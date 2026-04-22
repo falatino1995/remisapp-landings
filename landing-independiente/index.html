@@ -1,0 +1,543 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RemisApp Solo — Tu negocio de viajes, sin intermediarios</title>
+<meta name="description" content="Manejá tus viajes por WhatsApp sin depender de Uber, Didi ni Cabify. Tus clientes, tus precios, tu 100%.">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,700;1,300&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#0C0F0D;--bg2:#111612;--bg3:#161C17;
+  --card:#1A211B;--card2:#111814;
+  --verde:#3DCC8E;--verde-dim:#2A9E6A;
+  --verde-bg:rgba(61,204,142,0.1);--verde-border:rgba(61,204,142,0.2);
+  --blanco:#F2F5F0;--gris:#8A9488;--gris2:#BAC3B7;
+  --rojo:#E24B4A;--rojo-bg:rgba(226,75,74,0.1);
+  --borde:rgba(255,255,255,0.06);
+  --shadow:0 40px 100px rgba(0,0,0,0.55);
+  --naranja:#F5A623;
+}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;background:radial-gradient(circle at top,rgba(61,204,142,.06),transparent 26%),var(--bg);color:var(--blanco);overflow-x:hidden}
+a{text-decoration:none}
+section{scroll-margin-top:90px}
+.container{max-width:1200px;margin:0 auto;padding:0 48px}
+.divider{height:1px;background:var(--borde);max-width:1200px;margin:0 auto}
+
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:16px 48px;display:flex;align-items:center;justify-content:space-between;background:linear-gradient(135deg,#0A1A0F 0%,#0C1610 40%,#091208 100%);backdrop-filter:blur(20px);border-bottom:1px solid rgba(61,204,142,0.15);box-shadow:0 1px 0 rgba(61,204,142,0.08),0 4px 24px rgba(0,0,0,0.4)}
+.nav-logo{font-family:'Syne',sans-serif;font-weight:800;font-size:20px;color:var(--blanco);letter-spacing:-0.03em;display:flex;align-items:center;gap:8px}
+.nav-dot{width:8px;height:8px;border-radius:50%;background:var(--verde)}
+.nav-solo{font-size:11px;font-weight:700;color:var(--verde);background:var(--verde-bg);border:1px solid var(--verde-border);padding:2px 8px;border-radius:20px;margin-left:4px}
+.nav-links{display:flex;align-items:center;gap:24px}
+.nav-links a{font-size:13px;color:var(--gris);transition:.2s}
+.nav-links a:hover{color:var(--blanco)}
+.nav-switch{font-size:12px;color:var(--gris);border:1px solid var(--borde);padding:8px 14px;border-radius:100px;transition:.2s}
+.nav-switch:hover{border-color:var(--verde-border);color:var(--verde)}
+.nav-cta{background:var(--verde);color:#0C0F0D;font-size:14px;font-weight:700;padding:11px 20px;border-radius:100px;transition:all .2s}
+.nav-cta:hover{background:#5DDBA0;transform:translateY(-1px)}
+
+/* HERO */
+.hero{min-height:100vh;padding:130px 0 88px;display:grid;grid-template-columns:1.1fr .9fr;gap:64px;align-items:center}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(226,75,74,0.12);color:#F09595;font-size:13px;font-weight:700;padding:7px 14px;border-radius:100px;margin-bottom:22px;border:1px solid rgba(226,75,74,0.25)}
+.badge-pct{font-family:'Syne',sans-serif;font-size:15px;font-weight:800;color:var(--rojo)}
+.hero-title{font-family:'Syne',sans-serif;font-size:clamp(36px,4.5vw,62px);font-weight:800;line-height:1.02;letter-spacing:-0.04em;color:var(--blanco);margin-bottom:22px}
+.hero-title span{color:var(--verde)}
+.hero-title .tachado{text-decoration:line-through;color:var(--gris);font-size:.75em}
+.hero-sub{font-size:19px;font-weight:300;color:var(--gris2);line-height:1.72;margin-bottom:28px;max-width:560px}
+.hero-points{display:flex;flex-direction:column;gap:10px;margin:0 0 32px;padding:0;list-style:none}
+.hero-points li{display:flex;align-items:center;gap:10px;font-size:15px;color:var(--blanco);line-height:1.4}
+.hero-points .check{color:var(--verde);font-size:18px;flex-shrink:0}
+.hero-actions{display:flex;gap:14px;align-items:center;flex-wrap:wrap;margin-bottom:14px}
+.btn-primary{background:var(--verde);color:#0C0F0D;font-size:16px;font-weight:700;padding:15px 28px;border-radius:100px;display:inline-flex;align-items:center;gap:8px;transition:all .2s;border:none;cursor:pointer}
+.btn-primary:hover{background:#5DDBA0;transform:translateY(-1px)}
+.btn-secondary{background:transparent;border:1px solid var(--borde);color:var(--blanco);font-size:15px;font-weight:500;padding:14px 22px;border-radius:100px;display:inline-flex;align-items:center;gap:8px;transition:.2s}
+.btn-secondary:hover{border-color:var(--verde-border);color:var(--verde)}
+.hero-note{font-size:13px;color:var(--gris)}
+
+/* PHONE MOCKUP */
+.hero-visual{position:relative;overflow:visible}
+.phone-wrap{position:relative;max-width:300px;margin:0 auto}
+.phone-frame{background:linear-gradient(145deg,#2a2a2e 0%,#1a1a1c 40%,#141416 100%);border-radius:50px;padding:12px;box-shadow:var(--shadow),0 0 0 1px rgba(255,255,255,0.12),inset 0 1px 0 rgba(255,255,255,0.08);position:relative}
+.phone-frame::before{content:'';position:absolute;left:-3px;top:80px;width:3px;height:28px;background:#2a2a2e;border-radius:2px 0 0 2px}
+.phone-frame::after{content:'';position:absolute;left:-3px;top:118px;width:3px;height:48px;background:#2a2a2e;border-radius:2px 0 0 2px}
+.phone-btn-r{position:absolute;right:-3px;top:100px;width:3px;height:60px;background:#2a2a2e;border-radius:0 2px 2px 0}
+.phone-cam{width:110px;height:28px;background:#111;border-radius:0 0 18px 18px;margin:0 auto 6px;display:flex;align-items:center;justify-content:center;gap:6px}
+.phone-cam-dot{width:9px;height:9px;border-radius:50%;background:#1a1a1c;border:1px solid #333}
+.phone-cam-pill{width:36px;height:9px;border-radius:9px;background:#1a1a1c;border:1px solid #333}
+.phone-screen{background:#ECE5DD;border-radius:30px;overflow:hidden}
+.wapp-hdr{background:#075E54;padding:11px 14px;display:flex;align-items:center;gap:10px}
+.wapp-av{width:34px;height:34px;border-radius:50%;background:var(--verde);display:flex;align-items:center;justify-content:center;font-family:'Syne',sans-serif;font-weight:700;font-size:13px;color:#0C0F0D;flex-shrink:0}
+.wapp-n{font-size:13px;font-weight:700;color:white}
+.wapp-s{font-size:10px;color:#9FE1CB}
+.wapp-msgs{padding:10px 9px;display:flex;flex-direction:column;gap:7px}
+.msg{max-width:84%}.mi{align-self:flex-start}.mo{align-self:flex-end}
+.mb{padding:8px 11px;border-radius:12px;font-size:11.5px;line-height:1.5}
+.mi .mb{background:white;border-radius:2px 12px 12px 12px;color:#111}
+.mo .mb{background:#DCF8C6;border-radius:12px 2px 12px 12px;color:#111}
+.mt{font-size:9px;color:#aaa;margin-top:2px;text-align:right}.mi .mt{text-align:left}.mc{color:#53BDEB}
+
+/* PERFIL FLOTANTE */
+.perfil-float{position:absolute;right:-110px;top:40px;background:var(--card);border-radius:18px;padding:14px;width:180px;border:1px solid var(--verde-border);box-shadow:0 20px 50px rgba(0,0,0,.4);animation:float 3s ease-in-out infinite}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+.pf-avatar{width:44px;height:44px;border-radius:50%;background:var(--verde);display:flex;align-items:center;justify-content:center;font-family:'Syne',sans-serif;font-weight:800;font-size:16px;color:#0C0F0D;margin:0 auto 10px}
+.pf-name{font-family:'Syne',sans-serif;font-size:13px;font-weight:700;color:var(--blanco);text-align:center;margin-bottom:2px}
+.pf-city{font-size:10px;color:var(--gris);text-align:center;margin-bottom:10px}
+.pf-status{display:flex;align-items:center;justify-content:center;gap:5px;font-size:10px;color:var(--verde);margin-bottom:10px}
+.pf-dot{width:6px;height:6px;border-radius:50%;background:var(--verde)}
+.pf-btn-wa{background:var(--verde);color:#0C0F0D;border:none;border-radius:8px;padding:7px;font-size:10px;font-weight:700;width:100%;cursor:pointer;margin-bottom:5px}
+.pf-btn-p{background:var(--bg3);color:var(--gris2);border:1px solid var(--borde);border-radius:8px;padding:6px;font-size:10px;width:100%;cursor:pointer}
+.pf-url{font-size:9px;color:var(--gris);text-align:center;margin-top:8px}
+.pf-url span{color:var(--verde)}
+
+/* MATH SECTION */
+.math-box{background:var(--card);border:1px solid var(--borde);border-radius:20px;padding:40px;display:grid;grid-template-columns:1fr auto 1fr;gap:24px;align-items:center;margin-bottom:14px}
+.math-col{text-align:center}
+.math-label{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;margin-bottom:12px}
+.math-bad .math-label{color:var(--rojo)}
+.math-good .math-label{color:var(--verde)}
+.math-amount{font-family:'Syne',sans-serif;font-size:42px;font-weight:800;letter-spacing:-.04em;line-height:1}
+.math-bad .math-amount{color:var(--gris)}
+.math-good .math-amount{color:var(--verde)}
+.math-desc{font-size:13px;color:var(--gris);margin-top:8px;line-height:1.5}
+.math-arrow{font-size:28px;color:var(--verde)}
+.math-note{font-size:13px;color:var(--gris);text-align:center}
+.math-note strong{color:var(--blanco)}
+
+/* SECTION BASICS */
+.section{padding:100px 0}
+.sec-tag{font-size:12px;font-weight:700;color:var(--verde);text-transform:uppercase;letter-spacing:.12em;margin-bottom:16px}
+.sec-title{font-family:'Syne',sans-serif;font-size:clamp(28px,3.3vw,46px);font-weight:800;letter-spacing:-0.04em;line-height:1.08;margin-bottom:16px;color:var(--blanco)}
+.sec-title .hl{color:var(--verde)}
+.sec-sub{font-size:17px;font-weight:300;color:var(--gris2);line-height:1.7;max-width:580px;margin-bottom:56px}
+
+/* PROBLEMAS */
+.problem-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.problem-card{background:var(--card);border:1px solid var(--borde);border-radius:16px;padding:28px;border-top:3px solid var(--rojo)}
+.problem-icon{font-size:24px;margin-bottom:14px}
+.problem-title{font-family:'Syne',sans-serif;font-size:17px;font-weight:700;margin-bottom:8px;color:var(--blanco)}
+.problem-desc{font-size:14px;color:var(--gris);line-height:1.65}
+.problem-stat{font-family:'Syne',sans-serif;font-size:28px;font-weight:800;color:var(--rojo);margin-top:12px}
+
+/* CÓMO FUNCIONA */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--borde);border-radius:20px;overflow:hidden}
+.step{background:var(--bg2);padding:32px 24px;position:relative}
+.step-num{font-family:'Syne',sans-serif;font-size:48px;font-weight:800;color:var(--verde);opacity:.2;line-height:1;margin-bottom:16px}
+.step-icon{width:40px;height:40px;background:var(--verde-bg);border:1px solid var(--verde-border);border-radius:10px;display:flex;align-items:center;justify-content:center;margin-bottom:12px;font-size:18px}
+.step-title{font-family:'Syne',sans-serif;font-size:15px;font-weight:700;margin-bottom:8px;color:var(--blanco)}
+.step-desc{font-size:13px;font-weight:300;color:var(--gris);line-height:1.6}
+.step-arr{position:absolute;top:38px;right:-11px;width:22px;height:22px;background:var(--verde);border-radius:50%;display:flex;align-items:center;justify-content:center;z-index:2;color:#0C0F0D;font-size:11px;font-weight:700}
+
+/* FEATURES */
+.feat-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.feat-card{border:1px solid var(--borde);border-radius:16px;padding:26px;position:relative;background:var(--card);transition:border-color .2s}
+.feat-card:hover{border-color:var(--verde-border)}
+.feat-card.coming{opacity:.6}
+.fbadge{position:absolute;top:14px;right:14px;font-size:10px;font-weight:700;padding:3px 9px;border-radius:20px}
+.fb-live{background:var(--verde-bg);color:var(--verde)}
+.fb-soon{background:rgba(255,255,255,0.05);color:var(--gris)}
+.fi{font-size:22px;margin-bottom:12px}
+.ft{font-family:'Syne',sans-serif;font-size:15px;font-weight:700;margin-bottom:6px;color:var(--blanco)}
+.fd{font-size:13px;font-weight:300;color:var(--gris);line-height:1.6}
+
+/* VS UBER */
+.vs-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.vs-card{border-radius:16px;padding:28px}
+.vs-uber{background:rgba(0,0,0,0.3);border:1px solid rgba(255,255,255,0.06)}
+.vs-solo{background:linear-gradient(135deg,rgba(61,204,142,0.08),transparent);border:1px solid var(--verde-border)}
+.vs-tag{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;margin-bottom:20px}
+.vs-uber .vs-tag{color:var(--gris)}
+.vs-solo .vs-tag{color:var(--verde)}
+.vs-list{display:flex;flex-direction:column;gap:12px}
+.vs-item{display:flex;align-items:flex-start;gap:10px;font-size:14px;line-height:1.5}
+.vs-uber .vs-item{color:var(--gris)}
+.vs-solo .vs-item{color:var(--blanco)}
+.mark-x{color:var(--rojo);font-weight:700;flex-shrink:0}
+.mark-ok{color:var(--verde);font-weight:700;flex-shrink:0}
+
+/* LINK PREVIEW */
+.link-preview{background:var(--card);border:1px solid var(--verde-border);border-radius:20px;padding:40px;display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+.link-left .sec-tag{margin-bottom:12px}
+.link-title{font-family:'Syne',sans-serif;font-size:28px;font-weight:800;letter-spacing:-.03em;color:var(--blanco);margin-bottom:12px;line-height:1.1}
+.link-desc{font-size:15px;color:var(--gris2);line-height:1.65;margin-bottom:20px}
+.link-url{font-family:'Syne',sans-serif;font-size:18px;font-weight:700;color:var(--verde);background:var(--verde-bg);border:1px solid var(--verde-border);padding:12px 20px;border-radius:12px;display:inline-block}
+.link-url span{color:var(--gris2)}
+.profile-mock{background:var(--bg);border-radius:16px;overflow:hidden;border:1px solid var(--borde)}
+.profile-header{background:linear-gradient(135deg,#0F6E56,#1D9E75);padding:28px;text-align:center}
+.profile-av{width:72px;height:72px;border-radius:50%;background:var(--verde);display:flex;align-items:center;justify-content:center;font-family:'Syne',sans-serif;font-weight:800;font-size:24px;color:#0C0F0D;margin:0 auto 12px}
+.profile-name{font-family:'Syne',sans-serif;font-size:20px;font-weight:700;color:white;margin-bottom:4px}
+.profile-city{font-size:13px;color:rgba(255,255,255,0.7)}
+.profile-status{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:#9FE1CB;margin-top:8px}
+.pdot{width:7px;height:7px;border-radius:50%;background:#3DCC8E}
+.profile-body{padding:20px}
+.profile-btn-wa{background:#3DCC8E;color:#0C0F0D;border:none;border-radius:12px;padding:14px;font-size:15px;font-weight:700;width:100%;cursor:pointer;margin-bottom:10px}
+.profile-btn-p{background:var(--card);color:var(--gris2);border:1px solid var(--borde);border-radius:12px;padding:12px;font-size:14px;width:100%;cursor:pointer}
+
+/* CTA */
+.cta-box{background:var(--card);border:1px solid var(--verde-border);border-radius:28px;padding:80px 60px;text-align:center;position:relative;overflow:hidden;margin-bottom:100px}
+.cta-box::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 20% 50%,rgba(61,204,142,.09),transparent 60%),radial-gradient(ellipse at 80% 50%,rgba(61,204,142,.05),transparent 60%)}
+.cta-box>*{position:relative}
+.cta-tag{display:inline-block;background:var(--verde-bg);color:var(--verde);font-size:12px;font-weight:700;padding:6px 16px;border-radius:100px;margin-bottom:24px;border:1px solid var(--verde-border)}
+.cta-title{font-family:'Syne',sans-serif;font-size:clamp(28px,4vw,50px);font-weight:800;color:var(--blanco);letter-spacing:-0.05em;line-height:1.05;margin-bottom:16px}
+.cta-title span{color:var(--verde)}
+.cta-sub{font-size:16px;font-weight:300;color:var(--gris2);margin-bottom:40px;max-width:520px;margin-left:auto;margin-right:auto;line-height:1.68}
+.email-form{display:flex;gap:10px;max-width:520px;margin:0 auto;flex-wrap:wrap;justify-content:center}
+.email-in{flex:1;min-width:220px;padding:15px 20px;border-radius:100px;border:1px solid var(--borde);background:var(--bg2);color:var(--blanco);font-family:'DM Sans',sans-serif;font-size:15px;outline:none;transition:border-color .2s}
+.email-in::placeholder{color:var(--gris)}
+.email-in:focus{border-color:var(--verde)}
+.btn-cta{background:var(--verde);color:#0C0F0D;font-family:'DM Sans',sans-serif;font-size:15px;font-weight:700;padding:15px 28px;border-radius:100px;border:none;cursor:pointer;transition:all .2s;white-space:nowrap}
+.btn-cta:hover{background:#5DDBA0;transform:translateY(-1px)}
+.cta-note{font-size:12px;color:var(--gris);margin-top:16px}
+
+footer{padding:30px 48px;border-top:1px solid var(--borde);display:flex;align-items:center;justify-content:space-between;max-width:1200px;margin:0 auto}
+.f-logo{font-family:'Syne',sans-serif;font-weight:700;font-size:16px;color:var(--blanco)}
+.f-txt{font-size:13px;color:var(--gris)}
+.f-switch{font-size:12px;color:var(--gris)}
+.f-switch a{color:var(--verde)}
+
+.fade-up{opacity:0;transform:translateY(24px);animation:fadeUp .7s ease forwards}
+@keyframes fadeUp{to{opacity:1;transform:translateY(0)}}
+.d1{animation-delay:.1s}.d2{animation-delay:.2s}.d3{animation-delay:.35s}.d4{animation-delay:.5s}
+
+@media(max-width:1050px){
+  .hero{grid-template-columns:1fr;padding:110px 0 60px;gap:40px}
+  .perfil-float{display:none}
+  .link-preview{grid-template-columns:1fr}
+  .math-box{grid-template-columns:1fr;text-align:center}
+  .math-arrow{transform:rotate(90deg)}
+}
+@media(max-width:900px){
+  .container{padding:0 20px}
+  nav{padding:16px 20px}
+  .nav-links{display:none}
+  .problem-grid,.feat-grid,.vs-grid{grid-template-columns:1fr}
+  .steps{grid-template-columns:repeat(2,1fr)}
+  .step-arr{display:none}
+  .cta-box{padding:50px 24px;margin-bottom:60px}
+  footer{flex-direction:column;gap:12px;text-align:center;padding:28px 20px}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo">
+    <span class="nav-dot"></span>
+    RemisApp<span class="nav-solo">Solo</span>
+  </div>
+  <div class="nav-links">
+    <a href="#problema">El problema</a>
+    <a href="#como-funciona">Cómo funciona</a>
+    <a href="#tu-link">Tu link</a>
+    <a href="https://remisbot.netlify.app/" class="nav-switch">¿Tenés una remisería? →</a>
+  </div>
+  <a href="https://remisapp2-production.up.railway.app/empezar?kind=independiente" class="nav-cta">Empezá gratis ahora</a>
+</nav>
+
+<!-- HERO -->
+<section>
+<div class="container">
+<div class="hero">
+  <div>
+    <div class="hero-badge fade-up">
+      <span class="badge-pct">25-30%</span> de cada viaje se lo lleva Uber. Eso termina hoy.
+    </div>
+    <h1 class="hero-title fade-up d1">
+      Tus clientes.<br>
+      Tus precios.<br>
+      <span>Tu 100%.</span>
+    </h1>
+    <p class="hero-sub fade-up d2">RemisApp Solo te da tu propio sistema de viajes por WhatsApp. Sin intermediarios, sin comisiones, sin depender de que Uber no te banee.</p>
+    <ul class="hero-points fade-up d3">
+      <li><span class="check">✓</span> Tu link propio — los clientes te piden directo a vos</li>
+      <li><span class="check">✓</span> Vos ponés el precio de cada viaje</li>
+      <li><span class="check">✓</span> Puedes usar el precio de Uber como referencia para cobrar</li>
+      <li><span class="check">✓</span> El 100% de la tarifa es tuyo</li>
+      <li><span class="check">✓</span> Si Uber te banea, no perdés nada</li>
+    </ul>
+    <div class="hero-actions fade-up d4">
+      <a href="https://remisapp2-production.up.railway.app/empezar?kind=independiente" class="btn-primary">Empezá a usarlo gratis ahora →</a>
+      <a href="#como-funciona" class="btn-secondary">Ver cómo funciona</a>
+    </div>
+    <p class="hero-note fade-up d4">Crea tu cuenta, entra al admin y sigue el onboarding guiado. Tambien puedes dejar tu email si prefieres que te contactemos.</p>
+  </div>
+
+  <div class="hero-visual fade-up d4">
+    <div class="phone-wrap">
+      <div class="phone-frame">
+        <div class="phone-cam"><div class="phone-cam-dot"></div><div class="phone-cam-pill"></div></div>
+        <div class="phone-btn-r"></div>
+        <div class="phone-screen">
+          <div class="wapp-hdr">
+            <div class="wapp-av">M</div>
+            <div><div class="wapp-n">Marcelo — Remis</div><div class="wapp-s">en línea</div></div>
+          </div>
+          <div class="wapp-msgs">
+            <div class="msg mi"><div class="mb">Hola Marcelo, ¿tenés un auto para las 18hs?</div><div class="mt">17:42</div></div>
+            <div class="msg mo"><div class="mb">Sí, ¿de dónde salís?</div><div class="mt">17:42 <span class="mc">✓✓</span></div></div>
+            <div class="msg mi"><div class="mb">San Martín 450</div><div class="mt">17:43</div></div>
+            <div class="msg mo"><div class="mb">Perfecto. ¿A dónde vas?</div><div class="mt">17:43 <span class="mc">✓✓</span></div></div>
+            <div class="msg mi"><div class="mb">Terminal</div><div class="mt">17:43</div></div>
+            <div class="msg mo"><div class="mb">✅ Viaje confirmado<br><br>Tarifa: $2.800<br>Salida: 18:00 hs<br><br>Te mando el tracking cuando salga.</div><div class="mt">17:43 <span class="mc">✓✓</span></div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="perfil-float">
+        <div class="pf-avatar">M</div>
+        <div class="pf-name">Marcelo García</div>
+        <div class="pf-city">Rosario, Santa Fe</div>
+        <div class="pf-status"><span class="pf-dot"></span> Disponible ahora</div>
+        <button class="pf-btn-wa">💬 Pedir viaje por WhatsApp</button>
+        <button class="pf-btn-p">💰 Consultar precio</button>
+        <div class="pf-url">remisapp.link/<span>marcelo</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</section>
+
+<div class="divider"></div>
+
+<!-- LA MATEMÁTICA -->
+<section class="section" id="problema">
+<div class="container">
+  <div class="sec-tag">La matemática que te están escondiendo</div>
+  <h2 class="sec-title">Hacés 10 viajes por día.<br>Uber se queda con <span class="hl">3 de ellos.</span></h2>
+  <p class="sec-sub">No es una opinión. Es lo que pasa con cada viaje que hacés por Uber, Didi o Cabify.</p>
+
+  <div class="math-box">
+    <div class="math-col math-bad">
+      <div class="math-label">Lo que facturás por viaje</div>
+      <div class="math-amount">$3.000</div>
+      <div class="math-desc">Tarifa que paga el cliente</div>
+    </div>
+    <div class="math-arrow">→</div>
+    <div class="math-col math-good">
+      <div class="math-label">Lo que te llega a vos</div>
+      <div class="math-amount">$2.100</div>
+      <div class="math-desc">Después del 30% de Uber</div>
+    </div>
+  </div>
+  <p class="math-note">En un mes de 200 viajes: <strong>$180.000 que no te llegan.</strong> Con RemisApp Solo te quedás con todo — y podés ver el precio de Uber en tiempo real para fijar el tuyo.</p>
+
+  <div style="height:48px"></div>
+
+  <div class="problem-grid">
+    <div class="problem-card">
+      <div class="problem-icon">🚫</div>
+      <div class="problem-title">Te pueden banear sin aviso</div>
+      <p class="problem-desc">Una queja, un error del sistema, una política nueva. Y perdiste tu fuente de ingresos de un día para el otro. Sin explicación, sin apelación.</p>
+      <div class="problem-stat">Sin aviso</div>
+    </div>
+    <div class="problem-card">
+      <div class="problem-icon">👤</div>
+      <div class="problem-title">Los clientes no son tuyos</div>
+      <p class="problem-desc">Viajaste con el mismo pasajero 50 veces. Pero si mañana no usás Uber, no podés contactarlo. La relación es de Uber, no tuya.</p>
+      <div class="problem-stat">0 fidelización</div>
+    </div>
+    <div class="problem-card">
+      <div class="problem-icon">💸</div>
+      <div class="problem-title">El precio lo pone la plataforma</div>
+      <p class="problem-desc">Surge pricing, tarifas dinámicas, descuentos al cliente que te los cobran a vos. Nunca sabés bien cuánto vas a ganar por viaje.</p>
+      <div class="problem-stat">-30% promedio</div>
+    </div>
+  </div>
+</div>
+</section>
+
+<div class="divider"></div>
+
+<!-- CÓMO FUNCIONA -->
+<section class="section" id="como-funciona">
+<div class="container">
+  <div class="sec-tag">Cómo funciona</div>
+  <h2 class="sec-title">En 15 minutos tenés<br>tu propio sistema.</h2>
+  <p class="sec-sub">Sin técnicos, sin configuraciones complejas. Si sabés usar WhatsApp, sabés usar RemisApp Solo.</p>
+
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">01</div>
+      <div class="step-icon">🔗</div>
+      <div class="step-title">Creás tu perfil y tu link</div>
+      <p class="step-desc">Elegís tu nombre de link — tipo remisapp.link/marcelo — y configurás tu auto, ciudad y disponibilidad.</p>
+      <div class="step-arr">→</div>
+    </div>
+    <div class="step">
+      <div class="step-num">02</div>
+      <div class="step-icon">📢</div>
+      <div class="step-title">Compartís el link</div>
+      <p class="step-desc">En Instagram, grupos de WhatsApp, familia, clientes anteriores. Cualquiera que lo toque puede pedirte un viaje.</p>
+      <div class="step-arr">→</div>
+    </div>
+    <div class="step">
+      <div class="step-num">03</div>
+      <div class="step-icon">💬</div>
+      <div class="step-title">El cliente pide por WhatsApp</div>
+      <p class="step-desc">El bot toma el pedido, muestra el precio y confirma el viaje. Vos recibís la notificación y salís.</p>
+      <div class="step-arr">→</div>
+    </div>
+    <div class="step">
+      <div class="step-num">04</div>
+      <div class="step-icon">💰</div>
+      <div class="step-title">Cobrás el 100%</div>
+      <p class="step-desc">En efectivo, transferencia o Mercado Pago. Sin comisiones, sin plataforma en el medio.</p>
+    </div>
+  </div>
+</div>
+</section>
+
+<div class="divider"></div>
+
+<!-- TU LINK -->
+<section class="section" id="tu-link">
+<div class="container">
+  <div class="link-preview">
+    <div class="link-left">
+      <div class="sec-tag">Tu página pública</div>
+      <div class="link-title">Un link que comparte<br>toda tu cartera de clientes.</div>
+      <p class="link-desc">Tus clientes abren tu página, ven si estás disponible y te piden un viaje directo. Sin descargar nada, sin registrarse, sin complicaciones.</p>
+      <div class="link-url"><span>remisapp.link/</span>tunombre</div>
+      <div style="height:20px"></div>
+      <p style="font-size:13px;color:var(--gris)">Ponelo en tu bio de Instagram, mandalo a grupos, imprimilo en una tarjeta. Cada vez que alguien lo abre, puede pedirte un viaje.</p>
+    </div>
+    <div class="profile-mock">
+      <div class="profile-header">
+        <div class="profile-av">MG</div>
+        <div class="profile-name">Marcelo García</div>
+        <div class="profile-city">Rosario, Santa Fe · Remis</div>
+        <div class="profile-status"><span class="pdot"></span> Disponible ahora</div>
+      </div>
+      <div class="profile-body">
+        <button class="profile-btn-wa">💬 Pedir viaje por WhatsApp</button>
+        <button class="profile-btn-p">💰 Consultar precio primero</button>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<div class="divider"></div>
+
+<!-- FEATURES -->
+<section class="section">
+<div class="container">
+  <div class="sec-tag">Qué incluye</div>
+  <h2 class="sec-title">Tu propio sistema.<br><span class="hl">Mejor que Uber</span> para vos.</h2>
+  <p class="sec-sub">Pricing con referencia Uber, admin por WhatsApp, tracking para el cliente y tu link público. Todo lo que Uber te da, pero sin quedarse con el 30%.</p>
+
+  <div class="feat-grid">
+    <div class="feat-card"><span class="fbadge fb-live">Disponible</span><div class="fi">🔗</div><div class="ft">Tu link público</div><p class="fd">Una URL tuya — tipo remisapp.link/tunombre — que compartís en Instagram, grupos o tarjeta. Cualquiera que lo abra puede pedirte un viaje.</p></div>
+    <div class="feat-card"><span class="fbadge fb-live">Disponible</span><div class="fi">💬</div><div class="ft">Bot que opera solo</div><p class="fd">Toma el pedido, muestra el precio, confirma el viaje y te avisa. El cliente no espera respuesta tuya para saber si hay auto.</p></div>
+    <div class="feat-card"><span class="fbadge fb-live">Disponible</span><div class="fi">💰</div><div class="ft">Pricing con referencia Uber</div><p class="fd">El sistema puede mostrarte el precio de Uber para el mismo viaje. Vos decidís si ir igual, más barato o más caro. Siempre informado.</p></div>
+    <div class="feat-card"><span class="fbadge fb-live">Disponible</span><div class="fi">📱</div><div class="ft">Todo se configura por WhatsApp</div><p class="fd">CONFIG TARIFA BASE 800. CONFIG DISPONIBLE OFF. CONFIG MODO UBER. Sin entrar al panel, desde el celular, en cualquier momento.</p></div>
+    <div class="feat-card"><span class="fbadge fb-live">Disponible</span><div class="fi">📍</div><div class="ft">Tracking profesional</div><p class="fd">El cliente recibe un link para ver el estado del viaje en tiempo real. Se ve como Uber, sin que vos hagas nada extra.</p></div>
+    <div class="feat-card"><span class="fbadge fb-live">Disponible</span><div class="fi">📅</div><div class="ft">Viajes programados</div><p class="fd">El cliente reserva para las 18hs o para mañana. El sistema te avisa cuando se acerca el horario y activa el viaje automáticamente.</p></div>
+    <div class="feat-card"><span class="fbadge fb-live">Disponible</span><div class="fi">🗺️</div><div class="ft">Link de Maps automático</div><p class="fd">Cuando aceptás el viaje, te llega el link de Google Maps al origen. Sin copiar la dirección, sin buscarla.</p></div>
+    <div class="feat-card"><span class="fbadge fb-live">Disponible</span><div class="fi">💵</div><div class="ft">Precio manual por viaje</div><p class="fd">Si querés cobrar diferente en un viaje puntual, mandás PRECIO 8500 y listo. Con guardrails configurables para no cobrar de más ni de menos.</p></div>
+    <div class="feat-card"><span class="fbadge fb-live">Disponible</span><div class="fi">💳</div><div class="ft">Cobro por Mercado Pago</div><p class="fd">El cliente paga desde WhatsApp antes de subirse. El dinero va directo a tu cuenta de MP, sin intermediarios.</p></div>
+    <div class="feat-card coming"><span class="fbadge fb-soon">Próximamente</span><div class="fi">📊</div><div class="ft">Resumen de ganancias</div><p class="fd">Cuántos viajes hiciste, cuánto ganaste, qué días trabajás más. Todo en un resumen simple semanal o mensual.</p></div>
+  </div>
+</div>
+</section>
+
+<div class="divider"></div>
+
+<!-- VS UBER -->
+<section class="section">
+<div class="container">
+  <div class="sec-tag">La comparación honesta</div>
+  <h2 class="sec-title">RemisApp Solo<br>vs. trabajar para Uber</h2>
+  <p class="sec-sub">No te decimos que dejes Uber de golpe. Te decimos que empieces a construir algo que sea tuyo.</p>
+
+  <div class="vs-grid">
+    <div class="vs-card vs-uber">
+      <div class="vs-tag">Trabajar para Uber / Didi / Cabify</div>
+      <div class="vs-list">
+        <div class="vs-item"><span class="mark-x">✕</span> Se quedan el 25-30% de cada viaje</div>
+        <div class="vs-item"><span class="mark-x">✕</span> Te pueden banear sin aviso ni explicación</div>
+        <div class="vs-item"><span class="mark-x">✕</span> Los clientes son de la plataforma, no tuyos</div>
+        <div class="vs-item"><span class="mark-x">✕</span> El precio lo decide el algoritmo</div>
+        <div class="vs-item"><span class="mark-x">✕</span> No podés fidelizar ni construir cartera</div>
+        <div class="vs-item"><span class="mark-x">✕</span> Si la app cae, no trabajás</div>
+      </div>
+    </div>
+    <div class="vs-card vs-solo">
+      <div class="vs-tag">RemisApp Solo</div>
+      <div class="vs-list">
+        <div class="vs-item"><span class="mark-ok">✓</span> El 100% de cada viaje es tuyo</div>
+        <div class="vs-item"><span class="mark-ok">✓</span> Tu negocio no depende de nadie</div>
+        <div class="vs-item"><span class="mark-ok">✓</span> Tus clientes son tuyos para siempre</div>
+        <div class="vs-item"><span class="mark-ok">✓</span> Vos ponés el precio</div>
+        <div class="vs-item"><span class="mark-ok">✓</span> Construís cartera propia con el tiempo</div>
+        <div class="vs-item"><span class="mark-ok">✓</span> WhatsApp nunca te va a banear</div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<div class="divider"></div>
+
+<!-- CTA -->
+<div class="container" id="empezar">
+  <div class="cta-box">
+    <div class="cta-tag">Activalo hoy</div>
+    <h2 class="cta-title">Empieza por tu cuenta<br>o <span>dejanos ayudarte.</span></h2>
+    <p class="cta-sub">Si quieres avanzar solo, crea tu cuenta trial ahora y entra al onboarding guiado. Si prefieres venta asistida, deja tu email y te contactamos.</p>
+    <div style="display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-bottom:18px;">
+      <a href="https://remisapp2-production.up.railway.app/empezar?kind=independiente" class="btn-primary" style="padding:15px 30px;">Empezá a usarlo gratis ahora →</a>
+      <a href="#lead-form" class="btn-secondary" style="padding:14px 24px;">Quiero que me contacten</a>
+    </div>
+    <form class="email-form" id="lead-form" action="https://formspree.io/f/xjgalaag" method="POST" onsubmit="handleSubmit(event)">
+      <input type="email" name="email" class="email-in" placeholder="tunombre@gmail.com" id="email-input" required>
+      <button type="submit" class="btn-cta">Quiero que me contacten</button>
+    </form>
+    <p class="cta-note" id="form-msg">Alta self-serve con onboarding guiado o contacto asistido en menos de 24 horas</p>
+  </div>
+</div>
+
+<footer>
+  <div class="f-logo">RemisApp Solo</div>
+  <div class="f-txt">Hecho en Argentina 🇦🇷</div>
+  <div class="f-switch">¿Tenés una remisería? <a href="https://remisbot.netlify.app/">→ RemisApp para remiserías</a></div>
+</footer>
+
+<script>
+async function handleSubmit(e) {
+  e.preventDefault();
+  const form = e.target;
+  const email = document.getElementById('email-input').value;
+  const msg = document.getElementById('form-msg');
+  const btn = form.querySelector('button');
+  btn.textContent = 'Enviando...';
+  btn.disabled = true;
+  try {
+    const res = await fetch(form.action, {
+      method: 'POST',
+      body: new FormData(form),
+      headers: { 'Accept': 'application/json' }
+    });
+    if (res.ok) {
+      msg.style.color = '#3DCC8E';
+      msg.textContent = 'Listo. Te contactamos a ' + email + ' en menos de 24 horas, o si prefieres puedes crear tu cuenta ahora mismo.';
+      form.reset();
+    } else {
+      msg.style.color = '#E24B4A';
+      msg.textContent = 'Algo salió mal. Intentá de nuevo.';
+    }
+  } catch {
+    msg.style.color = '#E24B4A';
+    msg.textContent = 'Algo salió mal. Intentá de nuevo.';
+  }
+  btn.textContent = 'Quiero que me contacten';
+  btn.disabled = false;
+}
+</script>
+</body>
+</html>
+
+
+

@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RemisApp — Tu remisería en WhatsApp</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#0C0F0D;
+  --bg2:#111612;
+  --bg3:#161C17;
+  --card:#1A211B;
+  --verde:#3DCC8E;
+  --verde-dim:#2A9E6A;
+  --verde-bg:rgba(61,204,142,0.1);
+  --verde-border:rgba(61,204,142,0.2);
+  --blanco:#F2F5F0;
+  --gris:#8A9488;
+  --borde:rgba(255,255,255,0.06);
+}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--blanco);overflow-x:hidden}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:18px 48px;display:flex;align-items:center;justify-content:space-between;background:rgba(12,15,13,0.85);backdrop-filter:blur(16px);border-bottom:1px solid var(--borde)}
+.nav-logo{font-family:'Syne',sans-serif;font-weight:800;font-size:20px;color:var(--blanco);letter-spacing:-0.03em;display:flex;align-items:center;gap:8px}
+.nav-dot{width:8px;height:8px;border-radius:50%;background:var(--verde)}
+.nav-cta{background:var(--verde);color:#0C0F0D;font-family:'DM Sans',sans-serif;font-size:14px;font-weight:500;padding:10px 22px;border-radius:100px;text-decoration:none;transition:all .2s}
+.nav-cta:hover{background:#5DDBA0;transform:translateY(-1px)}
+
+/* HERO */
+.hero{min-height:100vh;padding:130px 48px 80px;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;max-width:1200px;margin:0 auto}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:var(--verde-bg);color:var(--verde);font-size:13px;font-weight:500;padding:6px 14px;border-radius:100px;margin-bottom:24px;border:1px solid var(--verde-border)}
+.badge-dot{width:7px;height:7px;border-radius:50%;background:var(--verde);animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(.8)}}
+.hero-title{font-family:'Syne',sans-serif;font-size:clamp(44px,5vw,68px);font-weight:800;line-height:1.03;letter-spacing:-0.04em;color:var(--blanco);margin-bottom:20px}
+.hero-title span{color:var(--verde)}
+.hero-sub{font-size:18px;font-weight:300;color:var(--gris);line-height:1.65;margin-bottom:36px;max-width:460px}
+.hero-actions{display:flex;gap:14px;align-items:center;flex-wrap:wrap}
+.btn-primary{background:var(--verde);color:#0C0F0D;font-family:'DM Sans',sans-serif;font-size:16px;font-weight:500;padding:14px 28px;border-radius:100px;text-decoration:none;display:inline-flex;align-items:center;gap:8px;transition:all .2s;border:none;cursor:pointer}
+.btn-primary:hover{background:#5DDBA0;transform:translateY(-1px)}
+.btn-ghost{color:var(--gris);font-family:'DM Sans',sans-serif;font-size:15px;font-weight:400;text-decoration:none;display:inline-flex;align-items:center;gap:6px;transition:all .2s}
+.btn-ghost:hover{color:var(--blanco);gap:10px}
+
+/* PHONE MOCKUP */
+.hero-visual{position:relative}
+.phone-frame{
+    background:linear-gradient(145deg,#2a2a2e 0%,#1a1a1c 40%,#141416 100%);
+    border-radius:50px;padding:12px;
+    box-shadow:0 50px 120px rgba(0,0,0,0.7),0 0 0 1px rgba(255,255,255,0.12),inset 0 1px 0 rgba(255,255,255,0.08);
+    max-width:290px;margin:0 auto;position:relative;
+  }
+  .phone-frame::before{content:'';position:absolute;left:-3px;top:80px;width:3px;height:28px;background:#2a2a2e;border-radius:2px 0 0 2px}
+  .phone-frame::after{content:'';position:absolute;left:-3px;top:118px;width:3px;height:48px;background:#2a2a2e;border-radius:2px 0 0 2px}
+  .phone-btn-right{position:absolute;right:-3px;top:100px;width:3px;height:60px;background:#2a2a2e;border-radius:0 2px 2px 0}
+  .phone-camera{width:120px;height:30px;background:#111;border-radius:0 0 20px 20px;margin:0 auto 6px;display:flex;align-items:center;justify-content:center;gap:6px}
+  .phone-camera-dot{width:10px;height:10px;border-radius:50%;background:#1a1a1c;border:1px solid #333}
+  .phone-camera-pill{width:40px;height:10px;border-radius:10px;background:#1a1a1c;border:1px solid #333}
+.phone-screen{background:#ECE5DD;border-radius:30px;overflow:hidden}
+.wapp-hdr{background:#075E54;padding:11px 14px;display:flex;align-items:center;gap:10px}
+.wapp-av{width:34px;height:34px;border-radius:50%;background:var(--verde);display:flex;align-items:center;justify-content:center;font-family:'Syne',sans-serif;font-weight:700;font-size:13px;color:#0C0F0D;flex-shrink:0}
+.wapp-n{font-size:13px;font-weight:500;color:white}
+.wapp-s{font-size:10px;color:#9FE1CB}
+.wapp-msgs{padding:12px 10px;display:flex;flex-direction:column;gap:7px}
+.msg{max-width:82%}
+.mi{align-self:flex-start}
+.mo{align-self:flex-end}
+.mb{padding:8px 11px;border-radius:12px;font-size:12px;line-height:1.5}
+.mi .mb{background:white;border-radius:2px 12px 12px 12px;color:#111}
+.mo .mb{background:#DCF8C6;border-radius:12px 2px 12px 12px;color:#111}
+.mt{font-size:10px;color:#aaa;margin-top:2px;text-align:right}
+.mi .mt{text-align:left}
+.mc{color:#53BDEB}
+  .msg-label{font-size:9px;font-weight:500;padding:0 4px;margin-bottom:3px;opacity:0.6}
+  .mi .msg-label{color:#9FE1CB;text-align:left}
+  .mo .msg-label{color:#888;text-align:right}
+  .typing-dots{display:flex;align-items:center;gap:3px;padding:10px 14px;background:white;border-radius:2px 12px 12px 12px;width:fit-content}
+  .typing-dots span{width:6px;height:6px;border-radius:50%;background:#aaa;animation:typingDot 1.2s infinite}
+  .typing-dots span:nth-child(2){animation-delay:.2s}
+  .typing-dots span:nth-child(3){animation-delay:.4s}
+  @keyframes typingDot{0%,60%,100%{transform:translateY(0);opacity:.4}30%{transform:translateY(-4px);opacity:1}}
+  .msg.hidden{display:none}
+
+/* PANEL FLOTANTE */
+.panel-float{position:absolute;right:-95px;top:50%;transform:translateY(-50%);background:var(--card);border-radius:16px;padding:14px;width:185px;border:1px solid var(--borde);animation:float 3s ease-in-out infinite}
+@keyframes float{0%,100%{transform:translateY(-50%) translateY(0)}50%{transform:translateY(-50%) translateY(-8px)}}
+.pf-label{font-size:10px;font-weight:500;color:var(--gris);text-transform:uppercase;letter-spacing:.07em;margin-bottom:8px}
+.pf-card{background:var(--bg3);border-radius:10px;padding:10px;margin-bottom:8px}
+.pf-num{font-size:10px;color:var(--gris);margin-bottom:3px}
+.pf-ruta{font-size:12px;font-weight:500;color:var(--blanco);line-height:1.4}
+.pf-badge{display:inline-block;background:var(--verde-bg);color:var(--verde);font-size:10px;font-weight:500;padding:2px 8px;border-radius:20px;margin-top:5px}
+.pf-select{width:100%;font-size:11px;padding:5px 8px;border:1px solid var(--borde);border-radius:7px;margin-bottom:5px;color:var(--blanco);background:var(--bg3);font-family:'DM Sans',sans-serif}
+.pf-btn{width:100%;background:var(--verde);color:#0C0F0D;border:none;border-radius:7px;padding:7px;font-size:11px;font-weight:500;cursor:pointer}
+
+/* SECCIONES */
+.section{padding:100px 48px;max-width:1200px;margin:0 auto}
+.sec-tag{font-size:11px;font-weight:500;color:var(--verde);text-transform:uppercase;letter-spacing:.1em;margin-bottom:16px}
+.sec-title{font-family:'Syne',sans-serif;font-size:clamp(32px,4vw,50px);font-weight:700;letter-spacing:-0.04em;line-height:1.08;margin-bottom:16px;color:var(--blanco)}
+.sec-sub{font-size:17px;font-weight:300;color:var(--gris);line-height:1.65;max-width:520px;margin-bottom:60px}
+
+/* PASOS */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--borde);border-radius:20px;overflow:hidden}
+.step{background:var(--bg2);padding:40px 32px;position:relative}
+.step-num{font-family:'Syne',sans-serif;font-size:56px;font-weight:800;color:var(--verde);opacity:.2;line-height:1;margin-bottom:20px}
+.step-icon{width:44px;height:44px;background:var(--verde-bg);border:1px solid var(--verde-border);border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:14px;font-size:20px}
+.step-title{font-family:'Syne',sans-serif;font-size:17px;font-weight:700;margin-bottom:10px;color:var(--blanco)}
+.step-desc{font-size:14px;font-weight:300;color:var(--gris);line-height:1.65}
+.step-arr{position:absolute;top:44px;right:-13px;width:26px;height:26px;background:var(--verde);border-radius:50%;display:flex;align-items:center;justify-content:center;z-index:2;color:#0C0F0D;font-size:12px}
+
+/* AUTOMATIZACIÓN */
+.auto-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.auto-item{background:var(--card);border:1px solid var(--borde);border-radius:14px;padding:24px;transition:border-color .2s}
+.auto-item:hover{border-color:var(--verde-border)}
+.auto-icon{font-size:22px;margin-bottom:12px}
+.auto-title{font-family:'Syne',sans-serif;font-size:15px;font-weight:700;color:var(--blanco);margin-bottom:6px}
+.auto-desc{font-size:13px;font-weight:300;color:var(--gris);line-height:1.6}
+.auto-badge{display:inline-block;font-size:10px;font-weight:500;padding:2px 8px;border-radius:20px;margin-top:8px}
+.ab-live{background:var(--verde-bg);color:var(--verde)}
+.ab-soon{background:rgba(255,255,255,0.05);color:var(--gris)}
+
+/* FEATURES */
+.feat-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.feat-card{border:1px solid var(--borde);border-radius:16px;padding:28px;position:relative;background:var(--card);transition:border-color .2s}
+.feat-card:hover{border-color:var(--verde-border)}
+.feat-card.coming{opacity:.55}
+.fbadge{position:absolute;top:16px;right:16px;font-size:10px;font-weight:500;padding:3px 10px;border-radius:20px}
+.fb-live{background:var(--verde-bg);color:var(--verde)}
+.fb-soon{background:rgba(255,255,255,0.05);color:var(--gris)}
+.fi{font-size:24px;margin-bottom:14px}
+.ft{font-family:'Syne',sans-serif;font-size:16px;font-weight:700;margin-bottom:8px;color:var(--blanco)}
+.fd{font-size:13px;font-weight:300;color:var(--gris);line-height:1.65}
+
+/* CTA */
+.cta-wrap{margin:0 48px 100px}
+.cta-box{background:var(--card);border:1px solid var(--verde-border);border-radius:28px;padding:80px 60px;text-align:center;position:relative;overflow:hidden}
+.cta-box::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 20% 50%,rgba(61,204,142,.08),transparent 60%),radial-gradient(ellipse at 80% 50%,rgba(61,204,142,.05),transparent 60%)}
+.cta-box>*{position:relative}
+.cta-tag{display:inline-block;background:var(--verde-bg);color:var(--verde);font-size:12px;font-weight:500;padding:6px 16px;border-radius:100px;margin-bottom:24px;border:1px solid var(--verde-border)}
+.cta-title{font-family:'Syne',sans-serif;font-size:clamp(28px,4vw,48px);font-weight:800;color:var(--blanco);letter-spacing:-0.04em;line-height:1.08;margin-bottom:16px}
+.cta-sub{font-size:16px;font-weight:300;color:var(--gris);margin-bottom:40px;max-width:480px;margin-left:auto;margin-right:auto;line-height:1.65}
+.email-form{display:flex;gap:10px;max-width:440px;margin:0 auto;flex-wrap:wrap;justify-content:center}
+.email-in{flex:1;min-width:220px;padding:14px 20px;border-radius:100px;border:1px solid var(--borde);background:var(--bg2);color:var(--blanco);font-family:'DM Sans',sans-serif;font-size:15px;outline:none;transition:border-color .2s}
+.email-in::placeholder{color:var(--gris)}
+.email-in:focus{border-color:var(--verde)}
+.btn-cta{background:var(--verde);color:#0C0F0D;font-family:'DM Sans',sans-serif;font-size:15px;font-weight:500;padding:14px 28px;border-radius:100px;border:none;cursor:pointer;transition:all .2s;white-space:nowrap}
+.btn-cta:hover{background:#5DDBA0;transform:translateY(-1px)}
+.cta-note{font-size:12px;color:var(--gris);margin-top:16px}
+
+/* FOOTER */
+footer{padding:30px 48px;border-top:1px solid var(--borde);display:flex;align-items:center;justify-content:space-between;max-width:1200px;margin:0 auto}
+.f-logo{font-family:'Syne',sans-serif;font-weight:700;font-size:16px;color:var(--blanco)}
+.f-txt{font-size:13px;color:var(--gris)}
+
+/* ANIMACIONES */
+.fade-up{opacity:0;transform:translateY(24px);animation:fadeUp .7s ease forwards}
+@keyframes fadeUp{to{opacity:1;transform:translateY(0)}}
+.d1{animation-delay:.1s}.d2{animation-delay:.2s}.d3{animation-delay:.35s}.d4{animation-delay:.5s}
+
+/* DIVISOR */
+.divider{height:1px;background:var(--borde);max-width:1200px;margin:0 auto}
+  .flow-bar{max-width:1200px;margin:0 auto;padding:0 48px 70px;display:grid;grid-template-columns:repeat(4,1fr);gap:0;position:relative}
+  .flow-bar::before{content:'';position:absolute;top:28px;left:calc(48px + 12.5%);right:calc(48px + 12.5%);height:1px;background:linear-gradient(90deg,var(--verde) 0%,rgba(61,204,142,0.2) 100%);z-index:0}
+  .flow-step{display:flex;flex-direction:column;align-items:center;text-align:center;position:relative;z-index:1;padding:0 12px}
+  .flow-icon{width:56px;height:56px;border-radius:50%;background:var(--bg2);border:1.5px solid var(--verde-border);display:flex;align-items:center;justify-content:center;font-size:22px;margin-bottom:14px;position:relative}
+  .flow-icon::after{content:attr(data-n);position:absolute;top:-4px;right:-4px;width:18px;height:18px;background:var(--verde);border-radius:50%;font-size:9px;font-weight:500;color:#0C0F0D;display:flex;align-items:center;justify-content:center;font-family:'Syne',sans-serif}
+  .flow-title{font-family:'Syne',sans-serif;font-size:13px;font-weight:700;color:var(--blanco);margin-bottom:4px;letter-spacing:-0.01em}
+  .flow-desc{font-size:11px;color:var(--gris);line-height:1.5}
+  @media(max-width:900px){.flow-bar{grid-template-columns:repeat(2,1fr);gap:24px;padding:0 20px 60px}.flow-bar::before{display:none}}
+
+@media(max-width:900px){
+  nav{padding:16px 20px}
+  .hero{grid-template-columns:1fr;padding:100px 20px 60px;gap:40px}
+  .panel-float{display:none}
+  .section{padding:70px 20px}
+  .steps{grid-template-columns:1fr}
+  .step-arr{display:none}
+  .auto-grid{grid-template-columns:1fr}
+  .feat-grid{grid-template-columns:1fr}
+  .cta-wrap{margin:0 20px 60px}
+  .cta-box{padding:50px 24px}
+  footer{flex-direction:column;gap:12px;text-align:center;padding:28px 20px}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo"><span class="nav-dot"></span> RemisApp</div>
+  <a href="#prueba" class="nav-cta">Quiero probar con mi remisería</a>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div>
+    <div class="hero-badge fade-up"><span class="badge-dot"></span> Prueba gratuita — sin tarjeta, sin contrato</div>
+    <h1 class="hero-title fade-up d1">Tu remisería<br><span>trabaja sola.</span></h1>
+    <p class="hero-sub fade-up d2">Automatizá pedidos, asigná choferes y seguí viajes en vivo. Todo desde WhatsApp, sin llamadas ni papel.</p>
+    <div class="hero-actions fade-up d3">
+      <a href="#prueba" class="btn-primary">Quiero probar con mi remisería <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      <a href="#como-funciona" class="btn-ghost">Cómo funciona <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M7 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+    </div>
+  </div>
+  <div class="hero-visual fade-up d4">
+    <div class="phone-frame">
+      <div class="phone-camera"><div class="phone-camera-dot"></div><div class="phone-camera-pill"></div></div><div class="phone-btn-right"></div>
+      <div class="phone-screen">
+        <div class="wapp-hdr">
+          <div class="wapp-av">R</div>
+          <div><div class="wapp-n">Remisería del Sur</div><div class="wapp-s">en línea</div></div>
+        </div>
+        <div class="wapp-msgs">
+          <div class="msg mi"><div class="mb">Hola 👋 ¿Desde dónde salís? Escribí la dirección o mandá tu ubicación.</div><div class="mt">10:32</div></div>
+          <div class="msg mo"><div class="mb">San Martín 450</div><div class="mt">10:33 <span class="mc">✓✓</span></div></div>
+          <div class="msg mi"><div class="mb">Perfecto. ¿A dónde vas?</div><div class="mt">10:33</div></div>
+          <div class="msg mo"><div class="mb">Terminal de ómnibus</div><div class="mt">10:33 <span class="mc">✓✓</span></div></div>
+          <div class="msg mi"><div class="mb">✅ <strong>Pedido confirmado</strong><br><br>Chofer: Marcelo García<br>Auto: Peugeot 208 — ABC 123<br><br>Seguí tu viaje acá:<br>remisapp.link/v/xK9f</div><div class="mt">10:34</div></div>
+        </div>
+      </div>
+    </div>
+    <div class="panel-float">
+      <div class="pf-label">Panel admin</div>
+      <div class="pf-card">
+        <div class="pf-num">Viaje #47</div>
+        <div class="pf-ruta">San Martín 450 → Terminal</div>
+        <div class="pf-badge">Pendiente</div>
+      </div>
+      <select class="pf-select"><option>Marcelo García</option><option>Roberto López</option></select>
+      <button class="pf-btn">Asignar chofer</button>
+    </div>
+  </div>
+</div>
+
+
+<!-- BARRA DE FLUJO -->
+<div class="flow-bar">
+  <div class="flow-step">
+    <div class="flow-icon" data-n="1">💬</div>
+    <div class="flow-title">Cliente pide por WhatsApp</div>
+    <p class="flow-desc">Escribe al número de la remisería. El bot toma el pedido solo.</p>
+  </div>
+  <div class="flow-step">
+    <div class="flow-icon" data-n="2">📋</div>
+    <div class="flow-title">Viaje entra al panel</div>
+    <p class="flow-desc">Aparece en tu celular. Elegís el chofer disponible en un toque.</p>
+  </div>
+  <div class="flow-step">
+    <div class="flow-icon" data-n="3">🗺️</div>
+    <div class="flow-title">Chofer recibe con Maps</div>
+    <p class="flow-desc">Le llega el viaje por WhatsApp con el link de navegación.</p>
+  </div>
+  <div class="flow-step">
+    <div class="flow-icon" data-n="4">📍</div>
+    <div class="flow-title">Cliente sigue en vivo</div>
+    <p class="flow-desc">Recibe un link para ver el estado del viaje en tiempo real.</p>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- LO QUE HACE SOLO -->
+<div class="section">
+  <div class="sec-tag">Automatización</div>
+  <h2 class="sec-title">Lo que RemisApp<br>hace solo.</h2>
+  <p class="sec-sub">No es solo un chat. Es un sistema que opera por vos. Cada viaje, desde que el cliente pide hasta que el chofer termina.</p>
+  <div class="auto-grid">
+    <div class="auto-item">
+      <div class="auto-icon">💬</div>
+      <div class="auto-title">Toma el pedido</div>
+      <p class="auto-desc">Pregunta origen y destino, valida la dirección y confirma el viaje sin que intervenga nadie.</p>
+      <span class="auto-badge ab-live">Disponible</span>
+    </div>
+    <div class="auto-item">
+      <div class="auto-icon">💰</div>
+      <div class="auto-title">Estima el precio</div>
+      <p class="auto-desc">Calcula el costo del viaje según distancia y la tarifa que configurás. El cliente lo ve antes de confirmar.</p>
+      <span class="auto-badge ab-live">Disponible</span>
+    </div>
+    <div class="auto-item">
+      <div class="auto-icon">🗺️</div>
+      <div class="auto-title">Manda la navegación</div>
+      <p class="auto-desc">El chofer recibe el link de Google Maps al origen directo por WhatsApp. Sin buscar la dirección a mano.</p>
+      <span class="auto-badge ab-live">Disponible</span>
+    </div>
+    <div class="auto-item">
+      <div class="auto-icon">📍</div>
+      <div class="auto-title">Trackea el viaje</div>
+      <p class="auto-desc">El cliente recibe un link para seguir el estado del viaje en tiempo real desde el celular.</p>
+      <span class="auto-badge ab-live">Disponible</span>
+    </div>
+    <div class="auto-item">
+      <div class="auto-icon">🔄</div>
+      <div class="auto-title">Gestiona los estados</div>
+      <p class="auto-desc">El chofer manda LISTO, AFUERA y FIN por WhatsApp. El sistema actualiza todo automáticamente.</p>
+      <span class="auto-badge ab-live">Disponible</span>
+    </div>
+    <div class="auto-item">
+      <div class="auto-icon">🤖</div>
+      <div class="auto-title">Asigna el chofer</div>
+      <p class="auto-desc">En modo automático asigna el chofer disponible más cercano. En modo sugerido propone uno y el dueño confirma. Configurable por remisería.</p>
+      <span class="auto-badge ab-soon">Próximamente</span>
+    </div>
+    <div class="auto-item">
+      <div class="auto-icon">💳</div>
+      <div class="auto-title">Cobra el pago</div>
+      <p class="auto-desc">El cliente va a poder pagar por Mercado Pago u otros medios desde WhatsApp, sin efectivo obligatorio.</p>
+      <span class="auto-badge ab-soon">Próximamente</span>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- CÓMO FUNCIONA -->
+<div class="section" id="como-funciona">
+  <div class="sec-tag">Cómo funciona</div>
+  <h2 class="sec-title">Tres pasos.<br>Sin complicaciones.</h2>
+  <p class="sec-sub">No hace falta app, no hace falta capacitar a nadie. Tu cliente ya sabe usar WhatsApp.</p>
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">01</div>
+      <div class="step-icon">💬</div>
+      <div class="step-title">El cliente pide por WhatsApp</div>
+      <p class="step-desc">Manda un mensaje al número de la remisería. El bot toma origen, destino y confirma el viaje solo.</p>
+      <div class="step-arr">→</div>
+    </div>
+    <div class="step">
+      <div class="step-num">02</div>
+      <div class="step-icon">📋</div>
+      <div class="step-title">Vos asignás el chofer</div>
+      <p class="step-desc">El viaje aparece en tu panel. Elegís el chofer disponible y lo asignás con un toque desde el celular.</p>
+      <div class="step-arr">→</div>
+    </div>
+    <div class="step">
+      <div class="step-num">03</div>
+      <div class="step-icon">🗺️</div>
+      <div class="step-title">El chofer sale solo</div>
+      <p class="step-desc">Recibe el viaje con el link de Maps. El cliente recibe confirmación y puede seguir el viaje en tiempo real.</p>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- FEATURES -->
+<div class="section" id="funcionalidades">
+  <div class="sec-tag">Qué incluye</div>
+  <h2 class="sec-title">Todo lo que<br>necesitás para operar.</h2>
+  <p class="sec-sub">Lo esencial ya funciona. Seguimos sumando lo que nos pidan las remiserías que están probando con nosotros.</p>
+  <div class="feat-grid">
+    <div class="feat-card"><span class="fbadge fb-live">Disponible</span><div class="fi">💬</div><div class="ft">Bot de WhatsApp</div><p class="fd">Toma pedidos automáticamente, valida direcciones y confirma viajes sin intervención humana.</p></div>
+    <div class="feat-card"><span class="fbadge fb-live">Disponible</span><div class="fi">📋</div><div class="ft">Panel de gestión</div><p class="fd">Ves todos los viajes en tiempo real. Asignás choferes desde el celular. Los estados se actualizan solos.</p></div>
+    <div class="feat-card"><span class="fbadge fb-live">Disponible</span><div class="fi">📅</div><div class="ft">Viajes programados</div><p class="fd">El cliente reserva para más tarde o para el día siguiente. Aparece separado de los viajes inmediatos.</p></div>
+    <div class="feat-card"><span class="fbadge fb-live">Disponible</span><div class="fi">📍</div><div class="ft">Tracking en vivo</div><p class="fd">El cliente ve el estado del viaje y la ubicación del chofer en tiempo real desde el celular.</p></div>
+    <div class="feat-card"><span class="fbadge fb-live">Disponible</span><div class="fi">🖥️</div><div class="ft">Panel superadmin</div><p class="fd">Monitoreá todas las remiserías, viajes y choferes desde un único panel de control centralizado.</p></div>
+    <div class="feat-card coming"><span class="fbadge fb-soon">Próximamente</span><div class="fi">💳</div><div class="ft">Pago online</div><p class="fd">El cliente paga por Mercado Pago u otros medios directamente desde WhatsApp. Sin efectivo obligatorio.</p></div>
+    <div class="feat-card coming"><span class="fbadge fb-soon">Próximamente</span><div class="fi">📊</div><div class="ft">Historial y reportes</div><p class="fd">Cuántos viajes, qué choferes trabajaron más, cuánto facturaste. Todo en un resumen simple.</p></div>
+    <div class="feat-card coming"><span class="fbadge fb-soon">Próximamente</span><div class="fi">⭐</div><div class="ft">Calificaciones</div><p class="fd">El cliente califica al chofer al finalizar el viaje. Mejor gestión de la calidad del servicio.</p></div>
+  </div>
+</div>
+
+<!-- CTA -->
+
+<!-- ANTES / CON REMISAPP -->
+<div class="section" style="padding-top: 0;">
+  <div class="sec-tag">El cambio real</div>
+  <h2 class="sec-title">Lo que cambia<br>con RemisApp.</h2>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:2px;background:rgba(255,255,255,0.06);border-radius:20px;overflow:hidden;">
+    <div style="background:#1A1F1B;padding:36px 32px;">
+      <div style="font-size:11px;font-weight:500;color:#8A9488;text-transform:uppercase;letter-spacing:.08em;margin-bottom:20px;">Antes</div>
+      <div style="display:flex;flex-direction:column;gap:12px;">
+        <div style="display:flex;align-items:flex-start;gap:10px;"><span style="color:#E24B4A;font-size:16px;margin-top:1px;">✕</span><span style="font-size:14px;color:#8A9488;line-height:1.5;">Llamadas perdidas en hora pico</span></div>
+        <div style="display:flex;align-items:flex-start;gap:10px;"><span style="color:#E24B4A;font-size:16px;margin-top:1px;">✕</span><span style="font-size:14px;color:#8A9488;line-height:1.5;">Viajes anotados en papel o en la cabeza</span></div>
+        <div style="display:flex;align-items:flex-start;gap:10px;"><span style="color:#E24B4A;font-size:16px;margin-top:1px;">✕</span><span style="font-size:14px;color:#8A9488;line-height:1.5;">Choferes que no saben a dónde ir</span></div>
+        <div style="display:flex;align-items:flex-start;gap:10px;"><span style="color:#E24B4A;font-size:16px;margin-top:1px;">✕</span><span style="font-size:14px;color:#8A9488;line-height:1.5;">Clientes preguntando "¿ya viene?"</span></div>
+        <div style="display:flex;align-items:flex-start;gap:10px;"><span style="color:#E24B4A;font-size:16px;margin-top:1px;">✕</span><span style="font-size:14px;color:#8A9488;line-height:1.5;">Errores por viajes mal tomados</span></div>
+      </div>
+    </div>
+    <div style="background:#0F1A14;padding:36px 32px;">
+      <div style="font-size:11px;font-weight:500;color:#3DCC8E;text-transform:uppercase;letter-spacing:.08em;margin-bottom:20px;">Con RemisApp</div>
+      <div style="display:flex;flex-direction:column;gap:12px;">
+        <div style="display:flex;align-items:flex-start;gap:10px;"><span style="color:#3DCC8E;font-size:16px;margin-top:1px;">✓</span><span style="font-size:14px;color:#F2F5F0;line-height:1.5;">El cliente pide por WhatsApp sin llamar</span></div>
+        <div style="display:flex;align-items:flex-start;gap:10px;"><span style="color:#3DCC8E;font-size:16px;margin-top:1px;">✓</span><span style="font-size:14px;color:#F2F5F0;line-height:1.5;">Todo queda registrado automáticamente</span></div>
+        <div style="display:flex;align-items:flex-start;gap:10px;"><span style="color:#3DCC8E;font-size:16px;margin-top:1px;">✓</span><span style="font-size:14px;color:#F2F5F0;line-height:1.5;">Chofer recibe dirección y link de Maps</span></div>
+        <div style="display:flex;align-items:flex-start;gap:10px;"><span style="color:#3DCC8E;font-size:16px;margin-top:1px;">✓</span><span style="font-size:14px;color:#F2F5F0;line-height:1.5;">Cliente ve el estado del viaje en tiempo real</span></div>
+        <div style="display:flex;align-items:flex-start;gap:10px;"><span style="color:#3DCC8E;font-size:16px;margin-top:1px;">✓</span><span style="font-size:14px;color:#F2F5F0;line-height:1.5;">Menos errores, más viajes, más control</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="prueba">
+  <div class="cta-wrap">
+    <div class="cta-box">
+      <div class="cta-tag">Prueba gratuita</div>
+      <h2 class="cta-title">Buscamos remiserías<br>para probarlo juntos</h2>
+      <p class="cta-sub">30 días gratis. Nosotros hacemos la configuración y el soporte. Si no te sirve, lo dejás de usar. Sin contrato, sin costo.</p>
+      <form class="email-form" action="https://formspree.io/f/xjgalaag" method="POST" onsubmit="handleSubmit(event)">
+        <input type="email" name="email" class="email-in" placeholder="tunegocio@gmail.com" id="email-input" required>
+        <button type="submit" class="btn-cta">Me interesa →</button>
+      </form>
+      <p class="cta-note" id="form-msg">Te escribimos en menos de 24 horas para coordinar.</p>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="f-logo">RemisApp</div>
+  <div class="f-txt">Hecho en Argentina 🇦🇷</div>
+</footer>
+
+<script>
+
+
+async function handleSubmit(e) {
+  e.preventDefault();
+  const form = e.target;
+  const email = document.getElementById('email-input').value;
+  const msg = document.getElementById('form-msg');
+  const btn = form.querySelector('button');
+  btn.textContent = 'Enviando...';
+  btn.disabled = true;
+  try {
+    const res = await fetch(form.action, {
+      method: 'POST',
+      body: new FormData(form),
+      headers: { 'Accept': 'application/json' }
+    });
+    if (res.ok) {
+      msg.style.color = '#3DCC8E';
+      msg.textContent = '¡Listo! Te contactamos a ' + email + ' en menos de 24 horas.';
+      form.reset();
+    } else {
+      msg.style.color = '#E24B4A';
+      msg.textContent = 'Algo salió mal. Intentá de nuevo.';
+    }
+  } catch {
+    msg.style.color = '#E24B4A';
+    msg.textContent = 'Algo salió mal. Intentá de nuevo.';
+  }
+  btn.textContent = 'Me interesa →';
+  btn.disabled = false;
+}
+</script>
+</body>
+</html>
