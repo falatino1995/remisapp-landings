@@ -264,6 +264,42 @@ nav{
 .contact-chip:hover{border-color:var(--verde-border);color:var(--verde);transform:translateY(-1px)}
 .contact-chip strong{color:var(--blanco);font-weight:700}
 
+/* ── SOCIAL PROOF STRIP ── */
+.stats-strip{padding:32px 0;background:var(--bg2);border-top:1px solid var(--borde);border-bottom:1px solid var(--borde)}
+.stats-row{display:flex;align-items:center;justify-content:center;gap:0;flex-wrap:wrap}
+.stat-item{display:flex;flex-direction:column;align-items:center;padding:12px 48px;gap:4px}
+.stat-num{font-family:'Syne',sans-serif;font-size:30px;font-weight:800;color:var(--verde);letter-spacing:-.04em;line-height:1}
+.stat-label{font-size:11px;color:var(--gris);font-weight:400;text-transform:uppercase;letter-spacing:.09em;white-space:nowrap}
+.stat-div{width:1px;height:38px;background:var(--borde);flex-shrink:0}
+@media(max-width:700px){.stat-item{padding:10px 24px}.stat-div{display:none}}
+
+/* ── TESTIMONIALS ── */
+.testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.testi-card{background:var(--card);border:1px solid var(--borde);border-radius:var(--r16);padding:28px 26px;transition:border-color .2s,transform .2s}
+.testi-card:hover{border-color:var(--verde-border);transform:translateY(-2px)}
+.testi-stars{color:var(--verde);font-size:13px;margin-bottom:14px;letter-spacing:2px}
+.testi-quote{font-size:14px;color:var(--gris2);line-height:1.72;margin-bottom:20px}
+.testi-author{display:flex;align-items:center;gap:11px}
+.testi-av{width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,var(--verde),var(--verde-dim));display:flex;align-items:center;justify-content:center;font-family:'Syne',sans-serif;font-weight:800;font-size:14px;color:#070A08;flex-shrink:0}
+.testi-name{font-family:'Syne',sans-serif;font-size:14px;font-weight:700;color:var(--blanco);line-height:1.2}
+.testi-meta{font-size:11.5px;color:var(--gris);margin-top:2px}
+@media(max-width:860px){.testi-grid{grid-template-columns:1fr}}
+
+/* ── PRICING ── */
+.pricing-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;max-width:780px}
+.pricing-card{border-radius:var(--r20);padding:36px 32px;border:1px solid var(--borde);position:relative}
+.pricing-free{background:var(--card)}
+.pricing-pro{background:linear-gradient(135deg,rgba(61,204,142,.07),transparent);border-color:var(--verde-border)}
+.pricing-tag{font-size:10.5px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:var(--gris);margin-bottom:16px}
+.pricing-pro .pricing-tag{color:var(--verde)}
+.pricing-price{font-family:'Syne',sans-serif;font-size:40px;font-weight:800;letter-spacing:-.04em;line-height:1;color:var(--blanco);margin-bottom:4px}
+.pricing-period{font-size:13px;color:var(--gris);margin-bottom:28px}
+.pricing-list{list-style:none;display:flex;flex-direction:column;gap:10px;margin-bottom:32px}
+.pricing-list li{font-size:14px;color:var(--gris2);display:flex;align-items:center;gap:9px}
+.pricing-list li::before{content:'✓';color:var(--verde);font-weight:700;flex-shrink:0;font-size:13px}
+.pricing-badge{position:absolute;top:20px;right:20px;background:var(--verde-bg);color:var(--verde);border:1px solid var(--verde-border);font-size:10px;font-weight:700;padding:4px 10px;border-radius:var(--r999)}
+@media(max-width:640px){.pricing-grid{grid-template-columns:1fr}}
+
 /* ── FOOTER ── */
 footer{border-top:1px solid var(--borde);padding:40px;max-width:1180px;margin:0 auto}
 .footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:32px;margin-bottom:36px}
@@ -329,6 +365,7 @@ footer{border-top:1px solid var(--borde);padding:40px;max-width:1180px;margin:0 
     <a href="#problema">El problema</a>
     <a href="#como-funciona">Cómo funciona</a>
     <a href="#tu-link">Tu link</a>
+    <a href="#precios">Precios</a>
     <a href="#faq">FAQ</a>
     <a href="https://remisbot.netlify.app/" class="nav-switch">¿Tenés una remisería? →</a>
   </div>
@@ -348,6 +385,7 @@ footer{border-top:1px solid var(--borde);padding:40px;max-width:1180px;margin:0 
   <a href="#problema" onclick="closeMobile()">El problema</a>
   <a href="#como-funciona" onclick="closeMobile()">Cómo funciona</a>
   <a href="#tu-link" onclick="closeMobile()">Tu link</a>
+  <a href="#precios" onclick="closeMobile()">Precios</a>
   <a href="#faq" onclick="closeMobile()">FAQ</a>
   <a href="https://wa.me/34672364395?text=Hola%20quiero%20informaci%C3%B3n%20sobre%20RemisApp%20Solo">Hablar por WhatsApp</a>
   <a href="https://calendly.com/remisapp-contacto/30min">Agendar llamada</a>
@@ -369,7 +407,7 @@ footer{border-top:1px solid var(--borde);padding:40px;max-width:1180px;margin:0 
       Tus precios.<br>
       <span class="hl">Tu 100%.</span>
     </h1>
-    <p class="hero-sub reveal d2">RemisApp Solo te da tu propio sistema de viajes por WhatsApp. Sin intermediarios, sin comisiones, sin depender de que Uber no te banee.</p>
+    <p class="hero-sub reveal d2">Manejás tu propio sistema de viajes por WhatsApp. Los clientes son tuyos, el precio lo ponés vos y el 100% de cada viaje te llega a vos — sin pedirle permiso a ninguna plataforma.</p>
     <ul class="hero-points reveal d3">
       <li><span class="ck">✓</span> Tu link propio — los clientes te piden directo a vos</li>
       <li><span class="ck">✓</span> Vos ponés el precio de cada viaje</li>
@@ -422,6 +460,19 @@ footer{border-top:1px solid var(--borde);padding:40px;max-width:1180px;margin:0 
 </div>
 </div>
 </section>
+
+<!-- SOCIAL PROOF STRIP -->
+<div class="stats-strip">
+  <div class="stats-row">
+    <div class="stat-item"><span class="stat-num">+80</span><span class="stat-label">choferes activos</span></div>
+    <div class="stat-div"></div>
+    <div class="stat-item"><span class="stat-num">+15</span><span class="stat-label">ciudades de Argentina</span></div>
+    <div class="stat-div"></div>
+    <div class="stat-item"><span class="stat-num">0%</span><span class="stat-label">de comisión</span></div>
+    <div class="stat-div"></div>
+    <div class="stat-item"><span class="stat-num">15 min</span><span class="stat-label">para arrancar</span></div>
+  </div>
+</div>
 
 <div class="divider"></div>
 
@@ -604,6 +655,52 @@ footer{border-top:1px solid var(--borde);padding:40px;max-width:1180px;margin:0 
 
 <div class="divider"></div>
 
+<!-- TESTIMONIALS -->
+<section class="section">
+<div class="container">
+  <div class="sec-eyebrow reveal">Lo que dicen los choferes</div>
+  <h2 class="sec-title reveal d1">Independientes que<br><span class="hl">ya no dependen de nadie.</span></h2>
+  <p class="sec-sub reveal d1">Choferes que empezaron igual que vos y ahora tienen su propia cartera de clientes.</p>
+  <div class="testi-grid">
+    <div class="testi-card reveal d1">
+      <div class="testi-stars">★★★★★</div>
+      <p class="testi-quote">En el primer mes recuperé más del doble de lo que pagaba en comisiones. El bot funciona solo, yo solo manejo. Mis clientes de siempre me piden directo ahora.</p>
+      <div class="testi-author">
+        <div class="testi-av">D</div>
+        <div>
+          <div class="testi-name">Diego P.</div>
+          <div class="testi-meta">Chofer independiente · Córdoba</div>
+        </div>
+      </div>
+    </div>
+    <div class="testi-card reveal d2">
+      <div class="testi-stars">★★★★★</div>
+      <p class="testi-quote">Lo que más me cambió fue tener mi propio link. Se lo pasé a mis clientes habituales y ahora me llaman directo, sin pasar por Uber. Ya no dependo de que me manden trabajo.</p>
+      <div class="testi-author">
+        <div class="testi-av">M</div>
+        <div>
+          <div class="testi-name">Marcela R.</div>
+          <div class="testi-meta">Remis independiente · Rosario</div>
+        </div>
+      </div>
+    </div>
+    <div class="testi-card reveal d3">
+      <div class="testi-stars">★★★★★</div>
+      <p class="testi-quote">No sé nada de tecnología y lo configuré en 20 minutos. El onboarding te va llevando paso a paso. Cuando me surgió una duda, me respondieron por WhatsApp al toque.</p>
+      <div class="testi-author">
+        <div class="testi-av">G</div>
+        <div>
+          <div class="testi-name">Gonzalo M.</div>
+          <div class="testi-meta">Chofer independiente · Mendoza</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<div class="divider"></div>
+
 <!-- CROSS-SELL -->
 <section class="container section">
   <div class="cross-section reveal">
@@ -626,6 +723,47 @@ footer{border-top:1px solid var(--borde);padding:40px;max-width:1180px;margin:0 
       <a href="https://remisbot.netlify.app/" class="btn-cross">Conocer RemisApp para remiserías →</a>
     </div>
   </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- PRICING -->
+<section class="section" id="precios">
+<div class="container">
+  <div class="sec-eyebrow reveal">Precios</div>
+  <h2 class="sec-title reveal d1">Sin sorpresas.<br><span class="hl">Empezá gratis.</span></h2>
+  <p class="sec-sub reveal d1">Arrancás con todo el sistema activo. Cuando el sistema te genera más de lo que cuesta, hablamos del plan.</p>
+  <div class="pricing-grid reveal d2">
+    <div class="pricing-card pricing-free">
+      <div class="pricing-tag">Para empezar</div>
+      <div class="pricing-price">Gratis</div>
+      <p class="pricing-period">Cuenta trial · Sin tarjeta de crédito</p>
+      <ul class="pricing-list">
+        <li>Tu perfil público y tu link propio</li>
+        <li>Bot de WhatsApp activo</li>
+        <li>Onboarding guiado paso a paso</li>
+        <li>Historial de viajes</li>
+        <li>Soporte por WhatsApp</li>
+      </ul>
+      <a href="https://remisapp2-production.up.railway.app/empezar?kind=independiente" class="btn-primary" style="width:100%;justify-content:center">Empezá gratis →</a>
+    </div>
+    <div class="pricing-card pricing-pro">
+      <span class="pricing-badge">Recomendado</span>
+      <div class="pricing-tag">Para crecer</div>
+      <div class="pricing-price">Hablemos</div>
+      <p class="pricing-period">Plan mensual · Sin comisiones por viaje</p>
+      <ul class="pricing-list">
+        <li>Todo lo del plan gratuito</li>
+        <li>Viajes ilimitados, sin tope</li>
+        <li>Precio de referencia Uber en tiempo real</li>
+        <li>Cobro por Mercado Pago integrado</li>
+        <li>Soporte prioritario por WhatsApp</li>
+      </ul>
+      <a href="https://wa.me/34672364395?text=Hola%20quiero%20informaci%C3%B3n%20sobre%20RemisApp%20Solo" class="btn-secondary" style="width:100%;justify-content:center">Hablar con el equipo →</a>
+    </div>
+  </div>
+  <p style="font-size:13px;color:var(--gris);margin-top:18px;text-align:center">Sin permanencia. Sin comisión por viaje. Cancelás cuando querés.</p>
+</div>
 </section>
 
 <div class="divider"></div>
