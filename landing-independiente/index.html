@@ -255,6 +255,14 @@ nav{
 .cta-pills{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;margin-top:14px}
 .cta-pill{font-size:12px;color:var(--gris);display:flex;align-items:center;gap:5px}
 .cta-pill::before{content:'✓';color:var(--verde)}
+.contact-strip{margin-top:18px;display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.contact-chip{
+  display:inline-flex;align-items:center;gap:8px;padding:10px 16px;border-radius:var(--r999);
+  border:1px solid var(--borde);background:var(--card2);color:var(--gris2);font-size:13.5px;font-weight:500;
+  transition:all .18s;
+}
+.contact-chip:hover{border-color:var(--verde-border);color:var(--verde);transform:translateY(-1px)}
+.contact-chip strong{color:var(--blanco);font-weight:700}
 
 /* ── FOOTER ── */
 footer{border-top:1px solid var(--borde);padding:40px;max-width:1180px;margin:0 auto}
@@ -325,6 +333,8 @@ footer{border-top:1px solid var(--borde);padding:40px;max-width:1180px;margin:0 
     <a href="https://remisbot.netlify.app/" class="nav-switch">¿Tenés una remisería? →</a>
   </div>
   <div class="nav-right">
+    <a href="https://wa.me/34672364395?text=Hola%20quiero%20informaci%C3%B3n%20sobre%20RemisApp%20Solo" class="nav-login">WhatsApp</a>
+    <a href="https://calendly.com/remisapp-contacto/30min" class="nav-login">Agendar llamada</a>
     <a href="https://remisapp2-production.up.railway.app/admin" class="nav-login">Iniciar sesión</a>
     <a href="https://remisapp2-production.up.railway.app/empezar?kind=independiente" class="nav-cta">Empezá gratis</a>
   </div>
@@ -339,6 +349,8 @@ footer{border-top:1px solid var(--borde);padding:40px;max-width:1180px;margin:0 
   <a href="#como-funciona" onclick="closeMobile()">Cómo funciona</a>
   <a href="#tu-link" onclick="closeMobile()">Tu link</a>
   <a href="#faq" onclick="closeMobile()">FAQ</a>
+  <a href="https://wa.me/34672364395?text=Hola%20quiero%20informaci%C3%B3n%20sobre%20RemisApp%20Solo">Hablar por WhatsApp</a>
+  <a href="https://calendly.com/remisapp-contacto/30min">Agendar llamada</a>
   <a href="https://remisbot.netlify.app/">¿Tenés una remisería? →</a>
   <a href="https://remisapp2-production.up.railway.app/admin" class="mm-login">Iniciar sesión</a>
   <a href="https://remisapp2-production.up.railway.app/empezar?kind=independiente" class="mm-cta">Empezá gratis ahora</a>
@@ -367,9 +379,14 @@ footer{border-top:1px solid var(--borde);padding:40px;max-width:1180px;margin:0 
     </ul>
     <div class="hero-actions reveal d4">
       <a href="https://remisapp2-production.up.railway.app/empezar?kind=independiente" class="btn-primary">Empezá a usarlo gratis →</a>
-      <a href="#como-funciona" class="btn-secondary">Ver cómo funciona</a>
+      <a href="https://wa.me/34672364395?text=Hola%20quiero%20informaci%C3%B3n%20sobre%20RemisApp%20Solo" class="btn-secondary">Hablar por WhatsApp</a>
+      <a href="https://calendly.com/remisapp-contacto/30min" class="btn-secondary">Agendar llamada</a>
     </div>
     <p class="hero-caption reveal d4">¿Ya tenés cuenta? <a href="https://remisapp2-production.up.railway.app/admin">Iniciá sesión acá.</a></p>
+    <div class="contact-strip reveal d4">
+      <a href="https://wa.me/34672364395?text=Hola%20quiero%20informaci%C3%B3n%20sobre%20RemisApp%20Solo" class="contact-chip">WhatsApp <strong>directo</strong></a>
+      <a href="https://calendly.com/remisapp-contacto/30min" class="contact-chip">Demo por <strong>videollamada</strong></a>
+    </div>
   </div>
 
   <div class="hero-visual reveal-r d3">
@@ -653,6 +670,8 @@ footer{border-top:1px solid var(--borde);padding:40px;max-width:1180px;margin:0 
     <div class="cta-dual">
       <div class="cta-direct">
         <a href="https://remisapp2-production.up.railway.app/empezar?kind=independiente" class="btn-primary" style="font-size:15px;padding:15px 28px">Empezá a usarlo gratis →</a>
+        <a href="https://wa.me/34672364395?text=Hola%20quiero%20informaci%C3%B3n%20sobre%20RemisApp%20Solo" class="btn-secondary" style="font-size:15px;padding:15px 28px">Hablar por WhatsApp</a>
+        <a href="https://calendly.com/remisapp-contacto/30min" class="btn-secondary" style="font-size:15px;padding:15px 28px">Agendar llamada</a>
       </div>
       <div class="cta-sep">o dejá tu mail y te contactamos</div>
       <form class="email-form" action="https://formspree.io/f/xjgalaag" method="POST" onsubmit="handleSubmit(event)">
@@ -687,6 +706,8 @@ footer{border-top:1px solid var(--borde);padding:40px;max-width:1180px;margin:0 
       <h4>Cuenta</h4>
       <a href="https://remisapp2-production.up.railway.app/empezar?kind=independiente">Crear cuenta gratis</a>
       <a href="https://remisapp2-production.up.railway.app/admin">Iniciar sesión</a>
+      <a href="https://wa.me/34672364395?text=Hola%20quiero%20informaci%C3%B3n%20sobre%20RemisApp%20Solo">Hablar por WhatsApp</a>
+      <a href="https://calendly.com/remisapp-contacto/30min">Agendar llamada</a>
     </div>
     <div class="footer-col">
       <h4>También</h4>
