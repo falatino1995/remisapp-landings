@@ -42,6 +42,14 @@ nav{
 .nav-center{display:flex;align-items:center;gap:24px}
 .nav-center a{font-family:'Barlow',sans-serif;font-size:14px;font-weight:600;letter-spacing:.03em;text-transform:uppercase;color:var(--gris);transition:color .18s}
 .nav-center a:hover{color:var(--blanco)}
+.nav-dropdown{position:relative}
+.nav-drop-toggle{display:inline-flex;align-items:center;gap:6px;font-family:'Barlow',sans-serif;font-size:14px;font-weight:600;letter-spacing:.03em;text-transform:uppercase;color:var(--gris);cursor:pointer;transition:color .18s}
+.nav-drop-toggle::after{content:'▾';font-size:11px;opacity:.75}
+.nav-dropdown:hover .nav-drop-toggle,.nav-dropdown:focus-within .nav-drop-toggle{color:var(--blanco)}
+.nav-drop-menu{position:absolute;top:calc(100% + 14px);left:0;min-width:250px;padding:10px;background:rgba(10,15,11,.96);border:1px solid var(--verde-border);border-radius:16px;box-shadow:0 24px 48px rgba(0,0,0,.42);display:flex;flex-direction:column;gap:2px;opacity:0;transform:translateY(8px);pointer-events:none;transition:opacity .18s,transform .18s}
+.nav-dropdown:hover .nav-drop-menu,.nav-dropdown:focus-within .nav-drop-menu{opacity:1;transform:none;pointer-events:auto}
+.nav-drop-menu a{padding:11px 12px;border-radius:10px;color:var(--gris2);font-size:13px;line-height:1.35;text-transform:none;letter-spacing:0;font-weight:500}
+.nav-drop-menu a:hover{background:rgba(61,204,142,.08);color:var(--blanco)}
 .nav-right{display:flex;align-items:center;gap:10px}
 .nav-switch{font-size:12px;color:var(--gris);border:1px solid var(--borde);padding:7px 14px;border-radius:var(--r999);transition:all .18s}
 .nav-switch:hover{border-color:var(--verde-border);color:var(--verde)}
@@ -279,6 +287,13 @@ nav{
 }
 .contact-chip:hover{border-color:var(--verde-border);color:var(--verde);transform:translateY(-1px)}
 .contact-chip strong{color:var(--blanco);font-weight:700}
+.wa-float{position:fixed;right:22px;bottom:22px;z-index:210;display:inline-flex;align-items:center;gap:10px;padding:13px 16px;border-radius:999px;background:#25D366;color:#071009;box-shadow:0 18px 42px rgba(0,0,0,.35);font-size:14px;font-weight:700;opacity:0;transform:translateY(18px) scale(.96);pointer-events:none;transition:opacity .18s,transform .18s,box-shadow .18s}
+.wa-float.visible{opacity:1;transform:none;pointer-events:auto}
+.wa-float:hover{box-shadow:0 22px 48px rgba(0,0,0,.42)}
+.wa-float-icon{font-size:18px;line-height:1}
+.wa-float-text{display:flex;flex-direction:column;line-height:1.05}
+.wa-float-text strong{font-size:14px}
+.wa-float-text span{font-size:11px;font-weight:600;opacity:.82}
 
 /* ── SOCIAL PROOF STRIP ── */
 .stats-strip{padding:0;background:var(--bg2);border-top:1px solid var(--borde);border-bottom:1px solid var(--borde)}
@@ -394,7 +409,17 @@ footer{border-top:1px solid var(--borde);padding:40px;max-width:1180px;margin:0 
   <div class="nav-center">
     <a href="#problema">El problema</a>
     <a href="#como-funciona">Cómo funciona</a>
-    <a href="#tu-link">Tu link</a>
+    <div class="nav-dropdown">
+      <span class="nav-drop-toggle" tabindex="0">Funcionalidades</span>
+      <div class="nav-drop-menu">
+        <a href="#tu-link">Tu link público</a>
+        <a href="#funcionalidades">Bot que opera solo</a>
+        <a href="#funcionalidades">Precio con referencia Uber</a>
+        <a href="#funcionalidades">Tracking</a>
+        <a href="#funcionalidades">Viajes programados</a>
+        <a href="#material">Cartel QR</a>
+      </div>
+    </div>
     <a href="#precios">Precios</a>
     <a href="#faq">FAQ</a>
     <a href="https://remisapp-remiseria.pages.dev/" class="nav-switch">¿Tenés una remisería? →</a>
@@ -412,6 +437,7 @@ footer{border-top:1px solid var(--borde);padding:40px;max-width:1180px;margin:0 
 <div class="mobile-menu" id="mobileMenu">
   <a href="#problema" onclick="closeMobile()">El problema</a>
   <a href="#como-funciona" onclick="closeMobile()">Cómo funciona</a>
+  <a href="#funcionalidades" onclick="closeMobile()">Funcionalidades</a>
   <a href="#tu-link" onclick="closeMobile()">Tu link</a>
   <a href="#precios" onclick="closeMobile()">Precios</a>
   <a href="#faq" onclick="closeMobile()">FAQ</a>
@@ -624,7 +650,7 @@ footer{border-top:1px solid var(--borde);padding:40px;max-width:1180px;margin:0 
 <div class="divider"></div>
 
 <!-- MATERIAL INCLUIDO -->
-<section class="section">
+<section class="section" id="material">
 <div class="container">
   <div class="material-grid">
     <div>
@@ -649,7 +675,7 @@ footer{border-top:1px solid var(--borde);padding:40px;max-width:1180px;margin:0 
 <div class="divider"></div>
 
 <!-- FEATURES -->
-<section class="section">
+<section class="section" id="funcionalidades">
 <div class="container">
   <div class="sec-eyebrow reveal">Qué incluye</div>
   <h2 class="sec-title reveal d1">Tu propio sistema.<br><span class="hl">Mejor que Uber</span> para vos.</h2>
@@ -910,9 +936,15 @@ footer{border-top:1px solid var(--borde);padding:40px;max-width:1180px;margin:0 
   </div>
 </footer>
 
+<a href="https://wa.me/34672364395?text=Hola%20quiero%20informaci%C3%B3n%20sobre%20RemisApp%20Solo" class="wa-float" id="waFloat" aria-label="Hablar por WhatsApp">
+  <span class="wa-float-icon">💬</span>
+  <span class="wa-float-text"><strong>WhatsApp</strong><span>Consultanos ahora</span></span>
+</a>
+
 <script>
 const ham = document.getElementById('hamburger');
 const mm = document.getElementById('mobileMenu');
+const waFloat = document.getElementById('waFloat');
 function closeMobile(){ ham.classList.remove('open'); mm.classList.remove('open'); document.body.style.overflow=''; }
 ham.addEventListener('click',()=>{
   const open = mm.classList.toggle('open');
