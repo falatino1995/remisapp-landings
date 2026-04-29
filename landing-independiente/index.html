@@ -67,7 +67,11 @@ nav{
 .mobile-menu .mm-login{margin-top:6px;text-align:center;border:1px solid var(--borde);border-radius:var(--r999);padding:13px;font-size:15px;color:var(--gris2)}
 
 /* ── HERO ── */
-.hero{min-height:100vh;padding:120px 0 80px;display:grid;grid-template-columns:1.15fr 0.85fr;gap:72px;align-items:center}
+.hero-bg{position:relative;background:url('assets/hero-car.png') center 30%/cover no-repeat}
+.hero-bg::before{content:'';position:absolute;inset:0;background:linear-gradient(95deg,#070A08 28%,rgba(7,10,8,.90) 50%,rgba(7,10,8,.35) 72%,transparent 100%);z-index:0}
+.hero-bg .container{position:relative;z-index:1}
+.hero{min-height:100vh;padding:140px 0 100px;display:flex;align-items:center}
+.hero-text{max-width:660px}
 .hero-badge{display:inline-flex;align-items:center;gap:8px;background:var(--rojo-bg);color:#F09090;font-size:12.5px;font-weight:700;padding:7px 14px;border-radius:var(--r999);margin-bottom:22px;border:1px solid var(--rojo-border)}
 .badge-pct{font-family:'Barlow Condensed',sans-serif;font-size:20px;font-weight:800;letter-spacing:.02em;color:var(--rojo)}
 .hero-title{font-family:'Barlow Condensed',sans-serif;font-size:clamp(44px,5.8vw,80px);font-weight:800;line-height:.97;letter-spacing:.01em;text-transform:uppercase;color:var(--blanco);margin-bottom:22px}
@@ -337,8 +341,10 @@ footer{border-top:1px solid var(--borde);padding:40px;max-width:1180px;margin:0 
   .perfil-float{right:-20px}
 }
 @media(max-width:1020px){
-  .hero{grid-template-columns:1fr;gap:48px;padding:100px 0 64px}
-  .perfil-float{display:none}
+  .hero{padding:120px 0 80px}
+  .hero-text{max-width:100%}
+  .hero-bg::before{background:linear-gradient(180deg,rgba(7,10,8,.97) 50%,rgba(7,10,8,.7) 75%,rgba(7,10,8,.4) 100%)}
+  .hero-bg{background-position:right center}
   .hero-sub{max-width:100%}
   .math-box{grid-template-columns:1fr;text-align:center}
   .math-arrow{transform:rotate(90deg)}
@@ -351,7 +357,7 @@ footer{border-top:1px solid var(--borde);padding:40px;max-width:1180px;margin:0 
   .nav-center{display:none}
   .nav-switch,.nav-login{display:none}
   .hamburger{display:flex}
-  .hero{padding:90px 0 56px}
+  .hero{padding:100px 0 60px}
   .section{padding:68px 0}
   .problem-grid,.feat-grid,.vs-grid{grid-template-columns:1fr}
   .steps-wrap{grid-template-columns:repeat(2,1fr)}
@@ -406,10 +412,10 @@ footer{border-top:1px solid var(--borde);padding:40px;max-width:1180px;margin:0 
 </div>
 
 <!-- HERO -->
-<section>
+<section class="hero-bg">
 <div class="container">
 <div class="hero">
-  <div>
+  <div class="hero-text">
     <div class="hero-badge reveal">
       <span class="badge-pct">25–30%</span>&nbsp;de cada viaje se lo lleva Uber. Eso termina hoy.
     </div>
@@ -438,9 +444,6 @@ footer{border-top:1px solid var(--borde);padding:40px;max-width:1180px;margin:0 
     </div>
   </div>
 
-  <div class="hero-visual reveal-r d3">
-    <img src="assets/hero-car.png" alt="Chofer con RemisApp Solo — cobrás el 100%" class="hero-img" loading="eager">
-  </div>
 </div>
 </div>
 </section>
