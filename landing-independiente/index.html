@@ -204,18 +204,36 @@ nav{
 
 /* ── FEATURES ── */
 .feat-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
-.feat-card{border:1px solid var(--borde);border-radius:var(--r16);padding:26px;background:var(--card);transition:border-color .2s,background .2s;position:relative;overflow:hidden}
-.feat-card::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,var(--verde-bg),transparent);opacity:0;transition:opacity .2s}
-.feat-card:hover{border-color:var(--verde-border)}
-.feat-card:hover::before{opacity:1}
-.feat-card>*{position:relative}
-.feat-card.coming{opacity:.6}
-.fbadge{position:absolute;top:14px;right:14px;font-size:10px;font-weight:700;padding:3px 9px;border-radius:20px}
+.feat-card{border:1px solid var(--borde);border-radius:var(--r16);padding:26px;background:var(--card);transition:border-color .2s;position:relative;cursor:pointer;user-select:none}
+.feat-card:hover,.feat-card.open{border-color:var(--verde-border)}
+.feat-card.coming{opacity:.6;cursor:default}
+.fbadge{position:absolute;top:14px;right:44px;font-size:10px;font-weight:700;padding:3px 9px;border-radius:20px}
 .fb-live{background:var(--verde-bg);color:var(--verde);border:1px solid var(--verde-border)}
 .fb-soon{background:rgba(255,255,255,.04);color:var(--gris)}
-.fi{font-size:22px;margin-bottom:12px}
-.ft{font-family:'Barlow Condensed',sans-serif;font-size:19px;font-weight:700;letter-spacing:.03em;text-transform:uppercase;margin-bottom:7px;color:var(--blanco)}
+.feat-icon{width:40px;height:40px;border-radius:10px;background:var(--verde-bg);border:1px solid var(--verde-border);display:flex;align-items:center;justify-content:center;color:var(--verde);margin-bottom:14px}
+.feat-header{display:flex;align-items:flex-start;justify-content:space-between;gap:8px;margin-bottom:6px}
+.feat-toggle{position:absolute;top:22px;right:18px;background:none;border:none;cursor:pointer;color:var(--gris);padding:0;display:flex;align-items:center;transition:transform .25s,color .15s}
+.feat-card.open .feat-toggle{transform:rotate(180deg);color:var(--verde)}
+.ft{font-family:'Barlow Condensed',sans-serif;font-size:19px;font-weight:700;letter-spacing:.03em;text-transform:uppercase;color:var(--blanco);margin-bottom:7px}
 .fd{font-size:13px;font-weight:300;color:var(--gris);line-height:1.65}
+.feat-body{max-height:0;overflow:hidden;transition:max-height .38s ease}
+.feat-card.open .feat-body{max-height:700px}
+.feat-body-inner{padding-top:16px;border-top:1px solid var(--borde);margin-top:14px}
+.feat-img{width:100%;border-radius:10px;display:block;margin-bottom:14px;border:1px solid var(--borde)}
+.feat-detail{font-size:13.5px;color:var(--gris2);line-height:1.75}
+
+/* ── SPEED DIAL ── */
+.speed-dial{position:fixed;bottom:28px;right:28px;z-index:9999;display:flex;flex-direction:column;align-items:flex-end;gap:12px}
+.sd-options{display:flex;flex-direction:column;align-items:flex-end;gap:10px;transition:opacity .2s,transform .2s;opacity:0;transform:translateY(10px);pointer-events:none}
+.speed-dial.open .sd-options{opacity:1;transform:translateY(0);pointer-events:all}
+.sd-opt{display:flex;align-items:center;gap:10px;padding:11px 18px 11px 14px;border-radius:50px;font-size:14px;font-weight:600;font-family:'Inter',sans-serif;white-space:nowrap;box-shadow:0 4px 18px rgba(0,0,0,.35);transition:transform .15s;text-decoration:none}
+.sd-opt:hover{transform:translateX(-3px)}
+.sd-wa{background:#25D366;color:#fff}
+.sd-cal{background:#fff;color:#111}
+.sd-main{width:56px;height:56px;border-radius:50%;background:var(--verde);border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 22px rgba(61,204,142,.45);transition:all .2s;color:#070A08}
+.sd-main:hover{transform:scale(1.06)}
+.speed-dial.open .sd-main{background:#2a2f2c;box-shadow:0 2px 10px rgba(0,0,0,.3);color:var(--gris2)}
+@media(max-width:520px){.sd-opt span{display:none}.sd-opt{padding:13px}}
 
 /* ── VS UBER ── */
 .vs-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
@@ -682,16 +700,122 @@ footer{border-top:1px solid var(--borde);padding:40px;max-width:1180px;margin:0 
   <p class="sec-sub reveal d1">Todo lo que Uber te da para trabajar — pero sin quedarse con el 30%.</p>
 
   <div class="feat-grid">
-    <div class="feat-card reveal d1"><span class="fbadge fb-live">Disponible</span><div class="fi">🔗</div><div class="ft">Tu link público propio</div><p class="fd">Una URL tuya — tipo remisapp.link/tunombre — que compartís en Instagram, grupos o tarjeta. Cualquiera que la abra puede pedirte un viaje.</p></div>
-    <div class="feat-card reveal d2"><span class="fbadge fb-live">Disponible</span><div class="fi">💬</div><div class="ft">Bot que opera solo</div><p class="fd">Toma el pedido, muestra el precio, confirma el viaje y te avisa. El cliente no necesita esperarte para saber si hay auto disponible.</p></div>
-    <div class="feat-card reveal d3"><span class="fbadge fb-live">Disponible</span><div class="fi">💰</div><div class="ft">Referencia de precio Uber</div><p class="fd">El sistema puede mostrarte el precio de Uber para el mismo viaje. Vos decidís si cobrar igual, más barato o más caro. Siempre informado.</p></div>
-    <div class="feat-card reveal d4"><span class="fbadge fb-live">Disponible</span><div class="fi">📱</div><div class="ft">Gestión total desde WhatsApp</div><p class="fd">CONFIG TARIFA BASE 800. CONFIG DISPONIBLE OFF. CONFIG MODO UBER. Sin panel web obligatorio, desde el celular, en cualquier momento.</p></div>
-    <div class="feat-card reveal d1"><span class="fbadge fb-live">Disponible</span><div class="fi">📍</div><div class="ft">Tracking profesional</div><p class="fd">El cliente recibe un link para ver el estado del viaje en tiempo real. Se ve como Uber, sin que vos hagas nada extra.</p></div>
-    <div class="feat-card reveal d2"><span class="fbadge fb-live">Disponible</span><div class="fi">📅</div><div class="ft">Viajes programados</div><p class="fd">El cliente reserva para las 18hs o para mañana. El sistema te avisa cuando se acerca el horario y activa el viaje automáticamente.</p></div>
-    <div class="feat-card reveal d3"><span class="fbadge fb-live">Disponible</span><div class="fi">🗺️</div><div class="ft">Link de Maps automático</div><p class="fd">Cuando aceptás el viaje, te llega el link de navegación al origen. Sin copiar la dirección, sin buscarla.</p></div>
-    <div class="feat-card reveal d4"><span class="fbadge fb-live">Disponible</span><div class="fi">💳</div><div class="ft">Cobro por Mercado Pago</div><p class="fd">El cliente paga desde WhatsApp antes de subirse. El dinero va directo a tu cuenta de MP, sin intermediarios.</p></div>
-    <div class="feat-card reveal d1"><span class="fbadge fb-live">Disponible</span><div class="fi">💵</div><div class="ft">Precio manual por viaje</div><p class="fd">Si querés cobrar diferente en un viaje puntual, mandás PRECIO 8500 y listo. Con límites configurables para no cobrar de más ni de menos.</p></div>
-    <div class="feat-card reveal d2 coming"><span class="fbadge fb-soon">Próximamente</span><div class="fi">📊</div><div class="ft">Resumen de ganancias</div><p class="fd">Cuántos viajes hiciste, cuánto ganaste, qué días trabajás más. Todo en un resumen simple semanal o mensual.</p></div>
+
+    <div class="feat-card reveal d1">
+      <span class="fbadge fb-live">Disponible</span>
+      <button class="feat-toggle" aria-label="Ver más"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg></button>
+      <div class="feat-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></div>
+      <div class="ft">Tu link público propio</div>
+      <p class="fd">Una URL tuya — tipo remisapp.link/tunombre — que compartís en Instagram, grupos o tarjeta. Cualquiera que la abra puede pedirte un viaje.</p>
+      <div class="feat-body"><div class="feat-body-inner">
+        <img src="assets/feat-link.png" alt="Tu link público" class="feat-img" onerror="this.style.display='none'">
+        <p class="feat-detail">Compartís el link una sola vez — en tu bio de Instagram, en un grupo de WhatsApp, impreso en tu tarjeta. Cada persona que lo abre puede pedirte un viaje directo. Y ese cliente queda conectado a vos para siempre, sin apps, sin registros.</p>
+      </div></div>
+    </div>
+
+    <div class="feat-card reveal d2">
+      <span class="fbadge fb-live">Disponible</span>
+      <button class="feat-toggle" aria-label="Ver más"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg></button>
+      <div class="feat-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+      <div class="ft">Bot que opera solo</div>
+      <p class="fd">Toma el pedido, muestra el precio, confirma el viaje y te avisa. El cliente no necesita esperarte.</p>
+      <div class="feat-body"><div class="feat-body-inner">
+        <img src="assets/feat-bot.png" alt="Bot de WhatsApp" class="feat-img" onerror="this.style.display='none'">
+        <p class="feat-detail">El bot atiende a tus clientes aunque estés manejando, durmiendo o sin señal. Recibe el pedido, muestra el precio estimado y confirma el viaje. Cuando necesita tu atención, te avisa por WhatsApp directo.</p>
+      </div></div>
+    </div>
+
+    <div class="feat-card reveal d3">
+      <span class="fbadge fb-live">Disponible</span>
+      <button class="feat-toggle" aria-label="Ver más"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg></button>
+      <div class="feat-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
+      <div class="ft">Referencia de precio Uber</div>
+      <p class="fd">El sistema consulta cuánto cobraría Uber por el mismo viaje. Vos decidís si cobrar igual, más o menos.</p>
+      <div class="feat-body"><div class="feat-body-inner">
+        <img src="assets/feat-precio.png" alt="Precio Uber" class="feat-img" onerror="this.style.display='none'">
+        <p class="feat-detail">El bot consulta en tiempo real el precio estimado de Uber para el mismo origen y destino. Te lo muestra antes de confirmar. Sin adivinar, sin quedarte corto, sin cobrar de más sin querer.</p>
+      </div></div>
+    </div>
+
+    <div class="feat-card reveal d4">
+      <span class="fbadge fb-live">Disponible</span>
+      <button class="feat-toggle" aria-label="Ver más"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg></button>
+      <div class="feat-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg></div>
+      <div class="ft">Gestión total desde WhatsApp</div>
+      <p class="fd">Sin panel web obligatorio. Cambiás tarifa, disponibilidad y modo desde el celular, en cualquier momento.</p>
+      <div class="feat-body"><div class="feat-body-inner">
+        <img src="assets/feat-gestion.png" alt="Gestión WhatsApp" class="feat-img" onerror="this.style.display='none'">
+        <p class="feat-detail">Mandás comandos simples al bot: <strong>CONFIG TARIFA BASE 1500</strong>, <strong>DISPONIBLE OFF</strong>, <strong>MODO UBER ON</strong>. Todo desde el celular, sin abrir ningún panel, en cualquier momento del día.</p>
+      </div></div>
+    </div>
+
+    <div class="feat-card reveal d1">
+      <span class="fbadge fb-live">Disponible</span>
+      <button class="feat-toggle" aria-label="Ver más"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg></button>
+      <div class="feat-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="10" r="3"/><path d="M12 2a8 8 0 0 0-8 8c0 5.4 7.1 12.3 7.7 12.9a.5.5 0 0 0 .6 0C12.9 22.3 20 15.4 20 10a8 8 0 0 0-8-8z"/></svg></div>
+      <div class="ft">Tracking profesional</div>
+      <p class="fd">El cliente recibe un link para ver el estado del viaje en tiempo real. Se ve como Uber, sin que vos hagas nada.</p>
+      <div class="feat-body"><div class="feat-body-inner">
+        <img src="assets/feat-tracking.png" alt="Tracking" class="feat-img" onerror="this.style.display='none'">
+        <p class="feat-detail">Cuando aceptás el viaje, el cliente recibe automáticamente un link con tu ubicación en tiempo real — igual que Uber. Genera confianza y elimina los mensajes de "¿dónde estás?".</p>
+      </div></div>
+    </div>
+
+    <div class="feat-card reveal d2">
+      <span class="fbadge fb-live">Disponible</span>
+      <button class="feat-toggle" aria-label="Ver más"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg></button>
+      <div class="feat-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div>
+      <div class="ft">Viajes programados</div>
+      <p class="fd">El cliente reserva para las 18hs o para mañana. El sistema te avisa cuando se acerca el horario.</p>
+      <div class="feat-body"><div class="feat-body-inner">
+        <img src="assets/feat-programado.png" alt="Viajes programados" class="feat-img" onerror="this.style.display='none'">
+        <p class="feat-detail">El cliente reserva con hora: "mañana a las 8 al aeropuerto". El sistema te avisa 30 minutos antes y activa el viaje automáticamente. Sin alarmas manuales, sin que se te olvide.</p>
+      </div></div>
+    </div>
+
+    <div class="feat-card reveal d3">
+      <span class="fbadge fb-live">Disponible</span>
+      <button class="feat-toggle" aria-label="Ver más"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg></button>
+      <div class="feat-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polygon points="3 11 22 2 13 21 11 13 3 11"/></svg></div>
+      <div class="ft">Link de Maps automático</div>
+      <p class="fd">Cuando aceptás el viaje, te llega el link de navegación al origen. Sin copiar la dirección, sin buscarla.</p>
+      <div class="feat-body"><div class="feat-body-inner">
+        <img src="assets/feat-maps.png" alt="Maps automático" class="feat-img" onerror="this.style.display='none'">
+        <p class="feat-detail">Aceptás el viaje y en segundos te llega el link de Google Maps navegando directo al origen del cliente. Sin tocar la dirección, sin escribir nada. Un tap y arrancás.</p>
+      </div></div>
+    </div>
+
+    <div class="feat-card reveal d4">
+      <span class="fbadge fb-live">Disponible</span>
+      <button class="feat-toggle" aria-label="Ver más"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg></button>
+      <div class="feat-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg></div>
+      <div class="ft">Cobro por Mercado Pago</div>
+      <p class="fd">El cliente paga desde WhatsApp antes de subirse. El dinero va directo a tu cuenta de MP.</p>
+      <div class="feat-body"><div class="feat-body-inner">
+        <img src="assets/feat-mp.png" alt="Mercado Pago" class="feat-img" onerror="this.style.display='none'">
+        <p class="feat-detail">Generás un link de pago y el cliente lo paga desde WhatsApp antes de subirse. El dinero cae directo en tu cuenta de Mercado Pago. Sin efectivo, sin que te fíen, sin intermediarios.</p>
+      </div></div>
+    </div>
+
+    <div class="feat-card reveal d1">
+      <span class="fbadge fb-live">Disponible</span>
+      <button class="feat-toggle" aria-label="Ver más"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg></button>
+      <div class="feat-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg></div>
+      <div class="ft">Precio manual por viaje</div>
+      <p class="fd">Si un viaje tiene precio especial, mandás PRECIO 8500 y el bot lo usa para ese viaje puntual.</p>
+      <div class="feat-body"><div class="feat-body-inner">
+        <img src="assets/feat-manual.png" alt="Precio manual" class="feat-img" onerror="this.style.display='none'">
+        <p class="feat-detail">Larga distancia, aeropuerto, hora pico — cada viaje puede tener su precio. Mandás <strong>PRECIO 8500</strong> y el bot lo aplica solo para ese pedido. Con límites configurables para que no haya cobros raros.</p>
+      </div></div>
+    </div>
+
+    <div class="feat-card reveal d2 coming">
+      <span class="fbadge fb-soon">Próximamente</span>
+      <div class="feat-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></div>
+      <div class="ft">Resumen de ganancias</div>
+      <p class="fd">Cuántos viajes hiciste, cuánto ganaste, qué días trabajás más. Resumen semanal y mensual automático.</p>
+    </div>
+
   </div>
 </div>
 </section>
@@ -977,17 +1101,51 @@ async function handleSubmit(e){
   btn.textContent='Quiero que me contacten'; btn.disabled=false;
 }
 </script>
-<!-- WHATSAPP FLOATING WIDGET -->
-<a href="https://wa.me/34672364395?text=Hola%20quiero%20informaci%C3%B3n%20sobre%20RemisApp%20Solo" class="wa-widget" target="_blank" rel="noopener" aria-label="Hablar por WhatsApp">
-  <svg width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-  <span class="wa-widget-label">¿Consultas?</span>
-</a>
+<!-- SPEED DIAL -->
+<div class="speed-dial" id="speedDial">
+  <div class="sd-options" id="sdOptions">
+    <a href="https://calendly.com/remisapp-contacto/30min" class="sd-opt sd-cal" target="_blank" rel="noopener">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+      <span>Agendar llamada</span>
+    </a>
+    <a href="https://wa.me/34672364395?text=Hola%20quiero%20informaci%C3%B3n%20sobre%20RemisApp%20Solo" class="sd-opt sd-wa" target="_blank" rel="noopener">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      <span>WhatsApp</span>
+    </a>
+  </div>
+  <button class="sd-main" id="sdMain" aria-label="Contacto">
+    <svg id="sdIconMsg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+    <svg id="sdIconX" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" style="display:none"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+  </button>
+</div>
+<script>
+// Feature cards expand
+document.querySelectorAll('.feat-card:not(.coming)').forEach(card => {
+  card.addEventListener('click', () => {
+    const isOpen = card.classList.contains('open');
+    document.querySelectorAll('.feat-card.open').forEach(c => c.classList.remove('open'));
+    if (!isOpen) card.classList.add('open');
+  });
+});
 
-<style>
-.wa-widget{position:fixed;bottom:28px;right:28px;z-index:9999;background:#25D366;border-radius:50px;display:flex;align-items:center;gap:10px;padding:14px 20px 14px 16px;box-shadow:0 4px 20px rgba(37,211,102,.4);transition:all .2s;text-decoration:none}
-.wa-widget:hover{background:#20bd5a;transform:translateY(-2px);box-shadow:0 6px 28px rgba(37,211,102,.55);padding-right:24px}
-.wa-widget-label{color:white;font-family:'Inter',sans-serif;font-size:14px;font-weight:600;white-space:nowrap}
-@media(max-width:520px){.wa-widget{padding:14px;border-radius:50%}.wa-widget-label{display:none}}
-</style>
+// Speed dial
+const dial = document.getElementById('speedDial');
+const sdMain = document.getElementById('sdMain');
+const sdIconMsg = document.getElementById('sdIconMsg');
+const sdIconX = document.getElementById('sdIconX');
+sdMain.addEventListener('click', () => {
+  dial.classList.toggle('open');
+  const open = dial.classList.contains('open');
+  sdIconMsg.style.display = open ? 'none' : '';
+  sdIconX.style.display = open ? '' : 'none';
+});
+document.addEventListener('click', e => {
+  if (!dial.contains(e.target)) {
+    dial.classList.remove('open');
+    sdIconMsg.style.display = '';
+    sdIconX.style.display = 'none';
+  }
+});
+</script>
 </body>
 </html>
