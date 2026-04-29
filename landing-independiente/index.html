@@ -300,6 +300,17 @@ nav{
 .pricing-badge{position:absolute;top:20px;right:20px;background:var(--verde-bg);color:var(--verde);border:1px solid var(--verde-border);font-size:10px;font-weight:700;padding:4px 10px;border-radius:var(--r999)}
 @media(max-width:640px){.pricing-grid{grid-template-columns:1fr}}
 
+/* ── HERO IMAGE ── */
+.hero-img{width:100%;border-radius:var(--r20);display:block;max-height:580px;object-fit:cover;object-position:center left}
+
+/* ── SECTION IMAGE FULL ── */
+.section-img{width:100%;border-radius:var(--r20);display:block;border:1px solid var(--borde)}
+
+/* ── MATERIAL INCLUIDO ── */
+.material-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+.material-photo{width:100%;max-width:420px;border-radius:var(--r20);display:block;margin:0 auto;border:1px solid var(--borde)}
+@media(max-width:860px){.material-grid{grid-template-columns:1fr}.material-photo{max-width:360px}}
+
 /* ── FOOTER ── */
 footer{border-top:1px solid var(--borde);padding:40px;max-width:1180px;margin:0 auto}
 .footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:32px;margin-bottom:36px}
@@ -428,34 +439,7 @@ footer{border-top:1px solid var(--borde);padding:40px;max-width:1180px;margin:0 
   </div>
 
   <div class="hero-visual reveal-r d3">
-    <div class="phone-outer">
-      <div class="phone-frame">
-        <div class="phone-island"><div class="island-cam"></div><div class="island-pill"></div></div>
-        <div class="phone-screen">
-          <div class="wapp-hdr">
-            <div class="wapp-av">M</div>
-            <div><div class="wapp-n">Marcelo — Remis</div><div class="wapp-s">en línea</div></div>
-          </div>
-          <div class="wapp-msgs">
-            <div class="msg mi"><div class="mb">Hola Marcelo 👋 ¿Tenés un auto para las 18hs?</div><div class="mt">17:42</div></div>
-            <div class="msg mo"><div class="mb">Sí, ¿de dónde salís?</div><div class="mt">17:42 <span class="mc">✓✓</span></div></div>
-            <div class="msg mi"><div class="mb">San Martín 450</div><div class="mt">17:43</div></div>
-            <div class="msg mo"><div class="mb">¿A dónde vas?</div><div class="mt">17:43 <span class="mc">✓✓</span></div></div>
-            <div class="msg mi"><div class="mb">Terminal de ómnibus</div><div class="mt">17:43</div></div>
-            <div class="msg mo"><div class="mb">✅ Viaje confirmado<br><br>Tarifa: $2.800<br>Salida: 18:00 hs<br><br>Te mando el link de seguimiento cuando salga.</div><div class="mt">17:44 <span class="mc">✓✓</span></div></div>
-          </div>
-        </div>
-      </div>
-      <div class="perfil-float">
-        <div class="pf-avatar">M</div>
-        <div class="pf-name">Marcelo García</div>
-        <div class="pf-city">Rosario, Santa Fe</div>
-        <div class="pf-status"><span class="pf-dot"></span> Disponible ahora</div>
-        <button class="pf-btn-wa">💬 Pedir viaje</button>
-        <button class="pf-btn-p">💰 Consultar precio</button>
-        <div class="pf-url">remisapp.link/<span>marcelo</span></div>
-      </div>
-    </div>
+    <img src="assets/hero-car.png" alt="Chofer con RemisApp Solo — cobrás el 100%" class="hero-img" loading="eager">
   </div>
 </div>
 </div>
@@ -566,6 +550,20 @@ footer{border-top:1px solid var(--borde);padding:40px;max-width:1180px;margin:0 
 
 <div class="divider"></div>
 
+<!-- VIAJE REAL -->
+<section class="section" id="viaje-real">
+<div class="container">
+  <div class="sec-eyebrow reveal">Flujo completo</div>
+  <h2 class="sec-title reveal d1">Así se ve<br><span class="hl">un viaje real.</span></h2>
+  <p class="sec-sub reveal d1">Desde que el pasajero escanea el QR hasta que vos cobrás — sin apps, sin intermediarios, todo por WhatsApp.</p>
+  <div class="reveal d2">
+    <img src="assets/steps-how.png" alt="Cómo funciona RemisApp Solo paso a paso" class="section-img">
+  </div>
+</div>
+</section>
+
+<div class="divider"></div>
+
 <!-- TU LINK -->
 <section class="section" id="tu-link">
 <div class="container">
@@ -588,6 +586,31 @@ footer{border-top:1px solid var(--borde);padding:40px;max-width:1180px;margin:0 
         <button class="profile-btn-wa">💬 Pedir viaje por WhatsApp</button>
         <button class="profile-btn-p">💰 Consultar precio primero</button>
       </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<div class="divider"></div>
+
+<!-- MATERIAL INCLUIDO -->
+<section class="section">
+<div class="container">
+  <div class="material-grid">
+    <div>
+      <div class="sec-eyebrow reveal">Viene incluido</div>
+      <h2 class="sec-title reveal d1">Tu cartel<br><span class="hl">para el auto.</span></h2>
+      <p class="sec-sub reveal d1">Con cada cuenta recibís el diseño de tu cartel personalizado con tu QR. Lo imprimís, lo ponés en el respaldo — y cada pasajero nuevo puede convertirse en cliente tuyo para siempre.</p>
+      <ul class="pricing-list reveal d2" style="max-width:360px;margin-bottom:32px">
+        <li>QR personalizado con tu link directo</li>
+        <li>Diseño listo para imprimir en cualquier copistería</li>
+        <li>El pasajero lo escanea y queda conectado a vos</li>
+        <li>Cada viaje puede ser un cliente nuevo</li>
+      </ul>
+      <a href="https://remisapp2-production.up.railway.app/empezar?kind=independiente" class="btn-primary reveal d3">Conseguir el mío gratis →</a>
+    </div>
+    <div class="reveal-r d2">
+      <img src="assets/qr-card.png" alt="Cartel QR para el auto — RemisApp Solo" class="material-photo">
     </div>
   </div>
 </div>
