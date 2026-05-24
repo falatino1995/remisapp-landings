@@ -220,7 +220,10 @@ nav{
 .fbadge{position:absolute;top:14px;right:14px;font-size:10px;font-weight:700;padding:3px 9px;border-radius:20px}
 .fb-live{background:var(--verde-bg);color:var(--verde);border:1px solid var(--verde-border)}
 .fb-soon{background:rgba(255,255,255,0.04);color:var(--gris)}
-.fi{font-size:22px;margin-bottom:12px}
+.fi{width:44px;height:44px;background:var(--verde-bg);border:1px solid var(--verde-border);border-radius:var(--r12);display:flex;align-items:center;justify-content:center;margin-bottom:16px;color:var(--verde);transition:background .2s;flex-shrink:0}
+.fi svg{width:20px;height:20px}
+.feat-card:hover .fi{background:rgba(61,204,142,.18)}
+.step-icon svg{width:20px;height:20px}
 .ft{font-family:'Syne',sans-serif;font-size:15.5px;font-weight:700;margin-bottom:7px;color:var(--blanco)}
 .fd{font-size:13px;font-weight:300;color:var(--gris);line-height:1.65}
 
@@ -372,6 +375,17 @@ footer{border-top:1px solid var(--borde);padding:40px;max-width:1180px;margin:0 
   .hero-metrics{grid-template-columns:1fr}
   .footer-grid{grid-template-columns:1fr}
 }
+
+/* ── MARQUEE ── */
+.marquee-strip{overflow:hidden;border-top:1px solid var(--borde);border-bottom:1px solid var(--borde);background:var(--bg2);padding:0;position:relative}
+.marquee-strip::before,.marquee-strip::after{content:'';position:absolute;top:0;bottom:0;width:100px;z-index:2;pointer-events:none}
+.marquee-strip::before{left:0;background:linear-gradient(90deg,var(--bg2) 0%,transparent 100%)}
+.marquee-strip::after{right:0;background:linear-gradient(-90deg,var(--bg2) 0%,transparent 100%)}
+.marquee-track{display:flex;width:max-content;animation:marqueeScroll 32s linear infinite}
+.marquee-track:hover{animation-play-state:paused}
+.marquee-item{display:flex;align-items:center;gap:9px;padding:15px 30px;font-size:13px;font-weight:500;color:var(--gris2);white-space:nowrap;border-right:1px solid var(--borde)}
+.marquee-check{color:var(--verde);font-weight:700;font-size:14px;flex-shrink:0}
+@keyframes marqueeScroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 </style>
 </head>
 <body>
@@ -481,6 +495,28 @@ footer{border-top:1px solid var(--borde);padding:40px;max-width:1180px;margin:0 
   </div>
 </section>
 
+<!-- MARQUEE -->
+<div class="marquee-strip">
+  <div class="marquee-track">
+    <div class="marquee-item"><span class="marquee-check">✓</span>Bot de WhatsApp 24/7</div>
+    <div class="marquee-item"><span class="marquee-check">✓</span>Panel de control centralizado</div>
+    <div class="marquee-item"><span class="marquee-check">✓</span>Seguimiento en tiempo real</div>
+    <div class="marquee-item"><span class="marquee-check">✓</span>Viajes programados</div>
+    <div class="marquee-item"><span class="marquee-check">✓</span>Tarifa automática por km</div>
+    <div class="marquee-item"><span class="marquee-check">✓</span>Pago online por MercadoPago</div>
+    <div class="marquee-item"><span class="marquee-check">✓</span>Sin app para el cliente</div>
+    <div class="marquee-item"><span class="marquee-check">✓</span>Historial completo de viajes</div>
+    <div class="marquee-item"><span class="marquee-check">✓</span>Bot de WhatsApp 24/7</div>
+    <div class="marquee-item"><span class="marquee-check">✓</span>Panel de control centralizado</div>
+    <div class="marquee-item"><span class="marquee-check">✓</span>Seguimiento en tiempo real</div>
+    <div class="marquee-item"><span class="marquee-check">✓</span>Viajes programados</div>
+    <div class="marquee-item"><span class="marquee-check">✓</span>Tarifa automática por km</div>
+    <div class="marquee-item"><span class="marquee-check">✓</span>Pago online por MercadoPago</div>
+    <div class="marquee-item"><span class="marquee-check">✓</span>Sin app para el cliente</div>
+    <div class="marquee-item"><span class="marquee-check">✓</span>Historial completo de viajes</div>
+  </div>
+</div>
+
 <div class="divider"></div>
 
 <!-- PROBLEM -->
@@ -517,21 +553,21 @@ footer{border-top:1px solid var(--borde);padding:40px;max-width:1180px;margin:0 
   <div class="steps-wrap reveal d2">
     <div class="step">
       <div class="step-n">01</div>
-      <div class="step-icon">💬</div>
+      <div class="step-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/><circle cx="9" cy="10" r=".5" fill="currentColor"/><circle cx="12" cy="10" r=".5" fill="currentColor"/><circle cx="15" cy="10" r=".5" fill="currentColor"/></svg></div>
       <div class="step-title">El cliente pide por WhatsApp</div>
       <p class="step-desc">Escribe al número de la remisería. El bot toma origen, destino y deja el pedido registrado automáticamente.</p>
       <div class="step-arr">→</div>
     </div>
     <div class="step">
       <div class="step-n">02</div>
-      <div class="step-icon">🚕</div>
+      <div class="step-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div>
       <div class="step-title">La remisería opera desde el panel</div>
       <p class="step-desc">Ves el viaje en el panel, asignás un chofer con un click y seguís todo desde un solo lugar.</p>
       <div class="step-arr">→</div>
     </div>
     <div class="step">
       <div class="step-n">03</div>
-      <div class="step-icon">📍</div>
+      <div class="step-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
       <div class="step-title">El chofer y el cliente reciben todo claro</div>
       <p class="step-desc">El chofer recibe el viaje con dirección y link de Maps. El cliente obtiene confirmación y seguimiento en tiempo real.</p>
     </div>
@@ -546,16 +582,16 @@ footer{border-top:1px solid var(--borde);padding:40px;max-width:1180px;margin:0 
   <h2 class="sec-title reveal d1">Todo lo que necesitás<br>para <span class="hl">operar mejor.</span></h2>
   <p class="sec-sub reveal d1">Mantiene la operación simple para tu equipo, pero suma orden, velocidad y control en cada viaje.</p>
   <div class="feat-grid">
-    <div class="feat-card reveal d1"><span class="fbadge fb-live">Disponible</span><div class="fi">💬</div><div class="ft">Bot de WhatsApp</div><p class="fd">Toma pedidos, pide origen y destino y confirma viajes sin depender de que alguien esté mirando el teléfono todo el tiempo.</p></div>
-    <div class="feat-card reveal d2"><span class="fbadge fb-live">Disponible</span><div class="fi">📋</div><div class="ft">Panel de control</div><p class="fd">Todos los viajes en un solo lugar, con vista clara, operativa y con historial completo de cada pedido. Accedé desde cualquier dispositivo.</p></div>
-    <div class="feat-card reveal d3"><span class="fbadge fb-live">Disponible</span><div class="fi">📅</div><div class="ft">Viajes programados</div><p class="fd">Tomá reservas para más tarde o para otro día directamente por WhatsApp. El sistema envía recordatorios automáticos al cliente y al chofer.</p></div>
-    <div class="feat-card reveal d4"><span class="fbadge fb-live">Disponible</span><div class="fi">📍</div><div class="ft">Seguimiento en tiempo real</div><p class="fd">El cliente ve dónde está el auto sin tener que escribir para preguntar. Link de tracking generado automáticamente para cada viaje.</p></div>
-    <div class="feat-card reveal d1"><span class="fbadge fb-live">Disponible</span><div class="fi">💰</div><div class="ft">Tarifa automática</div><p class="fd">Calculá el valor del viaje según tu configuración: precio por km, mínimo, zona, etc. Sin cuentas manuales ni errores.</p></div>
-    <div class="feat-card reveal d2"><span class="fbadge fb-live">Disponible</span><div class="fi">🔄</div><div class="ft">Estados automáticos</div><p class="fd">LISTO, AFUERA y FIN desde WhatsApp actualizan el panel en tiempo real y ordenan la operación sin seguimiento manual.</p></div>
-    <div class="feat-card reveal d3"><span class="fbadge fb-live">Disponible</span><div class="fi">🗺️</div><div class="ft">Link de Maps automático</div><p class="fd">El chofer recibe el viaje con el link de navegación al origen listo. Menos tiempo buscando direcciones, más tiempo haciendo viajes.</p></div>
-    <div class="feat-card reveal d4"><span class="fbadge fb-live">Disponible</span><div class="fi">🤖</div><div class="ft">Sugerencia de chofer</div><p class="fd">El sistema sugiere qué chofer asignar según disponibilidad y reglas configurables. Menos decisiones manuales en hora pico.</p></div>
-    <div class="feat-card reveal d1"><span class="fbadge fb-live">Disponible</span><div class="fi">💳</div><div class="ft">Pago online por MercadoPago</div><p class="fd">El cliente paga desde WhatsApp antes de subirse. Sin depender solo del efectivo, sin cobros extras de comisión.</p></div>
-    <div class="feat-card reveal d2"><span class="fbadge fb-live">Disponible</span><div class="fi">📊</div><div class="ft">Reportes de operación</div><p class="fd">Resumen simple de viajes, choferes y rendimiento para ver mejor qué está pasando en tu negocio.</p></div>
+    <div class="feat-card reveal d1"><span class="fbadge fb-live">Disponible</span><div class="fi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/><circle cx="9" cy="10" r=".5" fill="currentColor"/><circle cx="12" cy="10" r=".5" fill="currentColor"/><circle cx="15" cy="10" r=".5" fill="currentColor"/></svg></div><div class="ft">Bot de WhatsApp</div><p class="fd">Toma pedidos, pide origen y destino y confirma viajes sin depender de que alguien esté mirando el teléfono todo el tiempo.</p></div>
+    <div class="feat-card reveal d2"><span class="fbadge fb-live">Disponible</span><div class="fi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/></svg></div><div class="ft">Panel de control</div><p class="fd">Todos los viajes en un solo lugar, con vista clara, operativa y con historial completo de cada pedido. Accedé desde cualquier dispositivo.</p></div>
+    <div class="feat-card reveal d3"><span class="fbadge fb-live">Disponible</span><div class="fi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/><circle cx="16" cy="16" r="2.5"/><path d="M16 14.8V16l.8.8"/></svg></div><div class="ft">Viajes programados</div><p class="fd">Tomá reservas para más tarde o para otro día directamente por WhatsApp. El sistema envía recordatorios automáticos al cliente y al chofer.</p></div>
+    <div class="feat-card reveal d4"><span class="fbadge fb-live">Disponible</span><div class="fi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div><div class="ft">Seguimiento en tiempo real</div><p class="fd">El cliente ve dónde está el auto sin tener que escribir para preguntar. Link de tracking generado automáticamente para cada viaje.</p></div>
+    <div class="feat-card reveal d1"><span class="fbadge fb-live">Disponible</span><div class="fi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div><div class="ft">Tarifa automática</div><p class="fd">Calculá el valor del viaje según tu configuración: precio por km, mínimo, zona, etc. Sin cuentas manuales ni errores.</p></div>
+    <div class="feat-card reveal d2"><span class="fbadge fb-live">Disponible</span><div class="fi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M23 4v6h-6"/><path d="M1 20v-6h6"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg></div><div class="ft">Estados automáticos</div><p class="fd">LISTO, AFUERA y FIN desde WhatsApp actualizan el panel en tiempo real y ordenan la operación sin seguimiento manual.</p></div>
+    <div class="feat-card reveal d3"><span class="fbadge fb-live">Disponible</span><div class="fi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polygon points="3 11 22 2 13 21 11 13 3 11"/></svg></div><div class="ft">Link de Maps automático</div><p class="fd">El chofer recibe el viaje con el link de navegación al origen listo. Menos tiempo buscando direcciones, más tiempo haciendo viajes.</p></div>
+    <div class="feat-card reveal d4"><span class="fbadge fb-live">Disponible</span><div class="fi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div><div class="ft">Sugerencia de chofer</div><p class="fd">El sistema sugiere qué chofer asignar según disponibilidad y reglas configurables. Menos decisiones manuales en hora pico.</p></div>
+    <div class="feat-card reveal d1"><span class="fbadge fb-live">Disponible</span><div class="fi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg></div><div class="ft">Pago online por MercadoPago</div><p class="fd">El cliente paga desde WhatsApp antes de subirse. Sin depender solo del efectivo, sin cobros extras de comisión.</p></div>
+    <div class="feat-card reveal d2"><span class="fbadge fb-live">Disponible</span><div class="fi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></div><div class="ft">Reportes de operación</div><p class="fd">Resumen simple de viajes, choferes y rendimiento para ver mejor qué está pasando en tu negocio.</p></div>
   </div>
 </section>
 
