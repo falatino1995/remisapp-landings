@@ -660,7 +660,7 @@ footer{border-top:1px solid var(--borde);padding:40px;max-width:1180px;margin:0 
         <div class="hc-amount">$2.500</div>
         <div class="hc-sub">CobrÃ¡s: <span class="hc-green">$2.500 âœ“</span></div>
       </div>
-      <div class="hc-foot">Tu 100% · sin comisiones por viaje</div>
+      <div class="hc-foot">Tu 100% ï¿½ sin comisiones por viaje</div>
     </div>
     </div>
   </div>
@@ -1151,7 +1151,7 @@ footer{border-top:1px solid var(--borde);padding:40px;max-width:1180px;margin:0 
       <a href="https://wa.me/34672364395?text=Hola%20quiero%20informaci%C3%B3n%20sobre%20RemisApp%20Solo" class="btn-secondary" style="width:100%;justify-content:center">Hablar con el equipo â†’</a>
     </div>
   </div>
-  <p class="pricing-footnote">Sin permanencia. Sin comisión por viaje. Cancelás cuando querés.</p>
+  <p class="pricing-footnote">Sin permanencia. Sin comisiï¿½n por viaje. Cancelï¿½s cuando querï¿½s.</p>
   </div>
 </div>
 </section>
@@ -1252,7 +1252,6 @@ footer{border-top:1px solid var(--borde);padding:40px;max-width:1180px;margin:0 
 <script>
 const ham = document.getElementById('hamburger');
 const mm = document.getElementById('mobileMenu');
-const waFloat = document.getElementById('waFloat');
 const nav = document.getElementById('nav');
 function closeMobile(){ ham.classList.remove('open'); mm.classList.remove('open'); document.body.style.overflow=''; }
 ham.addEventListener('click',()=>{
@@ -1263,7 +1262,6 @@ ham.addEventListener('click',()=>{
 
 function syncNavState(){
   nav.classList.toggle('nav-scrolled', window.scrollY > 18);
-  waFloat.classList.toggle('visible', window.scrollY > 520);
 }
 syncNavState();
 window.addEventListener('scroll', syncNavState, { passive:true });
