@@ -19,7 +19,7 @@
   --r8:8px;--r12:12px;--r16:16px;--r20:20px;--r999:999px;
 }
 html{scroll-behavior:smooth}
-body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--blanco);overflow-x:hidden;-webkit-font-smoothing:antialiased}
+body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--blanco);overflow-x:hidden;-webkit-font-smoothing:antialiased;background-image:radial-gradient(circle,rgba(61,204,142,.038) 1px,transparent 1px);background-size:30px 30px}
 a{text-decoration:none;color:inherit}
 section{scroll-margin-top:80px}
 img{display:block;max-width:100%}
@@ -69,7 +69,24 @@ nav{
 .hero{
   min-height:100vh;padding:120px 0 80px;
   display:grid;grid-template-columns:1.1fr 0.9fr;gap:72px;align-items:center;
+  position:relative;isolation:isolate;
 }
+.hero-bg{position:absolute;inset:0;pointer-events:none;overflow:hidden;z-index:-1}
+.hero-orb-a{position:absolute;border-radius:50%;filter:blur(90px);width:700px;height:700px;background:radial-gradient(circle,rgba(61,204,142,.13) 0%,transparent 70%);top:-300px;left:-240px;animation:orbDriftA 17s ease-in-out infinite alternate}
+.hero-orb-b{position:absolute;border-radius:50%;filter:blur(110px);width:640px;height:640px;background:radial-gradient(circle,rgba(12,80,45,.24) 0%,transparent 70%);bottom:-220px;right:-140px;animation:orbDriftB 21s ease-in-out infinite alternate}
+.hero-orb-c{position:absolute;border-radius:50%;filter:blur(70px);width:300px;height:300px;background:radial-gradient(circle,rgba(61,204,142,.08) 0%,transparent 70%);top:calc(45% - 150px);left:calc(42% - 150px);animation:orbDriftC 12s ease-in-out infinite alternate}
+@keyframes orbDriftA{from{transform:translate(0,0) scale(1)}to{transform:translate(90px,55px) scale(1.14)}}
+@keyframes orbDriftB{from{transform:translate(0,0) scale(1)}to{transform:translate(-70px,-45px) scale(1.1)}}
+@keyframes orbDriftC{from{transform:translate(0,0) scale(1)}to{transform:translate(45px,-35px) scale(1.2)}}
+
+/* ── WHATSAPP TYPING INDICATOR ── */
+.wapp-typing{align-self:flex-start;display:none}
+.wapp-typing.active{display:block}
+.typing-dots{background:#fff;border-radius:2px 12px 12px 12px;padding:9px 13px;display:flex;align-items:center;gap:4px}
+.typing-dots span{width:6px;height:6px;border-radius:50%;background:#bbb;animation:dotBounce 1.2s ease-in-out infinite}
+.typing-dots span:nth-child(2){animation-delay:.2s}
+.typing-dots span:nth-child(3){animation-delay:.4s}
+@keyframes dotBounce{0%,80%,100%{transform:scale(.65);opacity:.5}40%{transform:scale(1.1);opacity:1}}
 .hero-badge{
   display:inline-flex;align-items:center;gap:8px;
   background:var(--verde-bg);color:var(--verde);
@@ -391,6 +408,7 @@ footer{border-top:1px solid var(--borde);padding:40px;max-width:1180px;margin:0 
 
 <!-- HERO -->
 <section class="container hero" id="inicio">
+  <div class="hero-bg"><div class="hero-orb-a"></div><div class="hero-orb-b"></div><div class="hero-orb-c"></div></div>
   <div>
     <div class="hero-badge reveal"><span class="badge-dot"></span>&nbsp;WhatsApp + panel + tracking en un solo lugar</div>
     <h1 class="hero-title reveal d1">
@@ -443,12 +461,8 @@ footer{border-top:1px solid var(--borde);padding:40px;max-width:1180px;margin:0 
             <div class="wapp-av">R</div>
             <div><div class="wapp-n">Remisería del Sur</div><div class="wapp-s">en línea</div></div>
           </div>
-          <div class="wapp-msgs">
-            <div class="msg mi"><div class="mb">Hola 👋 ¿Desde dónde salís?</div><div class="mt">10:32</div></div>
-            <div class="msg mo"><div class="mb">San Martín 450</div><div class="mt">10:33 <span class="mc">✓✓</span></div></div>
-            <div class="msg mi"><div class="mb">Perfecto. ¿A dónde vas?</div><div class="mt">10:33</div></div>
-            <div class="msg mo"><div class="mb">Terminal de ómnibus</div><div class="mt">10:33 <span class="mc">✓✓</span></div></div>
-            <div class="msg mi"><div class="mb">✅ <strong>Pedido confirmado</strong><br><br>Chofer: Marcelo G.<br>Auto: Peugeot 208 — ABC 123<br><br>Seguí el viaje: remisapp.link/v/xK9</div><div class="mt">10:34</div></div>
+          <div class="wapp-msgs" id="wappMsgs">
+            <div class="wapp-typing" id="wappTyping"><div class="typing-dots"><span></span><span></span><span></span></div></div>
           </div>
         </div>
       </div>
@@ -728,6 +742,52 @@ function toggleFaq(btn){
   document.querySelectorAll('.faq-item.open').forEach(i=>i.classList.remove('open'));
   if(!isOpen) item.classList.add('open');
 }
+
+(function initWappAnim(){
+  const MSGS=[
+    {t:'mi',text:'Hola 👋 ¿Desde dónde salís?',time:'10:32',typing:900},
+    {t:'mo',text:'San Martín 450',time:'10:33',typing:0,pause:700},
+    {t:'mi',text:'Perfecto. ¿A dónde vas?',time:'10:33',typing:800},
+    {t:'mo',text:'Terminal de ómnibus',time:'10:33',typing:0,pause:700},
+    {t:'mi',html:'✅ <strong>Pedido confirmado</strong><br><br>Chofer: Marcelo G.<br>Auto: Peugeot 208 — ABC 123<br><br>Seguí el viaje: remisapp.link/v/xK9',time:'10:34',typing:1400},
+  ];
+  const container=document.getElementById('wappMsgs');
+  const typingEl=document.getElementById('wappTyping');
+  if(!container||!typingEl)return;
+  const sleep=ms=>new Promise(r=>setTimeout(r,ms));
+  function makeMsg(d){
+    const w=document.createElement('div');
+    w.className='msg '+d.t;
+    w.style.cssText='opacity:0;transform:translateY(8px);transition:opacity .38s,transform .38s';
+    const b=document.createElement('div');b.className='mb';
+    if(d.html)b.innerHTML=d.html;else b.textContent=d.text;
+    const m=document.createElement('div');m.className='mt';
+    if(d.t==='mo')m.innerHTML=d.time+' <span class="mc">✓✓</span>';else m.textContent=d.time;
+    w.appendChild(b);w.appendChild(m);return w;
+  }
+  async function play(){
+    container.querySelectorAll('.msg').forEach(m=>m.remove());
+    for(const d of MSGS){
+      if(d.t==='mi'){
+        typingEl.classList.add('active');
+        await sleep(d.typing);
+        typingEl.classList.remove('active');
+      } else {
+        await sleep(d.pause||500);
+      }
+      const el=makeMsg(d);
+      container.insertBefore(el,typingEl);
+      requestAnimationFrame(()=>requestAnimationFrame(()=>{el.style.opacity='1';el.style.transform='translateY(0)'}));
+      await sleep(480);
+    }
+    await sleep(3200);
+    const all=container.querySelectorAll('.msg');
+    all.forEach(m=>{m.style.transition='opacity .45s';m.style.opacity='0'});
+    await sleep(520);
+    play();
+  }
+  setTimeout(play,1000);
+})();
 
 async function handleSubmit(e){
   e.preventDefault();
