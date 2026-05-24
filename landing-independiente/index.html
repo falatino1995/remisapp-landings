@@ -5,7 +5,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>RemisApp Solo — Tus clientes, tus precios, tu 100%</title>
 <meta name="description" content="Manejá tus viajes por WhatsApp sin depender de Uber, Didi ni Cabify. Tu link, tu bot, tus clientes. Sin comisiones.">
-<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Barlow:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Barlow:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Barlow:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap"></noscript>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
@@ -1267,8 +1270,10 @@ window.addEventListener('scroll', syncNavState, { passive:true });
 
 const observer = new IntersectionObserver((entries)=>{
   entries.forEach(e=>{ if(e.isIntersecting) e.target.classList.add('visible'); });
-},{ threshold:0.1 });
-document.querySelectorAll('.reveal,.reveal-l,.reveal-r').forEach(el=>observer.observe(el));
+},{ threshold:0.1, rootMargin:'0px 0px -40px 0px' });
+const revealEls = document.querySelectorAll('.reveal,.reveal-l,.reveal-r');
+revealEls.forEach(el=>observer.observe(el));
+setTimeout(()=>{ revealEls.forEach(el=>{ const r=el.getBoundingClientRect(); if(r.top<window.innerHeight&&r.bottom>0) el.classList.add('visible'); }); }, 120);
 
 function toggleFaq(btn){
   const item = btn.closest('.faq-item');
