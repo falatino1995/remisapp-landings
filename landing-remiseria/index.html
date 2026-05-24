@@ -376,6 +376,19 @@ footer{border-top:1px solid var(--borde);padding:40px;max-width:1180px;margin:0 
   .footer-grid{grid-template-columns:1fr}
 }
 
+/* ── GEO LINE ── */
+.hero-geo{font-size:12.5px;color:var(--gris);margin-top:8px;display:flex;align-items:center;gap:7px;flex-wrap:wrap}
+.hero-geo .geo-flag{font-size:14px}
+.hero-geo .geo-dot{width:3px;height:3px;border-radius:50%;background:var(--borde);flex-shrink:0}
+
+/* ── CITY STRIP ── */
+.city-strip{padding:64px 0;text-align:center}
+.city-list{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin:24px 0 20px}
+.city-tag{padding:8px 18px;border:1px solid var(--borde);border-radius:var(--r999);font-size:13.5px;color:var(--gris2);background:var(--card);transition:border-color .18s,color .18s,background .18s}
+.city-tag:hover{border-color:var(--verde-border);color:var(--verde)}
+.city-tag.featured{border-color:var(--verde-border);color:var(--blanco);background:var(--verde-bg)}
+.city-note{font-size:13px;color:var(--gris);line-height:1.6}
+
 /* ── MARQUEE ── */
 .marquee-strip{overflow:hidden;border-top:1px solid var(--borde);border-bottom:1px solid var(--borde);background:var(--bg2);padding:0;position:relative}
 .marquee-strip::before,.marquee-strip::after{content:'';position:absolute;top:0;bottom:0;width:100px;z-index:2;pointer-events:none}
@@ -443,6 +456,7 @@ footer{border-top:1px solid var(--borde);padding:40px;max-width:1180px;margin:0 
       <a href="https://calendly.com/remisapp-contacto/30min" class="btn-secondary">Agendar llamada</a>
     </div>
     <p class="hero-caption reveal d3">¿Ya tenés cuenta? <a href="https://remisapp2-production.up.railway.app/admin">Iniciá sesión acá.</a></p>
+    <p class="hero-geo reveal d3"><span class="geo-flag">🇦🇷</span><span>Disponible en toda Argentina</span><span class="geo-dot"></span><span>Cualquier ciudad</span><span class="geo-dot"></span><span>Sin restricciones de zona</span></p>
     <div class="contact-strip reveal d4">
       <a href="https://wa.me/34672364395?text=Hola%20quiero%20informaci%C3%B3n%20sobre%20RemisApp" class="contact-chip">WhatsApp <strong>directo</strong></a>
       <a href="https://calendly.com/remisapp-contacto/30min" class="contact-chip">Demo por <strong>videollamada</strong></a>
@@ -593,6 +607,31 @@ footer{border-top:1px solid var(--borde);padding:40px;max-width:1180px;margin:0 
     <div class="feat-card reveal d1"><span class="fbadge fb-live">Disponible</span><div class="fi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg></div><div class="ft">Pago online por MercadoPago</div><p class="fd">El cliente paga desde WhatsApp antes de subirse. Sin depender solo del efectivo, sin cobros extras de comisión.</p></div>
     <div class="feat-card reveal d2"><span class="fbadge fb-live">Disponible</span><div class="fi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></div><div class="ft">Reportes de operación</div><p class="fd">Resumen simple de viajes, choferes y rendimiento para ver mejor qué está pasando en tu negocio.</p></div>
   </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- CITIES -->
+<section class="container city-strip">
+  <div class="sec-eyebrow reveal">Cobertura</div>
+  <h2 class="sec-title reveal d1" style="margin-bottom:0">Funciona en <span class="hl">cualquier ciudad</span> de Argentina.</h2>
+  <div class="city-list reveal d2">
+    <span class="city-tag featured">Buenos Aires</span>
+    <span class="city-tag featured">Córdoba</span>
+    <span class="city-tag featured">Rosario</span>
+    <span class="city-tag">Mendoza</span>
+    <span class="city-tag">Mar del Plata</span>
+    <span class="city-tag">Tucumán</span>
+    <span class="city-tag">Salta</span>
+    <span class="city-tag">Santa Fe</span>
+    <span class="city-tag">Neuquén</span>
+    <span class="city-tag">La Plata</span>
+    <span class="city-tag">Bahía Blanca</span>
+    <span class="city-tag">Resistencia</span>
+    <span class="city-tag">Posadas</span>
+    <span class="city-tag">San Juan</span>
+  </div>
+  <p class="city-note reveal d3">...y en cualquier ciudad donde haya una remisería con WhatsApp. Sin configuración de zona.</p>
 </section>
 
 <div class="divider"></div>
