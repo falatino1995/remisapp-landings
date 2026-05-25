@@ -113,7 +113,7 @@ nav{
 .hero-bg{position:relative;background:url('assets/hero-bg.png') 80% center/cover no-repeat}
 .hero-bg::before{content:'';position:absolute;inset:0;background:linear-gradient(95deg,#070A08 38%,rgba(7,10,8,.85) 56%,rgba(7,10,8,.15) 80%,transparent 100%);z-index:0}
 .hero-bg .container{position:relative;z-index:1}
-.hero{min-height:100vh;padding:140px 0 100px;display:grid;grid-template-columns:1fr auto;gap:40px;align-items:center}
+.hero{min-height:100vh;min-height:100svh;padding:140px 0 100px;display:grid;grid-template-columns:1fr auto;gap:40px;align-items:center}
 .hero-text{max-width:620px}
 .hero-copy{position:relative;max-width:590px}
 .hero-copy::before{
@@ -319,20 +319,24 @@ nav{
 @media(max-width:520px){.fab-cal{display:none}}
 
 /* ── UNIFIED TICKER ── */
-.unified-ticker{overflow:hidden;background:var(--bg2);border-top:1px solid var(--borde);border-bottom:1px solid var(--borde)}
-.ticker-track{display:flex;align-items:center;width:max-content;animation:marqueeScroll 52s linear infinite}
+.unified-ticker{position:relative;overflow:hidden;background:var(--bg2);border-top:1px solid var(--borde);border-bottom:1px solid var(--borde);isolation:isolate}
+.unified-ticker::before,.unified-ticker::after{content:"";position:absolute;top:0;bottom:0;width:54px;z-index:2;pointer-events:none}
+.unified-ticker::before{left:0;background:linear-gradient(90deg,var(--bg2) 0%,rgba(11,16,12,0) 100%)}
+.unified-ticker::after{right:0;background:linear-gradient(270deg,var(--bg2) 0%,rgba(11,16,12,0) 100%)}
+.ticker-track{display:flex;align-items:stretch;width:max-content;animation:marqueeScroll 52s linear infinite}
 .ticker-track:hover{animation-play-state:paused}
 /* stat items */
-.tq-stat{display:inline-flex;flex-direction:column;align-items:center;justify-content:center;padding:20px 44px;gap:3px;border-right:1px solid var(--borde);border-left:1px solid var(--borde);flex-shrink:0}
-.tq-stat-num{font-family:'Barlow Condensed',sans-serif;font-size:40px;font-weight:800;color:var(--verde);letter-spacing:.02em;line-height:1;text-transform:uppercase}
-.tq-stat-label{font-size:10px;color:var(--gris2);font-weight:500;text-transform:uppercase;letter-spacing:.1em;white-space:nowrap}
+.tq-stat{display:inline-flex;flex-direction:column;align-items:center;justify-content:center;min-height:74px;padding:14px 36px 12px;gap:4px;border-left:1px solid rgba(255,255,255,.05);border-right:1px solid rgba(255,255,255,.05);background:linear-gradient(180deg,rgba(255,255,255,.02),rgba(255,255,255,.008));flex-shrink:0}
+.tq-stat-num{font-family:'Barlow Condensed',sans-serif;font-size:40px;font-weight:800;color:var(--verde);letter-spacing:.02em;line-height:.9;text-transform:uppercase}
+.tq-stat-label{font-size:10px;color:var(--gris2);font-weight:600;text-transform:uppercase;letter-spacing:.12em;white-space:nowrap;line-height:1}
 /* feature items */
-.tq-feat{display:inline-flex;align-items:center;gap:7px;font-size:13px;font-weight:500;color:var(--gris2);padding:0 26px;white-space:nowrap;flex-shrink:0}
-.tq-dot{width:4px;height:4px;border-radius:50%;background:var(--verde-border);flex-shrink:0}
-.tq-icon{width:18px;height:18px;border-radius:5px;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0}
-.tq-icon-wa{background:#25D366}
-.tq-icon-mp{background:#009EE3}
-.tq-icon-arg{color:var(--verde);display:inline-flex;align-items:center}
+.tq-feat{display:inline-flex;align-items:center;gap:10px;min-height:74px;padding:0 28px;border-right:1px solid rgba(255,255,255,.05);font-size:13px;font-weight:600;color:var(--gris2);line-height:1;white-space:nowrap;flex-shrink:0}
+.tq-dot{width:5px;height:5px;border-radius:50%;background:rgba(61,204,142,.6);box-shadow:0 0 0 4px rgba(61,204,142,.08);flex-shrink:0}
+.tq-icon{width:22px;height:22px;border-radius:7px;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0}
+.tq-icon svg{display:block}
+.tq-icon-wa{background:#25D366;color:#fff}
+.tq-icon-mp{background:#009EE3;color:#fff}
+.tq-icon-arg{background:rgba(61,204,142,.12);border:1px solid rgba(61,204,142,.24);color:var(--verde)}
 @keyframes marqueeScroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
 
 /* ── VS UBER ── */
@@ -692,13 +696,13 @@ footer{border-top:1px solid var(--borde);padding:40px;max-width:1180px;margin:0 
 .steps-cta-trust{font-size:11.5px;color:var(--gris);letter-spacing:.03em}
 /* ── DUAL PHONE ANIMATION ── */
 .dual-phones{display:flex;align-items:flex-start;justify-content:center;gap:36px;margin-top:48px}
-.dphone-col{display:flex;flex-direction:column;align-items:center;gap:12px}
+.dphone-col{display:flex;flex-direction:column;align-items:center;gap:12px;flex:0 0 200px}
 .dphone-tag{display:inline-flex;align-items:center;gap:7px;font-family:'Barlow Condensed',sans-serif;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--gris2);background:var(--bg2);border:1px solid var(--borde);padding:5px 12px;border-radius:999px}
 .dphone-tag svg{flex-shrink:0;color:var(--verde)}
-.dphone-frame{width:200px;background:#111;border-radius:36px;border:2px solid #252525;padding:12px 8px 16px;box-shadow:0 0 0 1px #0a0a0a,0 32px 64px rgba(0,0,0,.75),inset 0 1px 0 rgba(255,255,255,.07)}
-.dphone-frame--driver{border-color:#1e2e1e;box-shadow:0 0 0 1px #0a120a,0 32px 64px rgba(61,204,142,.13),inset 0 1px 0 rgba(255,255,255,.07)}
+.dphone-frame{width:200px;box-sizing:border-box;background:#111;border-radius:36px;border:2px solid #252525;padding:12px 8px 16px;box-shadow:0 0 0 1px #0a0a0a,0 32px 64px rgba(0,0,0,.75),inset 0 1px 0 rgba(255,255,255,.07)}
+.dphone-frame--driver{border-color:#284028;box-shadow:0 0 0 1px #0a120a,0 32px 64px rgba(0,0,0,.75),inset 0 1px 0 rgba(255,255,255,.07)}
 .dphone-notch{width:54px;height:5px;background:#1c1c1c;border-radius:3px;margin:0 auto 9px}
-.dphone-screen{background:#ECE5DD;border-radius:24px;overflow:hidden;display:flex;flex-direction:column;min-height:370px}
+.dphone-screen{background:#ECE5DD;border-radius:24px;overflow:hidden;display:flex;flex-direction:column;height:370px}
 .dwa-hdr{background:#075E54;padding:8px 10px;display:flex;align-items:center;gap:7px;flex-shrink:0}
 .dwa-av{width:26px;height:26px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;flex-shrink:0}
 .dwa-name{font-size:10.5px;font-weight:700;color:#fff;line-height:1.2}
@@ -854,7 +858,7 @@ footer{border-top:1px solid var(--borde);padding:40px;max-width:1180px;margin:0 
     <div class="tq-stat"><span class="tq-stat-num">+80</span><span class="tq-stat-label">Choferes activos</span></div>
     <div class="tq-feat"><span class="tq-dot"></span>Tu propio link de viajes</div>
     <div class="tq-feat">
-      <span class="tq-icon tq-icon-wa"><svg width="11" height="11" viewBox="0 0 24 24" fill="#fff"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></span>
+      <span class="tq-icon tq-icon-wa" aria-hidden="true"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></span>
       Bot que opera las 24h
     </div>
     <div class="tq-feat"><span class="tq-dot"></span>Precio de referencia Uber</div>
@@ -863,18 +867,18 @@ footer{border-top:1px solid var(--borde);padding:40px;max-width:1180px;margin:0 
     <div class="tq-feat"><span class="tq-dot"></span>Tracking en tiempo real</div>
     <div class="tq-feat"><span class="tq-dot"></span>Viajes programados</div>
     <div class="tq-feat">
-      <span class="tq-icon tq-icon-mp"><span style="font-family:'Barlow Condensed',sans-serif;font-size:9px;font-weight:800;color:#fff;letter-spacing:-.02em">MP</span></span>
+      <span class="tq-icon tq-icon-mp" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 28 28" fill="none"><ellipse cx="14" cy="14" rx="11" ry="7.5" fill="#fff"/><path d="M8.4 15.2c1.2-1.4 2.6-2.1 4-2.1 1 0 1.8.4 2.6 1.2l.4.4.4-.4c.8-.8 1.6-1.2 2.6-1.2 1.4 0 2.8.7 4 2.1" stroke="#009EE3" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M10 12.2l2.2 1.8m5.8-1.8L15.8 14" stroke="#009EE3" stroke-width="1.8" stroke-linecap="round"/></svg></span>
       Cobro por Mercado Pago
     </div>
 
     <div class="tq-stat"><span class="tq-stat-num">5 min</span><span class="tq-stat-label">Para arrancar</span></div>
     <div class="tq-feat"><span class="tq-dot"></span>Link de Maps automático</div>
     <div class="tq-feat">
-      <span class="tq-icon tq-icon-wa"><svg width="11" height="11" viewBox="0 0 24 24" fill="#fff"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></span>
+      <span class="tq-icon tq-icon-wa" aria-hidden="true"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></span>
       Pedidos confirmados por WhatsApp
     </div>
     <div class="tq-feat">
-      <span class="tq-icon-arg"><svg width="13" height="20" viewBox="0 0 26 40" fill="currentColor"><path d="M13,0 C16,0 20,2 22,5 C24,8 25,12 24,16 C26,18 26,22 24,25 C25,28 24,31 22,33 C20,36 17,38 15,39 C14,40 13,40 13,40 C13,40 12,40 11,39 C9,38 6,36 4,33 C2,31 1,28 2,25 C0,22 0,18 2,16 C1,12 2,8 4,5 C6,2 10,0 13,0 Z"/></svg></span>
+      <span class="tq-icon tq-icon-arg" aria-hidden="true"><svg width="11" height="15" viewBox="0 0 24 34" fill="currentColor"><path d="M12.8 1c2.1.4 3.4 2.1 3.3 4.4l1.3 1.2c1.2 1.1 1.7 2.8 1.4 4.4l-.4 2.1 1.1 1.8c.8 1.3.9 2.8.4 4.2l-.8 2 .7 1.8c.5 1.4.2 3-.8 4.2l-1.6 1.9-.2 2.4c-.1 1.7-1.2 2.9-2.8 3.1l-1.6.2-1.5-1.2-1.4.8-1.6-.7-.6-2.2-1.9-1.4c-1.3-1-1.8-2.7-1.5-4.3l.5-2-1-1.8c-.7-1.2-.8-2.7-.2-4l.8-1.8-.7-2c-.5-1.5-.1-3.1 1-4.3L7.6 7l.3-2.3c.2-1.9 1.4-3.2 3.3-3.7l1.6 1z"/></svg></span>
       Disponible en toda Argentina
     </div>
 
@@ -882,7 +886,7 @@ footer{border-top:1px solid var(--borde);padding:40px;max-width:1180px;margin:0 
     <div class="tq-stat"><span class="tq-stat-num">+80</span><span class="tq-stat-label">Choferes activos</span></div>
     <div class="tq-feat"><span class="tq-dot"></span>Tu propio link de viajes</div>
     <div class="tq-feat">
-      <span class="tq-icon tq-icon-wa"><svg width="11" height="11" viewBox="0 0 24 24" fill="#fff"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></span>
+      <span class="tq-icon tq-icon-wa" aria-hidden="true"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></span>
       Bot que opera las 24h
     </div>
     <div class="tq-feat"><span class="tq-dot"></span>Precio de referencia Uber</div>
@@ -891,18 +895,18 @@ footer{border-top:1px solid var(--borde);padding:40px;max-width:1180px;margin:0 
     <div class="tq-feat"><span class="tq-dot"></span>Tracking en tiempo real</div>
     <div class="tq-feat"><span class="tq-dot"></span>Viajes programados</div>
     <div class="tq-feat">
-      <span class="tq-icon tq-icon-mp"><span style="font-family:'Barlow Condensed',sans-serif;font-size:9px;font-weight:800;color:#fff;letter-spacing:-.02em">MP</span></span>
+      <span class="tq-icon tq-icon-mp" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 28 28" fill="none"><ellipse cx="14" cy="14" rx="11" ry="7.5" fill="#fff"/><path d="M8.4 15.2c1.2-1.4 2.6-2.1 4-2.1 1 0 1.8.4 2.6 1.2l.4.4.4-.4c.8-.8 1.6-1.2 2.6-1.2 1.4 0 2.8.7 4 2.1" stroke="#009EE3" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M10 12.2l2.2 1.8m5.8-1.8L15.8 14" stroke="#009EE3" stroke-width="1.8" stroke-linecap="round"/></svg></span>
       Cobro por Mercado Pago
     </div>
 
     <div class="tq-stat"><span class="tq-stat-num">5 min</span><span class="tq-stat-label">Para arrancar</span></div>
     <div class="tq-feat"><span class="tq-dot"></span>Link de Maps automático</div>
     <div class="tq-feat">
-      <span class="tq-icon tq-icon-wa"><svg width="11" height="11" viewBox="0 0 24 24" fill="#fff"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></span>
+      <span class="tq-icon tq-icon-wa" aria-hidden="true"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></span>
       Pedidos confirmados por WhatsApp
     </div>
     <div class="tq-feat">
-      <span class="tq-icon-arg"><svg width="13" height="20" viewBox="0 0 26 40" fill="currentColor"><path d="M13,0 C16,0 20,2 22,5 C24,8 25,12 24,16 C26,18 26,22 24,25 C25,28 24,31 22,33 C20,36 17,38 15,39 C14,40 13,40 13,40 C13,40 12,40 11,39 C9,38 6,36 4,33 C2,31 1,28 2,25 C0,22 0,18 2,16 C1,12 2,8 4,5 C6,2 10,0 13,0 Z"/></svg></span>
+      <span class="tq-icon tq-icon-arg" aria-hidden="true"><svg width="11" height="15" viewBox="0 0 24 34" fill="currentColor"><path d="M12.8 1c2.1.4 3.4 2.1 3.3 4.4l1.3 1.2c1.2 1.1 1.7 2.8 1.4 4.4l-.4 2.1 1.1 1.8c.8 1.3.9 2.8.4 4.2l-.8 2 .7 1.8c.5 1.4.2 3-.8 4.2l-1.6 1.9-.2 2.4c-.1 1.7-1.2 2.9-2.8 3.1l-1.6.2-1.5-1.2-1.4.8-1.6-.7-.6-2.2-1.9-1.4c-1.3-1-1.8-2.7-1.5-4.3l.5-2-1-1.8c-.7-1.2-.8-2.7-.2-4l.8-1.8-.7-2c-.5-1.5-.1-3.1 1-4.3L7.6 7l.3-2.3c.2-1.9 1.4-3.2 3.3-3.7l1.6 1z"/></svg></span>
       Disponible en toda Argentina
     </div>
 
