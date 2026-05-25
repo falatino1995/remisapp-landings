@@ -545,6 +545,87 @@ footer{border-top:1px solid var(--borde);padding:40px;max-width:1180px;margin:0 
   .steps-wrap{grid-template-columns:1fr}
   .footer-grid{grid-template-columns:1fr}
 }
+
+/* ── FEATURE SHOWCASE ── */
+.showcase{display:grid;grid-template-columns:1fr 1.2fr;align-items:stretch;background:var(--card);border:1px solid var(--borde);border-radius:24px;overflow:hidden}
+.showcase-tabs{padding:28px 24px;display:flex;flex-direction:column;gap:4px;border-right:1px solid var(--borde);background:var(--bg2)}
+.showcase-eyebrow{font-size:10.5px;font-weight:700;color:var(--verde);text-transform:uppercase;letter-spacing:.14em;margin-bottom:18px}
+.stab{padding:14px 16px;border-radius:12px;cursor:pointer;transition:background .18s;border:1px solid transparent;position:relative;overflow:hidden}
+.stab:hover{background:var(--verde-bg)}
+.stab.active{background:var(--verde-bg);border-color:var(--verde-border)}
+.stab-icon{width:30px;height:30px;border-radius:8px;background:var(--bg3);border:1px solid var(--borde);display:flex;align-items:center;justify-content:center;color:var(--gris);margin-bottom:8px;transition:background .18s,color .18s,border-color .18s}
+.stab.active .stab-icon{background:var(--verde-bg);color:var(--verde);border-color:var(--verde-border)}
+.stab-title{font-family:'Barlow Condensed',sans-serif;font-size:15px;font-weight:700;letter-spacing:.03em;text-transform:uppercase;color:var(--gris2);transition:color .18s}
+.stab.active .stab-title{color:var(--blanco)}
+.stab-desc{font-size:11.5px;color:var(--gris);line-height:1.52;margin-top:3px;max-height:0;overflow:hidden;opacity:0;transition:max-height .3s,opacity .3s}
+.stab.active .stab-desc{max-height:48px;opacity:1}
+.stab-prog{position:absolute;bottom:0;left:0;height:2px;background:var(--verde);width:0;border-radius:1px}
+.showcase-preview{position:relative;min-height:400px;background:var(--bg);overflow:hidden}
+.spanel{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;padding:28px;opacity:0;transform:translateY(10px);transition:opacity .32s ease,transform .32s ease;pointer-events:none}
+.spanel.active{opacity:1;transform:none;pointer-events:auto}
+/* mock browser */
+.mock-browser{background:#0d1510;border:1px solid rgba(255,255,255,.1);border-radius:12px;overflow:hidden;width:100%;max-width:320px;box-shadow:0 20px 50px rgba(0,0,0,.55)}
+.mock-bar{background:#141b14;padding:9px 12px;display:flex;align-items:center;gap:5px}
+.mock-dot{width:9px;height:9px;border-radius:50%;flex-shrink:0}
+.mock-dot.r{background:#FF5F57}.mock-dot.y{background:#FFBD2E}.mock-dot.g{background:#28C840}
+.mock-url-bar{margin-left:8px;font-size:10px;color:var(--gris);background:rgba(255,255,255,.06);padding:3px 10px;border-radius:5px;flex:1;text-align:center}
+.mock-profile-hdr{background:linear-gradient(135deg,#0F6E56,#1D9E75);padding:20px;text-align:center}
+.mock-profile-av{width:48px;height:48px;border-radius:50%;background:var(--verde);display:flex;align-items:center;justify-content:center;font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:17px;color:#070A08;margin:0 auto 7px}
+.mock-profile-name{font-family:'Barlow Condensed',sans-serif;font-size:15px;font-weight:700;color:#fff}
+.mock-profile-city{font-size:10.5px;color:rgba(255,255,255,.7);margin-top:2px}
+.mock-profile-online{display:inline-flex;align-items:center;gap:4px;font-size:9.5px;color:#9FE1CB;margin-top:5px}
+.mock-online-dot{width:5px;height:5px;border-radius:50%;background:#3DCC8E}
+.mock-profile-body{padding:12px}
+.mock-pbtn{border-radius:8px;padding:9px;font-size:11.5px;font-weight:700;width:100%;text-align:center;margin-bottom:6px}
+.mock-pbtn-wa{background:#3DCC8E;color:#070A08}.mock-pbtn-p{background:var(--bg3);color:var(--gris2);border:1px solid var(--borde)}
+.mock-link-pill{font-family:'Barlow Condensed',sans-serif;font-size:12px;font-weight:700;color:var(--verde);background:var(--verde-bg);border:1px solid var(--verde-border);padding:7px 12px;border-radius:7px;text-align:center;margin-top:8px}
+/* mock wa */
+.mock-wa{background:#ECE5DD;border-radius:12px;overflow:hidden;width:100%;max-width:290px;box-shadow:0 20px 50px rgba(0,0,0,.55)}
+.mock-wa-hdr{background:#075E54;padding:9px 12px;display:flex;align-items:center;gap:8px}
+.mock-wa-av{width:28px;height:28px;border-radius:50%;background:var(--verde);display:flex;align-items:center;justify-content:center;font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:700;color:#070A08;flex-shrink:0}
+.mock-wa-name{font-size:11.5px;font-weight:700;color:#fff}
+.mock-wa-sub{font-size:9px;color:#9FE1CB}
+.mock-wa-body{padding:9px 8px;display:flex;flex-direction:column;gap:5px}
+.mwmsg{max-width:82%}.mwmi{align-self:flex-start}.mwmo{align-self:flex-end}
+.mwmb{padding:6px 9px;border-radius:9px;font-size:10.5px;line-height:1.5;color:#111}
+.mwmi .mwmb{background:#fff;border-radius:2px 9px 9px 9px}.mwmo .mwmb{background:#DCF8C6;border-radius:9px 2px 9px 9px}
+.mwmt{font-size:8px;color:#aaa;margin-top:1px;text-align:right}
+/* mock price */
+.mock-price{background:var(--card);border:1px solid var(--borde);border-radius:16px;padding:22px;width:100%;max-width:300px;box-shadow:0 20px 50px rgba(0,0,0,.55)}
+.mock-price-badge{display:inline-flex;align-items:center;gap:5px;background:var(--verde-bg);color:var(--verde);font-size:9.5px;font-weight:700;padding:4px 10px;border-radius:999px;border:1px solid var(--verde-border);margin-bottom:14px}
+.mock-prow{padding:10px 0;border-bottom:1px solid var(--borde)}
+.mock-prow:last-of-type{border-bottom:none}
+.mock-plabel{font-size:9.5px;color:var(--gris);font-weight:600;text-transform:uppercase;letter-spacing:.08em;margin-bottom:3px}
+.mock-pamount{font-family:'Barlow Condensed',sans-serif;font-size:36px;font-weight:800;line-height:1}
+.mock-pamount.bad{color:var(--gris);text-decoration:line-through}.mock-pamount.good{color:var(--verde)}
+.mock-psub{font-size:10.5px;font-weight:600;margin-top:2px}
+.mock-ptimer{display:inline-flex;align-items:center;gap:4px;background:rgba(0,0,0,.25);color:var(--gris2);font-size:9.5px;padding:3px 8px;border-radius:5px;margin-top:8px}
+/* mock tracking */
+.mock-tracking{background:var(--card);border:1px solid var(--borde);border-radius:16px;overflow:hidden;width:100%;max-width:300px;box-shadow:0 20px 50px rgba(0,0,0,.55)}
+.mock-map-area{background:linear-gradient(135deg,#0c1a0f,#0f2012);height:165px;position:relative;overflow:hidden}
+.mock-map-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(61,204,142,.055) 1px,transparent 1px),linear-gradient(90deg,rgba(61,204,142,.055) 1px,transparent 1px);background-size:22px 22px}
+.mock-map-road-h{position:absolute;top:50%;left:0;right:0;height:12px;background:rgba(255,255,255,.07);transform:translateY(-50%)}
+.mock-map-road-v{position:absolute;top:0;bottom:0;left:38%;width:9px;background:rgba(255,255,255,.05)}
+.mock-map-car{position:absolute;top:50%;left:52%;transform:translate(-50%,-50%);width:26px;height:26px;background:var(--verde);border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 5px rgba(61,204,142,.22),0 0 0 11px rgba(61,204,142,.08)}
+.mock-map-pin{position:absolute;top:26%;right:24%;width:16px;height:16px;background:#E04B49;border-radius:50% 50% 50% 0;transform:rotate(-45deg)}
+.mock-track-body{padding:12px 14px}
+.mock-track-status{display:flex;align-items:center;gap:7px;margin-bottom:9px}
+.mock-track-live{width:7px;height:7px;border-radius:50%;background:var(--verde);animation:pulse 2s infinite;flex-shrink:0}
+.mock-track-label{font-size:11.5px;font-weight:700;color:var(--verde)}
+.mock-track-eta{font-size:10.5px;color:var(--gris);margin-left:auto}
+.mock-track-driver{display:flex;align-items:center;gap:9px}
+.mock-track-av{width:34px;height:34px;border-radius:50%;background:var(--verde);display:flex;align-items:center;justify-content:center;font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:12px;color:#070A08;flex-shrink:0}
+.mock-track-name{font-size:12px;font-weight:700;color:var(--blanco)}
+.mock-track-sub{font-size:9.5px;color:var(--gris)}
+.mock-track-btn{margin-left:auto;background:var(--verde-bg);border:1px solid var(--verde-border);border-radius:7px;padding:5px 9px;font-size:9.5px;color:var(--verde);font-weight:700}
+@media(max-width:860px){
+  .showcase{grid-template-columns:1fr}
+  .showcase-tabs{border-right:none;border-bottom:1px solid var(--borde);flex-direction:row;overflow-x:auto;gap:8px;padding:16px;scrollbar-width:none}
+  .showcase-tabs::-webkit-scrollbar{display:none}
+  .stab{min-width:130px;flex-shrink:0}
+  .stab-desc{display:none}
+  .showcase-preview{min-height:300px}
+}
 </style>
 </head>
 <body>
@@ -706,51 +787,134 @@ footer{border-top:1px solid var(--borde);padding:40px;max-width:1180px;margin:0 
 
 <div class="divider"></div>
 
-<!-- MATH / PROBLEMA -->
+<!-- FEATURE SHOWCASE -->
 <section class="section" id="problema">
 <div class="container">
-  <div class="section-shell surface">
-  <div class="sec-eyebrow reveal">La matemática que te están escondiendo</div>
-  <h2 class="sec-title reveal d1">Hacés 10 viajes por día.<br>Uber se queda con <span class="hl">3 de ellos.</span></h2>
-  <p class="sec-sub reveal d1">No es una opinión. Es lo que pasa con cada viaje que hacés por Uber, Didi o Cabify.</p>
+  <div class="sec-eyebrow reveal">El producto</div>
+  <h2 class="sec-title reveal d1">Todo lo que necesitás<br><span class="hl">en un solo lugar.</span></h2>
+  <p class="sec-sub reveal d1">Sin apps nuevas, sin configuraciones. Todo por WhatsApp, todo controlado por vos.</p>
 
-  <div class="math-box reveal d2">
-    <div class="math-col math-bad">
-      <div class="math-label">Lo que paga el cliente</div>
-      <div class="math-amount">$3.000</div>
-      <div class="math-desc">Tarifa del viaje</div>
-    </div>
-    <div class="math-arrow">→</div>
-    <div class="math-col math-good">
-      <div class="math-label">Lo que te llega a vos</div>
-      <div class="math-amount">$2.100</div>
-      <div class="math-desc">Después del 30% de Uber</div>
-    </div>
-  </div>
-  <p class="math-note reveal d3">En un mes con 200 viajes: <strong>$180.000 que no te llegan.</strong> Con RemisApp Solo te quedás con todo — y podés ver el precio de Uber como referencia para cobrar igual o más.</p>
+  <div class="showcase reveal d2">
+    <!-- TABS -->
+    <div class="showcase-tabs">
+      <div class="showcase-eyebrow">Funcionalidades</div>
 
-  <div style="height:56px"></div>
+      <div class="stab active" data-panel="0">
+        <div class="stab-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></div>
+        <div class="stab-title">Tu link público</div>
+        <div class="stab-desc">Una URL tuya que compartís donde quieras. Cualquiera que la abra puede pedirte un viaje directo.</div>
+        <div class="stab-prog" id="stprog-0"></div>
+      </div>
 
-  <div class="problem-grid">
-    <div class="problem-card reveal d1">
-      <div class="problem-icon">🚫</div>
-      <div class="problem-title">Te pueden banear sin aviso</div>
-      <p class="problem-desc">Una queja, un error del sistema, una política nueva. Perdiste tu fuente de ingresos de un día para el otro. Sin explicación, sin apelación.</p>
-      <div class="problem-stat">Sin aviso</div>
+      <div class="stab" data-panel="1">
+        <div class="stab-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+        <div class="stab-title">Bot que opera solo</div>
+        <div class="stab-desc">Toma el pedido, confirma el viaje y te avisa. El cliente no necesita esperarte.</div>
+        <div class="stab-prog" id="stprog-1"></div>
+      </div>
+
+      <div class="stab" data-panel="2">
+        <div class="stab-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
+        <div class="stab-title">Precio referencia Uber</div>
+        <div class="stab-desc">El sistema consulta cuánto cobraría Uber. Vos decidís si cobrar igual, más o menos.</div>
+        <div class="stab-prog" id="stprog-2"></div>
+      </div>
+
+      <div class="stab" data-panel="3">
+        <div class="stab-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="10" r="3"/><path d="M12 2a8 8 0 0 0-8 8c0 5.4 7.1 12.3 7.7 12.9a.5.5 0 0 0 .6 0C12.9 22.3 20 15.4 20 10a8 8 0 0 0-8-8z"/></svg></div>
+        <div class="stab-title">Tracking en tiempo real</div>
+        <div class="stab-desc">El cliente ve dónde estás. Se ve como Uber, sin que vos hagas nada.</div>
+        <div class="stab-prog" id="stprog-3"></div>
+      </div>
     </div>
-    <div class="problem-card reveal d2">
-      <div class="problem-icon">👤</div>
-      <div class="problem-title">Los clientes no son tuyos</div>
-      <p class="problem-desc">Viajaste con el mismo pasajero 50 veces. Pero si mañana no usás Uber, no podés contactarlo. La relación es de la plataforma, no tuya.</p>
-      <div class="problem-stat">0 fidelización</div>
+
+    <!-- PREVIEWS -->
+    <div class="showcase-preview">
+
+      <div class="spanel active" id="spanel-0">
+        <div class="mock-browser">
+          <div class="mock-bar">
+            <span class="mock-dot r"></span><span class="mock-dot y"></span><span class="mock-dot g"></span>
+            <span class="mock-url-bar">remisapp.link/marcelo</span>
+          </div>
+          <div class="mock-profile-hdr">
+            <div class="mock-profile-av">MG</div>
+            <div class="mock-profile-name">Marcelo García</div>
+            <div class="mock-profile-city">Rosario, Santa Fe</div>
+            <div class="mock-profile-online"><span class="mock-online-dot"></span> Disponible ahora</div>
+          </div>
+          <div class="mock-profile-body">
+            <div class="mock-pbtn mock-pbtn-wa">💬 Pedir viaje por WhatsApp</div>
+            <div class="mock-pbtn mock-pbtn-p">💰 Consultar precio primero</div>
+            <div class="mock-link-pill">remisapp.link/marcelo</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="spanel" id="spanel-1">
+        <div class="mock-wa">
+          <div class="mock-wa-hdr">
+            <div class="mock-wa-av">RA</div>
+            <div><div class="mock-wa-name">RemisApp Bot</div><div class="mock-wa-sub">en línea</div></div>
+          </div>
+          <div class="mock-wa-body">
+            <div class="mwmsg mwmi"><div class="mwmb">Hola 👋 ¿Desde dónde salís?</div><div class="mwmt">10:32</div></div>
+            <div class="mwmsg mwmo"><div class="mwmb">San Martín 450</div><div class="mwmt">10:32</div></div>
+            <div class="mwmsg mwmi"><div class="mwmb">¿A dónde vas?</div><div class="mwmt">10:33</div></div>
+            <div class="mwmsg mwmo"><div class="mwmb">Terminal de ómnibus</div><div class="mwmt">10:33</div></div>
+            <div class="mwmsg mwmi"><div class="mwmb">✅ <strong>Pedido confirmado</strong><br>Marcelo llega en ~8 min.<br>Precio: $2.400</div><div class="mwmt">10:34</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="spanel" id="spanel-2">
+        <div class="mock-price">
+          <div class="mock-price-badge">
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+            Referencia de precio activa
+          </div>
+          <div class="mock-prow">
+            <div class="mock-plabel">Viaje por Uber</div>
+            <div class="mock-pamount bad">$2.800</div>
+            <div class="mock-psub" style="color:var(--rojo)">Uber se queda $840</div>
+          </div>
+          <div class="mock-prow">
+            <div class="mock-plabel">Tu precio con RemisApp</div>
+            <div class="mock-pamount good">$2.800</div>
+            <div class="mock-psub" style="color:var(--verde)">Tuyo el 100% ✓</div>
+          </div>
+          <div class="mock-ptimer">
+            <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            Actualizado hace 2 seg
+          </div>
+        </div>
+      </div>
+
+      <div class="spanel" id="spanel-3">
+        <div class="mock-tracking">
+          <div class="mock-map-area">
+            <div class="mock-map-grid"></div>
+            <div class="mock-map-road-h"></div>
+            <div class="mock-map-road-v"></div>
+            <div class="mock-map-car"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#070A08" stroke-width="2.5"><polygon points="3 11 22 2 13 21 11 13 3 11"/></svg></div>
+            <div class="mock-map-pin"></div>
+          </div>
+          <div class="mock-track-body">
+            <div class="mock-track-status">
+              <span class="mock-track-live"></span>
+              <span class="mock-track-label">En camino</span>
+              <span class="mock-track-eta">~8 min</span>
+            </div>
+            <div class="mock-track-driver">
+              <div class="mock-track-av">MG</div>
+              <div><div class="mock-track-name">Marcelo G.</div><div class="mock-track-sub">Toyota Corolla · ABC 123</div></div>
+              <div class="mock-track-btn">Ver mapa</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
     </div>
-    <div class="problem-card reveal d3">
-      <div class="problem-icon">💸</div>
-      <div class="problem-title">El precio lo pone la plataforma</div>
-      <p class="problem-desc">Surge pricing, tarifas dinámicas, descuentos al cliente que te los cobran a vos. Nunca sabés exactamente cuánto vas a ganar por viaje.</p>
-      <div class="problem-stat">−30% promedio</div>
-    </div>
-  </div>
   </div>
 </div>
 </section>
@@ -1313,6 +1477,41 @@ document.querySelectorAll('.feat-card:not(.coming)').forEach(card => {
     if (!isOpen) card.classList.add('open');
   });
 });
+
+// Feature showcase
+(function(){
+  const INTERVAL = 3800;
+  const stabs = document.querySelectorAll('.stab');
+  const spanels = document.querySelectorAll('.spanel');
+  let current = 0, timer = null;
+
+  function activate(idx) {
+    stabs.forEach((t, i) => {
+      t.classList.toggle('active', i === idx);
+      const p = document.getElementById('stprog-' + i);
+      if (p) { p.style.transition = 'none'; p.style.width = '0'; }
+    });
+    spanels.forEach((p, i) => p.classList.toggle('active', i === idx));
+    current = idx;
+    requestAnimationFrame(() => {
+      const p = document.getElementById('stprog-' + idx);
+      if (p) { p.style.transition = 'width ' + INTERVAL + 'ms linear'; p.style.width = '100%'; }
+    });
+  }
+
+  function next() { activate((current + 1) % stabs.length); }
+
+  stabs.forEach((tab, i) => {
+    tab.addEventListener('click', () => {
+      clearInterval(timer);
+      activate(i);
+      timer = setInterval(next, INTERVAL);
+    });
+  });
+
+  activate(0);
+  timer = setInterval(next, INTERVAL);
+})();
 </script>
 </body>
 </html>
