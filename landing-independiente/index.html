@@ -682,6 +682,12 @@ footer{border-top:1px solid var(--borde);padding:40px;max-width:1180px;margin:0 
   .stab-desc{display:none}
   .showcase-preview{min-height:320px}
 }
+/* ── STEPS CTA ── */
+.steps-cta{display:flex;flex-direction:column;align-items:center;gap:14px;margin-top:36px;padding-top:32px;border-top:1px solid var(--borde);text-align:center}
+.steps-cta .btn-primary{font-size:16px;padding:14px 32px}
+.steps-cta-alt{display:inline-flex;align-items:center;gap:7px;font-size:13px;color:var(--gris2);border:1px solid var(--borde);padding:9px 18px;border-radius:var(--r999);transition:all .18s}
+.steps-cta-alt:hover{border-color:var(--verde-border);color:var(--verde)}
+.steps-cta-trust{font-size:11.5px;color:var(--gris);letter-spacing:.03em}
 /* ── DUAL PHONE ANIMATION ── */
 .dual-phones{display:flex;align-items:flex-start;justify-content:center;gap:36px;margin-top:48px}
 .dphone-col{display:flex;flex-direction:column;align-items:center;gap:12px}
@@ -1273,38 +1279,47 @@ footer{border-top:1px solid var(--borde);padding:40px;max-width:1180px;margin:0 
 <section class="section" id="como-funciona">
 <div class="container">
   <div class="section-shell surface">
-  <div class="sec-eyebrow reveal">Cómo funciona</div>
-  <h2 class="sec-title reveal d1">En 15 minutos tenés<br>tu propio sistema.</h2>
-  <p class="sec-sub reveal d1">Sin técnicos, sin configuraciones complejas. Si sabés usar WhatsApp, sabés usar RemisApp Solo.</p>
+  <div class="sec-eyebrow reveal">Activación</div>
+  <h2 class="sec-title reveal d1">Empezás en<br><span class="hl">menos de 15 minutos.</span></h2>
+  <p class="sec-sub reveal d1">Sin técnicos, sin instalaciones. Solo necesitás un celular y WhatsApp.</p>
 
   <div class="steps-wrap reveal d2">
     <div class="step">
       <div class="step-n">01</div>
-      <div class="step-icon">🔗</div>
-      <div class="step-title">Creás tu perfil y tu link</div>
-      <p class="step-desc">Elegís tu nombre de link — tipo remisapp.link/marcelo — y configurás tu auto, ciudad y disponibilidad.</p>
+      <div class="step-icon">👤</div>
+      <div class="step-title">Creás tu cuenta</div>
+      <p class="step-desc">Te registrás con tu nombre, ciudad y número de WhatsApp. Sin tarjeta de crédito, sin compromisos.</p>
       <div class="step-arr">→</div>
     </div>
     <div class="step">
       <div class="step-n">02</div>
-      <div class="step-icon">📢</div>
-      <div class="step-title">Compartís el link</div>
-      <p class="step-desc">En Instagram, grupos de WhatsApp, familia, clientes anteriores. Cualquiera que lo toque puede pedirte un viaje.</p>
+      <div class="step-icon">🔗</div>
+      <div class="step-title">Elegís tu link</div>
+      <p class="step-desc">Configurás tu link propio — tipo remisapp.link/marcelo — y subís foto de perfil. Listo, tu página ya está activa.</p>
       <div class="step-arr">→</div>
     </div>
     <div class="step">
       <div class="step-n">03</div>
-      <div class="step-icon">💬</div>
-      <div class="step-title">El cliente pide por WhatsApp</div>
-      <p class="step-desc">El bot toma el pedido, confirma el viaje y vos recibís la notificación. Nada más, nada menos.</p>
+      <div class="step-icon">📲</div>
+      <div class="step-title">Compartís y pegás el QR</div>
+      <p class="step-desc">Mandás el link por WhatsApp, lo ponés en tu bio de Instagram y pegás el QR en tu auto. Tus clientes ya pueden pedirte.</p>
       <div class="step-arr">→</div>
     </div>
     <div class="step">
       <div class="step-n">04</div>
-      <div class="step-icon">💰</div>
-      <div class="step-title">Cobrás el 100%</div>
-      <p class="step-desc">Efectivo, transferencia o Mercado Pago. Sin comisiones, sin plataformas en el medio, sin sorpresas.</p>
+      <div class="step-icon">🚗</div>
+      <div class="step-title">Recibís tu primer pedido</div>
+      <p class="step-desc">El bot atiende a tus clientes. Vos recibís la notificación, aceptás el viaje y cobrás el 100%. Sin plataformas en el medio.</p>
     </div>
+  </div>
+
+  <div class="steps-cta reveal d3">
+    <a href="https://remisapp2-production.up.railway.app/empezar?kind=independiente" class="btn-primary">Crear mi cuenta gratis →</a>
+    <a href="https://calendly.com/remisapp-contacto/30min" class="steps-cta-alt">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+      ¿Tenés dudas? Agendá una llamada
+    </a>
+    <p class="steps-cta-trust">Sin tarjeta de crédito · Sin contrato · 7 días de prueba gratis</p>
   </div>
   </div>
 </div>
