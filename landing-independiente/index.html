@@ -332,11 +332,14 @@ nav{
 /* feature items */
 .tq-feat{display:inline-flex;align-items:center;gap:11px;min-height:72px;padding:0 30px;border-right:1px solid rgba(255,255,255,.05);font-size:14px;font-weight:650;color:var(--gris2);line-height:1;white-space:nowrap;flex-shrink:0}
 .tq-dot{width:6px;height:6px;border-radius:50%;background:rgba(61,204,142,.68);box-shadow:0 0 0 4px rgba(61,204,142,.08);flex-shrink:0}
-.tq-icon{width:24px;height:24px;border-radius:8px;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0}
+.tq-icon{width:24px;height:24px;border-radius:8px;display:inline-flex;align-items:center;justify-content:center;overflow:hidden;flex-shrink:0}
 .tq-icon svg{display:block}
+.tq-icon-img{display:block;flex-shrink:0}
 .tq-icon-wa{background:#25D366;color:#fff}
-.tq-icon-mp{background:#009EE3;color:#fff}
-.tq-icon-arg{background:linear-gradient(180deg,#7fd7ff 0 33%,#ffffff 33% 66%,#7fd7ff 66% 100%);border:1px solid rgba(127,215,255,.28);color:#d8a82f}
+.tq-icon-mp{background:#fff;border:1px solid rgba(0,158,227,.2)}
+.tq-icon-mp .tq-icon-img{width:42px;height:24px;object-fit:cover;object-position:left center;transform:translateX(-1px)}
+.tq-icon-arg{background:rgba(255,255,255,.04);border:1px solid rgba(127,215,255,.18)}
+.tq-icon-arg .tq-icon-img{width:10px;height:18px;object-fit:contain}
 @keyframes marqueeScroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
 
 /* ── VS UBER ── */
@@ -867,7 +870,7 @@ footer{border-top:1px solid var(--borde);padding:40px;max-width:1180px;margin:0 
     <div class="tq-feat"><span class="tq-dot"></span>Tracking en tiempo real</div>
     <div class="tq-feat"><span class="tq-dot"></span>Viajes programados</div>
     <div class="tq-feat">
-      <span class="tq-icon tq-icon-mp" aria-hidden="true"><svg width="17" height="17" viewBox="0 0 28 28" fill="none"><ellipse cx="14" cy="14" rx="11" ry="7.5" fill="#fff"/><path d="M8 15c1.3-1.6 2.9-2.4 4.6-2.4 1.1 0 2.1.5 2.9 1.4l.5.5.5-.5c.8-.9 1.8-1.4 2.9-1.4 1.7 0 3.3.8 4.6 2.4" stroke="#009EE3" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/><path d="M10 12l2.5 2m5.5-2L15.5 14" stroke="#009EE3" stroke-width="1.9" stroke-linecap="round"/></svg></span>
+      <span class="tq-icon tq-icon-mp" aria-hidden="true"><img class="tq-icon-img" src="assets/brand/mercadopago/Mercado%20Pago%20Logo%20Vector.svg" alt=""></span>
       Cobro por Mercado Pago
     </div>
 
@@ -878,7 +881,7 @@ footer{border-top:1px solid var(--borde);padding:40px;max-width:1180px;margin:0 
       Pedidos confirmados por WhatsApp
     </div>
     <div class="tq-feat">
-      <span class="tq-icon tq-icon-arg" aria-hidden="true"><svg width="15" height="15" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="2.1" fill="currentColor"/><path d="M12 5.2v2.2M12 16.6v2.2M18.8 12h-2.2M7.4 12H5.2M16.9 7.1l-1.5 1.5M8.6 15.4l-1.5 1.5M16.9 16.9l-1.5-1.5M8.6 8.6L7.1 7.1" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg></span>
+      <span class="tq-icon tq-icon-arg" aria-hidden="true"><img class="tq-icon-img" src="assets/brand/argentina/mapa-de-argentina-seeklogo.png" alt=""></span>
       Disponible en toda Argentina
     </div>
 
@@ -895,7 +898,7 @@ footer{border-top:1px solid var(--borde);padding:40px;max-width:1180px;margin:0 
     <div class="tq-feat"><span class="tq-dot"></span>Tracking en tiempo real</div>
     <div class="tq-feat"><span class="tq-dot"></span>Viajes programados</div>
     <div class="tq-feat">
-      <span class="tq-icon tq-icon-mp" aria-hidden="true"><svg width="17" height="17" viewBox="0 0 28 28" fill="none"><ellipse cx="14" cy="14" rx="11" ry="7.5" fill="#fff"/><path d="M8 15c1.3-1.6 2.9-2.4 4.6-2.4 1.1 0 2.1.5 2.9 1.4l.5.5.5-.5c.8-.9 1.8-1.4 2.9-1.4 1.7 0 3.3.8 4.6 2.4" stroke="#009EE3" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/><path d="M10 12l2.5 2m5.5-2L15.5 14" stroke="#009EE3" stroke-width="1.9" stroke-linecap="round"/></svg></span>
+      <span class="tq-icon tq-icon-mp" aria-hidden="true"><img class="tq-icon-img" src="assets/brand/mercadopago/Mercado%20Pago%20Logo%20Vector.svg" alt=""></span>
       Cobro por Mercado Pago
     </div>
 
@@ -906,7 +909,7 @@ footer{border-top:1px solid var(--borde);padding:40px;max-width:1180px;margin:0 
       Pedidos confirmados por WhatsApp
     </div>
     <div class="tq-feat">
-      <span class="tq-icon tq-icon-arg" aria-hidden="true"><svg width="15" height="15" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="2.1" fill="currentColor"/><path d="M12 5.2v2.2M12 16.6v2.2M18.8 12h-2.2M7.4 12H5.2M16.9 7.1l-1.5 1.5M8.6 15.4l-1.5 1.5M16.9 16.9l-1.5-1.5M8.6 8.6L7.1 7.1" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg></span>
+      <span class="tq-icon tq-icon-arg" aria-hidden="true"><img class="tq-icon-img" src="assets/brand/argentina/mapa-de-argentina-seeklogo.png" alt=""></span>
       Disponible en toda Argentina
     </div>
 
