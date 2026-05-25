@@ -682,6 +682,39 @@ footer{border-top:1px solid var(--borde);padding:40px;max-width:1180px;margin:0 
   .stab-desc{display:none}
   .showcase-preview{min-height:320px}
 }
+/* ── DUAL PHONE ANIMATION ── */
+.dual-phones{display:flex;align-items:flex-start;justify-content:center;gap:36px;margin-top:48px}
+.dphone-col{display:flex;flex-direction:column;align-items:center;gap:12px}
+.dphone-tag{display:inline-flex;align-items:center;gap:7px;font-family:'Barlow Condensed',sans-serif;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--gris2);background:var(--bg2);border:1px solid var(--borde);padding:5px 12px;border-radius:999px}
+.dphone-tag svg{flex-shrink:0;color:var(--verde)}
+.dphone-frame{width:200px;background:#111;border-radius:36px;border:2px solid #252525;padding:12px 8px 16px;box-shadow:0 0 0 1px #0a0a0a,0 32px 64px rgba(0,0,0,.75),inset 0 1px 0 rgba(255,255,255,.07)}
+.dphone-frame--driver{border-color:#1e2e1e;box-shadow:0 0 0 1px #0a120a,0 32px 64px rgba(61,204,142,.13),inset 0 1px 0 rgba(255,255,255,.07)}
+.dphone-notch{width:54px;height:5px;background:#1c1c1c;border-radius:3px;margin:0 auto 9px}
+.dphone-screen{background:#ECE5DD;border-radius:24px;overflow:hidden;display:flex;flex-direction:column;min-height:370px}
+.dwa-hdr{background:#075E54;padding:8px 10px;display:flex;align-items:center;gap:7px;flex-shrink:0}
+.dwa-av{width:26px;height:26px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.dwa-name{font-size:10.5px;font-weight:700;color:#fff;line-height:1.2}
+.dwa-sub{font-size:8px;color:#9FE1CB}
+.dwa-body{padding:8px 7px;display:flex;flex-direction:column;gap:5px;flex:1}
+.dwm{padding:6px 9px;border-radius:9px;font-size:10px;line-height:1.5;color:#111;max-width:85%;opacity:0;transform:translateY(7px);transition:opacity .38s ease,transform .38s ease}
+.dwm.visible{opacity:1;transform:none}
+.dwm-in{background:#fff;border-radius:2px 9px 9px 9px;align-self:flex-start}
+.dwm-out{background:#DCF8C6;border-radius:9px 2px 9px 9px;align-self:flex-end}
+.dwm-confirm{font-weight:600}
+.dwm-btns{display:flex;flex-direction:column;gap:4px;padding:0 2px;opacity:0;transform:translateY(7px);transition:opacity .38s ease,transform .38s ease}
+.dwm-btns.visible{opacity:1;transform:none}
+.dwm-btn-ok{background:#3DCC8E;color:#070A08;border-radius:8px;padding:7px 10px;font-size:10px;font-weight:700;text-align:center}
+.dwm-btn-no{background:rgba(224,75,73,.12);color:#E04B49;border:1px solid rgba(224,75,73,.28);border-radius:8px;padding:7px 10px;font-size:10px;font-weight:700;text-align:center}
+.dphone-connector{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;padding-top:90px;flex-shrink:0}
+.dconn-dot{width:8px;height:8px;border-radius:50%;background:var(--verde);opacity:0;transition:opacity .28s,box-shadow .28s}
+.dconn-dot.lit{opacity:1;box-shadow:0 0 12px var(--verde)}
+.dconn-arrow{font-size:20px;color:var(--verde);opacity:.5;line-height:1}
+.dconn-label{font-size:9px;color:var(--gris);text-align:center;line-height:1.4;max-width:56px}
+@media(max-width:700px){
+  .dual-phones{flex-direction:column;align-items:center;gap:16px}
+  .dphone-connector{flex-direction:row;padding-top:0;gap:10px}
+  .dconn-arrow{transform:rotate(90deg)}
+}
 </style>
 </head>
 <body>
@@ -1163,11 +1196,71 @@ footer{border-top:1px solid var(--borde);padding:40px;max-width:1180px;margin:0 
 <!-- VIAJE REAL -->
 <section class="section" id="viaje-real">
 <div class="container">
-  <div class="sec-eyebrow reveal">Flujo completo</div>
-  <h2 class="sec-title reveal d1">Así se ve<br><span class="hl">un viaje real.</span></h2>
-  <p class="sec-sub reveal d1">Desde que el pasajero escanea el QR hasta que vos cobrás — sin apps, sin intermediarios, todo por WhatsApp.</p>
-  <div class="reveal d2">
-    <img src="assets/steps-how.png" alt="Cómo funciona RemisApp Solo paso a paso" class="section-img">
+  <div class="sec-eyebrow reveal">En la práctica</div>
+  <h2 class="sec-title reveal d1">El cliente pide.<br><span class="hl">Vos recibís y manejás.</span></h2>
+  <p class="sec-sub reveal d1">Todo por WhatsApp. En tiempo real. Sin apps, sin intermediarios.</p>
+
+  <div class="dual-phones reveal d2">
+
+    <!-- PASSENGER PHONE -->
+    <div class="dphone-col">
+      <div class="dphone-tag">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        Tu cliente
+      </div>
+      <div class="dphone-frame">
+        <div class="dphone-notch"></div>
+        <div class="dphone-screen">
+          <div class="dwa-hdr">
+            <div class="dwa-av"><svg width="14" height="14" viewBox="0 0 24 24" fill="#fff"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></div>
+            <div><div class="dwa-name">RemisApp Bot</div><div class="dwa-sub">en línea</div></div>
+          </div>
+          <div class="dwa-body">
+            <div class="dwm dwm-in pm">Hola 👋 ¿Desde dónde salís?</div>
+            <div class="dwm dwm-out pm">San Martín 450</div>
+            <div class="dwm dwm-in pm">¿A dónde vas?</div>
+            <div class="dwm dwm-out pm">Aeroparque</div>
+            <div class="dwm dwm-in pm">Precio estimado: <strong>$2.400</strong><br>¿Confirmás el viaje?</div>
+            <div class="dwm dwm-out pm">Sí, confirmo ✓</div>
+            <div class="dwm dwm-in pm dwm-confirm">✅ Pedido confirmado<br>Tu chofer llega en ~8 min</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CONNECTOR -->
+    <div class="dphone-connector">
+      <div class="dconn-dot" id="dconn-dot"></div>
+      <div class="dconn-arrow">→</div>
+      <div class="dconn-label">tiempo real</div>
+    </div>
+
+    <!-- DRIVER PHONE -->
+    <div class="dphone-col">
+      <div class="dphone-tag">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="3"/></svg>
+        Vos (chofer)
+      </div>
+      <div class="dphone-frame dphone-frame--driver">
+        <div class="dphone-notch"></div>
+        <div class="dphone-screen">
+          <div class="dwa-hdr">
+            <div class="dwa-av"><svg width="14" height="14" viewBox="0 0 24 24" fill="#fff"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></div>
+            <div><div class="dwa-name">RemisApp Bot</div><div class="dwa-sub">en línea</div></div>
+          </div>
+          <div class="dwa-body">
+            <div class="dwm dwm-in dm">🚗 <strong>Nuevo pedido</strong><br><span style="font-size:9.5px;color:#444">Origen: San Martín 450<br>Destino: Aeroparque<br>Precio: $2.400</span></div>
+            <div class="dwm-btns dm">
+              <div class="dwm-btn-ok">✓ Aceptar viaje</div>
+              <div class="dwm-btn-no">✗ Rechazar</div>
+            </div>
+            <div class="dwm dwm-out dm">Acepto ✓</div>
+            <div class="dwm dwm-in dm dwm-confirm">✅ ¡Viaje aceptado!<br><span style="font-size:9.5px;color:#444">Le avisamos al pasajero.<br>¡Buen viaje! 🚗</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </div>
 </div>
 </section>
@@ -1716,6 +1809,34 @@ document.querySelectorAll('.feat-card:not(.coming)').forEach(card => {
     if (!isOpen) card.classList.add('open');
   });
 });
+
+// Dual phone animation
+(function(){
+  const pms = document.querySelectorAll('.pm');
+  const dms = document.querySelectorAll('.dm');
+  const dot  = document.getElementById('dconn-dot');
+  // passenger message delays (ms)
+  const pD = [400, 1600, 2700, 3800, 5100, 6500, 7700];
+  // driver message delays — dm[0] fires at same moment as pm[6]
+  const dD = [7700, 9100, 10600, 12100];
+  const CYCLE = 15800;
+
+  function run() {
+    pms.forEach(el => el.classList.remove('visible'));
+    dms.forEach(el => el.classList.remove('visible'));
+    if (dot) dot.classList.remove('lit');
+    pD.forEach((d, i) => { if (pms[i]) setTimeout(() => pms[i].classList.add('visible'), d); });
+    dD.forEach((d, i) => { if (dms[i]) setTimeout(() => dms[i].classList.add('visible'), d); });
+    // flash connector dot when both sides sync
+    if (dot) setTimeout(() => {
+      dot.classList.add('lit');
+      setTimeout(() => dot.classList.remove('lit'), 700);
+    }, 7700);
+  }
+
+  run();
+  setInterval(run, CYCLE);
+})();
 
 // Feature showcase
 (function(){
