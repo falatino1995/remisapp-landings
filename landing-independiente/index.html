@@ -697,6 +697,10 @@ footer{border-top:1px solid var(--borde);padding:40px;max-width:1180px;margin:0 
 .steps-cta-alt{display:inline-flex;align-items:center;gap:7px;font-size:13px;color:var(--gris2);border:1px solid var(--borde);padding:9px 18px;border-radius:var(--r999);transition:all .18s}
 .steps-cta-alt:hover{border-color:var(--verde-border);color:var(--verde)}
 .steps-cta-trust{font-size:11.5px;color:var(--gris);letter-spacing:.03em}
+/* ── PRACTICAL VIDEO ── */
+.practical-video{max-width:360px;margin:28px auto 6px;padding:10px;border-radius:28px;background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.015));border:1px solid rgba(61,204,142,.18);box-shadow:0 28px 70px rgba(0,0,0,.28)}
+.practical-video video{display:block;width:100%;height:auto;border-radius:20px;background:#050705}
+.practical-video-note{margin-top:10px;font-size:12px;line-height:1.5;color:var(--gris2);text-align:center}
 /* ── DUAL PHONE ANIMATION ── */
 .dual-phones{display:flex;align-items:flex-start;justify-content:center;gap:42px;margin-top:48px}
 .dphone-col{display:flex;flex-direction:column;align-items:center;gap:12px;flex:0 0 220px}
@@ -731,6 +735,7 @@ footer{border-top:1px solid var(--borde);padding:40px;max-width:1180px;margin:0 
   .dual-phones{flex-direction:column;align-items:center;gap:16px}
   .dphone-connector{flex-direction:row;padding-top:0;gap:10px}
   .dconn-arrow{transform:rotate(90deg)}
+  .practical-video{max-width:300px;margin-top:24px}
 }
 </style>
 </head>
@@ -1243,6 +1248,13 @@ footer{border-top:1px solid var(--borde);padding:40px;max-width:1180px;margin:0 
   <div class="sec-eyebrow reveal">En la práctica</div>
   <h2 class="sec-title reveal d1">El cliente pide.<br><span class="hl">Vos recibís y manejás.</span></h2>
   <p class="sec-sub reveal d1">Todo por WhatsApp. En tiempo real. Sin apps, sin intermediarios.</p>
+
+  <div class="practical-video reveal d2">
+    <video autoplay muted loop playsinline preload="metadata">
+      <source src="assets/video/how-it-works.mp4" type="video/mp4">
+    </video>
+    <div class="practical-video-note">Un ejemplo corto del flujo completo: cliente escribe, el bot cotiza y el viaje queda confirmado.</div>
+  </div>
 
   <div class="dual-phones reveal d2">
 
