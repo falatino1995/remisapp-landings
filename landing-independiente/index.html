@@ -1222,7 +1222,8 @@ footer{border-top:1px solid var(--borde);padding:40px;max-width:1180px;margin:0 
             <div class="dwm dwm-out pm">Aeroparque</div>
             <div class="dwm dwm-in pm">Precio estimado: <strong>$2.400</strong><br>¿Confirmás el viaje?</div>
             <div class="dwm dwm-out pm">Sí, confirmo ✓</div>
-            <div class="dwm dwm-in pm dwm-confirm">✅ Pedido confirmado<br>Tu chofer llega en ~8 min</div>
+            <div class="dwm dwm-in pm" style="color:#888;font-style:italic;font-size:9.5px">🔄 Buscando chofer disponible...</div>
+            <div class="dwm dwm-in pm dwm-confirm">✅ <strong>¡Marcelo aceptó tu viaje!</strong><br>Llega en ~8 min<br><span style="color:#075E54;font-size:9.5px">🗺️ Seguí el recorrido en vivo →</span></div>
           </div>
         </div>
       </div>
@@ -1255,7 +1256,8 @@ footer{border-top:1px solid var(--borde);padding:40px;max-width:1180px;margin:0 
               <div class="dwm-btn-no">✗ Rechazar</div>
             </div>
             <div class="dwm dwm-out dm">Acepto ✓</div>
-            <div class="dwm dwm-in dm dwm-confirm">✅ ¡Viaje aceptado!<br><span style="font-size:9.5px;color:#444">Le avisamos al pasajero.<br>¡Buen viaje! 🚗</span></div>
+            <div class="dwm dwm-in dm dwm-confirm">✅ ¡Viaje aceptado!<br><span style="font-size:9.5px;color:#444">Ya le avisamos al pasajero.</span></div>
+            <div class="dwm dwm-in dm"><span style="font-size:9.5px;color:#444">📍 Compartí tu ubicación:<br></span><span style="color:#075E54;font-size:9.5px">Enviar ubicación en vivo →</span></div>
           </div>
         </div>
       </div>
@@ -1815,11 +1817,19 @@ document.querySelectorAll('.feat-card:not(.coming)').forEach(card => {
   const pms = document.querySelectorAll('.pm');
   const dms = document.querySelectorAll('.dm');
   const dot  = document.getElementById('dconn-dot');
-  // passenger message delays (ms)
-  const pD = [400, 1600, 2700, 3800, 5100, 6500, 7700];
-  // driver message delays — dm[0] fires at same moment as pm[6]
-  const dD = [7700, 9100, 10600, 12100];
-  const CYCLE = 15800;
+  // 8 passenger msgs: 0-5 = conversation, 6 = "buscando...", 7 = confirmed (fires after driver accepts)
+  const pD = [400, 1600, 2700, 3800, 5100, 6400, 7100, 11600];
+  // 5 driver msgs: 0 = notification (fires when passenger confirms), 1 = buttons, 2 = accepts, 3 = confirmed, 4 = nav link
+  const dD = [7100, 8600, 10200, 11600, 13100];
+  const CYCLE = 17200;
+
+  function flashDot(delay) {
+    if (!dot) return;
+    setTimeout(() => {
+      dot.classList.add('lit');
+      setTimeout(() => dot.classList.remove('lit'), 700);
+    }, delay);
+  }
 
   function run() {
     pms.forEach(el => el.classList.remove('visible'));
@@ -1827,11 +1837,8 @@ document.querySelectorAll('.feat-card:not(.coming)').forEach(card => {
     if (dot) dot.classList.remove('lit');
     pD.forEach((d, i) => { if (pms[i]) setTimeout(() => pms[i].classList.add('visible'), d); });
     dD.forEach((d, i) => { if (dms[i]) setTimeout(() => dms[i].classList.add('visible'), d); });
-    // flash connector dot when both sides sync
-    if (dot) setTimeout(() => {
-      dot.classList.add('lit');
-      setTimeout(() => dot.classList.remove('lit'), 700);
-    }, 7700);
+    flashDot(7100);  // sync 1: passenger confirms → driver notified
+    flashDot(11600); // sync 2: driver accepts → passenger gets confirmation
   }
 
   run();
