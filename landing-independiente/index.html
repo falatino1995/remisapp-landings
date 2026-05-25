@@ -698,6 +698,11 @@ footer{border-top:1px solid var(--borde);padding:40px;max-width:1180px;margin:0 
 .steps-cta-alt:hover{border-color:var(--verde-border);color:var(--verde)}
 .steps-cta-trust{font-size:11.5px;color:var(--gris);letter-spacing:.03em}
 /* ── DUAL PHONE ANIMATION ── */
+.flow-demo{display:flex;justify-content:center;margin-top:40px}
+.flow-demo-shell{position:relative;width:min(100%,360px);padding:12px;border-radius:34px;background:linear-gradient(180deg,rgba(61,204,142,.12),rgba(7,10,8,.92));border:1px solid rgba(61,204,142,.18);box-shadow:0 28px 72px rgba(0,0,0,.46),inset 0 1px 0 rgba(255,255,255,.06)}
+.flow-demo-shell::before{content:"";position:absolute;inset:14px 14px auto;height:1px;background:linear-gradient(90deg,transparent,rgba(255,255,255,.08),transparent)}
+.flow-demo-video{display:block;width:100%;aspect-ratio:9/16;object-fit:cover;border-radius:24px;background:#050806;box-shadow:inset 0 0 0 1px rgba(255,255,255,.04)}
+.flow-demo-note{margin-top:14px;text-align:center;font-size:11px;color:var(--gris);line-height:1.5}
 .dual-phones{display:flex;align-items:flex-start;justify-content:center;gap:42px;margin-top:48px}
 .dphone-col{display:flex;flex-direction:column;align-items:center;gap:12px;flex:0 0 220px}
 .dphone-tag{display:inline-flex;align-items:center;gap:7px;font-family:'Barlow Condensed',sans-serif;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--gris2);background:var(--bg2);border:1px solid var(--borde);padding:5px 12px;border-radius:999px}
@@ -728,6 +733,10 @@ footer{border-top:1px solid var(--borde);padding:40px;max-width:1180px;margin:0 
 .dconn-arrow{font-size:20px;color:var(--verde);opacity:.5;line-height:1}
 .dconn-label{font-size:9px;color:var(--gris);text-align:center;line-height:1.4;max-width:56px}
 @media(max-width:700px){
+  .flow-demo{margin-top:30px}
+  .flow-demo-shell{width:min(100%,320px);padding:10px;border-radius:28px}
+  .flow-demo-video{border-radius:20px}
+  .flow-demo-note{font-size:10.5px}
   .dual-phones{flex-direction:column;align-items:center;gap:16px}
   .dphone-connector{flex-direction:row;padding-top:0;gap:10px}
   .dconn-arrow{transform:rotate(90deg)}
@@ -1244,7 +1253,16 @@ footer{border-top:1px solid var(--borde);padding:40px;max-width:1180px;margin:0 
   <h2 class="sec-title reveal d1">El cliente pide.<br><span class="hl">Vos recibís y manejás.</span></h2>
   <p class="sec-sub reveal d1">Todo por WhatsApp. En tiempo real. Sin apps, sin intermediarios.</p>
 
-  <div class="dual-phones reveal d2">
+  <div class="flow-demo reveal d2">
+    <div class="flow-demo-shell">
+      <video class="flow-demo-video" autoplay muted loop playsinline preload="metadata" aria-label="Demostración del flujo de cliente y chofer en RemisApp Solo">
+        <source src="assets/video/dual-flow.mp4" type="video/mp4">
+      </video>
+      <div class="flow-demo-note">Un ejemplo real del ida y vuelta entre cliente y chofer, sincronizado en el mismo flujo.</div>
+    </div>
+  </div>
+
+  <div class="dual-phones reveal d3">
 
     <!-- PASSENGER PHONE -->
     <div class="dphone-col">
