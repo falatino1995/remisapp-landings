@@ -265,55 +265,7 @@ nav{
 .step{background:var(--bg2);padding:32px 22px;position:relative}
 .step:hover{background:var(--bg3)}
 .step-n{font-family:'Barlow Condensed',sans-serif;font-size:56px;font-weight:800;color:var(--verde);opacity:.2;line-height:1;letter-spacing:.02em;margin-bottom:16px}
-.step-icon{
-  position:relative;
-  width:58px;
-  height:58px;
-  border-radius:18px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  margin-bottom:16px;
-  background:
-    radial-gradient(circle at 30% 24%, rgba(255,255,255,.42), transparent 32%),
-    linear-gradient(145deg, rgba(255,255,255,.14), rgba(255,255,255,.03)),
-    linear-gradient(160deg, rgba(61,204,142,.24), rgba(16,26,20,.9));
-  border:1px solid rgba(61,204,142,.24);
-  box-shadow:
-    0 18px 34px rgba(0,0,0,.24),
-    inset 0 1px 0 rgba(255,255,255,.14),
-    inset 0 -10px 18px rgba(0,0,0,.2);
-  color:transparent;
-  font-size:0;
-}
-.step-icon::after{
-  content:'';
-  position:absolute;
-  inset:9px;
-  border-radius:14px;
-  background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,0));
-  pointer-events:none;
-}
-.step-icon::before{
-  position:relative;
-  z-index:1;
-  font-size:28px;
-  line-height:1;
-  transform:translateY(-1px);
-  filter:drop-shadow(0 6px 10px rgba(0,0,0,.2));
-}
-.step:nth-child(1) .step-icon::before{content:'\1F464'}
-.step:nth-child(2) .step-icon::before{content:'\1F517'}
-.step:nth-child(3) .step-icon::before{content:'\1F4F1'}
-.step:nth-child(4) .step-icon::before{content:'\1F697'}
-.step-glyph{
-  position:relative;
-  z-index:1;
-  font-size:28px;
-  line-height:1;
-  transform:translateY(-1px);
-  filter:drop-shadow(0 6px 10px rgba(0,0,0,.2));
-}
+.step-icon{width:40px;height:40px;background:var(--verde-bg);border:1px solid var(--verde-border);border-radius:var(--r12);display:flex;align-items:center;justify-content:center;margin-bottom:12px;font-size:18px}
 .step-title{font-family:'Barlow Condensed',sans-serif;font-size:18px;font-weight:700;letter-spacing:.03em;text-transform:uppercase;margin-bottom:8px;color:var(--blanco)}
 .step-desc{font-size:13px;font-weight:300;color:var(--gris);line-height:1.62}
 .step-arr{position:absolute;top:38px;right:-11px;width:22px;height:22px;background:var(--verde);border-radius:50%;display:flex;align-items:center;justify-content:center;z-index:2;color:#070A08;font-size:11px;font-weight:900}
@@ -333,58 +285,9 @@ nav{
 .profile-status{display:inline-flex;align-items:center;gap:6px;font-size:11.5px;color:#9FE1CB;margin-top:8px}
 .pdot{width:7px;height:7px;border-radius:50%;background:#3DCC8E}
 .profile-body{padding:18px}
-.profile-btn-wa,.profile-btn-p{display:inline-flex;align-items:center;justify-content:center;gap:10px}
 .profile-btn-wa{background:#3DCC8E;color:#070A08;border:none;border-radius:var(--r12);padding:13px;font-size:14.5px;font-weight:700;width:100%;cursor:pointer;margin-bottom:10px;transition:background .18s}
 .profile-btn-wa:hover{background:#52D89C}
 .profile-btn-p{background:var(--card);color:var(--gris2);border:1px solid var(--borde);border-radius:var(--r12);padding:11px;font-size:13.5px;width:100%;cursor:pointer}
-.profile-btn-wa::before,.profile-btn-p::before{
-  width:28px;
-  height:28px;
-  border-radius:10px;
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  flex-shrink:0;
-  font-size:16px;
-  line-height:1;
-  box-shadow:0 10px 18px rgba(0,0,0,.18), inset 0 1px 0 rgba(255,255,255,.22);
-}
-.profile-btn-wa::before{
-  content:'\1F4AC';
-  background:
-    radial-gradient(circle at 30% 24%, rgba(255,255,255,.48), transparent 34%),
-    linear-gradient(155deg, #7DF0B6, #28B273 78%);
-}
-.profile-btn-p::before{
-  content:'\1F4B0';
-  background:
-    radial-gradient(circle at 30% 24%, rgba(255,255,255,.38), transparent 34%),
-    linear-gradient(155deg, rgba(255,255,255,.16), rgba(255,255,255,.05));
-  border:1px solid rgba(255,255,255,.08);
-}
-.btn-glyph{
-  width:28px;
-  height:28px;
-  border-radius:10px;
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  flex-shrink:0;
-  font-size:16px;
-  line-height:1;
-  box-shadow:0 10px 18px rgba(0,0,0,.18), inset 0 1px 0 rgba(255,255,255,.22);
-}
-.btn-glyph--wa{
-  background:
-    radial-gradient(circle at 30% 24%, rgba(255,255,255,.48), transparent 34%),
-    linear-gradient(155deg, #7DF0B6, #28B273 78%);
-}
-.btn-glyph--price{
-  background:
-    radial-gradient(circle at 30% 24%, rgba(255,255,255,.38), transparent 34%),
-    linear-gradient(155deg, rgba(255,255,255,.16), rgba(255,255,255,.05));
-  border:1px solid rgba(255,255,255,.08);
-}
 
 /* ── FEATURES ── */
 .feat-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
