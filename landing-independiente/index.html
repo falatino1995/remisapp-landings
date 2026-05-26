@@ -691,6 +691,53 @@ footer{border-top:1px solid var(--borde);padding:40px;max-width:1180px;margin:0 
   .stab-desc{display:none}
   .showcase-preview{min-height:320px}
 }
+/* ── BOT EXPLAINER ── */
+.bot-wrap{display:flex;flex-direction:column;gap:48px;margin-top:48px}
+/* Part A — división */
+.bot-div{display:grid;grid-template-columns:1fr 56px 1fr;background:var(--card);border:1px solid var(--borde);border-radius:24px;overflow:hidden}
+.bot-div-col{padding:30px 26px}
+.bot-div-col--bot{background:var(--bg2);border-right:1px solid var(--borde)}
+.bot-div-sep{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;background:var(--bg2);border-right:1px solid var(--borde)}
+.bot-div-sep-arr{font-size:20px;color:var(--verde-border);line-height:1}
+.bot-div-sep-txt{font-size:8px;color:var(--gris);text-align:center;line-height:1.4;letter-spacing:.05em;text-transform:uppercase;max-width:36px}
+.bot-div-hdr{display:flex;align-items:center;gap:9px;margin-bottom:18px}
+.bot-div-ico{width:30px;height:30px;border-radius:9px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.bot-div-col--bot .bot-div-ico{background:var(--verde-bg);border:1px solid var(--verde-border);color:var(--verde)}
+.bot-div-col--you .bot-div-ico{background:rgba(255,255,255,.05);border:1px solid var(--borde);color:var(--gris2)}
+.bot-div-title{font-family:'Barlow Condensed',sans-serif;font-size:14px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--gris2)}
+.bot-div-list{list-style:none;display:flex;flex-direction:column;gap:9px;margin-bottom:18px}
+.bot-div-list li{display:flex;align-items:flex-start;gap:8px;font-size:13px;color:var(--gris2);line-height:1.45}
+.bot-div-list li .ck2{font-weight:700;flex-shrink:0;font-size:12px;margin-top:2px}
+.bot-div-col--bot .ck2{color:var(--verde)}
+.bot-div-col--you .ck2{color:var(--gris)}
+.bot-div-foot{padding-top:14px;border-top:1px solid var(--borde)}
+.bot-div-col--bot .bot-div-foot{font-family:'Barlow Condensed',sans-serif;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--verde)}
+.bot-div-col--you .bot-div-foot{font-size:13px;color:var(--gris2);font-style:italic;line-height:1.5}
+/* Part B — annotated chat */
+.bot-anno{display:grid;grid-template-columns:300px 1fr;gap:40px;align-items:start}
+.bca-phone{background:#ECE5DD;border-radius:16px;overflow:hidden;box-shadow:0 20px 50px rgba(0,0,0,.55)}
+.bca-hdr{background:#075E54;padding:10px 12px;display:flex;align-items:center;gap:8px}
+.bca-av{width:26px;height:26px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.bca-name{font-size:10.5px;font-weight:700;color:#fff;line-height:1.2}
+.bca-sub{font-size:8px;color:#9FE1CB}
+.bca-body{padding:9px 8px;display:flex;flex-direction:column;gap:5px}
+.bcm{padding:7px 10px;border-radius:9px;font-size:10.5px;line-height:1.5;color:#111;max-width:84%;position:relative}
+.bcm-in{background:#fff;border-radius:2px 9px 9px 9px;align-self:flex-start}
+.bcm-out{background:#DCF8C6;border-radius:9px 2px 9px 9px;align-self:flex-end}
+.bcm-n{position:absolute;top:-8px;right:-8px;width:17px;height:17px;border-radius:50%;background:var(--verde);color:#070A08;font-size:9px;font-weight:800;display:flex;align-items:center;justify-content:center;border:2px solid #ECE5DD}
+.bcm-t{font-size:8px;color:#aaa;margin-top:1px;text-align:right}
+.bca-notes{display:flex;flex-direction:column;gap:18px;padding-top:4px}
+.bca-note{display:flex;gap:12px;align-items:flex-start}
+.bca-note-num{width:24px;height:24px;border-radius:50%;background:var(--verde);color:#070A08;font-size:10px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px}
+.bca-note-title{font-size:13px;font-weight:700;color:var(--blanco);margin-bottom:3px}
+.bca-note-desc{font-size:12px;color:var(--gris);line-height:1.55}
+@media(max-width:860px){
+  .bot-div{grid-template-columns:1fr}
+  .bot-div-sep{flex-direction:row;padding:14px 20px;border-right:none;border-top:1px solid var(--borde);border-bottom:1px solid var(--borde)}
+  .bot-div-sep-arr{transform:rotate(90deg)}
+  .bot-anno{grid-template-columns:1fr}
+  .bca-phone{max-width:290px;margin:0 auto}
+}
 /* ── STEPS CTA ── */
 .steps-cta{display:flex;flex-direction:column;align-items:center;gap:14px;margin-top:36px;padding-top:32px;border-top:1px solid var(--borde);text-align:center}
 .steps-cta .btn-primary{font-size:16px;padding:14px 32px}
@@ -1323,6 +1370,163 @@ footer{border-top:1px solid var(--borde);padding:40px;max-width:1180px;margin:0 
     </div>
 
   </div>
+</div>
+</section>
+
+<!-- BOT EXPLICADO -->
+<section class="section" id="como-funciona-el-bot">
+<div class="container">
+  <div class="section-shell surface">
+  <div class="sec-eyebrow reveal">El bot en detalle</div>
+  <h2 class="sec-title reveal d1">Tu operador de viajes.<br><span class="hl">Que nunca duerme.</span></h2>
+  <p class="sec-sub reveal d1">El bot atiende, cotiza, confirma y trackea. Vos solo aceptás y manejás.</p>
+
+  <div class="bot-wrap reveal d2">
+
+    <!-- PART A: división de trabajo -->
+    <div class="bot-div">
+      <!-- columna izquierda: bot -->
+      <div class="bot-div-col bot-div-col--bot">
+        <div class="bot-div-hdr">
+          <div class="bot-div-ico">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><path d="M17 17h4M19 15v4"/></svg>
+          </div>
+          <span class="bot-div-title">El bot hace esto solo</span>
+        </div>
+        <ul class="bot-div-list">
+          <li><span class="ck2">✓</span>Atiende al cliente las 24 hs</li>
+          <li><span class="ck2">✓</span>Entiende origen y destino</li>
+          <li><span class="ck2">✓</span>Cotiza vs Uber en tiempo real</li>
+          <li><span class="ck2">✓</span>Confirma el viaje con el pasajero</li>
+          <li><span class="ck2">✓</span>Te avisa al instante</li>
+          <li><span class="ck2">✓</span>Manda el link de tracking</li>
+          <li><span class="ck2">✓</span>Gestiona viajes programados</li>
+          <li><span class="ck2">✓</span>Funciona los 365 días, sin descanso</li>
+        </ul>
+        <div class="bot-div-foot">8 tareas automáticas. Sin intervención tuya.</div>
+      </div>
+
+      <!-- separador central -->
+      <div class="bot-div-sep">
+        <svg class="bot-div-sep-arr" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--gris)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        <span style="font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--gris);writing-mode:vertical-rl;margin-top:6px">vos</span>
+      </div>
+
+      <!-- columna derecha: chofer -->
+      <div class="bot-div-col bot-div-col--you">
+        <div class="bot-div-hdr">
+          <div class="bot-div-ico">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+          </div>
+          <span class="bot-div-title">Lo que hacés vos</span>
+        </div>
+        <ul class="bot-div-list">
+          <li><span class="ck2">→</span>Aceptar o rechazar el viaje</li>
+          <li><span class="ck2">→</span>Manejar</li>
+        </ul>
+        <div class="bot-div-foot">Eso es todo. El resto lo hace el bot.</div>
+      </div>
+    </div>
+
+    <!-- PART B: chat anotado -->
+    <div class="bot-anno">
+      <!-- teléfono con chat -->
+      <div class="bca-phone">
+        <div class="bca-hdr">
+          <div class="bca-av">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="white"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9V8h2v8zm4 0h-2V8h2v8z"/></svg>
+          </div>
+          <div>
+            <div class="bca-name">RemisApp Bot</div>
+            <div class="bca-sub">en línea</div>
+          </div>
+        </div>
+        <div class="bca-body">
+          <!-- cliente escribe -->
+          <div class="bcm bcm-out">Hola! Necesito un remis</div>
+          <!-- bot responde: atiende -->
+          <div class="bcm bcm-in" style="position:relative">
+            ¡Hola! ¿A dónde vas?
+            <span class="bcm-n">1</span>
+            <div class="bcm-t">10:03</div>
+          </div>
+          <div class="bcm bcm-out">De Av. Colón 234 al aeropuerto</div>
+          <!-- bot cotiza -->
+          <div class="bcm bcm-in" style="position:relative">
+            📍 Trayecto: ~18 km<br>
+            💰 Precio sugerido: <strong>$6.800</strong><br>
+            <span style="font-size:9.5px;color:#555">(Uber cobra $7.200 ahora mismo)</span><br>
+            ¿Confirmamos?
+            <span class="bcm-n">2</span>
+            <div class="bcm-t">10:03</div>
+          </div>
+          <div class="bcm bcm-out">Sí, confirmo 👍</div>
+          <!-- bot confirma al cliente -->
+          <div class="bcm bcm-in" style="position:relative">
+            ✅ Pedido confirmado. Tu chofer está en camino.
+            <span class="bcm-n">3</span>
+            <div class="bcm-t">10:04</div>
+          </div>
+          <!-- notificacion al chofer (badge 4) -->
+          <div class="bcm bcm-in" style="position:relative;background:#e8f5e9">
+            🔔 <strong>Nuevo viaje disponible</strong><br>
+            Colón 234 → Aeropuerto<br>
+            $6.800 · 18 km
+            <span class="bcm-n">4</span>
+            <div class="bcm-t">10:04</div>
+          </div>
+          <!-- tracking -->
+          <div class="bcm bcm-in" style="position:relative">
+            📡 Tu chofer salió. Seguí el recorrido en vivo:<br>
+            <span style="color:#075E54;font-weight:700">remisapp.link/track/abc123</span>
+            <span class="bcm-n">5</span>
+            <div class="bcm-t">10:04</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- anotaciones -->
+      <div class="bca-notes">
+        <div class="bca-note">
+          <div class="bca-note-num">1</div>
+          <div>
+            <div class="bca-note-title">Atiende al cliente automáticamente</div>
+            <div class="bca-note-desc">Sin que vos hagas nada. A cualquier hora del día o la noche, sin importar si estás manejando.</div>
+          </div>
+        </div>
+        <div class="bca-note">
+          <div class="bca-note-num">2</div>
+          <div>
+            <div class="bca-note-title">Cotiza vs Uber en tiempo real</div>
+            <div class="bca-note-desc">Tarda ~2 segundos. El cliente ve un precio justo y transparente. Vos decidís si cobrar igual, más o menos.</div>
+          </div>
+        </div>
+        <div class="bca-note">
+          <div class="bca-note-num">3</div>
+          <div>
+            <div class="bca-note-title">Confirma el viaje con el pasajero</div>
+            <div class="bca-note-desc">El bot cierra la reserva sin que vos intervengas. El cliente queda confirmado y en espera.</div>
+          </div>
+        </div>
+        <div class="bca-note">
+          <div class="bca-note-num">4</div>
+          <div>
+            <div class="bca-note-title">Te notifica al instante</div>
+            <div class="bca-note-desc">Recibís el pedido por WhatsApp. Aceptás con un mensaje y listo. Sin apps extra, sin llamadas.</div>
+          </div>
+        </div>
+        <div class="bca-note">
+          <div class="bca-note-num">5</div>
+          <div>
+            <div class="bca-note-title">Envía el link de tracking automático</div>
+            <div class="bca-note-desc">El cliente sigue tu recorrido en vivo. Sin que vos hagas nada extra.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- end bot-wrap -->
+  </div><!-- end section-shell -->
 </div>
 </section>
 
