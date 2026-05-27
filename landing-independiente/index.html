@@ -773,6 +773,38 @@ footer{border-top:1px solid var(--borde);padding:40px;max-width:1180px;margin:0 
 .paym-card p{font-size:13.5px;font-weight:400;color:var(--gris2);line-height:1.6;margin:0}
 @media(max-width:820px){.price-hero{grid-template-columns:1fr}.payment-methods{grid-template-columns:1fr 1fr}}
 @media(max-width:500px){.payment-methods{grid-template-columns:1fr}}
+/* ── PROBLEMS BLOCK ── */
+.problems-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:44px}
+.prob-card{background:var(--bg2);border:1px solid var(--borde);border-radius:18px;padding:26px 22px;display:flex;flex-direction:column;gap:12px}
+.prob-card-stat{font-family:'Barlow Condensed',sans-serif;font-size:52px;font-weight:800;line-height:1;color:#F87171}
+.prob-card-title{font-family:'Barlow Condensed',sans-serif;font-size:19px;font-weight:800;text-transform:uppercase;letter-spacing:.02em;color:var(--blanco);line-height:1.1}
+.prob-card-desc{font-size:14px;font-weight:400;color:var(--gris2);line-height:1.62}
+.prob-bridge{display:flex;align-items:flex-start;gap:14px;background:rgba(0,168,132,0.08);border:1px solid var(--verde-border);border-radius:14px;padding:18px 22px;margin-top:20px}
+.prob-bridge-icon{font-size:22px;flex-shrink:0;margin-top:2px}
+.prob-bridge p{font-size:15px;font-weight:400;color:var(--gris2);line-height:1.6;margin:0}
+.prob-bridge strong{color:var(--blanco);font-weight:600}
+@media(max-width:700px){.problems-grid{grid-template-columns:1fr}}
+/* ── TRIP FLOW ── */
+.flow-wrap{margin-top:44px;display:grid;grid-template-columns:1fr 1fr;gap:0;background:var(--bg2);border:1px solid var(--borde);border-radius:24px;overflow:hidden}
+.flow-col{display:flex;flex-direction:column}
+.flow-col-hdr{padding:16px 24px;border-bottom:1px solid var(--borde);display:flex;align-items:center;gap:8px}
+.flow-col-hdr-dot{width:8px;height:8px;border-radius:50%}
+.flow-col-hdr-label{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.14em}
+.flow-col--cliente{border-right:1px solid var(--borde)}
+.flow-col--cliente .flow-col-hdr-dot{background:#60a5fa}
+.flow-col--cliente .flow-col-hdr-label{color:#60a5fa}
+.flow-col--bot .flow-col-hdr-dot{background:var(--verde)}
+.flow-col--bot .flow-col-hdr-label{color:var(--verde)}
+.flow-step-row{display:contents}
+.flow-cell{padding:20px 24px;border-bottom:1px solid var(--borde);min-height:80px;display:flex;flex-direction:column;justify-content:center;gap:5px}
+.flow-cell:last-child{border-bottom:none}
+.flow-cell--empty{background:rgba(0,0,0,.12)}
+.flow-col--cliente .flow-cell--active{border-left:3px solid #60a5fa}
+.flow-col--bot .flow-cell--active{border-left:3px solid var(--verde)}
+.flow-cell-step{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:var(--gris);margin-bottom:2px}
+.flow-cell-title{font-size:14.5px;font-weight:600;color:var(--blanco);line-height:1.3}
+.flow-cell-msg{display:inline-block;margin-top:6px;font-size:12.5px;color:var(--gris2);background:var(--bg3);border:1px solid var(--borde);border-radius:10px;padding:6px 11px;line-height:1.4;font-style:italic}
+@media(max-width:620px){.flow-wrap{grid-template-columns:1fr}.flow-col--cliente{border-right:none;border-bottom:1px solid var(--borde)}}
 /* ── ALTERNATING FEATURES ── */
 .altfeat-wrap{display:flex;flex-direction:column}
 .altfeat{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;padding:64px 0;border-top:1px solid var(--borde)}
@@ -980,6 +1012,42 @@ footer{border-top:1px solid var(--borde);padding:40px;max-width:1180px;margin:0 
 
   </div>
 </div>
+
+<div class="divider"></div>
+
+<!-- PROBLEMAS -->
+<section class="section">
+<div class="container">
+  <div class="section-shell surface">
+  <div class="sec-eyebrow reveal">El problema</div>
+  <h2 class="sec-title reveal d1">Trabajás para Uber.<br><span class="hl">No para vos.</span></h2>
+  <p class="sec-sub reveal d1">Cada viaje que hacés por una plataforma es un viaje que no te pertenece.</p>
+
+  <div class="problems-grid reveal d2">
+    <div class="prob-card">
+      <div class="prob-card-stat">20%</div>
+      <div class="prob-card-title">Se lo queda la plataforma</div>
+      <p class="prob-card-desc">Por cada viaje que hacés, Uber retiene su comisión antes de que el dinero llegue a vos. Sin excepción.</p>
+    </div>
+    <div class="prob-card">
+      <div class="prob-card-stat">0</div>
+      <div class="prob-card-title">Clientes que son tuyos</div>
+      <p class="prob-card-desc">El cliente pide por la app de ellos, no por la tuya. Si mañana te bajás de Uber, perdés todo el historial de viajes.</p>
+    </div>
+    <div class="prob-card">
+      <div class="prob-card-stat">∞</div>
+      <div class="prob-card-title">Pedidos que perdés manejando</div>
+      <p class="prob-card-desc">Cuando estás al volante no podés atender el teléfono. Cada llamada perdida es un cliente que se va a otro chofer.</p>
+    </div>
+  </div>
+
+  <div class="prob-bridge reveal d3">
+    <div class="prob-bridge-icon">💡</div>
+    <p>Por eso existe RemisApp. <strong>Tu propio bot de WhatsApp</strong> que atiende a tus clientes, cotiza viajes y confirma reservas — mientras vos manejás. Sin plataformas intermediarias, sin comisión, sin perder clientes.</p>
+  </div>
+  </div>
+</div>
+</section>
 
 <div class="divider"></div>
 
@@ -1475,6 +1543,75 @@ footer{border-top:1px solid var(--borde);padding:40px;max-width:1180px;margin:0 
 
   </div><!-- end bot-wrap -->
   </div><!-- end section-shell -->
+</div>
+</section>
+
+<div class="divider"></div>
+
+<!-- FLUJO DEL PEDIDO -->
+<section class="section">
+<div class="container">
+  <div class="section-shell surface">
+  <div class="sec-eyebrow reveal">Así funciona cada pedido</div>
+  <h2 class="sec-title reveal d1">El cliente pide.<br><span class="hl">Vos solo manejás.</span></h2>
+  <p class="sec-sub reveal d1">Todo lo que pasa entre medio lo hace el bot solo. Sin que vos toques el celular.</p>
+
+  <div class="flow-wrap reveal d2">
+
+    <!-- Columna CLIENTE -->
+    <div class="flow-col flow-col--cliente">
+      <div class="flow-col-hdr">
+        <div class="flow-col-hdr-dot"></div>
+        <span class="flow-col-hdr-label">Cliente</span>
+      </div>
+      <div class="flow-cell flow-cell--active">
+        <div class="flow-cell-step">Paso 1</div>
+        <div class="flow-cell-title">Escribe al bot por WhatsApp</div>
+        <span class="flow-cell-msg">"Hola, necesito un remis"</span>
+      </div>
+      <div class="flow-cell flow-cell--empty"></div>
+      <div class="flow-cell flow-cell--active">
+        <div class="flow-cell-step">Paso 3</div>
+        <div class="flow-cell-title">Confirma origen y destino</div>
+        <span class="flow-cell-msg">"De Av. Colón 234 al aeropuerto"</span>
+      </div>
+      <div class="flow-cell flow-cell--empty"></div>
+      <div class="flow-cell flow-cell--active">
+        <div class="flow-cell-step">Paso 5</div>
+        <div class="flow-cell-title">Recibe confirmación y link de tracking</div>
+        <span class="flow-cell-msg">"Tu viaje está confirmado. Podés seguir al chofer acá 👇"</span>
+      </div>
+      <div class="flow-cell flow-cell--empty"></div>
+    </div>
+
+    <!-- Columna BOT / VOS -->
+    <div class="flow-col flow-col--bot">
+      <div class="flow-col-hdr">
+        <div class="flow-col-hdr-dot"></div>
+        <span class="flow-col-hdr-label">Bot · Vos</span>
+      </div>
+      <div class="flow-cell flow-cell--empty"></div>
+      <div class="flow-cell flow-cell--active">
+        <div class="flow-cell-step">Paso 2 — Bot</div>
+        <div class="flow-cell-title">Pregunta origen y destino, cotiza vs Uber</div>
+        <span class="flow-cell-msg">"¿A dónde vas? El viaje cuesta $2.800 ¿Confirmamos?"</span>
+      </div>
+      <div class="flow-cell flow-cell--empty"></div>
+      <div class="flow-cell flow-cell--active">
+        <div class="flow-cell-step">Paso 4 — Bot</div>
+        <div class="flow-cell-title">Te avisa a vos con todos los datos</div>
+        <span class="flow-cell-msg">"🔔 Nuevo viaje: Av. Colón → Aeropuerto · $2.800"</span>
+      </div>
+      <div class="flow-cell flow-cell--empty"></div>
+      <div class="flow-cell flow-cell--active">
+        <div class="flow-cell-step">Paso 6 — Vos</div>
+        <div class="flow-cell-title">Aceptás con un tap y manejás</div>
+        <span class="flow-cell-msg">El 100% del cobro es tuyo. El bot ya manejó todo lo demás.</span>
+      </div>
+    </div>
+
+  </div>
+  </div>
 </div>
 </section>
 
