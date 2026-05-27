@@ -786,8 +786,8 @@ footer{border-top:1px solid var(--borde);padding:40px;max-width:1180px;margin:0 
 @media(max-width:700px){.problems-grid{grid-template-columns:1fr}}
 /* ── PROBLEMS VA (cards con foto) ── */
 .prob-va-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:44px}
-.prob-va-card{background:var(--bg2);border:1px solid var(--borde);border-radius:20px;overflow:hidden;display:flex;flex-direction:column;transition:transform .22s ease,box-shadow .22s ease,border-color .22s ease;cursor:default}
-.prob-va-card:hover{transform:translateY(-7px);box-shadow:0 32px 60px rgba(0,0,0,0.55);border-color:rgba(248,113,113,0.3)}
+.prob-va-card{background:var(--bg2);border:1px solid var(--borde);border-radius:20px;overflow:hidden;display:flex;flex-direction:column;transition:transform .24s cubic-bezier(.22,.68,0,1.2),box-shadow .24s ease,border-color .22s ease;cursor:default;position:relative}
+.prob-va-card:hover{transform:translateY(-8px) scale(1.04);box-shadow:0 36px 70px rgba(0,0,0,0.6);border-color:rgba(248,113,113,0.32);z-index:2}
 .prob-va-body{padding:24px 22px 18px;flex:1;display:flex;flex-direction:column;gap:6px}
 .prob-va-label{font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#F87171;opacity:.65}
 .prob-va-stat{font-family:'Barlow Condensed',sans-serif;font-size:52px;font-weight:800;line-height:1;color:#F87171}
@@ -1049,43 +1049,6 @@ footer{border-top:1px solid var(--borde);padding:40px;max-width:1180px;margin:0 
   <div class="sec-eyebrow reveal">El problema</div>
   <h2 class="sec-title reveal d1">Trabajás para Uber.<br><span class="hl">No para vos.</span></h2>
   <p class="sec-sub reveal d1">Cada viaje que hacés por una plataforma es un viaje que no te pertenece.</p>
-
-  <div class="problems-grid reveal d2">
-    <div class="prob-card">
-      <div class="prob-card-stat">20%</div>
-      <div class="prob-card-title">Se lo queda la plataforma</div>
-      <p class="prob-card-desc">Por cada viaje que hacés, Uber retiene su comisión antes de que el dinero llegue a vos. Sin excepción.</p>
-    </div>
-    <div class="prob-card">
-      <div class="prob-card-stat">0</div>
-      <div class="prob-card-title">Clientes que son tuyos</div>
-      <p class="prob-card-desc">El cliente pide por la app de ellos, no por la tuya. Si mañana te bajás de Uber, perdés todo el historial de viajes.</p>
-    </div>
-    <div class="prob-card">
-      <div class="prob-card-stat">∞</div>
-      <div class="prob-card-title">Pedidos que perdés manejando</div>
-      <p class="prob-card-desc">Cuando estás al volante no podés atender el teléfono. Cada llamada perdida es un cliente que se va a otro chofer.</p>
-    </div>
-  </div>
-
-  <div class="prob-bridge reveal d3">
-    <div class="prob-bridge-icon">💡</div>
-    <p>Por eso existe RemisApp. <strong>Tu propio bot de WhatsApp</strong> que atiende a tus clientes, cotiza viajes y confirma reservas — mientras vos manejás. Sin plataformas intermediarias, sin comisión, sin perder clientes.</p>
-  </div>
-  </div>
-</div>
-</section>
-
-<div class="divider"></div>
-
-<!-- PROBLEMAS DISEÑO A — cards con foto -->
-<section class="section">
-<div class="container">
-  <div class="section-shell surface">
-  <div class="variant-tag">Diseño A · Cards con foto</div>
-  <div class="sec-eyebrow reveal">El problema</div>
-  <h2 class="sec-title reveal d1">Trabajás para Uber.<br><span class="hl">No para vos.</span></h2>
-  <p class="sec-sub reveal d1">Cada viaje que hacés por una plataforma es un viaje que no te pertenece.</p>
   <div class="prob-va-grid reveal d2">
     <div class="prob-va-card">
       <div class="prob-va-body">
@@ -1112,69 +1075,16 @@ footer{border-top:1px solid var(--borde);padding:40px;max-width:1180px;margin:0 
         <div class="prob-va-title">Pedidos que perdés manejando</div>
         <p class="prob-va-desc">Al volante no podés atender el teléfono. Cada llamada perdida es un cliente que se va.</p>
       </div>
-      <img src="assets/chofer-interior-qr-01.png" class="prob-va-photo" alt="">
+      <img src="assets/chofer-interior-qr-01.png" class="prob-va-photo" alt="" style="object-position:center center">
     </div>
     <div class="prob-va-card">
       <div class="prob-va-body">
-        <div class="prob-va-label">Tu precio</div>
-        <div class="prob-va-stat">$0</div>
-        <div class="prob-va-title">Control sobre tu precio</div>
-        <p class="prob-va-desc">La app decide cuánto cobrás. No podés subir el precio en hora pico ni premiar a los clientes frecuentes.</p>
+        <div class="prob-va-label">Tu reputación</div>
+        <div class="prob-va-stat">4.8★</div>
+        <div class="prob-va-title">No es tuya</div>
+        <p class="prob-va-desc">Los años construyendo tu reputación viven en la app de ellos. Si te bajás, empezás con cero estrellas.</p>
       </div>
-      <img src="assets/chofer-independiente-canal-propio-01.png" class="prob-va-photo" alt="">
-    </div>
-  </div>
-  <div class="prob-bridge reveal d3">
-    <div class="prob-bridge-icon">💡</div>
-    <p>Por eso existe RemisApp. <strong>Tu propio bot de WhatsApp</strong> que atiende a tus clientes, cotiza viajes y confirma reservas — mientras vos manejás. Sin comisión, sin perder clientes.</p>
-  </div>
-  </div>
-</div>
-</section>
-
-<div class="divider"></div>
-
-<!-- PROBLEMAS DISEÑO B — lista editorial -->
-<section class="section">
-<div class="container">
-  <div class="section-shell surface">
-  <div class="variant-tag">Diseño B · Lista editorial</div>
-  <div class="sec-eyebrow reveal">El problema</div>
-  <h2 class="sec-title reveal d1">Trabajás para Uber.<br><span class="hl">No para vos.</span></h2>
-  <p class="sec-sub reveal d1">Cada viaje que hacés por una plataforma es un viaje que no te pertenece.</p>
-  <div class="prob-vb-wrap reveal d2">
-    <div class="prob-vb-list">
-      <div class="prob-vb-item">
-        <div class="prob-vb-num">01</div>
-        <div>
-          <div class="prob-vb-title">20% se lo queda la plataforma</div>
-          <p class="prob-vb-desc">Uber retiene su comisión antes de que el dinero llegue a vos. Por cada viaje, para siempre. Sin excepción.</p>
-        </div>
-      </div>
-      <div class="prob-vb-item">
-        <div class="prob-vb-num">02</div>
-        <div>
-          <div class="prob-vb-title">0 clientes que son tuyos</div>
-          <p class="prob-vb-desc">Los datos, el historial, el contacto — todo es de la app. Si te bajás mañana, empezás de cero.</p>
-        </div>
-      </div>
-      <div class="prob-vb-item">
-        <div class="prob-vb-num">03</div>
-        <div>
-          <div class="prob-vb-title">Pedidos perdidos mientras manejás</div>
-          <p class="prob-vb-desc">Al volante no podés atender el teléfono. Cada llamada no atendida es un cliente que se va a otro chofer.</p>
-        </div>
-      </div>
-      <div class="prob-vb-item">
-        <div class="prob-vb-num">04</div>
-        <div>
-          <div class="prob-vb-title">Tu precio lo define otro</div>
-          <p class="prob-vb-desc">La app decide cuánto cobrás. No podés subir en hora pico, no podés premiar a tus mejores clientes.</p>
-        </div>
-      </div>
-    </div>
-    <div class="prob-vb-photo-col">
-      <img src="assets/chofer-independiente-canal-propio-01.png" class="prob-vb-photo" alt="Chofer independiente">
+      <img src="assets/remis-negocio-organizado-01.png" class="prob-va-photo" alt="">
     </div>
   </div>
   <div class="prob-bridge reveal d3">
