@@ -747,6 +747,17 @@ footer{border-top:1px solid var(--borde);padding:40px;max-width:1180px;margin:0 
 .steps-cta-alt{display:inline-flex;align-items:center;gap:7px;font-size:13px;color:var(--gris2);border:1px solid var(--borde);padding:9px 18px;border-radius:var(--r999);transition:all .18s}
 .steps-cta-alt:hover{border-color:var(--verde-border);color:var(--verde)}
 .steps-cta-trust{font-size:11.5px;color:var(--gris);letter-spacing:.03em}
+/* ── SHARE SECTION ── */
+.share-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:44px}
+.share-card{background:var(--bg2);border:1px solid var(--borde);border-radius:18px;overflow:hidden;display:flex;flex-direction:column;transition:border-color .2s,transform .2s}
+.share-card:hover{border-color:var(--verde-border);transform:translateY(-3px)}
+.share-card-img{width:100%;height:168px;object-fit:cover;object-position:center top;display:block;border-bottom:1px solid var(--borde)}
+.share-card-body{padding:18px 18px 20px;flex:1;display:flex;flex-direction:column;gap:6px}
+.share-card-num{font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:var(--verde);opacity:.7}
+.share-card-title{font-family:'Barlow Condensed',sans-serif;font-size:20px;font-weight:800;text-transform:uppercase;letter-spacing:.01em;color:var(--blanco);line-height:1.1}
+.share-card-desc{font-size:13.5px;font-weight:400;color:var(--gris2);line-height:1.6;margin-top:2px}
+@media(max-width:860px){.share-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:500px){.share-grid{grid-template-columns:1fr}}
 /* ── DUAL PHONE ANIMATION ── */
 .flow-demo{display:flex;justify-content:center;margin-top:44px}
 .flow-demo-shell{position:relative;width:min(100%,1040px);padding:14px;border-radius:34px;background:linear-gradient(180deg,rgba(61,204,142,.12),rgba(7,10,8,.92));border:1px solid rgba(61,204,142,.18);box-shadow:0 28px 72px rgba(0,0,0,.46),inset 0 1px 0 rgba(255,255,255,.06)}
@@ -1473,6 +1484,59 @@ footer{border-top:1px solid var(--borde);padding:40px;max-width:1180px;margin:0 
       ¿Tenés dudas? Agendá una llamada
     </a>
     <p class="steps-cta-trust">Sin tarjeta de crédito · Sin contrato · 7 días de prueba gratis</p>
+  </div>
+  </div>
+</div>
+</section>
+
+<div class="divider"></div>
+
+<!-- COMPARTILO ASÍ -->
+<section class="section">
+<div class="container">
+  <div class="section-shell surface">
+  <div class="sec-eyebrow reveal">Captá clientes</div>
+  <h2 class="sec-title reveal d1">Compartilo donde<br><span class="hl">ya estás.</span></h2>
+  <p class="sec-sub reveal d1">No necesitás publicidad ni app. Con esto alcanza para empezar a recibir pedidos hoy.</p>
+
+  <div class="share-grid reveal d2">
+
+    <div class="share-card">
+      <img src="assets/qr-auto-01.png" class="share-card-img" alt="QR en el auto">
+      <div class="share-card-body">
+        <div class="share-card-num">01</div>
+        <div class="share-card-title">QR en tu auto</div>
+        <p class="share-card-desc">Imprimís el código, lo pegás en el tablero o la ventana. El pasajero escanea y te escribe directo — sin buscar nada.</p>
+      </div>
+    </div>
+
+    <div class="share-card">
+      <img src="assets/instagram-bio-link-reserva-01.png" class="share-card-img" alt="Instagram bio">
+      <div class="share-card-body">
+        <div class="share-card-num">02</div>
+        <div class="share-card-title">Bio de Instagram</div>
+        <p class="share-card-desc">Ponés tu link en la bio. Cualquier seguidor puede pedirte con un tap, sin salir de Instagram.</p>
+      </div>
+    </div>
+
+    <div class="share-card">
+      <img src="assets/perfil-link-celular-01.png" class="share-card-img" alt="Link por WhatsApp">
+      <div class="share-card-body">
+        <div class="share-card-num">03</div>
+        <div class="share-card-title">Link por WhatsApp</div>
+        <p class="share-card-desc">Mandás el link a tus clientes habituales. Te guardan el contacto y la próxima vez te piden directo al bot.</p>
+      </div>
+    </div>
+
+    <div class="share-card">
+      <img src="assets/cliente-escaneado-qr-01.png" class="share-card-img" alt="Cliente escanea QR">
+      <div class="share-card-body">
+        <div class="share-card-num">04</div>
+        <div class="share-card-title">Ellos te recomiendan</div>
+        <p class="share-card-desc">Un cliente satisfecho que manda tu link a un amigo ya es marketing gratuito. Tu cartera crece sola.</p>
+      </div>
+    </div>
+
   </div>
   </div>
 </div>
