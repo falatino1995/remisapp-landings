@@ -2266,6 +2266,66 @@ ham.addEventListener('click',()=>{
   document.body.style.overflow = open ? 'hidden' : '';
 });
 
+function reorderLandingSections(){
+  const ticker = document.querySelector('.unified-ticker');
+  if (!ticker) return;
+
+  const comments = [];
+  const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_COMMENT);
+  while (walker.nextNode()) comments.push(walker.currentNode);
+
+  const findComment = (label) => comments.find((node) => node.data.trim().toUpperCase() === label);
+  const findCommentLike = (label) => comments.find((node) => node.data.trim().toUpperCase().includes(label));
+  const firstElementAfter = (node) => {
+    let next = node && node.nextSibling;
+    while (next && next.nodeType !== Node.ELEMENT_NODE) next = next.nextSibling;
+    return next || null;
+  };
+  const getBlock = (comment) => {
+    const main = firstElementAfter(comment);
+    if (!main) return [];
+    const nodes = [main];
+    const divider = main.nextElementSibling;
+    if (divider && divider.classList.contains('divider')) nodes.push(divider);
+    return nodes;
+  };
+
+  const problemsComment = findComment('PROBLEMAS');
+  const problemsSection = firstElementAfter(problemsComment);
+  const oldProblemAnchor = document.getElementById('problema');
+  if (oldProblemAnchor && oldProblemAnchor !== problemsSection) oldProblemAnchor.id = 'producto-showcase';
+  if (problemsSection) problemsSection.id = 'problema';
+
+  const orderedComments = [
+    findComment('PROBLEMAS'),
+    findComment('FLUJO DEL PEDIDO'),
+    findComment('VIAJE REAL'),
+    findComment('BOT EXPLICADO'),
+    findCommentLike('COMPARTILO'),
+    findComment('PRECIO Y COBRO'),
+    findComment('FEATURES ALTERNADAS'),
+    findComment('VS UBER'),
+    findComment('PRICING'),
+    findComment('TESTIMONIALS'),
+    findComment('HOW IT WORKS'),
+    findComment('FEATURE SHOWCASE'),
+    findComment('FEATURES'),
+    findComment('FAQ'),
+    findComment('CTA'),
+  ].filter(Boolean);
+
+  let cursor = ticker;
+  orderedComments.forEach((comment) => {
+    const nodes = getBlock(comment);
+    nodes.forEach((node) => {
+      cursor.after(node);
+      cursor = node;
+    });
+  });
+}
+
+reorderLandingSections();
+
 function syncNavState(){
   nav.classList.toggle('nav-scrolled', window.scrollY > 18);
 }
