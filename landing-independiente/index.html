@@ -560,16 +560,16 @@ footer{border-top:1px solid var(--borde);padding:40px;max-width:1180px;margin:0 
 .showcase{display:grid;grid-template-columns:1fr 1.2fr;align-items:stretch;background:var(--card);border:1px solid var(--borde);border-radius:24px;overflow:hidden}
 .showcase-tabs{padding:16px 14px;display:flex;flex-direction:column;gap:2px;border-right:1px solid var(--borde);background:var(--bg2)}
 .showcase-eyebrow{font-size:10px;font-weight:700;color:var(--verde);text-transform:uppercase;letter-spacing:.14em;margin-bottom:10px}
-.stab{padding:8px 10px;border-radius:9px;cursor:pointer;transition:background .18s;border:1px solid transparent;position:relative;overflow:hidden}
-.stab-row{display:flex;align-items:center;gap:8px}
+.stab{padding:10px 12px;border-radius:10px;cursor:pointer;transition:background .18s;border:1px solid transparent;position:relative;overflow:hidden}
+.stab-row{display:flex;align-items:center;gap:10px}
 .stab:hover{background:var(--verde-bg)}
-.stab.active{background:var(--verde-bg);border-color:var(--verde-border)}
-.stab-icon{width:24px;height:24px;border-radius:6px;background:var(--bg3);border:1px solid var(--borde);display:flex;align-items:center;justify-content:center;color:var(--gris);flex-shrink:0;transition:background .18s,color .18s,border-color .18s}
+.stab.active{background:rgba(0,168,132,0.12);border-color:var(--verde-border);box-shadow:inset 0 0 0 1px rgba(0,168,132,0.18)}
+.stab-icon{width:28px;height:28px;border-radius:7px;background:var(--bg3);border:1px solid var(--borde);display:flex;align-items:center;justify-content:center;color:var(--gris);flex-shrink:0;transition:background .18s,color .18s,border-color .18s}
 .stab.active .stab-icon{background:var(--verde-bg);color:var(--verde);border-color:var(--verde-border)}
-.stab-title{font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:700;letter-spacing:.03em;text-transform:uppercase;color:var(--gris2);transition:color .18s;line-height:1.2}
-.stab.active .stab-title{color:var(--blanco)}
-.stab-desc{font-size:10px;color:var(--gris);line-height:1.5;margin-top:3px;padding-left:32px;max-height:0;overflow:hidden;opacity:0;transition:max-height .3s,opacity .3s}
-.stab.active .stab-desc{max-height:32px;opacity:1}
+.stab-title{font-family:'Inter',sans-serif;font-size:13.5px;font-weight:500;letter-spacing:0;text-transform:none;color:var(--gris2);transition:color .18s;line-height:1.2}
+.stab.active .stab-title{color:var(--blanco);font-weight:600}
+.stab-desc{font-size:12px;color:var(--gris);line-height:1.5;margin-top:4px;padding-left:38px;max-height:0;overflow:hidden;opacity:0;transition:max-height .3s,opacity .3s}
+.stab.active .stab-desc{max-height:40px;opacity:1}
 .stab-prog{position:absolute;bottom:0;left:0;height:2px;background:var(--verde);width:0;border-radius:1px}
 .showcase-preview{position:relative;min-height:420px;background:var(--bg);overflow:hidden}
 .spanel{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;padding:22px;opacity:0;transform:translateY(10px);transition:opacity .32s ease,transform .32s ease;pointer-events:none}
@@ -714,6 +714,8 @@ footer{border-top:1px solid var(--borde);padding:40px;max-width:1180px;margin:0 
 .bot-div-foot{padding-top:14px;border-top:1px solid var(--borde)}
 .bot-div-col--bot .bot-div-foot{font-family:'Barlow Condensed',sans-serif;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--verde)}
 .bot-div-col--you .bot-div-foot{font-size:13px;color:var(--gris2);font-style:italic;line-height:1.5}
+.bot-col-robot{display:block;width:130px;margin:18px auto 0;filter:drop-shadow(0 8px 28px rgba(0,168,132,0.35));pointer-events:none}
+.bot-col-photo{width:100%;height:150px;object-fit:cover;object-position:center top;border-radius:14px;margin-top:18px;opacity:0.88;border:1px solid var(--borde)}
 /* Part B — annotated chat */
 .bot-anno{display:grid;grid-template-columns:300px 1fr;gap:40px;align-items:start}
 .bca-phone{background:#ECE5DD;border-radius:16px;overflow:hidden;box-shadow:0 20px 50px rgba(0,0,0,.55)}
@@ -1296,6 +1298,7 @@ footer{border-top:1px solid var(--borde);padding:40px;max-width:1180px;margin:0 
           <li><span class="ck2">✓</span>Funciona los 365 días, sin descanso</li>
         </ul>
         <div class="bot-div-foot">8 tareas automáticas. Sin intervención tuya.</div>
+        <img src="assets/robot_bot.png" class="bot-col-robot" alt="Bot RemisApp">
       </div>
 
       <!-- separador central -->
@@ -1317,6 +1320,7 @@ footer{border-top:1px solid var(--borde);padding:40px;max-width:1180px;margin:0 
           <li><span class="ck2">→</span>Manejar</li>
         </ul>
         <div class="bot-div-foot">Eso es todo. El resto lo hace el bot.</div>
+        <img src="assets/chofer-independiente-canal-propio-01.png" class="bot-col-photo" alt="Chofer independiente">
       </div>
     </div>
 
