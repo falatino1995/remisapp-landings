@@ -977,6 +977,14 @@ footer{border-top:1px solid var(--borde);padding:40px;max-width:1180px;margin:0 
 .prob-va-photo{width:100%;height:165px;object-fit:cover;display:block;flex-shrink:0;margin-top:auto}
 
 .prob-va-card:not(:has(.prob-va-photo)) .prob-va-body{padding-bottom:28px}
+
+/* VISUAL DEMO — side by side layout */
+.vd-split{display:grid;grid-template-columns:1.2fr 1fr;gap:48px;margin-top:40px;align-items:start}
+.vd-col{display:flex;flex-direction:column;gap:20px}
+.vd-col-tag{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.14em;color:var(--verde);margin-bottom:4px}
+.vd-col-title{font-size:18px;font-weight:800;color:var(--blanco);line-height:1.3;margin-bottom:6px}
+.vd-col-sub{font-size:13px;color:var(--gris2);line-height:1.6;margin:0}
+.vd-col-head{padding-bottom:4px;border-bottom:1px solid var(--borde);margin-bottom:8px}
 </style>
 </head>
 <body>
@@ -1376,12 +1384,18 @@ footer{border-top:1px solid var(--borde);padding:40px;max-width:1180px;margin:0 
 <!-- VISUAL DEMO -->
 <section class="section" id="visual-demo">
 <div class="container">
-  <div class="sec-eyebrow reveal">El concepto</div>
-  <h2 class="sec-title reveal d1">El sistema<br><span class="hl">en tres formas</span></h2>
-  <p class="sec-sub reveal d1">Tres maneras de ver lo mismo — explorando cual explica mejor el producto.</p>
+  <div class="sec-eyebrow reveal">El sistema</div>
+  <h2 class="sec-title reveal d1">C&oacute;mo funciona<br><span class="hl">y todo lo que hace.</span></h2>
 
-  <div class="vdemo-label reveal d2">A &mdash; El flujo del pedido</div>
-  <div class="fv-wrap reveal d2">
+  <div class="vd-split">
+
+    <div class="vd-col vd-col--a reveal d1">
+      <div class="vd-col-head">
+        <div class="vd-col-tag">El flujo del pedido</div>
+        <div class="vd-col-title">Cliente escribe &rarr; bot responde &rarr; vos mane j&aacute;s</div>
+        <p class="vd-col-sub">Todo lo que pasa desde que el cliente te escribe hasta que cobr&aacute;s &mdash; sin que toques el celular.</p>
+      </div>
+      <div class="fv-wrap reveal d2">
 
     <div class="fv-node">
       <div class="fv-ring fv-ring--wa"><svg width="36" height="36" viewBox="0 0 24 24" fill="#25D366"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></div>
@@ -1427,33 +1441,15 @@ footer{border-top:1px solid var(--borde);padding:40px;max-width:1180px;margin:0 
 
   </div>
   <p class="fv-tagline">El bot atiende, cotiza y cobra solo. <strong>Los clientes son tuyos</strong> &mdash; no de ninguna plataforma.</p>
-
-  <div class="vdemo-label reveal" style="margin-top:72px">B &mdash; El dinero</div>
-  <div class="mf-wrap reveal">
-    <div class="mf-card mf-card--uber">
-      <div class="mf-eyebrow">Con Uber / Didi</div>
-      <div class="mf-amount">$2.800</div>
-      <div class="mf-amountsub">paga el cliente</div>
-      <div class="mf-bar">
-        <div class="mf-seg mf-seg--cut">Uber: $840</div>
-        <div class="mf-seg mf-seg--keep">Vos: $1.960</div>
-      </div>
-      <div class="mf-result">Trabajaste para hacer <strong>$1.960</strong>. Uber se llev&#243; <strong style="color:#F87171">$840 sin manejar nada.</strong></div>
     </div>
-    <div class="mf-vs">VS</div>
-    <div class="mf-card mf-card--remis">
-      <div class="mf-eyebrow">Con RemisApp Solo</div>
-      <div class="mf-amount">$2.800</div>
-      <div class="mf-amountsub">paga el cliente</div>
-      <div class="mf-bar">
-        <div class="mf-seg mf-seg--full">Vos: $2.800 &mdash; el 100% &#10003;</div>
-      </div>
-      <div class="mf-result">Todo es tuyo.<br><span class="mf-win">+$840 por viaje que antes perd&#237;as.</span></div>
-    </div>
-  </div>
 
-  <div class="vdemo-label reveal" style="margin-top:72px">C &mdash; Tu ecosistema</div>
-  <div class="rd-outer reveal">
+    <div class="vd-col vd-col--c reveal d2">
+      <div class="vd-col-head">
+        <div class="vd-col-tag">Tu ecosistema</div>
+        <div class="vd-col-title">Todo lo que RemisApp pone a tu disposici&oacute;n</div>
+        <p class="vd-col-sub">Cada nodo es una herramienta tuya. Hover sobre cada uno para ver los detalles.</p>
+      </div>
+      <div class="rd-outer reveal">
     <div class="rd-wrap">
       <svg class="rd-svg" viewBox="0 0 480 480">
         <line x1="240" y1="240" x2="240" y2="60" stroke="rgba(61,204,142,0.18)" stroke-width="1.5" stroke-dasharray="5 4"/>
@@ -1474,6 +1470,9 @@ footer{border-top:1px solid var(--borde);padding:40px;max-width:1180px;margin:0 
       <div class="rd-item rd-i4"><div class="rd-item-icon">&#128205;</div><div class="rd-item-label">Tracking<br>Vivo</div><div class="rd-callout"><span class="rd-call-chip">Link en vivo para el cliente</span><span class="rd-call-chip">Igual que Uber, pero tuyo</span></div></div>
       <div class="rd-item rd-i5"><div class="rd-item-icon">&#128197;</div><div class="rd-item-label">Viajes<br>Prog.</div><div class="rd-callout"><span class="rd-call-chip">Agenda con alerta previa</span><span class="rd-call-chip">Nunca se te olvida un viaje</span></div></div>
     </div>
+  </div>
+    </div>
+
   </div>
 
 </div>
@@ -2295,6 +2294,7 @@ function reorderLandingSections(){
 
   const orderedComments = [
     findComment('PROBLEMAS'),
+    findComment('VISUAL DEMO'),
     findCommentLike('FUSIÓN'),
     findCommentLike('COMPARTILO'),
     findComment('PRECIO Y COBRO'),
@@ -2304,7 +2304,6 @@ function reorderLandingSections(){
     findComment('TESTIMONIALS'),
     findComment('HOW IT WORKS'),
     findComment('FEATURE SHOWCASE'),
-    findComment('VISUAL DEMO'),
     findComment('FEATURES'),
     findComment('FAQ'),
     findComment('CTA'),
