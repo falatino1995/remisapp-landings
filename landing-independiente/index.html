@@ -791,6 +791,62 @@ footer{border-top:1px solid var(--borde);padding:40px;max-width:1180px;margin:0 
 @media(max-width:700px){
   .flow-demo{display:none}
 }
+
+/* -- VISUAL DEMO (A/B/C) -- */
+.vdemo-label{font-size:10px;font-weight:700;color:var(--verde);text-transform:uppercase;letter-spacing:.12em;display:inline-flex;align-items:center;gap:6px;background:var(--verde-bg);border:1px solid var(--verde-border);border-radius:999px;padding:5px 14px;margin:56px 0 24px}
+/* A: Flow diagram */
+.fv-wrap{display:flex;align-items:flex-start;justify-content:center;gap:0}
+.fv-node{display:flex;flex-direction:column;align-items:center;gap:8px;z-index:2}
+.fv-ring{width:80px;height:80px;border-radius:50%;border:2px solid var(--borde);background:var(--card);display:flex;align-items:center;justify-content:center;font-size:28px;box-shadow:0 0 0 7px rgba(255,255,255,.02)}
+.fv-node--bot .fv-ring{width:100px;height:100px;border-color:var(--verde);background:var(--verde-bg);box-shadow:0 0 0 10px rgba(61,204,142,.05),0 0 36px rgba(61,204,142,.2);font-size:34px}
+.fv-label{font-size:13px;font-weight:700;color:var(--blanco);text-align:center}
+.fv-sub{font-size:11px;color:var(--gris);text-align:center}
+.fv-connector{flex:1;min-width:50px;max-width:130px;height:2px;background:linear-gradient(90deg,transparent,rgba(61,204,142,.35),transparent);position:relative;align-self:center;margin:0 2px}
+.fv-connector::after{content:'';position:absolute;top:50%;left:-5px;width:10px;height:10px;border-radius:50%;background:var(--verde);transform:translateY(-50%);box-shadow:0 0 8px rgba(61,204,142,.8);animation:fv-dot 2.4s linear infinite}
+.fv-c2::after{animation-delay:1.2s}
+@keyframes fv-dot{0%{left:-5px;opacity:0}8%{opacity:1}85%{opacity:1}100%{left:calc(100% + 5px);opacity:0}}
+.fv-chips{display:flex;flex-direction:column;gap:5px;margin-top:16px;align-items:center}
+.fv-chip{background:var(--bg2);border:1px solid var(--borde);border-radius:999px;padding:4px 13px;font-size:11px;color:var(--gris2);white-space:nowrap}
+/* B: Money flow */
+.mf-wrap{display:grid;grid-template-columns:1fr 56px 1fr;gap:20px;align-items:center}
+.mf-card{background:var(--card);border:1px solid var(--borde);border-radius:20px;padding:28px 26px}
+.mf-card--remis{border-color:var(--verde-border);box-shadow:0 0 28px rgba(61,204,142,.07)}
+.mf-eyebrow{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;margin-bottom:10px}
+.mf-card--uber .mf-eyebrow{color:var(--gris)}
+.mf-card--remis .mf-eyebrow{color:var(--verde)}
+.mf-amount{font-family:'Barlow Condensed',sans-serif;font-size:38px;font-weight:800;color:var(--blanco);margin-bottom:3px}
+.mf-amountsub{font-size:11px;color:var(--gris);margin-bottom:18px}
+.mf-bar{border-radius:10px;overflow:hidden;height:52px;display:flex;margin-bottom:14px}
+.mf-seg{display:flex;align-items:center;padding:0 12px;font-size:11px;font-weight:700;white-space:nowrap}
+.mf-seg--cut{background:rgba(224,75,73,.22);color:#F87171;border-right:2px solid rgba(224,75,73,.35);flex:0 0 35%}
+.mf-seg--keep{background:rgba(61,204,142,.08);color:var(--verde);flex:1}
+.mf-seg--full{background:var(--verde-bg);color:var(--verde);flex:1;border-left:2px solid var(--verde-border)}
+.mf-result{font-size:12px;color:var(--gris2);line-height:1.6}
+.mf-result strong{color:var(--blanco)}
+.mf-win{color:var(--verde);font-weight:700;font-size:14px}
+.mf-vs{display:flex;align-items:center;justify-content:center;font-family:'Barlow Condensed',sans-serif;font-size:20px;font-weight:800;color:var(--gris)}
+/* C: Radial */
+.rd-outer{display:flex;justify-content:center}
+.rd-wrap{position:relative;width:480px;height:480px;flex-shrink:0}
+.rd-svg{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+.rd-center{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:112px;height:112px;border-radius:50%;background:var(--verde-bg);border:2px solid var(--verde);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;z-index:3;box-shadow:0 0 0 12px rgba(61,204,142,.05),0 0 40px rgba(61,204,142,.2)}
+.rd-center-icon{font-size:32px;line-height:1}
+.rd-center-label{font-size:9px;font-weight:700;color:var(--verde);text-transform:uppercase;letter-spacing:.12em}
+.rd-item{position:absolute;width:84px;height:84px;border-radius:50%;background:var(--card);border:1px solid var(--borde);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;z-index:2;box-shadow:0 8px 24px rgba(0,0,0,.4)}
+.rd-item-icon{font-size:22px;line-height:1}
+.rd-item-label{font-size:9px;font-weight:700;color:var(--gris2);text-align:center;text-transform:uppercase;letter-spacing:.06em;line-height:1.3}
+.rd-i0{left:198px;top:18px}
+.rd-i1{left:369px;top:142px}
+.rd-i2{left:304px;top:344px}
+.rd-i3{left:92px;top:344px}
+.rd-i4{left:27px;top:142px}
+@media(max-width:860px){
+  .fv-wrap{gap:8px}.fv-connector{min-width:30px;max-width:60px}
+  .mf-wrap{grid-template-columns:1fr;gap:12px}.mf-vs{display:none}
+  .rd-wrap{width:340px;height:340px}
+  .rd-i0{left:128px;top:12px}.rd-i1{left:254px;top:99px}.rd-i2{left:206px;top:244px}.rd-i3{left:50px;top:244px}.rd-i4{left:2px;top:99px}
+}
+
 </style>
 </head>
 <body>
@@ -1161,6 +1217,92 @@ footer{border-top:1px solid var(--borde);padding:40px;max-width:1180px;margin:0 
 </div>
 </section>
 
+
+<div class="divider"></div>
+
+<!-- VISUAL DEMO -->
+<section class="section" id="visual-demo">
+<div class="container">
+  <div class="sec-eyebrow reveal">El concepto</div>
+  <h2 class="sec-title reveal d1">El sistema<br><span class="hl">en tres formas</span></h2>
+  <p class="sec-sub reveal d1">Tres maneras de ver lo mismo — explorando cual explica mejor el producto.</p>
+
+  <div class="vdemo-label reveal d2">A &mdash; El flujo del pedido</div>
+  <div class="fv-wrap reveal d2">
+    <div class="fv-node">
+      <div class="fv-ring">&#128241;</div>
+      <div class="fv-label">Cliente</div>
+      <div class="fv-sub">Manda un WhatsApp</div>
+    </div>
+    <div class="fv-connector fv-c1"></div>
+    <div class="fv-node fv-node--bot">
+      <div class="fv-ring">&#129302;</div>
+      <div class="fv-label">Bot RemisApp</div>
+      <div class="fv-sub">Trabaja solo, 24hs</div>
+      <div class="fv-chips">
+        <span class="fv-chip">Responde y cotiza</span>
+        <span class="fv-chip">Precio vs Uber</span>
+        <span class="fv-chip">Tracking en vivo</span>
+        <span class="fv-chip">Cobra por MP</span>
+        <span class="fv-chip">Agenda viajes</span>
+      </div>
+    </div>
+    <div class="fv-connector fv-c2"></div>
+    <div class="fv-node">
+      <div class="fv-ring">&#128663;</div>
+      <div class="fv-label">Vos</div>
+      <div class="fv-sub">Solo maneja&#769;s</div>
+    </div>
+  </div>
+
+  <div class="vdemo-label reveal" style="margin-top:72px">B &mdash; El dinero</div>
+  <div class="mf-wrap reveal">
+    <div class="mf-card mf-card--uber">
+      <div class="mf-eyebrow">Con Uber / Didi</div>
+      <div class="mf-amount">$2.800</div>
+      <div class="mf-amountsub">paga el cliente</div>
+      <div class="mf-bar">
+        <div class="mf-seg mf-seg--cut">Uber: $840</div>
+        <div class="mf-seg mf-seg--keep">Vos: $1.960</div>
+      </div>
+      <div class="mf-result">Trabajaste para hacer <strong>$1.960</strong>. Uber se llev&#243; <strong style="color:#F87171">$840 sin manejar nada.</strong></div>
+    </div>
+    <div class="mf-vs">VS</div>
+    <div class="mf-card mf-card--remis">
+      <div class="mf-eyebrow">Con RemisApp Solo</div>
+      <div class="mf-amount">$2.800</div>
+      <div class="mf-amountsub">paga el cliente</div>
+      <div class="mf-bar">
+        <div class="mf-seg mf-seg--full">Vos: $2.800 &mdash; el 100% &#10003;</div>
+      </div>
+      <div class="mf-result">Todo es tuyo.<br><span class="mf-win">+$840 por viaje que antes perd&#237;as.</span></div>
+    </div>
+  </div>
+
+  <div class="vdemo-label reveal" style="margin-top:72px">C &mdash; Tu ecosistema</div>
+  <div class="rd-outer reveal">
+    <div class="rd-wrap">
+      <svg class="rd-svg" viewBox="0 0 480 480">
+        <line x1="240" y1="240" x2="240" y2="60" stroke="rgba(61,204,142,0.18)" stroke-width="1.5" stroke-dasharray="5 4"/>
+        <line x1="240" y1="240" x2="411" y2="184" stroke="rgba(61,204,142,0.18)" stroke-width="1.5" stroke-dasharray="5 4"/>
+        <line x1="240" y1="240" x2="346" y2="386" stroke="rgba(61,204,142,0.18)" stroke-width="1.5" stroke-dasharray="5 4"/>
+        <line x1="240" y1="240" x2="134" y2="386" stroke="rgba(61,204,142,0.18)" stroke-width="1.5" stroke-dasharray="5 4"/>
+        <line x1="240" y1="240" x2="69" y2="184" stroke="rgba(61,204,142,0.18)" stroke-width="1.5" stroke-dasharray="5 4"/>
+      </svg>
+      <div class="rd-center">
+        <div class="rd-center-icon">&#128663;</div>
+        <div class="rd-center-label">Vos</div>
+      </div>
+      <div class="rd-item rd-i0"><div class="rd-item-icon">&#128241;</div><div class="rd-item-label">Clientes<br>WhatsApp</div></div>
+      <div class="rd-item rd-i1"><div class="rd-item-icon">&#128176;</div><div class="rd-item-label">Tus<br>Precios</div></div>
+      <div class="rd-item rd-i2"><div class="rd-item-icon">&#128179;</div><div class="rd-item-label">Cobros<br>MP</div></div>
+      <div class="rd-item rd-i3"><div class="rd-item-icon">&#128205;</div><div class="rd-item-label">Tracking<br>Vivo</div></div>
+      <div class="rd-item rd-i4"><div class="rd-item-icon">&#128197;</div><div class="rd-item-label">Viajes<br>Prog.</div></div>
+    </div>
+  </div>
+
+</div>
+</section>
 
 <div class="divider"></div>
 
@@ -1854,6 +1996,7 @@ function reorderLandingSections(){
     findComment('TESTIMONIALS'),
     findComment('HOW IT WORKS'),
     findComment('FEATURE SHOWCASE'),
+    findComment('VISUAL DEMO'),
     findComment('FEATURES'),
     findComment('FAQ'),
     findComment('CTA'),
