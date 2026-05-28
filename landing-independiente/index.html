@@ -704,7 +704,7 @@ footer{border-top:1px solid var(--borde);padding:40px;max-width:1180px;margin:0 
 .prob-bridge strong{color:var(--blanco);font-weight:600}
 @media(max-width:700px){.problems-grid{grid-template-columns:1fr}}
 /* ── PROBLEMS VA (cards con foto) ── */
-.prob-va-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:44px;perspective:1200px}
+.prob-va-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:16px;margin-top:44px;perspective:1200px}
 .prob-va-card{background:var(--bg2);border:1px solid var(--borde);border-radius:20px;overflow:hidden;display:flex;flex-direction:column;transition:transform .24s cubic-bezier(.22,.68,0,1.2),box-shadow .24s ease,border-color .22s ease;cursor:default;position:relative}
 .prob-va-card.reveal{opacity:0;transform:translateY(60px) rotateX(38deg) scale(0.88);transform-origin:center bottom;transition:opacity .65s ease,transform .75s cubic-bezier(.22,.68,0,1.2)}
 .prob-va-card.reveal.d2{transition-delay:.13s}
@@ -969,18 +969,6 @@ footer{border-top:1px solid var(--borde);padding:40px;max-width:1180px;margin:0 
 .pc-sim-arrow{font-size:16px;color:var(--gris2);text-align:center}
 .pc-sim-diff{margin-top:16px;text-align:center;padding:12px 16px;background:rgba(61,204,142,.06);border:1px solid var(--verde-border);border-radius:12px;font-size:13px;color:var(--gris2)}
 .pc-sim-diff-num{color:var(--verde);font-weight:800;font-size:20px}
-
-/* Ban card — full width, horizontal */
-.prob-va-card--ban{grid-column:span 4;flex-direction:row;align-items:stretch;border-color:rgba(239,68,68,.35);background:rgba(239,68,68,.06)}
-.prob-va-card--ban:hover{border-color:rgba(239,68,68,.6)}
-.prob-va-card--ban .prob-va-body{flex:1;display:flex;gap:32px;align-items:center;padding:24px 28px}
-.prob-va-card--ban .prob-va-stat{font-size:52px;margin-bottom:0;flex-shrink:0;color:#ef4444;line-height:1}
-.prob-va-card--ban .prob-va-label{color:#ef4444}
-.prob-va-card--ban .prob-va-stat-wrap{display:flex;flex-direction:column;gap:4px;align-items:center;justify-content:center;min-width:80px}
-.prob-va-card--ban .prob-va-text{flex:1}
-.prob-va-card--ban .prob-va-title{font-size:16px;margin-bottom:6px}
-.prob-va-card--ban .prob-va-desc{font-size:13px;max-width:640px}
-.prob-va-card--ban .prob-va-photo{width:220px;height:auto;object-fit:cover;flex-shrink:0}
 </style>
 </head>
 <body>
@@ -1211,16 +1199,12 @@ footer{border-top:1px solid var(--borde);padding:40px;max-width:1180px;margin:0 
       <img src="assets/remis-negocio-organizado-01.png" class="prob-va-photo" alt="">
     </div>
   </div>
-    <div class="prob-va-card prob-va-card--ban reveal d4">
+    <div class="prob-va-card reveal d4" style="border-color:rgba(239,68,68,.35);background:rgba(239,68,68,.04)">
       <div class="prob-va-body">
-        <div class="prob-va-stat-wrap">
-          <div class="prob-va-label">Tu cuenta</div>
-          <div class="prob-va-stat">&#9888;</div>
-        </div>
-        <div class="prob-va-text">
-          <div class="prob-va-title">Te pueden banear sin explicaci&oacute;n</div>
-          <p class="prob-va-desc">Uber puede desactivar tu cuenta de un d&iacute;a para el otro &mdash; sin aviso, sin apelaci&oacute;n, sin devolverte tus clientes. Si eso pasa, perd&eacute;s todo lo que constru&iacute;ste. Con RemisApp, tu negocio es tuyo: ning&uacute;n algoritmo puede cerrarte la puerta.</p>
-        </div>
+        <div class="prob-va-label" style="color:#ef4444">Tu cuenta</div>
+        <div class="prob-va-stat" style="color:#ef4444">BAN</div>
+        <div class="prob-va-title">Te pueden cerrar sin explicaci&oacute;n</div>
+        <p class="prob-va-desc">Uber puede desactivar tu cuenta de un d&iacute;a para el otro. Sin aviso, sin apelaci&oacute;n. Perd&eacute;s todo de golpe.</p>
       </div>
     </div>
   <div class="prob-bridge reveal d3">
