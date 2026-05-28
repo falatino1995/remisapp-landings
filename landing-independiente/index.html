@@ -890,6 +890,85 @@ footer{border-top:1px solid var(--borde);padding:40px;max-width:1180px;margin:0 
 .rd-i3 .rd-callout{top:calc(100% + 10px);left:50%;transform:translateX(-50%);align-items:center}
 .rd-i4 .rd-callout{right:calc(100% + 10px);bottom:0;align-items:flex-end}
 .rd-i5 .rd-callout{right:calc(100% + 10px);top:0;align-items:flex-end}
+
+/* ===== PRICING VISUALS ===== */
+
+/* Barras comparativas */
+.pc-compare{margin-top:40px;padding:28px;background:var(--card);border:1px solid var(--borde);border-radius:20px}
+.pc-compare-title{font-size:13px;color:var(--gris2);margin-bottom:20px;text-align:center}
+.pc-bars{display:flex;flex-direction:column;gap:16px}
+.pc-bar-row{display:grid;grid-template-columns:120px 1fr 40px 72px;align-items:center;gap:12px}
+.pc-bar-lbl{font-size:12px;color:var(--gris2)}
+.pc-bar-track{height:30px;background:rgba(255,255,255,.05);border-radius:999px;overflow:hidden}
+.pc-bar{height:100%;border-radius:999px;width:0;transition:width 1.5s cubic-bezier(.22,.68,0,1);display:flex;align-items:center;padding-left:12px;font-size:11px;font-weight:700;white-space:nowrap}
+.pc-bar--uber{background:linear-gradient(90deg,rgba(127,29,29,.7),rgba(239,68,68,.85));color:#fca5a5}
+.pc-bar--remis{background:linear-gradient(90deg,rgba(6,78,59,.7),rgba(61,204,142,.9));color:#a7f3d0}
+.pc-compare.reveal.visible .pc-bar--uber{width:80%}
+.pc-compare.reveal.visible .pc-bar--remis{width:100%}
+.pc-bar-pct{font-size:12px;font-weight:700;text-align:right}
+.pc-bar-pct--uber{color:#ef4444}
+.pc-bar-pct--remis{color:var(--verde)}
+.pc-bar-amt{font-size:13px;color:var(--blanco);font-weight:600;text-align:right}
+.pc-bars-note{margin-top:16px;text-align:center;font-size:12px;color:var(--gris2);padding:10px 16px;background:rgba(239,68,68,.06);border-radius:8px;border:1px solid rgba(239,68,68,.18)}
+
+/* Journey del dinero */
+.pc-journey{margin-top:24px;display:grid;grid-template-columns:1fr 36px 1fr;border-radius:20px;overflow:hidden;border:1px solid var(--borde)}
+.pc-journey-col{padding:28px 18px;display:flex;flex-direction:column;align-items:center;gap:10px}
+.pcj-col-uber{background:rgba(239,68,68,.05)}
+.pcj-col-remis{background:rgba(61,204,142,.05)}
+.pcj-head{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;margin-bottom:6px}
+.pcj-head--uber{color:#ef4444}
+.pcj-head--remis{color:var(--verde)}
+.pcj-node{background:var(--card);border:1px solid var(--borde);border-radius:12px;padding:10px 14px;text-align:center;font-size:12px;width:100%;line-height:1.5}
+.pcj-node--filter{border-color:rgba(239,68,68,.5);color:#ef4444;background:rgba(239,68,68,.1);font-weight:600}
+.pcj-node--bad{color:var(--gris2)}
+.pcj-node--good{border-color:var(--verde-border);color:var(--verde);background:rgba(61,204,142,.08);font-weight:700}
+.pcj-arr{font-size:18px;color:var(--gris2);line-height:1}
+.pcj-arr--green{color:var(--verde);font-size:22px}
+.pcj-spacer{flex:1}
+.pcj-vs{display:flex;align-items:center;justify-content:center;padding:0;font-size:10px;color:var(--gris2);font-weight:700;text-transform:uppercase;letter-spacing:.1em;background:var(--bg2);border-left:1px solid var(--borde);border-right:1px solid var(--borde);writing-mode:vertical-rl;text-orientation:mixed}
+
+/* Slider de precio */
+.pc-slider-wrap{margin-top:24px;padding:28px;background:var(--card);border:1px solid var(--borde);border-radius:20px}
+.pc-slider-title{font-size:13px;color:var(--gris2);text-align:center;margin-bottom:20px}
+.pc-slider-cols{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:20px}
+.pc-sl-col{padding:18px;border-radius:14px;display:flex;flex-direction:column;align-items:center;gap:6px}
+.pc-sl-uber{background:rgba(239,68,68,.08);border:1px solid rgba(239,68,68,.25)}
+.pc-sl-remis{background:rgba(61,204,142,.08);border:1px solid var(--verde-border)}
+.pc-sl-lbl{font-size:10px;text-transform:uppercase;letter-spacing:.1em;color:var(--gris2)}
+.pc-sl-bar{width:100%;height:6px;background:rgba(255,255,255,.08);border-radius:999px;overflow:hidden;margin:2px 0}
+.pc-sl-fill{height:100%;border-radius:999px;transition:width .25s ease}
+.pc-sl-fill--uber{background:#ef4444;width:80%}
+.pc-sl-fill--remis{background:var(--verde);width:100%}
+.pc-sl-num{font-size:22px;font-weight:800}
+.pc-sl-uber .pc-sl-num{color:#ef4444}
+.pc-sl-remis .pc-sl-num{color:var(--verde)}
+.pc-sl-sub{font-size:10px;color:var(--gris2);text-align:center}
+.pc-sl-price-lbl{display:block;font-size:12px;color:var(--gris2);text-align:center;margin-bottom:8px}
+.pc-sl-price-lbl strong{color:var(--blanco)}
+.pc-sl-diff{text-align:center;margin-top:10px;font-size:13px;color:var(--gris2)}
+.pc-sl-diff strong{color:#ef4444}
+
+/* Simulador mensual */
+.pc-sim{margin-top:24px;padding:28px;background:var(--card);border:1px solid var(--borde);border-radius:20px}
+.pc-sim-title{font-size:16px;font-weight:700;color:var(--blanco);margin-bottom:20px;text-align:center}
+.pc-sim-controls{display:flex;flex-direction:column;gap:16px;margin-bottom:24px}
+.pc-sim-ctrl{display:flex;flex-direction:column;gap:6px}
+.pc-sim-ctrl label{font-size:12px;color:var(--gris2)}
+.pc-sim-ctrl strong{color:var(--blanco)}
+.pc-sim-range{width:100%;accent-color:var(--verde);cursor:pointer}
+.pc-sim-cols{display:grid;grid-template-columns:1fr 24px 1fr;align-items:center;gap:10px}
+.pc-sim-side{padding:18px 14px;border-radius:16px;text-align:center}
+.pc-sim-uber{background:rgba(239,68,68,.08);border:1px solid rgba(239,68,68,.25)}
+.pc-sim-remis{background:rgba(61,204,142,.08);border:1px solid var(--verde-border)}
+.pc-sim-side-lbl{font-size:10px;text-transform:uppercase;letter-spacing:.1em;color:var(--gris2);margin-bottom:8px}
+.pc-sim-side-num{font-size:22px;font-weight:800}
+.pc-sim-uber .pc-sim-side-num{color:#ef4444}
+.pc-sim-remis .pc-sim-side-num{color:var(--verde)}
+.pc-sim-side-sub{font-size:11px;color:var(--gris2);margin-top:4px}
+.pc-sim-arrow{font-size:16px;color:var(--gris2);text-align:center}
+.pc-sim-diff{margin-top:16px;text-align:center;padding:12px 16px;background:rgba(61,204,142,.06);border:1px solid var(--verde-border);border-radius:12px;font-size:13px;color:var(--gris2)}
+.pc-sim-diff-num{color:var(--verde);font-weight:800;font-size:20px}
 </style>
 </head>
 <body>
@@ -1566,6 +1645,139 @@ footer{border-top:1px solid var(--borde);padding:40px;max-width:1180px;margin:0 
     </div>
 
   </div>
+
+  <!-- Barras comparativas -->
+  <div class="pc-compare reveal d1">
+    <div class="pc-compare-title">Lo que te llega de cada viaje de $2.800</div>
+    <div class="pc-bars">
+      <div class="pc-bar-row">
+        <span class="pc-bar-lbl">Con Uber</span>
+        <div class="pc-bar-track"><div class="pc-bar pc-bar--uber">80%</div></div>
+        <span class="pc-bar-pct pc-bar-pct--uber">80%</span>
+        <span class="pc-bar-amt">$2.240</span>
+      </div>
+      <div class="pc-bar-row">
+        <span class="pc-bar-lbl">Con RemisApp</span>
+        <div class="pc-bar-track"><div class="pc-bar pc-bar--remis">100%</div></div>
+        <span class="pc-bar-pct pc-bar-pct--remis">100%</span>
+        <span class="pc-bar-amt">$2.800</span>
+      </div>
+    </div>
+    <div class="pc-bars-note">Uber se queda $560 de cada viaje &mdash; con RemisApp esa plata es tuya.</div>
+  </div>
+
+  <!-- Journey del dinero -->
+  <div class="pc-journey reveal d2">
+    <div class="pc-journey-col pcj-col-uber">
+      <div class="pcj-head pcj-head--uber">&#128308; Con Uber</div>
+      <div class="pcj-node">&#128100; Cliente paga $2.800</div>
+      <div class="pcj-arr">&#8595;</div>
+      <div class="pcj-node pcj-node--filter">Uber retiene 20%<br><strong>$560 se va</strong></div>
+      <div class="pcj-arr">&#8595;</div>
+      <div class="pcj-node pcj-node--bad">&#128663; Vos recib&iacute;s <strong>$2.240</strong></div>
+    </div>
+    <div class="pcj-vs">vs</div>
+    <div class="pc-journey-col pcj-col-remis">
+      <div class="pcj-head pcj-head--remis">&#10003; Con RemisApp</div>
+      <div class="pcj-node">&#128100; Cliente paga $2.800</div>
+      <div class="pcj-spacer"></div>
+      <div class="pcj-arr pcj-arr--green">&#8595;</div>
+      <div class="pcj-spacer"></div>
+      <div class="pcj-node pcj-node--good">&#128663; Vos recib&iacute;s <strong>$2.800</strong> &#10003;</div>
+    </div>
+  </div>
+
+  <!-- Slider: precio de viaje -->
+  <div class="pc-slider-wrap reveal d3">
+    <div class="pc-slider-title">Desliz&aacute; para ver cu&aacute;nto perd&eacute;s seg&uacute;n el precio del viaje</div>
+    <div class="pc-slider-cols">
+      <div class="pc-sl-col pc-sl-uber">
+        <div class="pc-sl-lbl">Con Uber</div>
+        <div class="pc-sl-bar"><div class="pc-sl-fill pc-sl-fill--uber" id="pcSlFillUber"></div></div>
+        <div class="pc-sl-num" id="pcSlNumUber">$2.240</div>
+        <div class="pc-sl-sub">80% &mdash; Uber cobra el resto</div>
+      </div>
+      <div class="pc-sl-col pc-sl-remis">
+        <div class="pc-sl-lbl">Con RemisApp</div>
+        <div class="pc-sl-bar"><div class="pc-sl-fill pc-sl-fill--remis" id="pcSlFillRemis"></div></div>
+        <div class="pc-sl-num" id="pcSlNumRemis">$2.800</div>
+        <div class="pc-sl-sub">100% &mdash; todo tuyo</div>
+      </div>
+    </div>
+    <label class="pc-sl-price-lbl">Precio del viaje: <strong id="pcSlPriceLbl">$2.800</strong></label>
+    <input type="range" min="500" max="10000" step="100" value="2800" id="pcSlRange" class="pc-sim-range">
+    <div class="pc-sl-diff">Uber te saca <strong id="pcSlDiff">$560</strong> de este viaje</div>
+  </div>
+
+  <!-- Simulador mensual -->
+  <div class="pc-sim reveal d4">
+    <div class="pc-sim-title">&iquest;Cu&aacute;nto perd&eacute;s por mes con Uber?</div>
+    <div class="pc-sim-controls">
+      <div class="pc-sim-ctrl">
+        <label>Viajes por mes: <strong id="simViajesVal">80</strong></label>
+        <input type="range" min="10" max="300" value="80" id="simViajes" class="pc-sim-range">
+      </div>
+      <div class="pc-sim-ctrl">
+        <label>Precio promedio por viaje: $<strong id="simPrecioVal">2.500</strong></label>
+        <input type="range" min="500" max="10000" step="100" value="2500" id="simPrecio" class="pc-sim-range">
+      </div>
+    </div>
+    <div class="pc-sim-cols">
+      <div class="pc-sim-side pc-sim-uber">
+        <div class="pc-sim-side-lbl">Con Uber</div>
+        <div class="pc-sim-side-num" id="simUberNum">$160.000</div>
+        <div class="pc-sim-side-sub" id="simUberSub">perd&eacute;s $40.000/mes</div>
+      </div>
+      <div class="pc-sim-arrow">&#8594;</div>
+      <div class="pc-sim-side pc-sim-remis">
+        <div class="pc-sim-side-lbl">Con RemisApp</div>
+        <div class="pc-sim-side-num" id="simRemisNum">$200.000</div>
+        <div class="pc-sim-side-sub">100% tuyo</div>
+      </div>
+    </div>
+    <div class="pc-sim-diff">Gan&aacute;s <span id="simDiff" class="pc-sim-diff-num">$40.000</span> m&aacute;s por mes</div>
+  </div>
+
+  <script>
+  (function(){
+    function fmt(n){return '$'+Math.round(n).toLocaleString('es-AR')}
+
+    // Slider precio de viaje
+    var slRange=document.getElementById('pcSlRange');
+    function updateSl(){
+      var p=parseInt(slRange.value);
+      var uber=Math.round(p*0.8);
+      var diff=p-uber;
+      var uberPct=80,remisPct=100;
+      document.getElementById('pcSlPriceLbl').textContent=fmt(p);
+      document.getElementById('pcSlNumUber').textContent=fmt(uber);
+      document.getElementById('pcSlNumRemis').textContent=fmt(p);
+      document.getElementById('pcSlDiff').textContent=fmt(diff);
+      document.getElementById('pcSlFillUber').style.width=uberPct+'%';
+      document.getElementById('pcSlFillRemis').style.width=remisPct+'%';
+    }
+    if(slRange){slRange.addEventListener('input',updateSl);updateSl();}
+
+    // Simulador mensual
+    var svEl=document.getElementById('simViajes');
+    var spEl=document.getElementById('simPrecio');
+    function updateSim(){
+      var v=parseInt(svEl.value);
+      var p=parseInt(spEl.value);
+      var total=v*p;
+      var uber=Math.round(total*0.8);
+      var diff=total-uber;
+      document.getElementById('simViajesVal').textContent=v;
+      document.getElementById('simPrecioVal').textContent=p.toLocaleString('es-AR');
+      document.getElementById('simUberNum').textContent=fmt(uber);
+      document.getElementById('simRemisNum').textContent=fmt(total);
+      document.getElementById('simUberSub').textContent='perdés '+fmt(diff)+'/mes';
+      document.getElementById('simDiff').textContent=fmt(diff);
+    }
+    if(svEl&&spEl){svEl.addEventListener('input',updateSim);spEl.addEventListener('input',updateSim);}
+  })();
+  </script>
+
   </div>
 </div>
 </section>
