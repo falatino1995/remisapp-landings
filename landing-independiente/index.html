@@ -704,7 +704,7 @@ footer{border-top:1px solid var(--borde);padding:40px;max-width:1180px;margin:0 
 .prob-bridge strong{color:var(--blanco);font-weight:600}
 @media(max-width:700px){.problems-grid{grid-template-columns:1fr}}
 /* ── PROBLEMS VA (compact pain row) ── */
-.prob-va-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:14px;margin-top:34px;perspective:1200px}
+.prob-va-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:44px;perspective:1200px}
 .prob-va-card{background:linear-gradient(180deg,rgba(255,255,255,.028),rgba(255,255,255,.01));border:1px solid var(--borde);border-radius:18px;overflow:hidden;display:flex;flex-direction:column;transition:transform .24s cubic-bezier(.22,.68,0,1.2),box-shadow .24s ease,border-color .22s ease;cursor:default;position:relative;min-height:208px}
 .prob-va-card::after{content:"";position:absolute;left:18px;right:18px;top:0;height:3px;border-radius:999px;background:linear-gradient(90deg,rgba(248,113,113,.75),rgba(248,113,113,0));opacity:.48}
 .prob-va-card--ban{border-color:rgba(239,68,68,.34);background:linear-gradient(145deg,rgba(239,68,68,.12),rgba(255,255,255,.012) 56%,rgba(239,68,68,.035))}
@@ -1166,39 +1166,58 @@ footer{border-top:1px solid var(--borde);padding:40px;max-width:1180px;margin:0 
   <h2 class="sec-title reveal d1">Trabajás para Uber.<br><span class="hl">No para vos.</span></h2>
   <p class="sec-sub reveal d1">Cada viaje que hacés por una plataforma es un viaje que no te pertenece.</p>
   <div class="prob-va-grid">
+
     <div class="prob-va-card reveal d1">
       <div class="prob-va-body">
-        <div class="prob-va-label">Comisión</div>
+        <div class="prob-va-label">Comisi&oacute;n</div>
         <div class="prob-va-stat">20%</div>
         <div class="prob-va-title">Se lo queda la plataforma</div>
-        <p class="prob-va-desc">Uber retiene antes de que el dinero llegue a vos. Sin excepción, sin negociación.</p>
+        <p class="prob-va-desc">Uber retiene antes de que el dinero llegue a vos. Sin excepci&oacute;n, sin negociaci&oacute;n.</p>
       </div>
+      <img src="assets/chofer-plata-retenida-01.png" class="prob-va-photo" alt="">
     </div>
+
     <div class="prob-va-card reveal d2">
       <div class="prob-va-body">
-        <div class="prob-va-label">Fidelizaci&oacute;n</div>
+        <div class="prob-va-label">Tus clientes</div>
         <div class="prob-va-stat">0</div>
         <div class="prob-va-title">Clientes que vuelven a vos</div>
-        <p class="prob-va-desc">El historial, el contacto y la repetici&oacute;n quedan en la app. No constru&iacute;s cartera propia.</p>
+        <p class="prob-va-desc">El historial, el contacto y la repetici&oacute;n quedan en la app. Si te baj&aacute;s, empez&aacute;s de cero.</p>
       </div>
+      <img src="assets/contacto-directo-sin-app-01.png" class="prob-va-photo" alt="">
     </div>
+
     <div class="prob-va-card reveal d3">
       <div class="prob-va-body">
         <div class="prob-va-label">Pedidos perdidos</div>
-        <div class="prob-va-stat">∞</div>
-        <div class="prob-va-title">Pedidos que perdés manejando</div>
-        <p class="prob-va-desc">Al volante no podés atender el teléfono. Cada llamada perdida es un cliente que se va.</p>
+        <div class="prob-va-stat">&#8734;</div>
+        <div class="prob-va-title">Pedidos que perd&eacute;s manejando</div>
+        <p class="prob-va-desc">Al volante no pod&eacute;s atender el tel&eacute;fono. Cada llamada perdida es un cliente que se va.</p>
       </div>
+      <img src="assets/chofer-interior-qr-01.png" class="prob-va-photo" alt="" style="object-position:center center">
     </div>
-    <div class="prob-va-card prob-va-card--plan reveal d4">
+
+    <div class="prob-va-card reveal d1">
+      <div class="prob-va-body">
+        <div class="prob-va-label">Tu reputaci&oacute;n</div>
+        <div class="prob-va-stat">4.8&#9733;</div>
+        <div class="prob-va-title">No es tuya</div>
+        <p class="prob-va-desc">Los a&ntilde;os construyendo tu reputaci&oacute;n viven en la app de ellos. Si te baj&aacute;s, empez&aacute;s con cero estrellas.</p>
+      </div>
+      <img src="assets/remis-negocio-organizado-01.png" class="prob-va-photo" alt="">
+    </div>
+
+    <div class="prob-va-card reveal d2">
       <div class="prob-va-body">
         <div class="prob-va-label">Tu jornada</div>
-        <div class="prob-va-stat">?</div>
+        <div class="prob-va-stat">&#63;</div>
         <div class="prob-va-title">No pod&eacute;s planificar</div>
         <p class="prob-va-desc">Viv&iacute;s esperando el pr&oacute;ximo viaje. Sin reservas propias ni agenda para ordenar el d&iacute;a.</p>
       </div>
+      <img src="assets/chofer-interior-qr-01.png" class="prob-va-photo" alt="" style="object-position:center top">
     </div>
-    <div class="prob-va-card prob-va-card--ban reveal d2">
+
+    <div class="prob-va-card reveal d3" style="border-color:rgba(239,68,68,.35);background:rgba(239,68,68,.04)">
       <div class="prob-va-body">
         <div class="prob-va-label" style="color:#ef4444">Tu cuenta</div>
         <div class="prob-va-stat" style="color:#ef4444">BAN</div>
@@ -1206,6 +1225,7 @@ footer{border-top:1px solid var(--borde);padding:40px;max-width:1180px;margin:0 
         <p class="prob-va-desc">Uber puede desactivar tu cuenta de un d&iacute;a para el otro. Sin aviso, sin apelaci&oacute;n. Perd&eacute;s todo de golpe.</p>
       </div>
     </div>
+
   </div>
   <div class="prob-bridge reveal d3">
     <div class="prob-bridge-icon">💡</div>
