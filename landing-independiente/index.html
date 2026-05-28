@@ -969,6 +969,18 @@ footer{border-top:1px solid var(--borde);padding:40px;max-width:1180px;margin:0 
 .pc-sim-arrow{font-size:16px;color:var(--gris2);text-align:center}
 .pc-sim-diff{margin-top:16px;text-align:center;padding:12px 16px;background:rgba(61,204,142,.06);border:1px solid var(--verde-border);border-radius:12px;font-size:13px;color:var(--gris2)}
 .pc-sim-diff-num{color:var(--verde);font-weight:800;font-size:20px}
+
+/* Ban card — full width, horizontal */
+.prob-va-card--ban{grid-column:span 4;flex-direction:row;align-items:stretch;border-color:rgba(239,68,68,.35);background:rgba(239,68,68,.06)}
+.prob-va-card--ban:hover{border-color:rgba(239,68,68,.6)}
+.prob-va-card--ban .prob-va-body{flex:1;display:flex;gap:32px;align-items:center;padding:24px 28px}
+.prob-va-card--ban .prob-va-stat{font-size:52px;margin-bottom:0;flex-shrink:0;color:#ef4444;line-height:1}
+.prob-va-card--ban .prob-va-label{color:#ef4444}
+.prob-va-card--ban .prob-va-stat-wrap{display:flex;flex-direction:column;gap:4px;align-items:center;justify-content:center;min-width:80px}
+.prob-va-card--ban .prob-va-text{flex:1}
+.prob-va-card--ban .prob-va-title{font-size:16px;margin-bottom:6px}
+.prob-va-card--ban .prob-va-desc{font-size:13px;max-width:640px}
+.prob-va-card--ban .prob-va-photo{width:220px;height:auto;object-fit:cover;flex-shrink:0}
 </style>
 </head>
 <body>
@@ -1199,6 +1211,18 @@ footer{border-top:1px solid var(--borde);padding:40px;max-width:1180px;margin:0 
       <img src="assets/remis-negocio-organizado-01.png" class="prob-va-photo" alt="">
     </div>
   </div>
+    <div class="prob-va-card prob-va-card--ban reveal d4">
+      <div class="prob-va-body">
+        <div class="prob-va-stat-wrap">
+          <div class="prob-va-label">Tu cuenta</div>
+          <div class="prob-va-stat">&#9888;</div>
+        </div>
+        <div class="prob-va-text">
+          <div class="prob-va-title">Te pueden banear sin explicaci&oacute;n</div>
+          <p class="prob-va-desc">Uber puede desactivar tu cuenta de un d&iacute;a para el otro &mdash; sin aviso, sin apelaci&oacute;n, sin devolverte tus clientes. Si eso pasa, perd&eacute;s todo lo que constru&iacute;ste. Con RemisApp, tu negocio es tuyo: ning&uacute;n algoritmo puede cerrarte la puerta.</p>
+        </div>
+      </div>
+    </div>
   <div class="prob-bridge reveal d3">
     <div class="prob-bridge-icon">💡</div>
     <p>Por eso existe RemisApp. <strong>Tu propio bot de WhatsApp</strong> que atiende a tus clientes, cotiza viajes y confirma reservas — mientras vos manejás. Sin comisión, sin perder clientes.</p>
