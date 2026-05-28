@@ -704,8 +704,13 @@ footer{border-top:1px solid var(--borde);padding:40px;max-width:1180px;margin:0 
 .prob-bridge strong{color:var(--blanco);font-weight:600}
 @media(max-width:700px){.problems-grid{grid-template-columns:1fr}}
 /* ── PROBLEMS VA (cards con foto) ── */
-.prob-va-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:44px}
+.prob-va-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:44px;perspective:1200px}
 .prob-va-card{background:var(--bg2);border:1px solid var(--borde);border-radius:20px;overflow:hidden;display:flex;flex-direction:column;transition:transform .24s cubic-bezier(.22,.68,0,1.2),box-shadow .24s ease,border-color .22s ease;cursor:default;position:relative}
+.prob-va-card.reveal{opacity:0;transform:translateY(60px) rotateX(38deg) scale(0.88);transform-origin:center bottom;transition:opacity .65s ease,transform .75s cubic-bezier(.22,.68,0,1.2)}
+.prob-va-card.reveal.d2{transition-delay:.13s}
+.prob-va-card.reveal.d3{transition-delay:.26s}
+.prob-va-card.reveal.d4{transition-delay:.39s}
+.prob-va-card.reveal.visible{opacity:1;transform:none;transition:transform .24s cubic-bezier(.22,.68,0,1.2),box-shadow .24s ease,border-color .22s ease}
 .prob-va-card:hover{transform:translateY(-8px) scale(1.04);box-shadow:0 36px 70px rgba(0,0,0,0.6);border-color:rgba(248,113,113,0.32);z-index:2}
 .prob-va-body{padding:24px 22px 18px;flex:1;display:flex;flex-direction:column;gap:6px}
 .prob-va-label{font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#F87171;opacity:.65}
@@ -978,8 +983,8 @@ footer{border-top:1px solid var(--borde);padding:40px;max-width:1180px;margin:0 
   <div class="sec-eyebrow reveal">El problema</div>
   <h2 class="sec-title reveal d1">Trabajás para Uber.<br><span class="hl">No para vos.</span></h2>
   <p class="sec-sub reveal d1">Cada viaje que hacés por una plataforma es un viaje que no te pertenece.</p>
-  <div class="prob-va-grid reveal d2">
-    <div class="prob-va-card">
+  <div class="prob-va-grid">
+    <div class="prob-va-card reveal d1">
       <div class="prob-va-body">
         <div class="prob-va-label">Comisión</div>
         <div class="prob-va-stat">20%</div>
@@ -988,7 +993,7 @@ footer{border-top:1px solid var(--borde);padding:40px;max-width:1180px;margin:0 
       </div>
       <img src="assets/chofer-plata-retenida-01.png" class="prob-va-photo" alt="">
     </div>
-    <div class="prob-va-card">
+    <div class="prob-va-card reveal d2">
       <div class="prob-va-body">
         <div class="prob-va-label">Tus clientes</div>
         <div class="prob-va-stat">0</div>
@@ -997,7 +1002,7 @@ footer{border-top:1px solid var(--borde);padding:40px;max-width:1180px;margin:0 
       </div>
       <img src="assets/contacto-directo-sin-app-01.png" class="prob-va-photo" alt="">
     </div>
-    <div class="prob-va-card">
+    <div class="prob-va-card reveal d3">
       <div class="prob-va-body">
         <div class="prob-va-label">Pedidos perdidos</div>
         <div class="prob-va-stat">∞</div>
@@ -1006,7 +1011,7 @@ footer{border-top:1px solid var(--borde);padding:40px;max-width:1180px;margin:0 
       </div>
       <img src="assets/chofer-interior-qr-01.png" class="prob-va-photo" alt="" style="object-position:center center">
     </div>
-    <div class="prob-va-card">
+    <div class="prob-va-card reveal d4">
       <div class="prob-va-body">
         <div class="prob-va-label">Tu reputación</div>
         <div class="prob-va-stat">4.8★</div>
