@@ -599,6 +599,8 @@ footer{border-top:1px solid var(--borde);padding:40px;max-width:1180px;margin:0 
 .bento-stat{display:flex;align-items:center;justify-content:center;flex:1;padding:36px 20px;gap:4px}
 .bento-stat-num{font-family:'Barlow Condensed',sans-serif;font-size:80px;font-weight:800;color:var(--verde);line-height:1}
 .bento-stat-sup{font-size:32px;font-weight:800;color:var(--verde);line-height:1;align-self:flex-start;padding-top:14px}
+.bento-grid .bento-card.reveal{transform:translateY(24px) scale(0.96);transition:opacity .55s cubic-bezier(.22,.68,0,1.2),transform .55s cubic-bezier(.22,.68,0,1.2)}
+.bento-grid .bento-card.reveal.visible{opacity:1;transform:none}
 @media(max-width:860px){
   .bento-grid{grid-template-columns:1fr 1fr}
   .bento-card--tall{grid-row:span 1}
@@ -1090,9 +1092,9 @@ footer{border-top:1px solid var(--borde);padding:40px;max-width:1180px;margin:0 
   <h2 class="sec-title reveal d1">Qué hace el bot<br><span class="hl">de RemisApp</span></h2>
   <p class="sec-sub reveal d1">Todo por WhatsApp, sin apps nuevas. Gratis para empezar — sin tarjeta de crédito.</p>
 
-  <div class="bento-grid reveal d2">
+  <div class="bento-grid">
 
-    <div class="bento-card bento-card--tall">
+    <div class="bento-card bento-card--tall reveal d1">
       <img src="assets/feat-link-pub.png" class="bento-img" alt="">
       <div class="bento-body">
         <div class="bento-tag">Tu marca</div>
@@ -1101,7 +1103,7 @@ footer{border-top:1px solid var(--borde);padding:40px;max-width:1180px;margin:0 
       </div>
     </div>
 
-    <div class="bento-card bento-card--wide">
+    <div class="bento-card bento-card--wide reveal d2">
       <img src="assets/feat-tracking-map.png" class="bento-img" alt="" style="object-position:center bottom">
       <div class="bento-body">
         <div class="bento-tag">Transparencia</div>
@@ -1110,7 +1112,7 @@ footer{border-top:1px solid var(--borde);padding:40px;max-width:1180px;margin:0 
       </div>
     </div>
 
-    <div class="bento-card">
+    <div class="bento-card reveal d1">
       <img src="assets/feat-precio-control.png" class="bento-img" alt="">
       <div class="bento-body">
         <div class="bento-tag">Precios</div>
@@ -1119,7 +1121,7 @@ footer{border-top:1px solid var(--borde);padding:40px;max-width:1180px;margin:0 
       </div>
     </div>
 
-    <div class="bento-card">
+    <div class="bento-card reveal d2">
       <img src="assets/feat-mp-cobro.png" class="bento-img" alt="">
       <div class="bento-body">
         <div class="bento-tag">Cobros</div>
@@ -1128,7 +1130,7 @@ footer{border-top:1px solid var(--borde);padding:40px;max-width:1180px;margin:0 
       </div>
     </div>
 
-    <div class="bento-card bento-card--wide">
+    <div class="bento-card bento-card--wide reveal d1">
       <img src="assets/feat-gestion-2.png" class="bento-img" alt="" style="object-position:center center">
       <div class="bento-body">
         <div class="bento-tag">Control</div>
@@ -1137,7 +1139,7 @@ footer{border-top:1px solid var(--borde);padding:40px;max-width:1180px;margin:0 
       </div>
     </div>
 
-    <div class="bento-card">
+    <div class="bento-card reveal d2">
       <div class="bento-stat">
         <div class="bento-stat-num">0</div>
         <div class="bento-stat-sup">%</div>
