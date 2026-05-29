@@ -1043,6 +1043,47 @@ footer{border-top:1px solid var(--borde);padding:40px;max-width:1180px;margin:0 
 .hw-bubble--bot{background:#128C7E;color:#fff;align-self:flex-end;border-radius:12px 12px 3px 12px}
 .hw-bubble--confirm{background:var(--verde);color:#000;font-weight:700;align-self:flex-end;border-radius:12px 12px 3px 12px}
 /* Profile phone - reuse shr-phone styles already in CSS */
+
+/* HOW IT WORKS — unified alternating layout */
+.hw-steps{display:flex;flex-direction:column;gap:56px;margin-top:48px}
+.hw-step{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.hw-step--alt .hw-step__text{order:2}
+.hw-step--alt .hw-step__mock{order:1}
+.hw-step__num{font-size:52px;font-weight:900;color:rgba(61,204,142,.12);line-height:1;margin-bottom:8px;font-family:inherit}
+.hw-step__tag{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.14em;color:var(--verde);margin-bottom:10px}
+.hw-step__title{font-size:22px;font-weight:800;color:var(--blanco);line-height:1.3;margin-bottom:10px}
+.hw-step__desc{font-size:14px;color:var(--gris2);line-height:1.7;margin:0}
+.hw-step__mock{background:var(--card);border:1px solid var(--borde);border-radius:24px;padding:36px 28px;display:flex;align-items:center;justify-content:center;min-height:260px}
+/* Form mockup */
+.hw-form{display:flex;flex-direction:column;gap:10px;width:100%;max-width:280px}
+.hw-form-title{font-size:13px;font-weight:700;color:var(--blanco);margin-bottom:4px}
+.hw-field{display:flex;flex-direction:column;gap:4px}
+.hw-field label{font-size:10px;color:var(--gris2);text-transform:uppercase;letter-spacing:.08em}
+.hw-field-input{background:rgba(255,255,255,.07);border:1px solid var(--borde);border-radius:8px;padding:9px 12px;font-size:12px;color:var(--blanco);display:flex;align-items:center;gap:8px}
+.hw-field-input span{opacity:.4;font-size:11px}
+.hw-form-btn{background:var(--verde);color:#000;font-weight:800;font-size:12px;border-radius:8px;padding:11px;text-align:center;margin-top:4px;letter-spacing:.02em}
+.hw-form-note{font-size:10px;color:var(--gris2);text-align:center}
+/* Link mockup */
+.hw-link-wrap{display:flex;flex-direction:column;gap:12px;width:100%;max-width:280px}
+.hw-link-bar{background:rgba(255,255,255,.07);border:1px solid var(--verde-border);border-radius:10px;padding:10px 14px;display:flex;align-items:center;gap:6px;font-size:12px}
+.hw-link-prefix{color:var(--gris2)}
+.hw-link-val{color:var(--verde);font-weight:700}
+.hw-link-cursor{width:2px;height:14px;background:var(--verde);animation:blink .9s step-end infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:0}}
+.hw-link-preview{background:rgba(255,255,255,.04);border:1px solid var(--borde);border-radius:14px;padding:16px;display:flex;flex-direction:column;align-items:center;gap:8px}
+.hw-link-avatar{width:42px;height:42px;border-radius:50%;background:rgba(61,204,142,.15);border:2px solid var(--verde);display:flex;align-items:center;justify-content:center;font-size:18px}
+.hw-link-name{font-size:13px;font-weight:700;color:var(--blanco)}
+.hw-link-url{font-size:10px;color:var(--verde);font-family:monospace}
+.hw-link-btn-prev{background:var(--verde);color:#000;font-weight:700;font-size:10px;border-radius:999px;padding:7px 18px;margin-top:2px}
+/* QR share mockup */
+.hw-qr-share{display:flex;flex-direction:column;align-items:center;gap:16px;width:100%;max-width:280px}
+.hw-qr-card-sm{background:#fff;border-radius:12px;padding:12px 12px 8px;display:flex;flex-direction:column;align-items:center;gap:6px;box-shadow:0 4px 20px rgba(0,0,0,.4)}
+.hw-qr-grid-sm{display:grid;grid-template-columns:repeat(9,7px);grid-template-rows:repeat(9,7px);gap:1px}
+.hw-qr-url-sm{font-size:8px;color:#555;font-family:monospace}
+.hw-share-row{display:flex;gap:12px;align-items:center}
+.hw-share-icon{width:40px;height:40px;border-radius:50%;background:var(--card);border:1px solid var(--borde);display:flex;align-items:center;justify-content:center;font-size:18px}
+.hw-share-label{font-size:10px;color:var(--gris2);text-align:center;margin-top:3px}
+.hw-share-item{display:flex;flex-direction:column;align-items:center}
 </style>
 </head>
 <body>
@@ -1546,97 +1587,98 @@ footer{border-top:1px solid var(--borde);padding:40px;max-width:1180px;margin:0 
   <h2 class="sec-title reveal d1">Cómo arrancás:<br><span class="hl">3 minutos y ya estás operando.</span></h2>
   <p class="sec-sub reveal d1">Sin técnicos, sin instalaciones. Solo necesitás un celular y WhatsApp. Es gratis.</p>
 
-  <div class="steps-wrap reveal d2">
-    <div class="step">
-      <div class="step-n">01</div>
-      <div class="step-icon">👤</div>
-      <div class="step-title">Creás tu cuenta</div>
-      <p class="step-desc">Te registrás con tu nombre, ciudad y número de WhatsApp. Sin tarjeta de crédito, sin compromisos.</p>
-      <div class="step-arr">→</div>
-    </div>
-    <div class="step">
-      <div class="step-n">02</div>
-      <div class="step-icon">🔗</div>
-      <div class="step-title">Elegís tu link</div>
-      <p class="step-desc">Configurás tu link propio — tipo remisapp.link/marcelo — y subís foto de perfil. Listo, tu página ya está activa.</p>
-      <div class="step-arr">→</div>
-    </div>
-    <div class="step">
-      <div class="step-n">03</div>
-      <div class="step-icon">📲</div>
-      <div class="step-title">Compartís y pegás el QR</div>
-      <p class="step-desc">Mandás el link por WhatsApp, lo ponés en tu bio de Instagram y pegás el QR en tu auto. Tus clientes ya pueden pedirte.</p>
-      <div class="step-arr">→</div>
-    </div>
-    <div class="step">
-      <div class="step-n">04</div>
-      <div class="step-icon">🚗</div>
-      <div class="step-title">Recibís tu primer pedido</div>
-      <p class="step-desc">El bot atiende a tus clientes. Vos recibís la notificación, aceptás el viaje y cobrás el 100%. Sin plataformas en el medio.</p>
-    </div>
-  </div>
+  <div class="hw-steps">
 
-
-  <div class="hw-result reveal d3">
-    <div class="hw-result-eyebrow">&#10003; Esto es lo que ten&eacute;s listo en 3 minutos</div>
-    <div class="hw-result-grid">
-
-      <!-- QR listo para imprimir -->
-      <div class="hw-result-card">
-        <div class="hw-mock">
-          <div class="hw-qr-card">
-            <div class="hw-qr-grid"><div class="qc"></div><div class="qc"></div><div class="qc"></div><div class="qc"></div><div class="qc"></div><div class="qc"></div><div class="qc"></div><div class="qw"></div><div class="qc"></div><div class="qc"></div><div class="qw"></div><div class="qw"></div><div class="qw"></div><div class="qw"></div><div class="qw"></div><div class="qc"></div><div class="qw"></div><div class="qw"></div><div class="qc"></div><div class="qw"></div><div class="qc"></div><div class="qc"></div><div class="qc"></div><div class="qw"></div><div class="qc"></div><div class="qw"></div><div class="qc"></div><div class="qc"></div><div class="qw"></div><div class="qc"></div><div class="qc"></div><div class="qc"></div><div class="qw"></div><div class="qc"></div><div class="qw"></div><div class="qw"></div><div class="qc"></div><div class="qw"></div><div class="qc"></div><div class="qc"></div><div class="qc"></div><div class="qw"></div><div class="qc"></div><div class="qw"></div><div class="qc"></div><div class="qc"></div><div class="qw"></div><div class="qw"></div><div class="qw"></div><div class="qw"></div><div class="qw"></div><div class="qc"></div><div class="qw"></div><div class="qc"></div><div class="qc"></div><div class="qc"></div><div class="qc"></div><div class="qc"></div><div class="qc"></div><div class="qc"></div><div class="qc"></div><div class="qw"></div><div class="qw"></div><div class="qw"></div><div class="qw"></div><div class="qw"></div><div class="qw"></div><div class="qw"></div><div class="qw"></div><div class="qw"></div><div class="qw"></div><div class="qc"></div><div class="qc"></div><div class="qw"></div><div class="qc"></div><div class="qc"></div><div class="qw"></div><div class="qc"></div><div class="qw"></div><div class="qc"></div><div class="qc"></div></div>
-            <div class="hw-qr-url">remisapp.link/tu-nombre</div>
-          </div>
-        </div>
-        <div class="hw-result-body">
-          <div class="hw-result-title">Tu QR listo para imprimir</div>
-          <p class="hw-result-desc">Lo peg&aacute;s en el tablero. El pasajero escanea y te escribe directo &mdash; sin buscar nada.</p>
+    <!-- Step 01 -->
+    <div class="hw-step reveal d1">
+      <div class="hw-step__text">
+        <div class="hw-step__num">01</div>
+        <div class="hw-step__tag">Alta en 2 minutos</div>
+        <div class="hw-step__title">Cre&aacute;s tu cuenta</div>
+        <p class="hw-step__desc">Te registr&aacute;s con tu nombre, ciudad y n&uacute;mero de WhatsApp. Sin tarjeta de cr&eacute;dito, sin compromisos. Todo guiado paso a paso.</p>
+      </div>
+      <div class="hw-step__mock">
+        <div class="hw-form">
+          <div class="hw-form-title">Cre&aacute; tu cuenta gratis</div>
+          <div class="hw-field"><label>Tu nombre</label><div class="hw-field-input"><span>Ej: Marcelo Garc&iacute;a</span></div></div>
+          <div class="hw-field"><label>WhatsApp</label><div class="hw-field-input"><span>+54 9 11...</span></div></div>
+          <div class="hw-field"><label>Ciudad</label><div class="hw-field-input"><span>Buenos Aires</span></div></div>
+          <div class="hw-form-btn">Crear cuenta gratis &rarr;</div>
+          <div class="hw-form-note">Sin tarjeta &middot; Sin contrato &middot; 3 viajes gratis/mes</div>
         </div>
       </div>
-
-      <!-- Bot activo 24hs -->
-      <div class="hw-result-card">
-        <div class="hw-mock">
-          <div class="hw-chat">
-            <div class="hw-chat-header">
-              <div class="hw-chat-avatar">&#129302;</div>
-              <div>
-                <div class="hw-chat-name">Bot de Marcelo</div>
-                <div class="hw-chat-status">&#9679; en l&iacute;nea</div>
-              </div>
-            </div>
-            <div class="hw-bubble hw-bubble--in">Hola, &iquest;ten&eacute;s lugar para hoy?</div>
-            <div class="hw-bubble hw-bubble--bot">Hola! Soy el asistente de Marcelo &#128075; &iquest;Para qu&eacute; hora y desde d&oacute;nde?</div>
-            <div class="hw-bubble hw-bubble--in">A las 18hs desde Palermo</div>
-            <div class="hw-bubble hw-bubble--confirm">$2.800 &#10003; &iquest;Confirmamos?</div>
-          </div>
-        </div>
-        <div class="hw-result-body">
-          <div class="hw-result-title">Bot activo 24hs</div>
-          <p class="hw-result-desc">Responde, cotiza y confirma mientras vos manej&aacute;s. Sin que toques el celular.</p>
-        </div>
-      </div>
-
-      <!-- Perfil público -->
-      <div class="hw-result-card">
-        <div class="hw-mock">
-          <div class="shr-phone">
-            <div class="shr-phone-notch"></div>
-            <div class="shr-phone-avatar"><svg width="14" height="14" viewBox="0 0 24 24" fill="rgba(61,204,142,.9)"><path d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z"/></svg></div>
-            <div class="shr-phone-name"></div>
-            <div class="shr-phone-sub"></div>
-            <div class="shr-phone-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-            <div class="shr-phone-btn">Pedir viaje &rarr;</div>
-          </div>
-        </div>
-        <div class="hw-result-body">
-          <div class="hw-result-title">Tu p&aacute;gina p&uacute;blica activa</div>
-          <p class="hw-result-desc">Tu link propio con tu nombre, tus estrellas y un bot&oacute;n para pedir. Se la das a quien quer&eacute;s.</p>
-        </div>
-      </div>
-
     </div>
+
+    <!-- Step 02 -->
+    <div class="hw-step hw-step--alt reveal d1">
+      <div class="hw-step__text">
+        <div class="hw-step__num">02</div>
+        <div class="hw-step__tag">Tu identidad digital</div>
+        <div class="hw-step__title">Eleg&iacute;s tu link</div>
+        <p class="hw-step__desc">Configur&aacute;s tu link propio &mdash; tipo remisapp.link/marcelo &mdash; y sub&iacute;s una foto de perfil. En segundos, tu p&aacute;gina ya est&aacute; activa.</p>
+      </div>
+      <div class="hw-step__mock">
+        <div class="hw-link-wrap">
+          <div class="hw-link-bar">
+            <span class="hw-link-prefix">remisapp.link/</span>
+            <span class="hw-link-val">marcelo</span>
+            <div class="hw-link-cursor"></div>
+          </div>
+          <div class="hw-link-preview">
+            <div class="hw-link-avatar">&#128663;</div>
+            <div class="hw-link-name">Marcelo Garc&iacute;a</div>
+            <div class="hw-link-url">remisapp.link/marcelo</div>
+            <div class="hw-link-btn-prev">Pedir viaje &rarr;</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Step 03 -->
+    <div class="hw-step reveal d1">
+      <div class="hw-step__text">
+        <div class="hw-step__num">03</div>
+        <div class="hw-step__tag">Capt&aacute; clientes</div>
+        <div class="hw-step__title">Compart&iacute;s y peg&aacute;s el QR</div>
+        <p class="hw-step__desc">Mand&aacute;s el link por WhatsApp, lo pon&eacute;s en tu bio de Instagram y peg&aacute;s el QR en tu auto. Tus clientes ya pueden pedirte sin instalar nada.</p>
+      </div>
+      <div class="hw-step__mock">
+        <div class="hw-qr-share">
+          <div class="hw-qr-card-sm">
+            <div class="hw-qr-grid-sm"><div class="qc"></div><div class="qc"></div><div class="qc"></div><div class="qc"></div><div class="qc"></div><div class="qc"></div><div class="qc"></div><div class="qw"></div><div class="qc"></div><div class="qc"></div><div class="qw"></div><div class="qw"></div><div class="qw"></div><div class="qw"></div><div class="qw"></div><div class="qc"></div><div class="qw"></div><div class="qw"></div><div class="qc"></div><div class="qw"></div><div class="qc"></div><div class="qc"></div><div class="qc"></div><div class="qw"></div><div class="qc"></div><div class="qw"></div><div class="qc"></div><div class="qc"></div><div class="qw"></div><div class="qc"></div><div class="qc"></div><div class="qc"></div><div class="qw"></div><div class="qc"></div><div class="qw"></div><div class="qw"></div><div class="qc"></div><div class="qw"></div><div class="qc"></div><div class="qc"></div><div class="qc"></div><div class="qw"></div><div class="qc"></div><div class="qw"></div><div class="qc"></div><div class="qc"></div><div class="qw"></div><div class="qw"></div><div class="qw"></div><div class="qw"></div><div class="qw"></div><div class="qc"></div><div class="qw"></div><div class="qc"></div><div class="qc"></div><div class="qc"></div><div class="qc"></div><div class="qc"></div><div class="qc"></div><div class="qc"></div><div class="qc"></div><div class="qw"></div><div class="qw"></div><div class="qw"></div><div class="qw"></div><div class="qw"></div><div class="qw"></div><div class="qw"></div><div class="qw"></div><div class="qw"></div><div class="qw"></div><div class="qc"></div><div class="qc"></div><div class="qw"></div><div class="qc"></div><div class="qc"></div><div class="qw"></div><div class="qc"></div><div class="qw"></div><div class="qc"></div><div class="qc"></div></div>
+            <div class="hw-qr-url-sm">remisapp.link/marcelo</div>
+          </div>
+          <div class="hw-share-row">
+            <div class="hw-share-item"><div class="hw-share-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="#25D366"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></div><div class="hw-share-label">WhatsApp</div></div>
+            <div class="hw-share-item"><div class="hw-share-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><defs><linearGradient id="ig2" x1="2" y1="22" x2="22" y2="2" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#f09433"/><stop offset="100%" stop-color="#bc1888"/></linearGradient></defs><rect x="2" y="2" width="20" height="20" rx="5" stroke="url(#ig2)" stroke-width="1.8"/><circle cx="12" cy="12" r="5" stroke="url(#ig2)" stroke-width="1.8"/><circle cx="17.5" cy="6.5" r="1.2" fill="url(#ig2)"/></svg></div><div class="hw-share-label">Instagram</div></div>
+            <div class="hw-share-item"><div class="hw-share-icon">&#128663;</div><div class="hw-share-label">QR en auto</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Step 04 -->
+    <div class="hw-step hw-step--alt reveal d1">
+      <div class="hw-step__text">
+        <div class="hw-step__num">04</div>
+        <div class="hw-step__tag">El bot trabaja por vos</div>
+        <div class="hw-step__title">Recib&iacute;s tu primer pedido</div>
+        <p class="hw-step__desc">El bot atiende, cotiza y confirma. Vos recib&iacute;s la notificaci&oacute;n, acept&aacute;s el viaje y cobr&aacute;s el 100%. Sin plataformas en el medio.</p>
+      </div>
+      <div class="hw-step__mock">
+        <div class="hw-chat">
+          <div class="hw-chat-header">
+            <div class="hw-chat-avatar">&#129302;</div>
+            <div><div class="hw-chat-name">Bot de Marcelo</div><div class="hw-chat-status">&#9679; en l&iacute;nea</div></div>
+          </div>
+          <div class="hw-bubble hw-bubble--in">Hola, &iquest;ten&eacute;s lugar para hoy?</div>
+          <div class="hw-bubble hw-bubble--bot">Hola! Soy el asistente de Marcelo &#128075; &iquest;Para qu&eacute; hora?</div>
+          <div class="hw-bubble hw-bubble--in">A las 18hs desde Palermo</div>
+          <div class="hw-bubble hw-bubble--confirm">$2.800 &#10003; &iquest;Confirmamos?</div>
+        </div>
+      </div>
+    </div>
+
   </div>
 
   <div class="steps-cta reveal d3">
