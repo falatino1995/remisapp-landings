@@ -1005,9 +1005,9 @@ footer{border-top:1px solid var(--borde);padding:40px;max-width:1180px;margin:0 
 .vd-col-head{padding-bottom:4px;border-bottom:1px solid var(--borde);margin-bottom:8px}
 
 /* Pricing 3-col */
-.pricing-grid{grid-template-columns:repeat(3,1fr)!important}
+.pricing-grid{grid-template-columns:repeat(3,1fr)!important;align-items:stretch}
 /* Pack options inside card */
-.pack-options{display:flex;flex-direction:column;gap:8px;margin:16px 0;flex:1}
+.pack-options{display:flex;flex-direction:column;gap:8px;margin:16px 0;flex:1;justify-content:center}
 .pack-option{display:flex;align-items:center;gap:8px;padding:10px 12px;border-radius:10px;background:rgba(255,255,255,.04);border:1px solid var(--borde)}
 .pack-option--pop{border-color:var(--verde-border);background:rgba(61,204,142,.06)}
 .pack-lbl{font-size:13px;font-weight:600;color:var(--blanco);flex:1}
@@ -2164,7 +2164,7 @@ footer{border-top:1px solid var(--borde);padding:40px;max-width:1180px;margin:0 
 
     <div class="pricing-card pricing-packs">
       <div class="pricing-tag">Pago por uso</div>
-      <div class="pricing-price" style="font-size:1.4rem;line-height:1.2;padding-top:4px">Recarg&aacute; cuando quer&eacute;s</div>
+      <div class="pricing-price">desde <span style="font-size:2rem">.000</span></div>
       <p class="pricing-period">Sin abono mensual &middot; Cr&eacute;ditos sin vencimiento</p>
       <div class="pack-options">
         <div class="pack-option">
