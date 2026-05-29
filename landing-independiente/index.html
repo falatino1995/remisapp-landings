@@ -1015,6 +1015,34 @@ footer{border-top:1px solid var(--borde);padding:40px;max-width:1180px;margin:0 
 .pack-unit{font-size:11px;color:var(--gris2);min-width:68px;text-align:right}
 /* Pricing tip */
 .pricing-tip{font-size:12px;color:var(--verde);padding:10px 12px;background:rgba(61,204,142,.06);border-radius:8px;border:1px solid var(--verde-border);margin:12px 0 16px;line-height:1.5}
+
+/* HOW IT WORKS — resultado block */
+.hw-result{margin-top:48px}
+.hw-result-eyebrow{font-size:10px;text-transform:uppercase;letter-spacing:.14em;color:var(--verde);font-weight:700;text-align:center;margin-bottom:20px}
+.hw-result-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.hw-result-card{background:var(--card);border:1px solid var(--borde);border-radius:20px;overflow:hidden;display:flex;flex-direction:column;transition:transform .22s ease,border-color .2s}
+.hw-result-card:hover{transform:translateY(-4px);border-color:var(--verde-border)}
+.hw-mock{width:100%;background:rgba(255,255,255,.03);padding:28px 20px;display:flex;align-items:center;justify-content:center;min-height:200px;border-bottom:1px solid var(--borde)}
+.hw-result-body{padding:20px 22px 24px}
+.hw-result-title{font-size:15px;font-weight:800;color:var(--blanco);margin-bottom:6px}
+.hw-result-desc{font-size:13px;color:var(--gris2);margin:0;line-height:1.6}
+/* QR mockup */
+.hw-qr-card{background:#fff;border-radius:14px;padding:14px 14px 10px;display:flex;flex-direction:column;align-items:center;gap:8px;box-shadow:0 4px 24px rgba(0,0,0,.35)}
+.hw-qr-grid{display:grid;grid-template-columns:repeat(9,8px);grid-template-rows:repeat(9,8px);gap:1.5px}
+.qc{background:#111;border-radius:1px}
+.qw{background:transparent}
+.hw-qr-url{font-size:9px;color:#555;font-family:monospace;letter-spacing:.02em}
+/* Chat mockup */
+.hw-chat{display:flex;flex-direction:column;gap:7px;width:100%;max-width:240px}
+.hw-chat-header{display:flex;align-items:center;gap:8px;padding-bottom:8px;border-bottom:1px solid rgba(255,255,255,.1);margin-bottom:4px}
+.hw-chat-avatar{width:28px;height:28px;border-radius:50%;background:rgba(61,204,142,.2);border:1.5px solid var(--verde);display:flex;align-items:center;justify-content:center;font-size:13px;flex-shrink:0}
+.hw-chat-name{font-size:11px;color:var(--blanco);font-weight:600}
+.hw-chat-status{font-size:9px;color:var(--verde)}
+.hw-bubble{border-radius:12px;padding:7px 11px;font-size:11px;line-height:1.5;max-width:86%}
+.hw-bubble--in{background:rgba(255,255,255,.1);color:var(--blanco);align-self:flex-start;border-radius:12px 12px 12px 3px}
+.hw-bubble--bot{background:#128C7E;color:#fff;align-self:flex-end;border-radius:12px 12px 3px 12px}
+.hw-bubble--confirm{background:var(--verde);color:#000;font-weight:700;align-self:flex-end;border-radius:12px 12px 3px 12px}
+/* Profile phone - reuse shr-phone styles already in CSS */
 </style>
 </head>
 <body>
@@ -1545,6 +1573,69 @@ footer{border-top:1px solid var(--borde);padding:40px;max-width:1180px;margin:0 
       <div class="step-icon">🚗</div>
       <div class="step-title">Recibís tu primer pedido</div>
       <p class="step-desc">El bot atiende a tus clientes. Vos recibís la notificación, aceptás el viaje y cobrás el 100%. Sin plataformas en el medio.</p>
+    </div>
+  </div>
+
+
+  <div class="hw-result reveal d3">
+    <div class="hw-result-eyebrow">&#10003; Esto es lo que ten&eacute;s listo en 3 minutos</div>
+    <div class="hw-result-grid">
+
+      <!-- QR listo para imprimir -->
+      <div class="hw-result-card">
+        <div class="hw-mock">
+          <div class="hw-qr-card">
+            <div class="hw-qr-grid"><div class="qc"></div><div class="qc"></div><div class="qc"></div><div class="qc"></div><div class="qc"></div><div class="qc"></div><div class="qc"></div><div class="qw"></div><div class="qc"></div><div class="qc"></div><div class="qw"></div><div class="qw"></div><div class="qw"></div><div class="qw"></div><div class="qw"></div><div class="qc"></div><div class="qw"></div><div class="qw"></div><div class="qc"></div><div class="qw"></div><div class="qc"></div><div class="qc"></div><div class="qc"></div><div class="qw"></div><div class="qc"></div><div class="qw"></div><div class="qc"></div><div class="qc"></div><div class="qw"></div><div class="qc"></div><div class="qc"></div><div class="qc"></div><div class="qw"></div><div class="qc"></div><div class="qw"></div><div class="qw"></div><div class="qc"></div><div class="qw"></div><div class="qc"></div><div class="qc"></div><div class="qc"></div><div class="qw"></div><div class="qc"></div><div class="qw"></div><div class="qc"></div><div class="qc"></div><div class="qw"></div><div class="qw"></div><div class="qw"></div><div class="qw"></div><div class="qw"></div><div class="qc"></div><div class="qw"></div><div class="qc"></div><div class="qc"></div><div class="qc"></div><div class="qc"></div><div class="qc"></div><div class="qc"></div><div class="qc"></div><div class="qc"></div><div class="qw"></div><div class="qw"></div><div class="qw"></div><div class="qw"></div><div class="qw"></div><div class="qw"></div><div class="qw"></div><div class="qw"></div><div class="qw"></div><div class="qw"></div><div class="qc"></div><div class="qc"></div><div class="qw"></div><div class="qc"></div><div class="qc"></div><div class="qw"></div><div class="qc"></div><div class="qw"></div><div class="qc"></div><div class="qc"></div></div>
+            <div class="hw-qr-url">remisapp.link/tu-nombre</div>
+          </div>
+        </div>
+        <div class="hw-result-body">
+          <div class="hw-result-title">Tu QR listo para imprimir</div>
+          <p class="hw-result-desc">Lo peg&aacute;s en el tablero. El pasajero escanea y te escribe directo &mdash; sin buscar nada.</p>
+        </div>
+      </div>
+
+      <!-- Bot activo 24hs -->
+      <div class="hw-result-card">
+        <div class="hw-mock">
+          <div class="hw-chat">
+            <div class="hw-chat-header">
+              <div class="hw-chat-avatar">&#129302;</div>
+              <div>
+                <div class="hw-chat-name">Bot de Marcelo</div>
+                <div class="hw-chat-status">&#9679; en l&iacute;nea</div>
+              </div>
+            </div>
+            <div class="hw-bubble hw-bubble--in">Hola, &iquest;ten&eacute;s lugar para hoy?</div>
+            <div class="hw-bubble hw-bubble--bot">Hola! Soy el asistente de Marcelo &#128075; &iquest;Para qu&eacute; hora y desde d&oacute;nde?</div>
+            <div class="hw-bubble hw-bubble--in">A las 18hs desde Palermo</div>
+            <div class="hw-bubble hw-bubble--confirm">$2.800 &#10003; &iquest;Confirmamos?</div>
+          </div>
+        </div>
+        <div class="hw-result-body">
+          <div class="hw-result-title">Bot activo 24hs</div>
+          <p class="hw-result-desc">Responde, cotiza y confirma mientras vos manej&aacute;s. Sin que toques el celular.</p>
+        </div>
+      </div>
+
+      <!-- Perfil público -->
+      <div class="hw-result-card">
+        <div class="hw-mock">
+          <div class="shr-phone">
+            <div class="shr-phone-notch"></div>
+            <div class="shr-phone-avatar"><svg width="14" height="14" viewBox="0 0 24 24" fill="rgba(61,204,142,.9)"><path d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z"/></svg></div>
+            <div class="shr-phone-name"></div>
+            <div class="shr-phone-sub"></div>
+            <div class="shr-phone-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <div class="shr-phone-btn">Pedir viaje &rarr;</div>
+          </div>
+        </div>
+        <div class="hw-result-body">
+          <div class="hw-result-title">Tu p&aacute;gina p&uacute;blica activa</div>
+          <p class="hw-result-desc">Tu link propio con tu nombre, tus estrellas y un bot&oacute;n para pedir. Se la das a quien quer&eacute;s.</p>
+        </div>
+      </div>
+
     </div>
   </div>
 
