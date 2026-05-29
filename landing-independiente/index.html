@@ -1003,6 +1003,18 @@ footer{border-top:1px solid var(--borde);padding:40px;max-width:1180px;margin:0 
 .vd-col-title{font-size:18px;font-weight:800;color:var(--blanco);line-height:1.3;margin-bottom:6px}
 .vd-col-sub{font-size:13px;color:var(--gris2);line-height:1.6;margin:0}
 .vd-col-head{padding-bottom:4px;border-bottom:1px solid var(--borde);margin-bottom:8px}
+
+/* Pricing 3-col */
+.pricing-grid{grid-template-columns:repeat(3,1fr)!important}
+/* Pack options inside card */
+.pack-options{display:flex;flex-direction:column;gap:8px;margin:16px 0;flex:1}
+.pack-option{display:flex;align-items:center;gap:8px;padding:10px 12px;border-radius:10px;background:rgba(255,255,255,.04);border:1px solid var(--borde)}
+.pack-option--pop{border-color:var(--verde-border);background:rgba(61,204,142,.06)}
+.pack-lbl{font-size:13px;font-weight:600;color:var(--blanco);flex:1}
+.pack-price{font-size:14px;font-weight:700;color:var(--blanco)}
+.pack-unit{font-size:11px;color:var(--gris2);min-width:68px;text-align:right}
+/* Pricing tip */
+.pricing-tip{font-size:12px;color:var(--verde);padding:10px 12px;background:rgba(61,204,142,.06);border-radius:8px;border:1px solid var(--verde-border);margin:12px 0 16px;line-height:1.5}
 </style>
 </head>
 <body>
@@ -2127,31 +2139,58 @@ footer{border-top:1px solid var(--borde);padding:40px;max-width:1180px;margin:0 
   <div class="pricing-wrap">
   <div class="sec-eyebrow reveal">Precios</div>
   <div class="pricing-proof reveal d1">
-    <span class="pricing-proof-pill"><strong>Trial</strong> para empezar sin friccion</span>
-    <span class="pricing-proof-pill"><strong>Plan pago</strong> cuando ya te esta sirviendo</span>
-    <span class="pricing-proof-pill"><strong>Sin comision</strong> por viaje en ambos casos</span>
+    <span class="pricing-proof-pill"><strong>3 viajes gratis</strong> por mes, siempre</span>
+    <span class="pricing-proof-pill"><strong>Sin comisi&oacute;n</strong> por viaje en todos los planes</span>
+    <span class="pricing-proof-pill"><strong>Sin permanencia</strong> ni contrato</span>
   </div>
-  <h2 class="sec-title reveal d1">14 días gratis.<br><span class="hl">Después, un precio fijo.</span></h2>
-  <p class="sec-sub reveal d1">Arrancás con todo activo sin poner la tarjeta. Si en 14 días el bot no te cierra ningún viaje extra, no pagás nada.</p>
+  <h2 class="sec-title reveal d1">Si us&aacute;s poco,<br><span class="hl">no pag&aacute;s nada.</span></h2>
+  <p class="sec-sub reveal d1">Cada mes ten&eacute;s 3 viajes gratis, siempre. Si necesit&aacute;s m&aacute;s, eleg&iacute;s &mdash; packs puntuales o mensual ilimitado.</p>
+
   <div class="pricing-grid reveal d2">
+
     <div class="pricing-card pricing-free">
-      <div class="pricing-tag">Para empezar</div>
-      <div class="pricing-price">Gratis</div>
-      <p class="pricing-period">14 días de prueba · Sin tarjeta de crédito</p>
+      <div class="pricing-tag">Siempre gratis</div>
+      <div class="pricing-price">$0<span style="font-size:1rem;font-weight:500;opacity:0.6">/mes</span></div>
+      <p class="pricing-period">3 viajes por mes &middot; Sin tarjeta &middot; Sin vencimiento</p>
       <ul class="pricing-list">
-        <li>Tu perfil público y tu link propio</li>
+        <li>3 viajes gratis cada mes, para siempre</li>
         <li>Bot de WhatsApp activo</li>
-        <li>Onboarding guiado paso a paso</li>
+        <li>Tu perfil p&uacute;blico y tu link propio</li>
         <li>Historial de viajes</li>
         <li>Soporte por WhatsApp</li>
       </ul>
-      <a href="https://remisapp2-production.up.railway.app/empezar?kind=independiente" class="btn-primary" style="width:100%;justify-content:center">Empezá gratis →</a>
+      <a href="https://remisapp2-production.up.railway.app/empezar?kind=independiente" class="btn-primary" style="width:100%;justify-content:center">Empez&aacute; gratis &rarr;</a>
     </div>
+
+    <div class="pricing-card pricing-packs">
+      <div class="pricing-tag">Pago por uso</div>
+      <div class="pricing-price" style="font-size:1.4rem;line-height:1.2;padding-top:4px">Recarg&aacute; cuando quer&eacute;s</div>
+      <p class="pricing-period">Sin abono mensual &middot; Cr&eacute;ditos sin vencimiento</p>
+      <div class="pack-options">
+        <div class="pack-option">
+          <span class="pack-lbl">5 viajes</span>
+          <span class="pack-price">$2.000</span>
+          <span class="pack-unit">$400/viaje</span>
+        </div>
+        <div class="pack-option pack-option--pop">
+          <span class="pack-lbl">12 viajes &#11088;</span>
+          <span class="pack-price">$4.000</span>
+          <span class="pack-unit">$333/viaje</span>
+        </div>
+        <div class="pack-option">
+          <span class="pack-lbl">20 viajes</span>
+          <span class="pack-price">$6.500</span>
+          <span class="pack-unit">$325/viaje</span>
+        </div>
+      </div>
+      <a href="https://remisapp2-production.up.railway.app/empezar?kind=independiente" class="btn-secondary" style="width:100%;justify-content:center;margin-top:auto">Comprar cr&eacute;ditos &rarr;</a>
+    </div>
+
     <div class="pricing-card pricing-pro">
       <span class="pricing-badge">Recomendado</span>
-      <div class="pricing-tag">Plan mensual</div>
+      <div class="pricing-tag">Mensual ilimitado</div>
       <div class="pricing-price">$4.900<span style="font-size:1rem;font-weight:500;opacity:0.7">/mes</span></div>
-      <p class="pricing-period">Ilimitado · Sin comisiones por viaje</p>
+      <p class="pricing-period">Ilimitado &middot; Sin comisiones por viaje</p>
       <ul class="pricing-list">
         <li>Viajes ilimitados, sin tope</li>
         <li>Bot 24hs respondiendo solo</li>
@@ -2159,10 +2198,12 @@ footer{border-top:1px solid var(--borde);padding:40px;max-width:1180px;margin:0 
         <li>Cobro por Mercado Pago integrado</li>
         <li>Soporte prioritario por WhatsApp</li>
       </ul>
-      <a href="https://remisapp2-production.up.railway.app/empezar?kind=independiente" class="btn-secondary" style="width:100%;justify-content:center">Empezá con 14 días gratis →</a>
+      <p class="pricing-tip">&#128161; Si hac&eacute;s m&aacute;s de 15 viajes/mes, el mensual ya te conviene m&aacute;s que los packs.</p>
+      <a href="https://remisapp2-production.up.railway.app/empezar?kind=independiente" class="btn-secondary" style="width:100%;justify-content:center">Empez&aacute; con 14 d&iacute;as gratis &rarr;</a>
     </div>
+
   </div>
-  <p class="pricing-footnote">Sin permanencia. Sin comisi�n por viaje. Cancel�s cuando quer�s.</p>
+  <p class="pricing-footnote">Sin permanencia. Sin comisi&oacute;n por viaje. Cancel&aacute;s cuando quer&eacute;s.</p>
   </div>
 </div>
 </section>
@@ -2190,7 +2231,7 @@ footer{border-top:1px solid var(--borde);padding:40px;max-width:1180px;margin:0 
     </div>
     <div class="faq-item">
       <button class="faq-q" onclick="toggleFaq(this)">¿Cuánto cuesta RemisApp Solo?<span class="faq-arrow">⌄</span></button>
-      <div class="faq-a">Podés empezar con 14 días gratis, sin tarjeta de crédito. Después el plan mensual es $4.900/mes, sin comisión por viaje. Si preferís pagar por uso, hay packs de 5, 12 o 20 viajes. Cancelás cuando querés.</div>
+      <div class="faq-a">Tenés 3 viajes gratis por mes, siempre, sin tarjeta. Si necesitás más, podés comprar packs (5 viajes $2.000 / 12 viajes $4.000 / 20 viajes $6.500) o suscribirte al plan mensual por $4.900/mes con viajes ilimitados. Cancelás cuando querés, sin permanencia.</div>
     </div>
     <div class="faq-item">
       <button class="faq-q" onclick="toggleFaq(this)">¿Necesito saber de tecnología para configurarlo?<span class="faq-arrow">⌄</span></button>
