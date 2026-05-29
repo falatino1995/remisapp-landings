@@ -776,7 +776,25 @@ footer{border-top:1px solid var(--borde);padding:40px;max-width:1180px;margin:0 
 .altfeat-mock{background:var(--bg2);border:1px solid var(--borde);border-radius:20px;padding:24px;display:flex;flex-direction:column;gap:16px}
 @media(max-width:780px){.altfeat{grid-template-columns:1fr;gap:32px;padding:48px 0}.altfeat--rev .altfeat-text{order:1}.altfeat--rev .altfeat-visual{order:2}}
 /* ── SHARE SECTION ── */
-.share-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:44px}
+.share-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:44px}
+.share-card-visual{width:100%;height:220px;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,.03);border-bottom:1px solid var(--borde);position:relative;overflow:hidden}
+/* Profile phone mockup */
+.shr-phone{width:108px;height:178px;border:1.5px solid rgba(255,255,255,.18);border-radius:20px;background:#0d1117;display:flex;flex-direction:column;align-items:center;padding:12px 10px 10px;gap:7px;box-shadow:0 12px 40px rgba(0,0,0,.6)}
+.shr-phone-notch{width:28px;height:4px;background:rgba(255,255,255,.12);border-radius:999px}
+.shr-phone-avatar{width:38px;height:38px;border-radius:50%;background:rgba(61,204,142,.15);border:2px solid var(--verde);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.shr-phone-name{width:68%;height:6px;background:rgba(255,255,255,.22);border-radius:999px}
+.shr-phone-sub{width:48%;height:4px;background:rgba(255,255,255,.1);border-radius:999px}
+.shr-phone-stars{font-size:10px;color:#facc15;letter-spacing:2px}
+.shr-phone-btn{width:88%;height:26px;background:var(--verde);border-radius:999px;margin-top:auto;display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:800;color:#000;letter-spacing:.05em}
+/* Hub mockup */
+.shr-hub{position:relative;width:100%;height:100%;display:flex;align-items:center;justify-content:center}
+.shr-hub-center{width:54px;height:54px;border-radius:14px;background:var(--card);border:2px solid var(--verde-border);display:flex;align-items:center;justify-content:center;z-index:2;box-shadow:0 0 24px rgba(61,204,142,.25)}
+.shr-hub-node{position:absolute;width:46px;height:46px;border-radius:50%;background:var(--card);border:1px solid var(--borde);display:flex;align-items:center;justify-content:center}
+.shr-hub-node--ig{top:22px;left:14%}
+.shr-hub-node--wa{top:22px;right:14%}
+.shr-hub-node--qr{bottom:22px;left:14%}
+.shr-hub-node--ref{bottom:22px;right:14%}
+.shr-hub-svg{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
 .share-card{background:var(--bg2);border:1px solid var(--borde);border-radius:18px;overflow:hidden;display:flex;flex-direction:column;transition:border-color .2s,transform .2s}
 .share-card:hover{border-color:var(--verde-border);transform:translateY(-3px)}
 .share-card-img{width:100%;height:168px;object-fit:cover;object-position:center top;display:block;border-bottom:1px solid var(--borde)}
@@ -1542,39 +1560,71 @@ footer{border-top:1px solid var(--borde);padding:40px;max-width:1180px;margin:0 
 
   <div class="share-grid reveal d2">
 
+    <!-- Card 1: QR en el auto (foto real) -->
     <div class="share-card">
       <img src="assets/qr-auto-01.png" class="share-card-img" alt="QR en el auto">
       <div class="share-card-body">
         <div class="share-card-num">01</div>
         <div class="share-card-title">QR en tu auto</div>
-        <p class="share-card-desc">Imprimís el código, lo pegás en el tablero o la ventana. El pasajero escanea y te escribe directo — sin buscar nada.</p>
+        <p class="share-card-desc">Lo imprim&iacute;s, lo peg&aacute;s en el tablero. El pasajero escanea y te escribe directo &mdash; sin buscar nada.</p>
       </div>
     </div>
 
+    <!-- Card 2: Tu perfil público (CSS mockup) -->
     <div class="share-card">
-      <img src="assets/instagram-bio-link-reserva-01.png" class="share-card-img" alt="Instagram bio">
+      <div class="share-card-visual">
+        <div class="shr-phone">
+          <div class="shr-phone-notch"></div>
+          <div class="shr-phone-avatar"><svg width="20" height="20" viewBox="0 0 24 24" fill="rgba(61,204,142,.8)"><path d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z"/></svg></div>
+          <div class="shr-phone-name"></div>
+          <div class="shr-phone-sub"></div>
+          <div class="shr-phone-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <div class="shr-phone-btn">Pedir viaje &rarr;</div>
+        </div>
+      </div>
       <div class="share-card-body">
         <div class="share-card-num">02</div>
-        <div class="share-card-title">Bio de Instagram</div>
-        <p class="share-card-desc">Ponés tu link en la bio. Cualquier seguidor puede pedirte con un tap, sin salir de Instagram.</p>
+        <div class="share-card-title">Tu perfil p&uacute;blico</div>
+        <p class="share-card-desc">Una p&aacute;gina tuya con tu nombre, tus estrellas y un bot&oacute;n para pedir. Se la das a quien quieras.</p>
       </div>
     </div>
 
+    <!-- Card 3: Hub de canales (CSS diagram) -->
     <div class="share-card">
-      <img src="assets/perfil-link-celular-01.png" class="share-card-img" alt="Link por WhatsApp">
+      <div class="share-card-visual">
+        <div class="shr-hub">
+          <svg class="shr-hub-svg" viewBox="0 0 100 100" preserveAspectRatio="none">
+            <line x1="50" y1="50" x2="22" y2="22" stroke="rgba(61,204,142,.25)" stroke-width="1" stroke-dasharray="3 2"/>
+            <line x1="50" y1="50" x2="78" y2="22" stroke="rgba(61,204,142,.25)" stroke-width="1" stroke-dasharray="3 2"/>
+            <line x1="50" y1="50" x2="22" y2="78" stroke="rgba(61,204,142,.25)" stroke-width="1" stroke-dasharray="3 2"/>
+            <line x1="50" y1="50" x2="78" y2="78" stroke="rgba(61,204,142,.25)" stroke-width="1" stroke-dasharray="3 2"/>
+          </svg>
+          <div class="shr-hub-center"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--verde)" stroke-width="2" stroke-linecap="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></div>
+          <div class="shr-hub-node shr-hub-node--ig"><svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+  <defs><linearGradient id="ig" x1="2" y1="22" x2="22" y2="2" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#f09433"/><stop offset="50%" stop-color="#dc2743"/><stop offset="100%" stop-color="#bc1888"/></linearGradient></defs>
+  <rect x="2" y="2" width="20" height="20" rx="5" stroke="url(#ig)" stroke-width="1.8"/>
+  <circle cx="12" cy="12" r="5" stroke="url(#ig)" stroke-width="1.8"/>
+  <circle cx="17.5" cy="6.5" r="1.2" fill="url(#ig)"/>
+</svg></div>
+          <div class="shr-hub-node shr-hub-node--wa"><svg width="20" height="20" viewBox="0 0 24 24" fill="#25D366"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></div>
+          <div class="shr-hub-node shr-hub-node--qr"><svg width="20" height="20" viewBox="0 0 24 24" fill="rgba(255,255,255,.7)">
+  <rect x="3" y="3" width="7" height="7" rx="1"/>
+  <rect x="14" y="3" width="7" height="7" rx="1"/>
+  <rect x="3" y="14" width="7" height="7" rx="1"/>
+  <rect x="4.5" y="4.5" width="4" height="4" fill="#0d1117"/>
+  <rect x="15.5" y="4.5" width="4" height="4" fill="#0d1117"/>
+  <rect x="4.5" y="15.5" width="4" height="4" fill="#0d1117"/>
+  <rect x="14" y="14" width="2" height="2"/><rect x="17" y="14" width="2" height="2"/>
+  <rect x="14" y="17" width="2" height="2"/><rect x="17" y="17" width="2" height="2"/>
+  <rect x="19" y="19" width="2" height="2"/>
+</svg></div>
+          <div class="shr-hub-node shr-hub-node--ref"><svg width="20" height="20" viewBox="0 0 24 24" fill="rgba(255,255,255,.6)"><path d="M16 11c1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3 1.34 3 3 3zm-8 0c1.66 0 3-1.34 3-3S9.66 5 8 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5C15 14.17 10.33 13 8 13zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg></div>
+        </div>
+      </div>
       <div class="share-card-body">
         <div class="share-card-num">03</div>
-        <div class="share-card-title">Link por WhatsApp</div>
-        <p class="share-card-desc">Mandás el link a tus clientes habituales. Te guardan el contacto y la próxima vez te piden directo al bot.</p>
-      </div>
-    </div>
-
-    <div class="share-card">
-      <img src="assets/cliente-escaneado-qr-01.png" class="share-card-img" alt="Cliente escanea QR">
-      <div class="share-card-body">
-        <div class="share-card-num">04</div>
-        <div class="share-card-title">Ellos te recomiendan</div>
-        <p class="share-card-desc">Un cliente satisfecho que manda tu link a un amigo ya es marketing gratuito. Tu cartera crece sola.</p>
+        <div class="share-card-title">Compart&iacute;lo por donde quer&aacute;s</div>
+        <p class="share-card-desc">Instagram, WhatsApp, QR, boca a boca. Un solo link, todos los canales. Cada cliente nuevo llega al bot.</p>
       </div>
     </div>
 
