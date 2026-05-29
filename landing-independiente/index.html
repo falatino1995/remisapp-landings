@@ -1090,6 +1090,17 @@ footer{border-top:1px solid var(--borde);padding:40px;max-width:1180px;margin:0 
 .hr-item{display:block;opacity:0;transform:translateY(110%);transition:opacity .45s cubic-bezier(.22,.68,0,1.2),transform .45s cubic-bezier(.22,.68,0,1.2);position:absolute;left:0;top:0;white-space:nowrap;pointer-events:none}
 .hr-item.hr-active{opacity:1;transform:translateY(0);position:relative;pointer-events:auto}
 .hr-item.hr-exit{opacity:0;transform:translateY(-110%);position:absolute}
+
+/* Problem cards carousel */
+.prob-carousel{overflow:hidden;position:relative;margin-top:44px}
+.prob-carousel::before,.prob-carousel::after{content:'';position:absolute;top:0;bottom:0;width:60px;z-index:3;pointer-events:none}
+.prob-carousel::before{left:0;background:linear-gradient(90deg,var(--bg2),transparent)}
+.prob-carousel::after{right:0;background:linear-gradient(-90deg,var(--bg2),transparent)}
+.prob-track{display:flex;gap:16px;transition:transform .65s cubic-bezier(.22,.68,0,1);will-change:transform}
+.prob-track .prob-va-card{flex:0 0 calc(33.333% - 11px);min-width:0}
+.prob-dots{display:flex;justify-content:center;gap:6px;margin-top:20px}
+.prob-dot{width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,.2);transition:background .3s,width .3s}
+.prob-dot.active{background:var(--verde);width:18px;border-radius:3px}
 </style>
 </head>
 <body>
@@ -1287,65 +1298,66 @@ footer{border-top:1px solid var(--borde);padding:40px;max-width:1180px;margin:0 
   <div class="sec-eyebrow reveal">El problema</div>
   <h2 class="sec-title reveal d1">Trabajás para Uber.<br><span class="hl">No para vos.</span></h2>
   <p class="sec-sub reveal d1">Cada viaje que hacés por una plataforma es un viaje que no te pertenece.</p>
-  <div class="prob-va-grid">
+  <div class="prob-carousel">
+    <div class="prob-track" id="probTrack">
 
-    <div class="prob-va-card reveal d1">
-      <div class="prob-va-body">
-        <div class="prob-va-label">Comisi&oacute;n</div>
-        <div class="prob-va-stat">20%</div>
-        <div class="prob-va-title">Se lo queda la plataforma</div>
-        <p class="prob-va-desc">Uber retiene antes de que el dinero llegue a vos. Sin excepci&oacute;n, sin negociaci&oacute;n.</p>
+      <div class="prob-va-card">
+        <div class="prob-va-body">
+          <div class="prob-va-label">Comisi&oacute;n</div>
+          <div class="prob-va-stat">20%</div>
+          <div class="prob-va-title">Se lo queda la plataforma</div>
+          <p class="prob-va-desc">Uber retiene antes de que el dinero llegue a vos. Sin excepci&oacute;n, sin negociaci&oacute;n.</p>
+        </div>
+        <img src="assets/chofer-plata-retenida-01.png" class="prob-va-photo" alt="">
       </div>
-      <img src="assets/chofer-plata-retenida-01.png" class="prob-va-photo" alt="">
-    </div>
 
-    <div class="prob-va-card reveal d2">
-      <div class="prob-va-body">
-        <div class="prob-va-label">Tus clientes</div>
-        <div class="prob-va-stat">0</div>
-        <div class="prob-va-title">Clientes que vuelven a vos</div>
-        <p class="prob-va-desc">El historial, el contacto y la repetici&oacute;n quedan en la app. Si te baj&aacute;s, empez&aacute;s de cero.</p>
+      <div class="prob-va-card">
+        <div class="prob-va-body">
+          <div class="prob-va-label">Tus clientes</div>
+          <div class="prob-va-stat">0</div>
+          <div class="prob-va-title">Cero fidelizaci&oacute;n real</div>
+          <p class="prob-va-desc">El historial, el contacto, las 4.8 estrellas que construiste &mdash; todo queda en la app. Si te baj&aacute;s, empez&aacute;s de cero.</p>
+        </div>
+        <img src="assets/contacto-directo-sin-app-01.png" class="prob-va-photo" alt="">
       </div>
-      <img src="assets/contacto-directo-sin-app-01.png" class="prob-va-photo" alt="">
-    </div>
 
-    <div class="prob-va-card reveal d3">
-      <div class="prob-va-body">
-        <div class="prob-va-label">Pedidos perdidos</div>
-        <div class="prob-va-stat">&#8734;</div>
-        <div class="prob-va-title">Pedidos que perd&eacute;s manejando</div>
-        <p class="prob-va-desc">Al volante no pod&eacute;s atender el tel&eacute;fono. Cada llamada perdida es un cliente que se va.</p>
+      <div class="prob-va-card">
+        <div class="prob-va-body">
+          <div class="prob-va-label">Al volante</div>
+          <div class="prob-va-stat">&#8734;</div>
+          <div class="prob-va-title">Clientes que no esperan</div>
+          <p class="prob-va-desc">Cuando manej&aacute;s no pod&eacute;s atender el tel&eacute;fono. Cada mensaje sin respuesta es un cliente que va a llamar a otro.</p>
+        </div>
+        <img src="assets/chofer-interior-qr-01.png" class="prob-va-photo" alt="" style="object-position:center center">
       </div>
-      <img src="assets/chofer-interior-qr-01.png" class="prob-va-photo" alt="" style="object-position:center center">
-    </div>
 
-    <div class="prob-va-card reveal d1">
-      <div class="prob-va-body">
-        <div class="prob-va-label">Tu reputaci&oacute;n</div>
-        <div class="prob-va-stat">4.8&#9733;</div>
-        <div class="prob-va-title">No es tuya</div>
-        <p class="prob-va-desc">Los a&ntilde;os construyendo tu reputaci&oacute;n viven en la app de ellos. Si te baj&aacute;s, empez&aacute;s con cero estrellas.</p>
+      <div class="prob-va-card">
+        <div class="prob-va-body">
+          <div class="prob-va-label">Tu agenda</div>
+          <div class="prob-va-stat" style="font-size:2.2rem">Sin orden</div>
+          <div class="prob-va-title">Viv&iacute;s esperando, no planeando</div>
+          <p class="prob-va-desc">Sin reservas propias ni agenda organizada. Cada d&iacute;a empez&aacute;s de cero sin saber cu&aacute;nto vas a hacer.</p>
+        </div>
+        <img src="assets/feat-programado-2.png" class="prob-va-photo" alt="" style="object-fit:contain;background:#0d1117;padding:12px">
       </div>
-      <img src="assets/remis-negocio-organizado-01.png" class="prob-va-photo" alt="">
-    </div>
 
-    <div class="prob-va-card reveal d2">
-      <div class="prob-va-body">
-        <div class="prob-va-label">Tu jornada</div>
-        <div class="prob-va-stat">&#63;</div>
-        <div class="prob-va-title">No pod&eacute;s planificar</div>
-        <p class="prob-va-desc">Viv&iacute;s esperando el pr&oacute;ximo viaje. Sin reservas propias ni agenda para ordenar el d&iacute;a.</p>
+      <div class="prob-va-card" style="border-color:rgba(239,68,68,.35);background:rgba(239,68,68,.04)">
+        <div class="prob-va-body">
+          <div class="prob-va-label" style="color:#ef4444">Tu cuenta</div>
+          <div class="prob-va-stat" style="color:#ef4444;font-size:1.8rem">Te cierran</div>
+          <div class="prob-va-title">Sin aviso, sin apelaci&oacute;n</div>
+          <p class="prob-va-desc">Uber puede desactivar tu cuenta de un d&iacute;a para el otro. Perd&eacute;s todo: clientes, reputaci&oacute;n, historial.</p>
+        </div>
+        <img src="assets/registro-celular-01.png" class="prob-va-photo" alt="">
       </div>
-    </div>
 
-    <div class="prob-va-card reveal d3" style="border-color:rgba(239,68,68,.35);background:rgba(239,68,68,.04)">
-      <div class="prob-va-body">
-        <div class="prob-va-label" style="color:#ef4444">Tu cuenta</div>
-        <div class="prob-va-stat" style="color:#ef4444">BAN</div>
-        <div class="prob-va-title">Te pueden cerrar sin explicaci&oacute;n</div>
-        <p class="prob-va-desc">Uber puede desactivar tu cuenta de un d&iacute;a para el otro. Sin aviso, sin apelaci&oacute;n. Perd&eacute;s todo de golpe.</p>
-      </div>
     </div>
+  </div>
+  <div class="prob-dots" id="probDots">
+    <div class="prob-dot active"></div>
+    <div class="prob-dot"></div>
+    <div class="prob-dot"></div>
+  </div>
 
   </div>
   <div class="prob-bridge reveal d3">
@@ -2581,6 +2593,51 @@ document.querySelectorAll('.feat-card:not(.coming)').forEach(card => {
     setTimeout(function(){ prev.classList.remove('hr-exit'); }, 500);
     next.classList.add('hr-active');
   }, 2800);
+})();
+
+// Problem cards carousel
+(function(){
+  var track = document.getElementById('probTrack');
+  var dotsEl = document.getElementById('probDots');
+  if(!track) return;
+  var cards = Array.from(track.children);
+  var total = cards.length;
+  var visible = 3;
+  var pos = 0;
+  var gap = 16;
+
+  // Clone first cards for seamless loop
+  for(var i=0;i<visible;i++){
+    track.appendChild(cards[i].cloneNode(true));
+  }
+
+  function cardW(){
+    return track.children[0].offsetWidth + gap;
+  }
+
+  function updateDots(){
+    if(!dotsEl) return;
+    var dots = dotsEl.children;
+    for(var i=0;i<dots.length;i++) dots[i].classList.toggle('active', i===pos%total);
+  }
+
+  function slide(){
+    pos++;
+    track.style.transition = 'transform .65s cubic-bezier(.22,.68,0,1)';
+    track.style.transform = 'translateX(-'+(pos*cardW())+'px)';
+    if(pos >= total){
+      setTimeout(function(){
+        track.style.transition = 'none';
+        pos = 0;
+        track.style.transform = 'translateX(0)';
+      }, 700);
+    }
+    updateDots();
+  }
+
+  var timer = setInterval(slide, 3200);
+  track.addEventListener('mouseenter', function(){ clearInterval(timer); });
+  track.addEventListener('mouseleave', function(){ timer = setInterval(slide, 3200); });
 })();
 </script>
 </body>
