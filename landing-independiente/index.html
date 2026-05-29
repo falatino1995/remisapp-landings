@@ -1101,6 +1101,48 @@ footer{border-top:1px solid var(--borde);padding:40px;max-width:1180px;margin:0 
 .prob-dots{display:flex;justify-content:center;gap:6px;margin-top:20px}
 .prob-dot{width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,.2);transition:background .3s,width .3s}
 .prob-dot.active{background:var(--verde);width:18px;border-radius:3px}
+
+/* PRECIO — compact payment methods row */
+.paym-row{display:flex;gap:12px;margin-top:24px;flex-wrap:wrap}
+.paym-badge{display:flex;align-items:center;gap:8px;background:var(--card);border:1px solid var(--borde);border-radius:12px;padding:10px 14px;font-size:12px;color:var(--gris2)}
+.paym-badge svg{flex-shrink:0}
+
+/* HOW IT WORKS — compact flow */
+.hw-flow{display:grid;grid-template-columns:1fr 32px 1fr 32px 1fr 32px 1fr;align-items:start;gap:0;margin-top:40px}
+.hw-flow-arrow{display:flex;align-items:flex-start;justify-content:center;padding-top:60px;color:rgba(61,204,142,.5);font-size:20px}
+.hw-flow-node{display:flex;flex-direction:column;align-items:center;gap:0}
+.hw-flow-mock{width:100%;background:var(--card);border:1px solid var(--borde);border-radius:16px;padding:16px;display:flex;align-items:center;justify-content:center;min-height:140px;margin-bottom:16px}
+.hw-flow-num{font-size:11px;font-weight:700;color:var(--verde);letter-spacing:.1em;margin-bottom:6px}
+.hw-flow-title{font-size:14px;font-weight:800;color:var(--blanco);text-align:center;margin-bottom:6px;line-height:1.3}
+.hw-flow-desc{font-size:12px;color:var(--gris2);text-align:center;line-height:1.5}
+/* Mini form */
+.mf-mini{display:flex;flex-direction:column;gap:6px;width:100%}
+.mf-field{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.1);border-radius:6px;padding:6px 10px;font-size:10px;color:rgba(255,255,255,.35)}
+.mf-btn-mini{background:var(--verde);border-radius:6px;padding:7px;text-align:center;font-size:10px;font-weight:700;color:#000;margin-top:2px}
+/* Mini link */
+.ml-bar{background:rgba(255,255,255,.07);border:1px solid var(--verde-border);border-radius:8px;padding:7px 10px;font-size:10px;display:flex;gap:4px;width:100%;margin-bottom:8px}
+.ml-prefix{color:rgba(255,255,255,.4)}
+.ml-val{color:var(--verde);font-weight:700}
+.ml-preview-mini{background:rgba(61,204,142,.06);border:1px solid var(--verde-border);border-radius:10px;padding:10px;display:flex;flex-direction:column;align-items:center;gap:4px;width:100%}
+.ml-avatar-mini{width:28px;height:28px;border-radius:50%;background:rgba(61,204,142,.15);border:1.5px solid var(--verde);display:flex;align-items:center;justify-content:center;font-size:12px}
+.ml-name-mini{font-size:10px;font-weight:700;color:var(--blanco)}
+.ml-btn-mini{background:var(--verde);border-radius:999px;padding:4px 12px;font-size:9px;font-weight:700;color:#000}
+/* Mini QR share */
+.mqr-wrap{display:flex;flex-direction:column;align-items:center;gap:10px;width:100%}
+.mqr-box{background:#fff;border-radius:8px;padding:8px;display:flex;flex-direction:column;align-items:center;gap:4px}
+.mqr-grid{display:grid;grid-template-columns:repeat(9,5px);grid-template-rows:repeat(9,5px);gap:1px}
+.mqr-url{font-size:7px;color:#666;font-family:monospace}
+.mqr-icons{display:flex;gap:10px}
+.mqr-icon{width:28px;height:28px;border-radius:50%;background:var(--card);border:1px solid var(--borde);display:flex;align-items:center;justify-content:center;font-size:13px}
+/* Mini chat */
+.mc-wrap{display:flex;flex-direction:column;gap:5px;width:100%}
+.mc-header{display:flex;align-items:center;gap:6px;padding-bottom:6px;border-bottom:1px solid rgba(255,255,255,.08);margin-bottom:2px}
+.mc-avatar{width:20px;height:20px;border-radius:50%;background:rgba(61,204,142,.2);display:flex;align-items:center;justify-content:center;font-size:9px;flex-shrink:0}
+.mc-name{font-size:9px;font-weight:700;color:var(--blanco)}
+.mc-bubble{border-radius:8px;padding:5px 8px;font-size:10px;line-height:1.4;max-width:90%}
+.mc-in{background:rgba(255,255,255,.1);color:var(--blanco);align-self:flex-start}
+.mc-bot{background:#128C7E;color:#fff;align-self:flex-end}
+.mc-ok{background:var(--verde);color:#000;font-weight:700;align-self:flex-end}
 </style>
 </head>
 <body>
@@ -1610,96 +1652,79 @@ footer{border-top:1px solid var(--borde);padding:40px;max-width:1180px;margin:0 
   <h2 class="sec-title reveal d1">Cómo arrancás:<br><span class="hl">3 minutos y ya estás operando.</span></h2>
   <p class="sec-sub reveal d1">Sin técnicos, sin instalaciones. Solo necesitás un celular y WhatsApp. Es gratis.</p>
 
-  <div class="hw-steps">
+  <div class="hw-flow reveal d2">
 
-    <!-- Step 01 -->
-    <div class="hw-step reveal d1">
-      <div class="hw-step__text">
-        <div class="hw-step__num">01</div>
-        <div class="hw-step__tag">Alta en 2 minutos</div>
-        <div class="hw-step__title">Cre&aacute;s tu cuenta</div>
-        <p class="hw-step__desc">Te registr&aacute;s con tu nombre, ciudad y n&uacute;mero de WhatsApp. Sin tarjeta de cr&eacute;dito, sin compromisos. Todo guiado paso a paso.</p>
-      </div>
-      <div class="hw-step__mock">
-        <div class="hw-form">
-          <div class="hw-form-title">Cre&aacute; tu cuenta gratis</div>
-          <div class="hw-field"><label>Tu nombre</label><div class="hw-field-input"><span>Ej: Marcelo Garc&iacute;a</span></div></div>
-          <div class="hw-field"><label>WhatsApp</label><div class="hw-field-input"><span>+54 9 11...</span></div></div>
-          <div class="hw-field"><label>Ciudad</label><div class="hw-field-input"><span>Buenos Aires</span></div></div>
-          <div class="hw-form-btn">Crear cuenta gratis &rarr;</div>
-          <div class="hw-form-note">Sin tarjeta &middot; Sin contrato &middot; 3 viajes gratis/mes</div>
+    <div class="hw-flow-node">
+      <div class="hw-flow-mock">
+        <div class="mf-mini">
+          <div class="mf-field">Ej: Marcelo Garc&iacute;a</div>
+          <div class="mf-field">+54 9 11...</div>
+          <div class="mf-field">Buenos Aires</div>
+          <div class="mf-btn-mini">Crear cuenta &rarr;</div>
         </div>
       </div>
+      <div class="hw-flow-num">01</div>
+      <div class="hw-flow-title">Cre&aacute;s tu cuenta</div>
+      <div class="hw-flow-desc">Nombre, ciudad y WhatsApp. Sin tarjeta.</div>
     </div>
 
-    <!-- Step 02 -->
-    <div class="hw-step hw-step--alt reveal d1">
-      <div class="hw-step__text">
-        <div class="hw-step__num">02</div>
-        <div class="hw-step__tag">Tu identidad digital</div>
-        <div class="hw-step__title">Eleg&iacute;s tu link</div>
-        <p class="hw-step__desc">Configur&aacute;s tu link propio &mdash; tipo remisapp.link/marcelo &mdash; y sub&iacute;s una foto de perfil. En segundos, tu p&aacute;gina ya est&aacute; activa.</p>
-      </div>
-      <div class="hw-step__mock">
-        <div class="hw-link-wrap">
-          <div class="hw-link-bar">
-            <span class="hw-link-prefix">remisapp.link/</span>
-            <span class="hw-link-val">marcelo</span>
-            <div class="hw-link-cursor"></div>
-          </div>
-          <div class="hw-link-preview">
-            <div class="hw-link-avatar">&#128663;</div>
-            <div class="hw-link-name">Marcelo Garc&iacute;a</div>
-            <div class="hw-link-url">remisapp.link/marcelo</div>
-            <div class="hw-link-btn-prev">Pedir viaje &rarr;</div>
+    <div class="hw-flow-arrow">&#8594;</div>
+
+    <div class="hw-flow-node">
+      <div class="hw-flow-mock">
+        <div style="width:100%">
+          <div class="ml-bar"><span class="ml-prefix">remisapp.link/</span><span class="ml-val">marcelo</span></div>
+          <div class="ml-preview-mini">
+            <div class="ml-avatar-mini">&#128663;</div>
+            <div class="ml-name-mini">Marcelo Garc&iacute;a</div>
+            <div class="ml-btn-mini">Pedir viaje &rarr;</div>
           </div>
         </div>
       </div>
+      <div class="hw-flow-num">02</div>
+      <div class="hw-flow-title">Eleg&iacute;s tu link</div>
+      <div class="hw-flow-desc">Tu p&aacute;gina lista en segundos.</div>
     </div>
 
-    <!-- Step 03 -->
-    <div class="hw-step reveal d1">
-      <div class="hw-step__text">
-        <div class="hw-step__num">03</div>
-        <div class="hw-step__tag">Capt&aacute; clientes</div>
-        <div class="hw-step__title">Compart&iacute;s y peg&aacute;s el QR</div>
-        <p class="hw-step__desc">Mand&aacute;s el link por WhatsApp, lo pon&eacute;s en tu bio de Instagram y peg&aacute;s el QR en tu auto. Tus clientes ya pueden pedirte sin instalar nada.</p>
-      </div>
-      <div class="hw-step__mock">
-        <div class="hw-qr-share">
-          <div class="hw-qr-card-sm">
-            <div class="hw-qr-grid-sm"><div class="qc"></div><div class="qc"></div><div class="qc"></div><div class="qc"></div><div class="qc"></div><div class="qc"></div><div class="qc"></div><div class="qw"></div><div class="qc"></div><div class="qc"></div><div class="qw"></div><div class="qw"></div><div class="qw"></div><div class="qw"></div><div class="qw"></div><div class="qc"></div><div class="qw"></div><div class="qw"></div><div class="qc"></div><div class="qw"></div><div class="qc"></div><div class="qc"></div><div class="qc"></div><div class="qw"></div><div class="qc"></div><div class="qw"></div><div class="qc"></div><div class="qc"></div><div class="qw"></div><div class="qc"></div><div class="qc"></div><div class="qc"></div><div class="qw"></div><div class="qc"></div><div class="qw"></div><div class="qw"></div><div class="qc"></div><div class="qw"></div><div class="qc"></div><div class="qc"></div><div class="qc"></div><div class="qw"></div><div class="qc"></div><div class="qw"></div><div class="qc"></div><div class="qc"></div><div class="qw"></div><div class="qw"></div><div class="qw"></div><div class="qw"></div><div class="qw"></div><div class="qc"></div><div class="qw"></div><div class="qc"></div><div class="qc"></div><div class="qc"></div><div class="qc"></div><div class="qc"></div><div class="qc"></div><div class="qc"></div><div class="qc"></div><div class="qw"></div><div class="qw"></div><div class="qw"></div><div class="qw"></div><div class="qw"></div><div class="qw"></div><div class="qw"></div><div class="qw"></div><div class="qw"></div><div class="qw"></div><div class="qc"></div><div class="qc"></div><div class="qw"></div><div class="qc"></div><div class="qc"></div><div class="qw"></div><div class="qc"></div><div class="qw"></div><div class="qc"></div><div class="qc"></div></div>
-            <div class="hw-qr-url-sm">remisapp.link/marcelo</div>
+    <div class="hw-flow-arrow">&#8594;</div>
+
+    <div class="hw-flow-node">
+      <div class="hw-flow-mock">
+        <div class="mqr-wrap">
+          <div class="mqr-box">
+            <div class="mqr-grid"><div class="qc"></div><div class="qc"></div><div class="qc"></div><div class="qc"></div><div class="qc"></div><div class="qc"></div><div class="qc"></div><div class="qw"></div><div class="qc"></div><div class="qc"></div><div class="qw"></div><div class="qw"></div><div class="qw"></div><div class="qw"></div><div class="qw"></div><div class="qc"></div><div class="qw"></div><div class="qw"></div><div class="qc"></div><div class="qw"></div><div class="qc"></div><div class="qc"></div><div class="qc"></div><div class="qw"></div><div class="qc"></div><div class="qw"></div><div class="qc"></div><div class="qc"></div><div class="qw"></div><div class="qc"></div><div class="qc"></div><div class="qc"></div><div class="qw"></div><div class="qc"></div><div class="qw"></div><div class="qw"></div><div class="qc"></div><div class="qw"></div><div class="qc"></div><div class="qc"></div><div class="qc"></div><div class="qw"></div><div class="qc"></div><div class="qw"></div><div class="qc"></div><div class="qc"></div><div class="qw"></div><div class="qw"></div><div class="qw"></div><div class="qw"></div><div class="qw"></div><div class="qc"></div><div class="qw"></div><div class="qc"></div><div class="qc"></div><div class="qc"></div><div class="qc"></div><div class="qc"></div><div class="qc"></div><div class="qc"></div><div class="qc"></div><div class="qw"></div><div class="qw"></div><div class="qw"></div><div class="qw"></div><div class="qw"></div><div class="qw"></div><div class="qw"></div><div class="qw"></div><div class="qw"></div><div class="qw"></div><div class="qc"></div><div class="qc"></div><div class="qw"></div><div class="qc"></div><div class="qc"></div><div class="qw"></div><div class="qc"></div><div class="qw"></div><div class="qc"></div><div class="qc"></div></div>
+            <div class="mqr-url">remisapp.link/marcelo</div>
           </div>
-          <div class="hw-share-row">
-            <div class="hw-share-item"><div class="hw-share-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="#25D366"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></div><div class="hw-share-label">WhatsApp</div></div>
-            <div class="hw-share-item"><div class="hw-share-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><defs><linearGradient id="ig2" x1="2" y1="22" x2="22" y2="2" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#f09433"/><stop offset="100%" stop-color="#bc1888"/></linearGradient></defs><rect x="2" y="2" width="20" height="20" rx="5" stroke="url(#ig2)" stroke-width="1.8"/><circle cx="12" cy="12" r="5" stroke="url(#ig2)" stroke-width="1.8"/><circle cx="17.5" cy="6.5" r="1.2" fill="url(#ig2)"/></svg></div><div class="hw-share-label">Instagram</div></div>
-            <div class="hw-share-item"><div class="hw-share-icon">&#128663;</div><div class="hw-share-label">QR en auto</div></div>
+          <div class="mqr-icons">
+            <div class="mqr-icon"><svg width="13" height="13" viewBox="0 0 24 24" fill="#25D366"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></div>
+            <div class="mqr-icon"><svg width="13" height="13" viewBox="0 0 24 24" fill="none"><defs><linearGradient id="ig3" x1="2" y1="22" x2="22" y2="2" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#f09433"/><stop offset="100%" stop-color="#bc1888"/></linearGradient></defs><rect x="2" y="2" width="20" height="20" rx="5" stroke="url(#ig3)" stroke-width="2"/><circle cx="12" cy="12" r="5" stroke="url(#ig3)" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1.5" fill="url(#ig3)"/></svg></div>
+            <div class="mqr-icon">&#128663;</div>
           </div>
         </div>
       </div>
+      <div class="hw-flow-num">03</div>
+      <div class="hw-flow-title">Compart&iacute;s el link</div>
+      <div class="hw-flow-desc">WA, Instagram, QR en el auto.</div>
     </div>
 
-    <!-- Step 04 -->
-    <div class="hw-step hw-step--alt reveal d1">
-      <div class="hw-step__text">
-        <div class="hw-step__num">04</div>
-        <div class="hw-step__tag">El bot trabaja por vos</div>
-        <div class="hw-step__title">Recib&iacute;s tu primer pedido</div>
-        <p class="hw-step__desc">El bot atiende, cotiza y confirma. Vos recib&iacute;s la notificaci&oacute;n, acept&aacute;s el viaje y cobr&aacute;s el 100%. Sin plataformas en el medio.</p>
-      </div>
-      <div class="hw-step__mock">
-        <div class="hw-chat">
-          <div class="hw-chat-header">
-            <div class="hw-chat-avatar">&#129302;</div>
-            <div><div class="hw-chat-name">Bot de Marcelo</div><div class="hw-chat-status">&#9679; en l&iacute;nea</div></div>
+    <div class="hw-flow-arrow">&#8594;</div>
+
+    <div class="hw-flow-node">
+      <div class="hw-flow-mock">
+        <div class="mc-wrap">
+          <div class="mc-header">
+            <div class="mc-avatar">&#129302;</div>
+            <div class="mc-name">Bot de Marcelo &bull; en l&iacute;nea</div>
           </div>
-          <div class="hw-bubble hw-bubble--in">Hola, &iquest;ten&eacute;s lugar para hoy?</div>
-          <div class="hw-bubble hw-bubble--bot">Hola! Soy el asistente de Marcelo &#128075; &iquest;Para qu&eacute; hora?</div>
-          <div class="hw-bubble hw-bubble--in">A las 18hs desde Palermo</div>
-          <div class="hw-bubble hw-bubble--confirm">$2.800 &#10003; &iquest;Confirmamos?</div>
+          <div class="mc-bubble mc-in">Hola, &iquest;ten&eacute;s lugar hoy?</div>
+          <div class="mc-bubble mc-bot">Hola! &iquest;Para qu&eacute; hora? &#128075;</div>
+          <div class="mc-bubble mc-in">A las 18hs, Palermo</div>
+          <div class="mc-bubble mc-ok">$2.800 &#10003; &iquest;Confirmamos?</div>
         </div>
       </div>
+      <div class="hw-flow-num">04</div>
+      <div class="hw-flow-title">Primer pedido</div>
+      <div class="hw-flow-desc">El bot atiende solo. Vos cobr&aacute;s el 100%.</div>
     </div>
 
   </div>
@@ -1865,16 +1890,20 @@ footer{border-top:1px solid var(--borde);padding:40px;max-width:1180px;margin:0 
 
   </div>
 
-  <!-- Métodos de cobro -->
-  <div class="payment-methods reveal d3">
-
-    <div class="paym-card">
-      <div class="paym-card-ico">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg>
-      </div>
-      <h4>Tu Mercado Pago</h4>
-      <p>El cliente paga con tarjeta o saldo directo a tu cuenta. Vos recibís el dinero al instante, sin que pase por nosotros.</p>
+  <div class="paym-row reveal d3">
+    <div class="paym-badge">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--verde)" stroke-width="2"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg>
+      Mercado Pago
     </div>
+    <div class="paym-badge">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--verde)" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+      Efectivo en el auto
+    </div>
+    <div class="paym-badge">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--verde)" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.15 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.06 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.09 8.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      Transferencia / Alias
+    </div>
+  </div>
 
     <div class="paym-card">
       <div class="paym-card-ico">
@@ -1894,472 +1923,7 @@ footer{border-top:1px solid var(--borde);padding:40px;max-width:1180px;margin:0 
 
   </div>
 
-  <!-- Journey del dinero -->
-  <div class="pc-journey reveal d2">
-    <div class="pc-journey-col pcj-col-uber">
-      <div class="pcj-head pcj-head--uber">&#128308; Con Uber</div>
-      <div class="pcj-node">&#128100; Cliente paga $2.800</div>
-      <div class="pcj-arr">&#8595;</div>
-      <div class="pcj-node pcj-node--filter">Uber retiene 20%<br><strong>$560 se va</strong></div>
-      <div class="pcj-arr">&#8595;</div>
-      <div class="pcj-node pcj-node--bad">&#128663; Vos recib&iacute;s <strong>$2.240</strong></div>
-    </div>
-    <div class="pcj-vs">vs</div>
-    <div class="pc-journey-col pcj-col-remis">
-      <div class="pcj-head pcj-head--remis">&#10003; Con RemisApp</div>
-      <div class="pcj-node">&#128100; Cliente paga $2.800</div>
-      <div class="pcj-spacer"></div>
-      <div class="pcj-arr pcj-arr--green">&#8595;</div>
-      <div class="pcj-spacer"></div>
-      <div class="pcj-node pcj-node--good">&#128663; Vos recib&iacute;s <strong>$2.800</strong> &#10003;</div>
-    </div>
-  </div>
 
-  <!-- Simulador mensual -->
-  <div class="pc-sim reveal d4">
-    <div class="pc-sim-title">&iquest;Cu&aacute;nto perd&eacute;s por mes con Uber?</div>
-    <div class="pc-sim-controls">
-      <div class="pc-sim-ctrl">
-        <label>Viajes por mes: <strong id="simViajesVal">80</strong></label>
-        <input type="range" min="10" max="300" value="80" id="simViajes" class="pc-sim-range">
-      </div>
-      <div class="pc-sim-ctrl">
-        <label>Precio promedio por viaje: $<strong id="simPrecioVal">2.500</strong></label>
-        <input type="range" min="500" max="10000" step="100" value="2500" id="simPrecio" class="pc-sim-range">
-      </div>
-    </div>
-    <div class="pc-sim-cols">
-      <div class="pc-sim-side pc-sim-uber">
-        <div class="pc-sim-side-lbl">Con Uber</div>
-        <div class="pc-sim-side-num" id="simUberNum">$160.000</div>
-        <div class="pc-sim-side-sub" id="simUberSub">perd&eacute;s $40.000/mes</div>
-      </div>
-      <div class="pc-sim-arrow">&#8594;</div>
-      <div class="pc-sim-side pc-sim-remis">
-        <div class="pc-sim-side-lbl">Con RemisApp</div>
-        <div class="pc-sim-side-num" id="simRemisNum">$200.000</div>
-        <div class="pc-sim-side-sub">100% tuyo</div>
-      </div>
-    </div>
-    <div class="pc-sim-diff">Gan&aacute;s <span id="simDiff" class="pc-sim-diff-num">$40.000</span> m&aacute;s por mes</div>
-  </div>
-
-  <script>
-  (function(){
-    function fmt(n){return '$'+Math.round(n).toLocaleString('es-AR')}
-
-    // Slider precio de viaje
-    var slRange=document.getElementById('pcSlRange');
-    function updateSl(){
-      var p=parseInt(slRange.value);
-      var uber=Math.round(p*0.8);
-      var diff=p-uber;
-      var uberPct=80,remisPct=100;
-      document.getElementById('pcSlPriceLbl').textContent=fmt(p);
-      document.getElementById('pcSlNumUber').textContent=fmt(uber);
-      document.getElementById('pcSlNumRemis').textContent=fmt(p);
-      document.getElementById('pcSlDiff').textContent=fmt(diff);
-      document.getElementById('pcSlFillUber').style.width=uberPct+'%';
-      document.getElementById('pcSlFillRemis').style.width=remisPct+'%';
-    }
-    if(slRange){slRange.addEventListener('input',updateSl);updateSl();}
-
-    // Simulador mensual
-    var svEl=document.getElementById('simViajes');
-    var spEl=document.getElementById('simPrecio');
-    function updateSim(){
-      var v=parseInt(svEl.value);
-      var p=parseInt(spEl.value);
-      var total=v*p;
-      var uber=Math.round(total*0.8);
-      var diff=total-uber;
-      document.getElementById('simViajesVal').textContent=v;
-      document.getElementById('simPrecioVal').textContent=p.toLocaleString('es-AR');
-      document.getElementById('simUberNum').textContent=fmt(uber);
-      document.getElementById('simRemisNum').textContent=fmt(total);
-      document.getElementById('simUberSub').textContent='perdés '+fmt(diff)+'/mes';
-      document.getElementById('simDiff').textContent=fmt(diff);
-    }
-    if(svEl&&spEl){svEl.addEventListener('input',updateSim);spEl.addEventListener('input',updateSim);}
-  })();
-  </script>
-
-  </div>
-</div>
-</section>
-
-<div class="divider"></div>
-
-<!-- FEATURES -->
-<section class="section" id="funcionalidades">
-<div class="container">
-  <div class="section-shell surface">
-  <div class="sec-eyebrow reveal">Qué incluye</div>
-  <h2 class="sec-title reveal d1">Tu propio sistema.<br><span class="hl">Mejor que Uber</span> para vos.</h2>
-  <p class="sec-sub reveal d1">Todo lo que Uber te da para trabajar — pero sin quedarse con el 20%.</p>
-
-  <div class="feat-grid">
-
-    <div class="feat-card reveal d1">
-      <span class="fbadge fb-live">Disponible</span>
-      <button class="feat-toggle" aria-label="Ver más"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg></button>
-      <div class="feat-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></div>
-      <div class="ft">Tu link público propio</div>
-      <p class="fd">Una URL tuya — tipo remisapp.link/tunombre — que compartís en Instagram, grupos o tarjeta. Cualquiera que la abra puede pedirte un viaje.</p>
-      <div class="feat-body"><div class="feat-body-inner">
-        <img src="assets/feat-link.png" alt="Tu link público" class="feat-img" onerror="this.style.display='none'">
-        <p class="feat-detail">Compartís el link una sola vez — en tu bio de Instagram, en un grupo de WhatsApp, impreso en tu tarjeta. Cada persona que lo abre puede pedirte un viaje directo. Y ese cliente queda conectado a vos para siempre, sin apps, sin registros.</p>
-      </div></div>
-    </div>
-
-    <div class="feat-card reveal d2">
-      <span class="fbadge fb-live">Disponible</span>
-      <button class="feat-toggle" aria-label="Ver más"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg></button>
-      <div class="feat-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
-      <div class="ft">Bot que opera solo</div>
-      <p class="fd">Toma el pedido, muestra el precio, confirma el viaje y te avisa. El cliente no necesita esperarte.</p>
-      <div class="feat-body"><div class="feat-body-inner">
-        <img src="assets/feat-bot.png" alt="Bot de WhatsApp" class="feat-img" onerror="this.style.display='none'">
-        <p class="feat-detail">El bot atiende a tus clientes aunque estés manejando, durmiendo o sin señal. Recibe el pedido, muestra el precio estimado y confirma el viaje. Cuando necesita tu atención, te avisa por WhatsApp directo.</p>
-      </div></div>
-    </div>
-
-    <div class="feat-card reveal d3">
-      <span class="fbadge fb-live">Disponible</span>
-      <button class="feat-toggle" aria-label="Ver más"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg></button>
-      <div class="feat-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
-      <div class="ft">Referencia de precio Uber</div>
-      <p class="fd">El sistema consulta cuánto cobraría Uber por el mismo viaje. Vos decidís si cobrar igual, más o menos.</p>
-      <div class="feat-body"><div class="feat-body-inner">
-        <img src="assets/feat-precio.png" alt="Precio Uber" class="feat-img" onerror="this.style.display='none'">
-        <p class="feat-detail">El bot consulta en tiempo real el precio estimado de Uber para el mismo origen y destino. Te lo muestra antes de confirmar. Sin adivinar, sin quedarte corto, sin cobrar de más sin querer.</p>
-      </div></div>
-    </div>
-
-    <div class="feat-card reveal d4">
-      <span class="fbadge fb-live">Disponible</span>
-      <button class="feat-toggle" aria-label="Ver más"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg></button>
-      <div class="feat-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg></div>
-      <div class="ft">Gestión total desde WhatsApp</div>
-      <p class="fd">Sin panel web obligatorio. Cambiás tarifa, disponibilidad y modo desde el celular, en cualquier momento.</p>
-      <div class="feat-body"><div class="feat-body-inner">
-        <img src="assets/feat-gestion.png" alt="Gestión WhatsApp" class="feat-img" onerror="this.style.display='none'">
-        <p class="feat-detail">Mandás comandos simples al bot: <strong>CONFIG TARIFA BASE 1500</strong>, <strong>DISPONIBLE OFF</strong>, <strong>MODO UBER ON</strong>. Todo desde el celular, sin abrir ningún panel, en cualquier momento del día.</p>
-      </div></div>
-    </div>
-
-    <div class="feat-card reveal d1">
-      <span class="fbadge fb-live">Disponible</span>
-      <button class="feat-toggle" aria-label="Ver más"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg></button>
-      <div class="feat-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="10" r="3"/><path d="M12 2a8 8 0 0 0-8 8c0 5.4 7.1 12.3 7.7 12.9a.5.5 0 0 0 .6 0C12.9 22.3 20 15.4 20 10a8 8 0 0 0-8-8z"/></svg></div>
-      <div class="ft">Tracking profesional</div>
-      <p class="fd">El cliente recibe un link para ver el estado del viaje en tiempo real. Se ve como Uber, sin que vos hagas nada.</p>
-      <div class="feat-body"><div class="feat-body-inner">
-        <img src="assets/feat-tracking.png" alt="Tracking" class="feat-img" onerror="this.style.display='none'">
-        <p class="feat-detail">Cuando aceptás el viaje, el cliente recibe automáticamente un link con tu ubicación en tiempo real — igual que Uber. Genera confianza y elimina los mensajes de "¿dónde estás?".</p>
-      </div></div>
-    </div>
-
-    <div class="feat-card reveal d2">
-      <span class="fbadge fb-live">Disponible</span>
-      <button class="feat-toggle" aria-label="Ver más"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg></button>
-      <div class="feat-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div>
-      <div class="ft">Viajes programados</div>
-      <p class="fd">El cliente reserva para las 18hs o para mañana. El sistema te avisa cuando se acerca el horario.</p>
-      <div class="feat-body"><div class="feat-body-inner">
-        <img src="assets/feat-programado-2.png" alt="Viajes programados" class="feat-img" onerror="this.style.display='none'">
-        <p class="feat-detail">El cliente reserva con hora: "mañana a las 8 al aeropuerto". El sistema te avisa 30 minutos antes y activa el viaje automáticamente. Sin alarmas manuales, sin que se te olvide.</p>
-      </div></div>
-    </div>
-
-    <div class="feat-card reveal d3">
-      <span class="fbadge fb-live">Disponible</span>
-      <button class="feat-toggle" aria-label="Ver más"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg></button>
-      <div class="feat-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polygon points="3 11 22 2 13 21 11 13 3 11"/></svg></div>
-      <div class="ft">Navegación automática</div>
-      <p class="fd">Cuando aceptás el viaje, te llega el link de navegación al origen. Sin copiar la dirección, sin buscarla.</p>
-      <div class="feat-body"><div class="feat-body-inner">
-        <img src="assets/feat-maps.png" alt="Maps automático" class="feat-img" onerror="this.style.display='none'">
-        <p class="feat-detail">Aceptás el viaje y en segundos te llega el link de Google Maps navegando directo al origen del cliente. Sin tocar la dirección, sin escribir nada. Un tap y arrancás.</p>
-      </div></div>
-    </div>
-
-    <div class="feat-card reveal d4">
-      <span class="fbadge fb-live">Disponible</span>
-      <button class="feat-toggle" aria-label="Ver más"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg></button>
-      <div class="feat-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg></div>
-      <div class="ft">Cobro por Mercado Pago</div>
-      <p class="fd">El cliente paga desde WhatsApp antes de subirse. El dinero va directo a tu cuenta de MP.</p>
-      <div class="feat-body"><div class="feat-body-inner">
-        <img src="assets/feat-mp.png" alt="Mercado Pago" class="feat-img" onerror="this.style.display='none'">
-        <p class="feat-detail">Generás un link de pago y el cliente lo paga desde WhatsApp antes de subirse. El dinero cae directo en tu cuenta de Mercado Pago. Sin efectivo, sin que te fíen, sin intermediarios.</p>
-      </div></div>
-    </div>
-
-    <div class="feat-card reveal d1">
-      <span class="fbadge fb-live">Disponible</span>
-      <button class="feat-toggle" aria-label="Ver más"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg></button>
-      <div class="feat-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg></div>
-      <div class="ft">Precio manual por viaje</div>
-      <p class="fd">Si un viaje tiene precio especial, mandás PRECIO 8500 y el bot lo usa para ese viaje puntual.</p>
-      <div class="feat-body"><div class="feat-body-inner">
-        <img src="assets/feat-manual.png" alt="Precio manual" class="feat-img" onerror="this.style.display='none'">
-        <p class="feat-detail">Larga distancia, aeropuerto, hora pico — cada viaje puede tener su precio. Mandás <strong>PRECIO 8500</strong> y el bot lo aplica solo para ese pedido. Con límites configurables para que no haya cobros raros.</p>
-      </div></div>
-    </div>
-
-    <div class="feat-card reveal d2 coming">
-      <span class="fbadge fb-soon">Próximamente</span>
-      <div class="feat-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></div>
-      <div class="ft">Resumen de ganancias</div>
-      <p class="fd">Cuántos viajes hiciste, cuánto ganaste, qué días trabajás más. Resumen semanal y mensual automático.</p>
-    </div>
-
-  </div>
-  </div>
-</div>
-</section>
-
-<div class="divider"></div>
-
-<!-- FEATURES ALTERNADAS -->
-<section class="section">
-<div class="container">
-  <div class="section-shell surface">
-  <div class="sec-eyebrow reveal">Cómo funciona</div>
-  <h2 class="sec-title reveal d1">Todo lo que hace<br><span class="hl">el bot por vos.</span></h2>
-  <p class="sec-sub reveal d1">Sin apps nuevas, sin técnicos, sin contratos. Solo tu WhatsApp y tus clientes.</p>
-
-  <div class="altfeat-wrap reveal d2">
-
-    <!-- 01 — Bot WhatsApp -->
-    <div class="altfeat">
-      <div class="altfeat-text">
-        <div class="altfeat-num">/ 01</div>
-        <h3 class="altfeat-title">El bot atiende.<br><span class="hl">Las 24 horas.</span></h3>
-        <p class="altfeat-desc">El cliente te manda un mensaje por WhatsApp. El bot entiende el pedido, cotiza el viaje, confirma con el pasajero y te avisa a vos — sin que hagas nada.</p>
-        <div class="altfeat-pills">
-          <span class="altfeat-pill">Respuesta en segundos</span>
-          <span class="altfeat-pill">Sin intermediarios</span>
-          <span class="altfeat-pill">365 días sin descanso</span>
-        </div>
-      </div>
-      <div class="altfeat-visual">
-        <img src="assets/whatsapp-bot-reserva-01.png" class="altfeat-img" alt="Bot WhatsApp en acción">
-      </div>
-    </div>
-
-    <!-- 02 — Precio Uber (invertido) -->
-    <div class="altfeat altfeat--rev">
-      <div class="altfeat-text">
-        <div class="altfeat-num">/ 02</div>
-        <h3 class="altfeat-title">Tu precio.<br><span class="hl">Sin que nadie se lleve nada.</span></h3>
-        <p class="altfeat-desc">Consultamos cuánto cobraría Uber para ese viaje. Vos elegís si cobrar igual, más o menos. La diferencia no va a ninguna plataforma — es tuya.</p>
-        <div class="altfeat-pills">
-          <span class="altfeat-pill">Referencia Uber en tiempo real</span>
-          <span class="altfeat-pill">0% de comisión</span>
-          <span class="altfeat-pill">Precio libre</span>
-        </div>
-      </div>
-      <div class="altfeat-visual">
-        <img src="assets/chofer-plata-retenida-01.png" class="altfeat-img" alt="Chofer con su plata">
-      </div>
-    </div>
-
-    <!-- 03 — Compartilo -->
-    <div class="altfeat">
-      <div class="altfeat-text">
-        <div class="altfeat-num">/ 03</div>
-        <h3 class="altfeat-title">Tu link.<br><span class="hl">Tus clientes.</span></h3>
-        <p class="altfeat-desc">Pegás el QR en el auto, lo ponés en Instagram o lo mandás por WhatsApp. El cliente escanea, abre el chat con el bot y reserva en 30 segundos. No necesita descargar nada.</p>
-        <div class="altfeat-pills">
-          <span class="altfeat-pill">QR para el auto</span>
-          <span class="altfeat-pill">Bio de Instagram</span>
-          <span class="altfeat-pill">Link por WhatsApp</span>
-        </div>
-      </div>
-      <div class="altfeat-visual">
-        <img src="assets/qr-auto-01.png" class="altfeat-img" alt="QR en el auto">
-      </div>
-    </div>
-
-    <!-- 04 — Viajes programados (invertido) -->
-    <div class="altfeat altfeat--rev">
-      <div class="altfeat-text">
-        <div class="altfeat-num">/ 04</div>
-        <h3 class="altfeat-title">Viajes programados.<br><span class="hl">Sin llamadas a medianoche.</span></h3>
-        <p class="altfeat-desc">El cliente reserva para mañana a las 7am. El bot lo confirma solo, te manda el recordatorio antes, y vos arrancás el día con la agenda organizada.</p>
-        <div class="altfeat-pills">
-          <span class="altfeat-pill">Confirmación automática</span>
-          <span class="altfeat-pill">Recordatorio previo</span>
-          <span class="altfeat-pill">Sin llamadas</span>
-        </div>
-      </div>
-      <div class="altfeat-visual">
-        <img src="assets/registro-celular-01.png" class="altfeat-img" alt="Viajes programados">
-      </div>
-    </div>
-
-  </div>
-  </div>
-</div>
-</section>
-
-<div class="divider"></div>
-
-<!-- VS UBER -->
-<section class="section">
-<div class="container">
-  <div class="section-shell surface">
-  <div class="sec-eyebrow reveal">La comparación honesta</div>
-  <h2 class="sec-title reveal d1">RemisApp Solo<br>vs. trabajar para Uber</h2>
-  <p class="sec-sub reveal d1">No te decimos que dejes Uber de golpe. Te decimos que empieces a construir algo que sea tuyo.</p>
-
-  <div class="vs-grid reveal d2">
-    <div class="vs-card vs-uber">
-      <div class="vs-tag">Trabajar para Uber / Didi / Cabify</div>
-      <div class="vs-list">
-        <div class="vs-item"><span class="mark-x">✕</span> Se quedan el 25–30% de cada viaje</div>
-        <div class="vs-item"><span class="mark-x">✕</span> Te pueden banear sin aviso ni explicación</div>
-        <div class="vs-item"><span class="mark-x">✕</span> Los clientes son de la plataforma, no tuyos</div>
-        <div class="vs-item"><span class="mark-x">✕</span> El precio lo decide el algoritmo</div>
-        <div class="vs-item"><span class="mark-x">✕</span> No podés fidelizar ni construir cartera propia</div>
-        <div class="vs-item"><span class="mark-x">✕</span> Si la app cae o te banean, no trabajás</div>
-      </div>
-    </div>
-    <div class="vs-card vs-solo">
-      <div class="vs-tag">RemisApp Solo</div>
-      <div class="vs-list">
-        <div class="vs-item"><span class="mark-ok">✓</span> Gratis para empezar — sin tarjeta de crédito</div>
-        <div class="vs-item"><span class="mark-ok">✓</span> El 100% de cada viaje es tuyo</div>
-        <div class="vs-item"><span class="mark-ok">✓</span> Tu negocio no depende de ninguna plataforma</div>
-        <div class="vs-item"><span class="mark-ok">✓</span> Tus clientes son tuyos para siempre</div>
-        <div class="vs-item"><span class="mark-ok">✓</span> Vos ponés el precio que querés cobrar</div>
-        <div class="vs-item"><span class="mark-ok">✓</span> WhatsApp nunca te va a banear</div>
-      </div>
-    </div>
-  </div>
-  </div>
-</div>
-</section>
-
-<div class="divider"></div>
-
-<!-- TESTIMONIALS -->
-<section class="section">
-<div class="container">
-  <div class="sec-eyebrow reveal">Lo que dicen los choferes</div>
-  <h2 class="sec-title reveal d1">Choferes que ya<br><span class="hl">trabajan con RemisApp</span></h2>
-  <p class="sec-sub reveal d1">Empezaron gratis, igual que vos. Hoy tienen su propia cartera de clientes.</p>
-  <div class="testi-grid">
-    <div class="testi-card reveal d1">
-      <div class="testi-stars">★★★★★</div>
-      <p class="testi-quote">En el primer mes recuperé más del doble de lo que pagaba en comisiones. El bot funciona solo, yo solo manejo. Mis clientes de siempre me piden directo ahora.</p>
-      <div class="testi-author">
-        <div class="testi-av">D</div>
-        <div>
-          <div class="testi-name">Diego P.</div>
-          <div class="testi-meta">Chofer independiente · Córdoba</div>
-        </div>
-      </div>
-    </div>
-    <div class="testi-card reveal d2">
-      <div class="testi-stars">★★★★★</div>
-      <p class="testi-quote">Lo que más me cambió fue tener mi propio link. Se lo pasé a mis clientes habituales y ahora me llaman directo, sin pasar por Uber. Ya no dependo de que me manden trabajo.</p>
-      <div class="testi-author">
-        <div class="testi-av">M</div>
-        <div>
-          <div class="testi-name">Marcela R.</div>
-          <div class="testi-meta">Remis independiente · Rosario</div>
-        </div>
-      </div>
-    </div>
-    <div class="testi-card reveal d3">
-      <div class="testi-stars">★★★★★</div>
-      <p class="testi-quote">No sé nada de tecnología y en pocos minutos ya lo tenía andando. El onboarding te va llevando paso a paso. Cuando me surgió una duda, me respondieron por WhatsApp al toque.</p>
-      <div class="testi-author">
-        <div class="testi-av">G</div>
-        <div>
-          <div class="testi-name">Gonzalo M.</div>
-          <div class="testi-meta">Chofer independiente · Mendoza</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-</section>
-
-<!-- PRICING -->
-<section class="section" id="precios">
-<div class="container">
-  <div class="pricing-wrap">
-  <div class="sec-eyebrow reveal">Precios</div>
-  <div class="pricing-proof reveal d1">
-    <span class="pricing-proof-pill"><strong>3 viajes gratis</strong> por mes, siempre</span>
-    <span class="pricing-proof-pill"><strong>Sin comisi&oacute;n</strong> por viaje en todos los planes</span>
-    <span class="pricing-proof-pill"><strong>Sin permanencia</strong> ni contrato</span>
-  </div>
-  <h2 class="sec-title reveal d1">Si us&aacute;s poco,<br><span class="hl">no pag&aacute;s nada.</span></h2>
-  <p class="sec-sub reveal d1">Cada mes ten&eacute;s 3 viajes gratis, siempre. Si necesit&aacute;s m&aacute;s, eleg&iacute;s &mdash; packs puntuales o mensual ilimitado.</p>
-
-  <div class="pricing-grid reveal d2">
-
-    <div class="pricing-card pricing-free">
-      <div class="pricing-tag">Siempre gratis</div>
-      <div class="pricing-price">$0<span style="font-size:1rem;font-weight:500;opacity:0.6">/mes</span></div>
-      <p class="pricing-period">3 viajes por mes &middot; Sin tarjeta &middot; Sin vencimiento</p>
-      <ul class="pricing-list">
-        <li>3 viajes gratis cada mes, para siempre</li>
-        <li>Bot de WhatsApp activo</li>
-        <li>Tu perfil p&uacute;blico y tu link propio</li>
-        <li>Historial de viajes</li>
-        <li>Soporte por WhatsApp</li>
-      </ul>
-      <a href="https://remisapp2-production.up.railway.app/empezar?kind=independiente" class="btn-primary" style="width:100%;justify-content:center">Empez&aacute; gratis &rarr;</a>
-    </div>
-
-    <div class="pricing-card pricing-packs">
-      <div class="pricing-tag">Pago por uso</div>
-
-      <p class="pricing-period">Sin abono mensual &middot; Cr&eacute;ditos sin vencimiento</p>
-      <div class="pack-options">
-        <div class="pack-option">
-          <span class="pack-lbl">5 viajes</span>
-          <span class="pack-price">$2.000</span>
-          <span class="pack-unit">$400/viaje</span>
-        </div>
-        <div class="pack-option pack-option--pop">
-          <span class="pack-lbl">12 viajes &#11088;</span>
-          <span class="pack-price">$4.000</span>
-          <span class="pack-unit">$333/viaje</span>
-        </div>
-        <div class="pack-option">
-          <span class="pack-lbl">20 viajes</span>
-          <span class="pack-price">$6.500</span>
-          <span class="pack-unit">$325/viaje</span>
-        </div>
-      </div>
-      <a href="https://remisapp2-production.up.railway.app/empezar?kind=independiente" class="btn-secondary" style="width:100%;justify-content:center;margin-top:auto">Comprar cr&eacute;ditos &rarr;</a>
-    </div>
-
-    <div class="pricing-card pricing-pro">
-      <span class="pricing-badge">Recomendado</span>
-      <div class="pricing-tag">Mensual ilimitado</div>
-      <div class="pricing-price">$4.900<span style="font-size:1rem;font-weight:500;opacity:0.7">/mes</span></div>
-      <p class="pricing-period">Ilimitado &middot; Sin comisiones por viaje</p>
-      <ul class="pricing-list">
-        <li>Viajes ilimitados, sin tope</li>
-        <li>Bot 24hs respondiendo solo</li>
-        <li>Precio de referencia Uber en tiempo real</li>
-        <li>Cobro por Mercado Pago integrado</li>
-        <li>Soporte prioritario por WhatsApp</li>
-      </ul>
-      <p class="pricing-tip">&#128161; Si hac&eacute;s m&aacute;s de 15 viajes/mes, el mensual ya te conviene m&aacute;s que los packs.</p>
-      <a href="https://remisapp2-production.up.railway.app/empezar?kind=independiente" class="btn-secondary" style="width:100%;justify-content:center">Empez&aacute; con 14 d&iacute;as gratis &rarr;</a>
-    </div>
-
-  </div>
-  <p class="pricing-footnote">Sin permanencia. Sin comisi&oacute;n por viaje. Cancel&aacute;s cuando quer&eacute;s.</p>
   </div>
 </div>
 </section>
