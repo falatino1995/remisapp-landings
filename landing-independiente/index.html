@@ -1084,6 +1084,12 @@ footer{border-top:1px solid var(--borde);padding:40px;max-width:1180px;margin:0 
 .hw-share-icon{width:40px;height:40px;border-radius:50%;background:var(--card);border:1px solid var(--borde);display:flex;align-items:center;justify-content:center;font-size:18px}
 .hw-share-label{font-size:10px;color:var(--gris2);text-align:center;margin-top:3px}
 .hw-share-item{display:flex;flex-direction:column;align-items:center}
+
+/* Hero rotating text */
+.hero-rotate{position:relative;display:inline-block;overflow:hidden;vertical-align:bottom}
+.hr-item{display:block;opacity:0;transform:translateY(110%);transition:opacity .45s cubic-bezier(.22,.68,0,1.2),transform .45s cubic-bezier(.22,.68,0,1.2);position:absolute;left:0;top:0;white-space:nowrap;pointer-events:none}
+.hr-item.hr-active{opacity:1;transform:translateY(0);position:relative;pointer-events:auto}
+.hr-item.hr-exit{opacity:0;transform:translateY(-110%);position:absolute}
 </style>
 </head>
 <body>
@@ -1130,7 +1136,12 @@ footer{border-top:1px solid var(--borde);padding:40px;max-width:1180px;margin:0 
     <h1 class="hero-title reveal d1">
       Tus clientes.<br>
       Tus precios.<br>
-      <span class="hl">Tu 100%.</span>
+      <span class="hl hero-rotate">
+        <span class="hr-item hr-active">Tu 100%.</span>
+        <span class="hr-item">Sin Uber.</span>
+        <span class="hr-item">Sin comisiones.</span>
+        <span class="hr-item">Tuyo, siempre.</span>
+      </span>
     </h1>
     <p class="hero-sub reveal d2">Manejás tu propio sistema de viajes por WhatsApp. Los clientes son tuyos, el precio lo ponés vos y el 100% de cada viaje te llega a vos — sin pedirle permiso a ninguna plataforma.</p>
     <div class="hero-trust reveal d3">
@@ -2555,6 +2566,22 @@ document.querySelectorAll('.feat-card:not(.coming)').forEach(card => {
   });
 });
 
+
+// Hero rotating text
+(function(){
+  var items = Array.from(document.querySelectorAll('.hr-item'));
+  if(!items.length) return;
+  var current = 0;
+  setInterval(function(){
+    var prev = items[current];
+    current = (current + 1) % items.length;
+    var next = items[current];
+    prev.classList.remove('hr-active');
+    prev.classList.add('hr-exit');
+    setTimeout(function(){ prev.classList.remove('hr-exit'); }, 500);
+    next.classList.add('hr-active');
+  }, 2800);
+})();
 </script>
 </body>
 </html>
