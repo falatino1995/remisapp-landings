@@ -2412,6 +2412,67 @@ footer{border-top:1px solid var(--borde);padding:40px;max-width:1180px;margin:0 
     </div>
   </div>
 
+  <!-- Payment methods -->
+  <style>
+  .pv2-pay-title{font-size:16px;font-weight:700;color:var(--blanco);margin-bottom:4px}
+  .pv2-pay-sub{font-size:13px;color:var(--gris2);margin-bottom:24px}
+  .pv2-pay-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+  .pv2-pay-card{border-radius:18px;padding:24px 20px;display:flex;flex-direction:column;gap:12px;transition:transform .2s,border-color .2s}
+  .pv2-pay-card:hover{transform:translateY(-3px)}
+  .pv2-pay-card--mp{background:rgba(0,110,255,.07);border:1px solid rgba(0,110,255,.25)}
+  .pv2-pay-card--cash{background:rgba(250,204,21,.06);border:1px solid rgba(250,204,21,.22)}
+  .pv2-pay-card--transfer{background:rgba(61,204,142,.07);border:1px solid var(--verde-border)}
+  .pv2-pay-ico{width:42px;height:42px;border-radius:12px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:20px}
+  .pv2-pay-card--mp .pv2-pay-ico{background:rgba(0,110,255,.15);border:1px solid rgba(0,110,255,.3)}
+  .pv2-pay-card--cash .pv2-pay-ico{background:rgba(250,204,21,.12);border:1px solid rgba(250,204,21,.3)}
+  .pv2-pay-card--transfer .pv2-pay-ico{background:rgba(61,204,142,.12);border:1px solid var(--verde-border)}
+  .pv2-pay-name{font-size:15px;font-weight:800;color:var(--blanco);letter-spacing:-.01em}
+  .pv2-pay-desc{font-size:12.5px;color:var(--gris2);line-height:1.6;flex:1}
+  .pv2-pay-chip{display:inline-flex;align-items:center;gap:5px;font-size:10px;font-weight:700;padding:3px 9px;border-radius:999px;margin-top:4px}
+  .pv2-pay-card--mp .pv2-pay-chip{color:rgba(0,110,255,.9);background:rgba(0,110,255,.1);border:1px solid rgba(0,110,255,.25)}
+  .pv2-pay-card--cash .pv2-pay-chip{color:rgba(250,204,21,.9);background:rgba(250,204,21,.08);border:1px solid rgba(250,204,21,.25)}
+  .pv2-pay-card--transfer .pv2-pay-chip{color:var(--verde);background:var(--verde-bg);border:1px solid var(--verde-border)}
+  @media(max-width:640px){.pv2-pay-grid{grid-template-columns:1fr}}
+  </style>
+  <div class="pv2-box reveal d3">
+    <div class="pv2-pay-title">Cobrás como quieras</div>
+    <div class="pv2-pay-sub">El cliente elige cómo pagar — vos cobrás directo, sin intermediarios.</div>
+    <div class="pv2-pay-grid">
+
+      <div class="pv2-pay-card pv2-pay-card--mp">
+        <div class="pv2-pay-ico">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="rgba(0,110,255,.9)" stroke-width="2" stroke-linecap="round"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg>
+        </div>
+        <div>
+          <div class="pv2-pay-name">Mercado Pago</div>
+          <div class="pv2-pay-desc">El bot genera el link de cobro directo en el chat. El cliente paga con tarjeta, saldo MP o QR.</div>
+        </div>
+        <span class="pv2-pay-chip">⚡ Link automático en el chat</span>
+      </div>
+
+      <div class="pv2-pay-card pv2-pay-card--cash">
+        <div class="pv2-pay-ico">💵</div>
+        <div>
+          <div class="pv2-pay-name">Efectivo en el auto</div>
+          <div class="pv2-pay-desc">El cliente paga al bajar. Sin apps, sin QRs, sin pasos extra. Simple como siempre.</div>
+        </div>
+        <span class="pv2-pay-chip">✓ Sin fricción, cero pasos</span>
+      </div>
+
+      <div class="pv2-pay-card pv2-pay-card--transfer">
+        <div class="pv2-pay-ico">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--verde)" stroke-width="2" stroke-linecap="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+        </div>
+        <div>
+          <div class="pv2-pay-name">Transferencia / Alias</div>
+          <div class="pv2-pay-desc">CVU, alias o cualquier billetera digital. El dinero va directo de la cuenta del cliente a la tuya.</div>
+        </div>
+        <span class="pv2-pay-chip">✓ Directo a tu cuenta</span>
+      </div>
+
+    </div>
+  </div>
+
   </div>
 </div>
 </section>
