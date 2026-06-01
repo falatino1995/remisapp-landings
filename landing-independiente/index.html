@@ -2556,13 +2556,13 @@ function reorderLandingSections(){
   const orderedComments = [
     findComment('PROBLEMAS'),
     findCommentLike('FUSIÓN'),
-    findComment('VISUAL DEMO'),
     findComment('FEATURE SHOWCASE'),
-    findComment('PRECIO Y COBRO'),
+    findComment('VISUAL DEMO'),
+    findCommentLike('COMPARTILO'),
     findComment('HOW IT WORKS'),
+    findComment('PRECIO Y COBRO'),
     findComment('PRICING'),
     findComment('TESTIMONIALS'),
-    findCommentLike('COMPARTILO'),
     findComment('FAQ'),
     findComment('CTA'),
   ].filter(Boolean);
