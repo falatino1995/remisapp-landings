@@ -2222,6 +2222,202 @@ footer{border-top:1px solid var(--borde);padding:40px;max-width:1180px;margin:0 
 
 <div class="divider"></div>
 
+<!-- PRECIO Y COBRO v2 -->
+<style>
+/* ══ Precio y Cobro v2 ══ */
+.pv2-box{padding:36px;background:var(--bg2);border:1px solid var(--borde);border-radius:24px;margin-bottom:20px}
+
+/* flow diagram */
+.pv2-flow-eye{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.14em;color:var(--gris2);text-align:center;margin-bottom:32px}
+.pv2-flow-grid{display:grid;grid-template-columns:150px 1fr 172px;align-items:center}
+.pv2-source{background:rgba(255,255,255,.05);border:1px solid var(--borde);border-radius:16px;padding:18px 14px;text-align:center}
+.pv2-source-lbl{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--gris2);margin-bottom:5px}
+.pv2-source-amt{font-family:'Barlow Condensed',sans-serif;font-size:34px;font-weight:800;color:var(--blanco);letter-spacing:-.02em;line-height:1}
+.pv2-source-sub{font-size:11px;color:var(--gris2);margin-top:4px}
+
+.pv2-tracks{padding:0 28px;display:flex;flex-direction:column;gap:32px}
+.pv2-track{display:flex;flex-direction:column;gap:6px}
+.pv2-track-lbl{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em}
+.pv2-track--uber .pv2-track-lbl{color:#ef4444}
+.pv2-track--remis .pv2-track-lbl{color:var(--verde)}
+
+.pv2-rail{position:relative;height:24px;display:flex;align-items:center}
+.pv2-rail-line{position:absolute;left:0;right:0;height:2px;border-radius:999px}
+.pv2-track--uber .pv2-rail-line{background:linear-gradient(90deg,rgba(239,68,68,.25),rgba(239,68,68,.15) 52%,rgba(239,68,68,.1))}
+.pv2-track--remis .pv2-rail-line{background:linear-gradient(90deg,rgba(61,204,142,.4),rgba(61,204,142,.7))}
+
+.pv2-dot{position:absolute;width:9px;height:9px;border-radius:50%;top:50%;margin-top:-4.5px}
+.pv2-track--remis .pv2-dot{background:var(--verde);box-shadow:0 0 7px rgba(61,204,142,.65);animation:pv2thru 2s linear infinite}
+.pv2-track--uber .pv2-dot{background:rgba(239,68,68,.45);animation:pv2thruUber 2s linear infinite}
+.pv2-track--uber .pv2-dot.cap{background:#ef4444;box-shadow:0 0 7px rgba(239,68,68,.5);animation:pv2cap 2s linear infinite}
+
+@keyframes pv2thru{0%{left:0;opacity:0}6%{opacity:1}94%{opacity:1}100%{left:100%;opacity:0}}
+@keyframes pv2thruUber{0%{left:0;opacity:0}6%{opacity:.45}94%{opacity:.45}100%{left:100%;opacity:0}}
+@keyframes pv2cap{0%{left:0;opacity:0}6%{opacity:1}46%{left:52%;opacity:1}56%{left:52%;opacity:0}100%{left:52%;opacity:0}}
+
+.pv2-intercept{position:relative;margin-top:6px;text-align:center}
+.pv2-intercept-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(239,68,68,.1);border:1px solid rgba(239,68,68,.35);border-radius:8px;padding:5px 12px;font-size:11px;animation:pv2pulse 2s ease-in-out infinite}
+.pv2-intercept-pct{font-weight:800;color:#ef4444}
+.pv2-intercept-amt{color:rgba(239,68,68,.75)}
+@keyframes pv2pulse{0%,100%{box-shadow:0 0 0 0 rgba(239,68,68,0)}50%{box-shadow:0 0 0 4px rgba(239,68,68,.12)}}
+
+.pv2-outcomes{display:flex;flex-direction:column;gap:32px}
+.pv2-outcome{padding:14px 16px;border-radius:14px;text-align:center}
+.pv2-outcome--uber{background:rgba(239,68,68,.06);border:1px solid rgba(239,68,68,.2)}
+.pv2-outcome--remis{background:rgba(61,204,142,.08);border:1px solid var(--verde-border)}
+.pv2-outcome-lbl{font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;margin-bottom:4px}
+.pv2-outcome--uber .pv2-outcome-lbl{color:#ef4444}
+.pv2-outcome--remis .pv2-outcome-lbl{color:var(--verde)}
+.pv2-outcome-amt{font-family:'Barlow Condensed',sans-serif;font-size:26px;font-weight:800;letter-spacing:-.02em;line-height:1}
+.pv2-outcome--uber .pv2-outcome-amt{color:rgba(255,255,255,.4)}
+.pv2-outcome--remis .pv2-outcome-amt{color:var(--verde)}
+.pv2-outcome-sub{font-size:10px;margin-top:3px}
+.pv2-outcome--uber .pv2-outcome-sub{color:rgba(239,68,68,.7)}
+.pv2-outcome--remis .pv2-outcome-sub{color:var(--gris2)}
+
+/* calculator */
+.pv2-calc-title{font-size:18px;font-weight:800;color:var(--blanco);text-align:center;margin-bottom:28px}
+.pv2-sliders{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:32px}
+.pv2-slider-grp{display:flex;flex-direction:column;gap:7px}
+.pv2-slider-lbl{font-size:12px;color:var(--gris2)}
+.pv2-slider-val{font-size:17px;font-weight:700;color:var(--blanco)}
+.pv2-range{width:100%;accent-color:var(--verde);cursor:pointer;height:4px}
+.pv2-results{display:grid;grid-template-columns:1fr 28px 1fr;align-items:center;gap:14px}
+.pv2-res{padding:22px 18px;border-radius:16px;text-align:center}
+.pv2-res--uber{background:rgba(239,68,68,.06);border:1px solid rgba(239,68,68,.2)}
+.pv2-res--remis{background:rgba(61,204,142,.08);border:1px solid var(--verde-border)}
+.pv2-res-lbl{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;margin-bottom:10px}
+.pv2-res--uber .pv2-res-lbl{color:#ef4444}
+.pv2-res--remis .pv2-res-lbl{color:var(--verde)}
+.pv2-res-num{font-family:'Barlow Condensed',sans-serif;font-size:36px;font-weight:800;letter-spacing:-.03em;line-height:1}
+.pv2-res--uber .pv2-res-num{color:rgba(255,255,255,.45)}
+.pv2-res--remis .pv2-res-num{color:var(--verde)}
+.pv2-res-sub{font-size:11px;color:var(--gris2);margin-top:5px;line-height:1.4}
+.pv2-vs{font-size:18px;color:var(--gris2);text-align:center}
+.pv2-diff{margin-top:18px;padding:20px 24px;background:rgba(239,68,68,.06);border:1px solid rgba(239,68,68,.22);border-radius:14px;text-align:center}
+.pv2-diff-lbl{font-size:13px;color:var(--gris2);margin-bottom:6px}
+.pv2-diff-num{font-family:'Barlow Condensed',sans-serif;font-size:44px;font-weight:800;color:#ef4444;letter-spacing:-.03em;line-height:1}
+.pv2-diff-sub{font-size:12px;color:var(--gris2);margin-top:5px}
+.pv2-diff-cta{display:inline-block;margin-top:16px;font-size:13px;font-weight:700;color:var(--verde);background:var(--verde-bg);border:1px solid var(--verde-border);padding:8px 20px;border-radius:999px;text-decoration:none}
+
+@media(max-width:680px){
+  .pv2-flow-grid{grid-template-columns:100px 1fr 120px}
+  .pv2-source-amt{font-size:24px}
+  .pv2-sliders{grid-template-columns:1fr}
+  .pv2-results{grid-template-columns:1fr}
+  .pv2-vs{display:none}
+}
+</style>
+<section class="section">
+<div class="container">
+  <div class="section-shell surface">
+  <div class="sec-eyebrow reveal">Precio y cobro</div>
+  <h2 class="sec-title reveal d1">Un viaje.<br><span class="hl">Dos destinos.</span></h2>
+  <p class="sec-sub reveal d1">Mismo cliente, mismo recorrido, mismo precio. La diferencia la decide la plataforma que uses.</p>
+
+  <!-- Flow diagram -->
+  <div class="pv2-box reveal d2">
+    <div class="pv2-flow-eye">Un viaje — dos destinos para el dinero</div>
+    <div class="pv2-flow-grid">
+
+      <div class="pv2-source">
+        <div class="pv2-source-lbl">Cliente paga</div>
+        <div class="pv2-source-amt">$9.500</div>
+        <div class="pv2-source-sub">un viaje</div>
+      </div>
+
+      <div class="pv2-tracks">
+
+        <div class="pv2-track pv2-track--uber">
+          <div class="pv2-track-lbl">Con Uber</div>
+          <div class="pv2-rail">
+            <div class="pv2-rail-line"></div>
+            <div class="pv2-dot" style="animation-delay:0s"></div>
+            <div class="pv2-dot" style="animation-delay:.4s"></div>
+            <div class="pv2-dot" style="animation-delay:.8s"></div>
+            <div class="pv2-dot" style="animation-delay:1.2s"></div>
+            <div class="pv2-dot cap" style="animation-delay:1.6s"></div>
+          </div>
+          <div class="pv2-intercept">
+            <div class="pv2-intercept-badge">
+              <span class="pv2-intercept-pct">⚡ −20%</span>
+              <span class="pv2-intercept-amt">Uber retiene $1.900</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="pv2-track pv2-track--remis">
+          <div class="pv2-track-lbl">Con RemisApp</div>
+          <div class="pv2-rail">
+            <div class="pv2-rail-line"></div>
+            <div class="pv2-dot" style="animation-delay:0s"></div>
+            <div class="pv2-dot" style="animation-delay:.4s"></div>
+            <div class="pv2-dot" style="animation-delay:.8s"></div>
+            <div class="pv2-dot" style="animation-delay:1.2s"></div>
+            <div class="pv2-dot" style="animation-delay:1.6s"></div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="pv2-outcomes">
+        <div class="pv2-outcome pv2-outcome--uber">
+          <div class="pv2-outcome-lbl">Vos recibís</div>
+          <div class="pv2-outcome-amt">$7.600</div>
+          <div class="pv2-outcome-sub">$1.900 se los quedó Uber</div>
+        </div>
+        <div class="pv2-outcome pv2-outcome--remis">
+          <div class="pv2-outcome-lbl">Vos recibís</div>
+          <div class="pv2-outcome-amt">$9.500</div>
+          <div class="pv2-outcome-sub">100% tuyo ✓</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Calculator -->
+  <div class="pv2-box reveal d3">
+    <div class="pv2-calc-title">¿Cuánto te retiene Uber por mes?</div>
+    <div class="pv2-sliders">
+      <div class="pv2-slider-grp">
+        <div class="pv2-slider-lbl">Viajes por día</div>
+        <div class="pv2-slider-val" id="pv2-trips-lbl">8 viajes/día</div>
+        <input type="range" class="pv2-range" id="pv2-trips" min="1" max="30" value="8" oninput="pv2Calc()">
+      </div>
+      <div class="pv2-slider-grp">
+        <div class="pv2-slider-lbl">Precio promedio por viaje</div>
+        <div class="pv2-slider-val" id="pv2-price-lbl">$9.500</div>
+        <input type="range" class="pv2-range" id="pv2-price" min="3000" max="30000" step="500" value="9500" oninput="pv2Calc()">
+      </div>
+    </div>
+    <div class="pv2-results">
+      <div class="pv2-res pv2-res--uber">
+        <div class="pv2-res-lbl">Con Uber</div>
+        <div class="pv2-res-num" id="pv2-uber-res">—</div>
+        <div class="pv2-res-sub">ingreso mensual<br>después del 20%</div>
+      </div>
+      <div class="pv2-vs">→</div>
+      <div class="pv2-res pv2-res--remis">
+        <div class="pv2-res-lbl">Con RemisApp</div>
+        <div class="pv2-res-num" id="pv2-remis-res">—</div>
+        <div class="pv2-res-sub">ingreso mensual<br>100% tuyo</div>
+      </div>
+    </div>
+    <div class="pv2-diff">
+      <div class="pv2-diff-lbl">Uber te retiene por mes</div>
+      <div class="pv2-diff-num" id="pv2-diff-res">—</div>
+      <div class="pv2-diff-sub">Con RemisApp, ese dinero es tuyo.</div>
+      <a href="https://remisapp2-production.up.railway.app/empezar?kind=independiente" class="pv2-diff-cta">Empezá gratis →</a>
+    </div>
+  </div>
+
+  </div>
+</div>
+</section>
+
+<div class="divider"></div>
+
 <!-- FAQ -->
 <section class="container section" id="faq">
   <div class="section-shell surface">
@@ -2424,6 +2620,31 @@ async function handleSubmit(e){
   </a>
 </div>
 <script>
+// Precio v2 calculator
+function pv2Calc() {
+  const trips = parseInt(document.getElementById('pv2-trips').value);
+  const price = parseInt(document.getElementById('pv2-price').value);
+  document.getElementById('pv2-trips-lbl').textContent = trips + ' viajes/día';
+  document.getElementById('pv2-price-lbl').textContent = '$' + price.toLocaleString('es-AR');
+  const monthly = trips * 22 * price;
+  pv2Num('pv2-uber-res', Math.round(monthly * 0.8));
+  pv2Num('pv2-remis-res', monthly);
+  pv2Num('pv2-diff-res', Math.round(monthly * 0.2));
+}
+function pv2Num(id, target) {
+  const el = document.getElementById(id);
+  if (!el) return;
+  const start = el._v || 0; el._v = target;
+  const t0 = performance.now();
+  (function tick(now) {
+    const p = Math.min((now - t0) / 380, 1);
+    const e = 1 - Math.pow(1 - p, 3);
+    el.textContent = '$' + Math.round(start + (target - start) * e).toLocaleString('es-AR');
+    if (p < 1) requestAnimationFrame(tick);
+  })(t0);
+}
+document.addEventListener('DOMContentLoaded', pv2Calc);
+
 // Feature cards expand (Opción 1)
 document.querySelectorAll('.feat-card:not(.coming)').forEach(card => {
   card.addEventListener('click', () => {
