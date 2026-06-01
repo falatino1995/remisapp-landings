@@ -1422,7 +1422,8 @@ footer{border-top:1px solid var(--borde);padding:40px;max-width:1180px;margin:0 
 <!-- ══ HERO VARIANTE D — columna vertical sincronizada ══ -->
 <style>
 /* Feature list vertical */
-.hvd-right{display:flex;align-items:center;gap:28px;height:100%;justify-content:center}
+.hvd-right{display:flex;align-items:center;gap:24px;height:100%;justify-content:flex-end;padding-right:8px}
+@media(max-width:760px){.hvd-right{justify-content:center;padding-right:0}.hvd-mock-slot{display:none}.hvd-list{width:100%}}
 .hvd-list{display:flex;flex-direction:column;gap:6px;width:220px;flex-shrink:0}
 .hvd-item{display:flex;align-items:center;gap:12px;padding:12px 14px;border-radius:14px;border:1px solid transparent;cursor:default;transition:background .35s,border-color .35s;position:relative}
 .hvd-item-bar{position:absolute;left:0;top:12px;bottom:12px;width:3px;border-radius:999px;background:var(--verde);opacity:0;transition:opacity .35s}
@@ -1505,6 +1506,14 @@ footer{border-top:1px solid var(--borde);padding:40px;max-width:1180px;margin:0 
             <div class="hvd-desc">Mercado Pago, efectivo o transferencia.</div>
           </div>
         </div>
+        <div class="hvd-item" id="hvd-i4">
+          <div class="hvd-item-bar"></div>
+          <div class="hvd-ico">📅</div>
+          <div class="hvd-text">
+            <div class="hvd-name">Viajes programados</div>
+            <div class="hvd-desc">Reservas con alerta automática. Sin olvidos.</div>
+          </div>
+        </div>
       </div>
       <!-- Mockup slot -->
       <div class="hvd-mock-slot">
@@ -1523,6 +1532,10 @@ footer{border-top:1px solid var(--borde);padding:40px;max-width:1180px;margin:0 
         <div class="hvd-mock" id="hvd-m3">
           <div class="hvd-mock-tag">Cobros MP</div>
           <img src="assets/feat-mp-cobro.png" class="hvd-mock-img" alt="MP">
+        </div>
+        <div class="hvd-mock" id="hvd-m4">
+          <div class="hvd-mock-tag">Viajes programados</div>
+          <img src="assets/feat-programado-2.png" class="hvd-mock-img" alt="Programados">
         </div>
       </div>
     </div>
@@ -2719,11 +2732,12 @@ async function handleSubmit(e){
     { item:1, mock:1, title:'Tuyo el 100%.'        },
     { item:2, mock:2, title:'Tracking como Uber.'  },
     { item:3, mock:3, title:'Cobros sin comisión.' },
+    { item:4, mock:4, title:'Sin olvidar un viaje.'},
   ];
   let cur = 0;
   function hvdStep(){
     const s = states[cur];
-    [0,1,2,3].forEach(i=>{
+    [0,1,2,3,4].forEach(i=>{
       const it=document.getElementById('hvd-i'+i); if(it) it.classList.remove('hvd-on');
       const m=document.getElementById('hvd-m'+i); if(m) m.classList.remove('hvd-mock-on');
     });
