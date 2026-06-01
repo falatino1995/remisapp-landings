@@ -1290,6 +1290,14 @@ footer{border-top:1px solid var(--borde);padding:40px;max-width:1180px;margin:0 
             <div class="hvd-desc">Reservas con alerta automática. Sin olvidos.</div>
           </div>
         </div>
+        <div class="hvd-item" id="hvd-i5">
+          <div class="hvd-item-bar"></div>
+          <div class="hvd-ico">🔗</div>
+          <div class="hvd-text">
+            <div class="hvd-name">Tu canal propio</div>
+            <div class="hvd-desc">Tu link. Los clientes te escriben a vos, no a una app.</div>
+          </div>
+        </div>
       </div>
       <!-- Mockup slot -->
       <div class="hvd-mock-slot">
@@ -1312,6 +1320,10 @@ footer{border-top:1px solid var(--borde);padding:40px;max-width:1180px;margin:0 
         <div class="hvd-mock" id="hvd-m4">
           <div class="hvd-mock-tag">Viajes programados</div>
           <img src="assets/feat-programado-2.png" class="hvd-mock-img" alt="Programados">
+        </div>
+        <div class="hvd-mock" id="hvd-m5">
+          <div class="hvd-mock-tag">Tu canal propio</div>
+          <img src="assets/feat-link-pub.png" class="hvd-mock-img" alt="Canal propio">
         </div>
       </div>
     </div>
@@ -2658,11 +2670,12 @@ async function handleSubmit(e){
     { item:2, mock:2, title:'Tracking como Uber.'  },
     { item:3, mock:3, title:'Cobros sin comisión.' },
     { item:4, mock:4, title:'Sin olvidar un viaje.'},
+    { item:5, mock:5, title:'Tu canal propio.'     },
   ];
   let cur = 0;
   function hvdStep(){
     const s = states[cur];
-    [0,1,2,3,4].forEach(i=>{
+    [0,1,2,3,4,5].forEach(i=>{
       const it=document.getElementById('hvd-i'+i); if(it) it.classList.remove('hvd-on');
       const m=document.getElementById('hvd-m'+i); if(m) m.classList.remove('hvd-mock-on');
     });
