@@ -1641,6 +1641,391 @@ footer{border-top:1px solid var(--borde);padding:40px;max-width:1180px;margin:0 
 </div>
 </section>
 
+<div class="divider"></div>
+
+<!-- ════════════════════════════════════════════════════════
+     OPCIONES DE FEATURES — elegir una y borrar las demás
+     ════════════════════════════════════════════════════════ -->
+<style>
+/* shared: option label badge */
+.opt-badge{display:inline-flex;align-items:center;gap:7px;background:rgba(250,204,21,.07);border:1px solid rgba(250,204,21,.28);color:#fde047;font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.13em;padding:5px 14px;border-radius:999px;margin-bottom:28px}
+/* feat-body base for accordion */
+.feat-body{overflow:hidden;max-height:0;transition:max-height .38s cubic-bezier(.4,0,.2,1)}
+.feat-card.open .feat-body{max-height:700px}
+.feat-title{font-size:15px;font-weight:700;color:var(--blanco);margin-bottom:5px;padding-right:30px;line-height:1.3}
+.feat-sub{font-size:13px;color:var(--gris2);line-height:1.5}
+</style>
+
+<!-- ── OPCIÓN 1: Cards expandibles 2×4 ── -->
+<section class="section">
+<div class="container">
+  <span class="opt-badge">▶ Opción 1 — Cards expandibles</span>
+  <div class="sec-eyebrow reveal">El producto</div>
+  <h2 class="sec-title reveal d1">Qué hace el bot<br><span class="hl">de RemisApp</span></h2>
+  <p class="sec-sub reveal d1">Todo por WhatsApp, sin apps nuevas. Gratis para empezar — sin tarjeta de crédito.</p>
+  <div class="feat-grid reveal d2" style="margin-top:36px">
+
+    <div class="feat-card">
+      <div class="feat-icon">🤖</div>
+      <button class="feat-toggle" aria-label="expandir"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="6 9 12 15 18 9"/></svg></button>
+      <div class="feat-title">Bot disponible 24hs</div>
+      <div class="feat-sub">Atiende pedidos solo, sin que toques el celular.</div>
+      <div class="feat-body">
+        <img src="assets/feat-bot.png" class="feat-img" alt="Bot 24hs" style="margin-top:14px">
+        <div class="feat-detail">Recibe el pedido, pregunta origen y destino, cotiza y confirma — todo automatizado. Funciona de noche, fines de semana, mientras manejás.</div>
+      </div>
+    </div>
+
+    <div class="feat-card">
+      <div class="feat-icon">🔗</div>
+      <button class="feat-toggle" aria-label="expandir"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="6 9 12 15 18 9"/></svg></button>
+      <div class="feat-title">Tu link público</div>
+      <div class="feat-sub">Tu URL propia para compartir donde quieras.</div>
+      <div class="feat-body">
+        <img src="assets/feat-link-pub.png" class="feat-img" alt="Link público" style="margin-top:14px">
+        <div class="feat-detail">remisapp.link/tunombre — tu página con tu nombre y un botón para pedir. Los clientes entran, te escriben, el bot los atiende.</div>
+      </div>
+    </div>
+
+    <div class="feat-card">
+      <div class="feat-icon">💰</div>
+      <button class="feat-toggle" aria-label="expandir"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="6 9 12 15 18 9"/></svg></button>
+      <div class="feat-title">Precio referencia Uber</div>
+      <div class="feat-sub">Sabé cuánto cobra Uber antes de cotizar.</div>
+      <div class="feat-body">
+        <img src="assets/feat-precio-control.png" class="feat-img" alt="Precio" style="margin-top:14px">
+        <div class="feat-detail">El sistema consulta el precio de Uber para el mismo recorrido. Vos decidís si usarlo, ajustarlo o ignorarlo — siempre la decisión es tuya.</div>
+      </div>
+    </div>
+
+    <div class="feat-card">
+      <div class="feat-icon">📍</div>
+      <button class="feat-toggle" aria-label="expandir"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="6 9 12 15 18 9"/></svg></button>
+      <div class="feat-title">Tracking en tiempo real</div>
+      <div class="feat-sub">El cliente te sigue en el mapa como en Uber.</div>
+      <div class="feat-body">
+        <img src="assets/feat-tracking-map.png" class="feat-img" alt="Tracking" style="margin-top:14px">
+        <div class="feat-detail">El bot manda un link de seguimiento en vivo cuando salís a buscar al cliente. Bajan los llamados, sube la confianza.</div>
+      </div>
+    </div>
+
+    <div class="feat-card">
+      <div class="feat-icon">💳</div>
+      <button class="feat-toggle" aria-label="expandir"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="6 9 12 15 18 9"/></svg></button>
+      <div class="feat-title">Cobro por Mercado Pago</div>
+      <div class="feat-sub">Link de pago automático directo en el chat.</div>
+      <div class="feat-body">
+        <img src="assets/feat-mp-cobro.png" class="feat-img" alt="Mercado Pago" style="margin-top:14px">
+        <div class="feat-detail">El bot genera y manda el link de cobro solo. El cliente paga con Mercado Pago, tarjeta o efectivo — el dinero va directo a vos.</div>
+      </div>
+    </div>
+
+    <div class="feat-card">
+      <div class="feat-icon">📅</div>
+      <button class="feat-toggle" aria-label="expandir"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="6 9 12 15 18 9"/></svg></button>
+      <div class="feat-title">Viajes programados</div>
+      <div class="feat-sub">Agendá viajes con alerta automática.</div>
+      <div class="feat-body">
+        <img src="assets/feat-programado-2.png" class="feat-img" alt="Programados" style="margin-top:14px">
+        <div class="feat-detail">El cliente reserva para mañana a las 6am — vos recibís el aviso antes de salir. Nunca más se te olvida un viaje.</div>
+      </div>
+    </div>
+
+    <div class="feat-card">
+      <div class="feat-icon">📊</div>
+      <button class="feat-toggle" aria-label="expandir"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="6 9 12 15 18 9"/></svg></button>
+      <div class="feat-title">Panel de gestión</div>
+      <div class="feat-sub">Tus viajes y cobros de un vistazo.</div>
+      <div class="feat-body">
+        <img src="assets/feat-gestion-2.png" class="feat-img" alt="Panel" style="margin-top:14px">
+        <div class="feat-detail">Cuántos viajes hiciste, cuánto cobraste, qué está pendiente. Todo en tiempo real desde el celular.</div>
+      </div>
+    </div>
+
+    <div class="feat-card">
+      <div class="feat-icon">🗺️</div>
+      <button class="feat-toggle" aria-label="expandir"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="6 9 12 15 18 9"/></svg></button>
+      <div class="feat-title">Navegación automática</div>
+      <div class="feat-sub">El destino llega directo a tu GPS.</div>
+      <div class="feat-body">
+        <img src="assets/feat-maps.png" class="feat-img" alt="Navegación" style="margin-top:14px">
+        <div class="feat-detail">Cuando aceptás el viaje, el bot te manda el link de navegación listo. Un tap y Google Maps o Waze arranca.</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ── OPCIÓN 2: Alternating editorial ── -->
+<section class="section">
+<div class="container">
+  <span class="opt-badge">▶ Opción 2 — Editorial alternante</span>
+  <div class="sec-eyebrow reveal">El producto</div>
+  <h2 class="sec-title reveal d1">Qué hace el bot<br><span class="hl">de RemisApp</span></h2>
+  <p class="sec-sub reveal d1">Todo por WhatsApp, sin apps nuevas. Gratis para empezar — sin tarjeta de crédito.</p>
+  <div class="altfeat-wrap" style="margin-top:16px">
+
+    <div class="altfeat reveal d1">
+      <div class="altfeat-text">
+        <div class="altfeat-num">01</div>
+        <h3 class="altfeat-title">Bot disponible<br><span class="hl">24 horas</span></h3>
+        <p class="altfeat-desc">El bot recibe pedidos, pregunta origen y destino, cotiza y confirma. Todo solo — sin que toques el celular. Funciona de noche, fines de semana, mientras manejás.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:4px">
+          <span class="altfeat-pill">Atiende y cotiza</span>
+          <span class="altfeat-pill">Confirma pedidos</span>
+          <span class="altfeat-pill">Día y noche</span>
+        </div>
+      </div>
+      <div class="altfeat-visual">
+        <img src="assets/feat-bot.png" class="altfeat-img" alt="Bot 24hs">
+      </div>
+    </div>
+
+    <div class="altfeat altfeat--rev reveal d1">
+      <div class="altfeat-text">
+        <div class="altfeat-num">02</div>
+        <h3 class="altfeat-title">Precio referencia<br><span class="hl">Uber</span></h3>
+        <p class="altfeat-desc">El sistema consulta cuánto cobraría Uber para el mismo recorrido. Vos decidís si usarlo, ajustarlo o ignorarlo — la decisión siempre es tuya.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:4px">
+          <span class="altfeat-pill">Consulta en tiempo real</span>
+          <span class="altfeat-pill">Vos ponés el precio</span>
+          <span class="altfeat-pill">0% comisión</span>
+        </div>
+      </div>
+      <div class="altfeat-visual">
+        <img src="assets/feat-precio-control.png" class="altfeat-img" alt="Precio Uber">
+      </div>
+    </div>
+
+    <div class="altfeat reveal d1">
+      <div class="altfeat-text">
+        <div class="altfeat-num">03</div>
+        <h3 class="altfeat-title">Tracking<br><span class="hl">en tiempo real</span></h3>
+        <p class="altfeat-desc">El bot manda un link de seguimiento en vivo cuando salís. El cliente ve dónde estás en el mapa — como Uber, pero tuyo. Bajan los llamados, sube la confianza.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:4px">
+          <span class="altfeat-pill">Link en vivo</span>
+          <span class="altfeat-pill">Sin app extra</span>
+          <span class="altfeat-pill">Como Uber</span>
+        </div>
+      </div>
+      <div class="altfeat-visual">
+        <img src="assets/feat-tracking-map.png" class="altfeat-img" alt="Tracking">
+      </div>
+    </div>
+
+    <div class="altfeat altfeat--rev reveal d1">
+      <div class="altfeat-text">
+        <div class="altfeat-num">04</div>
+        <h3 class="altfeat-title">Cobro por<br><span class="hl">Mercado Pago</span></h3>
+        <p class="altfeat-desc">El bot genera el link de cobro directo en el chat. El cliente paga como quiera — digital, efectivo o transferencia. El dinero va directo a tu cuenta, sin intermediarios.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:4px">
+          <span class="altfeat-pill">Link automático</span>
+          <span class="altfeat-pill">Efectivo también</span>
+          <span class="altfeat-pill">Directo a vos</span>
+        </div>
+      </div>
+      <div class="altfeat-visual">
+        <img src="assets/feat-mp-cobro.png" class="altfeat-img" alt="Mercado Pago">
+      </div>
+    </div>
+
+  </div>
+</div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ── OPCIÓN 3: Checklist comparativo ── -->
+<style>
+.featcomp{margin-top:36px;border:1px solid var(--borde);border-radius:20px;overflow:hidden}
+.featcomp-head{display:grid;grid-template-columns:1fr 140px 140px;background:var(--bg2);border-bottom:1px solid var(--borde)}
+.featcomp-hcell{padding:16px 20px;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;text-align:center}
+.featcomp-hcell:first-child{text-align:left;color:var(--gris2)}
+.featcomp-hcell--no{color:#ef4444}
+.featcomp-hcell--yes{color:var(--verde)}
+.featcomp-row{display:grid;grid-template-columns:1fr 140px 140px;border-top:1px solid var(--borde);align-items:center;transition:background .15s}
+.featcomp-row:hover{background:rgba(255,255,255,.025)}
+.featcomp-feat{padding:15px 20px}
+.featcomp-fname{font-size:14px;font-weight:600;color:var(--blanco);margin-bottom:2px}
+.featcomp-fsub{font-size:12px;color:var(--gris2)}
+.featcomp-cell{padding:14px;text-align:center}
+.featcomp-yes{color:var(--verde);font-size:18px;font-weight:700}
+.featcomp-no{color:#ef4444;font-size:18px;opacity:.75}
+.featcomp-note{padding:18px 20px;border-top:1px solid var(--borde);background:rgba(61,204,142,.04);font-size:13px;color:var(--gris2);text-align:center}
+@media(max-width:620px){.featcomp-head,.featcomp-row{grid-template-columns:1fr 72px 72px}.featcomp-fsub{display:none}.featcomp-feat{padding:12px 14px}.featcomp-hcell,.featcomp-cell{padding:10px 6px;font-size:10px}}
+</style>
+<section class="section">
+<div class="container">
+  <span class="opt-badge">▶ Opción 3 — Checklist comparativo</span>
+  <div class="sec-eyebrow reveal">El producto</div>
+  <h2 class="sec-title reveal d1">Qué hace el bot<br><span class="hl">de RemisApp</span></h2>
+  <p class="sec-sub reveal d1">Todo por WhatsApp, sin apps nuevas. Gratis para empezar — sin tarjeta de crédito.</p>
+  <div class="featcomp reveal d2">
+    <div class="featcomp-head">
+      <div class="featcomp-hcell">Feature</div>
+      <div class="featcomp-hcell featcomp-hcell--no">Sin RemisApp</div>
+      <div class="featcomp-hcell featcomp-hcell--yes">Con RemisApp</div>
+    </div>
+    <div class="featcomp-row">
+      <div class="featcomp-feat"><div class="featcomp-fname">Bot de WhatsApp 24hs</div><div class="featcomp-fsub">Atiende y cotiza solo, sin que intervengas</div></div>
+      <div class="featcomp-cell featcomp-no">✕</div>
+      <div class="featcomp-cell featcomp-yes">✓</div>
+    </div>
+    <div class="featcomp-row">
+      <div class="featcomp-feat"><div class="featcomp-fname">Tu link público</div><div class="featcomp-fsub">Página propia para recibir pedidos</div></div>
+      <div class="featcomp-cell featcomp-no">✕</div>
+      <div class="featcomp-cell featcomp-yes">✓</div>
+    </div>
+    <div class="featcomp-row">
+      <div class="featcomp-feat"><div class="featcomp-fname">Precio referencia Uber</div><div class="featcomp-fsub">Cotizá con info real del mercado</div></div>
+      <div class="featcomp-cell featcomp-no">✕</div>
+      <div class="featcomp-cell featcomp-yes">✓</div>
+    </div>
+    <div class="featcomp-row">
+      <div class="featcomp-feat"><div class="featcomp-fname">Tracking en tiempo real</div><div class="featcomp-fsub">El cliente te sigue en el mapa</div></div>
+      <div class="featcomp-cell featcomp-no">✕</div>
+      <div class="featcomp-cell featcomp-yes">✓</div>
+    </div>
+    <div class="featcomp-row">
+      <div class="featcomp-feat"><div class="featcomp-fname">Cobro por Mercado Pago</div><div class="featcomp-fsub">Link de pago automático en el chat</div></div>
+      <div class="featcomp-cell featcomp-no">✕</div>
+      <div class="featcomp-cell featcomp-yes">✓</div>
+    </div>
+    <div class="featcomp-row">
+      <div class="featcomp-feat"><div class="featcomp-fname">Viajes programados</div><div class="featcomp-fsub">Agenda con alerta automática</div></div>
+      <div class="featcomp-cell featcomp-no">✕</div>
+      <div class="featcomp-cell featcomp-yes">✓</div>
+    </div>
+    <div class="featcomp-row">
+      <div class="featcomp-feat"><div class="featcomp-fname">Navegación automática</div><div class="featcomp-fsub">Destino directo al GPS sin copiar</div></div>
+      <div class="featcomp-cell featcomp-no">✕</div>
+      <div class="featcomp-cell featcomp-yes">✓</div>
+    </div>
+    <div class="featcomp-row">
+      <div class="featcomp-feat"><div class="featcomp-fname">Panel de gestión</div><div class="featcomp-fsub">Viajes y cobros de un vistazo</div></div>
+      <div class="featcomp-cell featcomp-no">✕</div>
+      <div class="featcomp-cell featcomp-yes">✓</div>
+    </div>
+    <div class="featcomp-row">
+      <div class="featcomp-feat"><div class="featcomp-fname">Clientes que son tuyos</div><div class="featcomp-fsub">Historial propio, sin depender de Uber</div></div>
+      <div class="featcomp-cell featcomp-no">✕</div>
+      <div class="featcomp-cell featcomp-yes">✓</div>
+    </div>
+    <div class="featcomp-row">
+      <div class="featcomp-feat"><div class="featcomp-fname">0% de comisión</div><div class="featcomp-fsub">El 100% de cada viaje es tuyo</div></div>
+      <div class="featcomp-cell" style="color:#ef4444;font-size:12px;font-weight:700;line-height:1.3">20%<br><span style="font-size:10px;opacity:.65">se lleva Uber</span></div>
+      <div class="featcomp-cell featcomp-yes">✓</div>
+    </div>
+    <div class="featcomp-note">RemisApp no toca el dinero — vos cobrás directo al cliente.</div>
+  </div>
+</div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ── OPCIÓN 4: Tabs verticales + preview ── -->
+<style>
+.feattabs{display:grid;grid-template-columns:240px 1fr;border:1px solid var(--borde);border-radius:20px;overflow:hidden;margin-top:36px;min-height:420px}
+.feattabs-nav{background:var(--bg2);border-right:1px solid var(--borde);padding:10px;display:flex;flex-direction:column;gap:2px}
+.ftab{display:flex;align-items:center;gap:10px;padding:12px 14px;border-radius:10px;cursor:pointer;border:1px solid transparent;background:none;width:100%;text-align:left;transition:background .14s,border-color .14s;color:var(--gris2)}
+.ftab:hover{background:rgba(255,255,255,.04);color:var(--blanco)}
+.ftab.ftab-active{background:rgba(61,204,142,.09);border-color:var(--verde-border);color:var(--blanco)}
+.ftab-ico{width:30px;height:30px;border-radius:8px;background:var(--bg3);border:1px solid var(--borde);display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0;transition:background .14s,border-color .14s}
+.ftab.ftab-active .ftab-ico{background:var(--verde-bg);border-color:var(--verde-border)}
+.ftab-lbl{font-size:12.5px;font-weight:600;line-height:1.2}
+.feattabs-pane-wrap{background:var(--card);padding:36px 40px;display:flex;align-items:flex-start}
+.ftab-pane{display:none;flex-direction:column;gap:16px;width:100%}
+.ftab-pane.ftab-pane-active{display:flex;animation:ftFadeUp .2s ease}
+@keyframes ftFadeUp{from{opacity:0;transform:translateY(7px)}to{opacity:1;transform:translateY(0)}}
+.ftab-pane-eyebrow{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.13em;color:var(--verde)}
+.ftab-pane-title{font-size:22px;font-weight:800;color:var(--blanco);line-height:1.25}
+.ftab-pane-img{width:100%;max-height:260px;object-fit:cover;object-position:top;border-radius:12px;border:1px solid var(--borde)}
+.ftab-pane-desc{font-size:14px;color:var(--gris2);line-height:1.7}
+.ftab-pane-pills{display:flex;flex-wrap:wrap;gap:7px}
+.ftab-pane-pill{font-size:11px;color:var(--gris2);background:rgba(255,255,255,.04);border:1px solid var(--borde);padding:4px 10px;border-radius:999px}
+@media(max-width:700px){.feattabs{grid-template-columns:1fr;grid-template-rows:auto 1fr}.feattabs-nav{flex-direction:row;flex-wrap:wrap;border-right:none;border-bottom:1px solid var(--borde)}.ftab{width:auto;padding:8px 10px}.ftab-lbl{display:none}.feattabs-pane-wrap{padding:24px}}
+</style>
+<section class="section">
+<div class="container">
+  <span class="opt-badge">▶ Opción 4 — Tabs verticales + preview</span>
+  <div class="sec-eyebrow reveal">El producto</div>
+  <h2 class="sec-title reveal d1">Qué hace el bot<br><span class="hl">de RemisApp</span></h2>
+  <p class="sec-sub reveal d1">Todo por WhatsApp, sin apps nuevas. Gratis para empezar — sin tarjeta de crédito.</p>
+  <div class="feattabs reveal d2">
+    <nav class="feattabs-nav">
+      <button class="ftab ftab-active" onclick="ftSwitch(this,'ft-bot')"><span class="ftab-ico">🤖</span><span class="ftab-lbl">Bot 24hs</span></button>
+      <button class="ftab" onclick="ftSwitch(this,'ft-link')"><span class="ftab-ico">🔗</span><span class="ftab-lbl">Tu link</span></button>
+      <button class="ftab" onclick="ftSwitch(this,'ft-precio')"><span class="ftab-ico">💰</span><span class="ftab-lbl">Precio Uber</span></button>
+      <button class="ftab" onclick="ftSwitch(this,'ft-tracking')"><span class="ftab-ico">📍</span><span class="ftab-lbl">Tracking</span></button>
+      <button class="ftab" onclick="ftSwitch(this,'ft-mp')"><span class="ftab-ico">💳</span><span class="ftab-lbl">Mercado Pago</span></button>
+      <button class="ftab" onclick="ftSwitch(this,'ft-prog')"><span class="ftab-ico">📅</span><span class="ftab-lbl">Programados</span></button>
+      <button class="ftab" onclick="ftSwitch(this,'ft-panel')"><span class="ftab-ico">📊</span><span class="ftab-lbl">Panel</span></button>
+      <button class="ftab" onclick="ftSwitch(this,'ft-nav')"><span class="ftab-ico">🗺️</span><span class="ftab-lbl">Navegación</span></button>
+    </nav>
+    <div class="feattabs-pane-wrap">
+      <div id="ft-bot" class="ftab-pane ftab-pane-active">
+        <div class="ftab-pane-eyebrow">Automatización</div>
+        <div class="ftab-pane-title">Bot disponible 24 horas</div>
+        <img src="assets/feat-bot.png" class="ftab-pane-img" alt="Bot">
+        <div class="ftab-pane-desc">Recibe pedidos, pregunta origen y destino, cotiza y confirma. Todo solo, sin que intervengas. Funciona de noche, fines de semana y mientras manejás.</div>
+        <div class="ftab-pane-pills"><span class="ftab-pane-pill">Atiende y cotiza</span><span class="ftab-pane-pill">Confirma pedidos</span><span class="ftab-pane-pill">Día y noche</span></div>
+      </div>
+      <div id="ft-link" class="ftab-pane">
+        <div class="ftab-pane-eyebrow">Tu marca</div>
+        <div class="ftab-pane-title">Tu link público</div>
+        <img src="assets/feat-link-pub.png" class="ftab-pane-img" alt="Link">
+        <div class="ftab-pane-desc">remisapp.link/tunombre — tu página con tu nombre y un botón para pedir. Los clientes entran, te escriben, el bot los atiende. Sin descargar nada.</div>
+        <div class="ftab-pane-pills"><span class="ftab-pane-pill">URL propia</span><span class="ftab-pane-pill">Sin app</span><span class="ftab-pane-pill">Para compartir</span></div>
+      </div>
+      <div id="ft-precio" class="ftab-pane">
+        <div class="ftab-pane-eyebrow">Precios</div>
+        <div class="ftab-pane-title">Precio referencia Uber</div>
+        <img src="assets/feat-precio-control.png" class="ftab-pane-img" alt="Precio">
+        <div class="ftab-pane-desc">El sistema consulta cuánto cobraría Uber para el mismo recorrido. Vos decidís si usarlo, ajustarlo o ignorarlo. La decisión siempre es tuya.</div>
+        <div class="ftab-pane-pills"><span class="ftab-pane-pill">Tiempo real</span><span class="ftab-pane-pill">Vos decidís</span><span class="ftab-pane-pill">0% comisión</span></div>
+      </div>
+      <div id="ft-tracking" class="ftab-pane">
+        <div class="ftab-pane-eyebrow">Transparencia</div>
+        <div class="ftab-pane-title">Tracking en tiempo real</div>
+        <img src="assets/feat-tracking-map.png" class="ftab-pane-img" alt="Tracking">
+        <div class="ftab-pane-desc">El bot manda un link de seguimiento en vivo cuando salís. El cliente ve dónde estás en el mapa. Bajan los llamados, sube la confianza.</div>
+        <div class="ftab-pane-pills"><span class="ftab-pane-pill">Link en vivo</span><span class="ftab-pane-pill">Como Uber</span><span class="ftab-pane-pill">Sin app extra</span></div>
+      </div>
+      <div id="ft-mp" class="ftab-pane">
+        <div class="ftab-pane-eyebrow">Cobros</div>
+        <div class="ftab-pane-title">Cobro por Mercado Pago</div>
+        <img src="assets/feat-mp-cobro.png" class="ftab-pane-img" alt="Mercado Pago">
+        <div class="ftab-pane-desc">El bot genera el link de cobro directo en el chat. El cliente paga como quiera — digital, efectivo o transferencia. El dinero va directo a vos.</div>
+        <div class="ftab-pane-pills"><span class="ftab-pane-pill">Link automático</span><span class="ftab-pane-pill">Efectivo también</span><span class="ftab-pane-pill">Directo a vos</span></div>
+      </div>
+      <div id="ft-prog" class="ftab-pane">
+        <div class="ftab-pane-eyebrow">Planificación</div>
+        <div class="ftab-pane-title">Viajes programados</div>
+        <img src="assets/feat-programado-2.png" class="ftab-pane-img" alt="Programados">
+        <div class="ftab-pane-desc">El cliente reserva para mañana a las 6am. Vos recibís el aviso antes de salir. Nunca más se te olvida un viaje.</div>
+        <div class="ftab-pane-pills"><span class="ftab-pane-pill">Alerta automática</span><span class="ftab-pane-pill">Confirmación al cliente</span><span class="ftab-pane-pill">Sin olvidos</span></div>
+      </div>
+      <div id="ft-panel" class="ftab-pane">
+        <div class="ftab-pane-eyebrow">Control</div>
+        <div class="ftab-pane-title">Panel de gestión</div>
+        <img src="assets/feat-gestion-2.png" class="ftab-pane-img" alt="Panel">
+        <div class="ftab-pane-desc">Cuántos viajes hiciste, cuánto cobraste, qué está pendiente. Todo en tiempo real desde el celular.</div>
+        <div class="ftab-pane-pills"><span class="ftab-pane-pill">Viajes en vivo</span><span class="ftab-pane-pill">Historial</span><span class="ftab-pane-pill">Cobros</span></div>
+      </div>
+      <div id="ft-nav" class="ftab-pane">
+        <div class="ftab-pane-eyebrow">Comodidad</div>
+        <div class="ftab-pane-title">Navegación automática</div>
+        <img src="assets/feat-maps.png" class="ftab-pane-img" alt="Navegación">
+        <div class="ftab-pane-desc">Cuando aceptás el viaje, el bot te manda el link de navegación listo. Un tap y Google Maps o Waze arrancan — sin copiar y pegar la dirección.</div>
+        <div class="ftab-pane-pills"><span class="ftab-pane-pill">Google Maps</span><span class="ftab-pane-pill">Waze</span><span class="ftab-pane-pill">Un tap</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
 
 <div class="divider"></div>
 
@@ -2199,7 +2584,7 @@ async function handleSubmit(e){
   </a>
 </div>
 <script>
-// Feature cards expand
+// Feature cards expand (Opción 1)
 document.querySelectorAll('.feat-card:not(.coming)').forEach(card => {
   card.addEventListener('click', () => {
     const isOpen = card.classList.contains('open');
@@ -2207,6 +2592,14 @@ document.querySelectorAll('.feat-card:not(.coming)').forEach(card => {
     if (!isOpen) card.classList.add('open');
   });
 });
+
+// Feature tabs switch (Opción 4)
+function ftSwitch(btn, panelId) {
+  btn.closest('.feattabs').querySelectorAll('.ftab').forEach(t => t.classList.remove('ftab-active'));
+  btn.classList.add('ftab-active');
+  btn.closest('.feattabs').querySelectorAll('.ftab-pane').forEach(p => p.classList.remove('ftab-pane-active'));
+  document.getElementById(panelId).classList.add('ftab-pane-active');
+}
 
 
 // Hero rotating text
