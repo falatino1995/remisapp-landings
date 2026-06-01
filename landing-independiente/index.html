@@ -1091,6 +1091,26 @@ footer{border-top:1px solid var(--borde);padding:40px;max-width:1180px;margin:0 
 .hr-item.hr-active{opacity:1;transform:translateY(0);position:relative;pointer-events:auto}
 .hr-item.hr-exit{opacity:0;transform:translateY(-110%);position:absolute}
 
+/* ── Problemas peek carousel (v2) ── */
+.p3-outer{position:relative;margin-top:44px}
+.p3-outer::after{content:'';position:absolute;right:0;top:0;bottom:20px;width:140px;background:linear-gradient(to right,transparent,var(--bg2) 80%);pointer-events:none;z-index:2}
+.p3-outer::before{content:'';position:absolute;left:0;top:0;bottom:20px;width:80px;background:linear-gradient(to left,transparent,var(--bg2) 80%);pointer-events:none;z-index:2;opacity:0;transition:opacity .3s}
+.p3-outer.p3-scrolled::before{opacity:1}
+.p3-track{display:flex;flex-wrap:nowrap;gap:16px;overflow-x:scroll;scroll-snap-type:x mandatory;scrollbar-width:none;-ms-overflow-style:none;cursor:grab;user-select:none}
+.p3-track::-webkit-scrollbar{display:none}
+.p3-track.dragging{cursor:grabbing;scroll-snap-type:none}
+.p3-track .prob-va-card{flex:0 0 30%;scroll-snap-align:start}
+.p3-arrow{position:absolute;top:calc(50% - 20px);transform:translateY(-50%);z-index:10;width:46px;height:46px;border-radius:50%;border:1.5px solid var(--verde-border);background:rgba(7,10,8,.82);color:var(--verde);font-size:20px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .18s,transform .18s,opacity .25s;backdrop-filter:blur(6px)}
+.p3-arrow:hover{background:rgba(61,204,142,.18);transform:translateY(-50%) scale(1.08)}
+.p3-arrow--prev{left:-14px}
+.p3-arrow--next{right:-14px}
+.p3-arrow.p3-hidden{opacity:0;pointer-events:none}
+.p3-dots{display:flex;gap:7px;justify-content:center;margin-top:18px}
+.p3-dot{width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,.2);transition:background .25s,width .25s}
+.p3-dot.active{background:var(--verde);width:22px;border-radius:999px}
+@media(max-width:860px){.p3-track .prob-va-card{flex:0 0 44%}}
+@media(max-width:560px){.p3-track .prob-va-card{flex:0 0 82%}.p3-arrow{display:none}}
+
 /* Problem cards carousel */
 .prob-carousel{overflow:hidden;position:relative;margin-top:44px}
 .prob-carousel::before,.prob-carousel::after{content:'';position:absolute;top:0;bottom:0;width:60px;z-index:3;pointer-events:none}
