@@ -1474,6 +1474,86 @@ footer{border-top:1px solid var(--borde);padding:40px;max-width:1180px;margin:0 
 
 <div class="divider"></div>
 
+<!-- ══ HERO VARIANTE B — foto → diagrama (transición única) ══ -->
+<style>
+.hvb-zone{position:relative;width:100%;height:100%}
+.hvb-panel{position:absolute;inset:0;transition:opacity 1.1s ease}
+.hvb-panel--photo{opacity:1}
+.hvb-panel--diag{opacity:0;display:flex;align-items:center;justify-content:center}
+.hvb-zone.hvb-done .hvb-panel--photo{opacity:0}
+.hvb-zone.hvb-done .hvb-panel--diag{opacity:1}
+/* pulse on nodes after transition completes */
+.hvb-zone.hvb-done .hdg-node{animation:hvbNodeIn .5s ease forwards}
+.hvb-zone.hvb-done .hdg-node:nth-child(3){animation-delay:.05s}
+.hvb-zone.hvb-done .hdg-node:nth-child(4){animation-delay:.10s}
+.hvb-zone.hvb-done .hdg-node:nth-child(5){animation-delay:.15s}
+.hvb-zone.hvb-done .hdg-node:nth-child(6){animation-delay:.20s}
+.hvb-zone.hvb-done .hdg-node:nth-child(7){animation-delay:.25s}
+.hvb-zone.hvb-done .hdg-node:nth-child(8){animation-delay:.30s}
+@keyframes hvbNodeIn{from{transform:translate(-50%,-50%) scale(.7);opacity:0}to{transform:translate(-50%,-50%) scale(1);opacity:1}}
+</style>
+<section class="hero-bg" style="position:relative">
+<div class="hv-badge"><span class="opt-badge">▶ Variante B — foto primero, luego diagrama (una vez)</span></div>
+<div class="container">
+<div class="hero">
+  <div class="hero-text">
+    <div class="hero-copy">
+    <div class="hero-badge">
+      <span class="badge-pct">20%</span>&nbsp;de cada viaje se lo lleva Uber. Eso termina hoy.
+    </div>
+    <h1 class="hero-title">
+      Tus clientes.<br>Tus precios.<br>
+      <span class="hl">Tu 100%.</span>
+    </h1>
+    <p class="hero-sub">Manejás tu propio sistema de viajes por WhatsApp. Los clientes son tuyos, el precio lo ponés vos y el 100% de cada viaje te llega a vos.</p>
+    <div class="hero-trust">
+      <div class="hero-trust-card"><span class="hero-trust-kicker">Modelo</span><span class="hero-trust-value">Directo</span><span class="hero-trust-copy">Tus clientes escriben al bot — vos recibís el pedido.</span></div>
+      <div class="hero-trust-card"><span class="hero-trust-kicker">Tarifa</span><span class="hero-trust-value">100%</span><span class="hero-trust-copy">La plata del viaje queda de tu lado.</span></div>
+      <div class="hero-trust-card"><span class="hero-trust-kicker">Operacion</span><span class="hero-trust-value">WhatsApp</span><span class="hero-trust-copy">Simple, familiar y listo para usar hoy.</span></div>
+    </div>
+    <div class="hero-actions">
+      <a href="https://remisapp2-production.up.railway.app/empezar?kind=independiente" class="btn-primary">Empezá gratis →</a>
+    </div>
+    </div>
+  </div>
+  <div class="hero-card-col">
+    <div class="hero-visual-zone hvb-zone" id="hvb-zone">
+      <!-- Foto original -->
+      <div class="hvb-panel hvb-panel--photo">
+        <img src="assets/chofer-independiente-canal-propio-01.png" class="hero-viz-photo" alt="">
+        <div class="hfloat hfloat--tl"><div class="hfloat-wa-hdr"><div class="hfloat-wa-dot"></div><span>Jose Gomez · Bot</span></div><div class="hfloat-wa-msg hfloat-wa-msg--in">¿Desde dónde salís?</div><div class="hfloat-wa-msg hfloat-wa-msg--out">Av. Corrientes 1234 ✓✓</div></div>
+        <div class="hfloat hfloat--tr"><div class="hfloat-notif-dot"></div><div class="hfloat-notif-title">🔔 Nuevo viaje</div><div class="hfloat-notif-sub">Corrientes → Aeroparque<br>$9.500 · tuyo al 100%</div></div>
+        <div class="hfloat hfloat--bl"><div class="hfloat-stat-num">0%</div><div class="hfloat-stat-label">Comisión</div></div>
+        <div class="hfloat hfloat--br"><div class="hfloat-cmp-hdr">Cada viaje de $2.500</div><div class="hfloat-cmp-row"><span>Uber</span><span class="hfloat-red">cobrás $1.800</span></div><div class="hfloat-cmp-row"><span>RemisApp</span><span class="hfloat-green">$2.500 ✓</span></div></div>
+      </div>
+      <!-- Diagrama radial -->
+      <div class="hvb-panel hvb-panel--diag">
+        <div class="hdg">
+          <svg class="hdg-svg" viewBox="0 0 340 340">
+            <line class="hdg-line" x1="170" y1="170" x2="170" y2="50"/>
+            <line class="hdg-line" x1="170" y1="170" x2="274" y2="110"/>
+            <line class="hdg-line" x1="170" y1="170" x2="274" y2="230"/>
+            <line class="hdg-line" x1="170" y1="170" x2="170" y2="290"/>
+            <line class="hdg-line" x1="170" y1="170" x2="66" y2="230"/>
+            <line class="hdg-line" x1="170" y1="170" x2="66" y2="110"/>
+          </svg>
+          <div class="hdg-center"><div class="hdg-center-ico">🚗</div><div class="hdg-center-lbl">Vos</div></div>
+          <div class="hdg-node" style="left:170px;top:50px"><div class="hdg-node-ico">🤖</div><div class="hdg-node-lbl">Bot 24hs</div></div>
+          <div class="hdg-node" style="left:274px;top:110px"><div class="hdg-node-ico">🔗</div><div class="hdg-node-lbl">Tu link</div></div>
+          <div class="hdg-node" style="left:274px;top:230px"><div class="hdg-node-ico">💰</div><div class="hdg-node-lbl">Precio Uber</div></div>
+          <div class="hdg-node" style="left:170px;top:290px"><div class="hdg-node-ico">💳</div><div class="hdg-node-lbl">Cobros MP</div></div>
+          <div class="hdg-node" style="left:66px;top:230px"><div class="hdg-node-ico">📍</div><div class="hdg-node-lbl">Tracking</div></div>
+          <div class="hdg-node" style="left:66px;top:110px"><div class="hdg-node-ico">📅</div><div class="hdg-node-lbl">Programados</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</section>
+
+<div class="divider"></div>
+
 <!-- PROBLEMAS -->
 <section class="section">
 <div class="container">
@@ -2653,6 +2733,23 @@ async function handleSubmit(e){
   </a>
 </div>
 <script>
+// Hero Variante B — foto → diagrama una sola vez al entrar en viewport
+(function(){
+  const zone = document.getElementById('hvb-zone');
+  if (!zone) return;
+  let fired = false;
+  const obs = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if (e.isIntersecting && !fired) {
+        fired = true;
+        setTimeout(function(){ zone.classList.add('hvb-done'); }, 2800);
+        obs.disconnect();
+      }
+    });
+  }, {threshold: 0.4});
+  obs.observe(zone);
+})();
+
 // Hero Variante C — sync diagram nodes with trust cards
 (function(){
   // state → [trust card index, node indices to highlight]
