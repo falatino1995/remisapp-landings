@@ -1333,6 +1333,147 @@ footer{border-top:1px solid var(--borde);padding:40px;max-width:1180px;margin:0 
 
 <div class="divider"></div>
 
+<!-- ══ HERO VARIANTE A — foto ↔ diagrama alternantes ══ -->
+<style>
+.hv-badge{position:absolute;top:14px;left:50%;transform:translateX(-50%);z-index:20}
+/* Alternating panels */
+.hva-zone{position:relative;width:100%;height:100%}
+.hva-panel{position:absolute;inset:0;transition:opacity .9s ease}
+.hva-panel--photo{animation:hvaPhoto 9s ease-in-out infinite}
+.hva-panel--diag{animation:hvaDiag 9s ease-in-out infinite;display:flex;align-items:center;justify-content:center}
+@keyframes hvaPhoto{0%,38%{opacity:1}45%,88%{opacity:0}95%,100%{opacity:1}}
+@keyframes hvaDiag{0%,38%{opacity:0}45%,88%{opacity:1}95%,100%{opacity:0}}
+/* Mini radial diagram shared styles */
+.hdg{position:relative;width:340px;height:340px;flex-shrink:0}
+.hdg-svg{position:absolute;inset:0;width:100%;height:100%}
+.hdg-center{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:68px;height:68px;border-radius:50%;background:linear-gradient(135deg,#0d2b1a,#1a4d2e);border:2px solid var(--verde-border);box-shadow:0 0 28px rgba(61,204,142,.3);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;z-index:3}
+.hdg-center-ico{font-size:22px;line-height:1}
+.hdg-center-lbl{font-size:8px;font-weight:700;color:var(--verde);text-transform:uppercase;letter-spacing:.06em}
+.hdg-node{position:absolute;width:60px;height:60px;border-radius:50%;background:rgba(255,255,255,.04);border:1.5px solid var(--borde);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;transform:translate(-50%,-50%);transition:border-color .4s,box-shadow .4s,background .4s;z-index:2}
+.hdg-node-ico{font-size:16px;line-height:1}
+.hdg-node-lbl{font-size:8px;font-weight:700;color:var(--gris2);text-align:center;line-height:1.2;max-width:50px;text-transform:uppercase;letter-spacing:.03em}
+.hdg-node.hd-active{border-color:var(--verde-border);background:rgba(61,204,142,.14);box-shadow:0 0 18px rgba(61,204,142,.35)}
+.hdg-node.hd-active .hdg-node-lbl{color:var(--verde)}
+.hdg-line{stroke:rgba(61,204,142,.18);stroke-width:1.5;stroke-dasharray:4 3}
+.hdg-line.hd-active{stroke:rgba(61,204,142,.55);stroke-width:2}
+/* Synced trust card highlight */
+.hvc-trust.hd-active{border-color:var(--verde-border)!important;background:rgba(61,204,142,.07)!important}
+.hvc-trust.hd-active .hero-trust-value{color:var(--verde)}
+</style>
+<section class="hero-bg" style="position:relative">
+<div class="hv-badge"><span class="opt-badge">▶ Variante A — foto ↔ diagrama (auto-alterna)</span></div>
+<div class="container">
+<div class="hero">
+  <div class="hero-text">
+    <div class="hero-copy">
+    <div class="hero-badge">
+      <span class="badge-pct">20%</span>&nbsp;de cada viaje se lo lleva Uber. Eso termina hoy.
+    </div>
+    <h1 class="hero-title">
+      Tus clientes.<br>Tus precios.<br>
+      <span class="hl">Tu 100%.</span>
+    </h1>
+    <p class="hero-sub">Manejás tu propio sistema de viajes por WhatsApp. Los clientes son tuyos, el precio lo ponés vos y el 100% de cada viaje te llega a vos.</p>
+    <div class="hero-trust">
+      <div class="hero-trust-card"><span class="hero-trust-kicker">Modelo</span><span class="hero-trust-value">Directo</span><span class="hero-trust-copy">Tus clientes escriben al bot — vos recibís el pedido.</span></div>
+      <div class="hero-trust-card"><span class="hero-trust-kicker">Tarifa</span><span class="hero-trust-value">100%</span><span class="hero-trust-copy">La plata del viaje queda de tu lado.</span></div>
+      <div class="hero-trust-card"><span class="hero-trust-kicker">Operacion</span><span class="hero-trust-value">WhatsApp</span><span class="hero-trust-copy">Simple, familiar y listo para usar hoy.</span></div>
+    </div>
+    <div class="hero-actions">
+      <a href="https://remisapp2-production.up.railway.app/empezar?kind=independiente" class="btn-primary">Empezá gratis →</a>
+    </div>
+    </div>
+  </div>
+  <div class="hero-card-col">
+    <div class="hero-visual-zone hva-zone">
+      <!-- Panel 1: foto original -->
+      <div class="hva-panel hva-panel--photo">
+        <img src="assets/chofer-independiente-canal-propio-01.png" class="hero-viz-photo" alt="">
+        <div class="hfloat hfloat--tl"><div class="hfloat-wa-hdr"><div class="hfloat-wa-dot"></div><span>Jose Gomez · Bot</span></div><div class="hfloat-wa-msg hfloat-wa-msg--in">¿Desde dónde salís?</div><div class="hfloat-wa-msg hfloat-wa-msg--out">Av. Corrientes 1234 ✓✓</div></div>
+        <div class="hfloat hfloat--tr"><div class="hfloat-notif-dot"></div><div class="hfloat-notif-title">🔔 Nuevo viaje</div><div class="hfloat-notif-sub">Corrientes → Aeroparque<br>$9.500 · tuyo al 100%</div></div>
+        <div class="hfloat hfloat--bl"><div class="hfloat-stat-num">0%</div><div class="hfloat-stat-label">Comisión</div></div>
+        <div class="hfloat hfloat--br"><div class="hfloat-cmp-hdr">Cada viaje de $2.500</div><div class="hfloat-cmp-row"><span>Uber</span><span class="hfloat-red">cobrás $1.800</span></div><div class="hfloat-cmp-row"><span>RemisApp</span><span class="hfloat-green">$2.500 ✓</span></div></div>
+      </div>
+      <!-- Panel 2: diagrama radial -->
+      <div class="hva-panel hva-panel--diag">
+        <div class="hdg">
+          <svg class="hdg-svg" viewBox="0 0 340 340">
+            <line class="hdg-line" x1="170" y1="170" x2="170" y2="50"/>
+            <line class="hdg-line" x1="170" y1="170" x2="274" y2="110"/>
+            <line class="hdg-line" x1="170" y1="170" x2="274" y2="230"/>
+            <line class="hdg-line" x1="170" y1="170" x2="170" y2="290"/>
+            <line class="hdg-line" x1="170" y1="170" x2="66" y2="230"/>
+            <line class="hdg-line" x1="170" y1="170" x2="66" y2="110"/>
+          </svg>
+          <div class="hdg-center"><div class="hdg-center-ico">🚗</div><div class="hdg-center-lbl">Vos</div></div>
+          <div class="hdg-node" style="left:170px;top:50px"><div class="hdg-node-ico">🤖</div><div class="hdg-node-lbl">Bot 24hs</div></div>
+          <div class="hdg-node" style="left:274px;top:110px"><div class="hdg-node-ico">🔗</div><div class="hdg-node-lbl">Tu link</div></div>
+          <div class="hdg-node" style="left:274px;top:230px"><div class="hdg-node-ico">💰</div><div class="hdg-node-lbl">Precio Uber</div></div>
+          <div class="hdg-node" style="left:170px;top:290px"><div class="hdg-node-ico">💳</div><div class="hdg-node-lbl">Cobros MP</div></div>
+          <div class="hdg-node" style="left:66px;top:230px"><div class="hdg-node-ico">📍</div><div class="hdg-node-lbl">Tracking</div></div>
+          <div class="hdg-node" style="left:66px;top:110px"><div class="hdg-node-ico">📅</div><div class="hdg-node-lbl">Programados</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ══ HERO VARIANTE C — diagrama sincronizado con trust cards ══ -->
+<section class="hero-bg" style="position:relative">
+<div class="hv-badge"><span class="opt-badge">▶ Variante C — diagrama sincronizado con trust cards</span></div>
+<div class="container">
+<div class="hero">
+  <div class="hero-text">
+    <div class="hero-copy">
+    <div class="hero-badge">
+      <span class="badge-pct">20%</span>&nbsp;de cada viaje se lo lleva Uber. Eso termina hoy.
+    </div>
+    <h1 class="hero-title">
+      Tus clientes.<br>Tus precios.<br>
+      <span class="hl">Tu 100%.</span>
+    </h1>
+    <p class="hero-sub">Manejás tu propio sistema de viajes por WhatsApp. Los clientes son tuyos, el precio lo ponés vos y el 100% de cada viaje te llega a vos.</p>
+    <div class="hero-trust" id="hvc-trust-wrap">
+      <div class="hero-trust-card hvc-trust" id="hvc-t0"><span class="hero-trust-kicker">Modelo</span><span class="hero-trust-value">Directo</span><span class="hero-trust-copy">Tus clientes escriben al bot — vos recibís el pedido.</span></div>
+      <div class="hero-trust-card hvc-trust" id="hvc-t1"><span class="hero-trust-kicker">Tarifa</span><span class="hero-trust-value">100%</span><span class="hero-trust-copy">La plata del viaje queda de tu lado.</span></div>
+      <div class="hero-trust-card hvc-trust" id="hvc-t2"><span class="hero-trust-kicker">Operacion</span><span class="hero-trust-value">WhatsApp</span><span class="hero-trust-copy">Simple, familiar y listo para usar hoy.</span></div>
+    </div>
+    <div class="hero-actions">
+      <a href="https://remisapp2-production.up.railway.app/empezar?kind=independiente" class="btn-primary">Empezá gratis →</a>
+    </div>
+    </div>
+  </div>
+  <div class="hero-card-col">
+    <div style="display:flex;align-items:center;justify-content:center;height:100%">
+      <div class="hdg" id="hvc-diagram">
+        <svg class="hdg-svg" viewBox="0 0 340 340">
+          <line class="hdg-line" id="hvl0" x1="170" y1="170" x2="170" y2="50"/>
+          <line class="hdg-line" id="hvl1" x1="170" y1="170" x2="274" y2="110"/>
+          <line class="hdg-line" id="hvl2" x1="170" y1="170" x2="274" y2="230"/>
+          <line class="hdg-line" id="hvl3" x1="170" y1="170" x2="170" y2="290"/>
+          <line class="hdg-line" id="hvl4" x1="170" y1="170" x2="66" y2="230"/>
+          <line class="hdg-line" id="hvl5" x1="170" y1="170" x2="66" y2="110"/>
+        </svg>
+        <div class="hdg-center"><div class="hdg-center-ico">🚗</div><div class="hdg-center-lbl">Vos</div></div>
+        <div class="hdg-node" id="hvn0" style="left:170px;top:50px"><div class="hdg-node-ico">🤖</div><div class="hdg-node-lbl">Bot 24hs</div></div>
+        <div class="hdg-node" id="hvn1" style="left:274px;top:110px"><div class="hdg-node-ico">🔗</div><div class="hdg-node-lbl">Tu link</div></div>
+        <div class="hdg-node" id="hvn2" style="left:274px;top:230px"><div class="hdg-node-ico">💰</div><div class="hdg-node-lbl">Precio Uber</div></div>
+        <div class="hdg-node" id="hvn3" style="left:170px;top:290px"><div class="hdg-node-ico">💳</div><div class="hdg-node-lbl">Cobros MP</div></div>
+        <div class="hdg-node" id="hvn4" style="left:66px;top:230px"><div class="hdg-node-ico">📍</div><div class="hdg-node-lbl">Tracking</div></div>
+        <div class="hdg-node" id="hvn5" style="left:66px;top:110px"><div class="hdg-node-ico">📅</div><div class="hdg-node-lbl">Programados</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</section>
+
+<div class="divider"></div>
+
 <!-- PROBLEMAS -->
 <section class="section">
 <div class="container">
@@ -2512,6 +2653,34 @@ async function handleSubmit(e){
   </a>
 </div>
 <script>
+// Hero Variante C — sync diagram nodes with trust cards
+(function(){
+  // state → [trust card index, node indices to highlight]
+  const states = [
+    [0, [0, 1]],   // Directo → Bot 24hs + Tu link
+    [1, [2, 3]],   // 100%    → Precio Uber + Cobros MP
+    [2, [4, 5]],   // WhatsApp→ Tracking + Programados
+  ];
+  let cur = 0;
+  function hvStep() {
+    const [ti, ni] = states[cur];
+    // reset all
+    [0,1,2].forEach(i => { const el = document.getElementById('hvc-t'+i); if(el) el.classList.remove('hd-active'); });
+    [0,1,2,3,4,5].forEach(i => {
+      const n = document.getElementById('hvn'+i); if(n) n.classList.remove('hd-active');
+      const l = document.getElementById('hvl'+i); if(l) l.classList.remove('hd-active');
+    });
+    // activate
+    const tc = document.getElementById('hvc-t'+ti); if(tc) tc.classList.add('hd-active');
+    ni.forEach(i => {
+      const n = document.getElementById('hvn'+i); if(n) n.classList.add('hd-active');
+      const l = document.getElementById('hvl'+i); if(l) l.classList.add('hd-active');
+    });
+    cur = (cur + 1) % states.length;
+  }
+  document.addEventListener('DOMContentLoaded', function(){ hvStep(); setInterval(hvStep, 2200); });
+})();
+
 // Precio v2 calculator
 function pv2Calc() {
   const trips = parseInt(document.getElementById('pv2-trips').value);
