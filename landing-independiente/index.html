@@ -843,39 +843,53 @@ footer{border-top:1px solid var(--borde);padding:40px;max-width:1180px;margin:0 
 .flowv2-lane li::before{content:"✓";color:var(--verde);font-weight:800;margin-right:7px}
 .flowv2-lane--you li::before{content:"→";color:#FDE68A}
 .flowv2-side{display:flex;flex-direction:column;gap:12px}
-.flowv2-visual{min-height:260px;border-radius:22px;background:radial-gradient(circle at 18% 12%,rgba(61,204,142,.15),transparent 38%),linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.015));border:1px solid var(--borde);padding:18px;display:flex;align-items:center;justify-content:center;overflow:hidden;position:relative}
-.flowv2-visual::after{content:"";position:absolute;inset:auto -20% -45% -20%;height:150px;background:radial-gradient(circle,rgba(61,204,142,.16),transparent 64%);pointer-events:none}
-.f2-phone{width:190px;border-radius:24px;background:#071018;border:1px solid rgba(255,255,255,.18);box-shadow:0 20px 46px rgba(0,0,0,.52);overflow:hidden;position:relative;z-index:1}
-.f2-phone-head{padding:12px 13px;background:#0f2028;border-bottom:1px solid rgba(255,255,255,.07);display:flex;align-items:center;gap:8px}
+.flowv2-visual{min-height:318px;border-radius:22px;background:radial-gradient(circle at 16% 18%,rgba(61,204,142,.22),transparent 34%),radial-gradient(circle at 82% 80%,rgba(20,184,166,.13),transparent 35%),linear-gradient(180deg,#050807,#020403);border:1px solid var(--borde);padding:18px;display:flex;align-items:center;justify-content:center;overflow:hidden;position:relative}
+.flowv2-visual::before{content:"";position:absolute;inset:12px;border-radius:18px;border:1px solid rgba(61,204,142,.07);background:linear-gradient(90deg,rgba(61,204,142,.07),transparent 28%,transparent 72%,rgba(61,204,142,.05));pointer-events:none}
+.flowv2-visual::after{content:"";position:absolute;inset:auto -20% -45% -20%;height:160px;background:radial-gradient(circle,rgba(61,204,142,.18),transparent 64%);pointer-events:none}
+.f2-stage{width:100%;height:100%;min-height:280px;display:flex;align-items:center;justify-content:center;gap:14px;position:relative;z-index:1}
+.f2-stage--split{justify-content:space-around}
+.f2-phone{width:172px;border-radius:24px;background:#071018;border:1px solid rgba(210,234,255,.32);box-shadow:0 20px 46px rgba(0,0,0,.58),0 0 34px rgba(61,204,142,.08);overflow:hidden;position:relative;z-index:1;animation:f2Float 5s ease-in-out infinite}
+.f2-phone--small{width:150px}
+.f2-phone-head{padding:11px 12px;background:#0f2028;border-bottom:1px solid rgba(255,255,255,.07);display:flex;align-items:center;gap:8px}
 .f2-avatar{width:26px;height:26px;border-radius:50%;background:var(--verde);color:#071009;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;flex-shrink:0}
 .f2-name{font-size:10.5px;font-weight:800;color:var(--blanco);line-height:1.15}
 .f2-status{font-size:8.5px;color:var(--verde);margin-top:1px}
-.f2-chat{min-height:205px;padding:14px 12px;display:flex;flex-direction:column;gap:8px;background:linear-gradient(180deg,#071018,#060b0f)}
-.f2-bubble{max-width:86%;border-radius:12px;padding:8px 10px;font-size:10.5px;line-height:1.38;color:var(--blanco);box-shadow:0 8px 20px rgba(0,0,0,.16)}
+.f2-chat{min-height:215px;padding:13px 11px;display:flex;flex-direction:column;gap:8px;background:linear-gradient(180deg,#071018,#060b0f)}
+.f2-bubble{max-width:88%;border-radius:12px;padding:8px 10px;font-size:10.5px;line-height:1.38;color:var(--blanco);box-shadow:0 8px 20px rgba(0,0,0,.16);opacity:0;transform:translateY(12px);animation:f2Bubble 6.2s ease-in-out infinite;animation-delay:var(--d,0s)}
 .f2-in{align-self:flex-start;background:#162630;border-radius:4px 12px 12px 12px}
 .f2-out{align-self:flex-end;background:#0a7c6c;border-radius:12px 4px 12px 12px}
 .f2-ok{align-self:flex-start;background:rgba(61,204,142,.16);border:1px solid var(--verde-border)}
-.f2-calendar{width:100%;max-width:270px;border-radius:22px;background:rgba(7,10,8,.72);border:1px solid var(--borde);padding:18px;position:relative;z-index:1}
+.f2-note{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);border-radius:999px;background:var(--verde);color:#071009;padding:8px 11px;font-size:10px;font-weight:900;text-transform:uppercase;letter-spacing:.08em;box-shadow:0 12px 35px rgba(61,204,142,.28);opacity:0;animation:f2Note 6.2s ease-in-out infinite;animation-delay:2.1s;z-index:3;white-space:nowrap}
+.f2-connector{width:52px;height:2px;background:linear-gradient(90deg,var(--verde),rgba(61,204,142,.08));position:relative;opacity:.8}
+.f2-connector::after{content:"";position:absolute;right:-4px;top:-4px;border-left:8px solid var(--verde);border-top:5px solid transparent;border-bottom:5px solid transparent}
+.f2-calendar{width:100%;max-width:245px;border-radius:22px;background:rgba(7,10,8,.72);border:1px solid var(--borde);padding:18px;position:relative;z-index:1;animation:f2Float 5s ease-in-out infinite}
 .f2-cal-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px}
 .f2-cal-month{font-family:'Barlow Condensed',sans-serif;font-size:26px;font-weight:800;color:var(--blanco);text-transform:uppercase}
 .f2-cal-pill{font-size:10px;font-weight:800;color:var(--verde);background:var(--verde-bg);border:1px solid var(--verde-border);border-radius:999px;padding:5px 9px}
 .f2-cal-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:5px;margin-bottom:14px}
 .f2-day{height:25px;border-radius:8px;background:rgba(255,255,255,.04);display:flex;align-items:center;justify-content:center;font-size:10px;color:var(--gris2)}
-.f2-day.hot{background:var(--verde);color:#071009;font-weight:900;box-shadow:0 0 24px rgba(61,204,142,.28)}
-.f2-alert{border-radius:14px;background:rgba(61,204,142,.09);border:1px solid var(--verde-border);padding:12px}
+.f2-day.hot{background:var(--verde);color:#071009;font-weight:900;box-shadow:0 0 24px rgba(61,204,142,.28);animation:f2Pulse 2.5s ease-in-out infinite}
+.f2-alert{border-radius:14px;background:rgba(61,204,142,.09);border:1px solid var(--verde-border);padding:12px;opacity:0;transform:translateY(10px);animation:f2Alert 6.2s ease-in-out infinite;animation-delay:1.2s}
 .f2-alert-title{font-size:12px;font-weight:900;color:var(--blanco);margin-bottom:4px}
 .f2-alert-copy{font-size:10.5px;color:var(--gris2);line-height:1.45}
-.f2-pay{width:100%;max-width:280px;display:grid;grid-template-columns:1fr;gap:12px;position:relative;z-index:1}
-.f2-pay-card,.f2-map-card{border-radius:18px;background:rgba(7,10,8,.76);border:1px solid var(--borde);padding:16px}
+.f2-pay{width:100%;max-width:300px;display:grid;grid-template-columns:1fr;gap:12px;position:relative;z-index:1}
+.f2-pay-card,.f2-map-card{border-radius:18px;background:rgba(7,10,8,.76);border:1px solid var(--borde);padding:16px;opacity:0;transform:translateY(12px);animation:f2Alert 6.2s ease-in-out infinite}
+.f2-map-card{animation-delay:1.4s}
 .f2-pay-row{display:flex;align-items:center;justify-content:space-between;gap:12px}
 .f2-pay-brand{font-size:12px;font-weight:900;color:var(--blanco)}
 .f2-pay-amount{font-family:'Barlow Condensed',sans-serif;font-size:30px;font-weight:800;color:var(--verde)}
 .f2-pay-link{margin-top:10px;border-radius:999px;background:var(--verde);color:#071009;text-align:center;padding:8px 12px;font-size:11px;font-weight:900}
 .f2-map{height:88px;border-radius:14px;background:linear-gradient(135deg,rgba(61,204,142,.18),rgba(255,255,255,.03));position:relative;overflow:hidden}
-.f2-route{position:absolute;left:24px;right:34px;top:42px;height:2px;background:linear-gradient(90deg,var(--verde),rgba(61,204,142,.18));transform:rotate(-8deg);transform-origin:left}
+.f2-route{position:absolute;left:24px;right:34px;top:42px;height:2px;background:linear-gradient(90deg,var(--verde),rgba(61,204,142,.18));transform:rotate(-8deg) scaleX(0);transform-origin:left;animation:f2Route 6.2s ease-in-out infinite;animation-delay:2s}
 .f2-pin{position:absolute;width:12px;height:12px;border-radius:50%;background:var(--verde);box-shadow:0 0 18px rgba(61,204,142,.7)}
 .f2-pin.a{left:24px;top:48px}.f2-pin.b{right:32px;top:30px;background:#FDE68A}
 .f2-map-label{margin-top:9px;font-size:11px;color:var(--gris2)}
+@keyframes f2Float{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
+@keyframes f2Bubble{0%,10%{opacity:0;transform:translateY(12px)}18%,78%{opacity:1;transform:translateY(0)}90%,100%{opacity:0;transform:translateY(-5px)}}
+@keyframes f2Note{0%,28%{opacity:0;transform:translate(-50%,-42%)}36%,62%{opacity:1;transform:translate(-50%,-50%)}78%,100%{opacity:0;transform:translate(-50%,-58%)}}
+@keyframes f2Alert{0%,15%{opacity:0;transform:translateY(12px)}25%,82%{opacity:1;transform:translateY(0)}95%,100%{opacity:0;transform:translateY(-6px)}}
+@keyframes f2Pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.08)}}
+@keyframes f2Route{0%,30%{transform:rotate(-8deg) scaleX(0)}48%,82%{transform:rotate(-8deg) scaleX(1)}95%,100%{transform:rotate(-8deg) scaleX(0)}}
 .flowv2-mini{background:rgba(255,255,255,.035);border:1px solid var(--borde);border-radius:18px;padding:16px;display:flex;gap:13px;align-items:flex-start;transition:border-color .2s,background .2s}
 .flowv2-mini.active{border-color:var(--verde-border);background:rgba(61,204,142,.07)}
 .flowv2-mini-num{font-family:'Barlow Condensed',sans-serif;font-size:22px;font-weight:800;color:var(--verde);line-height:1;min-width:28px}
@@ -887,6 +901,15 @@ footer{border-top:1px solid var(--borde);padding:40px;max-width:1180px;margin:0 
   .flowv2-tabs{justify-content:flex-start}
   .flowv2-grid{grid-template-columns:1fr}
   .flowv2-lanes{grid-template-columns:1fr}
+  .flowv2-visual{min-height:auto;padding:16px}
+  .f2-stage{flex-direction:column;min-height:auto;gap:10px}
+  .f2-connector{width:2px;height:34px;background:linear-gradient(180deg,var(--verde),rgba(61,204,142,.08))}
+  .f2-connector::after{right:-4px;top:auto;bottom:-4px;border-top:8px solid var(--verde);border-left:5px solid transparent;border-right:5px solid transparent;border-bottom:0}
+  .f2-note{top:48%}
+}
+@media(prefers-reduced-motion:reduce){
+  .f2-phone,.f2-calendar,.f2-bubble,.f2-note,.f2-alert,.f2-pay-card,.f2-map-card,.f2-route,.f2-day.hot{animation:none;opacity:1;transform:none}
+  .f2-route{transform:rotate(-8deg) scaleX(1)}
 }
 
 /* -- VISUAL DEMO (A/B/C) -- */
@@ -1642,20 +1665,39 @@ footer{border-top:1px solid var(--borde);padding:40px;max-width:1180px;margin:0 
 
       <div class="flowv2-side">
         <div class="flowv2-visual" data-flow-visual>
-          <div class="f2-phone">
-            <div class="f2-phone-head">
-              <div class="f2-avatar">JG</div>
-              <div>
-                <div class="f2-name">Jose Gomez - Bot</div>
-                <div class="f2-status">en línea</div>
+          <div class="f2-stage f2-stage--split">
+            <div class="f2-phone f2-phone--small">
+              <div class="f2-phone-head">
+                <div class="f2-avatar">JG</div>
+                <div>
+                  <div class="f2-name">Jose Gomez - Bot</div>
+                  <div class="f2-status">en línea</div>
+                </div>
+              </div>
+              <div class="f2-chat">
+                <div class="f2-bubble f2-in" style="--d:.1s">Hola, necesito un remis</div>
+                <div class="f2-bubble f2-in" style="--d:.8s">¿Desde dónde salís?</div>
+                <div class="f2-bubble f2-out" style="--d:1.5s">Av. Corrientes 1234</div>
+                <div class="f2-bubble f2-ok" style="--d:2.2s">Cotizado y confirmado</div>
               </div>
             </div>
-            <div class="f2-chat">
-              <div class="f2-bubble f2-in">Hola, necesito un remis</div>
-              <div class="f2-bubble f2-in">¿Desde dónde salís?</div>
-              <div class="f2-bubble f2-out">Av. Corrientes 1234</div>
-              <div class="f2-bubble f2-ok">Solicitud lista para aceptar</div>
+            <div class="f2-connector"></div>
+            <div class="f2-phone f2-phone--small">
+              <div class="f2-phone-head">
+                <div class="f2-avatar">RA</div>
+                <div>
+                  <div class="f2-name">RemisApp Bot</div>
+                  <div class="f2-status">solicitudes</div>
+                </div>
+              </div>
+              <div class="f2-chat">
+                <div class="f2-bubble f2-in" style="--d:2.7s">Nueva solicitud: Av. Corrientes → Aeroparque</div>
+                <div class="f2-bubble f2-in" style="--d:3.4s">$9.500 · 1 aceptar · 2 rechazar</div>
+                <div class="f2-bubble f2-out" style="--d:4.1s">1</div>
+                <div class="f2-bubble f2-ok" style="--d:4.7s">Viaje aceptado</div>
+              </div>
             </div>
+            <div class="f2-note">bot arma el viaje</div>
           </div>
         </div>
         <div class="flowv2-mini active" data-flow-step="0">
@@ -2863,20 +2905,39 @@ document.addEventListener('DOMContentLoaded', pv2Calc);
       bot: ['Atiende el mensaje inicial', 'Pide origen y destino', 'Cotiza y confirma con el cliente'],
       you: ['Aceptás o rechazás', 'Vas a buscarlo'],
       visual: `
-        <div class="f2-phone">
-          <div class="f2-phone-head">
-            <div class="f2-avatar">JG</div>
-            <div>
-              <div class="f2-name">Jose Gomez - Bot</div>
-              <div class="f2-status">en línea</div>
+        <div class="f2-stage f2-stage--split">
+          <div class="f2-phone f2-phone--small">
+            <div class="f2-phone-head">
+              <div class="f2-avatar">JG</div>
+              <div>
+                <div class="f2-name">Jose Gomez - Bot</div>
+                <div class="f2-status">en línea</div>
+              </div>
+            </div>
+            <div class="f2-chat">
+              <div class="f2-bubble f2-in" style="--d:.1s">Hola, necesito un remis</div>
+              <div class="f2-bubble f2-in" style="--d:.8s">¿Desde dónde salís?</div>
+              <div class="f2-bubble f2-out" style="--d:1.5s">Av. Corrientes 1234</div>
+              <div class="f2-bubble f2-ok" style="--d:2.2s">Cotizado y confirmado</div>
             </div>
           </div>
-          <div class="f2-chat">
-            <div class="f2-bubble f2-in">Hola, necesito un remis</div>
-            <div class="f2-bubble f2-in">¿Desde dónde salís?</div>
-            <div class="f2-bubble f2-out">Av. Corrientes 1234</div>
-            <div class="f2-bubble f2-ok">Solicitud lista para aceptar</div>
+          <div class="f2-connector"></div>
+          <div class="f2-phone f2-phone--small">
+            <div class="f2-phone-head">
+              <div class="f2-avatar">RA</div>
+              <div>
+                <div class="f2-name">RemisApp Bot</div>
+                <div class="f2-status">solicitudes</div>
+              </div>
+            </div>
+            <div class="f2-chat">
+              <div class="f2-bubble f2-in" style="--d:2.7s">Nueva solicitud: Av. Corrientes → Aeroparque</div>
+              <div class="f2-bubble f2-in" style="--d:3.4s">$9.500 · 1 aceptar · 2 rechazar</div>
+              <div class="f2-bubble f2-out" style="--d:4.1s">1</div>
+              <div class="f2-bubble f2-ok" style="--d:4.7s">Viaje aceptado</div>
+            </div>
           </div>
+          <div class="f2-note">bot arma el viaje</div>
         </div>`,
       steps: [
         ['Cliente escribe', 'El pedido entra por tu link o QR, directo a WhatsApp.'],
@@ -2891,18 +2952,36 @@ document.addEventListener('DOMContentLoaded', pv2Calc);
       bot: ['Toma fecha, hora y recorrido', 'Agenda la reserva', 'Dispara recordatorios antes del viaje'],
       you: ['Confirmás disponibilidad', 'Salís a horario'],
       visual: `
-        <div class="f2-calendar">
-          <div class="f2-cal-top">
-            <div class="f2-cal-month">Mañana</div>
-            <div class="f2-cal-pill">21:30</div>
+        <div class="f2-stage f2-stage--split">
+          <div class="f2-phone f2-phone--small">
+            <div class="f2-phone-head">
+              <div class="f2-avatar">JG</div>
+              <div>
+                <div class="f2-name">Jose Gomez - Bot</div>
+                <div class="f2-status">reserva</div>
+              </div>
+            </div>
+            <div class="f2-chat">
+              <div class="f2-bubble f2-in" style="--d:.1s">Necesito reservar para mañana</div>
+              <div class="f2-bubble f2-in" style="--d:.9s">¿A qué hora?</div>
+              <div class="f2-bubble f2-out" style="--d:1.6s">21:30 al aeropuerto</div>
+              <div class="f2-bubble f2-ok" style="--d:2.4s">Reserva agendada</div>
+            </div>
           </div>
-          <div class="f2-cal-grid">
-            <div class="f2-day">L</div><div class="f2-day">M</div><div class="f2-day">M</div><div class="f2-day hot">J</div><div class="f2-day">V</div><div class="f2-day">S</div><div class="f2-day">D</div>
-            <div class="f2-day">18</div><div class="f2-day">19</div><div class="f2-day">20</div><div class="f2-day hot">21</div><div class="f2-day">22</div><div class="f2-day">23</div><div class="f2-day">24</div>
-          </div>
-          <div class="f2-alert">
-            <div class="f2-alert-title">Alerta previa</div>
-            <div class="f2-alert-copy">Aeropuerto - 21:30 - el bot te avisa antes.</div>
+          <div class="f2-connector"></div>
+          <div class="f2-calendar">
+            <div class="f2-cal-top">
+              <div class="f2-cal-month">Mañana</div>
+              <div class="f2-cal-pill">21:30</div>
+            </div>
+            <div class="f2-cal-grid">
+              <div class="f2-day">L</div><div class="f2-day">M</div><div class="f2-day">M</div><div class="f2-day hot">J</div><div class="f2-day">V</div><div class="f2-day">S</div><div class="f2-day">D</div>
+              <div class="f2-day">18</div><div class="f2-day">19</div><div class="f2-day">20</div><div class="f2-day hot">21</div><div class="f2-day">22</div><div class="f2-day">23</div><div class="f2-day">24</div>
+            </div>
+            <div class="f2-alert">
+              <div class="f2-alert-title">Alerta previa</div>
+              <div class="f2-alert-copy">Aeropuerto - 21:30 - el bot te avisa antes.</div>
+            </div>
           </div>
         </div>`,
       steps: [
@@ -2918,21 +2997,38 @@ document.addEventListener('DOMContentLoaded', pv2Calc);
       bot: ['Genera link de Mercado Pago', 'Manda tracking en vivo', 'Actualiza el estado del viaje'],
       you: ['Cobrás directo', 'Manejás sin intermediarios'],
       visual: `
-        <div class="f2-pay">
-          <div class="f2-pay-card">
-            <div class="f2-pay-row">
-              <div class="f2-pay-brand">Mercado Pago</div>
-              <div class="f2-pay-amount">$9.500</div>
+        <div class="f2-stage f2-stage--split">
+          <div class="f2-phone f2-phone--small">
+            <div class="f2-phone-head">
+              <div class="f2-avatar">RA</div>
+              <div>
+                <div class="f2-name">RemisApp Bot</div>
+                <div class="f2-status">post viaje</div>
+              </div>
             </div>
-            <div class="f2-pay-link">Link de pago enviado</div>
+            <div class="f2-chat">
+              <div class="f2-bubble f2-in" style="--d:.1s">Viaje confirmado</div>
+              <div class="f2-bubble f2-in" style="--d:.9s">Te paso pago y seguimiento</div>
+              <div class="f2-bubble f2-ok" style="--d:1.8s">Tracking activo</div>
+            </div>
           </div>
-          <div class="f2-map-card">
-            <div class="f2-map">
-              <div class="f2-route"></div>
-              <div class="f2-pin a"></div>
-              <div class="f2-pin b"></div>
+          <div class="f2-connector"></div>
+          <div class="f2-pay">
+            <div class="f2-pay-card">
+              <div class="f2-pay-row">
+                <div class="f2-pay-brand">Mercado Pago</div>
+                <div class="f2-pay-amount">$9.500</div>
+              </div>
+              <div class="f2-pay-link">Link de pago enviado</div>
             </div>
-            <div class="f2-map-label">Tracking en vivo para el pasajero</div>
+            <div class="f2-map-card">
+              <div class="f2-map">
+                <div class="f2-route"></div>
+                <div class="f2-pin a"></div>
+                <div class="f2-pin b"></div>
+              </div>
+              <div class="f2-map-label">Tracking en vivo para el pasajero</div>
+            </div>
           </div>
         </div>`,
       steps: [
