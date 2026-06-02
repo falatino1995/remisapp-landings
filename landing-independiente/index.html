@@ -632,15 +632,21 @@ footer{border-top:1px solid var(--borde);padding:40px;max-width:1180px;margin:0 
   /* How it works result grid */
   .hw-result-grid{grid-template-columns:1fr}
 
-  /* Hero mobile — título más compacto */
+  /* Hero mobile — badge visible por encima del nav fijo */
   #hvd-hl{min-height:1em}
-  .hero{padding:40px 0 32px}
+  .hero{padding:84px 0 32px}
 
   /* Trust cards — 3 columnas compactas en vez de apiladas */
   .hero-trust{grid-template-columns:repeat(3,1fr);gap:8px}
   .hero-trust-card{padding:10px 8px}
   .hero-trust-value{font-size:18px}
   .hero-trust-copy{display:none}
+
+  /* Mock slot — visible bajo la lista de features */
+  .hvd-right{flex-direction:column;align-items:stretch;gap:16px}
+  .hvd-mock-slot{display:block !important;width:100%;height:200px}
+  .hvd-mock{border-radius:14px}
+  .hvd-mock-img{height:162px}
 }
 
 /* ── FEATURE SHOWCASE (BENTO) ── */
