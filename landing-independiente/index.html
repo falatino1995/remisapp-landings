@@ -848,6 +848,11 @@ footer{border-top:1px solid var(--borde);padding:40px;max-width:1180px;margin:0 
 .flowv2-visual::after{content:"";position:absolute;inset:auto -20% -45% -20%;height:160px;background:radial-gradient(circle,rgba(61,204,142,.18),transparent 64%);pointer-events:none}
 .f2-stage{width:100%;height:100%;min-height:326px;display:flex;align-items:center;justify-content:center;gap:24px;position:relative;z-index:1}
 .f2-stage--split{justify-content:space-around}
+.f2-shot{display:flex;flex-direction:column;align-items:center;gap:8px;position:relative;z-index:2}
+.f2-role{border:1px solid rgba(255,255,255,.1);background:rgba(255,255,255,.045);border-radius:999px;padding:5px 10px;font-size:10px;font-weight:900;color:var(--gris2);letter-spacing:.08em;text-transform:uppercase}
+.f2-role--client{color:#8AB8FF;border-color:rgba(138,184,255,.28);background:rgba(138,184,255,.08)}
+.f2-role--bot{color:var(--verde);border-color:var(--verde-border);background:var(--verde-bg)}
+.f2-role--driver{color:#FDE68A;border-color:rgba(253,230,138,.28);background:rgba(253,230,138,.08)}
 .f2-phone{width:198px;border-radius:26px;background:#071018;border:1px solid rgba(210,234,255,.32);box-shadow:0 20px 46px rgba(0,0,0,.58),0 0 34px rgba(61,204,142,.08);overflow:hidden;position:relative;z-index:1;animation:f2Float 5s ease-in-out infinite}
 .f2-phone--small{width:184px}
 .f2-phone-head{padding:11px 12px;background:#0f2028;border-bottom:1px solid rgba(255,255,255,.07);display:flex;align-items:center;gap:8px}
@@ -884,6 +889,8 @@ footer{border-top:1px solid var(--borde);padding:40px;max-width:1180px;margin:0 
 .f2-pay-amount{font-family:'Barlow Condensed',sans-serif;font-size:30px;font-weight:800;color:var(--verde)}
 .f2-pay-link{margin-top:10px;border-radius:999px;background:var(--verde);color:#071009;text-align:center;padding:8px 12px;font-size:11px;font-weight:900}
 .f2-map{height:172px;border-radius:16px;background:linear-gradient(135deg,rgba(61,204,142,.14),rgba(255,255,255,.03)),repeating-linear-gradient(0deg,transparent 0 28px,rgba(255,255,255,.055) 29px 30px),repeating-linear-gradient(90deg,transparent 0 34px,rgba(255,255,255,.05) 35px 36px);position:relative;overflow:hidden}
+.f2-map-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;filter:saturate(.95) brightness(.58) contrast(1.08);opacity:.82}
+.f2-map--real::before{background:rgba(61,204,142,.16);backdrop-filter:blur(1px)}
 .f2-map::before{content:"";position:absolute;inset:18px 12px;border-radius:18px;border:2px solid rgba(61,204,142,.38);border-left-color:transparent;border-bottom-color:rgba(253,230,138,.5);transform:rotate(-11deg);opacity:.9}
 .f2-map::after{content:"6 min";position:absolute;right:12px;top:12px;border-radius:999px;background:#071009;color:var(--verde);border:1px solid var(--verde-border);padding:5px 9px;font-size:10px;font-weight:900}
 .f2-route{position:absolute;left:34px;right:46px;top:82px;height:4px;border-radius:999px;background:linear-gradient(90deg,var(--verde),#FDE68A);transform:rotate(-14deg) scaleX(0);transform-origin:left;animation:f2Route 6.2s ease-in-out infinite;animation-delay:1.1s;box-shadow:0 0 22px rgba(61,204,142,.38)}
@@ -1679,6 +1686,8 @@ footer{border-top:1px solid var(--borde);padding:40px;max-width:1180px;margin:0 
       <div class="flowv2-side">
         <div class="flowv2-visual" data-flow-visual>
           <div class="f2-stage f2-stage--split">
+            <div class="f2-shot">
+            <div class="f2-role f2-role--client">Cliente</div>
             <div class="f2-phone f2-phone--small">
               <div class="f2-phone-head">
                 <div class="f2-avatar f2-avatar--driver"><img src="assets/chofer-plata-retenida-01.png" alt=""></div>
@@ -1694,7 +1703,10 @@ footer{border-top:1px solid var(--borde);padding:40px;max-width:1180px;margin:0 
                 <div class="f2-bubble f2-ok" style="--d:2.2s">Cotizado y confirmado</div>
               </div>
             </div>
+            </div>
             <div class="f2-connector"></div>
+            <div class="f2-shot">
+            <div class="f2-role f2-role--driver">Vos</div>
             <div class="f2-phone f2-phone--small">
               <div class="f2-phone-head">
                 <div class="f2-avatar f2-avatar--bot"><img src="assets/robot_bot.png" alt=""></div>
@@ -1709,6 +1721,7 @@ footer{border-top:1px solid var(--borde);padding:40px;max-width:1180px;margin:0 
                 <div class="f2-bubble f2-out" style="--d:4.1s">1</div>
                 <div class="f2-bubble f2-ok" style="--d:4.7s">Viaje aceptado</div>
               </div>
+            </div>
             </div>
             <div class="f2-note">bot arma el viaje</div>
           </div>
@@ -2919,6 +2932,8 @@ document.addEventListener('DOMContentLoaded', pv2Calc);
       you: ['Aceptás o rechazás', 'Vas a buscarlo'],
       visual: `
         <div class="f2-stage f2-stage--split">
+          <div class="f2-shot">
+          <div class="f2-role f2-role--client">Cliente</div>
           <div class="f2-phone f2-phone--small">
             <div class="f2-phone-head">
               <div class="f2-avatar f2-avatar--driver"><img src="assets/chofer-plata-retenida-01.png" alt=""></div>
@@ -2934,7 +2949,10 @@ document.addEventListener('DOMContentLoaded', pv2Calc);
               <div class="f2-bubble f2-ok" style="--d:2.2s">Cotizado y confirmado</div>
             </div>
           </div>
+          </div>
           <div class="f2-connector"></div>
+          <div class="f2-shot">
+          <div class="f2-role f2-role--driver">Vos</div>
           <div class="f2-phone f2-phone--small">
             <div class="f2-phone-head">
               <div class="f2-avatar f2-avatar--bot"><img src="assets/robot_bot.png" alt=""></div>
@@ -2949,6 +2967,7 @@ document.addEventListener('DOMContentLoaded', pv2Calc);
               <div class="f2-bubble f2-out" style="--d:4.1s">1</div>
               <div class="f2-bubble f2-ok" style="--d:4.7s">Viaje aceptado</div>
             </div>
+          </div>
           </div>
           <div class="f2-note">bot arma el viaje</div>
         </div>`,
@@ -2966,6 +2985,8 @@ document.addEventListener('DOMContentLoaded', pv2Calc);
       you: ['Confirmás disponibilidad', 'Salís a horario'],
       visual: `
         <div class="f2-stage f2-stage--split">
+          <div class="f2-shot">
+          <div class="f2-role f2-role--client">Cliente</div>
           <div class="f2-phone f2-phone--small">
             <div class="f2-phone-head">
               <div class="f2-avatar f2-avatar--driver"><img src="assets/chofer-plata-retenida-01.png" alt=""></div>
@@ -2981,7 +3002,10 @@ document.addEventListener('DOMContentLoaded', pv2Calc);
               <div class="f2-bubble f2-ok" style="--d:2.4s">Reserva agendada</div>
             </div>
           </div>
+          </div>
           <div class="f2-connector"></div>
+          <div class="f2-shot">
+          <div class="f2-role f2-role--bot">Agenda</div>
           <div class="f2-calendar">
             <div class="f2-cal-top">
               <div class="f2-cal-month">Mañana</div>
@@ -2995,6 +3019,7 @@ document.addEventListener('DOMContentLoaded', pv2Calc);
               <div class="f2-alert-title">Alerta previa</div>
               <div class="f2-alert-copy">Aeropuerto - 21:30 - el bot te avisa antes.</div>
             </div>
+          </div>
           </div>
         </div>`,
       steps: [
@@ -3011,6 +3036,8 @@ document.addEventListener('DOMContentLoaded', pv2Calc);
       you: ['Cobrás directo', 'Seguís manejando'],
       visual: `
         <div class="f2-stage f2-stage--split">
+          <div class="f2-shot">
+          <div class="f2-role f2-role--bot">Bot</div>
           <div class="f2-phone f2-phone--small">
             <div class="f2-phone-head">
               <div class="f2-avatar f2-avatar--bot"><img src="assets/robot_bot.png" alt=""></div>
@@ -3025,7 +3052,10 @@ document.addEventListener('DOMContentLoaded', pv2Calc);
               <div class="f2-bubble f2-ok" style="--d:1.8s">Pago recibido</div>
             </div>
           </div>
+          </div>
           <div class="f2-connector"></div>
+          <div class="f2-shot">
+          <div class="f2-role f2-role--driver">Cobro</div>
           <div class="f2-pay">
             <div class="f2-pay-card">
               <div class="f2-pay-row">
@@ -3034,6 +3064,7 @@ document.addEventListener('DOMContentLoaded', pv2Calc);
               </div>
               <div class="f2-pay-link">Link de pago enviado</div>
             </div>
+          </div>
           </div>
         </div>`,
       steps: [
@@ -3050,6 +3081,8 @@ document.addEventListener('DOMContentLoaded', pv2Calc);
       you: ['Manejás', 'Llegás sin explicar cada minuto'],
       visual: `
         <div class="f2-stage f2-stage--split">
+          <div class="f2-shot">
+          <div class="f2-role f2-role--bot">Bot</div>
           <div class="f2-phone f2-phone--small">
             <div class="f2-phone-head">
               <div class="f2-avatar f2-avatar--bot"><img src="assets/robot_bot.png" alt=""></div>
@@ -3064,10 +3097,14 @@ document.addEventListener('DOMContentLoaded', pv2Calc);
               <div class="f2-bubble f2-ok" style="--d:1.8s">Ver seguimiento en vivo</div>
             </div>
           </div>
+          </div>
           <div class="f2-connector"></div>
+          <div class="f2-shot">
+          <div class="f2-role f2-role--client">Cliente ve mapa</div>
           <div class="f2-pay">
             <div class="f2-map-card">
-              <div class="f2-map">
+              <div class="f2-map f2-map--real">
+                <img class="f2-map-img" src="assets/feat-tracking-map.png" alt="">
                 <div class="f2-route"></div>
                 <div class="f2-pin a"></div>
                 <div class="f2-pin b"></div>
@@ -3076,6 +3113,7 @@ document.addEventListener('DOMContentLoaded', pv2Calc);
               </div>
               <div class="f2-map-label">El cliente ve tu ubicación y el tiempo estimado.</div>
             </div>
+          </div>
           </div>
         </div>`,
       steps: [
