@@ -1087,12 +1087,6 @@ footer{border-top:1px solid var(--borde);padding:40px;max-width:1180px;margin:0 
 .hw-share-label{font-size:10px;color:var(--gris2);text-align:center;margin-top:3px}
 .hw-share-item{display:flex;flex-direction:column;align-items:center}
 
-/* Hero rotating text */
-.hero-rotate{position:relative;display:inline-block;overflow:hidden;vertical-align:bottom}
-.hr-item{display:block;opacity:0;transform:translateY(110%);transition:opacity .45s cubic-bezier(.22,.68,0,1.2),transform .45s cubic-bezier(.22,.68,0,1.2);position:absolute;left:0;top:0;white-space:nowrap;pointer-events:none}
-.hr-item.hr-active{opacity:1;transform:translateY(0);position:relative;pointer-events:auto}
-.hr-item.hr-exit{opacity:0;transform:translateY(-110%);position:absolute}
-
 /* ── Problemas peek carousel (v2) ── */
 .p3-outer{position:relative;margin-top:44px}
 .p3-outer::after{content:'';position:absolute;right:0;top:0;bottom:20px;width:140px;background:linear-gradient(to right,transparent,var(--bg2) 80%);pointer-events:none;z-index:2}
@@ -1112,17 +1106,6 @@ footer{border-top:1px solid var(--borde);padding:40px;max-width:1180px;margin:0 
 .p3-dot.active{background:var(--verde);width:22px;border-radius:999px}
 @media(max-width:860px){.p3-track .prob-va-card{flex:0 0 44%}}
 @media(max-width:560px){.p3-track .prob-va-card{flex:0 0 82%}.p3-arrow{display:none}}
-
-/* Problem cards carousel */
-.prob-carousel{overflow:hidden;position:relative;margin-top:44px}
-.prob-carousel::before,.prob-carousel::after{content:'';position:absolute;top:0;bottom:0;width:60px;z-index:3;pointer-events:none}
-.prob-carousel::before{left:0;background:linear-gradient(90deg,var(--bg2),transparent)}
-.prob-carousel::after{right:0;background:linear-gradient(-90deg,var(--bg2),transparent)}
-.prob-track{display:flex;gap:16px;transition:transform .65s cubic-bezier(.22,.68,0,1);will-change:transform}
-.prob-track .prob-va-card{flex:0 0 calc(33.333% - 11px);min-width:0}
-.prob-dots{display:flex;justify-content:center;gap:6px;margin-top:20px}
-.prob-dot{width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,.2);transition:background .3s,width .3s}
-.prob-dot.active{background:var(--verde);width:18px;border-radius:3px}
 
 /* PRECIO — compact payment methods row */
 .paym-row{display:flex;gap:12px;margin-top:24px;flex-wrap:wrap}
@@ -1407,7 +1390,7 @@ footer{border-top:1px solid var(--borde);padding:40px;max-width:1180px;margin:0 
 <div class="divider"></div>
 
 <!-- PROBLEMAS -->
-<section class="section">
+<section class="section" id="problema">
 <div class="container">
   <div class="section-shell surface">
     <div class="sec-eyebrow reveal">El problema</div>
@@ -1552,7 +1535,7 @@ footer{border-top:1px solid var(--borde);padding:40px;max-width:1180px;margin:0 
 <div class="divider"></div>
 
 <!-- HOW IT WORKS -->
-<section class="section" id="como-funciona">
+<section class="section" id="activacion">
 <div class="container">
   <div class="section-shell surface">
   <div class="sec-eyebrow reveal">Activación</div>
@@ -1664,7 +1647,7 @@ footer{border-top:1px solid var(--borde);padding:40px;max-width:1180px;margin:0 
 </style>
 
 <!-- FEATURE SHOWCASE -->
-<section class="section" id="features">
+<section class="section" id="funcionalidades">
 <div class="container">
   <div class="sec-eyebrow reveal">El producto</div>
   <h2 class="sec-title reveal d1">Qué hace el bot<br><span class="hl">de RemisApp</span></h2>
@@ -2591,12 +2574,6 @@ function reorderLandingSections(){
     return nodes;
   };
 
-  const problemsComment = findComment('PROBLEMAS');
-  const problemsSection = firstElementAfter(problemsComment);
-  const oldProblemAnchor = document.getElementById('problema');
-  if (oldProblemAnchor && oldProblemAnchor !== problemsSection) oldProblemAnchor.id = 'producto-showcase';
-  if (problemsSection) problemsSection.id = 'problema';
-
   const orderedComments = [
     findComment('PROBLEMAS'),
     findCommentLike('FUSIÓN'),
@@ -2694,44 +2671,6 @@ async function handleSubmit(e){
   document.addEventListener('DOMContentLoaded',function(){ hvdStep(); setInterval(hvdStep,2600); });
 })();
 
-
-// Hero Variante C — sync diagram nodes + mockup + title with trust cards
-(function(){
-  const states = [
-    { trust:0, nodes:[0,1], title:'Tu bot. Tu canal.',    mock:0 },
-    { trust:1, nodes:[2,3], title:'Tuyo el 100%.',        mock:1 },
-    { trust:2, nodes:[4,5], title:'Siempre activo.',      mock:2 },
-  ];
-  let cur = 0;
-  function hvStep() {
-    const s = states[cur];
-    // reset nodes + lines + trust cards + mocks
-    [0,1,2].forEach(i => { const el = document.getElementById('hvc-t'+i); if(el) el.classList.remove('hd-active'); });
-    [0,1,2,3,4,5].forEach(i => {
-      const n = document.getElementById('hvn'+i); if(n) n.classList.remove('hd-active');
-      const l = document.getElementById('hvl'+i); if(l) l.classList.remove('hd-active');
-    });
-    [0,1,2].forEach(i => { const m = document.getElementById('hvc-mock'+i); if(m) m.classList.remove('hvc-mock-on'); });
-    // activate trust card
-    const tc = document.getElementById('hvc-t'+s.trust); if(tc) tc.classList.add('hd-active');
-    // activate nodes + lines
-    s.nodes.forEach(i => {
-      const n = document.getElementById('hvn'+i); if(n) n.classList.add('hd-active');
-      const l = document.getElementById('hvl'+i); if(l) l.classList.add('hd-active');
-    });
-    // activate mockup
-    const mock = document.getElementById('hvc-mock'+s.mock); if(mock) mock.classList.add('hvc-mock-on');
-    // animate title
-    const hl = document.getElementById('hvc-hl');
-    if(hl) {
-      hl.classList.add('hvc-hl-out');
-      setTimeout(function(){ hl.textContent = s.title; hl.classList.remove('hvc-hl-out'); }, 200);
-    }
-    cur = (cur + 1) % states.length;
-  }
-  document.addEventListener('DOMContentLoaded', function(){ hvStep(); setInterval(hvStep, 2600); });
-})();
-
 // Precio v2 calculator
 function pv2Calc() {
   const trips = parseInt(document.getElementById('pv2-trips').value);
@@ -2773,52 +2712,6 @@ function ftSwitch(btn, panelId) {
   btn.closest('.feattabs').querySelectorAll('.ftab-pane').forEach(p => p.classList.remove('ftab-pane-active'));
   document.getElementById(panelId).classList.add('ftab-pane-active');
 }
-
-
-// Hero rotating text
-(function(){
-  var items = Array.from(document.querySelectorAll('.hr-item'));
-  if(!items.length) return;
-  var current = 0;
-  setInterval(function(){
-    var prev = items[current];
-    current = (current + 1) % items.length;
-    var next = items[current];
-    prev.classList.remove('hr-active');
-    prev.classList.add('hr-exit');
-    setTimeout(function(){ prev.classList.remove('hr-exit'); }, 500);
-    next.classList.add('hr-active');
-  }, 2800);
-})();
-
-// Problem cards carousel (original)
-(function(){
-  var track = document.getElementById('probTrack');
-  var dotsEl = document.getElementById('probDots');
-  if(!track) return;
-  var cards = Array.from(track.children);
-  var total = cards.length;
-  var visible = 3;
-  var pos = 0;
-  var gap = 16;
-  for(var i=0;i<visible;i++) track.appendChild(cards[i].cloneNode(true));
-  function cardW(){ return track.children[0].offsetWidth + gap; }
-  function updateDots(){
-    if(!dotsEl) return;
-    var dots = dotsEl.children;
-    for(var i=0;i<dots.length;i++) dots[i].classList.toggle('active', i===pos%total);
-  }
-  function slide(){
-    pos++;
-    track.style.transition = 'transform .65s cubic-bezier(.22,.68,0,1)';
-    track.style.transform = 'translateX(-'+(pos*cardW())+'px)';
-    if(pos >= total){ setTimeout(function(){ track.style.transition='none'; pos=0; track.style.transform='translateX(0)'; }, 700); }
-    updateDots();
-  }
-  var timer = setInterval(slide, 3200);
-  track.addEventListener('mouseenter', function(){ clearInterval(timer); });
-  track.addEventListener('mouseleave', function(){ timer = setInterval(slide, 3200); });
-})();
 
 // Problem cards v2 — peek carousel with arrows + drag
 (function(){
