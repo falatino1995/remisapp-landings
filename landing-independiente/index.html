@@ -851,7 +851,11 @@ footer{border-top:1px solid var(--borde);padding:40px;max-width:1180px;margin:0 
 .f2-phone{width:198px;border-radius:26px;background:#071018;border:1px solid rgba(210,234,255,.32);box-shadow:0 20px 46px rgba(0,0,0,.58),0 0 34px rgba(61,204,142,.08);overflow:hidden;position:relative;z-index:1;animation:f2Float 5s ease-in-out infinite}
 .f2-phone--small{width:184px}
 .f2-phone-head{padding:11px 12px;background:#0f2028;border-bottom:1px solid rgba(255,255,255,.07);display:flex;align-items:center;gap:8px}
-.f2-avatar{width:26px;height:26px;border-radius:50%;background:var(--verde);color:#071009;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;flex-shrink:0}
+.f2-avatar{width:26px;height:26px;border-radius:50%;background:var(--verde);color:#071009;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;flex-shrink:0;overflow:hidden;border:1px solid rgba(255,255,255,.18)}
+.f2-avatar img{width:100%;height:100%;object-fit:cover;display:block}
+.f2-avatar--bot{background:rgba(61,204,142,.18);padding:2px;border-color:var(--verde-border)}
+.f2-avatar--bot img{object-fit:contain;filter:drop-shadow(0 1px 4px rgba(61,204,142,.45))}
+.f2-avatar--driver img{object-position:center top}
 .f2-name{font-size:10.5px;font-weight:800;color:var(--blanco);line-height:1.15}
 .f2-status{font-size:8.5px;color:var(--verde);margin-top:1px}
 .f2-chat{min-height:252px;padding:13px 11px;display:flex;flex-direction:column;gap:8px;background:linear-gradient(180deg,#071018,#060b0f)}
@@ -1677,7 +1681,7 @@ footer{border-top:1px solid var(--borde);padding:40px;max-width:1180px;margin:0 
           <div class="f2-stage f2-stage--split">
             <div class="f2-phone f2-phone--small">
               <div class="f2-phone-head">
-                <div class="f2-avatar">JG</div>
+                <div class="f2-avatar f2-avatar--driver"><img src="assets/chofer-plata-retenida-01.png" alt=""></div>
                 <div>
                   <div class="f2-name">Jose Gomez - Bot</div>
                   <div class="f2-status">en línea</div>
@@ -1693,7 +1697,7 @@ footer{border-top:1px solid var(--borde);padding:40px;max-width:1180px;margin:0 
             <div class="f2-connector"></div>
             <div class="f2-phone f2-phone--small">
               <div class="f2-phone-head">
-                <div class="f2-avatar">RA</div>
+                <div class="f2-avatar f2-avatar--bot"><img src="assets/robot_bot.png" alt=""></div>
                 <div>
                   <div class="f2-name">RemisApp Bot</div>
                   <div class="f2-status">solicitudes</div>
@@ -2917,7 +2921,7 @@ document.addEventListener('DOMContentLoaded', pv2Calc);
         <div class="f2-stage f2-stage--split">
           <div class="f2-phone f2-phone--small">
             <div class="f2-phone-head">
-              <div class="f2-avatar">JG</div>
+              <div class="f2-avatar f2-avatar--driver"><img src="assets/chofer-plata-retenida-01.png" alt=""></div>
               <div>
                 <div class="f2-name">Jose Gomez - Bot</div>
                 <div class="f2-status">en línea</div>
@@ -2933,7 +2937,7 @@ document.addEventListener('DOMContentLoaded', pv2Calc);
           <div class="f2-connector"></div>
           <div class="f2-phone f2-phone--small">
             <div class="f2-phone-head">
-              <div class="f2-avatar">RA</div>
+              <div class="f2-avatar f2-avatar--bot"><img src="assets/robot_bot.png" alt=""></div>
               <div>
                 <div class="f2-name">RemisApp Bot</div>
                 <div class="f2-status">solicitudes</div>
@@ -2964,7 +2968,7 @@ document.addEventListener('DOMContentLoaded', pv2Calc);
         <div class="f2-stage f2-stage--split">
           <div class="f2-phone f2-phone--small">
             <div class="f2-phone-head">
-              <div class="f2-avatar">JG</div>
+              <div class="f2-avatar f2-avatar--driver"><img src="assets/chofer-plata-retenida-01.png" alt=""></div>
               <div>
                 <div class="f2-name">Jose Gomez - Bot</div>
                 <div class="f2-status">reserva</div>
@@ -3009,7 +3013,7 @@ document.addEventListener('DOMContentLoaded', pv2Calc);
         <div class="f2-stage f2-stage--split">
           <div class="f2-phone f2-phone--small">
             <div class="f2-phone-head">
-              <div class="f2-avatar">RA</div>
+              <div class="f2-avatar f2-avatar--bot"><img src="assets/robot_bot.png" alt=""></div>
               <div>
                 <div class="f2-name">RemisApp Bot</div>
                 <div class="f2-status">post viaje</div>
@@ -3048,7 +3052,7 @@ document.addEventListener('DOMContentLoaded', pv2Calc);
         <div class="f2-stage f2-stage--split">
           <div class="f2-phone f2-phone--small">
             <div class="f2-phone-head">
-              <div class="f2-avatar">RA</div>
+              <div class="f2-avatar f2-avatar--bot"><img src="assets/robot_bot.png" alt=""></div>
               <div>
                 <div class="f2-name">RemisApp Bot</div>
                 <div class="f2-status">tracking</div>
