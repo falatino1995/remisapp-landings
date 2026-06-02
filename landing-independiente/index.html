@@ -258,7 +258,13 @@ nav{
 .hfloat-cmp-row span:first-child{color:var(--gris2)}
 .hfloat-red{color:#F87171;font-weight:700;font-size:12px}
 .hfloat-green{color:var(--verde);font-weight:700;font-size:12px}
-@media(max-width:640px){.hero-visual-zone{display:none}}
+@media(max-width:640px){
+  .hero-visual-zone{display:none}
+  .hw-step{grid-template-columns:1fr;gap:24px}
+  .hw-step--alt .hw-step__text{order:1}
+  .hw-step--alt .hw-step__mock{order:2}
+  .hw-result-grid{grid-template-columns:1fr}
+}
 @media(max-width:520px){
   .hero-actions{width:100%;flex-direction:column;align-items:stretch}
   .btn-primary,.btn-wa-hero{justify-content:center;width:100%;font-size:15px}
@@ -613,6 +619,18 @@ footer{border-top:1px solid var(--borde);padding:40px;max-width:1180px;margin:0 
 
   /* Problema stats */
   .prob-va-stat{font-size:32px}
+
+  /* How it works — alternating steps: texto + mock apilados */
+  .hw-step{grid-template-columns:1fr;gap:24px}
+  .hw-step--alt .hw-step__text{order:1}
+  .hw-step--alt .hw-step__mock{order:2}
+  .hw-step__mock{padding:24px 16px;min-height:auto}
+  .hw-step__num{font-size:36px}
+  .hw-step__title{font-size:18px}
+  .hw-steps{gap:36px}
+
+  /* How it works result grid */
+  .hw-result-grid{grid-template-columns:1fr}
 }
 
 /* ── FEATURE SHOWCASE (BENTO) ── */
