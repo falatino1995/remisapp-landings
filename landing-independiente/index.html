@@ -980,8 +980,8 @@ footer{border-top:1px solid var(--borde);padding:40px;max-width:1180px;margin:0 
   .flowv2-head{align-items:flex-start;flex-direction:column}
   .flowv2-tabs{justify-content:flex-start}
   .flowv2-grid{grid-template-columns:1fr}
-  .flowv2-card{order:1}
-  .flowv2-side{order:2}
+  .flowv2-card{order:2}
+  .flowv2-side{order:1}
   .flowv2-lanes{grid-template-columns:1fr}
   .flowv2-visual{min-height:auto;padding:16px}
   .f2-stage{flex-direction:column;min-height:auto;gap:10px}
@@ -1653,60 +1653,8 @@ footer{border-top:1px solid var(--borde);padding:40px;max-width:1180px;margin:0 
 
 <div class="divider"></div>
 
-<!-- FUSIÓN: CÓMO FUNCIONA -->
-<section class="section" id="como-funciona">
+<section class="section">
 <div class="container">
-  <div class="sec-eyebrow reveal">Cómo funciona</div>
-  <h2 class="sec-title reveal d1">El cliente pide.<br><span class="hl">Vos solo manejás.</span></h2>
-  <p class="sec-sub reveal d1">Todo lo que pasa entre medio lo hace el bot solo. Sin que toques el celular.</p>
-
-  <div class="flow-demo reveal d2">
-    <div class="flow-demo-shell">
-      <video class="flow-demo-video" autoplay muted loop playsinline preload="metadata" aria-label="Flujo cliente-bot-chofer en RemisApp Solo">
-        <source src="assets/video/dual-flow.mp4" type="video/mp4">
-      </video>
-    </div>
-  </div>
-
-  <div class="bot-div reveal d3" style="margin-top:32px">
-    <div class="bot-div-col bot-div-col--bot">
-      <div class="bot-div-hdr">
-        <div class="bot-div-ico">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><path d="M17 17h4M19 15v4"/></svg>
-        </div>
-        <span class="bot-div-title">El bot hace esto solo</span>
-      </div>
-      <ul class="bot-div-list">
-        <li><span class="ck2">✓</span>Atiende al cliente las 24 hs</li>
-        <li><span class="ck2">✓</span>Entiende origen y destino</li>
-        <li><span class="ck2">✓</span>Cotiza vs Uber en tiempo real</li>
-        <li><span class="ck2">✓</span>Confirma el viaje con el pasajero</li>
-        <li><span class="ck2">✓</span>Te avisa al instante</li>
-        <li><span class="ck2">✓</span>Manda el link de tracking</li>
-        <li><span class="ck2">✓</span>Gestiona viajes programados</li>
-        <li><span class="ck2">✓</span>Funciona los 365 días, sin descanso</li>
-      </ul>
-      <div class="bot-div-foot">8 tareas automáticas. Sin intervención tuya.</div>
-    </div>
-    <div class="bot-div-sep">
-      <svg class="bot-div-sep-arr" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--gris)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-      <span style="font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--gris);writing-mode:vertical-rl;margin-top:6px">vos</span>
-    </div>
-    <div class="bot-div-col bot-div-col--you">
-      <div class="bot-div-hdr">
-        <div class="bot-div-ico">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
-        </div>
-        <span class="bot-div-title">Lo que hacés vos</span>
-      </div>
-      <ul class="bot-div-list">
-        <li><span class="ck2">→</span>Aceptar o rechazar el viaje</li>
-        <li><span class="ck2">→</span>Manejar</li>
-      </ul>
-      <div class="bot-div-foot">Eso es todo. El resto lo hace el bot.</div>
-    </div>
-  </div>
-
   <div class="flowv2 reveal d4" id="flow-v2">
     <div class="flowv2-head">
       <div>
@@ -1811,6 +1759,64 @@ footer{border-top:1px solid var(--borde);padding:40px;max-width:1180px;margin:0 
           </div>
         </div>
       </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<div class="divider"></div>
+
+<!-- FUSIÓN: CÓMO FUNCIONA -->
+<section class="section" id="como-funciona">
+<div class="container">
+  <div class="sec-eyebrow reveal">Cómo funciona</div>
+  <h2 class="sec-title reveal d1">El cliente pide.<br><span class="hl">Vos solo manejás.</span></h2>
+  <p class="sec-sub reveal d1">Todo lo que pasa entre medio lo hace el bot solo. Sin que toques el celular.</p>
+
+  <div class="flow-demo reveal d2">
+    <div class="flow-demo-shell">
+      <video class="flow-demo-video" autoplay muted loop playsinline preload="metadata" aria-label="Flujo cliente-bot-chofer en RemisApp Solo">
+        <source src="assets/video/dual-flow.mp4" type="video/mp4">
+      </video>
+    </div>
+  </div>
+
+  <div class="bot-div reveal d3" style="margin-top:32px">
+    <div class="bot-div-col bot-div-col--bot">
+      <div class="bot-div-hdr">
+        <div class="bot-div-ico">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><path d="M17 17h4M19 15v4"/></svg>
+        </div>
+        <span class="bot-div-title">El bot hace esto solo</span>
+      </div>
+      <ul class="bot-div-list">
+        <li><span class="ck2">✓</span>Atiende al cliente las 24 hs</li>
+        <li><span class="ck2">✓</span>Entiende origen y destino</li>
+        <li><span class="ck2">✓</span>Cotiza vs Uber en tiempo real</li>
+        <li><span class="ck2">✓</span>Confirma el viaje con el pasajero</li>
+        <li><span class="ck2">✓</span>Te avisa al instante</li>
+        <li><span class="ck2">✓</span>Manda el link de tracking</li>
+        <li><span class="ck2">✓</span>Gestiona viajes programados</li>
+        <li><span class="ck2">✓</span>Funciona los 365 días, sin descanso</li>
+      </ul>
+      <div class="bot-div-foot">8 tareas automáticas. Sin intervención tuya.</div>
+    </div>
+    <div class="bot-div-sep">
+      <svg class="bot-div-sep-arr" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--gris)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      <span style="font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--gris);writing-mode:vertical-rl;margin-top:6px">vos</span>
+    </div>
+    <div class="bot-div-col bot-div-col--you">
+      <div class="bot-div-hdr">
+        <div class="bot-div-ico">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+        </div>
+        <span class="bot-div-title">Lo que hacés vos</span>
+      </div>
+      <ul class="bot-div-list">
+        <li><span class="ck2">→</span>Aceptar o rechazar el viaje</li>
+        <li><span class="ck2">→</span>Manejar</li>
+      </ul>
+      <div class="bot-div-foot">Eso es todo. El resto lo hace el bot.</div>
     </div>
   </div>
 
