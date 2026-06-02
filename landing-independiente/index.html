@@ -1292,6 +1292,10 @@ footer{border-top:1px solid var(--borde);padding:40px;max-width:1180px;margin:0 
 
 /* HOW IT WORKS — compact flow */
 .hw-flow{display:grid;grid-template-columns:1fr 32px 1fr 32px 1fr 32px 1fr;align-items:start;gap:0;margin-top:40px}
+@media(max-width:640px){
+  .hw-flow{grid-template-columns:1fr;gap:16px}
+  .hw-flow-arrow{display:none}
+}
 .hw-flow-arrow{display:flex;align-items:flex-start;justify-content:center;padding-top:60px;color:rgba(61,204,142,.5);font-size:20px}
 .hw-flow-node{display:flex;flex-direction:column;align-items:center;gap:0}
 .hw-flow-mock{width:100%;background:var(--card);border:1px solid var(--borde);border-radius:16px;padding:16px;display:flex;align-items:center;justify-content:center;min-height:140px;margin-bottom:16px}
