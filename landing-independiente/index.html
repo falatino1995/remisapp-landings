@@ -843,6 +843,39 @@ footer{border-top:1px solid var(--borde);padding:40px;max-width:1180px;margin:0 
 .flowv2-lane li::before{content:"✓";color:var(--verde);font-weight:800;margin-right:7px}
 .flowv2-lane--you li::before{content:"→";color:#FDE68A}
 .flowv2-side{display:flex;flex-direction:column;gap:12px}
+.flowv2-visual{min-height:260px;border-radius:22px;background:radial-gradient(circle at 18% 12%,rgba(61,204,142,.15),transparent 38%),linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.015));border:1px solid var(--borde);padding:18px;display:flex;align-items:center;justify-content:center;overflow:hidden;position:relative}
+.flowv2-visual::after{content:"";position:absolute;inset:auto -20% -45% -20%;height:150px;background:radial-gradient(circle,rgba(61,204,142,.16),transparent 64%);pointer-events:none}
+.f2-phone{width:190px;border-radius:24px;background:#071018;border:1px solid rgba(255,255,255,.18);box-shadow:0 20px 46px rgba(0,0,0,.52);overflow:hidden;position:relative;z-index:1}
+.f2-phone-head{padding:12px 13px;background:#0f2028;border-bottom:1px solid rgba(255,255,255,.07);display:flex;align-items:center;gap:8px}
+.f2-avatar{width:26px;height:26px;border-radius:50%;background:var(--verde);color:#071009;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;flex-shrink:0}
+.f2-name{font-size:10.5px;font-weight:800;color:var(--blanco);line-height:1.15}
+.f2-status{font-size:8.5px;color:var(--verde);margin-top:1px}
+.f2-chat{min-height:205px;padding:14px 12px;display:flex;flex-direction:column;gap:8px;background:linear-gradient(180deg,#071018,#060b0f)}
+.f2-bubble{max-width:86%;border-radius:12px;padding:8px 10px;font-size:10.5px;line-height:1.38;color:var(--blanco);box-shadow:0 8px 20px rgba(0,0,0,.16)}
+.f2-in{align-self:flex-start;background:#162630;border-radius:4px 12px 12px 12px}
+.f2-out{align-self:flex-end;background:#0a7c6c;border-radius:12px 4px 12px 12px}
+.f2-ok{align-self:flex-start;background:rgba(61,204,142,.16);border:1px solid var(--verde-border)}
+.f2-calendar{width:100%;max-width:270px;border-radius:22px;background:rgba(7,10,8,.72);border:1px solid var(--borde);padding:18px;position:relative;z-index:1}
+.f2-cal-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px}
+.f2-cal-month{font-family:'Barlow Condensed',sans-serif;font-size:26px;font-weight:800;color:var(--blanco);text-transform:uppercase}
+.f2-cal-pill{font-size:10px;font-weight:800;color:var(--verde);background:var(--verde-bg);border:1px solid var(--verde-border);border-radius:999px;padding:5px 9px}
+.f2-cal-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:5px;margin-bottom:14px}
+.f2-day{height:25px;border-radius:8px;background:rgba(255,255,255,.04);display:flex;align-items:center;justify-content:center;font-size:10px;color:var(--gris2)}
+.f2-day.hot{background:var(--verde);color:#071009;font-weight:900;box-shadow:0 0 24px rgba(61,204,142,.28)}
+.f2-alert{border-radius:14px;background:rgba(61,204,142,.09);border:1px solid var(--verde-border);padding:12px}
+.f2-alert-title{font-size:12px;font-weight:900;color:var(--blanco);margin-bottom:4px}
+.f2-alert-copy{font-size:10.5px;color:var(--gris2);line-height:1.45}
+.f2-pay{width:100%;max-width:280px;display:grid;grid-template-columns:1fr;gap:12px;position:relative;z-index:1}
+.f2-pay-card,.f2-map-card{border-radius:18px;background:rgba(7,10,8,.76);border:1px solid var(--borde);padding:16px}
+.f2-pay-row{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.f2-pay-brand{font-size:12px;font-weight:900;color:var(--blanco)}
+.f2-pay-amount{font-family:'Barlow Condensed',sans-serif;font-size:30px;font-weight:800;color:var(--verde)}
+.f2-pay-link{margin-top:10px;border-radius:999px;background:var(--verde);color:#071009;text-align:center;padding:8px 12px;font-size:11px;font-weight:900}
+.f2-map{height:88px;border-radius:14px;background:linear-gradient(135deg,rgba(61,204,142,.18),rgba(255,255,255,.03));position:relative;overflow:hidden}
+.f2-route{position:absolute;left:24px;right:34px;top:42px;height:2px;background:linear-gradient(90deg,var(--verde),rgba(61,204,142,.18));transform:rotate(-8deg);transform-origin:left}
+.f2-pin{position:absolute;width:12px;height:12px;border-radius:50%;background:var(--verde);box-shadow:0 0 18px rgba(61,204,142,.7)}
+.f2-pin.a{left:24px;top:48px}.f2-pin.b{right:32px;top:30px;background:#FDE68A}
+.f2-map-label{margin-top:9px;font-size:11px;color:var(--gris2)}
 .flowv2-mini{background:rgba(255,255,255,.035);border:1px solid var(--borde);border-radius:18px;padding:16px;display:flex;gap:13px;align-items:flex-start;transition:border-color .2s,background .2s}
 .flowv2-mini.active{border-color:var(--verde-border);background:rgba(61,204,142,.07)}
 .flowv2-mini-num{font-family:'Barlow Condensed',sans-serif;font-size:22px;font-weight:800;color:var(--verde);line-height:1;min-width:28px}
@@ -1608,6 +1641,23 @@ footer{border-top:1px solid var(--borde);padding:40px;max-width:1180px;margin:0 
       </div>
 
       <div class="flowv2-side">
+        <div class="flowv2-visual" data-flow-visual>
+          <div class="f2-phone">
+            <div class="f2-phone-head">
+              <div class="f2-avatar">JG</div>
+              <div>
+                <div class="f2-name">Jose Gomez - Bot</div>
+                <div class="f2-status">en línea</div>
+              </div>
+            </div>
+            <div class="f2-chat">
+              <div class="f2-bubble f2-in">Hola, necesito un remis</div>
+              <div class="f2-bubble f2-in">¿Desde dónde salís?</div>
+              <div class="f2-bubble f2-out">Av. Corrientes 1234</div>
+              <div class="f2-bubble f2-ok">Solicitud lista para aceptar</div>
+            </div>
+          </div>
+        </div>
         <div class="flowv2-mini active" data-flow-step="0">
           <div class="flowv2-mini-num">01</div>
           <div>
@@ -2812,6 +2862,22 @@ document.addEventListener('DOMContentLoaded', pv2Calc);
       copy: 'El cliente te escribe por WhatsApp, el bot pide origen y destino, cotiza con referencia Uber y te manda la solicitud lista para aceptar.',
       bot: ['Atiende el mensaje inicial', 'Pide origen y destino', 'Cotiza y confirma con el cliente'],
       you: ['Aceptás o rechazás', 'Vas a buscarlo'],
+      visual: `
+        <div class="f2-phone">
+          <div class="f2-phone-head">
+            <div class="f2-avatar">JG</div>
+            <div>
+              <div class="f2-name">Jose Gomez - Bot</div>
+              <div class="f2-status">en línea</div>
+            </div>
+          </div>
+          <div class="f2-chat">
+            <div class="f2-bubble f2-in">Hola, necesito un remis</div>
+            <div class="f2-bubble f2-in">¿Desde dónde salís?</div>
+            <div class="f2-bubble f2-out">Av. Corrientes 1234</div>
+            <div class="f2-bubble f2-ok">Solicitud lista para aceptar</div>
+          </div>
+        </div>`,
       steps: [
         ['Cliente escribe', 'El pedido entra por tu link o QR, directo a WhatsApp.'],
         ['Bot resuelve', 'Pregunta, cotiza, valida y deja todo ordenado.'],
@@ -2824,6 +2890,21 @@ document.addEventListener('DOMContentLoaded', pv2Calc);
       copy: 'El pasajero reserva para otro día u horario. El bot guarda la solicitud, la organiza y te avisa antes para que no dependas de acordarte.',
       bot: ['Toma fecha, hora y recorrido', 'Agenda la reserva', 'Dispara recordatorios antes del viaje'],
       you: ['Confirmás disponibilidad', 'Salís a horario'],
+      visual: `
+        <div class="f2-calendar">
+          <div class="f2-cal-top">
+            <div class="f2-cal-month">Mañana</div>
+            <div class="f2-cal-pill">21:30</div>
+          </div>
+          <div class="f2-cal-grid">
+            <div class="f2-day">L</div><div class="f2-day">M</div><div class="f2-day">M</div><div class="f2-day hot">J</div><div class="f2-day">V</div><div class="f2-day">S</div><div class="f2-day">D</div>
+            <div class="f2-day">18</div><div class="f2-day">19</div><div class="f2-day">20</div><div class="f2-day hot">21</div><div class="f2-day">22</div><div class="f2-day">23</div><div class="f2-day">24</div>
+          </div>
+          <div class="f2-alert">
+            <div class="f2-alert-title">Alerta previa</div>
+            <div class="f2-alert-copy">Aeropuerto - 21:30 - el bot te avisa antes.</div>
+          </div>
+        </div>`,
       steps: [
         ['Cliente reserva', 'Pide un viaje para mañana, aeropuerto o una hora puntual.'],
         ['Bot agenda', 'Guarda los datos y prepara el aviso automático.'],
@@ -2836,6 +2917,24 @@ document.addEventListener('DOMContentLoaded', pv2Calc);
       copy: 'Después de confirmar, el bot puede mandar el link de pago y el seguimiento en vivo para que el cliente sepa dónde estás.',
       bot: ['Genera link de Mercado Pago', 'Manda tracking en vivo', 'Actualiza el estado del viaje'],
       you: ['Cobrás directo', 'Manejás sin intermediarios'],
+      visual: `
+        <div class="f2-pay">
+          <div class="f2-pay-card">
+            <div class="f2-pay-row">
+              <div class="f2-pay-brand">Mercado Pago</div>
+              <div class="f2-pay-amount">$9.500</div>
+            </div>
+            <div class="f2-pay-link">Link de pago enviado</div>
+          </div>
+          <div class="f2-map-card">
+            <div class="f2-map">
+              <div class="f2-route"></div>
+              <div class="f2-pin a"></div>
+              <div class="f2-pin b"></div>
+            </div>
+            <div class="f2-map-label">Tracking en vivo para el pasajero</div>
+          </div>
+        </div>`,
       steps: [
         ['Cliente confirma', 'El viaje ya está acordado y listo para cobrar.'],
         ['Bot manda links', 'Pago y tracking salen por WhatsApp automáticamente.'],
@@ -2862,6 +2961,8 @@ document.addEventListener('DOMContentLoaded', pv2Calc);
     if(copy) copy.textContent = state.copy;
     fillList(wrap.querySelector('[data-flow-bot]'), state.bot);
     fillList(wrap.querySelector('[data-flow-you]'), state.you);
+    const visual = wrap.querySelector('[data-flow-visual]');
+    if(visual && state.visual) visual.innerHTML = state.visual;
     wrap.querySelectorAll('[data-flow-step]').forEach((card, i) => {
       const step = state.steps[i];
       const titleEl = card.querySelector('.flowv2-mini-title');
