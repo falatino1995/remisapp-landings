@@ -1332,24 +1332,28 @@ footer{border-top:1px solid var(--borde);padding:40px;max-width:1180px;margin:0 
 .mc-ok{background:var(--verde);color:#000;font-weight:700;align-self:flex-end}
 </style>
 <script>
-!function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.async=!0,p.src=s.api_host.replace(".i.posthog.com","").replace("i.posthog.com","")+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+" (stub)"},g(u,["capture","identify","alias","people.set","people.set_once","set","on","once","reset","opt_in_capturing","opt_out_capturing","has_opted_in_capturing","has_opted_out_capturing","register","register_once","unregister","get_distinct_id"]),e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
-posthog.init("phc_BWpZouDvHARDDTR9BvG8rbRKiwVUkE8ey3dn3nk3tGqs",{api_host:"https://us.i.posthog.com",person_profiles:"identified_only"});
-
-// CTA clicks
-document.addEventListener("click",function(e){
-  var a=e.target.closest("a[href*='empezar']");
-  if(a){posthog.capture("cta_click",{text:a.textContent.trim().slice(0,40),section:a.closest("[id]")?a.closest("[id]").id:""});}
-  var w=e.target.closest("a[href*='wa.me']");
-  if(w){posthog.capture("whatsapp_click");}
-});
-
-// Scroll depth
 (function(){
-  var marks={25:false,50:false,75:false,100:false};
-  window.addEventListener("scroll",function(){
-    var pct=Math.round((window.scrollY+window.innerHeight)/document.body.scrollHeight*100);
-    [25,50,75,100].forEach(function(m){if(!marks[m]&&pct>=m){marks[m]=true;posthog.capture("scroll_depth",{pct:m});}});
-  },{passive:true});
+  var s=document.createElement('script');
+  s.src='https://us-assets.i.posthog.com/static/array.js';
+  s.async=true;
+  s.onload=function(){
+    posthog.init('phc_BWpZouDvHARDDTR9BvG8rbRKiwVUkE8ey3dn3nk3tGqs',{
+      api_host:'https://us.i.posthog.com',
+      person_profiles:'identified_only'
+    });
+    document.addEventListener('click',function(e){
+      var a=e.target.closest("a[href*='empezar']");
+      if(a) posthog.capture('cta_click',{text:a.textContent.trim().slice(0,40)});
+      var w=e.target.closest("a[href*='wa.me']");
+      if(w) posthog.capture('whatsapp_click');
+    });
+    var marks={25:false,50:false,75:false,100:false};
+    window.addEventListener('scroll',function(){
+      var pct=Math.round((window.scrollY+window.innerHeight)/document.body.scrollHeight*100);
+      [25,50,75,100].forEach(function(m){if(!marks[m]&&pct>=m){marks[m]=true;posthog.capture('scroll_depth',{pct:m});}});
+    },{passive:true});
+  };
+  document.head.appendChild(s);
 })();
 </script>
 </head>
