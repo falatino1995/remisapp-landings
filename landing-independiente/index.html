@@ -456,6 +456,19 @@ nav{
 
 /* stats-strip kept for any fallback references */
 
+/* ── CLIENT VALUE ── */
+.client-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:44px}
+.client-card{background:var(--card);border:1px solid var(--borde);border-radius:var(--r20);padding:30px 26px;transition:border-color .2s,transform .2s}
+.client-card:hover{border-color:var(--verde-border);transform:translateY(-2px)}
+.client-icon{font-size:26px;margin-bottom:12px;line-height:1}
+.client-card h3{font-family:'Barlow Condensed',sans-serif;font-size:1.25rem;font-weight:700;color:var(--blanco);margin:0 0 8px;letter-spacing:-.01em}
+.client-card p{font-size:14px;color:var(--gris2);line-height:1.7;margin:0}
+.client-extra{margin-top:20px;padding:24px 28px;background:var(--verde-bg);border:1px solid var(--verde-border);border-radius:var(--r20);display:flex;flex-wrap:wrap;align-items:center;gap:14px}
+.client-extra-label{font-size:13px;color:var(--gris2);flex-shrink:0}
+.client-pills{display:flex;flex-wrap:wrap;gap:8px}
+.client-pill{background:var(--card);border:1px solid var(--borde);border-radius:var(--r999);padding:6px 14px;font-size:12.5px;color:var(--blanco)}
+@media(max-width:640px){.client-grid{grid-template-columns:1fr}}
+
 /* ── TESTIMONIALS ── */
 .testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
 .testi-card{background:var(--card);border:1px solid var(--borde);border-radius:var(--r16);padding:28px 26px;transition:border-color .2s,transform .2s}
@@ -2346,6 +2359,47 @@ footer{border-top:1px solid var(--borde);padding:40px;max-width:1180px;margin:0 
 
   </div>
 
+</div>
+</section>
+
+<!-- PROPUESTA AL CLIENTE -->
+<section class="section" id="para-tus-clientes">
+<div class="container">
+  <div class="sec-eyebrow reveal">Para tus clientes</div>
+  <h2 class="sec-title reveal d1">Lo que le podés ofrecer<br><span class="hl">que Uber nunca va a poder.</span></h2>
+  <p class="sec-sub reveal d1">No es solo un viaje. Es un servicio con nombre, número y cara conocida. En una región donde las apps no generan confianza, eso vale muchísimo.</p>
+  <div class="client-grid">
+    <div class="client-card reveal d1">
+      <div class="client-icon">🤝</div>
+      <h3>Confianza real, no un algoritmo</h3>
+      <p>Tus clientes saben con quién van. Tu nombre, tu número, tu cara. No un desconocido asignado al azar que mañana puede no aparecer.</p>
+    </div>
+    <div class="client-card reveal d2">
+      <div class="client-icon">💰</div>
+      <h3>Precio sin sorpresas</h3>
+      <p>Sin precio dinámico. Sin algoritmos que suben en lluvia, feriado o hora pico. El precio es siempre el mismo — y muchas veces mejor que Uber.</p>
+    </div>
+    <div class="client-card reveal d3">
+      <div class="client-icon">💬</div>
+      <h3>Atención directa, sin intermediarios</h3>
+      <p>Si necesitan cambiar el horario o el destino, te escriben a vos. No esperan respuesta de un chatbot de soporte que nadie controla.</p>
+    </div>
+    <div class="client-card reveal d4">
+      <div class="client-icon">📣</div>
+      <h3>Clientes que te recomiendan</h3>
+      <p>"Usá a Diego, es mi chofer de siempre." Un cliente fiel te recomienda a familia y amigos. Eso vale más que cualquier campaña publicitaria.</p>
+    </div>
+  </div>
+  <div class="client-extra reveal d2">
+    <span class="client-extra-label">Y además tienen todo lo que esperan de una app moderna:</span>
+    <div class="client-pills">
+      <span class="client-pill">📍 Tracking en tiempo real</span>
+      <span class="client-pill">📅 Reservas programadas</span>
+      <span class="client-pill">💳 MercadoPago o efectivo</span>
+      <span class="client-pill">✅ Confirmación automática</span>
+      <span class="client-pill">📲 Sin descargas</span>
+    </div>
+  </div>
 </div>
 </section>
 
