@@ -1467,11 +1467,11 @@ footer{border-top:1px solid var(--borde);padding:40px;max-width:1180px;margin:0 
 .paym-badge svg{flex-shrink:0}
 
 /* HOW IT WORKS — compact flow */
-.hw-flow{display:grid;grid-template-columns:1fr 32px 1fr 32px 1fr 32px 1fr;align-items:start;gap:0;margin-top:40px}
-.hw-flow-arrow{display:flex;align-items:flex-start;justify-content:center;padding-top:60px;color:rgba(61,204,142,.5);font-size:20px}
+.hw-flow{display:grid;grid-template-columns:1fr 36px 1fr 36px 1fr 36px 1fr;align-items:start;gap:0;margin-top:40px}
+.hw-flow-arrow{display:flex;align-items:flex-start;justify-content:center;padding-top:56px;color:rgba(61,204,142,.88);font-size:24px;font-weight:900;text-shadow:0 0 18px rgba(61,204,142,.26)}
 @media(max-width:640px){
   .hw-flow{grid-template-columns:1fr;gap:0}
-  .hw-flow-arrow{padding:10px 0;font-size:28px;font-weight:900;color:rgba(61,204,142,.8);transform:rotate(90deg)}
+  .hw-flow-arrow{padding:10px 0;font-size:30px;font-weight:900;color:rgba(61,204,142,.92);transform:rotate(90deg)}
 }
 .hw-flow-node{display:flex;flex-direction:column;align-items:center;gap:0}
 .hw-flow-mock{width:100%;background:var(--card);border:1px solid var(--borde);border-radius:16px;padding:16px;display:flex;align-items:center;justify-content:center;min-height:140px;margin-bottom:16px}
@@ -1491,12 +1491,11 @@ footer{border-top:1px solid var(--borde);padding:40px;max-width:1180px;margin:0 
 .ml-name-mini{font-size:10px;font-weight:700;color:var(--blanco)}
 .ml-btn-mini{background:var(--verde);border-radius:999px;padding:4px 12px;font-size:9px;font-weight:700;color:#000}
 /* Mini QR share */
-.mqr-wrap{display:flex;flex-direction:column;align-items:center;gap:10px;width:100%}
-.mqr-box{background:#fff;border-radius:8px;padding:8px;display:flex;flex-direction:column;align-items:center;gap:4px}
-.mqr-grid{display:grid;grid-template-columns:repeat(9,5px);grid-template-rows:repeat(9,5px);gap:1px}
-.mqr-url{font-size:7px;color:#666;font-family:monospace}
-.mqr-icons{display:flex;gap:10px}
-.mqr-icon{width:28px;height:28px;border-radius:50%;background:var(--card);border:1px solid var(--borde);display:flex;align-items:center;justify-content:center;font-size:13px}
+.mqr-wrap{display:flex;flex-direction:column;align-items:center;gap:12px;width:100%;max-width:240px}
+.mqr-box{width:100%;max-width:164px;border-radius:14px;overflow:hidden;background:#fff;box-shadow:0 10px 28px rgba(0,0,0,.32);border:1px solid rgba(255,255,255,.12)}
+.mqr-img{display:block;width:100%;height:auto}
+.mqr-icons{display:flex;gap:14px}
+.mqr-icon{width:34px;height:34px;border-radius:50%;background:var(--card);border:1px solid var(--borde);display:flex;align-items:center;justify-content:center;font-size:16px;box-shadow:0 6px 18px rgba(0,0,0,.22)}
 /* Mini chat */
 .mc-wrap{display:flex;flex-direction:column;gap:5px;width:100%}
 .mc-header{display:flex;align-items:center;gap:6px;padding-bottom:6px;border-bottom:1px solid rgba(255,255,255,.08);margin-bottom:2px}
@@ -2857,13 +2856,12 @@ footer{border-top:1px solid var(--borde);padding:40px;max-width:1180px;margin:0 
       <div class="hw-flow-mock">
         <div class="mqr-wrap">
           <div class="mqr-box">
-            <div class="mqr-grid"><div class="qc"></div><div class="qc"></div><div class="qc"></div><div class="qc"></div><div class="qc"></div><div class="qc"></div><div class="qc"></div><div class="qw"></div><div class="qc"></div><div class="qc"></div><div class="qw"></div><div class="qw"></div><div class="qw"></div><div class="qw"></div><div class="qw"></div><div class="qc"></div><div class="qw"></div><div class="qw"></div><div class="qc"></div><div class="qw"></div><div class="qc"></div><div class="qc"></div><div class="qc"></div><div class="qw"></div><div class="qc"></div><div class="qw"></div><div class="qc"></div><div class="qc"></div><div class="qw"></div><div class="qc"></div><div class="qc"></div><div class="qc"></div><div class="qw"></div><div class="qc"></div><div class="qw"></div><div class="qw"></div><div class="qc"></div><div class="qw"></div><div class="qc"></div><div class="qc"></div><div class="qc"></div><div class="qw"></div><div class="qc"></div><div class="qw"></div><div class="qc"></div><div class="qc"></div><div class="qw"></div><div class="qw"></div><div class="qw"></div><div class="qw"></div><div class="qw"></div><div class="qc"></div><div class="qw"></div><div class="qc"></div><div class="qc"></div><div class="qc"></div><div class="qc"></div><div class="qc"></div><div class="qc"></div><div class="qc"></div><div class="qc"></div><div class="qw"></div><div class="qw"></div><div class="qw"></div><div class="qw"></div><div class="qw"></div><div class="qw"></div><div class="qw"></div><div class="qw"></div><div class="qw"></div><div class="qw"></div><div class="qc"></div><div class="qc"></div><div class="qw"></div><div class="qc"></div><div class="qc"></div><div class="qw"></div><div class="qc"></div><div class="qw"></div><div class="qc"></div><div class="qc"></div></div>
-            <div class="mqr-url">remisapp.link/marcelo</div>
+            <img src="assets/qr-card.png" class="mqr-img" alt="QR para compartir tu link">
           </div>
           <div class="mqr-icons">
-            <div class="mqr-icon"><svg width="13" height="13" viewBox="0 0 24 24" fill="#25D366"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></div>
-            <div class="mqr-icon"><svg width="13" height="13" viewBox="0 0 24 24" fill="none"><defs><linearGradient id="ig3" x1="2" y1="22" x2="22" y2="2" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#f09433"/><stop offset="100%" stop-color="#bc1888"/></linearGradient></defs><rect x="2" y="2" width="20" height="20" rx="5" stroke="url(#ig3)" stroke-width="2"/><circle cx="12" cy="12" r="5" stroke="url(#ig3)" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1.5" fill="url(#ig3)"/></svg></div>
-            <div class="mqr-icon">&#128663;</div>
+            <div class="mqr-icon"><svg width="17" height="17" viewBox="0 0 24 24" fill="#25D366"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></div>
+            <div class="mqr-icon"><svg width="17" height="17" viewBox="0 0 24 24" fill="none"><defs><linearGradient id="ig3" x1="2" y1="22" x2="22" y2="2" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#f09433"/><stop offset="100%" stop-color="#bc1888"/></linearGradient></defs><rect x="2" y="2" width="20" height="20" rx="5" stroke="url(#ig3)" stroke-width="2"/><circle cx="12" cy="12" r="5" stroke="url(#ig3)" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1.5" fill="url(#ig3)"/></svg></div>
+            <div class="mqr-icon">🚕</div>
           </div>
         </div>
       </div>
