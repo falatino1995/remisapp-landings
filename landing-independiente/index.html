@@ -167,6 +167,7 @@ nav{
 .hero-title{font-family:'Barlow Condensed',sans-serif;font-size:clamp(48px,6.8vw,96px);font-weight:800;line-height:.95;letter-spacing:-.01em;text-transform:uppercase;color:var(--blanco);margin-bottom:22px}
 .hero-title .hl{color:var(--verde)}
 .hero-title .dim{color:var(--gris2);font-size:.82em;text-decoration:line-through;letter-spacing:-.02em}
+.hero-loop{margin-top:-8px}
 .hero-sub{font-size:18px;font-weight:400;color:var(--gris2);line-height:1.74;margin-bottom:28px;max-width:520px}
 .hero-trust{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;max-width:560px;margin:0 0 28px}
 .hero-trust-card{padding:14px 14px 15px;border-radius:18px;background:rgba(10,15,12,.72);border:1px solid rgba(255,255,255,.08);box-shadow:var(--shadow-soft)}
@@ -1437,11 +1438,11 @@ footer{border-top:1px solid var(--borde);padding:40px;max-width:1180px;margin:0 
     <div class="hero-badge">
       <span class="badge-pct">Gratis</span>&nbsp;— 3 viajes por mes incluidos, sin tarjeta.
     </div>
-    <h1 class="hero-title">
-      Tus clientes.<br>Tus precios.<br>
-      <span class="hl" id="hvd-hl">Tu canal propio de viajes por WhatsApp.</span>
-    </h1>
-    <p class="hero-sub">Tus clientes te escriben a vos y el sistema responde, organiza y ordena cada viaje sin que tengas que gestionar todo a mano.</p>
+    <h1 class="hero-title">Tu canal propio de viajes por WhatsApp.</h1>
+    <div class="hero-title hero-loop">
+      <span class="hl" id="hvd-hl">Responde y coordina viajes solo.</span>
+    </div>
+    <p class="hero-sub">Tus clientes te escriben a vos y el sistema se encarga de ordenar cada viaje sin que tengas que gestionar todo a mano.</p>
     <div class="hero-trust">
       <div class="hero-trust-card"><span class="hero-trust-kicker">Modelo</span><span class="hero-trust-value">Directo</span><span class="hero-trust-copy">Los clientes son tuyos, siempre.</span></div>
       <div class="hero-trust-card"><span class="hero-trust-kicker">Tarifa</span><span class="hero-trust-value">100%</span><span class="hero-trust-copy">La plata del viaje queda de tu lado.</span></div>
@@ -1500,14 +1501,6 @@ footer{border-top:1px solid var(--borde);padding:40px;max-width:1180px;margin:0 
             <div class="hvd-desc">Toma viajes programados y te avisa a tiempo para que no se te pase ninguno.</div>
           </div>
         </div>
-        <div class="hvd-item" id="hvd-i5">
-          <div class="hvd-item-bar"></div>
-          <div class="hvd-ico">🔗</div>
-          <div class="hvd-text">
-            <div class="hvd-name">Tu canal propio</div>
-            <div class="hvd-desc">Tu link. Los clientes te escriben a vos, no a una app.</div>
-          </div>
-        </div>
       </div>
       <!-- Mockup slot -->
       <div class="hvd-mock-slot">
@@ -1530,10 +1523,6 @@ footer{border-top:1px solid var(--borde);padding:40px;max-width:1180px;margin:0 
         <div class="hvd-mock" id="hvd-m4">
           <div class="hvd-mock-tag">Viajes programados</div>
           <img src="assets/feat-programado-2.png" class="hvd-mock-img" alt="Programados">
-        </div>
-        <div class="hvd-mock" id="hvd-m5">
-          <div class="hvd-mock-tag">Tu canal propio</div>
-          <img src="assets/perfil-link-celular-01.png" class="hvd-mock-img" alt="Canal propio">
         </div>
       </div>
     </div>
@@ -3077,15 +3066,14 @@ async function handleSubmit(e){
   const states = [
     { item:0, mock:0, title:'Responde y coordina viajes solo.' },
     { item:1, mock:1, title:'Cotiza con referencia Uber.'      },
+    { item:4, mock:4, title:'Recibe reservas y las agenda.'    },
     { item:2, mock:2, title:'Comparte tracking en vivo.'       },
     { item:3, mock:3, title:'Cobra con Mercado Pago.'          },
-    { item:4, mock:4, title:'Recibe reservas y las agenda.'    },
-    { item:5, mock:5, title:'Tu canal propio.'                 },
   ];
   let cur = 0;
   function hvdStep(){
     const s = states[cur];
-    [0,1,2,3,4,5].forEach(i=>{
+    [0,1,2,3,4].forEach(i=>{
       const it=document.getElementById('hvd-i'+i); if(it) it.classList.remove('hvd-on');
       const m=document.getElementById('hvd-m'+i); if(m) m.classList.remove('hvd-mock-on');
     });
