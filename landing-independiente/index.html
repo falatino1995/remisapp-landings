@@ -1683,7 +1683,7 @@ footer{border-top:1px solid var(--borde);padding:40px;max-width:1180px;margin:0 
 
   <div class="prob-bridge reveal d4">
     <div class="prob-bridge-icon">💡</div>
-    <p>Por eso existe RemisApp. <strong>Tu propio bot de WhatsApp</strong> que atiende a tus clientes, cotiza viajes y confirma reservas — mientras vos manejás. Sin comisión, sin perder clientes.</p>
+    <p>Por eso existe RemisApp. <strong>Tu canal propio de viajes por WhatsApp</strong>: el sistema responde, cotiza, agenda y ordena cada pedido mientras vos manejás. Sin comisión, sin perder clientes.</p>
   </div>
   </div>
 </div>
@@ -1698,8 +1698,8 @@ footer{border-top:1px solid var(--borde);padding:40px;max-width:1180px;margin:0 
     <div class="flowv2-head">
       <div>
         <div class="flowv2-kicker">Momentos clave del sistema</div>
-        <div class="flowv2-title">Qué hace el bot,<br>paso a paso.</div>
-        <p class="flowv2-sub">Elegí el momento que más te interesa y mirá cómo funciona el bot: pedido, reserva, cobro y tracking.</p>
+        <div class="flowv2-title">Cómo trabaja el sistema,<br>paso a paso.</div>
+        <p class="flowv2-sub">Elegí el momento que más te interesa y mirá cómo responde, organiza y acompaña cada viaje: pedido, reserva, cobro y tracking.</p>
       </div>
       <div class="flowv2-tabs" role="tablist" aria-label="Modos del flujo RemisApp">
         <button class="flowv2-tab active" type="button" data-flow-mode="now">Pedido ahora</button>
@@ -1877,10 +1877,10 @@ footer{border-top:1px solid var(--borde);padding:40px;max-width:1180px;margin:0 
 
 <!-- FEATURE SHOWCASE -->
 <section class="section" id="funcionalidades">
-<div class="container">
+  <div class="container">
   <div class="sec-eyebrow reveal">El producto</div>
-  <h2 class="sec-title reveal d1">Qué hace el bot<br><span class="hl">de RemisApp</span></h2>
-  <p class="sec-sub reveal d1">Todo por WhatsApp, sin apps nuevas. Gratis para empezar — sin tarjeta de crédito.</p>
+  <h2 class="sec-title reveal d1">Todo lo que te ayuda a<br><span class="hl">captar, operar y cobrar mejor.</span></h2>
+  <p class="sec-sub reveal d1">No es solo un bot. Es tu canal propio de viajes por WhatsApp para recibir pedidos, ordenar la operación y cobrar directo. Gratis para empezar, sin tarjeta.</p>
   <div class="feat-grid reveal d2" style="margin-top:36px">
 
     <div class="feat-card">
@@ -2804,7 +2804,7 @@ footer{border-top:1px solid var(--borde);padding:40px;max-width:1180px;margin:0 
     <span class="pricing-proof-pill"><strong>Sin permanencia</strong> ni contrato</span>
   </div>
   <h2 class="sec-title reveal d1">Si us&aacute;s poco,<br><span class="hl">no pag&aacute;s nada.</span></h2>
-  <p class="sec-sub reveal d1">Cada mes ten&eacute;s 3 viajes gratis, siempre. Si necesit&aacute;s m&aacute;s, eleg&iacute;s &mdash; packs puntuales o mensual ilimitado.</p>
+  <p class="sec-sub reveal d1">Cada mes ten&eacute;s 3 viajes gratis, siempre. Si necesit&aacute;s m&aacute;s, eleg&iacute;s entre packs puntuales o mensual ilimitado. Si lo us&aacute;s de vez en cuando, pag&aacute;s solo cuando te sirve. Si ya oper&aacute;s todos los d&iacute;as, el mensual te deja trabajar sin mirar cr&eacute;ditos.</p>
 
   <div class="pricing-grid reveal d2">
 
@@ -2878,6 +2878,14 @@ footer{border-top:1px solid var(--borde);padding:40px;max-width:1180px;margin:0 
   <div style="height:40px"></div>
   <div class="faq-list reveal d2">
     <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">¿Qué hace realmente el sistema solo?<span class="faq-arrow">⌄</span></button>
+      <div class="faq-a">Responde el primer mensaje, toma origen y destino, cotiza con referencia Uber, confirma con el cliente, comparte tracking, agenda reservas y puede mandar el cobro. Vos intervenís cuando el viaje ya está listo o cuando querés decidir algo.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">¿Cuánto cuesta RemisApp Solo?<span class="faq-arrow">⌄</span></button>
+      <div class="faq-a">Tenés 3 viajes gratis por mes, siempre, sin tarjeta. Si necesitás más, podés comprar packs (5 viajes $2.000 / 12 viajes $4.000 / 20 viajes $6.500) o suscribirte al plan mensual por $4.900/mes con viajes ilimitados. Cancelás cuando querés, sin permanencia.</div>
+    </div>
+    <div class="faq-item">
       <button class="faq-q" onclick="toggleFaq(this)">¿Tengo que dejar de usar Uber para usar RemisApp Solo?<span class="faq-arrow">⌄</span></button>
       <div class="faq-a">Para nada. Podés usar los dos en paralelo. La idea es que vayas construyendo tu cartera propia mientras seguís con Uber. Con el tiempo, dependés menos de la plataforma.</div>
     </div>
@@ -2888,10 +2896,6 @@ footer{border-top:1px solid var(--borde);padding:40px;max-width:1180px;margin:0 
     <div class="faq-item">
       <button class="faq-q" onclick="toggleFaq(this)">¿Cómo funciona el precio de referencia de Uber?<span class="faq-arrow">⌄</span></button>
       <div class="faq-a">El sistema puede consultar el precio que cobraría Uber para el mismo viaje y usarlo como referencia. Vos elegís si cobrar igual, más barato o más caro. La decisión siempre es tuya.</div>
-    </div>
-    <div class="faq-item">
-      <button class="faq-q" onclick="toggleFaq(this)">¿Cuánto cuesta RemisApp Solo?<span class="faq-arrow">⌄</span></button>
-      <div class="faq-a">Tenés 3 viajes gratis por mes, siempre, sin tarjeta. Si necesitás más, podés comprar packs (5 viajes $2.000 / 12 viajes $4.000 / 20 viajes $6.500) o suscribirte al plan mensual por $4.900/mes con viajes ilimitados. Cancelás cuando querés, sin permanencia.</div>
     </div>
     <div class="faq-item">
       <button class="faq-q" onclick="toggleFaq(this)">¿Necesito saber de tecnología para configurarlo?<span class="faq-arrow">⌄</span></button>
