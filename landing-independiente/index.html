@@ -168,7 +168,7 @@ nav{
 .hero-title .hl{color:var(--verde)}
 .hero-title .dim{color:var(--gris2);font-size:.82em;text-decoration:line-through;letter-spacing:-.02em}
 .hero-loop{font-size:clamp(34px,4.8vw,62px);line-height:.92;margin-top:0;margin-bottom:18px;max-width:11ch}
-.hero-sub{font-size:18px;font-weight:400;color:var(--gris2);line-height:1.74;margin-bottom:28px;max-width:520px}
+.hero-sub{font-size:18px;font-weight:400;color:var(--gris2);line-height:1.68;margin-bottom:24px;max-width:500px}
 .hero-trust{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;max-width:560px;margin:0 0 28px}
 .hero-trust-card{padding:14px 14px 15px;border-radius:18px;background:rgba(10,15,12,.72);border:1px solid rgba(255,255,255,.08);box-shadow:var(--shadow-soft)}
 .hero-trust-kicker{display:block;font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gris);margin-bottom:7px}
@@ -592,7 +592,7 @@ footer{border-top:1px solid var(--borde);padding:40px;max-width:1180px;margin:0 
   .nav-center{display:none}
   .nav-switch,.nav-login{display:none}
   .hamburger{display:flex}
-  .hero{padding:80px 0 48px}
+  .hero{padding:72px 0 38px;gap:24px}
   .hero-trust{grid-template-columns:1fr}
   .section{padding:68px 0}
   .problem-grid,.feat-grid,.vs-grid{grid-template-columns:1fr}
@@ -616,9 +616,10 @@ footer{border-top:1px solid var(--borde);padding:40px;max-width:1180px;margin:0 
   .tq-feat{padding:0 18px;font-size:13px}
 
   /* Hero */
-  .hero-title{font-size:clamp(40px,13vw,58px);line-height:.96;margin-bottom:14px}
-  .hero-loop{font-size:clamp(30px,10.5vw,46px);margin-bottom:14px}
-  .hero-sub{font-size:15px}
+  .hero{padding:68px 0 26px;gap:18px}
+  .hero-title{font-size:clamp(38px,12vw,54px);line-height:.96;margin-bottom:12px}
+  .hero-loop{font-size:clamp(28px,9.6vw,42px);line-height:.94;margin-bottom:12px}
+  .hero-sub{font-size:15px;line-height:1.58;margin-bottom:18px}
   .mobile-menu{padding:20px 16px}
 
   /* Steps */
@@ -654,10 +655,12 @@ footer{border-top:1px solid var(--borde);padding:40px;max-width:1180px;margin:0 
   .hero{padding:84px 0 32px}
 
   /* Trust cards — 3 columnas compactas en vez de apiladas */
-  .hero-trust{grid-template-columns:repeat(3,1fr);gap:8px}
-  .hero-trust-card{padding:10px 8px}
+  .hero-trust{grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:18px}
+  .hero-trust-card{padding:9px 8px}
   .hero-trust-value{font-size:18px}
   .hero-trust-copy{display:none}
+  .hero-actions{margin-bottom:6px;padding:10px;width:100%}
+  .btn-primary,.btn-wa-hero{justify-content:center}
 
   /* Hero features — solo muestra el item activo en mobile */
   .hvd-item{display:none}
@@ -1445,7 +1448,7 @@ footer{border-top:1px solid var(--borde);padding:40px;max-width:1180px;margin:0 
     <div class="hero-title hero-loop">
       <span class="hl" id="hvd-hl">Responde y coordina viajes solo.</span>
     </div>
-    <p class="hero-sub">Tus clientes te escriben a vos y el sistema se encarga de ordenar cada viaje sin que tengas que gestionar todo a mano.</p>
+    <p class="hero-sub">Tus clientes te escriben directo y el sistema responde, organiza y agenda tus viajes sin que tengas que estar encima.</p>
     <div class="hero-trust">
       <div class="hero-trust-card"><span class="hero-trust-kicker">Modelo</span><span class="hero-trust-value">Directo</span><span class="hero-trust-copy">Los clientes son tuyos, siempre.</span></div>
       <div class="hero-trust-card"><span class="hero-trust-kicker">Tarifa</span><span class="hero-trust-value">100%</span><span class="hero-trust-copy">La plata del viaje queda de tu lado.</span></div>
@@ -1484,7 +1487,7 @@ footer{border-top:1px solid var(--borde);padding:40px;max-width:1180px;margin:0 
           <div class="hvd-ico">📍</div>
           <div class="hvd-item-bar"></div>
           <div class="hvd-text">
-            <div class="hvd-name">Tracking en vivo</div>
+            <div class="hvd-name">Comparte tracking en vivo</div>
             <div class="hvd-desc">El cliente te sigue en el mapa como Uber.</div>
           </div>
         </div>
