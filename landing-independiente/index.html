@@ -542,6 +542,13 @@ body.lightbox-open{overflow:hidden}
 .pricing-list li{font-size:14px;color:var(--gris2);display:flex;align-items:center;gap:9px}
 .pricing-list li::before{content:'✓';color:var(--verde);font-weight:700;flex-shrink:0;font-size:13px}
 .pricing-badge{position:absolute;top:20px;right:20px;background:var(--verde-bg);color:var(--verde);border:1px solid var(--verde-border);font-size:10px;font-weight:700;padding:4px 10px;border-radius:var(--r999)}
+.pricing-guide{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:24px 0 18px}
+.pricing-guide-card{padding:14px 16px;border-radius:16px;border:1px solid rgba(255,255,255,.08);background:rgba(10,15,12,.7);box-shadow:var(--shadow-soft)}
+.pricing-guide-kicker{display:block;font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gris);margin-bottom:7px}
+.pricing-guide-title{display:block;font-size:14px;font-weight:800;color:var(--blanco);line-height:1.25}
+.pricing-guide-copy{display:block;font-size:12.5px;color:var(--gris2);line-height:1.55;margin-top:7px}
+.pricing-guide-card--pro{background:linear-gradient(135deg,rgba(61,204,142,.1),rgba(255,255,255,.02));border-color:var(--verde-border)}
+.pricing-guide-card--pro .pricing-guide-kicker{color:var(--verde)}
 .pricing-proof{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-top:20px}
 .pricing-proof-pill{
   display:inline-flex;align-items:center;gap:7px;
@@ -555,7 +562,7 @@ body.lightbox-open{overflow:hidden}
 }
 .pricing-proof-pill strong{color:var(--gris3);font-weight:700}
 .pricing-footnote{font-size:13px;color:var(--gris);margin-top:18px;text-align:center}
-@media(max-width:640px){.pricing-grid{grid-template-columns:1fr}}
+@media(max-width:640px){.pricing-grid{grid-template-columns:1fr}.pricing-guide{grid-template-columns:1fr}}
 
 /* ── HERO IMAGE ── */
 .hero-img{width:100%;border-radius:var(--r20);display:block;max-height:580px;object-fit:cover;object-position:center left}
@@ -687,6 +694,29 @@ footer{border-top:1px solid var(--borde);padding:40px;max-width:1180px;margin:0 
   /* Hero features — solo muestra el item activo en mobile */
   .hvd-item{display:none}
   .hvd-item.hvd-on{display:flex}
+}
+@media(max-width:680px){
+  .section{padding:56px 0}
+  .sec-title{font-size:clamp(34px,11vw,46px);line-height:.98}
+  .sec-sub{font-size:15px;line-height:1.6}
+  .flowv2{padding:20px 14px;border-radius:22px}
+  .flowv2-sub{font-size:13px}
+  .flowv2-visual{padding:16px 12px}
+  .flowv2-mini{padding:12px 10px}
+  .share-grid{gap:14px;margin-top:28px}
+  .share-card-visual{height:210px}
+  .share-card-body{padding:18px 16px}
+  .pricing-wrap{padding:22px 16px}
+  .pricing-guide{margin:18px 0 16px}
+  .pricing-card{padding:26px 18px}
+  .pricing-price{font-size:38px}
+  .pricing-period{margin-bottom:20px}
+  .pricing-list{margin-bottom:24px;padding-top:16px}
+  .pricing-list li{font-size:13.5px}
+  .pv2-box{padding:22px 16px}
+  .testi-card{padding:22px 18px}
+  .hw-flow{margin-top:28px}
+  .hw-flow-mock{min-height:128px;padding:14px}
 }
 
 /* ── FEATURE SHOWCASE (BENTO) ── */
@@ -2827,6 +2857,23 @@ footer{border-top:1px solid var(--borde);padding:40px;max-width:1180px;margin:0 
   </div>
   <h2 class="sec-title reveal d1">Si us&aacute;s poco,<br><span class="hl">no pag&aacute;s nada.</span></h2>
   <p class="sec-sub reveal d1">Cada mes ten&eacute;s 3 viajes gratis, siempre. Si necesit&aacute;s m&aacute;s, eleg&iacute;s entre packs puntuales o mensual ilimitado. Si lo us&aacute;s de vez en cuando, pag&aacute;s solo cuando te sirve. Si ya oper&aacute;s todos los d&iacute;as, el mensual te deja trabajar sin mirar cr&eacute;ditos.</p>
+  <div class="pricing-guide reveal d1">
+    <div class="pricing-guide-card">
+      <span class="pricing-guide-kicker">Para probar</span>
+      <span class="pricing-guide-title">Hasta 3 viajes por mes</span>
+      <span class="pricing-guide-copy">Arranc&aacute; gratis. Te alcanza para testear el sistema y compartir tu link sin poner tarjeta.</span>
+    </div>
+    <div class="pricing-guide-card">
+      <span class="pricing-guide-kicker">Uso ocasional</span>
+      <span class="pricing-guide-title">Si todav&iacute;a no viaj&aacute;s todos los d&iacute;as</span>
+      <span class="pricing-guide-copy">Us&aacute; packs. Recarg&aacute;s cuando quer&eacute;s y los cr&eacute;ditos no vencen.</span>
+    </div>
+    <div class="pricing-guide-card pricing-guide-card--pro">
+      <span class="pricing-guide-kicker">Uso constante</span>
+      <span class="pricing-guide-title">M&aacute;s de 15 viajes por mes</span>
+      <span class="pricing-guide-copy">El mensual ya te conviene m&aacute;s y te deja trabajar sin mirar cr&eacute;ditos.</span>
+    </div>
+  </div>
 
   <div class="pricing-grid reveal d2">
 
