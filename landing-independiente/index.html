@@ -1316,6 +1316,9 @@ footer{border-top:1px solid var(--borde);padding:40px;max-width:1180px;margin:0 
 .vd-col-tag{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.14em;color:var(--verde);margin-bottom:4px}
 .vd-col-title{font-size:18px;font-weight:800;color:var(--blanco);line-height:1.3;margin-bottom:6px}
 .vd-col-sub{font-size:13px;color:var(--gris2);line-height:1.6;margin:0}
+.vd-chip-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.vd-chip{display:inline-flex;align-items:center;gap:6px;padding:6px 10px;border-radius:999px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);font-size:11px;font-weight:700;color:var(--gris2);line-height:1}
+.vd-chip b{color:var(--blanco);font-weight:800}
 .vd-col-head{padding-bottom:4px;border-bottom:1px solid var(--borde);margin-bottom:8px}
 
 /* Pricing 3-col */
@@ -2334,9 +2337,15 @@ footer{border-top:1px solid var(--borde);padding:40px;max-width:1180px;margin:0 
 
     <div class="vd-col vd-col--a reveal d1">
       <div class="vd-col-head">
-        <div class="vd-col-tag">El flujo del pedido</div>
-        <div class="vd-col-title">Cliente escribe &rarr; bot responde &rarr; vos manej&aacute;s</div>
+        <div class="vd-col-tag">Flujo real del pedido</div>
+        <div class="vd-col-title">De WhatsApp al viaje listo</div>
         <p class="vd-col-sub">Más que un paso a paso, esto muestra cómo se conectan tus clientes, el bot, el cobro y el viaje dentro de tu canal propio.</p>
+        <div class="vd-chip-row" aria-label="Partes del sistema">
+          <span class="vd-chip">💬 <b>WhatsApp</b></span>
+          <span class="vd-chip">🤖 <b>Bot</b></span>
+          <span class="vd-chip">💳 <b>Cobro</b></span>
+          <span class="vd-chip">📍 <b>Tracking</b></span>
+        </div>
       </div>
       <div class="fv-wrap reveal d2">
 
