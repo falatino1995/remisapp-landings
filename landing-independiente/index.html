@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="es">
 <head>
 <meta charset="UTF-8">
@@ -1439,8 +1439,9 @@ footer{border-top:1px solid var(--borde);padding:40px;max-width:1180px;margin:0 
     </div>
     <h1 class="hero-title">
       Tus clientes.<br>Tus precios.<br>
-      <span class="hl" id="hvd-hl">Tu bot. Tu canal.</span>
+      <span class="hl" id="hvd-hl">Tu canal propio de viajes por WhatsApp.</span>
     </h1>
+    <p class="hero-sub">Tus clientes te escriben a vos y el sistema responde, organiza y ordena cada viaje sin que tengas que gestionar todo a mano.</p>
     <div class="hero-trust">
       <div class="hero-trust-card"><span class="hero-trust-kicker">Modelo</span><span class="hero-trust-value">Directo</span><span class="hero-trust-copy">Los clientes son tuyos, siempre.</span></div>
       <div class="hero-trust-card"><span class="hero-trust-kicker">Tarifa</span><span class="hero-trust-value">100%</span><span class="hero-trust-copy">La plata del viaje queda de tu lado.</span></div>
@@ -1463,16 +1464,16 @@ footer{border-top:1px solid var(--borde);padding:40px;max-width:1180px;margin:0 
           <div class="hvd-item-bar"></div>
           <div class="hvd-ico">🤖</div>
           <div class="hvd-text">
-            <div class="hvd-name">Bot 24hs</div>
-            <div class="hvd-desc">Atiende y cotiza solo, sin que intervengas.</div>
+            <div class="hvd-name">Responde y coordina solo</div>
+            <div class="hvd-desc">Atiende clientes y ordena el viaje mientras vos manejás.</div>
           </div>
         </div>
         <div class="hvd-item" id="hvd-i1">
           <div class="hvd-item-bar"></div>
           <div class="hvd-ico">💰</div>
           <div class="hvd-text">
-            <div class="hvd-name">Tu precio, tu 100%</div>
-            <div class="hvd-desc">Referencia Uber en tiempo real. Vos decidís.</div>
+            <div class="hvd-name">Cotiza con referencia Uber</div>
+            <div class="hvd-desc">Toma el precio como referencia y vos seguís teniendo la última palabra.</div>
           </div>
         </div>
         <div class="hvd-item" id="hvd-i2">
@@ -1487,16 +1488,16 @@ footer{border-top:1px solid var(--borde);padding:40px;max-width:1180px;margin:0 
           <div class="hvd-item-bar"></div>
           <div class="hvd-ico">💳</div>
           <div class="hvd-text">
-            <div class="hvd-name">Cobros sin comisión</div>
-            <div class="hvd-desc">Mercado Pago, efectivo o transferencia.</div>
+            <div class="hvd-name">Cobra con Mercado Pago</div>
+            <div class="hvd-desc">Mandá link o cobrá directo, sin comisiones por viaje.</div>
           </div>
         </div>
         <div class="hvd-item" id="hvd-i4">
           <div class="hvd-item-bar"></div>
           <div class="hvd-ico">📅</div>
           <div class="hvd-text">
-            <div class="hvd-name">Viajes programados</div>
-            <div class="hvd-desc">Reservas con alerta automática. Sin olvidos.</div>
+            <div class="hvd-name">Recibe reservas y las agenda</div>
+            <div class="hvd-desc">Toma viajes programados y te avisa a tiempo para que no se te pase ninguno.</div>
           </div>
         </div>
         <div class="hvd-item" id="hvd-i5">
@@ -3074,12 +3075,12 @@ async function handleSubmit(e){
 // Hero Variante D — lista vertical sincronizada
 (function(){
   const states = [
-    { item:0, mock:0, title:'Tu bot. Tu canal.'    },
-    { item:1, mock:1, title:'Tuyo el 100%.'        },
-    { item:2, mock:2, title:'Tracking en vivo.'    },
-    { item:3, mock:3, title:'Cobrás directo.'      },
-    { item:4, mock:4, title:'Sin olvidar un viaje.'},
-    { item:5, mock:5, title:'Tu canal propio.'     },
+    { item:0, mock:0, title:'Responde y coordina viajes solo.' },
+    { item:1, mock:1, title:'Cotiza con referencia Uber.'      },
+    { item:2, mock:2, title:'Comparte tracking en vivo.'       },
+    { item:3, mock:3, title:'Cobra con Mercado Pago.'          },
+    { item:4, mock:4, title:'Recibe reservas y las agenda.'    },
+    { item:5, mock:5, title:'Tu canal propio.'                 },
   ];
   let cur = 0;
   function hvdStep(){

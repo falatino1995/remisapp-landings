@@ -7,14 +7,14 @@ Este repo centraliza las landings comerciales de RemisApp.
 - `landing-remiseria`: sitio comercial para remiserias
 - `landing-independiente`: sitio comercial para chofer independiente
 
-## Netlify
+## Cloudflare Pages
 
-Configura dos sitios separados apuntando al mismo repo:
+Despliegues actuales:
 
-1. Sitio `remisbot`
+1. Sitio `remisapp-remiseria.pages.dev`
    - Base directory: `landing-remiseria`
    - Publish directory: `.`
 
-2. Sitio `remisapp-conductor-independiente`
+2. Sitio `remisapp-solo.pages.dev`
    - Base directory: `landing-independiente`
    - Publish directory: `.`
