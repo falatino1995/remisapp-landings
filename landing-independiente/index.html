@@ -332,7 +332,7 @@ nav{
 
 /* ── FEATURES ── */
 .feat-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
-.feat-card{border:1px solid var(--borde);border-radius:var(--r16);padding:26px;background:linear-gradient(180deg,rgba(255,255,255,.018),rgba(255,255,255,.008));transition:border-color .2s,transform .2s,box-shadow .2s;position:relative;cursor:pointer;user-select:none;box-shadow:var(--shadow-soft)}
+.feat-card{border:1px solid var(--borde);border-radius:var(--r16);padding:26px;background:linear-gradient(180deg,rgba(255,255,255,.018),rgba(255,255,255,.008));transition:border-color .2s,transform .2s,box-shadow .2s;position:relative;cursor:pointer;user-select:none;box-shadow:var(--shadow-soft);overflow:hidden}
 .feat-card:hover,.feat-card.open{border-color:var(--verde-border);transform:translateY(-3px);box-shadow:0 28px 62px rgba(0,0,0,.28)}
 .feat-card.coming{opacity:.6;cursor:default}
 .fbadge{position:absolute;top:14px;right:44px;font-size:10px;font-weight:700;padding:3px 9px;border-radius:20px}
@@ -345,9 +345,20 @@ nav{
 .ft{font-family:'Barlow Condensed',sans-serif;font-size:19px;font-weight:700;letter-spacing:.03em;text-transform:uppercase;color:var(--blanco);margin-bottom:7px}
 .fd{font-size:14px;font-weight:400;color:var(--gris);line-height:1.65}
 .feat-body{max-height:0;overflow:hidden;transition:max-height .38s ease}
-.feat-card.open .feat-body{max-height:700px}
+.feat-card.open .feat-body{max-height:760px}
 .feat-body-inner{padding-top:16px;border-top:1px solid var(--borde);margin-top:14px}
-.feat-img{width:100%;max-height:260px;object-fit:cover;object-position:top;border-radius:10px;display:block;margin-bottom:14px;border:1px solid var(--borde)}
+.feat-img{width:100%;height:232px;max-height:none;object-fit:cover;object-position:center;border-radius:16px;display:block;margin:14px 0 14px;border:1px solid rgba(255,255,255,.08);background:
+  radial-gradient(circle at 50% 0%, rgba(61,204,142,.15), transparent 58%),
+  linear-gradient(180deg,rgba(15,22,17,.95),rgba(8,12,9,.98));box-shadow:inset 0 1px 0 rgba(255,255,255,.04),0 20px 42px rgba(0,0,0,.22)}
+.feat-card--phone .feat-img{height:290px;object-fit:contain;object-position:center bottom;padding:0 14px 0;background:
+  radial-gradient(circle at 50% 10%, rgba(61,204,142,.16), transparent 56%),
+  linear-gradient(180deg,rgba(13,20,15,.98),rgba(7,10,8,.98))}
+.feat-card--wide .feat-img{height:236px;object-fit:contain;object-position:center;padding:20px 22px;background:
+  radial-gradient(circle at 50% 35%, rgba(61,204,142,.12), transparent 58%),
+  linear-gradient(180deg,rgba(18,24,20,.96),rgba(8,12,9,.98))}
+.feat-card--link .feat-img{height:286px;padding:0 8px 0}
+.feat-card--tracking .feat-img{height:282px;padding:0 12px 0}
+.feat-card--nav .feat-img{height:278px;padding:0 12px 0}
 .feat-detail{font-size:13.5px;color:var(--gris2);line-height:1.75}
 
 /* ── FAB STACK ── */
@@ -1883,7 +1894,7 @@ footer{border-top:1px solid var(--borde);padding:40px;max-width:1180px;margin:0 
   <p class="sec-sub reveal d1">No es solo un bot. Es tu canal propio de viajes por WhatsApp para recibir pedidos, ordenar la operación y cobrar directo. Gratis para empezar, sin tarjeta.</p>
   <div class="feat-grid reveal d2" style="margin-top:36px">
 
-    <div class="feat-card">
+    <div class="feat-card feat-card--phone">
       <div class="feat-icon">🤖</div>
       <button class="feat-toggle" aria-label="expandir"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="6 9 12 15 18 9"/></svg></button>
       <div class="feat-title">Bot disponible 24hs</div>
@@ -1894,18 +1905,18 @@ footer{border-top:1px solid var(--borde);padding:40px;max-width:1180px;margin:0 
       </div>
     </div>
 
-    <div class="feat-card">
+    <div class="feat-card feat-card--phone feat-card--link">
       <div class="feat-icon">🔗</div>
       <button class="feat-toggle" aria-label="expandir"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="6 9 12 15 18 9"/></svg></button>
       <div class="feat-title">Tu link público</div>
       <div class="feat-sub">Tu URL propia para compartir donde quieras.</div>
       <div class="feat-body">
-        <img src="assets/perfil-link-celular-01.png" class="feat-img" alt="Link público" style="margin-top:14px">
+        <img src="assets/feat-link.png" class="feat-img" alt="Link público" style="margin-top:14px">
         <div class="feat-detail">remisapp.link/tunombre — tu página con tu nombre y un botón para pedir. Los clientes entran, te escriben, el bot los atiende.</div>
       </div>
     </div>
 
-    <div class="feat-card">
+    <div class="feat-card feat-card--phone">
       <div class="feat-icon">💰</div>
       <button class="feat-toggle" aria-label="expandir"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="6 9 12 15 18 9"/></svg></button>
       <div class="feat-title">Precio referencia Uber</div>
@@ -1916,29 +1927,29 @@ footer{border-top:1px solid var(--borde);padding:40px;max-width:1180px;margin:0 
       </div>
     </div>
 
-    <div class="feat-card">
+    <div class="feat-card feat-card--phone feat-card--tracking">
       <div class="feat-icon">📍</div>
       <button class="feat-toggle" aria-label="expandir"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="6 9 12 15 18 9"/></svg></button>
       <div class="feat-title">Tracking en tiempo real</div>
       <div class="feat-sub">El cliente te sigue en el mapa como en Uber.</div>
       <div class="feat-body">
-        <img src="assets/feat-tracking-map.png" class="feat-img" alt="Tracking" style="margin-top:14px">
+        <img src="assets/feat-tracking.png" class="feat-img" alt="Tracking" style="margin-top:14px">
         <div class="feat-detail">El bot manda un link de seguimiento en vivo cuando salís a buscar al cliente. Bajan los llamados, sube la confianza.</div>
       </div>
     </div>
 
-    <div class="feat-card">
+    <div class="feat-card feat-card--wide">
       <div class="feat-icon">💳</div>
       <button class="feat-toggle" aria-label="expandir"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="6 9 12 15 18 9"/></svg></button>
       <div class="feat-title">Cobro por Mercado Pago</div>
       <div class="feat-sub">Link de pago automático directo en el chat.</div>
       <div class="feat-body">
-        <img src="assets/feat-mp-cobro.png" class="feat-img" alt="Mercado Pago" style="margin-top:14px">
+        <img src="assets/feat-mp.png" class="feat-img" alt="Mercado Pago" style="margin-top:14px">
         <div class="feat-detail">El bot genera y manda el link de cobro solo. El cliente paga con Mercado Pago, tarjeta o efectivo — el dinero va directo a vos.</div>
       </div>
     </div>
 
-    <div class="feat-card">
+    <div class="feat-card feat-card--phone">
       <div class="feat-icon">📅</div>
       <button class="feat-toggle" aria-label="expandir"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="6 9 12 15 18 9"/></svg></button>
       <div class="feat-title">Viajes programados</div>
@@ -1949,7 +1960,7 @@ footer{border-top:1px solid var(--borde);padding:40px;max-width:1180px;margin:0 
       </div>
     </div>
 
-    <div class="feat-card">
+    <div class="feat-card feat-card--wide">
       <div class="feat-icon">📊</div>
       <button class="feat-toggle" aria-label="expandir"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="6 9 12 15 18 9"/></svg></button>
       <div class="feat-title">Panel de gestión</div>
@@ -1960,7 +1971,7 @@ footer{border-top:1px solid var(--borde);padding:40px;max-width:1180px;margin:0 
       </div>
     </div>
 
-    <div class="feat-card">
+    <div class="feat-card feat-card--phone feat-card--nav">
       <div class="feat-icon">🗺️</div>
       <button class="feat-toggle" aria-label="expandir"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="6 9 12 15 18 9"/></svg></button>
       <div class="feat-title">Navegación automática</div>
