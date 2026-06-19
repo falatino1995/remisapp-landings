@@ -1047,10 +1047,7 @@ footer{border-top:1px solid var(--borde);padding:40px;max-width:1180px;margin:0 
 @media(max-width:700px){
   .flow-demo{display:flex;margin-top:28px}
   .flow-demo-shell{padding:8px;border-radius:24px}
-  .flow-demo-video{border-radius:18px;aspect-ratio:16/9;object-fit:contain}
-  /* en mobile: ocultar original, mostrar solo el nuevo a ancho completo */
-  .flow-compare{display:block;margin-top:28px}
-  .flow-compare-item:first-child{display:none}
+  .flow-demo-video{border-radius:18px;aspect-ratio:3/4;object-fit:cover;object-position:62% center}
 }
 
 /* ── FLOW MODES V2 (parallel experiment) ── */
@@ -1987,22 +1984,11 @@ footer{border-top:1px solid var(--borde);padding:40px;max-width:1180px;margin:0 
   <h2 class="sec-title reveal d1">El cliente pide.<br><span class="hl">Vos solo manejás.</span></h2>
   <p class="sec-sub reveal d1">Acá no ves el pedido paso a paso: ves todo lo que el sistema resuelve por vos mientras manejás.</p>
 
-  <div class="flow-compare reveal d2">
-    <div class="flow-compare-item">
-      <div class="flow-compare-label">Original</div>
-      <div class="flow-demo-shell">
-        <video class="flow-demo-video" autoplay muted loop playsinline webkit-playsinline preload="metadata" poster="assets/feat-bot.png" onclick="this.play()">
-          <source src="assets/video/dual-flow.mp4" type="video/mp4">
-        </video>
-      </div>
-    </div>
-    <div class="flow-compare-item">
-      <div class="flow-compare-label">Nuevo</div>
-      <div class="flow-demo-shell">
-        <video class="flow-demo-video" autoplay muted loop playsinline webkit-playsinline preload="metadata" poster="assets/feat-bot.png" onclick="this.play()">
-          <source src="assets/video/dual-flow-v8.mp4" type="video/mp4">
-        </video>
-      </div>
+  <div class="flow-demo reveal d2">
+    <div class="flow-demo-shell">
+      <video class="flow-demo-video" autoplay muted loop playsinline webkit-playsinline preload="metadata" poster="assets/feat-bot.png" onclick="this.play()" aria-label="Flujo cliente-bot-chofer en RemisApp Solo">
+        <source src="assets/video/dual-flow-v8.mp4" type="video/mp4">
+      </video>
     </div>
   </div>
 
