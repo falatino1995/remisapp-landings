@@ -1046,13 +1046,9 @@ footer{border-top:1px solid var(--borde);padding:40px;max-width:1180px;margin:0 
 .flow-compare-label{font-size:11px;font-weight:700;letter-spacing:.08em;color:#888;text-transform:uppercase;margin-bottom:8px}
 .flow-demo-mobile-info{display:none}
 @media(max-width:700px){
-  .flow-demo{display:flex;flex-direction:column;margin-top:28px}
+  .flow-demo{display:flex;margin-top:28px}
   .flow-demo-shell{padding:8px;border-radius:24px}
-  .flow-demo-video{border-radius:18px;aspect-ratio:3/4;object-fit:cover;object-position:56% center}
-  .flow-demo-mobile-info{display:block;margin-top:16px;padding:0 4px}
-  .flow-demo-live-badge{display:inline-block;font-size:10px;font-weight:700;letter-spacing:.1em;color:var(--verde);text-transform:uppercase;margin-bottom:6px}
-  .flow-demo-mobile-title{display:block;font-size:20px;font-weight:800;color:#fff;line-height:1.2;margin-bottom:6px}
-  .flow-demo-mobile-desc{font-size:14px;color:var(--gris);line-height:1.5;margin:0}
+  .flow-demo-video{border-radius:18px;aspect-ratio:9/16;object-fit:cover}
 }
 
 /* ── FLOW MODES V2 (parallel experiment) ── */
@@ -1992,13 +1988,9 @@ footer{border-top:1px solid var(--borde);padding:40px;max-width:1180px;margin:0 
   <div class="flow-demo reveal d2">
     <div class="flow-demo-shell">
       <video class="flow-demo-video" autoplay muted loop playsinline webkit-playsinline preload="metadata" poster="assets/feat-bot.png" onclick="this.play()" aria-label="Flujo cliente-bot-chofer en RemisApp Solo">
+        <source media="(max-width:700px)" src="assets/video/dual-flow-mobile.mp4" type="video/mp4">
         <source src="assets/video/dual-flow-v8.mp4" type="video/mp4">
       </video>
-    </div>
-    <div class="flow-demo-mobile-info">
-      <span class="flow-demo-live-badge">● FLUJO EN VIVO</span>
-      <strong class="flow-demo-mobile-title">El cliente pide el viaje</strong>
-      <p class="flow-demo-mobile-desc">Origen, destino y horario en el mismo chat.</p>
     </div>
   </div>
 
