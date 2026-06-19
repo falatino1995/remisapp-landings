@@ -1911,10 +1911,13 @@ footer{border-top:1px solid var(--borde);padding:40px;max-width:1180px;margin:0 
                 </div>
               </div>
               <div class="f2-chat">
-                <div class="f2-bubble f2-in" style="--d:.2s">Hola, necesito un remis</div>
-                <div class="f2-bubble f2-in" style="--d:1.4s">¿Desde dónde salís?</div>
-                <div class="f2-bubble f2-out" style="--d:2.6s">Av. Corrientes 1234</div>
-                <div class="f2-bubble f2-ok" style="--d:3.8s">Cotizado y confirmado</div>
+                <div class="f2-bubble f2-in" style="--d:.2s">⏱️ ¿Para ahora o más tarde?</div>
+                <div class="f2-bubble f2-out" style="--d:1.2s">Ahora</div>
+                <div class="f2-bubble f2-in" style="--d:2.0s">📍 ¿Desde dónde salís?</div>
+                <div class="f2-bubble f2-out" style="--d:3.0s">Av. Corrientes 1234</div>
+                <div class="f2-bubble f2-in" style="--d:3.8s">🏁 ¿Y a dónde vas?</div>
+                <div class="f2-bubble f2-out" style="--d:4.7s">Aeroparque</div>
+                <div class="f2-bubble f2-ok" style="--d:5.8s">💰 $9.500 · viaje confirmado ✅</div>
               </div>
             </div>
             </div>
@@ -1930,10 +1933,10 @@ footer{border-top:1px solid var(--borde);padding:40px;max-width:1180px;margin:0 
                 </div>
               </div>
               <div class="f2-chat">
-                <div class="f2-bubble f2-in" style="--d:4.6s">Nueva solicitud: Av. Corrientes → Aeroparque</div>
-                <div class="f2-bubble f2-in" style="--d:5.6s">$9.500 · 1 aceptar · 2 rechazar</div>
-                <div class="f2-bubble f2-out" style="--d:6.6s">1</div>
-                <div class="f2-bubble f2-ok" style="--d:7.4s">Viaje aceptado</div>
+                <div class="f2-bubble f2-in" style="--d:6.6s">🔔 Nueva solicitud — Martina R.</div>
+                <div class="f2-bubble f2-in" style="--d:7.4s">📍 Corrientes 1234 → Aeroparque · 💰 $9.500</div>
+                <div class="f2-bubble f2-out" style="--d:8.4s">1 ✅</div>
+                <div class="f2-bubble f2-ok" style="--d:9.2s">🚗 Viaje aceptado</div>
               </div>
             </div>
             </div>
@@ -3559,6 +3562,7 @@ document.addEventListener('DOMContentLoaded', pv2Calc);
     wrap.querySelectorAll('[data-flow-mode]').forEach(btn => {
       btn.addEventListener('click', function(){ selectMode(btn.dataset.flowMode); });
     });
+    selectMode('now');
   });
 })();
 
