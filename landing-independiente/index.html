@@ -571,14 +571,16 @@ body.lightbox-open{overflow:hidden}
   .pricing-guide{display:none}
   .pricing-proof{display:none}
   .pricing-card{text-align:center}
-  .pricing-price{font-size:76px;line-height:.88;text-align:center}
+  .pricing-price{font-size:90px;line-height:.88;text-align:center}
   .pricing-free .pricing-price{color:var(--verde)}
+  .pricing-free .pricing-period,.pricing-pro .pricing-period{display:none}
   .pricing-tag{font-size:15px;letter-spacing:.04em;font-weight:800;color:var(--verde);padding:8px 22px;border-radius:999px;display:inline-block;margin-bottom:18px}
   .pricing-free .pricing-tag{background:rgba(61,204,142,.14);border:1px solid rgba(61,204,142,.35)}
   .pricing-packs .pricing-tag{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);color:var(--gris3)}
   .pricing-pro .pricing-tag{background:rgba(61,204,142,.14);border:1px solid rgba(61,204,142,.35)}
-  .pricing-ctx,.pricing-ctx-desc{text-align:center}
-  .pricing-period{display:block;text-align:center;margin:10px auto 22px}
+  .pricing-ctx{text-align:center}
+  .pricing-ctx-desc{text-align:center;margin-bottom:18px}
+  .pricing-period{display:block;text-align:center;margin:8px auto 20px}
   .pricing-list{text-align:left}
   .pack-options{text-align:left}
   .pricing-badge{left:50%;transform:translateX(-50%);right:auto;top:-14px}
@@ -3055,7 +3057,7 @@ fbq('track', 'PageView');
     <div class="pricing-card pricing-free">
       <div class="pricing-ctx">Para probar</div>
       <div class="pricing-ctx-desc">Hasta 3 viajes por mes &mdash; sin poner tarjeta</div>
-      <div class="pricing-tag">✨ Siempre gratis</div>
+      <div class="pricing-tag">🎁 3 viajes gratis</div>
       <div class="pricing-price">$0<span style="font-size:1rem;font-weight:500;opacity:0.6">/mes</span></div>
       <p class="pricing-period">3 viajes por mes &middot; Sin tarjeta &middot; Sin vencimiento</p>
       <ul class="pricing-list">
