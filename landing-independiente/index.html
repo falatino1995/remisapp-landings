@@ -571,14 +571,18 @@ body.lightbox-open{overflow:hidden}
   .pricing-guide{display:none}
   .pricing-proof{display:none}
   .pricing-card{text-align:center}
-  .pricing-price{font-size:60px;text-align:center}
+  .pricing-price{font-size:76px;line-height:.88;text-align:center}
   .pricing-free .pricing-price{color:var(--verde)}
-  .pricing-tag{font-size:13px;letter-spacing:.06em;color:var(--verde);padding:4px 0;margin-bottom:10px}
+  .pricing-tag{font-size:15px;letter-spacing:.04em;font-weight:800;color:var(--verde);padding:8px 22px;border-radius:999px;display:inline-block;margin-bottom:18px}
+  .pricing-free .pricing-tag{background:rgba(61,204,142,.14);border:1px solid rgba(61,204,142,.35)}
+  .pricing-packs .pricing-tag{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);color:var(--gris3)}
+  .pricing-pro .pricing-tag{background:rgba(61,204,142,.14);border:1px solid rgba(61,204,142,.35)}
   .pricing-ctx,.pricing-ctx-desc{text-align:center}
-  .pricing-period{display:block;text-align:center;margin:10px auto 20px}
+  .pricing-period{display:block;text-align:center;margin:10px auto 22px}
   .pricing-list{text-align:left}
   .pack-options{text-align:left}
-  .pricing-badge{left:50%;transform:translateX(-50%);right:auto}
+  .pricing-badge{left:50%;transform:translateX(-50%);right:auto;top:-14px}
+  .pricing-pro{padding-top:38px}
 }
 
 /* ── HERO IMAGE ── */
@@ -3051,7 +3055,7 @@ fbq('track', 'PageView');
     <div class="pricing-card pricing-free">
       <div class="pricing-ctx">Para probar</div>
       <div class="pricing-ctx-desc">Hasta 3 viajes por mes &mdash; sin poner tarjeta</div>
-      <div class="pricing-tag">Siempre gratis</div>
+      <div class="pricing-tag">✨ Siempre gratis</div>
       <div class="pricing-price">$0<span style="font-size:1rem;font-weight:500;opacity:0.6">/mes</span></div>
       <p class="pricing-period">3 viajes por mes &middot; Sin tarjeta &middot; Sin vencimiento</p>
       <ul class="pricing-list">
@@ -3067,7 +3071,7 @@ fbq('track', 'PageView');
     <div class="pricing-card pricing-packs">
       <div class="pricing-ctx">Uso ocasional</div>
       <div class="pricing-ctx-desc">Si todav&iacute;a no viaj&aacute;s todos los d&iacute;as</div>
-      <div class="pricing-tag">Pago por uso</div>
+      <div class="pricing-tag">⚡ Pago por uso</div>
       <div class="pricing-price" style="font-size:1.4rem;line-height:1.2;padding-top:4px">Recarg&aacute; cuando quer&eacute;s</div>
       <p class="pricing-period">Sin abono mensual &middot; Cr&eacute;ditos sin vencimiento</p>
       <div class="pack-options">
@@ -3094,7 +3098,7 @@ fbq('track', 'PageView');
       <span class="pricing-badge">Recomendado</span>
       <div class="pricing-ctx">Uso constante</div>
       <div class="pricing-ctx-desc">M&aacute;s de 30 viajes por mes</div>
-      <div class="pricing-tag">Mensual ilimitado</div>
+      <div class="pricing-tag">🚀 Mensual ilimitado</div>
       <div class="pricing-price">$10.000<span style="font-size:1rem;font-weight:500;opacity:0.7">/mes</span></div>
       <p class="pricing-period">Ilimitado &middot; Sin comisiones por viaje</p>
       <ul class="pricing-list">
