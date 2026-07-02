@@ -494,7 +494,7 @@ body.lightbox-open{overflow:hidden}
 .client-extra-label{font-size:13px;color:var(--gris2);flex-shrink:0}
 .client-pills{display:flex;flex-wrap:wrap;gap:8px}
 .client-pill{background:var(--card);border:1px solid var(--borde);border-radius:var(--r999);padding:6px 14px;font-size:12.5px;color:var(--blanco)}
-@media(max-width:640px){.client-grid{grid-template-columns:1fr}}
+/* client-grid stays 2-col on mobile via the 640px pricing block */
 
 /* ── TESTIMONIALS ── */
 .testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
@@ -506,7 +506,11 @@ body.lightbox-open{overflow:hidden}
 .testi-av{width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,var(--verde),var(--verde-dim));display:flex;align-items:center;justify-content:center;font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:14px;color:#070A08;flex-shrink:0}
 .testi-name{font-family:'Barlow Condensed',sans-serif;font-size:14px;font-weight:700;color:var(--blanco);line-height:1.2}
 .testi-meta{font-size:11.5px;color:var(--gris);margin-top:2px}
-@media(max-width:860px){.testi-grid{grid-template-columns:1fr}}
+@media(max-width:860px){
+  .testi-grid{display:flex;flex-direction:row;overflow-x:auto;overflow-y:hidden;scroll-snap-type:x mandatory;gap:14px;padding-bottom:16px;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+  .testi-grid::-webkit-scrollbar{display:none}
+  .testi-card{min-width:80vw;max-width:80vw;scroll-snap-align:start;flex-shrink:0}
+}
 
 /* ── PRICING ── */
 .pricing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;align-items:stretch}
@@ -583,8 +587,13 @@ body.lightbox-open{overflow:hidden}
   .pricing-period{display:block;text-align:center;margin:8px auto 20px}
   .pricing-list{text-align:left}
   .pack-options{text-align:left}
-  .pricing-badge{left:50%;transform:translateX(-50%);right:auto;top:-14px}
-  .pricing-pro{padding-top:38px}
+  .pricing-badge{position:static;display:block;width:fit-content;margin:0 auto 14px;transform:none;top:auto;right:auto}
+  .pricing-pro{padding-top:20px}
+  .client-grid{grid-template-columns:1fr 1fr}
+  .client-card p{display:none}
+  .client-card{padding:20px 14px;text-align:center}
+  .client-card h3{font-size:1rem;text-align:center}
+  .client-icon{font-size:30px;margin-bottom:10px}
 }
 
 /* ── HERO IMAGE ── */
