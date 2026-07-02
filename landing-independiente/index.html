@@ -1097,6 +1097,7 @@ footer{border-top:1px solid var(--borde);padding:40px;max-width:1180px;margin:0 
 .flowv2-tab{border:1px solid var(--borde);background:rgba(255,255,255,.035);color:var(--gris2);border-radius:999px;padding:9px 13px;font-size:12px;font-weight:700;cursor:pointer;transition:background .2s,border-color .2s,color .2s,transform .2s}
 .flowv2-tab:hover{transform:translateY(-1px);border-color:var(--verde-border);color:var(--verde)}
 .flowv2-tab.active{background:var(--verde);border-color:var(--verde);color:#071009}
+.flowv2-tab--video{border-color:rgba(61,204,142,.4);color:var(--verde)}
 .flowv2-grid{display:grid;grid-template-columns:minmax(0,1.36fr) minmax(320px,.74fr);gap:18px;align-items:stretch}
 .flowv2-card{background:rgba(7,10,8,.72);border:1px solid var(--borde);border-radius:22px;padding:20px;min-height:230px;display:flex;flex-direction:column;position:relative;overflow:hidden;order:2}
 .flowv2-card::before{content:"";position:absolute;inset:auto -20% -45% -20%;height:150px;background:radial-gradient(circle,rgba(61,204,142,.13),transparent 64%);pointer-events:none}
@@ -1948,6 +1949,7 @@ fbq('track', 'PageView');
         <button class="flowv2-tab" type="button" data-flow-mode="scheduled">Viaje programado</button>
         <button class="flowv2-tab" type="button" data-flow-mode="payment">Cobro</button>
         <button class="flowv2-tab" type="button" data-flow-mode="tracking">Tracking vivo</button>
+        <button class="flowv2-tab flowv2-tab--video" type="button" data-flow-mode="video">🎬 Ver demo</button>
       </div>
     </div>
 
@@ -2045,6 +2047,14 @@ fbq('track', 'PageView');
         </div>
       </div>
     </div>
+
+    <div id="flowv2-video-panel" style="display:none;margin-top:8px">
+      <video id="flowv2-video" muted loop playsinline webkit-playsinline preload="none" style="width:100%;border-radius:16px;background:#050806;display:block">
+        <source media="(max-width:700px)" src="assets/video/dual-flow-mobile.mp4" type="video/mp4">
+        <source src="assets/video/dual-flow-v8.mp4" type="video/mp4">
+      </video>
+    </div>
+
   </div>
 </div>
 </section>
@@ -3616,6 +3626,18 @@ document.addEventListener('DOMContentLoaded', pv2Calc);
 
   function selectMode(mode){
     const wrap = document.getElementById('flow-v2');
+    const videoPanel = document.getElementById('flowv2-video-panel');
+    const flowCard = wrap ? wrap.querySelector('.flowv2-card') : null;
+    const vid = document.getElementById('flowv2-video');
+    if(mode === 'video'){
+      if(!wrap) return;
+      wrap.querySelectorAll('[data-flow-mode]').forEach(btn => btn.classList.toggle('active', btn.dataset.flowMode === 'video'));
+      if(flowCard) flowCard.style.display = 'none';
+      if(videoPanel){ videoPanel.style.display = 'block'; if(vid){ vid.load(); vid.play(); } }
+      return;
+    }
+    if(flowCard) flowCard.style.display = '';
+    if(videoPanel){ videoPanel.style.display = 'none'; if(vid){ vid.pause(); vid.currentTime = 0; } }
     const state = data[mode];
     if(!wrap || !state) return;
     wrap.querySelectorAll('[data-flow-mode]').forEach(btn => btn.classList.toggle('active', btn.dataset.flowMode === mode));
