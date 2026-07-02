@@ -1197,7 +1197,8 @@ footer{border-top:1px solid var(--borde);padding:40px;max-width:1180px;margin:0 
   .flowv2-lanes{grid-template-columns:1fr}
   .flowv2-visual{min-height:auto;padding:16px}
   .f2-stage{flex-direction:column;min-height:auto;gap:10px}
-  .f2-connector{width:2px;height:34px;background:linear-gradient(180deg,var(--verde),rgba(61,204,142,.08))}
+  .f2-connector{width:2px;height:58px;background:linear-gradient(180deg,var(--verde),rgba(61,204,142,.08))}
+  .f2-connector::before{content:"↑↓";background:rgba(7,10,8,.92);width:28px;height:28px;font-size:12px;font-weight:900;color:var(--verde);display:flex;align-items:center;justify-content:center;letter-spacing:-2px}
   .f2-connector::after{right:-4px;top:auto;bottom:-4px;border-top:8px solid var(--verde);border-left:5px solid transparent;border-right:5px solid transparent;border-bottom:0}
   .f2-note{display:none}
 }
@@ -1949,10 +1950,10 @@ fbq('track', 'PageView');
         <p class="flowv2-sub">Elegí un momento y mirá qué pasa desde que entra el pedido hasta que el viaje queda encaminado: pedido, reserva, cobro o tracking.</p>
       </div>
       <div class="flowv2-tabs" role="tablist" aria-label="Modos del flujo RemisApp">
-        <button class="flowv2-tab active" type="button" data-flow-mode="now">Pedido ahora</button>
-        <button class="flowv2-tab" type="button" data-flow-mode="scheduled">Viaje programado</button>
-        <button class="flowv2-tab" type="button" data-flow-mode="payment">Cobro</button>
-        <button class="flowv2-tab" type="button" data-flow-mode="tracking">Tracking vivo</button>
+        <button class="flowv2-tab active" type="button" data-flow-mode="now">🚕 Pedido ahora</button>
+        <button class="flowv2-tab" type="button" data-flow-mode="scheduled">📅 Viaje programado</button>
+        <button class="flowv2-tab" type="button" data-flow-mode="payment">💳 Cobro</button>
+        <button class="flowv2-tab" type="button" data-flow-mode="tracking">📍 Tracking vivo</button>
         <button class="flowv2-tab flowv2-tab--video" type="button" data-flow-mode="video">🎬 Ver demo</button>
       </div>
     </div>
@@ -2031,21 +2032,21 @@ fbq('track', 'PageView');
         <div class="flowv2-mini active" data-flow-step="0">
           <div class="flowv2-mini-num">01</div>
           <div>
-            <div class="flowv2-mini-title">Cliente escribe</div>
+            <div class="flowv2-mini-title">💬 Cliente escribe</div>
             <div class="flowv2-mini-copy">El pedido entra por tu link o QR, directo a WhatsApp.</div>
           </div>
         </div>
         <div class="flowv2-mini active" data-flow-step="1">
           <div class="flowv2-mini-num">02</div>
           <div>
-            <div class="flowv2-mini-title">Bot resuelve</div>
+            <div class="flowv2-mini-title">🤖 Bot resuelve</div>
             <div class="flowv2-mini-copy">Pregunta, cotiza, valida y deja todo ordenado.</div>
           </div>
         </div>
         <div class="flowv2-mini active" data-flow-step="2">
           <div class="flowv2-mini-num">03</div>
           <div>
-            <div class="flowv2-mini-title">Chofer maneja</div>
+            <div class="flowv2-mini-title">🚗 Chofer maneja</div>
             <div class="flowv2-mini-copy">Intervenís al final, cuando ya hay un viaje listo.</div>
           </div>
         </div>
@@ -3467,9 +3468,9 @@ document.addEventListener('DOMContentLoaded', pv2Calc);
           <div class="f2-note">bot envía la solicitud</div>
         </div>`,
       steps: [
-        ['Cliente escribe', 'El pedido entra por tu link o QR, directo a WhatsApp.'],
-        ['Bot resuelve', 'Pregunta, cotiza, valida y deja todo ordenado.'],
-        ['Chofer maneja', 'Interviene al final, cuando ya hay un viaje listo.']
+        ['💬 Cliente escribe', 'El pedido entra por tu link o QR, directo a WhatsApp.'],
+        ['🤖 Bot resuelve', 'Pregunta, cotiza, valida y deja todo ordenado.'],
+        ['🚗 Chofer maneja', 'Interviene al final, cuando ya hay un viaje listo.']
       ]
     },
     scheduled: {
@@ -3522,9 +3523,9 @@ document.addEventListener('DOMContentLoaded', pv2Calc);
           </div>
         </div>`,
       steps: [
-        ['Cliente reserva', 'Pide un viaje para mañana, aeropuerto o una hora puntual.'],
-        ['Chofer acepta', 'La solicitud queda pendiente hasta que confirmás disponibilidad.'],
-        ['Bot agenda', 'Después de aceptar, guarda la reserva y te recuerda antes.']
+        ['📅 Cliente reserva', 'Pide un viaje para mañana, aeropuerto o una hora puntual.'],
+        ['✅ Chofer acepta', 'La solicitud queda pendiente hasta que confirmás disponibilidad.'],
+        ['🔔 Bot agenda', 'Después de aceptar, guarda la reserva y te recuerda antes.']
       ]
     },
     payment: {
@@ -3567,9 +3568,9 @@ document.addEventListener('DOMContentLoaded', pv2Calc);
           </div>
         </div>`,
       steps: [
-        ['Cliente confirma', 'El viaje ya está acordado y listo para cobrar.'],
-        ['Bot manda pago', 'El link sale por WhatsApp automáticamente.'],
-        ['Cobrás vos', 'Sin intermediarios y sin comisión por viaje.']
+        ['📱 Cliente confirma', 'El viaje ya está acordado y listo para cobrar.'],
+        ['💳 Bot manda pago', 'El link sale por WhatsApp automáticamente.'],
+        ['💰 Cobrás vos', 'Sin intermediarios y sin comisión por viaje.']
       ]
     },
     tracking: {
@@ -3616,9 +3617,9 @@ document.addEventListener('DOMContentLoaded', pv2Calc);
           </div>
         </div>`,
       steps: [
-        ['Bot manda link', 'El pasajero recibe el seguimiento en WhatsApp.'],
-        ['Cliente mira el mapa', 'Ve por dónde venís y cuánto falta.'],
-        ['Chofer llega', 'Menos llamadas, menos ansiedad, más orden.']
+        ['📲 Bot manda link', 'El pasajero recibe el seguimiento en WhatsApp.'],
+        ['🗺️ Cliente ve el mapa', 'Ve por dónde venís y cuánto falta.'],
+        ['🚗 Chofer llega', 'Menos llamadas, menos ansiedad, más orden.']
       ]
     }
   };
