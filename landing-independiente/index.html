@@ -1950,11 +1950,11 @@ fbq('track', 'PageView');
         <p class="flowv2-sub">Elegí un momento y mirá qué pasa desde que entra el pedido hasta que el viaje queda encaminado: pedido, reserva, cobro o tracking.</p>
       </div>
       <div class="flowv2-tabs" role="tablist" aria-label="Modos del flujo RemisApp">
+        <button class="flowv2-tab flowv2-tab--video" type="button" data-flow-mode="video">🎬 Ver demo</button>
         <button class="flowv2-tab active" type="button" data-flow-mode="now">🚕 Pedido ahora</button>
         <button class="flowv2-tab" type="button" data-flow-mode="scheduled">📅 Viaje programado</button>
         <button class="flowv2-tab" type="button" data-flow-mode="payment">💳 Cobro</button>
         <button class="flowv2-tab" type="button" data-flow-mode="tracking">📍 Tracking vivo</button>
-        <button class="flowv2-tab flowv2-tab--video" type="button" data-flow-mode="video">🎬 Ver demo</button>
       </div>
     </div>
 
@@ -2053,7 +2053,7 @@ fbq('track', 'PageView');
       </div>
     </div>
 
-    <div id="flowv2-video-panel" style="display:none;margin-top:8px">
+    <div id="flowv2-video-panel" style="display:none">
       <video id="flowv2-video" muted loop playsinline webkit-playsinline preload="none" style="width:100%;border-radius:16px;background:#050806;display:block">
         <source media="(max-width:700px)" src="assets/video/dual-flow-mobile.mp4" type="video/mp4">
         <source src="assets/video/dual-flow-v8.mp4" type="video/mp4">
@@ -3632,16 +3632,16 @@ document.addEventListener('DOMContentLoaded', pv2Calc);
   function selectMode(mode){
     const wrap = document.getElementById('flow-v2');
     const videoPanel = document.getElementById('flowv2-video-panel');
-    const flowCard = wrap ? wrap.querySelector('.flowv2-card') : null;
+    const flowGrid = wrap ? wrap.querySelector('.flowv2-grid') : null;
     const vid = document.getElementById('flowv2-video');
     if(mode === 'video'){
       if(!wrap) return;
       wrap.querySelectorAll('[data-flow-mode]').forEach(btn => btn.classList.toggle('active', btn.dataset.flowMode === 'video'));
-      if(flowCard) flowCard.style.display = 'none';
+      if(flowGrid) flowGrid.style.display = 'none';
       if(videoPanel){ videoPanel.style.display = 'block'; if(vid){ vid.load(); vid.play(); } }
       return;
     }
-    if(flowCard) flowCard.style.display = '';
+    if(flowGrid) flowGrid.style.display = '';
     if(videoPanel){ videoPanel.style.display = 'none'; if(vid){ vid.pause(); vid.currentTime = 0; } }
     const state = data[mode];
     if(!wrap || !state) return;
