@@ -594,8 +594,9 @@ body.lightbox-open{overflow:hidden}
   .client-card{padding:20px 14px;text-align:center}
   .client-card h3{font-size:1rem;text-align:center}
   .client-icon{font-size:30px;margin-bottom:10px}
-  .feat-grid{gap:8px}
+  .feat-grid{gap:8px;grid-template-columns:1fr 1fr}
   .feat-card{padding:14px 13px}
+  .feat-card.open{grid-column:1 / -1}
   .feat-icon{font-size:20px;margin-bottom:7px}
   .feat-title{font-size:13.5px;margin-bottom:3px}
   .feat-sub{font-size:12px;line-height:1.4}
@@ -664,7 +665,7 @@ footer{border-top:1px solid var(--borde);padding:40px;max-width:1180px;margin:0 
   .hero-card-col{display:none}
   .hero-trust{grid-template-columns:1fr}
   .section{padding:68px 0}
-  .problem-grid,.feat-grid,.vs-grid{grid-template-columns:1fr}
+  .problem-grid,.vs-grid{grid-template-columns:1fr}
   .steps-wrap{grid-template-columns:repeat(2,1fr)}
   .step-arr{display:none}
   .cta-box{padding:48px 24px;margin-bottom:64px}
