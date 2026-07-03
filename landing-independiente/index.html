@@ -1281,7 +1281,8 @@ footer{border-top:1px solid var(--borde);padding:40px;max-width:1180px;margin:0 
   .flowv2-side .f2-avatar{width:20px!important;height:20px!important}
   .flowv2-side .f2-name{font-size:7.5px!important;line-height:1.1}
   .flowv2-side .f2-status{display:none!important}
-  .flowv2-side .f2-chat{min-height:0!important;padding:7px 6px!important;gap:4px!important}
+  .flowv2-side .f2-chat{min-height:0!important;height:118px!important;padding:7px 6px!important;gap:4px!important;overflow:hidden;justify-content:flex-end!important;position:relative}
+  .flowv2-side .f2-chat::before{content:"";position:absolute;top:0;left:0;right:0;height:28px;background:linear-gradient(rgba(7,10,8,.96),transparent);pointer-events:none;z-index:1}
   .flowv2-side .f2-bubble{font-size:8px!important;padding:5px 6px!important;border-radius:7px!important;max-width:98%!important;animation:none!important;opacity:1!important;transform:none!important}
   .flowv2-side .f2-role{font-size:7.5px!important;padding:2px 6px!important}
   .flowv2-side .f2-pay-card,.flowv2-side .f2-map-card{width:100%;box-sizing:border-box;animation:none!important}
