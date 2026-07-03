@@ -506,10 +506,21 @@ body.lightbox-open{overflow:hidden}
 .testi-av{width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,var(--verde),var(--verde-dim));display:flex;align-items:center;justify-content:center;font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:14px;color:#070A08;flex-shrink:0}
 .testi-name{font-family:'Barlow Condensed',sans-serif;font-size:14px;font-weight:700;color:var(--blanco);line-height:1.2}
 .testi-meta{font-size:11.5px;color:var(--gris);margin-top:2px}
+.testi-outer{position:relative}
+.testi-arrow{display:none;position:absolute;top:calc(50% - 12px);transform:translateY(-50%);z-index:10;width:36px;height:36px;border-radius:50%;border:1.5px solid var(--verde-border);background:rgba(7,10,8,.9);color:var(--verde);font-size:20px;cursor:pointer;align-items:center;justify-content:center;transition:background .18s,opacity .25s;backdrop-filter:blur(6px)}
+.testi-arrow:hover{background:rgba(61,204,142,.18)}
+.testi-arrow--prev{left:-10px}
+.testi-arrow--next{right:-10px}
+.testi-arrow.t-hidden{opacity:0;pointer-events:none}
+.testi-dots{display:none;gap:7px;justify-content:center;margin-top:16px}
+.testi-dot{width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,.2);transition:background .25s,width .25s;cursor:pointer}
+.testi-dot.active{background:var(--verde);width:22px;border-radius:999px}
 @media(max-width:860px){
   .testi-grid{display:flex;flex-direction:row;overflow-x:auto;overflow-y:hidden;scroll-snap-type:x mandatory;gap:14px;padding-bottom:16px;-webkit-overflow-scrolling:touch;scrollbar-width:none}
   .testi-grid::-webkit-scrollbar{display:none}
   .testi-card{min-width:80vw;max-width:80vw;scroll-snap-align:start;flex-shrink:0}
+  .testi-arrow{display:flex}
+  .testi-dots{display:flex}
 }
 
 /* ── PRICING ── */
@@ -1130,7 +1141,7 @@ footer{border-top:1px solid var(--borde);padding:40px;max-width:1180px;margin:0 
   .share-grid::-webkit-scrollbar{display:none}
   .share-card{min-width:75vw;max-width:75vw;scroll-snap-align:start;flex-shrink:0}
   .share-dots{display:flex;justify-content:center;gap:7px;margin-top:16px}
-  .share-dot{width:7px;height:7px;border-radius:50%;background:rgba(255,255,255,.18);transition:background .25s,transform .25s}
+  .share-dot{width:7px;height:7px;border-radius:50%;background:rgba(255,255,255,.18);transition:background .25s,transform .25s;cursor:pointer}
   .share-dot.active{background:var(--verde);transform:scale(1.3)}
 }
 /* ── DUAL PHONE ANIMATION ── */
@@ -3194,43 +3205,55 @@ fbq('track', 'PageView');
 <!-- TESTIMONIALS -->
 <section class="section">
 <div class="container">
-  <div class="sec-eyebrow reveal">Lo que dicen los choferes</div>
-  <h2 class="sec-title reveal d1">Independientes que<br><span class="hl">ya no dependen de nadie.</span></h2>
-  <p class="sec-sub reveal d1">Choferes que empezaron igual que vos y ahora tienen su propia cartera de clientes.</p>
-  <div class="testi-grid">
-    <div class="testi-card reveal d1">
-      <div class="testi-stars">★★★★★</div>
-      <p class="testi-quote">En el primer mes recuperé más del doble de lo que pagaba en comisiones. El bot funciona solo, yo solo manejo. Mis clientes de siempre me piden directo ahora.</p>
-      <div class="testi-author">
-        <div class="testi-av">D</div>
-        <div>
-          <div class="testi-name">Diego P.</div>
-          <div class="testi-meta">Chofer independiente · Córdoba</div>
+  <div class="sec-eyebrow reveal">Opiniones reales</div>
+  <h2 class="sec-title reveal d1">La opinión<br><span class="hl">de los choferes.</span></h2>
+  <div class="testi-outer reveal d2">
+    <button class="testi-arrow testi-arrow--prev t-hidden" id="testiPrev" aria-label="anterior">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="15 18 9 12 15 6"/></svg>
+    </button>
+    <button class="testi-arrow testi-arrow--next" id="testiNext" aria-label="siguiente">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="9 18 15 12 9 6"/></svg>
+    </button>
+    <div class="testi-grid">
+      <div class="testi-card reveal d1">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-quote">En el primer mes recuperé más del doble de lo que pagaba en comisiones. El bot funciona solo, yo solo manejo. Mis clientes de siempre me piden directo ahora.</p>
+        <div class="testi-author">
+          <div class="testi-av">D</div>
+          <div>
+            <div class="testi-name">Diego P.</div>
+            <div class="testi-meta">Chofer independiente · Córdoba</div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card reveal d2">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-quote">Lo que más me cambió fue tener mi propio link. Se lo pasé a mis clientes habituales y ahora me llaman directo, sin pasar por Uber. Ya no dependo de que me manden trabajo.</p>
+        <div class="testi-author">
+          <div class="testi-av">M</div>
+          <div>
+            <div class="testi-name">Marcela R.</div>
+            <div class="testi-meta">Remis independiente · Rosario</div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card reveal d3">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-quote">No sé nada de tecnología y lo configuré en 20 minutos. El onboarding te va llevando paso a paso. Cuando me surgió una duda, me respondieron por WhatsApp al toque.</p>
+        <div class="testi-author">
+          <div class="testi-av">G</div>
+          <div>
+            <div class="testi-name">Gonzalo M.</div>
+            <div class="testi-meta">Chofer independiente · Mendoza</div>
+          </div>
         </div>
       </div>
     </div>
-    <div class="testi-card reveal d2">
-      <div class="testi-stars">★★★★★</div>
-      <p class="testi-quote">Lo que más me cambió fue tener mi propio link. Se lo pasé a mis clientes habituales y ahora me llaman directo, sin pasar por Uber. Ya no dependo de que me manden trabajo.</p>
-      <div class="testi-author">
-        <div class="testi-av">M</div>
-        <div>
-          <div class="testi-name">Marcela R.</div>
-          <div class="testi-meta">Remis independiente · Rosario</div>
-        </div>
-      </div>
-    </div>
-    <div class="testi-card reveal d3">
-      <div class="testi-stars">★★★★★</div>
-      <p class="testi-quote">No sé nada de tecnología y lo configuré en 20 minutos. El onboarding te va llevando paso a paso. Cuando me surgió una duda, me respondieron por WhatsApp al toque.</p>
-      <div class="testi-author">
-        <div class="testi-av">G</div>
-        <div>
-          <div class="testi-name">Gonzalo M.</div>
-          <div class="testi-meta">Chofer independiente · Mendoza</div>
-        </div>
-      </div>
-    </div>
+  </div>
+  <div class="testi-dots" id="testiDots">
+    <div class="testi-dot active"></div>
+    <div class="testi-dot"></div>
+    <div class="testi-dot"></div>
   </div>
 </div>
 </section>
@@ -3479,17 +3502,45 @@ setTimeout(()=>{ revealEls.forEach(el=>{ const r=el.getBoundingClientRect(); if(
   }
 })();
 
-// Share carousel dots
+// Share carousel dots (with click navigation)
 (function(){
   var grid = document.querySelector('.share-grid');
   var dots = document.querySelectorAll('.share-dot');
   if(!grid || !dots.length) return;
+  function cw(){ var c = grid.querySelector('.share-card'); return c ? c.offsetWidth + 12 : 300; }
   grid.addEventListener('scroll', function(){
-    var cardW = grid.querySelector('.share-card');
-    if(!cardW) return;
-    var idx = Math.round(grid.scrollLeft / (cardW.offsetWidth + 12));
+    var idx = Math.round(grid.scrollLeft / cw());
     dots.forEach(function(d,i){ d.classList.toggle('active', i === idx); });
   }, {passive:true});
+  dots.forEach(function(d, i){
+    d.addEventListener('click', function(){ grid.scrollTo({left: i * cw(), behavior:'smooth'}); });
+  });
+})();
+
+// Testimonials carousel arrows + dots
+(function(){
+  var grid = document.querySelector('.testi-grid');
+  var prev = document.getElementById('testiPrev');
+  var next = document.getElementById('testiNext');
+  var dotsEl = document.getElementById('testiDots');
+  if(!grid) return;
+  function cw(){ var c = grid.children[0]; return c ? c.offsetWidth + 14 : 300; }
+  function update(){
+    var sl = grid.scrollLeft, max = grid.scrollWidth - grid.clientWidth;
+    if(prev) prev.classList.toggle('t-hidden', sl < 8);
+    if(next) next.classList.toggle('t-hidden', sl >= max - 8);
+    if(dotsEl){
+      var page = Math.round(sl / cw()), dots = dotsEl.children;
+      for(var i=0;i<dots.length;i++) dots[i].classList.toggle('active', i===page);
+    }
+  }
+  if(prev) prev.addEventListener('click', function(){ grid.scrollBy({left:-cw(),behavior:'smooth'}); });
+  if(next) next.addEventListener('click', function(){ grid.scrollBy({left:cw(),behavior:'smooth'}); });
+  if(dotsEl) Array.prototype.forEach.call(dotsEl.children, function(d,i){
+    d.addEventListener('click', function(){ grid.scrollTo({left:i*cw(),behavior:'smooth'}); });
+  });
+  grid.addEventListener('scroll', update, {passive:true});
+  update();
 })();
 
 function pricingTab(btn, cls){
