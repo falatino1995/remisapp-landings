@@ -1571,16 +1571,17 @@ footer{border-top:1px solid var(--borde);padding:40px;max-width:1180px;margin:0 
   .p3-outer{margin-top:22px}
   .p3-outer::before,.p3-outer::after{display:none}
   .p3-track{display:grid!important;grid-template-columns:1fr 1fr;gap:10px;overflow-x:visible;scroll-snap-type:none;cursor:default}
-  .p3-track .prob-va-card{flex:none;scroll-snap-align:none;min-width:0;min-height:unset}
+  .p3-track .prob-va-card{flex:none;scroll-snap-align:none;min-width:0;min-height:unset;transition:transform .4s ease,border-color .4s ease,box-shadow .4s ease!important}
   .prob-va-photo{display:none}
   .prob-va-desc{display:none}
-  .prob-va-body{padding:12px 10px!important;gap:4px!important}
+  .prob-va-body{padding:14px 10px!important;gap:5px!important;text-align:center!important;align-items:center!important}
   .prob-va-label{font-size:11px!important;letter-spacing:.06em}
-  .prob-va-stat{font-size:1.5rem!important}
-  .prob-va-title{font-size:11.5px!important;letter-spacing:.01em}
+  .prob-va-stat{font-size:1.6rem!important}
+  .prob-va-title{font-size:11px!important;letter-spacing:.01em;text-align:center!important}
   .p3-track .prob-va-card:last-child{grid-column:1/-1}
   .p3-dots{display:none}
   .p3-arrow{display:none}
+  .p3-track .prob-va-card.p3-spot{transform:scale(1.04);border-color:rgba(255,51,51,.6)!important;box-shadow:0 0 0 1px rgba(255,51,51,.18),0 10px 32px rgba(255,51,51,.2)!important}
 }
 
 /* PRECIO — compact payment methods row */
@@ -1929,7 +1930,7 @@ fbq('track', 'PageView');
 <div class="container">
   <div class="section-shell surface">
     <div class="sec-eyebrow reveal">El problema</div>
-  <h2 class="sec-title reveal d1">Lo que perdés<br><span class="hl">sin darte cuenta.</span></h2>
+  <h2 class="sec-title reveal d1">Lo que las apps<br><span style="color:#FF3333">no resuelven.</span></h2>
   <p class="sec-sub reveal d1">Los números reales de trabajar para una plataforma.</p>
 
   <div class="p3-outer reveal d2">
@@ -3964,6 +3965,30 @@ function ftSwitch(btn, panelId) {
     }
   }, 2500);
   track.addEventListener('touchstart', function(){ clearInterval(autoTimer); }, {passive:true});
+})();
+
+// Pains spotlight cycle — only on mobile grid layout
+(function(){
+  if(window.innerWidth > 560) return;
+  var cards = Array.prototype.slice.call(document.querySelectorAll('.p3-track .prob-va-card'));
+  if(!cards.length) return;
+  var idx = 0;
+  function next(){
+    cards.forEach(function(c){ c.classList.remove('p3-spot'); });
+    cards[idx].classList.add('p3-spot');
+    idx = (idx + 1) % cards.length;
+  }
+  // Start only when section is visible
+  var sec = document.getElementById('problema');
+  if(!sec){ next(); setInterval(next, 1800); return; }
+  var spotObs = new IntersectionObserver(function(entries){
+    if(entries[0].isIntersecting){
+      next();
+      setInterval(next, 1800);
+      spotObs.disconnect();
+    }
+  }, {threshold:.2});
+  spotObs.observe(sec);
 })();
 </script>
 </body>
