@@ -2024,191 +2024,6 @@ fbq('track', 'PageView');
 
 <div class="divider"></div>
 
-<!-- FLOW V2 -->
-<section class="section">
-<div class="container">
-  <div class="flowv2 reveal d4" id="flow-v2">
-    <div class="flowv2-head">
-      <div>
-        <div class="flowv2-kicker">Momentos clave del sistema</div>
-        <div class="flowv2-title">Cómo trabaja el sistema,<br>paso a paso.</div>
-        <p class="flowv2-sub">Elegí un momento y mirá qué pasa desde que entra el pedido hasta que el viaje queda encaminado: pedido, reserva, cobro o tracking.</p>
-      </div>
-      <div class="flowv2-tabs" role="tablist" aria-label="Modos del flujo RemisApp">
-        <button class="flowv2-tab flowv2-tab--video" type="button" data-flow-mode="video">🎬 Ver demo</button>
-        <button class="flowv2-tab active" type="button" data-flow-mode="now">🚕 Pedido ahora</button>
-        <button class="flowv2-tab" type="button" data-flow-mode="scheduled">📅 Viaje programado</button>
-        <button class="flowv2-tab" type="button" data-flow-mode="payment">💳 Cobro</button>
-        <button class="flowv2-tab" type="button" data-flow-mode="tracking">📍 Tracking vivo</button>
-      </div>
-    </div>
-
-    <div class="flowv2-grid">
-      <div class="flowv2-card">
-        <div class="flowv2-badge" data-flow-icon>🚕</div>
-        <div class="flowv2-mode-title" data-flow-title>Pedido ahora</div>
-        <p class="flowv2-mode-copy" data-flow-copy>El cliente te escribe por WhatsApp, el bot pide origen y destino, cotiza con referencia Uber y te manda la solicitud lista para aceptar.</p>
-        <div class="flowv2-lanes">
-          <div class="flowv2-lane">
-            <div class="flowv2-lane-label">Lo hace el bot</div>
-            <ul data-flow-bot>
-              <li>Atiende el mensaje inicial</li>
-              <li>Pide origen y destino</li>
-              <li>Cotiza y confirma con el cliente</li>
-            </ul>
-          </div>
-          <div class="flowv2-lane flowv2-lane--you">
-            <div class="flowv2-lane-label">Lo hace el chofer</div>
-            <ul data-flow-you>
-              <li>Aceptás o rechazás</li>
-              <li>Vas a buscarlo</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      <div class="flowv2-side">
-        <div class="flowv2-visual" data-flow-visual>
-          <div class="f2-stage f2-stage--split">
-            <div class="f2-shot">
-            <div class="f2-role f2-role--client">Cliente</div>
-            <div class="f2-phone f2-phone--small">
-              <div class="f2-phone-head">
-                <div class="f2-avatar f2-avatar--driver"><img src="assets/chofer-plata-retenida-01.png" alt=""></div>
-                <div>
-                  <div class="f2-name">Jose Gomez - Bot</div>
-                  <div class="f2-status">en línea</div>
-                </div>
-              </div>
-              <div class="f2-chat">
-                <div class="f2-bubble f2-in" style="--d:.2s">⏱️ ¿Para ahora o más tarde?</div>
-                <div class="f2-bubble f2-out" style="--d:1.0s">Ahora</div>
-                <div class="f2-bubble f2-in" style="--d:1.8s">📍 Origen y destino?</div>
-                <div class="f2-bubble f2-out" style="--d:2.7s">Corrientes 1234 → Aeroparque</div>
-                <div class="f2-bubble f2-in" style="--d:3.5s">🚕 $9.500 · 1 Confirmar · 2 Cancelar</div>
-                <div class="f2-bubble f2-out" style="--d:4.3s">1</div>
-                <div class="f2-bubble f2-in" style="--d:5.1s">⏳ Enviado. Esperando al chofer...</div>
-                <div class="f2-bubble f2-ok" style="--d:9.2s">🎉 ¡Confirmado! Jose Gomez en camino 🚗</div>
-              </div>
-            </div>
-            </div>
-            <div class="f2-connector"></div>
-            <div class="f2-shot">
-            <div class="f2-role f2-role--driver">Chofer</div>
-            <div class="f2-phone f2-phone--small">
-              <div class="f2-phone-head">
-                <div class="f2-avatar f2-avatar--bot"><img src="assets/robot_bot.png" alt=""></div>
-                <div>
-                  <div class="f2-name">RemisApp Bot</div>
-                  <div class="f2-status">solicitudes</div>
-                </div>
-              </div>
-              <div class="f2-chat">
-                <div class="f2-bubble f2-in" style="--d:5.9s">🔔 Nueva solicitud — Martina R.</div>
-                <div class="f2-bubble f2-in" style="--d:6.7s">📍 Corrientes 1234 → Aeroparque · 💰 $9.500</div>
-                <div class="f2-bubble f2-out" style="--d:7.8s">1 ✅</div>
-                <div class="f2-bubble f2-ok" style="--d:8.6s">🚗 Viaje aceptado. Pasajero notificado.</div>
-              </div>
-            </div>
-            </div>
-            <div class="f2-note">bot envía la solicitud</div>
-          </div>
-        </div>
-        <div class="flowv2-mini active" data-flow-step="0">
-          <div class="flowv2-mini-num">01</div>
-          <div>
-            <div class="flowv2-mini-title">💬 Cliente escribe</div>
-            <div class="flowv2-mini-copy">El pedido entra por tu link o QR, directo a WhatsApp.</div>
-          </div>
-        </div>
-        <div class="flowv2-mini active" data-flow-step="1">
-          <div class="flowv2-mini-num">02</div>
-          <div>
-            <div class="flowv2-mini-title">🤖 Bot resuelve</div>
-            <div class="flowv2-mini-copy">Pregunta, cotiza, valida y deja todo ordenado.</div>
-          </div>
-        </div>
-        <div class="flowv2-mini active" data-flow-step="2">
-          <div class="flowv2-mini-num">03</div>
-          <div>
-            <div class="flowv2-mini-title">🚗 Chofer maneja</div>
-            <div class="flowv2-mini-copy">Intervenís al final, cuando ya hay un viaje listo.</div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div id="flowv2-video-panel" style="display:none">
-      <video id="flowv2-video" muted loop playsinline webkit-playsinline preload="none" style="width:100%;border-radius:16px;background:#050806;display:block">
-        <source media="(max-width:700px)" src="assets/video/dual-flow-mobile.mp4" type="video/mp4">
-        <source src="assets/video/dual-flow-v8.mp4" type="video/mp4">
-      </video>
-    </div>
-
-  </div>
-</div>
-</section>
-
-<div class="divider" id="div-como-funciona"></div>
-
-<!-- FUSIÓN: CÓMO FUNCIONA -->
-<section class="section" id="como-funciona">
-<div class="container">
-  <div class="sec-eyebrow reveal">Cómo funciona</div>
-  <h2 class="sec-title reveal d1">El cliente pide.<br><span class="hl">Vos solo manejás.</span></h2>
-  <p class="sec-sub reveal d1">Acá no ves el pedido paso a paso: ves todo lo que el sistema resuelve por vos mientras manejás.</p>
-
-  <div class="flow-demo reveal d2">
-    <div class="flow-demo-shell">
-      <video class="flow-demo-video" autoplay muted loop playsinline webkit-playsinline preload="metadata" poster="assets/feat-bot.png" onclick="this.play()" aria-label="Flujo cliente-bot-chofer en RemisApp Solo">
-        <source media="(max-width:700px)" src="assets/video/dual-flow-mobile.mp4" type="video/mp4">
-        <source src="assets/video/dual-flow-v8.mp4" type="video/mp4">
-      </video>
-    </div>
-  </div>
-
-  <div class="bot-div reveal d3" style="margin-top:32px">
-    <div class="bot-div-col bot-div-col--bot">
-      <div class="bot-div-hdr">
-        <div class="bot-div-ico">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><path d="M17 17h4M19 15v4"/></svg>
-        </div>
-        <span class="bot-div-title">El bot hace esto solo</span>
-      </div>
-      <ul class="bot-div-list">
-        <li><span class="ck2">✓</span>Atiende al cliente las 24 hs</li>
-        <li><span class="ck2">✓</span>Entiende origen y destino</li>
-        <li><span class="ck2">✓</span>Cotiza vs Uber en tiempo real</li>
-        <li><span class="ck2">✓</span>Confirma el viaje con el pasajero</li>
-        <li><span class="ck2">✓</span>Te avisa al instante</li>
-        <li><span class="ck2">✓</span>Manda el link de tracking</li>
-        <li><span class="ck2">✓</span>Gestiona viajes programados</li>
-        <li><span class="ck2">✓</span>Funciona los 365 días, sin descanso</li>
-      </ul>
-      <div class="bot-div-foot">8 tareas automáticas. Sin intervención tuya.</div>
-    </div>
-    <div class="bot-div-sep">
-      <svg class="bot-div-sep-arr" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--gris)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-      <span style="font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--gris);writing-mode:vertical-rl;margin-top:6px">vos</span>
-    </div>
-    <div class="bot-div-col bot-div-col--you">
-      <div class="bot-div-hdr">
-        <div class="bot-div-ico">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
-        </div>
-        <span class="bot-div-title">Lo que hacés vos</span>
-      </div>
-      <ul class="bot-div-list">
-        <li><span class="ck2">→</span>Aceptar o rechazar el viaje</li>
-        <li><span class="ck2">→</span>Manejar</li>
-      </ul>
-      <div class="bot-div-foot">Eso es todo. El resto lo hace el bot.</div>
-    </div>
-  </div>
-
-</div>
-</section>
-
 <!-- ════════════════════════════════════════════════════════
      OPCIONES DE FEATURES — elegir una y borrar las demás
      ════════════════════════════════════════════════════════ -->
@@ -2401,6 +2216,193 @@ fbq('track', 'PageView');
     </div>
     <div class="featcomp-note">RemisApp no toca el dinero — vos cobrás directo al cliente.</div>
   </div>
+</div>
+</section>
+
+<div class="divider"></div>
+
+<!-- FLOW V2 -->
+<section class="section">
+<div class="container">
+  <div class="flowv2 reveal d4" id="flow-v2">
+    <div class="flowv2-head">
+      <div>
+        <div class="flowv2-kicker">Momentos clave del sistema</div>
+        <div class="flowv2-title">Cómo trabaja el sistema,<br>paso a paso.</div>
+        <p class="flowv2-sub">Elegí un momento y mirá qué pasa desde que entra el pedido hasta que el viaje queda encaminado: pedido, reserva, cobro o tracking.</p>
+      </div>
+      <div class="flowv2-tabs" role="tablist" aria-label="Modos del flujo RemisApp">
+        <button class="flowv2-tab flowv2-tab--video" type="button" data-flow-mode="video">🎬 Ver demo</button>
+        <button class="flowv2-tab active" type="button" data-flow-mode="now">🚕 Pedido ahora</button>
+        <button class="flowv2-tab" type="button" data-flow-mode="scheduled">📅 Viaje programado</button>
+        <button class="flowv2-tab" type="button" data-flow-mode="payment">💳 Cobro</button>
+        <button class="flowv2-tab" type="button" data-flow-mode="tracking">📍 Tracking vivo</button>
+      </div>
+    </div>
+
+    <div class="flowv2-grid">
+      <div class="flowv2-card">
+        <div class="flowv2-badge" data-flow-icon>🚕</div>
+        <div class="flowv2-mode-title" data-flow-title>Pedido ahora</div>
+        <p class="flowv2-mode-copy" data-flow-copy>El cliente te escribe por WhatsApp, el bot pide origen y destino, cotiza con referencia Uber y te manda la solicitud lista para aceptar.</p>
+        <div class="flowv2-lanes">
+          <div class="flowv2-lane">
+            <div class="flowv2-lane-label">Lo hace el bot</div>
+            <ul data-flow-bot>
+              <li>Atiende el mensaje inicial</li>
+              <li>Pide origen y destino</li>
+              <li>Cotiza y confirma con el cliente</li>
+            </ul>
+          </div>
+          <div class="flowv2-lane flowv2-lane--you">
+            <div class="flowv2-lane-label">Lo hace el chofer</div>
+            <ul data-flow-you>
+              <li>Aceptás o rechazás</li>
+              <li>Vas a buscarlo</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="flowv2-side">
+        <div class="flowv2-visual" data-flow-visual>
+          <div class="f2-stage f2-stage--split">
+            <div class="f2-shot">
+            <div class="f2-role f2-role--client">Cliente</div>
+            <div class="f2-phone f2-phone--small">
+              <div class="f2-phone-head">
+                <div class="f2-avatar f2-avatar--driver"><img src="assets/chofer-plata-retenida-01.png" alt=""></div>
+                <div>
+                  <div class="f2-name">Jose Gomez - Bot</div>
+                  <div class="f2-status">en línea</div>
+                </div>
+              </div>
+              <div class="f2-chat">
+                <div class="f2-bubble f2-in" style="--d:.2s">⏱️ ¿Para ahora o más tarde?</div>
+                <div class="f2-bubble f2-out" style="--d:1.0s">Ahora</div>
+                <div class="f2-bubble f2-in" style="--d:1.8s">📍 Origen y destino?</div>
+                <div class="f2-bubble f2-out" style="--d:2.7s">Corrientes 1234 → Aeroparque</div>
+                <div class="f2-bubble f2-in" style="--d:3.5s">🚕 $9.500 · 1 Confirmar · 2 Cancelar</div>
+                <div class="f2-bubble f2-out" style="--d:4.3s">1</div>
+                <div class="f2-bubble f2-in" style="--d:5.1s">⏳ Enviado. Esperando al chofer...</div>
+                <div class="f2-bubble f2-ok" style="--d:9.2s">🎉 ¡Confirmado! Jose Gomez en camino 🚗</div>
+              </div>
+            </div>
+            </div>
+            <div class="f2-connector"></div>
+            <div class="f2-shot">
+            <div class="f2-role f2-role--driver">Chofer</div>
+            <div class="f2-phone f2-phone--small">
+              <div class="f2-phone-head">
+                <div class="f2-avatar f2-avatar--bot"><img src="assets/robot_bot.png" alt=""></div>
+                <div>
+                  <div class="f2-name">RemisApp Bot</div>
+                  <div class="f2-status">solicitudes</div>
+                </div>
+              </div>
+              <div class="f2-chat">
+                <div class="f2-bubble f2-in" style="--d:5.9s">🔔 Nueva solicitud — Martina R.</div>
+                <div class="f2-bubble f2-in" style="--d:6.7s">📍 Corrientes 1234 → Aeroparque · 💰 $9.500</div>
+                <div class="f2-bubble f2-out" style="--d:7.8s">1 ✅</div>
+                <div class="f2-bubble f2-ok" style="--d:8.6s">🚗 Viaje aceptado. Pasajero notificado.</div>
+              </div>
+            </div>
+            </div>
+            <div class="f2-note">bot envía la solicitud</div>
+          </div>
+        </div>
+        <div class="flowv2-mini active" data-flow-step="0">
+          <div class="flowv2-mini-num">01</div>
+          <div>
+            <div class="flowv2-mini-title">💬 Cliente escribe</div>
+            <div class="flowv2-mini-copy">El pedido entra por tu link o QR, directo a WhatsApp.</div>
+          </div>
+        </div>
+        <div class="flowv2-mini active" data-flow-step="1">
+          <div class="flowv2-mini-num">02</div>
+          <div>
+            <div class="flowv2-mini-title">🤖 Bot resuelve</div>
+            <div class="flowv2-mini-copy">Pregunta, cotiza, valida y deja todo ordenado.</div>
+          </div>
+        </div>
+        <div class="flowv2-mini active" data-flow-step="2">
+          <div class="flowv2-mini-num">03</div>
+          <div>
+            <div class="flowv2-mini-title">🚗 Chofer maneja</div>
+            <div class="flowv2-mini-copy">Intervenís al final, cuando ya hay un viaje listo.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="flowv2-video-panel" style="display:none">
+      <video id="flowv2-video" muted loop playsinline webkit-playsinline preload="none" style="width:100%;border-radius:16px;background:#050806;display:block">
+        <source media="(max-width:700px)" src="assets/video/dual-flow-mobile.mp4" type="video/mp4">
+        <source src="assets/video/dual-flow-v8.mp4" type="video/mp4">
+      </video>
+    </div>
+
+  </div>
+</div>
+</section>
+
+<div class="divider" id="div-como-funciona"></div>
+
+<!-- FUSIÓN: CÓMO FUNCIONA -->
+<section class="section" id="como-funciona">
+<div class="container">
+  <div class="sec-eyebrow reveal">Cómo funciona</div>
+  <h2 class="sec-title reveal d1">El cliente pide.<br><span class="hl">Vos solo manejás.</span></h2>
+  <p class="sec-sub reveal d1">Acá no ves el pedido paso a paso: ves todo lo que el sistema resuelve por vos mientras manejás.</p>
+
+  <div class="flow-demo reveal d2">
+    <div class="flow-demo-shell">
+      <video class="flow-demo-video" autoplay muted loop playsinline webkit-playsinline preload="metadata" poster="assets/feat-bot.png" onclick="this.play()" aria-label="Flujo cliente-bot-chofer en RemisApp Solo">
+        <source media="(max-width:700px)" src="assets/video/dual-flow-mobile.mp4" type="video/mp4">
+        <source src="assets/video/dual-flow-v8.mp4" type="video/mp4">
+      </video>
+    </div>
+  </div>
+
+  <div class="bot-div reveal d3" style="margin-top:32px">
+    <div class="bot-div-col bot-div-col--bot">
+      <div class="bot-div-hdr">
+        <div class="bot-div-ico">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><path d="M17 17h4M19 15v4"/></svg>
+        </div>
+        <span class="bot-div-title">El bot hace esto solo</span>
+      </div>
+      <ul class="bot-div-list">
+        <li><span class="ck2">✓</span>Atiende al cliente las 24 hs</li>
+        <li><span class="ck2">✓</span>Entiende origen y destino</li>
+        <li><span class="ck2">✓</span>Cotiza vs Uber en tiempo real</li>
+        <li><span class="ck2">✓</span>Confirma el viaje con el pasajero</li>
+        <li><span class="ck2">✓</span>Te avisa al instante</li>
+        <li><span class="ck2">✓</span>Manda el link de tracking</li>
+        <li><span class="ck2">✓</span>Gestiona viajes programados</li>
+        <li><span class="ck2">✓</span>Funciona los 365 días, sin descanso</li>
+      </ul>
+      <div class="bot-div-foot">8 tareas automáticas. Sin intervención tuya.</div>
+    </div>
+    <div class="bot-div-sep">
+      <svg class="bot-div-sep-arr" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--gris)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      <span style="font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--gris);writing-mode:vertical-rl;margin-top:6px">vos</span>
+    </div>
+    <div class="bot-div-col bot-div-col--you">
+      <div class="bot-div-hdr">
+        <div class="bot-div-ico">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+        </div>
+        <span class="bot-div-title">Lo que hacés vos</span>
+      </div>
+      <ul class="bot-div-list">
+        <li><span class="ck2">→</span>Aceptar o rechazar el viaje</li>
+        <li><span class="ck2">→</span>Manejar</li>
+      </ul>
+      <div class="bot-div-foot">Eso es todo. El resto lo hace el bot.</div>
+    </div>
+  </div>
+
 </div>
 </section>
 
