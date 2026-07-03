@@ -1585,14 +1585,13 @@ footer{border-top:1px solid var(--borde);padding:40px;max-width:1180px;margin:0 
 .hw-flow{display:grid;grid-template-columns:1fr 36px 1fr 36px 1fr 36px 1fr;align-items:start;gap:0;margin-top:40px}
 .hw-flow-arrow{display:flex;align-items:flex-start;justify-content:center;padding-top:56px;color:rgba(61,204,142,.88);font-size:24px;font-weight:900;text-shadow:0 0 18px rgba(61,204,142,.26)}
 @media(max-width:640px){
-  .hw-flow{display:flex!important;flex-direction:column;gap:0;margin-top:20px}
+  .hw-flow{display:flex!important;flex-direction:column;gap:4px;margin-top:20px}
   .hw-flow-arrow{display:none!important}
   .hw-flow-mock{display:none!important}
-  .hw-flow-node{flex-direction:row!important;align-items:center!important;gap:16px;text-align:left;padding:15px 0;border-bottom:1px solid rgba(255,255,255,.07)}
-  .hw-flow-node:last-child{border-bottom:none}
-  .hw-flow-num{font-family:'Barlow Condensed',sans-serif;font-size:30px;min-width:40px;flex-shrink:0;line-height:1;margin-bottom:0}
-  .hw-flow-title{text-align:left!important;font-size:15px;margin-bottom:3px}
-  .hw-flow-desc{text-align:left!important;max-width:none!important;font-size:12.5px}
+  .hw-flow-node{display:grid!important;grid-template-columns:52px 1fr;column-gap:14px;row-gap:2px;padding:16px 14px;border-radius:14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06)}
+  .hw-flow-num{font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:800;letter-spacing:.06em;color:#071009;background:var(--verde);border-radius:8px;width:40px;height:40px;display:flex!important;align-items:center;justify-content:center;grid-row:1/3;align-self:center;margin-bottom:0;line-height:1}
+  .hw-flow-title{text-align:left!important;font-size:15px;font-weight:800;margin-bottom:0;align-self:end;color:var(--blanco)}
+  .hw-flow-desc{text-align:left!important;max-width:none!important;font-size:12.5px;align-self:start;color:var(--gris2);line-height:1.45}
 }
 .hw-flow-node{display:flex;flex-direction:column;align-items:center;gap:0}
 .hw-flow-mock{width:100%;background:var(--card);border:1px solid var(--borde);border-radius:16px;padding:16px;display:flex;align-items:center;justify-content:center;min-height:140px;margin-bottom:16px}
@@ -2998,7 +2997,7 @@ fbq('track', 'PageView');
         </div>
       </div>
       <div class="hw-flow-num">01</div>
-      <div class="hw-flow-title">Cre&aacute;s tu cuenta</div>
+      <div class="hw-flow-title">✍️ Creás tu cuenta</div>
       <div class="hw-flow-desc">Nombre, ciudad y WhatsApp. Sin tarjeta.</div>
     </div>
 
@@ -3016,8 +3015,8 @@ fbq('track', 'PageView');
         </div>
       </div>
       <div class="hw-flow-num">02</div>
-      <div class="hw-flow-title">Eleg&iacute;s tu link</div>
-      <div class="hw-flow-desc">Tu p&aacute;gina lista en segundos.</div>
+      <div class="hw-flow-title">🔗 Elegís tu link</div>
+      <div class="hw-flow-desc">Tu página lista en segundos.</div>
     </div>
 
     <div class="hw-flow-arrow">&#8594;</div>
@@ -3036,7 +3035,7 @@ fbq('track', 'PageView');
         </div>
       </div>
       <div class="hw-flow-num">03</div>
-      <div class="hw-flow-title">Compart&iacute;s el link</div>
+      <div class="hw-flow-title">📲 Compartís el link</div>
       <div class="hw-flow-desc">WA, Instagram, QR en el auto.</div>
     </div>
 
@@ -3056,8 +3055,8 @@ fbq('track', 'PageView');
         </div>
       </div>
       <div class="hw-flow-num">04</div>
-      <div class="hw-flow-title">Primer pedido</div>
-      <div class="hw-flow-desc">El bot atiende solo. Vos cobr&aacute;s el 100%.</div>
+      <div class="hw-flow-title">🚕 Primer pedido</div>
+      <div class="hw-flow-desc">El bot atiende solo. Vos cobrás el 100%.</div>
     </div>
 
   </div>
