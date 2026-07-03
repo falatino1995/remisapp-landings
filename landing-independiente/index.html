@@ -2346,6 +2346,116 @@ fbq('track', 'PageView');
 </div>
 </section>
 
+<!-- ══ DRAFT COMPARATIVO (solo mobile, borrar después) ══ -->
+<style>
+@media(min-width:821px){.flow-draft-wrap{display:none}}
+.flow-draft-wrap{padding:0 16px;margin:24px 0 0}
+.flow-draft-box{border-radius:18px;padding:18px 14px;margin-bottom:16px}
+.flow-draft-box--a{background:rgba(138,184,255,.04);border:1px solid rgba(138,184,255,.22)}
+.flow-draft-box--b{background:rgba(61,204,142,.04);border:1px solid rgba(61,204,142,.18)}
+.flow-draft-tag{display:inline-block;font-size:9px;font-weight:800;text-transform:uppercase;letter-spacing:.12em;padding:3px 10px;border-radius:999px;margin-bottom:12px}
+.flow-draft-tag--a{background:rgba(138,184,255,.12);border:1px solid rgba(138,184,255,.3);color:#8AB8FF}
+.flow-draft-tag--b{background:rgba(61,204,142,.1);border:1px solid var(--verde-border);color:var(--verde)}
+/* ── Option A: side-by-side ── */
+.fda .f2-stage{flex-direction:row!important;align-items:flex-start!important;gap:0!important;min-height:auto!important}
+.fda .f2-shot{gap:4px!important}
+.fda .f2-phone{width:40vw!important;max-width:152px!important;border-radius:16px!important;box-shadow:none!important;animation:none!important}
+.fda .f2-phone-head{padding:6px 7px!important;gap:5px!important}
+.fda .f2-avatar{width:20px!important;height:20px!important}
+.fda .f2-name{font-size:7.5px!important;line-height:1.1}
+.fda .f2-status{display:none!important}
+.fda .f2-chat{min-height:0!important;padding:7px 6px!important;gap:4px!important}
+.fda .f2-bubble{font-size:8px!important;padding:5px 6px!important;border-radius:7px!important;animation:none!important;opacity:1!important;transform:none!important;max-width:98%!important}
+.fda .f2-role{font-size:7.5px!important;padding:2px 6px!important}
+.fda .f2-connector{width:18px!important;height:2px!important;background:var(--verde)!important;box-shadow:none!important;align-self:center!important;margin-top:44px!important;flex-shrink:0}
+.fda .f2-connector::before{content:""!important;width:18px!important;height:18px!important;background:rgba(7,10,8,.95) url('assets/robot_bot.png') center/12px no-repeat!important;border-radius:50%!important;display:flex!important;letter-spacing:0!important;font-size:0!important;left:50%!important;top:50%!important;transform:translate(-50%,-50%)!important}
+.fda .f2-connector::after{right:-4px!important;bottom:auto!important;top:-3px!important;border-top:4px solid transparent!important;border-bottom:4px solid transparent!important;border-left:6px solid var(--verde)!important;border-right:0!important}
+/* ── Option B: short vertical ── */
+.fdb .f2-stage{min-height:auto!important}
+.fdb .f2-chat{min-height:0!important;padding:9px 8px!important;gap:5px!important}
+.fdb .f2-bubble{animation:none!important;opacity:1!important;transform:none!important}
+.fdb .f2-phone{animation:none!important}
+</style>
+<div class="flow-draft-wrap">
+  <!-- OPCIÓN A: SIDE BY SIDE -->
+  <div class="flow-draft-box flow-draft-box--a fda">
+    <div class="flow-draft-tag flow-draft-tag--a">Opción A · Side by side</div>
+    <div class="f2-stage f2-stage--split">
+      <div class="f2-shot">
+        <div class="f2-role f2-role--client">Cliente</div>
+        <div class="f2-phone f2-phone--small">
+          <div class="f2-phone-head">
+            <div class="f2-avatar f2-avatar--driver"><img src="assets/chofer-plata-retenida-01.png" alt=""></div>
+            <div><div class="f2-name">Jose - Bot</div></div>
+          </div>
+          <div class="f2-chat">
+            <div class="f2-bubble f2-in">⏱️ ¿Para ahora?</div>
+            <div class="f2-bubble f2-out">Ahora · Corrientes→Aero</div>
+            <div class="f2-bubble f2-in">🚕 $9.500 · 1 Confirmar</div>
+            <div class="f2-bubble f2-out">1</div>
+            <div class="f2-bubble f2-ok">🎉 Jose en camino 🚗</div>
+          </div>
+        </div>
+      </div>
+      <div class="f2-connector"></div>
+      <div class="f2-shot">
+        <div class="f2-role f2-role--driver">Chofer</div>
+        <div class="f2-phone f2-phone--small">
+          <div class="f2-phone-head">
+            <div class="f2-avatar f2-avatar--bot"><img src="assets/robot_bot.png" alt=""></div>
+            <div><div class="f2-name">RemisApp Bot</div></div>
+          </div>
+          <div class="f2-chat">
+            <div class="f2-bubble f2-in">🔔 Martina R.</div>
+            <div class="f2-bubble f2-in">📍 Corrientes→Aero · $9.500</div>
+            <div class="f2-bubble f2-out">1 ✅</div>
+            <div class="f2-bubble f2-ok">🚗 Aceptado. Notificado.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- OPCIÓN B: VERTICAL CORTO -->
+  <div class="flow-draft-box flow-draft-box--b fdb">
+    <div class="flow-draft-tag flow-draft-tag--b">Opción B · Vertical corto</div>
+    <div class="f2-stage f2-stage--split">
+      <div class="f2-shot">
+        <div class="f2-role f2-role--client">Cliente</div>
+        <div class="f2-phone f2-phone--small">
+          <div class="f2-phone-head">
+            <div class="f2-avatar f2-avatar--driver"><img src="assets/chofer-plata-retenida-01.png" alt=""></div>
+            <div><div class="f2-name">Jose Gomez - Bot</div><div class="f2-status">en línea</div></div>
+          </div>
+          <div class="f2-chat">
+            <div class="f2-bubble f2-in">⏱️ ¿Para ahora o más tarde?</div>
+            <div class="f2-bubble f2-out">Ahora · Corrientes 1234 → Aeroparque</div>
+            <div class="f2-bubble f2-in">🚕 $9.500 · 1 Confirmar · 2 Cancelar</div>
+            <div class="f2-bubble f2-out">1</div>
+            <div class="f2-bubble f2-ok">🎉 ¡Confirmado! Jose Gomez en camino 🚗</div>
+          </div>
+        </div>
+      </div>
+      <div class="f2-connector"></div>
+      <div class="f2-shot">
+        <div class="f2-role f2-role--driver">Chofer</div>
+        <div class="f2-phone f2-phone--small">
+          <div class="f2-phone-head">
+            <div class="f2-avatar f2-avatar--bot"><img src="assets/robot_bot.png" alt=""></div>
+            <div><div class="f2-name">RemisApp Bot</div><div class="f2-status">solicitudes</div></div>
+          </div>
+          <div class="f2-chat">
+            <div class="f2-bubble f2-in">🔔 Martina R. · Corrientes→Aeroparque</div>
+            <div class="f2-bubble f2-in">💰 $9.500</div>
+            <div class="f2-bubble f2-out">1 ✅</div>
+            <div class="f2-bubble f2-ok">🚗 Aceptado. Pasajero notificado.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- ══ FIN DRAFT ══ -->
+
 <div class="divider" id="div-como-funciona"></div>
 
 <!-- FUSIÓN: CÓMO FUNCIONA -->
