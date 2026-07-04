@@ -2091,6 +2091,13 @@ fbq('track', 'PageView');
   .prob-c100-val{font-size:16px;font-weight:800;color:#ef4444;line-height:1.1}
   .prob-c100-close{text-align:center;font-size:13px;color:var(--gris2);line-height:1.6;padding-top:16px;border-top:1px dashed rgba(255,255,255,.08)}
   .prob-c100-close strong{color:var(--blanco);display:block;font-size:15px;margin-bottom:4px}
+  .prob-c100-bar{cursor:pointer;user-select:none}
+  .prob-c100-bar:active{opacity:.85}
+  .c100-hint{font-size:10px;opacity:.5;margin-left:4px;display:inline-block;transition:transform .35s ease}
+  .prob-c100-bar.open .c100-hint{transform:rotate(180deg)}
+  .prob-c100-expand{overflow:hidden;max-height:0;opacity:0;transition:max-height .5s cubic-bezier(.4,0,.2,1),opacity .4s ease}
+  .prob-c100-expand.open{max-height:600px;opacity:1}
+  .prob-c100-expand-inner{padding:16px 0 4px;text-align:center;border-top:1px dashed rgba(239,68,68,.25);margin-top:2px}
   /* D — El número */
   .prob-d{text-align:center;padding:8px 0 4px}
   .prob-d-setup{font-size:14px;color:var(--gris2);line-height:1.55;margin-bottom:22px}
@@ -2166,9 +2173,21 @@ fbq('track', 'PageView');
     <!-- C: $100 -->
     <div class="prob-br-pane" id="prob-pane-c">
       <p class="prob-c100-intro">De cada $100 que ganás trabajando para una plataforma...</p>
-      <div class="prob-c100-bar">
+      <div class="prob-c100-bar" id="c100Bar" onclick="toggleC100()" role="button" aria-expanded="false">
         <div class="prob-c100-seg prob-c100-seg--taken">$20</div>
-        <div class="prob-c100-seg prob-c100-seg--yours">$80 ← ¿realmente tuyos?</div>
+        <div class="prob-c100-seg prob-c100-seg--yours">$80 ← ¿realmente tuyos? <span class="c100-hint">↓</span></div>
+      </div>
+      <div class="prob-c100-expand" id="c100Expand">
+        <div class="prob-c100-expand-inner">
+          <p style="font-size:13px;color:var(--gris2);margin-bottom:14px">Este año, sin saberlo, le entregaste a la plataforma:</p>
+          <div class="prob-d-number">$308.000</div>
+          <p style="font-size:11px;color:var(--gris2);text-transform:uppercase;letter-spacing:.06em;margin:6px 0 18px">Solo en comisiones — el 20% de cada viaje</p>
+          <div class="prob-d-items" style="text-align:left">
+            <div class="prob-d-item">= <b>más de un mes entero</b> de trabajo regalado</div>
+            <div class="prob-d-item">= <b>370 viajes</b> que hiciste gratis para la plataforma</div>
+            <div class="prob-d-item">= <b>6 meses de nafta</b> que podrían haber sido tuyos</div>
+          </div>
+        </div>
       </div>
       <div class="prob-c100-items">
         <div class="prob-c100-item">
@@ -2220,6 +2239,13 @@ fbq('track', 'PageView');
     document.querySelectorAll('.prob-br-tab').forEach(function(b){b.classList.remove('active')});
     document.getElementById('prob-pane-'+id).classList.add('active');
     btn.classList.add('active');
+  }
+  function toggleC100(){
+    var bar=document.getElementById('c100Bar');
+    var exp=document.getElementById('c100Expand');
+    var open=exp.classList.toggle('open');
+    bar.classList.toggle('open',open);
+    bar.setAttribute('aria-expanded',open);
   }
   </script>
 
