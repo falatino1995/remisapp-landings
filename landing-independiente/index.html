@@ -2091,13 +2091,23 @@ fbq('track', 'PageView');
   .prob-c100-val{font-size:16px;font-weight:800;color:#ef4444;line-height:1.1}
   .prob-c100-close{text-align:center;font-size:13px;color:var(--gris2);line-height:1.6;padding-top:16px;border-top:1px dashed rgba(255,255,255,.08)}
   .prob-c100-close strong{color:var(--blanco);display:block;font-size:15px;margin-bottom:4px}
+  /* D — El número */
+  .prob-d{text-align:center;padding:8px 0 4px}
+  .prob-d-setup{font-size:14px;color:var(--gris2);line-height:1.55;margin-bottom:22px}
+  .prob-d-number{font-family:'Barlow Condensed',sans-serif;font-size:76px;font-weight:800;color:#ef4444;line-height:1;margin-bottom:6px;letter-spacing:-.01em}
+  .prob-d-context{font-size:12px;color:var(--gris2);letter-spacing:.04em;margin-bottom:24px;text-transform:uppercase}
+  .prob-d-items{display:flex;flex-direction:column;gap:8px;margin-bottom:22px;text-align:left}
+  .prob-d-item{font-size:13px;color:var(--blanco);padding:10px 14px;border:1px solid rgba(239,68,68,.14);border-radius:10px;background:rgba(239,68,68,.04);line-height:1.4}
+  .prob-d-item b{color:#ef4444}
+  .prob-d-close{font-size:14px;font-weight:600;color:var(--verde);padding-top:16px;border-top:1px dashed rgba(61,204,142,.2);line-height:1.5}
   </style>
 
   <div class="prob-br reveal d2" style="margin-top:28px">
     <div class="prob-br-tabs">
-      <button class="prob-br-tab active" onclick="showBrPane('a',this)">A · Comprobante</button>
+      <button class="prob-br-tab active" onclick="showBrPane('a',this)">A · Ticket</button>
       <button class="prob-br-tab" onclick="showBrPane('b',this)">B · Contrato</button>
       <button class="prob-br-tab" onclick="showBrPane('c',this)">C · $100</button>
+      <button class="prob-br-tab" onclick="showBrPane('d',this)">D · Número</button>
     </div>
 
     <!-- A: Receipt -->
@@ -2186,6 +2196,21 @@ fbq('track', 'PageView');
       <div class="prob-c100-close">
         <strong>¿Cuánto cuesta realmente trabajar para una plataforma?</strong>
         Más que plata.
+      </div>
+    </div>
+
+    <!-- D: El número -->
+    <div class="prob-br-pane" id="prob-pane-d">
+      <div class="prob-d">
+        <p class="prob-d-setup">Este año, sin saberlo, sin votarlo, sin poder negociarlo, le entregaste a la plataforma:</p>
+        <div class="prob-d-number">$308.000</div>
+        <p class="prob-d-context">Solo en comisiones — el 20% de cada viaje</p>
+        <div class="prob-d-items">
+          <div class="prob-d-item">= <b>más de un mes entero</b> de trabajo regalado</div>
+          <div class="prob-d-item">= <b>370 viajes</b> que hiciste gratis para la plataforma</div>
+          <div class="prob-d-item">= <b>6 meses de nafta</b> que podrían haber sido tuyos</div>
+        </div>
+        <p class="prob-d-close">Con RemisApp: 0% de comisión.<br>Cada peso que ganás es tuyo.</p>
       </div>
     </div>
   </div>
