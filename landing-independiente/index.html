@@ -1976,7 +1976,7 @@ fbq('track', 'PageView');
   <h2 class="sec-title reveal d1">Lo que las apps<br><span style="color:#FF3333">no resuelven.</span></h2>
   <p class="sec-sub reveal d1">Los números reales de trabajar para una plataforma.</p>
 
-  <div class="p3-outer reveal d2">
+  <div class="p3-outer reveal d2" style="display:none">
     <button class="p3-arrow p3-arrow--prev p3-hidden" id="p3Prev" aria-label="anterior">
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="15 18 9 12 15 6"/></svg>
     </button>
@@ -2045,6 +2045,158 @@ fbq('track', 'PageView');
       <div class="p3-dot"></div>
     </div>
   </div>
+
+  <style>
+  .prob-br-tabs{display:flex;gap:8px;margin-bottom:20px}
+  .prob-br-tab{flex:1;padding:9px 4px;border:1px solid var(--borde);border-radius:12px;background:rgba(255,255,255,.03);color:var(--gris2);font-size:11px;font-weight:700;cursor:pointer;text-align:center;transition:all .2s;line-height:1.3}
+  .prob-br-tab.active{border-color:var(--verde-border);background:var(--verde-bg);color:var(--verde)}
+  .prob-br-pane{display:none}
+  .prob-br-pane.active{display:block}
+  /* A — Receipt */
+  .prob-rcpt{font-family:'Courier New',Courier,monospace;background:#070e09;border:1px solid rgba(255,255,255,.09);border-radius:18px;overflow:hidden}
+  .prob-rcpt-top{padding:16px 20px 12px;border-bottom:1px dashed rgba(255,255,255,.1);text-align:center}
+  .prob-rcpt-brand{font-size:11px;font-weight:700;letter-spacing:.22em;color:#ef4444;text-transform:uppercase;margin-bottom:3px}
+  .prob-rcpt-date{font-size:10px;color:var(--gris2);letter-spacing:.1em}
+  .prob-rcpt-rows{padding:14px 20px}
+  .prob-rcpt-row{display:flex;justify-content:space-between;align-items:baseline;font-size:11.5px;padding:5px 0;border-bottom:1px dotted rgba(255,255,255,.05)}
+  .prob-rcpt-row span:first-child{color:var(--gris2)}
+  .prob-rcpt-row span:last-child{color:var(--blanco)}
+  .prob-rcpt-row--neg span:last-child{color:#ef4444;font-weight:700}
+  .prob-rcpt-dash{border-bottom:1px dashed rgba(255,255,255,.12);margin:10px 0}
+  .prob-rcpt-total{display:flex;justify-content:space-between;font-size:12px;font-weight:700;padding:12px 20px;border-top:2px dashed rgba(239,68,68,.4);background:rgba(239,68,68,.05)}
+  .prob-rcpt-total span:last-child{color:#ef4444}
+  .prob-rcpt-foot{padding:12px 20px;text-align:center;border-top:1px dashed rgba(61,204,142,.2);background:rgba(61,204,142,.04);font-size:11px;color:var(--verde);letter-spacing:.04em}
+  /* B — Contract */
+  .prob-doc{background:rgba(255,248,220,.02);border:1px solid rgba(250,200,50,.15);border-radius:18px;overflow:hidden}
+  .prob-doc-top{padding:18px 20px;text-align:center;border-bottom:1px solid rgba(250,200,50,.12)}
+  .prob-doc-kicker{font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:rgba(250,200,50,.5);margin-bottom:6px}
+  .prob-doc-title{font-size:18px;font-weight:800;color:var(--blanco)}
+  .prob-doc-sub{font-size:11px;color:var(--gris2);margin-top:4px}
+  .prob-doc-clauses{padding:16px 20px;display:flex;flex-direction:column;gap:14px}
+  .prob-doc-clause{display:flex;gap:10px;align-items:flex-start}
+  .prob-doc-art{font-size:10px;font-weight:800;color:rgba(250,200,50,.45);white-space:nowrap;padding-top:3px;min-width:38px}
+  .prob-doc-txt{font-size:13px;color:var(--gris2);line-height:1.55}
+  .prob-doc-hl{background:rgba(239,68,68,.12);border-left:2px solid rgba(239,68,68,.7);padding:5px 10px;border-radius:0 8px 8px 0;color:var(--blanco)}
+  .prob-doc-foot{padding:14px 20px;text-align:center;border-top:1px solid rgba(61,204,142,.15);background:rgba(61,204,142,.05);font-size:12px;color:var(--verde)}
+  /* C — $100 */
+  .prob-c100-intro{font-size:15px;color:var(--blanco);font-weight:600;margin-bottom:16px;text-align:center}
+  .prob-c100-bar{display:flex;border-radius:14px;overflow:hidden;height:52px;margin-bottom:18px}
+  .prob-c100-seg{display:flex;align-items:center;justify-content:center;font-weight:800;font-size:15px}
+  .prob-c100-seg--taken{background:rgba(239,68,68,.3);border:1px solid rgba(239,68,68,.5);color:#ef4444;flex:2}
+  .prob-c100-seg--yours{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);color:var(--gris2);flex:8;font-size:12px}
+  .prob-c100-items{display:flex;flex-direction:column;gap:10px;margin-bottom:18px}
+  .prob-c100-item{display:flex;align-items:center;gap:12px;padding:12px 14px;border:1px solid rgba(239,68,68,.15);border-radius:12px;background:rgba(239,68,68,.04)}
+  .prob-c100-emoji{font-size:22px;flex-shrink:0}
+  .prob-c100-lbl{font-size:12px;color:var(--gris2);margin-bottom:1px}
+  .prob-c100-val{font-size:16px;font-weight:800;color:#ef4444;line-height:1.1}
+  .prob-c100-close{text-align:center;font-size:13px;color:var(--gris2);line-height:1.6;padding-top:16px;border-top:1px dashed rgba(255,255,255,.08)}
+  .prob-c100-close strong{color:var(--blanco);display:block;font-size:15px;margin-bottom:4px}
+  </style>
+
+  <div class="prob-br reveal d2" style="margin-top:28px">
+    <div class="prob-br-tabs">
+      <button class="prob-br-tab active" onclick="showBrPane('a',this)">A · Comprobante</button>
+      <button class="prob-br-tab" onclick="showBrPane('b',this)">B · Contrato</button>
+      <button class="prob-br-tab" onclick="showBrPane('c',this)">C · $100</button>
+    </div>
+
+    <!-- A: Receipt -->
+    <div class="prob-br-pane active" id="prob-pane-a">
+      <div class="prob-rcpt">
+        <div class="prob-rcpt-top">
+          <div class="prob-rcpt-brand">La Plataforma</div>
+          <div class="prob-rcpt-date">RESUMEN MENSUAL · JUNIO 2025</div>
+        </div>
+        <div class="prob-rcpt-rows">
+          <div class="prob-rcpt-row"><span>Viajes completados</span><span>94</span></div>
+          <div class="prob-rcpt-row"><span>Ingresos brutos</span><span>$128.400</span></div>
+          <div class="prob-rcpt-dash"></div>
+          <div class="prob-rcpt-row prob-rcpt-row--neg"><span>Comisión plataforma (20%)</span><span>- $25.680</span></div>
+          <div class="prob-rcpt-row prob-rcpt-row--neg"><span>Clientes que son tuyos</span><span>Ninguno</span></div>
+          <div class="prob-rcpt-row prob-rcpt-row--neg"><span>Control de agenda</span><span>Cero</span></div>
+          <div class="prob-rcpt-row prob-rcpt-row--neg"><span>Aviso antes de suspensión</span><span>No</span></div>
+        </div>
+        <div class="prob-rcpt-total">
+          <span>Lo que realmente perdés</span><span>Mucho más que plata</span>
+        </div>
+        <div class="prob-rcpt-foot">RemisApp: 0% de comisión. Siempre.</div>
+      </div>
+    </div>
+
+    <!-- B: Contract -->
+    <div class="prob-br-pane" id="prob-pane-b">
+      <div class="prob-doc">
+        <div class="prob-doc-top">
+          <div class="prob-doc-kicker">Lo que aceptaste al instalar la app</div>
+          <div class="prob-doc-title">Términos y Condiciones</div>
+          <div class="prob-doc-sub">— las partes que nadie lee —</div>
+        </div>
+        <div class="prob-doc-clauses">
+          <div class="prob-doc-clause">
+            <span class="prob-doc-art">Art. 3</span>
+            <span class="prob-doc-txt prob-doc-hl">El 20% de cada viaje pertenece a la plataforma, sin excepción ni negociación posible.</span>
+          </div>
+          <div class="prob-doc-clause">
+            <span class="prob-doc-art">Art. 7</span>
+            <span class="prob-doc-txt prob-doc-hl">La cuenta puede suspenderse sin previo aviso ni explicación al conductor.</span>
+          </div>
+          <div class="prob-doc-clause">
+            <span class="prob-doc-art">Art. 12</span>
+            <span class="prob-doc-txt prob-doc-hl">Los clientes y su historial son propiedad de la plataforma, no del conductor.</span>
+          </div>
+          <div class="prob-doc-clause">
+            <span class="prob-doc-art">Art. 19</span>
+            <span class="prob-doc-txt">No existe proceso de apelación garantizado. La decisión de la plataforma es final e irrevocable.</span>
+          </div>
+        </div>
+        <div class="prob-doc-foot">RemisApp no tiene ninguna de estas cláusulas.</div>
+      </div>
+    </div>
+
+    <!-- C: $100 -->
+    <div class="prob-br-pane" id="prob-pane-c">
+      <p class="prob-c100-intro">De cada $100 que ganás trabajando para una plataforma...</p>
+      <div class="prob-c100-bar">
+        <div class="prob-c100-seg prob-c100-seg--taken">$20</div>
+        <div class="prob-c100-seg prob-c100-seg--yours">$80 ← ¿realmente tuyos?</div>
+      </div>
+      <div class="prob-c100-items">
+        <div class="prob-c100-item">
+          <span class="prob-c100-emoji">💸</span>
+          <div>
+            <div class="prob-c100-lbl">Comisión automática de la plataforma</div>
+            <div class="prob-c100-val">- $20 de cada 100</div>
+          </div>
+        </div>
+        <div class="prob-c100-item">
+          <span class="prob-c100-emoji">👤</span>
+          <div>
+            <div class="prob-c100-lbl">Clientes que son tuyos si te vas</div>
+            <div class="prob-c100-val">$0</div>
+          </div>
+        </div>
+        <div class="prob-c100-item">
+          <span class="prob-c100-emoji">⚠️</span>
+          <div>
+            <div class="prob-c100-lbl">Garantía de que tu cuenta sigue mañana</div>
+            <div class="prob-c100-val">Ninguna</div>
+          </div>
+        </div>
+      </div>
+      <div class="prob-c100-close">
+        <strong>¿Cuánto cuesta realmente trabajar para una plataforma?</strong>
+        Más que plata.
+      </div>
+    </div>
+  </div>
+  <script>
+  function showBrPane(id,btn){
+    document.querySelectorAll('.prob-br-pane').forEach(function(p){p.classList.remove('active')});
+    document.querySelectorAll('.prob-br-tab').forEach(function(b){b.classList.remove('active')});
+    document.getElementById('prob-pane-'+id).classList.add('active');
+    btn.classList.add('active');
+  }
+  </script>
 
   <div class="prob-bridge reveal d4">
     <div class="prob-bridge-icon">💡</div>
