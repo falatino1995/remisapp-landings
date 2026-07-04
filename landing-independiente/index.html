@@ -2146,68 +2146,6 @@ fbq('track', 'PageView');
   </style>
 
   <div class="prob-br reveal d2" style="margin-top:28px">
-    <div class="prob-br-tabs">
-      <button class="prob-br-tab active" onclick="showBrPane('a',this)">A · Ticket</button>
-      <button class="prob-br-tab" onclick="showBrPane('b',this)">B · Contrato</button>
-      <button class="prob-br-tab" onclick="showBrPane('c',this)">C · $100</button>
-      <button class="prob-br-tab" onclick="showBrPane('d',this)">D · Número</button>
-    </div>
-
-    <!-- A: Receipt -->
-    <div class="prob-br-pane active" id="prob-pane-a">
-      <div class="prob-rcpt">
-        <div class="prob-rcpt-top">
-          <div class="prob-rcpt-brand">La Plataforma</div>
-          <div class="prob-rcpt-date">RESUMEN MENSUAL · JUNIO 2025</div>
-        </div>
-        <div class="prob-rcpt-rows">
-          <div class="prob-rcpt-row"><span>Viajes completados</span><span>94</span></div>
-          <div class="prob-rcpt-row"><span>Ingresos brutos</span><span>$128.400</span></div>
-          <div class="prob-rcpt-dash"></div>
-          <div class="prob-rcpt-row prob-rcpt-row--neg"><span>Comisión plataforma (20%)</span><span>- $25.680</span></div>
-          <div class="prob-rcpt-row prob-rcpt-row--neg"><span>Clientes que son tuyos</span><span>Ninguno</span></div>
-          <div class="prob-rcpt-row prob-rcpt-row--neg"><span>Control de agenda</span><span>Cero</span></div>
-          <div class="prob-rcpt-row prob-rcpt-row--neg"><span>Aviso antes de suspensión</span><span>No</span></div>
-        </div>
-        <div class="prob-rcpt-total">
-          <span>Lo que realmente perdés</span><span>Mucho más que plata</span>
-        </div>
-        <div class="prob-rcpt-foot">RemisApp: 0% de comisión. Siempre.</div>
-      </div>
-    </div>
-
-    <!-- B: Contract -->
-    <div class="prob-br-pane" id="prob-pane-b">
-      <div class="prob-doc">
-        <div class="prob-doc-top">
-          <div class="prob-doc-kicker">Lo que aceptaste al instalar la app</div>
-          <div class="prob-doc-title">Términos y Condiciones</div>
-          <div class="prob-doc-sub">— las partes que nadie lee —</div>
-        </div>
-        <div class="prob-doc-clauses">
-          <div class="prob-doc-clause">
-            <span class="prob-doc-art">Art. 3</span>
-            <span class="prob-doc-txt prob-doc-hl">El 20% de cada viaje pertenece a la plataforma, sin excepción ni negociación posible.</span>
-          </div>
-          <div class="prob-doc-clause">
-            <span class="prob-doc-art">Art. 7</span>
-            <span class="prob-doc-txt prob-doc-hl">La cuenta puede suspenderse sin previo aviso ni explicación al conductor.</span>
-          </div>
-          <div class="prob-doc-clause">
-            <span class="prob-doc-art">Art. 12</span>
-            <span class="prob-doc-txt prob-doc-hl">Los clientes y su historial son propiedad de la plataforma, no del conductor.</span>
-          </div>
-          <div class="prob-doc-clause">
-            <span class="prob-doc-art">Art. 19</span>
-            <span class="prob-doc-txt">No existe proceso de apelación garantizado. La decisión de la plataforma es final e irrevocable.</span>
-          </div>
-        </div>
-        <div class="prob-doc-foot">RemisApp no tiene ninguna de estas cláusulas.</div>
-      </div>
-    </div>
-
-    <!-- C: $100 -->
-    <div class="prob-br-pane" id="prob-pane-c">
       <p class="prob-c100-intro">De cada $100 que ganás trabajando para una plataforma...</p>
       <div class="prob-c100-bar" id="c100Bar" onclick="toggleC100()" role="button" aria-expanded="false">
         <div class="prob-c100-seg prob-c100-seg--taken">$20</div>
@@ -2321,30 +2259,8 @@ fbq('track', 'PageView');
         <strong>¿Cuánto cuesta realmente trabajar para una plataforma?</strong>
         Más que plata.
       </div>
-    </div>
-
-    <!-- D: El número -->
-    <div class="prob-br-pane" id="prob-pane-d">
-      <div class="prob-d">
-        <p class="prob-d-setup">Este año, sin saberlo, sin votarlo, sin poder negociarlo, le entregaste a la plataforma:</p>
-        <div class="prob-d-number">$308.000</div>
-        <p class="prob-d-context">Solo en comisiones — el 20% de cada viaje</p>
-        <div class="prob-d-items">
-          <div class="prob-d-item">= <b>más de un mes entero</b> de trabajo regalado</div>
-          <div class="prob-d-item">= <b>370 viajes</b> que hiciste gratis para la plataforma</div>
-          <div class="prob-d-item">= <b>6 meses de nafta</b> que podrían haber sido tuyos</div>
-        </div>
-        <p class="prob-d-close">Con RemisApp: 0% de comisión.<br>Cada peso que ganás es tuyo.</p>
-      </div>
-    </div>
   </div>
   <script>
-  function showBrPane(id,btn){
-    document.querySelectorAll('.prob-br-pane').forEach(function(p){p.classList.remove('active')});
-    document.querySelectorAll('.prob-br-tab').forEach(function(b){b.classList.remove('active')});
-    document.getElementById('prob-pane-'+id).classList.add('active');
-    btn.classList.add('active');
-  }
   function toggleC100(){
     var bar=document.getElementById('c100Bar');
     var exp=document.getElementById('c100Expand');
