@@ -2105,6 +2105,35 @@ fbq('track', 'PageView');
   .prob-item-expand.open{max-height:200px;opacity:1}
   .prob-item-expand-inner{font-size:13px;color:var(--gris2);line-height:1.6;padding:10px 14px 12px;border-left:2px solid rgba(239,68,68,.35);margin:0 0 4px;border-radius:0 0 10px 10px;background:rgba(239,68,68,.03)}
   .prob-item-expand-inner b{color:var(--blanco)}
+  /* Exp 1 — mini receipt */
+  .c100-mini-rcpt{font-family:'Courier New',Courier,monospace;background:#060d08;border:1px solid rgba(239,68,68,.2);border-radius:12px;overflow:hidden;padding:14px 16px}
+  .c100-mini-rcpt-row{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:12px}
+  .c100-mini-rcpt-col{text-align:center;flex:1}
+  .c100-mini-rcpt-lbl{font-size:9px;letter-spacing:.14em;color:var(--gris2);margin-bottom:4px;text-transform:uppercase}
+  .c100-mini-rcpt-val{font-size:22px;font-weight:700;color:#ef4444;line-height:1}
+  .c100-mini-rcpt-arr{font-size:14px;color:rgba(239,68,68,.35);flex-shrink:0}
+  .c100-mini-rcpt-eq{font-size:11px;color:var(--gris2);border-top:1px dashed rgba(255,255,255,.08);padding-top:10px;text-align:center;line-height:1.5}
+  .c100-mini-rcpt-eq b{color:var(--blanco)}
+  /* Exp 2 — compare table */
+  .c100-cmp{border:1px solid rgba(255,255,255,.07);border-radius:12px;overflow:hidden}
+  .c100-cmp-head{display:grid;grid-template-columns:1fr 18px 1fr;gap:4px;padding:8px 12px;background:rgba(255,255,255,.03);border-bottom:1px solid rgba(255,255,255,.07);font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--gris2);text-align:center}
+  .c100-cmp-row{display:grid;grid-template-columns:1fr 18px 1fr;gap:4px;padding:8px 12px;border-bottom:1px solid rgba(255,255,255,.04);align-items:center;font-size:12px}
+  .c100-cmp-row span:first-child{color:var(--gris2)}
+  .c100-cmp-arr{color:rgba(239,68,68,.35);text-align:center;font-size:12px}
+  .c100-cmp-zero{color:#ef4444;font-weight:800;font-size:15px;text-align:right}
+  .c100-cmp-note{padding:9px 12px;font-size:11px;color:var(--gris2);text-align:center;background:rgba(239,68,68,.04)}
+  .c100-cmp-note b{color:var(--blanco)}
+  /* Exp 3 — alert notification */
+  .c100-notif{background:rgba(239,68,68,.05);border:1px solid rgba(239,68,68,.22);border-radius:12px;overflow:hidden}
+  .c100-notif-hdr{display:flex;align-items:center;gap:8px;padding:9px 14px;background:rgba(239,68,68,.1);border-bottom:1px solid rgba(239,68,68,.18)}
+  .c100-notif-dot{width:8px;height:8px;border-radius:50%;background:#ef4444;flex-shrink:0;animation:pulse2 1.8s ease-in-out infinite}
+  @keyframes pulse2{0%,100%{opacity:1}50%{opacity:.3}}
+  .c100-notif-brand{font-size:9px;font-weight:800;letter-spacing:.15em;text-transform:uppercase;color:#ef4444}
+  .c100-notif-body{padding:12px 14px;font-size:14px;color:var(--blanco);line-height:1.5;font-style:italic}
+  .c100-notif-body b{color:#ef4444;font-style:normal}
+  .c100-notif-meta{padding:0 14px 10px;display:flex;flex-direction:column;gap:3px;font-size:11px;color:var(--gris2)}
+  .c100-notif-meta span b{color:rgba(239,68,68,.8);font-weight:600}
+  .c100-notif-foot{padding:9px 14px;font-size:11px;font-weight:700;color:#ef4444;border-top:1px solid rgba(239,68,68,.18);letter-spacing:.04em;text-align:center}
   /* D — El número */
   .prob-d{text-align:center;padding:8px 0 4px}
   .prob-d-setup{font-size:14px;color:var(--gris2);line-height:1.55;margin-bottom:22px}
@@ -2208,7 +2237,20 @@ fbq('track', 'PageView');
         </div>
         <div class="prob-item-expand" id="c100ItemExp1">
           <div class="prob-item-expand-inner">
-            94 viajes este mes → <b>$25.680 que nunca viste</b>. En un año eso es más de <b>$300.000 directo a la plataforma</b>. Automático. Sin preguntarte, sin negociarlo.
+            <div class="c100-mini-rcpt">
+              <div class="c100-mini-rcpt-row">
+                <div class="c100-mini-rcpt-col">
+                  <div class="c100-mini-rcpt-lbl">Este mes</div>
+                  <div class="c100-mini-rcpt-val">-$25.680</div>
+                </div>
+                <div class="c100-mini-rcpt-arr">→</div>
+                <div class="c100-mini-rcpt-col">
+                  <div class="c100-mini-rcpt-lbl">Este año</div>
+                  <div class="c100-mini-rcpt-val">-$308.000</div>
+                </div>
+              </div>
+              <div class="c100-mini-rcpt-eq">= <b>1 semana entera de trabajo</b> regalada cada mes.<br>Automático. Sin preguntarte. Sin negociarlo.</div>
+            </div>
           </div>
         </div>
 
@@ -2222,7 +2264,29 @@ fbq('track', 'PageView');
         </div>
         <div class="prob-item-expand" id="c100ItemExp2">
           <div class="prob-item-expand-inner">
-            Las 4.8 estrellas, el historial, los números guardados — <b>todo queda en la app</b>. Si te vas o te suspenden, empezás de cero. Con RemisApp tu cliente tiene tu link, tu número, y vuelve cuando quiere sin intermediarios.
+            <div class="c100-cmp">
+              <div class="c100-cmp-head">
+                <span>Lo que construiste</span>
+                <span></span>
+                <span>Lo que te llevás</span>
+              </div>
+              <div class="c100-cmp-row">
+                <span>4.8 ★ reputación</span>
+                <span class="c100-cmp-arr">→</span>
+                <span class="c100-cmp-zero">$0</span>
+              </div>
+              <div class="c100-cmp-row">
+                <span>Historial de viajes</span>
+                <span class="c100-cmp-arr">→</span>
+                <span class="c100-cmp-zero">$0</span>
+              </div>
+              <div class="c100-cmp-row">
+                <span>Contactos de clientes</span>
+                <span class="c100-cmp-arr">→</span>
+                <span class="c100-cmp-zero">$0</span>
+              </div>
+              <div class="c100-cmp-note"><b>Todo queda en la plataforma.</b> Vos empezás de cero.</div>
+            </div>
           </div>
         </div>
 
@@ -2236,7 +2300,19 @@ fbq('track', 'PageView');
         </div>
         <div class="prob-item-expand" id="c100ItemExp3">
           <div class="prob-item-expand-inner">
-            Pueden desactivarte mañana. Sin aviso, sin explicación. Todo lo que construiste — reputación, clientes, historial — <b>desaparece en un segundo</b>. Con RemisApp la cuenta es tuya y nadie te la puede sacar.
+            <div class="c100-notif">
+              <div class="c100-notif-hdr">
+                <div class="c100-notif-dot"></div>
+                <span class="c100-notif-brand">Notificación — La Plataforma</span>
+              </div>
+              <div class="c100-notif-body">"Tu acceso fue <b>desactivado</b>."</div>
+              <div class="c100-notif-meta">
+                <span>Motivo: <b>no especificado</b></span>
+                <span>Apelación: <b>no disponible</b></span>
+                <span>Aviso previo: <b>ninguno</b></span>
+              </div>
+              <div class="c100-notif-foot">Sin razón. Sin vuelta atrás.</div>
+            </div>
           </div>
         </div>
 
