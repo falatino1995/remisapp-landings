@@ -2098,6 +2098,13 @@ fbq('track', 'PageView');
   .prob-c100-expand{overflow:hidden;max-height:0;opacity:0;transition:max-height .5s cubic-bezier(.4,0,.2,1),opacity .4s ease}
   .prob-c100-expand.open{max-height:600px;opacity:1}
   .prob-c100-expand-inner{padding:16px 0 4px;text-align:center;border-top:1px dashed rgba(239,68,68,.25);margin-top:2px}
+  .prob-c100-item{cursor:pointer;user-select:none}
+  .prob-c100-item .c100-hint{flex-shrink:0;font-size:11px;opacity:.45;transition:transform .35s ease;align-self:center;margin-left:8px}
+  .prob-c100-item.open .c100-hint{transform:rotate(180deg)}
+  .prob-item-expand{overflow:hidden;max-height:0;opacity:0;transition:max-height .45s cubic-bezier(.4,0,.2,1),opacity .35s ease}
+  .prob-item-expand.open{max-height:200px;opacity:1}
+  .prob-item-expand-inner{font-size:13px;color:var(--gris2);line-height:1.6;padding:10px 14px 12px;border-left:2px solid rgba(239,68,68,.35);margin:0 0 4px;border-radius:0 0 10px 10px;background:rgba(239,68,68,.03)}
+  .prob-item-expand-inner b{color:var(--blanco)}
   /* D — El número */
   .prob-d{text-align:center;padding:8px 0 4px}
   .prob-d-setup{font-size:14px;color:var(--gris2);line-height:1.55;margin-bottom:22px}
@@ -2190,27 +2197,49 @@ fbq('track', 'PageView');
         </div>
       </div>
       <div class="prob-c100-items">
-        <div class="prob-c100-item">
+
+        <div class="prob-c100-item" id="c100Item1" onclick="toggleC100Item(1)" role="button" aria-expanded="false">
           <span class="prob-c100-emoji">💸</span>
-          <div>
+          <div style="flex:1">
             <div class="prob-c100-lbl">Comisión automática de la plataforma</div>
             <div class="prob-c100-val">- $20 de cada 100</div>
           </div>
+          <span class="c100-hint">↓</span>
         </div>
-        <div class="prob-c100-item">
+        <div class="prob-item-expand" id="c100ItemExp1">
+          <div class="prob-item-expand-inner">
+            94 viajes este mes → <b>$25.680 que nunca viste</b>. En un año eso es más de <b>$300.000 directo a la plataforma</b>. Automático. Sin preguntarte, sin negociarlo.
+          </div>
+        </div>
+
+        <div class="prob-c100-item" id="c100Item2" onclick="toggleC100Item(2)" role="button" aria-expanded="false">
           <span class="prob-c100-emoji">👤</span>
-          <div>
+          <div style="flex:1">
             <div class="prob-c100-lbl">Clientes que son tuyos si te vas</div>
             <div class="prob-c100-val">$0</div>
           </div>
+          <span class="c100-hint">↓</span>
         </div>
-        <div class="prob-c100-item">
+        <div class="prob-item-expand" id="c100ItemExp2">
+          <div class="prob-item-expand-inner">
+            Las 4.8 estrellas, el historial, los números guardados — <b>todo queda en la app</b>. Si te vas o te suspenden, empezás de cero. Con RemisApp tu cliente tiene tu link, tu número, y vuelve cuando quiere sin intermediarios.
+          </div>
+        </div>
+
+        <div class="prob-c100-item" id="c100Item3" onclick="toggleC100Item(3)" role="button" aria-expanded="false">
           <span class="prob-c100-emoji">⚠️</span>
-          <div>
+          <div style="flex:1">
             <div class="prob-c100-lbl">Garantía de que tu cuenta sigue mañana</div>
             <div class="prob-c100-val">Ninguna</div>
           </div>
+          <span class="c100-hint">↓</span>
         </div>
+        <div class="prob-item-expand" id="c100ItemExp3">
+          <div class="prob-item-expand-inner">
+            Pueden desactivarte mañana. Sin aviso, sin explicación. Todo lo que construiste — reputación, clientes, historial — <b>desaparece en un segundo</b>. Con RemisApp la cuenta es tuya y nadie te la puede sacar.
+          </div>
+        </div>
+
       </div>
       <div class="prob-c100-close">
         <strong>¿Cuánto cuesta realmente trabajar para una plataforma?</strong>
@@ -2246,6 +2275,13 @@ fbq('track', 'PageView');
     var open=exp.classList.toggle('open');
     bar.classList.toggle('open',open);
     bar.setAttribute('aria-expanded',open);
+  }
+  function toggleC100Item(n){
+    var item=document.getElementById('c100Item'+n);
+    var exp=document.getElementById('c100ItemExp'+n);
+    var open=exp.classList.toggle('open');
+    item.classList.toggle('open',open);
+    item.setAttribute('aria-expanded',open);
   }
   </script>
 
