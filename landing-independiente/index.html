@@ -657,8 +657,7 @@ footer{border-top:1px solid var(--borde);padding:40px;max-width:1180px;margin:0 
 .reveal-pop.visible{opacity:1;transform:none}
 
 /* Eyebrow sweep in */
-@keyframes eyebrowIn{from{opacity:0;letter-spacing:.28em;transform:translateX(-5px)}to{letter-spacing:.12em;transform:none}}
-.sec-eyebrow.visible{animation:eyebrowIn .55s cubic-bezier(.16,1,.3,1) both}
+.sec-eyebrow.visible{opacity:1}
 
 /* HL text fly up when section enters view */
 @keyframes hlFlyUp{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
@@ -806,7 +805,7 @@ footer{border-top:1px solid var(--borde);padding:40px;max-width:1180px;margin:0 
   .sec-sub{font-size:15px;line-height:1.6;margin-bottom:34px}
   .flowv2{padding:20px 14px;border-radius:22px}
   .flowv2-head{margin-bottom:16px}
-  .flowv2-title{font-size:24px}
+  .flowv2-title{font-size:clamp(34px,11vw,46px)}
   .flowv2-sub{font-size:13px}
   .flowv2-visual{padding:16px 12px}
   .flowv2-mini{padding:12px 10px}
@@ -842,7 +841,7 @@ footer{border-top:1px solid var(--borde);padding:40px;max-width:1180px;margin:0 
   .section{padding:48px 0}
   .sec-sub{font-size:14.5px;line-height:1.55;margin-bottom:28px}
   .flowv2{margin-top:18px;padding:16px 12px}
-  .flowv2-title{font-size:22px}
+  .flowv2-title{font-size:clamp(32px,10vw,42px)}
   .flowv2-tabs{gap:6px}
   .flowv2-tab{padding:8px 11px;font-size:11px}
   .flowv2-visual{padding:12px 10px}
@@ -1165,7 +1164,7 @@ footer{border-top:1px solid var(--borde);padding:40px;max-width:1180px;margin:0 
 .flowv2{margin-top:24px;padding:24px;border-radius:28px;background:linear-gradient(180deg,rgba(61,204,142,.06),rgba(255,255,255,.01));border:1px solid rgba(61,204,142,.16);box-shadow:var(--shadow-soft)}
 .flowv2-head{display:flex;align-items:flex-end;justify-content:space-between;gap:20px;margin-bottom:22px}
 .flowv2-kicker{font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.14em;color:var(--verde);margin-bottom:8px}
-.flowv2-title{font-family:'Barlow Condensed',sans-serif;font-size:30px;font-weight:800;line-height:1;text-transform:uppercase;color:var(--blanco);letter-spacing:.01em}
+.flowv2-title{font-family:'Barlow Condensed',sans-serif;font-size:clamp(36px,4.8vw,72px);font-weight:800;line-height:1;text-transform:uppercase;color:var(--blanco);letter-spacing:-.01em;margin-bottom:10px}
 .flowv2-sub{font-size:13.5px;color:var(--gris2);line-height:1.65;max-width:430px;margin-top:10px}
 .flowv2-tabs{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end}
 .flowv2-tab{border:1px solid var(--borde);background:rgba(255,255,255,.035);color:var(--gris2);border-radius:999px;padding:9px 13px;font-size:12px;font-weight:700;cursor:pointer;transition:background .2s,border-color .2s,color .2s,transform .2s}
@@ -2493,7 +2492,7 @@ fbq('track', 'PageView');
     <div class="flowv2-head">
       <div>
         <div class="flowv2-kicker">Momentos clave del sistema</div>
-        <div class="flowv2-title">Cómo trabaja el sistema,<br>paso a paso.</div>
+        <div class="flowv2-title">El bot,<br><span class="hl tw-effect">en acción.</span></div>
         <p class="flowv2-sub">Elegí un momento y mirá qué pasa desde que entra el pedido hasta que el viaje queda encaminado: pedido, reserva, cobro o tracking.</p>
       </div>
       <div class="flowv2-tabs" role="tablist" aria-label="Modos del flujo RemisApp">
