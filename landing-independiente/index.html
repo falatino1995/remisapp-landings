@@ -2507,24 +2507,7 @@ fbq('track', 'PageView');
       <div class="flowv2-card">
         <div class="flowv2-badge" data-flow-icon>🚕</div>
         <div class="flowv2-mode-title" data-flow-title>Pedido ahora</div>
-        <p class="flowv2-mode-copy" data-flow-copy>El cliente te escribe por WhatsApp, el bot pide origen y destino, cotiza con referencia Uber y te manda la solicitud lista para aceptar.</p>
-        <div class="flowv2-lanes">
-          <div class="flowv2-lane">
-            <div class="flowv2-lane-label">Lo hace el bot</div>
-            <ul data-flow-bot>
-              <li>Atiende el mensaje inicial</li>
-              <li>Pide origen y destino</li>
-              <li>Cotiza y confirma con el cliente</li>
-            </ul>
-          </div>
-          <div class="flowv2-lane flowv2-lane--you">
-            <div class="flowv2-lane-label">Lo hace el chofer</div>
-            <ul data-flow-you>
-              <li>Aceptás o rechazás</li>
-              <li>Vas a buscarlo</li>
-            </ul>
-          </div>
-        </div>
+        <p class="flowv2-mode-copy" data-flow-copy>El bot atiende y cotiza. Vos solo aceptás o rechazás.</p>
       </div>
 
       <div class="flowv2-side">
@@ -3912,9 +3895,7 @@ document.addEventListener('DOMContentLoaded', pv2Calc);
     now: {
       icon: '🚕',
       title: 'Pedido ahora',
-      copy: 'El cliente escribe por WhatsApp. El bot pregunta si el viaje es para ahora o después, pide origen y destino, cotiza con referencia Uber y te manda la solicitud lista para aceptar.',
-      bot: ['Pregunta si es para ahora o más tarde', 'Pide origen y destino por separado', 'Cotiza con Uber, confirma y avisa al chofer'],
-      you: ['Aceptás o rechazás', 'Vas a buscarlo'],
+      copy: 'El bot atiende y cotiza. Vos solo aceptás o rechazás.',
       visual: `
         <div class="f2-stage f2-stage--split">
           <div class="f2-shot">
@@ -3969,9 +3950,7 @@ document.addEventListener('DOMContentLoaded', pv2Calc);
     scheduled: {
       icon: '📅',
       title: 'Viaje programado',
-      copy: 'El pasajero pide un viaje para otro día u horario. El bot toma los datos y te consulta; la reserva queda confirmada recién cuando el chofer acepta.',
-      bot: ['Toma fecha, hora y recorrido', 'Te manda la solicitud programada', 'Agenda y recuerda solo si aceptás'],
-      you: ['Aceptás la reserva', 'Recibís recordatorio antes de salir'],
+      copy: 'El bot recibe la reserva. Queda pendiente hasta que aceptás.',
       visual: `
         <div class="f2-stage f2-stage--split">
           <div class="f2-shot">
@@ -4024,9 +4003,7 @@ document.addEventListener('DOMContentLoaded', pv2Calc);
     payment: {
       icon: '💳',
       title: 'Cobro directo',
-      copy: 'Cuando el viaje está confirmado, el bot puede mandar el link de Mercado Pago. La plata va directo a vos, sin comisión por viaje.',
-      bot: ['Genera link de Mercado Pago', 'Manda el comprobante por WhatsApp', 'Deja el cobro registrado'],
-      you: ['Cobrás directo', 'Seguís manejando'],
+      copy: 'Link de Mercado Pago generado solo. La plata va directo a vos, sin comisión.',
       visual: `
         <div class="f2-stage f2-stage--split">
           <div class="f2-shot">
@@ -4069,9 +4046,7 @@ document.addEventListener('DOMContentLoaded', pv2Calc);
     tracking: {
       icon: '📍',
       title: 'Tracking vivo',
-      copy: 'El bot manda un link para que el pasajero vea tu llegada en un mapa. Menos mensajes preguntando dónde estás, más tranquilidad para los dos.',
-      bot: ['Crea el link de seguimiento', 'Comparte estado y ETA', 'Avisa cuando estás llegando'],
-      you: ['Manejás', 'Llegás sin explicar cada minuto'],
+      copy: 'El cliente sigue tu llegada en el mapa. Sin mensajes de "¿dónde estás?".',
       visual: `
         <div class="f2-stage f2-stage--split">
           <div class="f2-shot">
