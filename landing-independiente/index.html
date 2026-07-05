@@ -1643,7 +1643,7 @@ footer{border-top:1px solid var(--borde);padding:40px;max-width:1180px;margin:0 
   .hw-flow-mock{display:none!important}
   .hw-flow-node{display:grid!important;grid-template-columns:46px 1fr;grid-template-rows:auto auto;column-gap:18px;row-gap:0;padding:16px 14px;border-radius:14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);width:100%;box-sizing:border-box;align-items:start;align-content:start;min-height:72px}
   .hw-flow-num{grid-column:1!important;grid-row:1/3!important;align-self:center!important;justify-self:center;font-family:'Barlow Condensed',sans-serif;font-size:17px!important;font-weight:900!important;color:#000!important;background:var(--verde)!important;border-radius:10px;width:40px;height:40px;display:grid!important;place-items:center;margin-bottom:0!important;line-height:1;letter-spacing:0!important}
-  .hw-flow-title{grid-column:2!important;grid-row:1!important;text-align:left!important;font-size:15px;font-weight:800;margin-bottom:0;color:var(--blanco);padding-top:0}
+  .hw-flow-title{grid-column:2!important;grid-row:1!important;text-align:center!important;font-size:15px;font-weight:800;margin-bottom:0;color:var(--blanco);padding-top:0}
   .hw-flow-desc{grid-column:2!important;grid-row:2!important;text-align:center!important;max-width:none!important;font-size:12.5px;color:var(--gris2);line-height:1.45;margin-top:3px}
 }
 .hw-flow-node{display:flex;flex-direction:column;align-items:center;gap:0}
@@ -3270,8 +3270,8 @@ fbq('track', 'PageView');
 <section class="section" id="activacion">
 <div class="container">
   <div class="section-shell surface">
-  <div class="sec-eyebrow reveal">Activación</div>
-  <h2 class="sec-title reveal d1">¿Cómo arrancás?<br><span class="hl">En solo 3 minutos.</span></h2>
+  <div class="sec-eyebrow reveal">Para arrancar</div>
+  <h2 class="sec-title reveal d1">¿Cómo arrancás?<br><span class="hl" id="hw-typewriter">En solo 3 minutos.</span></h2>
   <p class="sec-sub reveal d1">Sin técnicos, sin instalaciones. Solo necesitás un celular y WhatsApp. Es gratis.</p>
 
   <div class="hw-flow reveal d2">
@@ -4308,6 +4308,29 @@ function ftSwitch(btn, panelId) {
     }
   }, {threshold:.2});
   spotObs.observe(sec);
+})();
+
+// Typewriter effect for "En solo 3 minutos."
+(function(){
+  var el = document.getElementById('hw-typewriter');
+  if(!el) return;
+  var text = el.textContent;
+  var played = false;
+  function play(){
+    if(played) return;
+    played = true;
+    el.textContent = '';
+    var i = 0;
+    var t = setInterval(function(){
+      el.textContent += text[i];
+      i++;
+      if(i >= text.length) clearInterval(t);
+    }, 60);
+  }
+  var obs = new IntersectionObserver(function(entries){
+    if(entries[0].isIntersecting) play();
+  }, {threshold: 0.5});
+  obs.observe(el);
 })();
 </script>
 </body>
