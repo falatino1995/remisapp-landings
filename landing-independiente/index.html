@@ -2421,7 +2421,7 @@ fbq('track', 'PageView');
       <div class="feat-title">Bot disponible 24hs</div>
       <div class="feat-sub">Atiende pedidos solo, sin que toques el celular.</div>
       <div class="feat-body">
-        <video src="assets/video/WhatsAppChat.mp4" class="feat-img" autoplay muted loop playsinline poster="assets/whatsapp-bot-reserva-01.png" style="margin-top:14px"></video>
+        <img src="assets/whatsapp-bot-reserva-01.png" class="feat-img" alt="Bot 24hs" style="margin-top:14px">
         <div class="feat-detail">Recibe el pedido, pregunta origen y destino, cotiza y confirma — todo automatizado. Funciona de noche, fines de semana, mientras manejás.</div>
       </div>
     </div>
@@ -4303,6 +4303,7 @@ document.querySelectorAll('.feat-card:not(.coming)').forEach(card => {
   }
 
   document.querySelectorAll('.feat-img').forEach(el => {
+    if(el.tagName === 'VIDEO') return;
     el.addEventListener('click', function(e){
       e.stopPropagation();
       img.src = el.getAttribute('src') || '';
