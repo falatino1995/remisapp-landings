@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚗</text></svg>">
+<title>Política de Privacidad — RemisApp</title>
+<meta name="description" content="Política de privacidad de RemisApp. Cómo recopilamos, usamos y protegemos tu información.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Barlow:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Barlow:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap"></noscript>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#080C09;--bg2:#0E1410;--bg3:#141B15;
+  --card:#161D17;--card2:#0F1510;--card3:#1A221B;
+  --verde:#3DCC8E;--verde-dim:#2A9E6A;
+  --verde-bg:rgba(61,204,142,0.09);--verde-border:rgba(61,204,142,0.22);
+  --blanco:#EEF2EC;--gris:#7A8A78;--gris2:#B0BBA8;--gris3:#D8E2D2;
+  --borde:rgba(255,255,255,0.055);
+  --maxw:780px;
+  --r8:8px;--r12:12px;--r16:16px;
+}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--blanco);font-family:'Inter',sans-serif;font-size:16px;line-height:1.7;min-height:100vh}
+a{color:var(--verde);text-decoration:none}
+a:hover{text-decoration:underline}
+
+nav{
+  position:sticky;top:0;z-index:100;
+  background:rgba(8,12,9,0.9);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--borde);
+  padding:0 24px;
+  height:56px;display:flex;align-items:center;
+}
+.nav-inner{max-width:var(--maxw);margin:0 auto;width:100%;display:flex;align-items:center;gap:12px}
+.nav-logo{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:1.3rem;color:var(--blanco);letter-spacing:0.02em}
+.nav-logo span{color:var(--verde)}
+.nav-back{margin-left:auto;font-size:.85rem;color:var(--gris2)}
+
+main{max-width:var(--maxw);margin:0 auto;padding:56px 24px 96px}
+
+h1{
+  font-family:'Barlow Condensed',sans-serif;
+  font-weight:800;font-size:2.4rem;
+  color:var(--blanco);
+  margin-bottom:8px;
+  line-height:1.1;
+}
+.meta{font-size:.85rem;color:var(--gris);margin-bottom:48px}
+
+h2{
+  font-family:'Barlow',sans-serif;
+  font-weight:700;font-size:1.1rem;
+  color:var(--verde);
+  margin:40px 0 12px;
+  text-transform:uppercase;
+  letter-spacing:.06em;
+}
+p{color:var(--gris3);margin-bottom:16px}
+ul{color:var(--gris3);padding-left:20px;margin-bottom:16px}
+ul li{margin-bottom:8px}
+
+.divider{border:none;border-top:1px solid var(--borde);margin:48px 0}
+
+footer{
+  text-align:center;
+  padding:32px 24px;
+  font-size:.8rem;
+  color:var(--gris);
+  border-top:1px solid var(--borde);
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <span class="nav-logo">Remis<span>App</span></span>
+    <a class="nav-back" href="/">← Volver al inicio</a>
+  </div>
+</nav>
+
+<main>
+  <h1>Política de Privacidad</h1>
+  <p class="meta">Última actualización: julio de 2026</p>
+
+  <p>RemisApp ("nosotros", "nuestro") opera una plataforma de gestión de viajes en remis y taxi que permite a choferes y remiserías recibir pedidos a través de WhatsApp. Esta política describe qué información recopilamos, cómo la usamos y cómo la protegemos.</p>
+
+  <h2>1. Información que recopilamos</h2>
+  <ul>
+    <li><strong>Número de teléfono:</strong> cuando un cliente o chofer interactúa con el bot de WhatsApp, recibimos su número de teléfono a través de la API de WhatsApp Business de Meta.</li>
+    <li><strong>Mensajes de texto:</strong> el contenido de los mensajes enviados al bot (pedidos de viaje, comandos, respuestas) para procesar las solicitudes.</li>
+    <li><strong>Datos del viaje:</strong> origen, destino, estado del viaje, fechas y precios asociados a cada solicitud.</li>
+    <li><strong>Datos del operador:</strong> nombre, correo electrónico y número de teléfono de los operadores que crean una cuenta en RemisApp.</li>
+  </ul>
+
+  <h2>2. Cómo usamos la información</h2>
+  <ul>
+    <li>Procesar y gestionar los pedidos de viaje entre clientes y choferes.</li>
+    <li>Enviar notificaciones automáticas sobre el estado del viaje (confirmación, seguimiento, llegada, finalización).</li>
+    <li>Mejorar el funcionamiento del servicio y detectar errores.</li>
+    <li>Comunicarnos con los operadores sobre su cuenta (onboarding, soporte, facturación).</li>
+  </ul>
+
+  <h2>3. WhatsApp Business API</h2>
+  <p>RemisApp utiliza la API de WhatsApp Business de Meta para enviar y recibir mensajes. Los mensajes se procesan a través de los servidores de Meta conforme a su <a href="https://www.whatsapp.com/legal/privacy-policy" target="_blank" rel="noopener">Política de Privacidad</a>. No almacenamos el contenido completo de las conversaciones más allá de los datos necesarios para gestionar los viajes.</p>
+
+  <h2>4. Compartición de datos</h2>
+  <p>No vendemos ni compartimos tu información personal con terceros, salvo en los siguientes casos:</p>
+  <ul>
+    <li><strong>Entre partes del viaje:</strong> el número de teléfono del cliente puede ser visible para el chofer asignado y viceversa, únicamente para coordinar el viaje.</li>
+    <li><strong>Proveedores de infraestructura:</strong> utilizamos servicios de terceros (Railway para hosting, Meta para WhatsApp, Mercado Pago para cobros) que procesan datos bajo sus propias políticas de privacidad.</li>
+    <li><strong>Requerimientos legales:</strong> si la ley nos lo exige.</li>
+  </ul>
+
+  <h2>5. Retención de datos</h2>
+  <p>Los datos de viajes se conservan mientras la cuenta del operador esté activa. Al cancelar una cuenta, los datos pueden eliminarse a pedido del titular. Los mensajes de WhatsApp no se almacenan permanentemente en nuestros sistemas.</p>
+
+  <h2>6. Seguridad</h2>
+  <p>Aplicamos medidas técnicas y organizativas para proteger la información (conexiones cifradas HTTPS, acceso restringido a bases de datos, autenticación). Ningún sistema es 100% seguro, pero tomamos todas las precauciones razonables.</p>
+
+  <h2>7. Tus derechos</h2>
+  <p>Podés solicitar en cualquier momento:</p>
+  <ul>
+    <li>Acceso a los datos que tenemos sobre vos.</li>
+    <li>Corrección de datos incorrectos.</li>
+    <li>Eliminación de tus datos.</li>
+  </ul>
+  <p>Para ejercer estos derechos, escribinos a <a href="mailto:contact.tifossi@gmail.com">contact.tifossi@gmail.com</a>.</p>
+
+  <h2>8. Cambios a esta política</h2>
+  <p>Podemos actualizar esta política ocasionalmente. Publicaremos la versión más reciente en esta página con la fecha de actualización correspondiente.</p>
+
+  <h2>9. Contacto</h2>
+  <p>Para consultas sobre privacidad: <a href="mailto:contact.tifossi@gmail.com">contact.tifossi@gmail.com</a></p>
+
+  <hr class="divider">
+  <p style="font-size:.85rem;color:var(--gris)">RemisApp es un servicio de software operado en Argentina.</p>
+</main>
+
+<footer>
+  © 2026 RemisApp · <a href="/">Inicio</a> · <a href="mailto:contact.tifossi@gmail.com">Contacto</a>
+</footer>
+
+</body>
+</html>
