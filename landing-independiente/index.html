@@ -3540,28 +3540,52 @@ fbq('track', 'PageView');
   <div style="height:40px"></div>
   <div class="faq-list reveal d2">
     <div class="faq-item">
-      <button class="faq-q" onclick="toggleFaq(this)">¿Qué hace realmente el sistema solo?<span class="faq-arrow">⌄</span></button>
-      <div class="faq-a">Responde el primer mensaje, toma origen y destino, cotiza con referencia Uber, confirma con el cliente, comparte tracking, agenda reservas y puede mandar el cobro. Vos intervenís cuando el viaje ya está listo o cuando querés decidir algo.</div>
+      <button class="faq-q" onclick="toggleFaq(this)">¿Qué hace el sistema solo y cuándo intervengo yo?<span class="faq-arrow">⌄</span></button>
+      <div class="faq-a">El bot atiende al cliente, le pide origen y destino, cotiza el viaje, y te manda la solicitud a tu WhatsApp. Vos respondés con un comando simple (aceptar o rechazar). Si aceptás, el sistema le avisa al cliente, activa el tracking cuando salís, y al terminar genera el link de cobro. Vos sólo tomás la decisión del viaje — el resto lo maneja solo.</div>
     </div>
     <div class="faq-item">
-      <button class="faq-q" onclick="toggleFaq(this)">¿Cuánto cuesta RemisApp Solo?<span class="faq-arrow">⌄</span></button>
-      <div class="faq-a">Tenés 3 viajes gratis por mes, siempre, sin tarjeta. Si necesitás más, podés comprar packs (5 viajes $2.000 / 10 viajes $3.500 / 15 viajes $4.500) o suscribirte al plan mensual por $10.000/mes con viajes ilimitados. Cancelás cuando querés, sin permanencia.</div>
+      <button class="faq-q" onclick="toggleFaq(this)">¿Tengo que tener alguna app abierta para recibir pedidos?<span class="faq-arrow">⌄</span></button>
+      <div class="faq-a">No. Todo llega por WhatsApp directamente — que ya tenés instalado y siempre activo. Cuando entra un pedido te llega como cualquier mensaje. Sin abrir nada extra, sin estar pendiente de otra pantalla. También tenés un panel web que podés guardar en la pantalla de inicio del celular como si fuera una app, y que manda notificaciones cuando llega un viaje.</div>
     </div>
     <div class="faq-item">
-      <button class="faq-q" onclick="toggleFaq(this)">¿Tengo que dejar de usar Uber para usar RemisApp Solo?<span class="faq-arrow">⌄</span></button>
+      <button class="faq-q" onclick="toggleFaq(this)">¿Tiene tracking en tiempo real como Uber?<span class="faq-arrow">⌄</span></button>
+      <div class="faq-a">Sí. Cuando salís a buscar al cliente, abrís una página web desde el celular y activás tu ubicación en vivo. El sistema le manda automáticamente al cliente un link de seguimiento — él lo abre y ve dónde estás y cuánto tardás en llegar, sin necesidad de llamarte ni preguntarte nada.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">¿Cómo funciona el precio? ¿Lo pongo yo o lo define el sistema?<span class="faq-arrow">⌄</span></button>
+      <div class="faq-a">Vos tenés el control total. El sistema toma como referencia el precio de Uber para ese recorrido. Podés configurar un ajuste fijo (por ejemplo, cobrar siempre un 10% más o menos que Uber), o definir el precio manualmente viaje por viaje. Si la consulta a Uber no responde, el sistema usa una tarifa interna propia como respaldo. La decisión siempre es tuya.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">¿Mis clientes tienen que registrarse o descargar algo?<span class="faq-arrow">⌄</span></button>
+      <div class="faq-a">No. El cliente solo necesita WhatsApp, que ya tiene instalado. Abre tu link, escribe y el bot lo atiende. Sin apps, sin registros, sin contraseñas. Y como la única forma de conseguir tu link es a través de vos mismo — porque los llevaste antes o alguien de confianza te recomendó — los clientes que te llegan ya son de tu entorno.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">¿Cómo sé quién es el cliente que me pide el viaje?<span class="faq-arrow">⌄</span></button>
+      <div class="faq-a">Cuando llega un pedido ves el número de WhatsApp del cliente. Antes de aceptar podés llamarlo directamente si querés verificar quién es. Además, el sistema guarda el historial de todos tus clientes en tu panel, con nombre, contacto y viajes realizados.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">¿Yo tengo que conseguir mis propios clientes?<span class="faq-arrow">⌄</span></button>
+      <div class="faq-a">Sí, RemisApp no te trae clientes solo — esa parte la hacés vos. Lo que sí te damos es un link propio (remisapp.link/tunombre) y un QR imprimible para poner en el auto, así los clientes que te usan en Uber o Cabify y les gusta tu servicio te pueden pedir directo la próxima vez, sin comisión para nadie. La idea es ir convirtiendo tus clientes de las plataformas en clientes propios.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">¿Tengo que dejar de usar Uber para usar RemisApp?<span class="faq-arrow">⌄</span></button>
       <div class="faq-a">Para nada. Podés usar los dos en paralelo. La idea es que vayas construyendo tu cartera propia mientras seguís con Uber. Con el tiempo, dependés menos de la plataforma.</div>
     </div>
     <div class="faq-item">
-      <button class="faq-q" onclick="toggleFaq(this)">¿Mis clientes tienen que descargar algo?<span class="faq-arrow">⌄</span></button>
-      <div class="faq-a">No. Todo funciona por WhatsApp, que ya tienen instalado. El cliente abre tu link, te manda un mensaje y el bot lo atiende. Sin apps extra, sin registros.</div>
+      <button class="faq-q" onclick="toggleFaq(this)">¿Funciona en cualquier ciudad de Argentina?<span class="faq-arrow">⌄</span></button>
+      <div class="faq-a">Sí. El sistema es online, no tiene restricción por zona. Cuando te registrás elegís en qué ciudad operás y listo. Da igual si estás en Buenos Aires, Mendoza, Córdoba o cualquier otra ciudad del país.</div>
     </div>
     <div class="faq-item">
-      <button class="faq-q" onclick="toggleFaq(this)">¿Cómo funciona el precio de referencia de Uber?<span class="faq-arrow">⌄</span></button>
-      <div class="faq-a">El sistema puede consultar el precio que cobraría Uber para el mismo viaje y usarlo como referencia. Vos elegís si cobrar igual, más barato o más caro. La decisión siempre es tuya.</div>
+      <button class="faq-q" onclick="toggleFaq(this)">¿Cuánto cuesta RemisApp Solo?<span class="faq-arrow">⌄</span></button>
+      <div class="faq-a">Los primeros 14 días son gratis con uso ilimitado, sin tarjeta ni compromiso. Después podés quedarte con el plan gratuito (3 viajes por mes, para siempre sin pagar nada), comprar packs si usás poco (5 viajes $2.000 / 10 viajes $3.500 / 15 viajes $4.500), o suscribirte al plan mensual ilimitado por $10.000/mes si ya operás seguido. Sin comisión por viaje en ningún plan.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">¿Hay algún panel donde puedo ver mis clientes y viajes?<span class="faq-arrow">⌄</span></button>
+      <div class="faq-a">Sí. Tenés un panel de administración accesible desde el navegador (funciona mejor desde la PC) donde podés ver el historial completo de todos los clientes que te pidieron viajes — nombre, contacto y viajes realizados. Por ahora es básico, pero sirve para tener tu cartera ordenada. A futuro vamos a sumar funciones de fidelización como avisos automáticos por WhatsApp y promociones.</div>
     </div>
     <div class="faq-item">
       <button class="faq-q" onclick="toggleFaq(this)">¿Necesito saber de tecnología para configurarlo?<span class="faq-arrow">⌄</span></button>
-      <div class="faq-a">No. El alta está guiada paso a paso. Si sabés usar WhatsApp, podés configurar RemisApp Solo. Y si necesitás ayuda, tenemos soporte.</div>
+      <div class="faq-a">No. El alta está guiada paso a paso y en menos de 3 minutos tenés tu link listo para compartir. Si sabés usar WhatsApp, podés configurar RemisApp Solo. Y si necesitás ayuda, podés escribirnos directamente por WhatsApp y te respondemos.</div>
     </div>
   </div>
   </div>
