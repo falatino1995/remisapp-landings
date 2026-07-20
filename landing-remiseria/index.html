@@ -749,11 +749,21 @@ footer{border-top:1px solid var(--borde);padding:40px;max-width:1180px;margin:0 
         <a href="https://wa.me/34672364395?text=Hola%20quiero%20informaci%C3%B3n%20sobre%20RemisApp" class="btn-secondary" style="font-size:15px;padding:15px 28px">Hablar por WhatsApp</a>
         <a href="https://calendly.com/remisapp-contacto/30min" class="btn-secondary" style="font-size:15px;padding:15px 28px">Agendar llamada</a>
       </div>
-      <div class="cta-sep">o dejá tu mail y te contactamos</div>
-      <form class="email-form" action="https://formspree.io/f/xjgalaag" method="POST" onsubmit="handleSubmit(event)">
+      <div class="cta-sep">o dejá tus datos y te contactamos</div>
+      <form class="email-form" action="https://formspree.io/f/xjgalaag" method="POST" onsubmit="handleSubmit(event)" style="flex-direction:column;align-items:center;gap:10px">
         <input type="hidden" name="origen" value="agencia">
-        <input type="email" name="email" class="email-in" placeholder="tunegocio@gmail.com" id="email-input" required>
-        <button type="submit" class="btn-cta">Quiero que me contacten</button>
+        <input type="text" name="nombre" class="email-in" placeholder="Nombre de tu remisería o agencia" style="width:100%" required>
+        <input type="email" name="email" class="email-in" placeholder="tunegocio@gmail.com" id="email-input" style="width:100%" required>
+        <input type="text" name="whatsapp" class="email-in" placeholder="WhatsApp (opcional)" style="width:100%">
+        <input type="text" name="ciudad" class="email-in" placeholder="Ciudad" style="width:100%" required>
+        <select name="choferes" class="email-in" style="width:100%;color:var(--gris)" required>
+          <option value="" disabled selected>¿Cuántos choferes tienen?</option>
+          <option value="1-5">1 a 5 choferes</option>
+          <option value="6-15">6 a 15 choferes</option>
+          <option value="16-30">16 a 30 choferes</option>
+          <option value="30+">Más de 30 choferes</option>
+        </select>
+        <button type="submit" class="btn-cta" style="width:100%">Quiero que me contacten</button>
       </form>
     </div>
     <p class="cta-note" id="form-msg">Respondemos en menos de 24 horas hábiles.</p>
