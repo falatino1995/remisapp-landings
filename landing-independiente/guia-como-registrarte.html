@@ -142,6 +142,7 @@ nav{
   border-bottom:1px solid var(--borde);
 }
 .nav-logo{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:24px;letter-spacing:.02em;display:flex;align-items:center;gap:8px;color:var(--blanco)}
+.nav-logo span{color:var(--verde)}
 .nav-dot{width:7px;height:7px;border-radius:50%;background:var(--verde);flex-shrink:0;animation:navPulse 2.4s ease-in-out infinite}
 @keyframes navPulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(.75)}}
 .nav-solo{font-family:'Barlow Condensed',sans-serif;font-size:14px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--verde);background:var(--verde-bg);border:1px solid var(--verde-border);padding:3px 10px;border-radius:6px;margin-left:1px}
@@ -149,7 +150,7 @@ nav{
 .nav-center a{font-family:'Barlow',sans-serif;font-size:14px;font-weight:600;letter-spacing:.03em;text-transform:uppercase;color:rgba(255,255,255,.72);transition:color .18s,opacity .18s}
 .nav-center a:hover{color:var(--blanco)}
 .nav-dropdown{position:relative}
-.nav-drop-toggle{display:inline-flex;align-items:center;gap:6px;font-family:'Barlow',sans-serif;font-size:14px;font-weight:600;letter-spacing:.03em;text-transform:uppercase;color:var(--gris);cursor:pointer;transition:color .18s}
+.nav-drop-toggle{display:inline-flex;align-items:center;gap:6px;font-family:'Barlow',sans-serif;font-size:14px;font-weight:600;letter-spacing:.03em;text-transform:uppercase;color:rgba(255,255,255,.72);cursor:pointer;transition:color .18s}
 .nav-drop-toggle::after{content:'▾';font-size:11px;opacity:.75}
 .nav-dropdown:hover .nav-drop-toggle,.nav-dropdown:focus-within .nav-drop-toggle{color:var(--blanco)}
 .nav-drop-menu{position:absolute;top:calc(100% + 14px);left:0;min-width:250px;padding:10px;background:rgba(10,15,11,.96);border:1px solid var(--verde-border);border-radius:16px;box-shadow:0 24px 48px rgba(0,0,0,.42);display:flex;flex-direction:column;gap:2px;opacity:0;transform:translateY(8px);pointer-events:none;transition:opacity .18s,transform .18s}
@@ -198,7 +199,7 @@ footer{border-top:1px solid var(--borde);padding:40px;max-width:1180px;margin:0 
 <body>
 
 <nav id="nav">
-  <a href="/" class="nav-logo"><span class="nav-dot"></span>RemisApp<span class="nav-solo">Solo</span></a>
+  <a href="/" class="nav-logo">Remis<span>App</span></a>
   <div class="nav-center">
     <a href="/#como-funciona">Cómo funciona</a>
     <div class="nav-dropdown">
