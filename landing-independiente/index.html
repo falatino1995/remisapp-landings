@@ -86,6 +86,7 @@ nav{
 .nav-dropdown:hover .nav-drop-menu,.nav-dropdown:focus-within .nav-drop-menu{opacity:1;transform:none;pointer-events:auto}
 .nav-drop-menu a{padding:11px 12px;border-radius:10px;color:var(--gris2);font-size:13px;line-height:1.35;text-transform:none;letter-spacing:0;font-weight:500}
 .nav-drop-menu a:hover{background:rgba(61,204,142,.08);color:var(--blanco)}
+.nav-drop-badge{display:inline-block;margin-left:6px;padding:1px 7px;border-radius:999px;font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.04em;color:#FDE68A;background:rgba(253,230,138,.1);border:1px solid rgba(253,230,138,.28);vertical-align:1px}
 .nav-right{display:flex;align-items:center;gap:10px}
 .nav-switch{font-size:12px;color:rgba(255,255,255,.8);border:1px solid rgba(255,255,255,.12);padding:7px 14px;border-radius:var(--r999);transition:all .18s}
 .nav-switch:hover{border-color:var(--verde-border);color:var(--verde);background:rgba(61,204,142,.06)}
@@ -1775,7 +1776,19 @@ fbq('track', 'PageView');
   <a href="/" class="nav-logo"><span class="nav-dot"></span>RemisApp<span class="nav-solo">Solo</span></a>
   <div class="nav-center">
     <a href="#como-funciona">Cómo funciona</a>
-    <a href="#funcionalidades">Funcionalidades</a>
+    <div class="nav-dropdown">
+      <span class="nav-drop-toggle" tabindex="0">Funcionalidades</span>
+      <div class="nav-drop-menu">
+        <a href="funcionalidad-bot.html">El bot de WhatsApp</a>
+        <a href="funcionalidad-precio.html">Tu precio, automático</a>
+        <a href="funcionalidad-link.html">Tu link propio</a>
+        <a href="funcionalidad-qr.html">Tu QR imprimible</a>
+        <a href="funcionalidad-panel.html">Panel de chofer</a>
+        <a href="funcionalidad-app-android.html">App para Android <small class="nav-drop-badge">Muy pronto</small></a>
+        <a href="funcionalidad-mercadopago.html">Cobros y Mercado Pago</a>
+        <a href="funcionalidad-notificaciones.html">Notificaciones</a>
+      </div>
+    </div>
     <a href="#precios">Precios</a>
     <a href="#faq">Preguntas</a>
     <div class="nav-dropdown">
@@ -1798,7 +1811,14 @@ fbq('track', 'PageView');
 <!-- MOBILE MENU -->
 <div class="mobile-menu" id="mobileMenu">
   <a href="#flow-v2" onclick="closeMobile()">Cómo funciona</a>
-  <a href="#funcionalidades" onclick="closeMobile()">Funcionalidades</a>
+  <a href="funcionalidad-bot.html">El bot de WhatsApp</a>
+  <a href="funcionalidad-precio.html">Tu precio, automático</a>
+  <a href="funcionalidad-link.html">Tu link propio</a>
+  <a href="funcionalidad-qr.html">Tu QR imprimible</a>
+  <a href="funcionalidad-panel.html">Panel de chofer</a>
+  <a href="funcionalidad-app-android.html">App para Android · Muy pronto</a>
+  <a href="funcionalidad-mercadopago.html">Cobros y Mercado Pago</a>
+  <a href="funcionalidad-notificaciones.html">Notificaciones</a>
   <a href="#precios" onclick="closeMobile()">Precios</a>
   <a href="#faq" onclick="closeMobile()">Preguntas</a>
   <a href="guias.html">Guías para choferes independientes</a>
