@@ -1253,6 +1253,29 @@ footer{border-top:1px solid var(--borde);padding:40px;max-width:1180px;margin:0 
 @keyframes f2Pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.08)}}
 @keyframes f2Route{0%,30%{transform:rotate(-14deg) scaleX(0)}48%,82%{transform:rotate(-14deg) scaleX(1)}95%,100%{transform:rotate(-14deg) scaleX(0)}}
 @keyframes f2Car{0%,28%{transform:translate(-34px,22px) rotate(-8deg);opacity:.2}48%,82%{transform:translate(34px,-14px) rotate(-8deg);opacity:1}95%,100%{transform:translate(58px,-28px) rotate(-8deg);opacity:0}}
+
+.regmock-wrap{display:flex;gap:48px;align-items:center;flex-wrap:wrap;justify-content:center}
+.regmock-copy{flex:1;min-width:260px;max-width:420px}
+.regmock-phone{width:240px;flex-shrink:0;margin:0 auto;border-radius:28px;background:#071018;border:1px solid rgba(210,234,255,.32);box-shadow:0 20px 46px rgba(0,0,0,.58),0 0 34px rgba(61,204,142,.08);overflow:hidden;position:relative}
+.regmock-bar{background:rgba(255,255,255,.06);padding:9px 12px;font-size:9px;color:rgba(255,255,255,.45);border-bottom:1px solid rgba(255,255,255,.07);display:flex;align-items:center;gap:5px;white-space:nowrap;overflow:hidden}
+.regmock-bar .lock{color:var(--verde);flex-shrink:0}
+.regmock-body{padding:16px 14px 18px;background:linear-gradient(180deg,#071018,#060b0f);min-height:360px;position:relative;overflow:hidden}
+.regmock-title{font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:800;color:var(--blanco);margin-bottom:1px}
+.regmock-sub{font-size:9px;color:var(--gris2);margin-bottom:12px}
+.regmock-field{opacity:0;transform:translateY(6px);animation:regReveal 15s ease-in-out infinite;animation-delay:var(--d,0s)}
+.regmock-label{font-size:7.5px;text-transform:uppercase;letter-spacing:.05em;color:var(--gris);margin-bottom:2px}
+.regmock-value{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:7px;padding:6px 9px;font-size:10px;color:var(--blanco);margin-bottom:7px}
+.regmock-btn{opacity:0;transform:translateY(6px);animation:regReveal 15s ease-in-out infinite;animation-delay:var(--d,0s);background:var(--verde);border-radius:8px;padding:9px;text-align:center;font-size:10.5px;font-weight:800;color:#04140c;margin-top:2px}
+.regmock-success{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;text-align:center;padding:22px;opacity:0;animation:regSuccessReveal 15s ease-in-out infinite;background:linear-gradient(180deg,#071018,#060b0f)}
+.regmock-success-icon{font-size:30px}
+.regmock-success-title{font-size:12.5px;font-weight:800;color:var(--blanco)}
+.regmock-success-sub{font-size:9.5px;color:var(--gris2);line-height:1.5}
+@keyframes regReveal{0%,8%{opacity:0;transform:translateY(6px)}14%,82%{opacity:1;transform:translateY(0)}92%,100%{opacity:0;transform:translateY(-4px)}}
+@keyframes regSuccessReveal{0%,62%{opacity:0;transform:translateY(6px)}70%,90%{opacity:1;transform:translateY(0)}97%,100%{opacity:0;transform:translateY(-4px)}}
+@media(max-width:760px){
+  .regmock-wrap{gap:28px}
+  .regmock-copy{text-align:center}
+}
 .flowv2-mini{background:rgba(255,255,255,.035);border:1px solid var(--borde);border-radius:16px;padding:12px 14px;display:flex;gap:11px;align-items:flex-start;transition:border-color .2s,background .2s}
 .flowv2-mini.active{border-color:var(--verde-border);background:rgba(61,204,142,.07)}
 .flowv2-mini-num{font-family:'Barlow Condensed',sans-serif;font-size:19px;font-weight:800;color:var(--verde);line-height:1;min-width:25px}
@@ -3385,6 +3408,64 @@ fbq('track', 'PageView');
     </a>
     <p class="steps-cta-trust">Sin tarjeta de crédito · Sin contrato · 3 viajes gratis por mes</p>
   </div>
+  </div>
+</div>
+</section>
+
+<section class="section">
+<div class="container">
+  <div class="sec-eyebrow reveal">Sin vueltas</div>
+  <h2 class="sec-title reveal d1">Así es la pantalla<br><span class="hl">de registro real.</span></h2>
+  <p class="sec-sub reveal d1">No es una recreación — son los campos que realmente completás hoy.</p>
+
+  <div class="regmock-wrap reveal d2">
+    <div class="regmock-copy">
+      <p style="color:var(--gris2);font-size:.98rem;line-height:1.7;margin-bottom:14px">Nombre, WhatsApp, email y contraseña para tu cuenta. Zona y país para saber dónde operás. Auto y patente para tu perfil público. Nada más — sin pasos ocultos que aparecen después.</p>
+      <p style="color:var(--gris2);font-size:.98rem;line-height:1.7">Al confirmar, te llega un mensaje directo a tu WhatsApp para conectar el bot.</p>
+    </div>
+    <div class="regmock-phone">
+      <div class="regmock-bar"><span class="lock">🔒</span> app.remisapp.info/empezar</div>
+      <div class="regmock-body">
+        <div class="regmock-title">Activá tu cuenta independiente</div>
+        <div class="regmock-sub">Completá tus datos en menos de 2 minutos.</div>
+
+        <div class="regmock-field" style="--d:.2s">
+          <div class="regmock-label">Tu nombre completo</div>
+          <div class="regmock-value">Carlos Gomez</div>
+        </div>
+        <div class="regmock-field" style="--d:1.0s">
+          <div class="regmock-label">Tu número de WhatsApp</div>
+          <div class="regmock-value">11 3336 1972</div>
+        </div>
+        <div class="regmock-field" style="--d:1.8s">
+          <div class="regmock-label">Email</div>
+          <div class="regmock-value">carlos@gmail.com</div>
+        </div>
+        <div class="regmock-field" style="--d:2.6s">
+          <div class="regmock-label">Contraseña</div>
+          <div class="regmock-value">••••••••</div>
+        </div>
+        <div class="regmock-field" style="--d:3.4s">
+          <div class="regmock-label">Zona donde vas a trabajar</div>
+          <div class="regmock-value">Buenos Aires</div>
+        </div>
+        <div class="regmock-field" style="--d:4.2s">
+          <div class="regmock-label">Modelo del auto</div>
+          <div class="regmock-value">Toyota Corolla gris</div>
+        </div>
+        <div class="regmock-field" style="--d:5.0s">
+          <div class="regmock-label">Patente</div>
+          <div class="regmock-value">AA123BB</div>
+        </div>
+        <div class="regmock-btn" style="--d:5.8s">Crear cuenta</div>
+
+        <div class="regmock-success">
+          <div class="regmock-success-icon">✅</div>
+          <div class="regmock-success-title">Cuenta creada</div>
+          <div class="regmock-success-sub">Revisá tu WhatsApp para conectar el bot.</div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 </section>
