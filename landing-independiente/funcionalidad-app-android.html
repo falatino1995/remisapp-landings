@@ -59,19 +59,46 @@ strong{color:var(--blanco)}
 .hero-text{flex:1;min-width:0}
 .hero-text .dek{margin-bottom:0}
 .androidphone{width:210px;aspect-ratio:9/19;border-radius:30px;border:7px solid #1c211d;background:linear-gradient(165deg,#0e2418 0%,#081310 55%,#060b09 100%);position:relative;overflow:hidden;box-shadow:0 30px 70px rgba(0,0,0,.55),inset 0 0 0 1px rgba(255,255,255,.04);flex-shrink:0}
-.aphone-notch{position:absolute;top:9px;left:50%;transform:translateX(-50%);width:40px;height:12px;background:#000;border-radius:999px}
-.aphone-status{position:absolute;top:28px;left:18px;right:18px;display:flex;justify-content:space-between;font-size:9px;color:rgba(255,255,255,.65);font-family:'Barlow',sans-serif}
-.aphone-clock{position:absolute;top:56px;left:0;right:0;text-align:center;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:38px;color:#fff;letter-spacing:-.02em}
-.aphone-date{position:absolute;top:100px;left:0;right:0;text-align:center;font-size:10px;color:rgba(255,255,255,.5)}
-.aphone-notif{position:absolute;left:12px;right:12px;top:132px;background:rgba(22,26,23,.94);backdrop-filter:blur(6px);border:1px solid rgba(255,255,255,.1);border-radius:13px;padding:10px 11px;display:flex;gap:9px;align-items:flex-start;box-shadow:0 14px 30px rgba(0,0,0,.4);opacity:0;transform:translateY(-10px);animation:aphoneDrop 5s ease-in-out infinite}
+.aphone-notch{position:absolute;top:9px;left:50%;transform:translateX(-50%);width:40px;height:12px;background:#000;border-radius:999px;z-index:5}
+.aphone-status{position:absolute;top:28px;left:18px;right:18px;display:flex;justify-content:space-between;font-size:9px;color:rgba(255,255,255,.65);font-family:'Barlow',sans-serif;z-index:4}
+
+/* pantallas que se van turnando dentro del telefono */
+.aphone-slide{position:absolute;left:0;right:0;top:46px;bottom:60px;display:flex;flex-direction:column;opacity:0;animation-duration:9s;animation-iteration-count:infinite;animation-timing-function:ease-in-out}
+.aphone-slide.s1{animation-name:aphoneS1;align-items:center;padding-top:8px}
+.aphone-slide.s2{animation-name:aphoneS2;align-items:center;justify-content:center}
+.aphone-slide.s3{animation-name:aphoneS3;padding:2px 12px}
+@keyframes aphoneS1{0%,2%{opacity:0}7%,27%{opacity:1}32%,100%{opacity:0}}
+@keyframes aphoneS2{0%,32%{opacity:0}37%,60%{opacity:1}65%,100%{opacity:0}}
+@keyframes aphoneS3{0%,65%{opacity:0}70%,93%{opacity:1}98%,100%{opacity:0}}
+
+.aphone-clock{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:34px;color:#fff;letter-spacing:-.02em;line-height:1}
+.aphone-date{font-size:10px;color:rgba(255,255,255,.5);margin-bottom:22px}
+.aphone-notif{width:100%;background:rgba(22,26,23,.94);backdrop-filter:blur(6px);border:1px solid rgba(255,255,255,.1);border-radius:13px;padding:10px 11px;display:flex;gap:9px;align-items:flex-start;box-shadow:0 14px 30px rgba(0,0,0,.4)}
 .aphone-notif .notif-icon{width:26px;height:26px;border-radius:8px;background:var(--verde);color:#04140c;display:flex;align-items:center;justify-content:center;font-size:13px;flex-shrink:0}
 .aphone-notif .notif-title{font-size:10px;font-weight:800;color:#fff}
 .aphone-notif .notif-body{font-size:9px;color:rgba(255,255,255,.65);margin-top:2px;line-height:1.35}
-@keyframes aphoneDrop{0%,10%{opacity:0;transform:translateY(-10px)}22%,86%{opacity:1;transform:translateY(0)}96%,100%{opacity:0;transform:translateY(-8px)}}
-.aphone-dock{position:absolute;left:12px;right:12px;bottom:14px;background:rgba(255,255,255,.06);border-radius:18px;padding:9px 10px;display:flex;justify-content:space-between}
+
+.aphone-home-ico{width:56px;height:56px;border-radius:16px;background:linear-gradient(135deg,#53d89c,#36c283);color:#04140c;display:flex;align-items:center;justify-content:center;font-size:26px;margin:0 auto 9px;box-shadow:0 12px 26px rgba(61,204,142,.4)}
+.aphone-home-label{text-align:center;font-size:11px;color:#fff;font-weight:700}
+.aphone-home-hint{text-align:center;font-size:9px;color:rgba(255,255,255,.4);margin-top:5px}
+
+.aphone-appbar{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:11.5px;color:#fff;margin-bottom:12px;display:flex;align-items:center;gap:6px}
+.aphone-trip-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:12px}
+.aphone-trip-status{display:flex;align-items:center;gap:6px;font-size:9px;font-weight:700;color:var(--verde);text-transform:uppercase;letter-spacing:.04em;margin-bottom:8px}
+.aphone-live-dot{width:6px;height:6px;border-radius:50%;background:var(--verde);animation:navPulse2 1.6s ease-in-out infinite;flex-shrink:0}
+@keyframes navPulse2{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(.7)}}
+.aphone-trip-route{font-size:12px;font-weight:700;color:#fff;margin-bottom:5px}
+.aphone-trip-note{font-size:9px;color:rgba(255,255,255,.55);line-height:1.4}
+
+.aphone-dock{position:absolute;left:12px;right:12px;bottom:14px;background:rgba(255,255,255,.06);border-radius:18px;padding:9px 10px;display:flex;justify-content:space-between;z-index:4}
 .dock-app{width:30px;height:30px;border-radius:9px;background:rgba(255,255,255,.08)}
 .dock-app.active{background:var(--verde);display:flex;align-items:center;justify-content:center;font-size:14px;box-shadow:0 0 0 2px rgba(61,204,142,.3),0 6px 14px rgba(61,204,142,.35)}
 @media(max-width:680px){.hero-row{flex-direction:column-reverse;gap:28px}.hero-text{width:100%}.androidphone{width:180px}}
+
+/* ── Ícono "Play" (triángulo, colores propios de marca, no el logo de Google) ── */
+.ps-ico{display:inline-block;width:0;height:0;border-style:solid;border-width:5px 0 5px 8px;border-color:transparent transparent transparent var(--verde);flex-shrink:0;vertical-align:middle}
+.badge-soon{display:inline-flex;align-items:center;gap:6px}
+.roadmap-label .ps-ico{margin-right:4px}
 
 /* ── Roadmap de publicación ── */
 .roadmap{display:flex;align-items:center;margin:28px 0 36px}
@@ -244,22 +271,41 @@ footer{border-top:1px solid var(--borde);padding:40px;max-width:1180px;margin:0 
 <main>
   <div class="hero-row">
     <div class="hero-text">
-      <div class="eyebrow">Funcionalidad <span class="badge-soon">Muy pronto en Google Play</span></div>
+      <div class="eyebrow">Funcionalidad <span class="badge-soon"><i class="ps-ico"></i>Muy pronto en Google Play</span></div>
       <h1>App para Android</h1>
       <p class="dek">Ya está lista y la estamos subiendo a la Play Store — pensada para el chofer que vive todo el día con el celular en la mano.</p>
     </div>
     <div class="androidphone" aria-hidden="true">
       <div class="aphone-notch"></div>
       <div class="aphone-status"><span>21:47</span><span>📶 🔋</span></div>
-      <div class="aphone-clock">21:47</div>
-      <div class="aphone-date">Jueves 12 de septiembre</div>
-      <div class="aphone-notif">
-        <div class="notif-icon">🚗</div>
-        <div>
-          <div class="notif-title">RemisApp · ahora</div>
-          <div class="notif-body">Nuevo viaje: Palermo → Aeroparque · $9.500</div>
+
+      <div class="aphone-slide s1">
+        <div class="aphone-clock">21:47</div>
+        <div class="aphone-date">Jueves · viaje nuevo</div>
+        <div class="aphone-notif">
+          <div class="notif-icon">🚗</div>
+          <div>
+            <div class="notif-title">RemisApp · ahora</div>
+            <div class="notif-body">Nuevo viaje: Palermo → Aeroparque · $9.500</div>
+          </div>
         </div>
       </div>
+
+      <div class="aphone-slide s2">
+        <div class="aphone-home-ico">🚗</div>
+        <div class="aphone-home-label">RemisApp</div>
+        <div class="aphone-home-hint">Se abre como cualquier app instalada</div>
+      </div>
+
+      <div class="aphone-slide s3">
+        <div class="aphone-appbar">🚗 RemisApp</div>
+        <div class="aphone-trip-card">
+          <div class="aphone-trip-status"><span class="aphone-live-dot"></span>Viaje en curso</div>
+          <div class="aphone-trip-route">Palermo → Aeroparque</div>
+          <div class="aphone-trip-note">📍 Compartiendo tu ubicación en vivo con el pasajero</div>
+        </div>
+      </div>
+
       <div class="aphone-dock">
         <span class="dock-app"></span>
         <span class="dock-app"></span>
@@ -278,7 +324,7 @@ footer{border-top:1px solid var(--borde);padding:40px;max-width:1180px;margin:0 
     <div class="roadmap-line done"></div>
     <div class="roadmap-step current">
       <div class="roadmap-dot">●</div>
-      <div class="roadmap-label">Subiendo a<br>Google Play</div>
+      <div class="roadmap-label">Subiendo a<br><i class="ps-ico"></i>Google Play</div>
     </div>
     <div class="roadmap-line"></div>
     <div class="roadmap-step">
