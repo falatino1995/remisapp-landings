@@ -64,6 +64,13 @@ strong{color:var(--blanco)}
 .linkmock-save{display:block;margin-top:12px;font-size:.72rem;color:var(--gris2)}
 .linkmock-save:hover{color:var(--verde)}
 .linkmock-note{font-size:.68rem;color:var(--gris);margin-top:12px;line-height:1.5}
+.linkmock-title{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:1.15rem;margin-bottom:6px;text-align:center}
+.linkmock-sub{font-size:.78rem;color:var(--gris2);margin-bottom:16px;line-height:1.5;text-align:center}
+
+.screen-block{margin:36px 0}
+.screen-block h3{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:1.15rem;color:var(--blanco);margin-bottom:6px}
+.screen-block p{margin-bottom:18px}
+.screen-block .linkmock{margin:0 auto}
 
 .cta-card{background:linear-gradient(145deg,var(--card2),var(--card));border:1px solid var(--verde-border);border-radius:var(--r16);padding:32px;margin-top:32px}
 .cta-card h3{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:1.4rem;margin-bottom:10px}
@@ -278,13 +285,52 @@ footer{border-top:1px solid var(--borde);padding:40px;max-width:1180px;margin:0 
   </div>
   <p class="mock-caption">Tu propia URL — la elegís vos al registrarte.</p>
 
-  <h2>Qué puede hacer alguien que abre tu link</h2>
-  <ul>
-    <li>Ve tu nombre, tu auto y tu ciudad — sabe a quién le está pidiendo el viaje.</li>
-    <li>Completa origen y destino ahí mismo y lo manda, sin tener que escribirte a mano por WhatsApp.</li>
-    <li>Si es la primera vez que te pide, le pedimos que confirme con un mensaje de WhatsApp — así comprobamos que el número es real. Si ya te pidió antes, el viaje se manda directo y lo llevamos a su cuenta ("Mi cuenta").</li>
-    <li><strong>Si todavía no necesita un viaje</strong>, puede tocar "Guardame para la próxima" y queda guardado para cuando lo necesite — no tiene que pedir algo ahora para no perderte.</li>
-  </ul>
+  <h2>Qué pasa después de que toca "Pedir viaje"</h2>
+
+  <div class="screen-block">
+    <h3>Primera vez: confirma por WhatsApp</h3>
+    <p>Si nunca te pidió antes, le pedimos un paso más para comprobar que el número es real — así el pedido no lo puede mandar cualquiera en su nombre.</p>
+    <div class="linkmock">
+      <div class="linkmock-bar"><span class="lock">🔒</span> app.remisapp.info/c/carlos-gomez/solicitud/…</div>
+      <div class="linkmock-body">
+        <div class="linkmock-title">Ya casi</div>
+        <div class="linkmock-sub">Tocá el botón y después "Enviar" en WhatsApp para confirmar que sos vos. Esta página se actualiza sola.</div>
+        <div class="linkmock-btn">Confirmar por WhatsApp</div>
+        <div class="linkmock-note">Esperando confirmación…</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="screen-block">
+    <h3>Ya te conoce: entra directo a su cuenta</h3>
+    <p>Si ya te pidió antes, se salta ese paso — el viaje se manda solo y queda viendo el pedido en su portal.</p>
+    <div class="linkmock">
+      <div class="linkmock-bar"><span class="lock">🔒</span> app.remisapp.info/cliente/app</div>
+      <div class="linkmock-body">
+        <div class="linkmock-title">Mi cuenta</div>
+        <div class="linkmock-field" style="text-align:center">
+          <div class="linkmock-field-label">✓ Viaje enviado</div>
+          <div class="linkmock-field-value">Palermo → Aeroparque</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="screen-block">
+    <h3>Si no necesita nada ahora: te guarda</h3>
+    <p>Con "Guardame para la próxima" no manda ningún pedido — solo queda guardado en su lista de choferes para cuando le haga falta.</p>
+    <div class="linkmock">
+      <div class="linkmock-bar"><span class="lock">🔒</span> app.remisapp.info/c/carlos-gomez</div>
+      <div class="linkmock-body">
+        <div class="linkmock-avatar">🚗</div>
+        <div class="linkmock-name">Carlos Gomez</div>
+        <div class="linkmock-field" style="text-align:center">
+          <div class="linkmock-field-label">✓ Guardado</div>
+          <div class="linkmock-field-value">Te va a poder pedir cuando quiera</div>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <h2>Dónde compartirlo</h2>
   <ul>
