@@ -58,6 +58,7 @@ strong{color:var(--blanco)}
 .hero-row{display:flex;gap:40px;align-items:center;margin-bottom:8px}
 .hero-text{flex:1;min-width:0}
 .hero-text .dek{margin-bottom:0}
+.mock-caption{text-align:center;font-size:.8rem;color:var(--gris);margin:14px 0 8px}
 .gp-hero-badge{height:42px;width:auto;display:block;margin-bottom:16px;filter:brightness(1.15)}
 @media(max-width:680px){.gp-hero-badge{height:34px}}
 .androidphone{width:210px;aspect-ratio:9/19;border-radius:30px;border:7px solid #1c211d;background:linear-gradient(165deg,#0e2418 0%,#081310 55%,#060b09 100%);position:relative;overflow:hidden;box-shadow:0 30px 70px rgba(0,0,0,.55),inset 0 0 0 1px rgba(255,255,255,.04);flex-shrink:0}
@@ -65,13 +66,23 @@ strong{color:var(--blanco)}
 .aphone-status{position:absolute;top:28px;left:18px;right:18px;display:flex;justify-content:space-between;font-size:9px;color:rgba(255,255,255,.65);font-family:'Barlow',sans-serif;z-index:4}
 
 /* pantallas que se van turnando dentro del telefono */
-.aphone-slide{position:absolute;left:0;right:0;top:46px;bottom:60px;display:flex;flex-direction:column;opacity:0;animation-duration:9s;animation-iteration-count:infinite;animation-timing-function:ease-in-out}
+.aphone-slide{position:absolute;left:0;right:0;top:46px;bottom:60px;display:flex;flex-direction:column;opacity:0;animation-duration:28s;animation-iteration-count:infinite;animation-timing-function:ease-in-out}
 .aphone-slide.s1{animation-name:aphoneS1;align-items:center;padding-top:8px}
 .aphone-slide.s2{animation-name:aphoneS2;align-items:center;justify-content:center}
 .aphone-slide.s3{animation-name:aphoneS3;padding:2px 12px}
-@keyframes aphoneS1{0%,2%{opacity:0}7%,27%{opacity:1}32%,100%{opacity:0}}
-@keyframes aphoneS2{0%,32%{opacity:0}37%,60%{opacity:1}65%,100%{opacity:0}}
-@keyframes aphoneS3{0%,65%{opacity:0}70%,93%{opacity:1}98%,100%{opacity:0}}
+.aphone-slide.s4{animation-name:aphoneS4;padding:2px 12px}
+.aphone-slide.s5{animation-name:aphoneS5;padding:2px 12px}
+.aphone-slide.s6{animation-name:aphoneS6;align-items:center;justify-content:center}
+.aphone-slide.s7{animation-name:aphoneS7;align-items:center;justify-content:center}
+.aphone-slide.s8{animation-name:aphoneS8;align-items:center;justify-content:center}
+@keyframes aphoneS1{0%,1%{opacity:0}4%,9%{opacity:1}12%,100%{opacity:0}}
+@keyframes aphoneS2{0%,12%{opacity:0}15%,21%{opacity:1}24%,100%{opacity:0}}
+@keyframes aphoneS3{0%,24%{opacity:0}27%,33%{opacity:1}36%,100%{opacity:0}}
+@keyframes aphoneS4{0%,36%{opacity:0}39%,45%{opacity:1}48%,100%{opacity:0}}
+@keyframes aphoneS5{0%,48%{opacity:0}51%,57%{opacity:1}60%,100%{opacity:0}}
+@keyframes aphoneS6{0%,60%{opacity:0}63%,69%{opacity:1}72%,100%{opacity:0}}
+@keyframes aphoneS7{0%,72%{opacity:0}75%,81%{opacity:1}84%,100%{opacity:0}}
+@keyframes aphoneS8{0%,84%{opacity:0}87%,93%{opacity:1}96%,100%{opacity:0}}
 
 .aphone-clock{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:34px;color:#fff;letter-spacing:-.02em;line-height:1}
 .aphone-date{font-size:10px;color:rgba(255,255,255,.5);margin-bottom:22px}
@@ -358,6 +369,45 @@ footer{border-top:1px solid var(--borde);padding:40px;max-width:1180px;margin:0 
         </div>
       </div>
 
+      <div class="aphone-slide s4">
+        <div class="aphone-appbar"><span class="aphone-appbar-badge">R</span>Hoy · Jueves</div>
+        <div class="aphone-trip-card" style="margin-bottom:6px">
+          <div class="aphone-trip-route">18:00 · Palermo → Belgrano</div>
+          <div class="aphone-trip-note">$3.200</div>
+        </div>
+        <div class="aphone-trip-card">
+          <div class="aphone-trip-route">21:30 · Aeroparque</div>
+          <div class="aphone-trip-note">$9.500</div>
+        </div>
+      </div>
+
+      <div class="aphone-slide s5">
+        <div class="aphone-appbar"><span class="aphone-appbar-badge">R</span>Agenda</div>
+        <div class="aphone-trip-card">
+          <div class="aphone-trip-status">Mañana</div>
+          <div class="aphone-trip-route">09:00 · Recoleta → Centro</div>
+        </div>
+      </div>
+
+      <div class="aphone-slide s6">
+        <div class="aphone-appbar" style="margin-bottom:14px"><span class="aphone-appbar-badge">R</span>Créditos</div>
+        <div class="aphone-home-ico" style="font-size:16px">17</div>
+        <div class="aphone-home-label" style="margin-top:8px">créditos disponibles</div>
+      </div>
+
+      <div class="aphone-slide s7">
+        <div class="aphone-appbar" style="margin-bottom:12px"><span class="aphone-appbar-badge">R</span>Compartir</div>
+        <div class="aphone-home-ico" style="font-size:22px">🔗</div>
+        <div class="aphone-home-label" style="margin-top:8px">Tu link y tu QR</div>
+      </div>
+
+      <div class="aphone-slide s8">
+        <div class="aphone-appbar" style="margin-bottom:12px"><span class="aphone-appbar-badge">R</span>Perfil</div>
+        <div class="aphone-home-ico">R</div>
+        <div class="aphone-home-label" style="margin-top:8px">Carlos Gomez</div>
+        <div class="aphone-home-hint">Toyota Corolla gris</div>
+      </div>
+
       <div class="aphone-dock">
         <span class="dock-app"></span>
         <span class="dock-app"></span>
@@ -367,6 +417,7 @@ footer{border-top:1px solid var(--borde);padding:40px;max-width:1180px;margin:0 
       </div>
     </div>
   </div>
+  <p class="mock-caption">La app abre tu mismo panel — acá cicla por sus pantallas reales: notificación, ícono, viaje en curso, hoy, agenda, créditos, compartir y perfil.</p>
 
   <div class="roadmap">
     <div class="roadmap-step done">
