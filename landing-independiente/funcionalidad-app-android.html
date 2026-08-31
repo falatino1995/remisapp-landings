@@ -58,6 +58,8 @@ strong{color:var(--blanco)}
 .hero-row{display:flex;gap:40px;align-items:center;margin-bottom:8px}
 .hero-text{flex:1;min-width:0}
 .hero-text .dek{margin-bottom:0}
+.gp-hero-badge{height:42px;width:auto;display:block;margin-bottom:16px;filter:brightness(1.15)}
+@media(max-width:680px){.gp-hero-badge{height:34px}}
 .androidphone{width:210px;aspect-ratio:9/19;border-radius:30px;border:7px solid #1c211d;background:linear-gradient(165deg,#0e2418 0%,#081310 55%,#060b09 100%);position:relative;overflow:hidden;box-shadow:0 30px 70px rgba(0,0,0,.55),inset 0 0 0 1px rgba(255,255,255,.04);flex-shrink:0}
 .aphone-notch{position:absolute;top:9px;left:50%;transform:translateX(-50%);width:40px;height:12px;background:#000;border-radius:999px;z-index:5}
 .aphone-status{position:absolute;top:28px;left:18px;right:18px;display:flex;justify-content:space-between;font-size:9px;color:rgba(255,255,255,.65);font-family:'Barlow',sans-serif;z-index:4}
@@ -98,11 +100,12 @@ strong{color:var(--blanco)}
 /* ── Logo oficial de Google Play ── */
 .gp-logo{height:14px;width:auto;vertical-align:middle;filter:brightness(1.15)}
 .badge-soon{display:inline-flex;align-items:center;gap:6px}
-.roadmap-label .gp-logo{height:11px;margin-left:1px}
+.roadmap-label .gp-logo{height:26px;margin-top:5px}
+@media(max-width:540px){.roadmap-label .gp-logo{height:20px}}
 
 /* ── Roadmap de publicación ── */
 .roadmap{display:flex;align-items:center;margin:28px 0 36px}
-.roadmap-step{display:flex;flex-direction:column;align-items:center;text-align:center;width:120px;flex-shrink:0}
+.roadmap-step{display:flex;flex-direction:column;align-items:center;text-align:center;width:140px;flex-shrink:0}
 .roadmap-dot{width:26px;height:26px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;background:var(--card);border:2px solid var(--borde);color:var(--gris)}
 .roadmap-step.done .roadmap-dot{background:var(--verde);border-color:var(--verde);color:#04140c}
 .roadmap-step.current .roadmap-dot{background:var(--ambar-bg);border-color:var(--ambar);color:var(--ambar);animation:roadmapPulse 1.8s ease-in-out infinite}
@@ -271,7 +274,8 @@ footer{border-top:1px solid var(--borde);padding:40px;max-width:1180px;margin:0 
 <main>
   <div class="hero-row">
     <div class="hero-text">
-      <div class="eyebrow">Funcionalidad <span class="badge-soon">Muy pronto en <img class="gp-logo" src="assets/brand/googleplay/google-play-logo.webp" alt="Google Play"></span></div>
+      <img class="gp-hero-badge" src="assets/brand/googleplay/google-play-logo.webp" alt="Google Play">
+      <div class="eyebrow">Funcionalidad <span class="badge-soon">Muy pronto</span></div>
       <h1>App para Android</h1>
       <p class="dek">Ya está lista y la estamos subiendo a la Play Store — pensada para el chofer que vive todo el día con el celular en la mano.</p>
     </div>
