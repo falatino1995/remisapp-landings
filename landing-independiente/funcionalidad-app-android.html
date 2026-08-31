@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚗</text></svg>">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%233DCC8E'/><rect x='30' y='26' width='40' height='24' rx='9' fill='%2304140c'/><rect x='10' y='48' width='80' height='24' rx='12' fill='%2304140c'/><circle cx='30' cy='80' r='10' fill='%2304140c'/><circle cx='70' cy='80' r='10' fill='%2304140c'/></svg>">
 <title>App para Android — RemisApp</title>
 <meta name="description" content="La app nativa de RemisApp para choferes: notificaciones que no se pierden, tracking en vivo, y acceso directo desde tu celular.">
 <link rel="canonical" href="https://solo.remisapp.info/funcionalidad-app-android">
@@ -94,7 +94,7 @@ strong{color:var(--blanco)}
 
 .aphone-dock{position:absolute;left:12px;right:12px;bottom:14px;background:rgba(255,255,255,.06);border-radius:18px;padding:9px 10px;display:flex;justify-content:space-between;z-index:4}
 .dock-app{width:30px;height:30px;border-radius:9px;background:rgba(255,255,255,.08)}
-.dock-app.active{background:var(--verde);display:flex;align-items:center;justify-content:center;font-size:14px;box-shadow:0 0 0 2px rgba(61,204,142,.3),0 6px 14px rgba(61,204,142,.35)}
+.dock-app.active{background:var(--verde);color:#04140c;display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 2px rgba(61,204,142,.3),0 6px 14px rgba(61,204,142,.35)}
 @media(max-width:680px){.hero-row{flex-direction:column-reverse;gap:28px}.hero-text{width:100%}.androidphone{width:180px}}
 
 /* ── Logo oficial de Google Play ── */
@@ -287,7 +287,7 @@ footer{border-top:1px solid var(--borde);padding:40px;max-width:1180px;margin:0 
         <div class="aphone-clock">21:47</div>
         <div class="aphone-date">Jueves · viaje nuevo</div>
         <div class="aphone-notif">
-          <div class="notif-icon">🚗</div>
+          <div class="notif-icon"><svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" aria-hidden="true"><rect x="7" y="6" width="10" height="6" rx="2"/><rect x="2" y="11" width="20" height="6" rx="3"/><circle cx="7" cy="19" r="2.6"/><circle cx="17" cy="19" r="2.6"/></svg></div>
           <div>
             <div class="notif-title">RemisApp · ahora</div>
             <div class="notif-body">Nuevo viaje: Palermo → Aeroparque · $9.500</div>
@@ -296,13 +296,13 @@ footer{border-top:1px solid var(--borde);padding:40px;max-width:1180px;margin:0 
       </div>
 
       <div class="aphone-slide s2">
-        <div class="aphone-home-ico">🚗</div>
+        <div class="aphone-home-ico"><svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor" aria-hidden="true"><rect x="7" y="6" width="10" height="6" rx="2"/><rect x="2" y="11" width="20" height="6" rx="3"/><circle cx="7" cy="19" r="2.6"/><circle cx="17" cy="19" r="2.6"/></svg></div>
         <div class="aphone-home-label">RemisApp</div>
         <div class="aphone-home-hint">Se abre como cualquier app instalada</div>
       </div>
 
       <div class="aphone-slide s3">
-        <div class="aphone-appbar">🚗 RemisApp</div>
+        <div class="aphone-appbar"><svg viewBox="0 0 24 24" width="12" height="12" fill="currentColor" aria-hidden="true"><rect x="7" y="6" width="10" height="6" rx="2"/><rect x="2" y="11" width="20" height="6" rx="3"/><circle cx="7" cy="19" r="2.6"/><circle cx="17" cy="19" r="2.6"/></svg>RemisApp</div>
         <div class="aphone-trip-card">
           <div class="aphone-trip-status"><span class="aphone-live-dot"></span>Viaje en curso</div>
           <div class="aphone-trip-route">Palermo → Aeroparque</div>
@@ -313,7 +313,7 @@ footer{border-top:1px solid var(--borde);padding:40px;max-width:1180px;margin:0 
       <div class="aphone-dock">
         <span class="dock-app"></span>
         <span class="dock-app"></span>
-        <span class="dock-app active">🚗</span>
+        <span class="dock-app active"><svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor" aria-hidden="true"><rect x="7" y="6" width="10" height="6" rx="2"/><rect x="2" y="11" width="20" height="6" rx="3"/><circle cx="7" cy="19" r="2.6"/><circle cx="17" cy="19" r="2.6"/></svg></span>
         <span class="dock-app"></span>
         <span class="dock-app"></span>
       </div>
