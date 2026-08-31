@@ -57,7 +57,12 @@ strong{color:var(--blanco)}
 .linkmock-avatar{width:64px;height:64px;border-radius:50%;background:var(--verde-bg);border:2px solid var(--verde-border);display:flex;align-items:center;justify-content:center;font-size:26px;margin:0 auto 10px}
 .linkmock-name{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:1.05rem;margin-bottom:2px}
 .linkmock-car{font-size:.72rem;color:var(--gris2);margin-bottom:14px}
-.linkmock-btn{background:var(--verde);color:#04140c;font-weight:800;font-size:.78rem;padding:9px;border-radius:var(--r999)}
+.linkmock-field{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:10px;padding:8px 12px;text-align:left;margin-bottom:8px}
+.linkmock-field-label{font-size:.62rem;text-transform:uppercase;letter-spacing:.05em;color:var(--gris);margin-bottom:2px}
+.linkmock-field-value{font-size:.8rem;color:var(--blanco)}
+.linkmock-btn{background:var(--verde);color:#04140c;font-weight:800;font-size:.78rem;padding:9px;border-radius:var(--r999);margin-top:2px}
+.linkmock-save{display:block;margin-top:12px;font-size:.72rem;color:var(--gris2)}
+.linkmock-save:hover{color:var(--verde)}
 .linkmock-note{font-size:.68rem;color:var(--gris);margin-top:12px;line-height:1.5}
 
 .cta-card{background:linear-gradient(145deg,var(--card2),var(--card));border:1px solid var(--verde-border);border-radius:var(--r16);padding:32px;margin-top:32px}
@@ -251,7 +256,7 @@ footer{border-top:1px solid var(--borde);padding:40px;max-width:1180px;margin:0 
 <main>
   <div class="eyebrow">Funcionalidad</div>
   <h1>Tu link propio</h1>
-  <p class="dek">Una página pública tuya, con tu nombre. Cualquiera que la abra puede pedirte un viaje directo, sin guardar tu número primero.</p>
+  <p class="dek">Una página pública tuya, con tu nombre. Cualquiera que la abra puede completar origen y destino ahí mismo y pedirte el viaje, sin guardar tu número primero.</p>
 
   <div class="linkmock">
     <div class="linkmock-bar"><span class="lock">🔒</span> app.remisapp.info/c/carlos-gomez</div>
@@ -259,11 +264,27 @@ footer{border-top:1px solid var(--borde);padding:40px;max-width:1180px;margin:0 
       <div class="linkmock-avatar">🚗</div>
       <div class="linkmock-name">Carlos Gomez</div>
       <div class="linkmock-car">Toyota Corolla gris · Buenos Aires</div>
-      <div class="linkmock-btn">Pedir viaje por WhatsApp →</div>
-      <div class="linkmock-note">Este es mi enlace personal para pedirme un viaje directo.</div>
+      <div class="linkmock-field">
+        <div class="linkmock-field-label">Origen</div>
+        <div class="linkmock-field-value">Av. Corrientes 1234</div>
+      </div>
+      <div class="linkmock-field">
+        <div class="linkmock-field-label">Destino</div>
+        <div class="linkmock-field-value">Aeroparque</div>
+      </div>
+      <div class="linkmock-btn">Pedir viaje →</div>
+      <a class="linkmock-save">💚 Guardame para la próxima</a>
     </div>
   </div>
   <p class="mock-caption">Tu propia URL — la elegís vos al registrarte.</p>
+
+  <h2>Qué puede hacer alguien que abre tu link</h2>
+  <ul>
+    <li>Ve tu nombre, tu auto y tu ciudad — sabe a quién le está pidiendo el viaje.</li>
+    <li>Completa origen y destino ahí mismo y lo manda, sin tener que escribirte a mano por WhatsApp.</li>
+    <li>Si es la primera vez que te pide, le pedimos que confirme con un mensaje de WhatsApp — así comprobamos que el número es real. Si ya te pidió antes, el viaje se manda directo y lo llevamos a su cuenta ("Mi cuenta").</li>
+    <li><strong>Si todavía no necesita un viaje</strong>, puede tocar "Guardame para la próxima" y queda guardado para cuando lo necesite — no tiene que pedir algo ahora para no perderte.</li>
+  </ul>
 
   <h2>Dónde compartirlo</h2>
   <ul>
@@ -274,7 +295,7 @@ footer{border-top:1px solid var(--borde);padding:40px;max-width:1180px;margin:0 
   </ul>
 
   <h2>Por qué importa que sea tuyo</h2>
-  <p>Ese link no pertenece a ninguna plataforma — es tuyo. Si un pasajero lo guarda o lo escanea una vez, puede volver a pedirte sin buscar tu número entre sus contactos ni acordarse de tu nombre. Es tu herramienta de fidelización, no solo un botón de "pedir".</p>
+  <p>Ese link no pertenece a ninguna plataforma — es tuyo. Si un pasajero lo guarda o lo escanea una vez, puede volver a pedirte sin buscar tu número entre sus contactos ni acordarse de tu nombre. Es tu herramienta de fidelización, no solo un botón de "pedir" — y una vez que te pidió, quedás guardado en su <a href="funcionalidad-portal-cliente.html">portal de pasajero</a> como uno de sus choferes de confianza.</p>
 
   <p>Se edita desde tu panel de administración, sección <strong>Mi Canal</strong> — ahí también encontrás el QR que lleva al mismo link.</p>
 
