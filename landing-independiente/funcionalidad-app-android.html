@@ -103,17 +103,24 @@ strong{color:var(--blanco)}
 .screen-block{margin:36px 0}
 .screen-block h3{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:1.15rem;color:var(--blanco);margin-bottom:6px}
 .screen-block p{margin-bottom:18px}
-.panelmock{max-width:320px;margin:0 auto;border-radius:20px;background:#071018;border:1px solid rgba(210,234,255,.28);box-shadow:0 20px 40px rgba(0,0,0,.45);overflow:hidden}
-.panelmock-tabs{display:flex;border-bottom:1px solid rgba(255,255,255,.07)}
-.panelmock-tab{flex:1;text-align:center;padding:10px 2px;font-size:8.5px;font-weight:700;color:var(--gris)}
-.panelmock-tab.active{color:var(--verde);border-bottom:2px solid var(--verde);background:rgba(61,204,142,.06)}
-.panelmock-body{padding:16px 14px;background:linear-gradient(180deg,#071018,#060b0f);min-height:96px}
-.panelmock-row{background:rgba(255,255,255,.05);border:1px solid var(--borde);border-radius:10px;padding:10px 12px;margin-bottom:8px;font-size:10.5px;display:flex;justify-content:space-between;gap:10px}
-.panelmock-row:last-child{margin-bottom:0}
-.panelmock-row span:first-child{color:var(--gris2)}
-.panelmock-row span:last-child{color:var(--blanco);font-weight:700;text-align:right}
-.panelmock-day{font-size:8.5px;color:var(--gris);margin:12px 0 4px;letter-spacing:.03em}
-.panelmock-day:first-child{margin-top:0}
+
+/* ── Mockup con los colores/tipografia/iconos reales del panel (tema oscuro,
+     que es el que ve la mayoria por defecto segun prefers-color-scheme) ── */
+.realphone{width:230px;aspect-ratio:9/19;margin:0 auto;border-radius:30px;border:7px solid #1c211d;background:linear-gradient(180deg,#111826 0%,#0d131d 100%);box-shadow:0 20px 46px rgba(0,0,0,.5);overflow:hidden;position:relative;display:flex;flex-direction:column;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+.realphone-notch{position:absolute;top:9px;left:50%;transform:translateX(-50%);width:40px;height:12px;background:#000;border-radius:999px;z-index:5}
+.realphone-status{padding:26px 16px 6px;display:flex;justify-content:space-between;font-size:9px;color:#7a8a9a}
+.realphone-body{flex:1;padding:8px 12px}
+.realphone-row{background:rgba(22,30,42,.85);border:1px solid #2a3748;border-radius:12px;padding:10px 12px;margin-bottom:8px;font-size:11px;display:flex;justify-content:space-between;gap:8px}
+.realphone-row:last-child{margin-bottom:0}
+.realphone-row span:first-child{color:#7a8a9a}
+.realphone-row span:last-child{color:#dde5ee;font-weight:700;text-align:right}
+.realphone-day{font-size:9px;color:#7a8a9a;margin:10px 0 5px;letter-spacing:.03em;text-transform:uppercase}
+.realphone-day:first-child{margin-top:0}
+.realphone-tabs{display:flex;justify-content:space-between;gap:3px;margin:0 8px 8px;padding:7px 3px;border-radius:20px;background:rgba(18,26,38,.94);border:1px solid rgba(255,255,255,.08)}
+.realphone-tab{flex:1;display:flex;flex-direction:column;align-items:center;gap:3px;padding:4px 1px;border-radius:14px;color:#7a8a9a}
+.realphone-tab svg{width:16px;height:16px}
+.realphone-tab strong{font-size:7px;font-weight:700}
+.realphone-tab.active{background:rgba(31,143,104,.18);color:#39D7A0}
 
 /* ── Logo oficial de Google Play ── */
 .gp-logo{height:14px;width:auto;vertical-align:middle;filter:brightness(1.15)}
@@ -390,95 +397,105 @@ footer{border-top:1px solid var(--borde);padding:40px;max-width:1180px;margin:0 
 
   <div class="screen-block">
     <h3>Hoy</h3>
-    <p>Tus viajes y pedidos pendientes del día, apenas abrís la app.</p>
-    <div class="panelmock">
-      <div class="panelmock-tabs">
-        <div class="panelmock-tab active">Hoy</div>
-        <div class="panelmock-tab">Agenda</div>
-        <div class="panelmock-tab">Créditos</div>
-        <div class="panelmock-tab">Compartir</div>
-        <div class="panelmock-tab">Perfil</div>
+    <p>Resumen y viajes: tus pedidos pendientes del día, apenas abrís la app.</p>
+    <div class="realphone" aria-hidden="true">
+      <div class="realphone-notch"></div>
+      <div class="realphone-status"><span>21:47</span><span>📶 🔋</span></div>
+      <div class="realphone-body">
+        <div class="realphone-row"><span>18:00 · Palermo → Belgrano</span><span>$3.200</span></div>
+        <div class="realphone-row"><span>21:30 · Aeroparque</span><span>$9.500</span></div>
       </div>
-      <div class="panelmock-body">
-        <div class="panelmock-row"><span>18:00 · Palermo → Belgrano</span><span>$3.200</span></div>
-        <div class="panelmock-row"><span>21:30 · Aeroparque</span><span>$9.500</span></div>
+      <div class="realphone-tabs">
+        <div class="realphone-tab active"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l-2 0l9 -9l9 9l-2 0"/><path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7"/><path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6"/></svg><strong>Hoy</strong></div>
+        <div class="realphone-tab"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2v-12"/><path d="M16 3v4"/><path d="M8 3v4"/><path d="M4 11h16"/></svg><strong>Agenda</strong></div>
+        <div class="realphone-tab"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8a3 3 0 0 1 3 -3h12a3 3 0 0 1 3 3v8a3 3 0 0 1 -3 3h-12a3 3 0 0 1 -3 -3l0 -8"/><path d="M3 10l18 0"/></svg><strong>Créditos</strong></div>
+        <div class="realphone-tab"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a3 3 0 1 0 6 0a3 3 0 1 0 -6 0"/><path d="M15 6a3 3 0 1 0 6 0a3 3 0 1 0 -6 0"/><path d="M15 18a3 3 0 1 0 6 0a3 3 0 1 0 -6 0"/><path d="M8.7 10.7l6.6 -3.4"/><path d="M8.7 13.3l6.6 3.4"/></svg><strong>Compartir</strong></div>
+        <div class="realphone-tab"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 7a4 4 0 1 0 8 0a4 4 0 0 0 -8 0"/><path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2"/></svg><strong>Perfil</strong></div>
       </div>
     </div>
   </div>
 
   <div class="screen-block">
     <h3>Agenda</h3>
-    <p>Tus reservas de los próximos días, con calendario visual.</p>
-    <div class="panelmock">
-      <div class="panelmock-tabs">
-        <div class="panelmock-tab">Hoy</div>
-        <div class="panelmock-tab active">Agenda</div>
-        <div class="panelmock-tab">Créditos</div>
-        <div class="panelmock-tab">Compartir</div>
-        <div class="panelmock-tab">Perfil</div>
+    <p>Hoy y próximos programados: tus reservas con calendario visual.</p>
+    <div class="realphone" aria-hidden="true">
+      <div class="realphone-notch"></div>
+      <div class="realphone-status"><span>21:47</span><span>📶 🔋</span></div>
+      <div class="realphone-body">
+        <div class="realphone-day">Hoy · Jueves</div>
+        <div class="realphone-row"><span>18:00 · Palermo → Belgrano</span><span>$3.200</span></div>
+        <div class="realphone-row"><span>21:30 · Aeroparque</span><span>$9.500</span></div>
+        <div class="realphone-day">Mañana</div>
+        <div class="realphone-row"><span>09:00 · Recoleta → Centro</span><span>$2.800</span></div>
       </div>
-      <div class="panelmock-body">
-        <div class="panelmock-day">HOY · JUEVES</div>
-        <div class="panelmock-row"><span>18:00 · Palermo → Belgrano</span><span>$3.200</span></div>
-        <div class="panelmock-row"><span>21:30 · Aeroparque</span><span>$9.500</span></div>
-        <div class="panelmock-day">MAÑANA</div>
-        <div class="panelmock-row"><span>09:00 · Recoleta → Centro</span><span>$2.800</span></div>
+      <div class="realphone-tabs">
+        <div class="realphone-tab"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l-2 0l9 -9l9 9l-2 0"/><path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7"/><path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6"/></svg><strong>Hoy</strong></div>
+        <div class="realphone-tab active"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2v-12"/><path d="M16 3v4"/><path d="M8 3v4"/><path d="M4 11h16"/></svg><strong>Agenda</strong></div>
+        <div class="realphone-tab"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8a3 3 0 0 1 3 -3h12a3 3 0 0 1 3 3v8a3 3 0 0 1 -3 3h-12a3 3 0 0 1 -3 -3l0 -8"/><path d="M3 10l18 0"/></svg><strong>Créditos</strong></div>
+        <div class="realphone-tab"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a3 3 0 1 0 6 0a3 3 0 1 0 -6 0"/><path d="M15 6a3 3 0 1 0 6 0a3 3 0 1 0 -6 0"/><path d="M15 18a3 3 0 1 0 6 0a3 3 0 1 0 -6 0"/><path d="M8.7 10.7l6.6 -3.4"/><path d="M8.7 13.3l6.6 3.4"/></svg><strong>Compartir</strong></div>
+        <div class="realphone-tab"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 7a4 4 0 1 0 8 0a4 4 0 0 0 -8 0"/><path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2"/></svg><strong>Perfil</strong></div>
       </div>
     </div>
   </div>
 
   <div class="screen-block">
     <h3>Créditos</h3>
-    <p>Tu saldo actual y la opción de recargar.</p>
-    <div class="panelmock">
-      <div class="panelmock-tabs">
-        <div class="panelmock-tab">Hoy</div>
-        <div class="panelmock-tab">Agenda</div>
-        <div class="panelmock-tab active">Créditos</div>
-        <div class="panelmock-tab">Compartir</div>
-        <div class="panelmock-tab">Perfil</div>
+    <p>Saldo y recarga: cuánto te queda y cómo sumar más.</p>
+    <div class="realphone" aria-hidden="true">
+      <div class="realphone-notch"></div>
+      <div class="realphone-status"><span>21:47</span><span>📶 🔋</span></div>
+      <div class="realphone-body">
+        <div class="realphone-row"><span>Créditos disponibles</span><span>17</span></div>
+        <div class="realphone-row"><span>Se resetean</span><span>en 12 días</span></div>
+        <div class="realphone-row"><span>Recargar créditos</span><span>→</span></div>
       </div>
-      <div class="panelmock-body">
-        <div class="panelmock-row"><span>Créditos disponibles</span><span>17</span></div>
-        <div class="panelmock-row"><span>Se resetean</span><span>en 12 días</span></div>
-        <div class="panelmock-row"><span>Recargar créditos</span><span>→</span></div>
+      <div class="realphone-tabs">
+        <div class="realphone-tab"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l-2 0l9 -9l9 9l-2 0"/><path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7"/><path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6"/></svg><strong>Hoy</strong></div>
+        <div class="realphone-tab"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2v-12"/><path d="M16 3v4"/><path d="M8 3v4"/><path d="M4 11h16"/></svg><strong>Agenda</strong></div>
+        <div class="realphone-tab active"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8a3 3 0 0 1 3 -3h12a3 3 0 0 1 3 3v8a3 3 0 0 1 -3 3h-12a3 3 0 0 1 -3 -3l0 -8"/><path d="M3 10l18 0"/></svg><strong>Créditos</strong></div>
+        <div class="realphone-tab"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a3 3 0 1 0 6 0a3 3 0 1 0 -6 0"/><path d="M15 6a3 3 0 1 0 6 0a3 3 0 1 0 -6 0"/><path d="M15 18a3 3 0 1 0 6 0a3 3 0 1 0 -6 0"/><path d="M8.7 10.7l6.6 -3.4"/><path d="M8.7 13.3l6.6 3.4"/></svg><strong>Compartir</strong></div>
+        <div class="realphone-tab"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 7a4 4 0 1 0 8 0a4 4 0 0 0 -8 0"/><path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2"/></svg><strong>Perfil</strong></div>
       </div>
     </div>
   </div>
 
   <div class="screen-block">
     <h3>Compartir</h3>
-    <p>Tu link y tu QR, listos para mandar o imprimir.</p>
-    <div class="panelmock">
-      <div class="panelmock-tabs">
-        <div class="panelmock-tab">Hoy</div>
-        <div class="panelmock-tab">Agenda</div>
-        <div class="panelmock-tab">Créditos</div>
-        <div class="panelmock-tab active">Compartir</div>
-        <div class="panelmock-tab">Perfil</div>
+    <p>QR y link para clientes: listos para mandar o imprimir.</p>
+    <div class="realphone" aria-hidden="true">
+      <div class="realphone-notch"></div>
+      <div class="realphone-status"><span>21:47</span><span>📶 🔋</span></div>
+      <div class="realphone-body">
+        <div class="realphone-row"><span>🔗 Tu link personal</span><span>Copiar</span></div>
+        <div class="realphone-row"><span>📱 Tu QR imprimible</span><span>Descargar</span></div>
       </div>
-      <div class="panelmock-body">
-        <div class="panelmock-row"><span>🔗 Tu link personal</span><span>Copiar</span></div>
-        <div class="panelmock-row"><span>📱 Tu QR imprimible</span><span>Descargar</span></div>
+      <div class="realphone-tabs">
+        <div class="realphone-tab"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l-2 0l9 -9l9 9l-2 0"/><path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7"/><path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6"/></svg><strong>Hoy</strong></div>
+        <div class="realphone-tab"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2v-12"/><path d="M16 3v4"/><path d="M8 3v4"/><path d="M4 11h16"/></svg><strong>Agenda</strong></div>
+        <div class="realphone-tab"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8a3 3 0 0 1 3 -3h12a3 3 0 0 1 3 3v8a3 3 0 0 1 -3 3h-12a3 3 0 0 1 -3 -3l0 -8"/><path d="M3 10l18 0"/></svg><strong>Créditos</strong></div>
+        <div class="realphone-tab active"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a3 3 0 1 0 6 0a3 3 0 1 0 -6 0"/><path d="M15 6a3 3 0 1 0 6 0a3 3 0 1 0 -6 0"/><path d="M15 18a3 3 0 1 0 6 0a3 3 0 1 0 -6 0"/><path d="M8.7 10.7l6.6 -3.4"/><path d="M8.7 13.3l6.6 3.4"/></svg><strong>Compartir</strong></div>
+        <div class="realphone-tab"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 7a4 4 0 1 0 8 0a4 4 0 0 0 -8 0"/><path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2"/></svg><strong>Perfil</strong></div>
       </div>
     </div>
   </div>
 
   <div class="screen-block">
     <h3>Perfil</h3>
-    <p>Tu foto, bio y datos públicos.</p>
-    <div class="panelmock">
-      <div class="panelmock-tabs">
-        <div class="panelmock-tab">Hoy</div>
-        <div class="panelmock-tab">Agenda</div>
-        <div class="panelmock-tab">Créditos</div>
-        <div class="panelmock-tab">Compartir</div>
-        <div class="panelmock-tab active">Perfil</div>
+    <p>Datos y ajustes: tu foto, auto y datos públicos.</p>
+    <div class="realphone" aria-hidden="true">
+      <div class="realphone-notch"></div>
+      <div class="realphone-status"><span>21:47</span><span>📶 🔋</span></div>
+      <div class="realphone-body">
+        <div class="realphone-row"><span>Nombre</span><span>Carlos Gomez</span></div>
+        <div class="realphone-row"><span>Auto</span><span>Corolla gris</span></div>
+        <div class="realphone-row"><span>Foto de perfil</span><span>✓ Subida</span></div>
       </div>
-      <div class="panelmock-body">
-        <div class="panelmock-row"><span>Nombre</span><span>Carlos Gomez</span></div>
-        <div class="panelmock-row"><span>Auto</span><span>Corolla gris</span></div>
-        <div class="panelmock-row"><span>Foto de perfil</span><span>✓ Subida</span></div>
+      <div class="realphone-tabs">
+        <div class="realphone-tab"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l-2 0l9 -9l9 9l-2 0"/><path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7"/><path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6"/></svg><strong>Hoy</strong></div>
+        <div class="realphone-tab"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2v-12"/><path d="M16 3v4"/><path d="M8 3v4"/><path d="M4 11h16"/></svg><strong>Agenda</strong></div>
+        <div class="realphone-tab"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8a3 3 0 0 1 3 -3h12a3 3 0 0 1 3 3v8a3 3 0 0 1 -3 3h-12a3 3 0 0 1 -3 -3l0 -8"/><path d="M3 10l18 0"/></svg><strong>Créditos</strong></div>
+        <div class="realphone-tab"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a3 3 0 1 0 6 0a3 3 0 1 0 -6 0"/><path d="M15 6a3 3 0 1 0 6 0a3 3 0 1 0 -6 0"/><path d="M15 18a3 3 0 1 0 6 0a3 3 0 1 0 -6 0"/><path d="M8.7 10.7l6.6 -3.4"/><path d="M8.7 13.3l6.6 3.4"/></svg><strong>Compartir</strong></div>
+        <div class="realphone-tab active"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 7a4 4 0 1 0 8 0a4 4 0 0 0 -8 0"/><path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2"/></svg><strong>Perfil</strong></div>
       </div>
     </div>
   </div>
