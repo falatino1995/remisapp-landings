@@ -107,17 +107,20 @@ code{background:rgba(255,255,255,.06);border:1px solid var(--borde);border-radiu
 .choice-chip small{display:block;font-size:10.5px;font-weight:500;color:var(--gris2);margin-top:2px}
 .choice-chip-logo{height:17px;width:auto;display:block;margin:0 auto}
 
-/* mockup del hub "Mi cuenta" */
-.hubmock{width:230px;margin:0 auto 8px;border-radius:26px;background:#071018;border:1px solid rgba(210,234,255,.32);box-shadow:0 20px 46px rgba(0,0,0,.5);overflow:hidden}
-.hubmock-head{padding:14px 14px 10px;background:linear-gradient(180deg,#0c1a14,#071018)}
-.hubmock-title{font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:800;color:var(--blanco)}
-.hubmock-sub{font-size:9px;color:var(--gris2);margin-top:1px}
-.hubmock-card{margin:8px 14px 14px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.09);border-radius:12px;padding:10px 11px}
-.hubmock-card-status{font-size:8.5px;font-weight:700;color:var(--verde);text-transform:uppercase;letter-spacing:.04em;margin-bottom:5px}
-.hubmock-card-route{font-size:11px;font-weight:700;color:var(--blanco)}
-.hubmock-tabs{display:flex;justify-content:space-between;padding:9px 8px;border-top:1px solid rgba(255,255,255,.08);background:#050a08}
-.hubmock-tab{display:flex;flex-direction:column;align-items:center;gap:3px;font-size:7px;color:var(--gris);flex:1}
-.hubmock-tab svg{width:15px;height:15px}
+/* mockup del hub "Mi cuenta" — mismo bezel tipo telefono que .androidphone */
+.hubmock{width:230px;aspect-ratio:9/19;margin:0 auto 8px;border-radius:30px;border:7px solid #1c211d;background:linear-gradient(165deg,#0e2418 0%,#081310 55%,#060b09 100%);box-shadow:0 20px 46px rgba(0,0,0,.5);overflow:hidden;position:relative;display:flex;flex-direction:column}
+.hubmock-notch{position:absolute;top:9px;left:50%;transform:translateX(-50%);width:42px;height:12px;background:#000;border-radius:999px;z-index:5}
+.hubmock-status{padding:28px 16px 0;display:flex;justify-content:space-between;font-size:9px;color:rgba(255,255,255,.6)}
+.hubmock-head{padding:12px 16px 8px}
+.hubmock-title{font-family:'Barlow Condensed',sans-serif;font-size:14px;font-weight:800;color:var(--blanco)}
+.hubmock-sub{font-size:10px;color:var(--gris2);margin-top:2px}
+.hubmock-card{margin:6px 14px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.09);border-radius:12px;padding:11px 12px}
+.hubmock-card-status{font-size:9px;font-weight:700;color:var(--verde);text-transform:uppercase;letter-spacing:.04em;margin-bottom:6px}
+.hubmock-card-route{font-size:12px;font-weight:700;color:var(--blanco)}
+.hubmock-spacer{flex:1}
+.hubmock-tabs{display:flex;justify-content:space-between;padding:10px 8px;border-top:1px solid rgba(255,255,255,.08);background:#050a08}
+.hubmock-tab{display:flex;flex-direction:column;align-items:center;gap:3px;font-size:7.5px;color:var(--gris);flex:1}
+.hubmock-tab svg{width:16px;height:16px}
 .hubmock-tab.active{color:var(--verde)}
 
 .cta-card{
@@ -373,6 +376,8 @@ footer{border-top:1px solid var(--borde);padding:40px;max-width:1180px;margin:0 
   <p>Además del chat, tu pasajero tiene un link personal a un mini panel con todo lo suyo: el viaje en curso, su historial, sus choferes favoritos, sus direcciones guardadas y su perfil.</p>
 
   <div class="hubmock" aria-hidden="true">
+    <div class="hubmock-notch"></div>
+    <div class="hubmock-status"><span>21:47</span><span>📶 🔋</span></div>
     <div class="hubmock-head">
       <div class="hubmock-title">Mi cuenta</div>
       <div class="hubmock-sub">Hola de nuevo 👋</div>
@@ -381,6 +386,7 @@ footer{border-top:1px solid var(--borde);padding:40px;max-width:1180px;margin:0 
       <div class="hubmock-card-status">● Viaje en curso</div>
       <div class="hubmock-card-route">Palermo → Aeroparque</div>
     </div>
+    <div class="hubmock-spacer"></div>
     <div class="hubmock-tabs">
       <div class="hubmock-tab active"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 3l0 7l6 0l-8 11l0 -7l-6 0l8 -11"/></svg>Ahora</div>
       <div class="hubmock-tab"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2v-12"/><path d="M16 3v4"/><path d="M8 3v4"/><path d="M4 11h16"/></svg>Viajes</div>
