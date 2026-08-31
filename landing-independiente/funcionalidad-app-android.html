@@ -157,7 +157,10 @@ nav{
 .nav-center a{font-family:'Barlow',sans-serif;font-size:14px;font-weight:600;letter-spacing:.03em;text-transform:uppercase;color:rgba(255,255,255,.72);transition:color .18s,opacity .18s}
 .nav-center a:hover{color:var(--blanco)}
 .nav-dropdown{position:relative}
-.nav-drop-toggle{display:inline-flex;align-items:center;gap:6px;font-family:'Barlow',sans-serif;font-size:14px;font-weight:600;letter-spacing:.03em;text-transform:uppercase;color:rgba(255,255,255,.72);cursor:pointer;transition:color .18s}
+.nav-dropdown::after{content:'';position:absolute;top:100%;left:0;height:14px;width:620px;max-width:90vw}
+.nav-drop-toggle{display:inline-flex;align-items:center;gap:6px;font-family:'Barlow',sans-serif;font-size:14px;font-weight:600;letter-spacing:.03em;text-transform:uppercase;color:rgba(255,255,255,.72);cursor:pointer;transition:color .18s;user-select:none}
+.nav-mega-ico-img{width:18px;height:18px;border-radius:5px;flex-shrink:0;object-fit:contain}
+.mm-ico{width:16px;height:16px;border-radius:4px;vertical-align:-3px;margin-right:6px;object-fit:contain}
 .nav-drop-toggle::after{content:'▾';font-size:11px;opacity:.75}
 .nav-dropdown:hover .nav-drop-toggle,.nav-dropdown:focus-within .nav-drop-toggle{color:var(--blanco)}
 .nav-drop-menu{position:absolute;top:calc(100% + 14px);left:0;min-width:250px;padding:10px;background:rgba(10,15,11,.96);border:1px solid var(--verde-border);border-radius:16px;box-shadow:0 24px 48px rgba(0,0,0,.42);display:flex;flex-direction:column;gap:2px;opacity:0;transform:translateY(8px);pointer-events:none;transition:opacity .18s,transform .18s}
@@ -218,7 +221,7 @@ footer{border-top:1px solid var(--borde);padding:40px;max-width:1180px;margin:0 
       <div class="nav-drop-menu nav-mega-menu">
         <div class="nav-mega-col">
           <div class="nav-mega-heading">Recibir pedidos</div>
-          <a href="funcionalidad-bot.html"><span class="nav-mega-ico">🤖</span>El bot de WhatsApp</a>
+          <a href="funcionalidad-bot.html"><img class="nav-mega-ico-img" src="assets/brand/whatsapp/whatsapp-icon.png" alt="">El bot de WhatsApp</a>
           <a href="funcionalidad-link.html"><span class="nav-mega-ico">🔗</span>Tu link propio</a>
           <a href="funcionalidad-qr.html"><span class="nav-mega-ico">📱</span>Tu QR imprimible</a>
         </div>
@@ -231,7 +234,7 @@ footer{border-top:1px solid var(--borde);padding:40px;max-width:1180px;margin:0 
         <div class="nav-mega-col">
           <div class="nav-mega-heading">Pagos y app</div>
           <a href="funcionalidad-mercadopago.html"><span class="nav-mega-ico">💳</span>Cobros y Mercado Pago</a>
-          <a href="funcionalidad-app-android.html"><span class="nav-mega-ico">📲</span>App para Android <small class="nav-drop-badge">Muy pronto</small></a>
+          <a href="funcionalidad-app-android.html"><img class="nav-mega-ico-img" src="assets/brand/googleplay/google-play-icon.png" alt="">App móvil <small class="nav-drop-badge">Muy pronto</small></a>
         </div>
       </div>
     </div>
@@ -256,14 +259,14 @@ footer{border-top:1px solid var(--borde);padding:40px;max-width:1180px;margin:0 
 
 <div class="mobile-menu" id="mobileMenu">
   <a href="/#como-funciona" onclick="closeMobile()">Cómo funciona</a>
-  <a href="funcionalidad-bot.html">🤖 El bot de WhatsApp</a>
+  <a href="funcionalidad-bot.html"><img class="mm-ico" src="assets/brand/whatsapp/whatsapp-icon.png" alt="">El bot de WhatsApp</a>
   <a href="funcionalidad-link.html">🔗 Tu link propio</a>
   <a href="funcionalidad-qr.html">📱 Tu QR imprimible</a>
   <a href="funcionalidad-precio.html">💰 Tu precio, automático</a>
   <a href="funcionalidad-panel.html">📋 Panel de chofer</a>
   <a href="funcionalidad-notificaciones.html">🔔 Notificaciones</a>
   <a href="funcionalidad-mercadopago.html">💳 Cobros y Mercado Pago</a>
-  <a href="funcionalidad-app-android.html">📲 App para Android · Muy pronto</a>
+  <a href="funcionalidad-app-android.html"><img class="mm-ico" src="assets/brand/googleplay/google-play-icon.png" alt="">App móvil · Muy pronto</a>
   <a href="/#precios" onclick="closeMobile()">Precios</a>
   <a href="/#faq" onclick="closeMobile()">Preguntas</a>
   <a href="guias.html">Guías para choferes independientes</a>
