@@ -273,6 +273,9 @@ footer{border-top:1px solid var(--borde);padding:40px;max-width:1180px;margin:0 
   <h2>Cómo se aplica</h2>
   <p>Cada vez que cambiás el precio desde tu panel (sección <strong>Tarifa</strong>), el cambio se aplica <strong>inmediatamente</strong> a las próximas cotizaciones del bot — no hace falta reiniciar nada ni esperar.</p>
 
+  <h2>Precio manual, viaje por viaje</h2>
+  <p>Si elegiste "pasar tu precio a mano", cotizás cada viaje vos: le mandás al bot <code>PRECIO &lt;monto&gt;</code> y eso le llega a tu pasajero como propuesta — él la confirma o la rechaza antes de que el viaje quede armado. Para evitar mandar un número por error, configurás una sola vez un rango mínimo y máximo con <code>CONFIG PRECIO MANUAL MIN &lt;monto&gt;</code> y <code>CONFIG PRECIO MANUAL MAX &lt;monto&gt;</code>.</p>
+
   <div class="card-red">
     <strong>Un detalle importante:</strong> el precio que configurés es el que el bot le va a decir al pasajero. Si está mal cargado, el bot va a cotizar mal — conviene revisarlo antes de empezar a compartir tu link.
   </div>
