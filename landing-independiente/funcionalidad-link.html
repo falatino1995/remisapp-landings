@@ -102,6 +102,7 @@ nav{
 .nav-mega-heading{font-family:'Barlow',sans-serif;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--verde);padding:0 12px;margin-bottom:8px}
 .nav-mega-menu a{display:flex;align-items:center;gap:10px}
 .nav-mega-ico{font-size:16px;width:20px;text-align:center;flex-shrink:0}
+.nav-mega-menu.single-col{grid-template-columns:1fr;min-width:240px}
 .nav-drop-badge{display:inline-block;margin-left:6px;padding:1px 7px;border-radius:999px;font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.04em;color:#FDE68A;background:rgba(253,230,138,.1);border:1px solid rgba(253,230,138,.28);vertical-align:1px}
 .nav-right{display:flex;align-items:center;gap:10px}
 .nav-switch{font-size:12px;color:rgba(255,255,255,.8);border:1px solid rgba(255,255,255,.12);padding:7px 14px;border-radius:999px;transition:all .18s}
@@ -172,8 +173,14 @@ footer{border-top:1px solid var(--borde);padding:40px;max-width:1180px;margin:0 
     <a href="/#faq">Preguntas</a>
     <div class="nav-dropdown">
       <span class="nav-drop-toggle" tabindex="0">Recursos</span>
-      <div class="nav-drop-menu">
-        <a href="guias.html">Guías para choferes independientes</a>
+      <div class="nav-drop-menu nav-mega-menu single-col">
+        <div class="nav-mega-col">
+          <div class="nav-mega-heading">Guías</div>
+          <a href="guias.html"><span class="nav-mega-ico">📚</span>Todas las guías</a>
+          <a href="guia-como-registrarte.html"><span class="nav-mega-ico">📝</span>Cómo registrarte</a>
+          <a href="guia-primeros-pasajeros.html"><span class="nav-mega-ico">🚀</span>Primeros pasajeros</a>
+          <a href="guia-configurar-tu-cuenta.html"><span class="nav-mega-ico">⚙️</span>Configurá tu cuenta</a>
+        </div>
       </div>
     </div>
     <a href="https://remiseria.remisapp.info/" class="nav-switch">¿Tenés una agencia o remisería? →</a>
@@ -199,7 +206,10 @@ footer{border-top:1px solid var(--borde);padding:40px;max-width:1180px;margin:0 
   <a href="funcionalidad-app-android.html"><img class="mm-ico" src="assets/brand/googleplay/google-play-icon.png" alt="">App móvil · Muy pronto</a>
   <a href="/#precios" onclick="closeMobile()">Precios</a>
   <a href="/#faq" onclick="closeMobile()">Preguntas</a>
-  <a href="guias.html">Guías para choferes independientes</a>
+  <a href="guias.html">📚 Todas las guías</a>
+  <a href="guia-como-registrarte.html">📝 Cómo registrarte</a>
+  <a href="guia-primeros-pasajeros.html">🚀 Primeros pasajeros</a>
+  <a href="guia-configurar-tu-cuenta.html">⚙️ Configurá tu cuenta</a>
   <a href="https://remiseria.remisapp.info/">¿Tenés una agencia o remisería? →</a>
   <a href="https://remisapp2-production.up.railway.app/admin" class="mm-login">Iniciar sesión</a>
   <a href="https://remisapp2-production.up.railway.app/empezar?kind=independiente" class="mm-cta">Empezá gratis ahora</a>
