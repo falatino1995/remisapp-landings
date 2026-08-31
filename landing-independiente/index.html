@@ -95,6 +95,9 @@ nav{
 .nav-mega-heading{font-family:'Barlow',sans-serif;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--verde);padding:0 12px;margin-bottom:8px}
 .nav-mega-menu a{display:flex;align-items:center;gap:10px}
 .nav-mega-ico{font-size:16px;width:20px;text-align:center;flex-shrink:0}
+.nav-mega-footer{grid-column:1/-1;border-top:1px solid var(--borde);margin-top:8px;padding-top:8px}
+.nav-mega-footer a{padding:9px 12px;border-radius:10px;color:var(--gris2);font-size:13px;font-weight:500;display:flex;align-items:center;gap:10px}
+.nav-mega-footer a:hover{background:rgba(61,204,142,.08);color:var(--blanco)}
 .nav-drop-badge{display:inline-block;margin-left:6px;padding:1px 7px;border-radius:999px;font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.04em;color:#FDE68A;background:rgba(253,230,138,.1);border:1px solid rgba(253,230,138,.28);vertical-align:1px}
 .nav-right{display:flex;align-items:center;gap:10px}
 .nav-switch{font-size:12px;color:rgba(255,255,255,.8);border:1px solid rgba(255,255,255,.12);padding:7px 14px;border-radius:var(--r999);transition:all .18s}
@@ -1824,13 +1827,18 @@ fbq('track', 'PageView');
           <a href="guia-configurar-tu-cuenta.html"><span class="nav-mega-ico">⚙️</span>Configurá tu cuenta</a>
           <a href="funcionalidad-panel.html"><span class="nav-mega-ico">📋</span>Tu panel de chofer</a>
           <a href="guia-configurar-tu-cuenta.html#creditos"><span class="nav-mega-ico">💳</span>Planes y créditos</a>
+          <a href="funcionalidad-app-android.html"><img class="nav-mega-ico-img" src="assets/brand/googleplay/google-play-icon.png" alt="">La app móvil</a>
         </div>
         <div class="nav-mega-col">
-          <div class="nav-mega-heading">Más</div>
-          <a href="funcionalidad-app-android.html"><img class="nav-mega-ico-img" src="assets/brand/googleplay/google-play-icon.png" alt="">La app móvil</a>
-          <a href="guia-experiencia-pasajero.html"><span class="nav-mega-ico">🧍</span>Tu pasajero</a>
-          <a href="guias.html"><span class="nav-mega-ico">📚</span>Todas las guías</a>
-          <a href="mailto:contact.tifossi@gmail.com"><span class="nav-mega-ico">✉️</span>Sugerí un tema</a>
+          <div class="nav-mega-heading">Tu pasajero</div>
+          <a href="guia-experiencia-pasajero.html#programar"><span class="nav-mega-ico">📅</span>Cómo te agenda</a>
+          <a href="guia-experiencia-pasajero.html#bot"><img class="nav-mega-ico-img" src="assets/brand/whatsapp/whatsapp-icon.png" alt="">Te pide por WhatsApp</a>
+          <a href="guia-experiencia-pasajero.html#hub"><span class="nav-mega-ico">💻</span>Su hub (web)</a>
+          <a href="guia-experiencia-pasajero.html#pwa"><span class="nav-mega-ico">📲</span>Instala la app</a>
+          <a href="guia-experiencia-pasajero.html#pago"><span class="nav-mega-ico">💰</span>Cómo paga</a>
+        </div>
+        <div class="nav-mega-footer">
+          <a href="guias.html"><span class="nav-mega-ico">📚</span>Ver todas las guías →</a>
         </div>
       </div>
     </div>
@@ -1866,9 +1874,12 @@ fbq('track', 'PageView');
   <a href="funcionalidad-panel.html">📋 Tu panel de chofer</a>
   <a href="guia-configurar-tu-cuenta.html#creditos">💳 Planes y créditos</a>
   <a href="funcionalidad-app-android.html"><img class="mm-ico" src="assets/brand/googleplay/google-play-icon.png" alt="">La app móvil</a>
-  <a href="guia-experiencia-pasajero.html">🧍 Tu pasajero</a>
-  <a href="guias.html">📚 Todas las guías</a>
-  <a href="mailto:contact.tifossi@gmail.com">✉️ Sugerí un tema</a>
+  <a href="guia-experiencia-pasajero.html#programar">📅 Cómo te agenda</a>
+  <a href="guia-experiencia-pasajero.html#bot"><img class="mm-ico" src="assets/brand/whatsapp/whatsapp-icon.png" alt="">Te pide por WhatsApp</a>
+  <a href="guia-experiencia-pasajero.html#hub">💻 Su hub (web)</a>
+  <a href="guia-experiencia-pasajero.html#pwa">📲 Instala la app</a>
+  <a href="guia-experiencia-pasajero.html#pago">💰 Cómo paga</a>
+  <a href="guias.html">📚 Ver todas las guías</a>
   <a href="https://remiseria.remisapp.info/">¿Tenés una agencia o remisería? →</a>
   <a href="https://remisapp2-production.up.railway.app/admin" class="mm-login">Iniciar sesión</a>
   <a href="https://remisapp2-production.up.railway.app/empezar?kind=independiente" class="mm-cta">Empezá gratis ahora</a>
