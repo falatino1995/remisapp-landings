@@ -41,7 +41,10 @@ nav{position:sticky;top:0;z-index:100;background:rgba(8,12,9,0.9);backdrop-filte
 .nav-logo span{color:var(--verde)}
 .nav-back{margin-left:auto;font-size:.85rem;color:var(--gris2)}
 main{max-width:var(--maxw);margin:0 auto;padding:56px 24px 96px}
-.hero-brand-logo{height:42px;width:auto;display:block;margin-bottom:16px}
+.hero-row{display:flex;align-items:center;gap:32px;margin-bottom:8px}
+.hero-text{flex:1;min-width:0}
+.hero-brand-logo{height:130px;width:auto;flex-shrink:0}
+@media(max-width:600px){.hero-row{flex-direction:column-reverse;gap:20px}.hero-text{width:100%}.hero-brand-logo{height:88px}}
 .eyebrow{font-family:'Barlow',sans-serif;font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--verde);margin-bottom:14px}
 h1{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:clamp(1.9rem,4vw,2.5rem);margin-bottom:14px;line-height:1.1}
 .dek{color:var(--gris2);font-size:1.05rem;margin-bottom:40px}
@@ -204,10 +207,14 @@ footer{border-top:1px solid var(--borde);padding:40px;max-width:1180px;margin:0 
   <a href="https://remisapp2-production.up.railway.app/empezar?kind=independiente" class="mm-cta">Empezá gratis ahora</a>
 </div>
 <main>
-  <img class="hero-brand-logo" src="assets/brand/mercadopago/mercado-pago.svg" alt="Mercado Pago">
-  <div class="eyebrow">Funcionalidad</div>
-  <h1>Cobros y Mercado Pago</h1>
-  <p class="dek">Efectivo, o un link de pago que se manda solo — vos elegís, viaje por viaje.</p>
+  <div class="hero-row">
+    <div class="hero-text">
+      <div class="eyebrow">Funcionalidad</div>
+      <h1>Cobros y Mercado Pago</h1>
+      <p class="dek">Efectivo, o un link de pago que se manda solo — vos elegís, viaje por viaje.</p>
+    </div>
+    <img class="hero-brand-logo" src="assets/brand/mercadopago/mercado-pago.svg" alt="Mercado Pago">
+  </div>
 
   <h2>Cómo cerrás un viaje</h2>
   <p>Al terminar, escribís uno de estos comandos al bot:</p>
