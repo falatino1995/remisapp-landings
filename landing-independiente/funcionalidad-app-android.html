@@ -99,24 +99,21 @@ strong{color:var(--blanco)}
 .dock-app.active{background:var(--verde);color:#04140c;display:flex;align-items:center;justify-content:center;font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:15px;box-shadow:0 0 0 2px rgba(61,204,142,.3),0 6px 14px rgba(61,204,142,.35)}
 @media(max-width:680px){.hero-row{flex-direction:column-reverse;gap:28px}.hero-text{width:100%}.androidphone{width:180px}}
 
-/* ── Fila de celulares chicos, una pantalla real por segmento del panel ── */
-.screens-row{display:flex;gap:16px;overflow-x:auto;padding:6px 2px 18px;margin:20px 0 8px;-webkit-overflow-scrolling:touch}
-.screens-row::-webkit-scrollbar{height:6px}
-.screens-row::-webkit-scrollbar-thumb{background:var(--borde);border-radius:99px}
-.miniphone-wrap{flex-shrink:0;width:128px;text-align:center}
-.miniphone{width:128px;aspect-ratio:9/19;border-radius:22px;border:6px solid #1c211d;background:linear-gradient(165deg,#0e2418 0%,#081310 55%,#060b09 100%);box-shadow:0 16px 34px rgba(0,0,0,.45);overflow:hidden;position:relative;display:flex;flex-direction:column}
-.miniphone-notch{position:absolute;top:7px;left:50%;transform:translateX(-50%);width:28px;height:9px;background:#000;border-radius:999px;z-index:5}
-.miniphone-appbar{padding:18px 10px 4px;font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:9.5px;color:#fff;display:flex;align-items:center;gap:5px}
-.miniphone-appbar-badge{width:11px;height:11px;border-radius:3px;background:var(--verde);color:#04140c;display:inline-flex;align-items:center;justify-content:center;font-size:7px;font-weight:800;flex-shrink:0}
-.miniphone-card{margin:5px 8px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.09);border-radius:8px;padding:7px 8px}
-.miniphone-card+.miniphone-card{margin-top:0}
-.miniphone-card-label{font-size:6.5px;font-weight:700;color:var(--gris2);text-transform:uppercase;letter-spacing:.03em;margin-bottom:2px}
-.miniphone-card-main{font-size:9px;font-weight:700;color:#fff;line-height:1.3}
-.miniphone-mid{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center}
-.miniphone-ico{width:34px;height:34px;border-radius:10px;background:linear-gradient(135deg,#53d89c,#36c283);color:#04140c;display:flex;align-items:center;justify-content:center;font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:14px;margin-bottom:6px}
-.miniphone-mid-label{font-size:9px;font-weight:700;color:#fff;text-align:center;padding:0 6px;line-height:1.3}
-.miniphone-mid-hint{font-size:7.5px;color:rgba(255,255,255,.4);margin-top:2px}
-.miniphone-label{font-size:11.5px;font-weight:700;color:var(--gris3);margin-top:10px}
+/* ── Un bloque por seccion del panel, con el mockup real de pestañas ── */
+.screen-block{margin:36px 0}
+.screen-block h3{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:1.15rem;color:var(--blanco);margin-bottom:6px}
+.screen-block p{margin-bottom:18px}
+.panelmock{max-width:320px;margin:0 auto;border-radius:20px;background:#071018;border:1px solid rgba(210,234,255,.28);box-shadow:0 20px 40px rgba(0,0,0,.45);overflow:hidden}
+.panelmock-tabs{display:flex;border-bottom:1px solid rgba(255,255,255,.07)}
+.panelmock-tab{flex:1;text-align:center;padding:10px 2px;font-size:8.5px;font-weight:700;color:var(--gris)}
+.panelmock-tab.active{color:var(--verde);border-bottom:2px solid var(--verde);background:rgba(61,204,142,.06)}
+.panelmock-body{padding:16px 14px;background:linear-gradient(180deg,#071018,#060b0f);min-height:96px}
+.panelmock-row{background:rgba(255,255,255,.05);border:1px solid var(--borde);border-radius:10px;padding:10px 12px;margin-bottom:8px;font-size:10.5px;display:flex;justify-content:space-between;gap:10px}
+.panelmock-row:last-child{margin-bottom:0}
+.panelmock-row span:first-child{color:var(--gris2)}
+.panelmock-row span:last-child{color:var(--blanco);font-weight:700;text-align:right}
+.panelmock-day{font-size:8.5px;color:var(--gris);margin:12px 0 4px;letter-spacing:.03em}
+.panelmock-day:first-child{margin-top:0}
 
 /* ── Logo oficial de Google Play ── */
 .gp-logo{height:14px;width:auto;vertical-align:middle;filter:brightness(1.15)}
@@ -388,6 +385,104 @@ footer{border-top:1px solid var(--borde);padding:40px;max-width:1180px;margin:0 
     </div>
   </div>
 
+  <h2>Recorré la app, pantalla por pantalla</h2>
+  <p>Son las mismas 5 secciones de tu panel — cada una con su lugar, tal cual las vas a ver.</p>
+
+  <div class="screen-block">
+    <h3>Hoy</h3>
+    <p>Tus viajes y pedidos pendientes del día, apenas abrís la app.</p>
+    <div class="panelmock">
+      <div class="panelmock-tabs">
+        <div class="panelmock-tab active">Hoy</div>
+        <div class="panelmock-tab">Agenda</div>
+        <div class="panelmock-tab">Créditos</div>
+        <div class="panelmock-tab">Compartir</div>
+        <div class="panelmock-tab">Perfil</div>
+      </div>
+      <div class="panelmock-body">
+        <div class="panelmock-row"><span>18:00 · Palermo → Belgrano</span><span>$3.200</span></div>
+        <div class="panelmock-row"><span>21:30 · Aeroparque</span><span>$9.500</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="screen-block">
+    <h3>Agenda</h3>
+    <p>Tus reservas de los próximos días, con calendario visual.</p>
+    <div class="panelmock">
+      <div class="panelmock-tabs">
+        <div class="panelmock-tab">Hoy</div>
+        <div class="panelmock-tab active">Agenda</div>
+        <div class="panelmock-tab">Créditos</div>
+        <div class="panelmock-tab">Compartir</div>
+        <div class="panelmock-tab">Perfil</div>
+      </div>
+      <div class="panelmock-body">
+        <div class="panelmock-day">HOY · JUEVES</div>
+        <div class="panelmock-row"><span>18:00 · Palermo → Belgrano</span><span>$3.200</span></div>
+        <div class="panelmock-row"><span>21:30 · Aeroparque</span><span>$9.500</span></div>
+        <div class="panelmock-day">MAÑANA</div>
+        <div class="panelmock-row"><span>09:00 · Recoleta → Centro</span><span>$2.800</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="screen-block">
+    <h3>Créditos</h3>
+    <p>Tu saldo actual y la opción de recargar.</p>
+    <div class="panelmock">
+      <div class="panelmock-tabs">
+        <div class="panelmock-tab">Hoy</div>
+        <div class="panelmock-tab">Agenda</div>
+        <div class="panelmock-tab active">Créditos</div>
+        <div class="panelmock-tab">Compartir</div>
+        <div class="panelmock-tab">Perfil</div>
+      </div>
+      <div class="panelmock-body">
+        <div class="panelmock-row"><span>Créditos disponibles</span><span>17</span></div>
+        <div class="panelmock-row"><span>Se resetean</span><span>en 12 días</span></div>
+        <div class="panelmock-row"><span>Recargar créditos</span><span>→</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="screen-block">
+    <h3>Compartir</h3>
+    <p>Tu link y tu QR, listos para mandar o imprimir.</p>
+    <div class="panelmock">
+      <div class="panelmock-tabs">
+        <div class="panelmock-tab">Hoy</div>
+        <div class="panelmock-tab">Agenda</div>
+        <div class="panelmock-tab">Créditos</div>
+        <div class="panelmock-tab active">Compartir</div>
+        <div class="panelmock-tab">Perfil</div>
+      </div>
+      <div class="panelmock-body">
+        <div class="panelmock-row"><span>🔗 Tu link personal</span><span>Copiar</span></div>
+        <div class="panelmock-row"><span>📱 Tu QR imprimible</span><span>Descargar</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="screen-block">
+    <h3>Perfil</h3>
+    <p>Tu foto, bio y datos públicos.</p>
+    <div class="panelmock">
+      <div class="panelmock-tabs">
+        <div class="panelmock-tab">Hoy</div>
+        <div class="panelmock-tab">Agenda</div>
+        <div class="panelmock-tab">Créditos</div>
+        <div class="panelmock-tab">Compartir</div>
+        <div class="panelmock-tab active">Perfil</div>
+      </div>
+      <div class="panelmock-body">
+        <div class="panelmock-row"><span>Nombre</span><span>Carlos Gomez</span></div>
+        <div class="panelmock-row"><span>Auto</span><span>Corolla gris</span></div>
+        <div class="panelmock-row"><span>Foto de perfil</span><span>✓ Subida</span></div>
+      </div>
+    </div>
+  </div>
+
   <div class="roadmap">
     <div class="roadmap-step done">
       <div class="roadmap-dot">✓</div>
@@ -442,75 +537,6 @@ footer{border-top:1px solid var(--borde);padding:40px;max-width:1180px;margin:0 
       <div class="compare-label">Login con código de WhatsApp</div>
       <div class="compare-cell no">✗</div>
       <div class="compare-cell yes">✓</div>
-    </div>
-  </div>
-
-  <h2>Recorré la app, pantalla por pantalla</h2>
-  <p>Son las mismas 5 secciones de tu panel — acá vas viendo cada una por separado.</p>
-  <div class="screens-row">
-    <div class="miniphone-wrap">
-      <div class="miniphone">
-        <div class="miniphone-notch"></div>
-        <div class="miniphone-appbar"><span class="miniphone-appbar-badge">R</span>Hoy · Jueves</div>
-        <div class="miniphone-card">
-          <div class="miniphone-card-label">18:00</div>
-          <div class="miniphone-card-main">Palermo → Belgrano<br>$3.200</div>
-        </div>
-        <div class="miniphone-card">
-          <div class="miniphone-card-label">21:30</div>
-          <div class="miniphone-card-main">Aeroparque<br>$9.500</div>
-        </div>
-      </div>
-      <div class="miniphone-label">Hoy</div>
-    </div>
-
-    <div class="miniphone-wrap">
-      <div class="miniphone">
-        <div class="miniphone-notch"></div>
-        <div class="miniphone-appbar"><span class="miniphone-appbar-badge">R</span>Agenda</div>
-        <div class="miniphone-card">
-          <div class="miniphone-card-label">Mañana · 09:00</div>
-          <div class="miniphone-card-main">Recoleta → Centro</div>
-        </div>
-      </div>
-      <div class="miniphone-label">Agenda</div>
-    </div>
-
-    <div class="miniphone-wrap">
-      <div class="miniphone">
-        <div class="miniphone-notch"></div>
-        <div class="miniphone-appbar"><span class="miniphone-appbar-badge">R</span>Créditos</div>
-        <div class="miniphone-mid">
-          <div class="miniphone-ico">17</div>
-          <div class="miniphone-mid-label">créditos disponibles</div>
-        </div>
-      </div>
-      <div class="miniphone-label">Créditos</div>
-    </div>
-
-    <div class="miniphone-wrap">
-      <div class="miniphone">
-        <div class="miniphone-notch"></div>
-        <div class="miniphone-appbar"><span class="miniphone-appbar-badge">R</span>Compartir</div>
-        <div class="miniphone-mid">
-          <div class="miniphone-ico">🔗</div>
-          <div class="miniphone-mid-label">Tu link y tu QR</div>
-        </div>
-      </div>
-      <div class="miniphone-label">Compartir</div>
-    </div>
-
-    <div class="miniphone-wrap">
-      <div class="miniphone">
-        <div class="miniphone-notch"></div>
-        <div class="miniphone-appbar"><span class="miniphone-appbar-badge">R</span>Perfil</div>
-        <div class="miniphone-mid">
-          <div class="miniphone-ico">R</div>
-          <div class="miniphone-mid-label">Carlos Gomez</div>
-          <div class="miniphone-mid-hint">Toyota Corolla gris</div>
-        </div>
-      </div>
-      <div class="miniphone-label">Perfil</div>
     </div>
   </div>
 
