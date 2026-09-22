@@ -360,6 +360,7 @@ nav{
 .feat-body{max-height:0;overflow:hidden;transition:max-height .38s ease}
 .feat-card.open .feat-body{max-height:760px}
 .feat-body-inner{padding-top:16px;border-top:1px solid var(--borde);margin-top:14px}
+.feat-more{display:inline-flex;align-items:center;margin-top:14px;padding:9px 13px;border:1px solid var(--verde-border);border-radius:var(--r999);color:var(--verde);font-size:12px;font-weight:700;transition:.18s}.feat-more:hover{background:var(--verde);color:#07140d;text-decoration:none}
 .feat-img{width:100%;height:232px;max-height:none;object-fit:cover;object-position:center;border-radius:16px;display:block;margin:14px 0 14px;border:1px solid rgba(255,255,255,.08);background:
   radial-gradient(circle at 50% 0%, rgba(61,204,142,.15), transparent 58%),
   linear-gradient(180deg,rgba(15,22,17,.95),rgba(8,12,9,.98));box-shadow:inset 0 1px 0 rgba(255,255,255,.04),0 20px 42px rgba(0,0,0,.22)}
@@ -2429,6 +2430,17 @@ fbq('track', 'PageView');
   <div class="feat-grid reveal d2" style="margin-top:36px">
 
     <div class="feat-card feat-card--phone">
+      <div class="feat-icon">📲</div>
+      <button class="feat-toggle" aria-label="expandir"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="6 9 12 15 18 9"/></svg></button>
+      <div class="feat-title">Descargate la app</div>
+      <div class="feat-sub">Instalala en 30 segundos, sin tienda.</div>
+      <div class="feat-body">
+        <div class="feat-detail">Guardás el panel en tu pantalla de inicio y activás notificaciones. Te avisa apenas entra un pedido, aunque tengas la pantalla apagada o el celular en el bolsillo.</div>
+        <a class="feat-more" href="funcionalidad-app-android.html" onclick="event.stopPropagation()">Ver cómo instalarla →</a>
+      </div>
+    </div>
+
+    <div class="feat-card feat-card--phone">
       <div class="feat-icon">🤖</div>
       <button class="feat-toggle" aria-label="expandir"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="6 9 12 15 18 9"/></svg></button>
       <div class="feat-title">Bot disponible 24hs</div>
@@ -2436,6 +2448,7 @@ fbq('track', 'PageView');
       <div class="feat-body">
         <img src="assets/feat-bot.png" class="feat-img" alt="Bot 24hs" style="margin-top:14px">
         <div class="feat-detail">Recibe el pedido, pregunta origen y destino, cotiza y confirma — todo automatizado. Funciona de noche, fines de semana, mientras manejás.</div>
+        <a class="feat-more" href="funcionalidad-bot.html" onclick="event.stopPropagation()">Ver cómo funciona →</a>
       </div>
     </div>
 
@@ -2447,6 +2460,7 @@ fbq('track', 'PageView');
       <div class="feat-body">
         <img src="assets/feat-link.png" class="feat-img" alt="Link público" style="margin-top:14px">
         <div class="feat-detail">remisapp.link/tunombre — tu página con tu nombre y un botón para pedir. Los clientes entran, te escriben, el bot los atiende.</div>
+        <a class="feat-more" href="funcionalidad-link.html" onclick="event.stopPropagation()">Ver tu web propia →</a>
       </div>
     </div>
 
@@ -2458,6 +2472,7 @@ fbq('track', 'PageView');
       <div class="feat-body">
         <img src="assets/feat-mp.png" class="feat-img" alt="Mercado Pago" style="margin-top:14px">
         <div class="feat-detail">El bot genera y manda el link de cobro solo. El cliente paga con Mercado Pago, tarjeta o efectivo — el dinero va directo a vos.</div>
+        <a class="feat-more" href="funcionalidad-mercadopago.html" onclick="event.stopPropagation()">Ver cómo funciona →</a>
       </div>
     </div>
 
@@ -2469,6 +2484,7 @@ fbq('track', 'PageView');
       <div class="feat-body">
         <img src="assets/feat-precio-control.png" class="feat-img" alt="Precio" style="margin-top:14px">
         <div class="feat-detail">El sistema consulta el precio de Uber para el mismo recorrido. Vos decidís si usarlo, ajustarlo o ignorarlo — siempre la decisión es tuya.</div>
+        <a class="feat-more" href="funcionalidad-precio.html" onclick="event.stopPropagation()">Ver cómo funciona →</a>
       </div>
     </div>
 
@@ -2491,6 +2507,7 @@ fbq('track', 'PageView');
       <div class="feat-body">
         <img src="assets/feat-programado-2.png" class="feat-img" alt="Programados" style="margin-top:14px">
         <div class="feat-detail">El cliente reserva para mañana a las 6am — vos recibís el aviso antes de salir. Y si querés, se sincroniza solo con el calendario de tu celular, sin tener que volver a mirar el panel. Nunca más se te olvida un viaje.</div>
+        <a class="feat-more" href="guia-experiencia-pasajero.html#programar" onclick="event.stopPropagation()">Ver la guía de programación →</a>
       </div>
     </div>
 
@@ -2502,6 +2519,7 @@ fbq('track', 'PageView');
       <div class="feat-body">
         <img src="assets/feat-gestion-2.png" class="feat-img" alt="Panel" style="margin-top:14px">
         <div class="feat-detail">Cuántos viajes hiciste, cuánto cobraste, qué está pendiente. Todo en tiempo real desde el celular.</div>
+        <a class="feat-more" href="funcionalidad-panel.html" onclick="event.stopPropagation()">Ver el panel de chofer →</a>
       </div>
     </div>
 
@@ -2513,16 +2531,6 @@ fbq('track', 'PageView');
       <div class="feat-body">
         <img src="assets/feat-maps.png" class="feat-img" alt="Navegación" style="margin-top:14px">
         <div class="feat-detail">Cuando aceptás el viaje, el bot te manda el link de navegación listo. Un tap y Google Maps o Waze arranca.</div>
-      </div>
-    </div>
-
-    <div class="feat-card feat-card--phone">
-      <div class="feat-icon">📲</div>
-      <button class="feat-toggle" aria-label="expandir"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="6 9 12 15 18 9"/></svg></button>
-      <div class="feat-title">Guardalo como app, sin tienda</div>
-      <div class="feat-sub">Ni Play Store ni App Store — 30 segundos y listo.</div>
-      <div class="feat-body">
-        <div class="feat-detail">Guardás el panel en tu pantalla de inicio y activás notificaciones. Te avisa apenas entra un pedido, aunque tengas la pantalla apagada o el celular en el bolsillo. Nada que instalar, nada que actualizar.</div>
       </div>
     </div>
 
@@ -2598,7 +2606,7 @@ fbq('track', 'PageView');
       <div class="featcomp-cell featcomp-yes">✓</div>
     </div>
     <div class="featcomp-row">
-      <div class="featcomp-feat"><div class="featcomp-fname">Guardalo como app</div><div class="featcomp-fsub">Sin tienda, con notificaciones</div></div>
+      <div class="featcomp-feat"><div class="featcomp-fname">Descargate la app</div><div class="featcomp-fsub">Sin tienda, con notificaciones</div></div>
       <div class="featcomp-cell featcomp-no">✕</div>
       <div class="featcomp-cell featcomp-yes">✓</div>
     </div>
