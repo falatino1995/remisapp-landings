@@ -352,6 +352,8 @@ nav{
 .fb-live{background:var(--verde-bg);color:var(--verde);border:1px solid var(--verde-border)}
 .fb-soon{background:rgba(255,255,255,.04);color:var(--gris)}
 .feat-icon{width:40px;height:40px;border-radius:10px;background:var(--verde-bg);border:1px solid var(--verde-border);display:flex;align-items:center;justify-content:center;color:var(--verde);margin-bottom:14px}
+.feat-icon--3d{width:46px;height:46px;margin:-3px 0 11px;background:transparent;border:0}
+.feat-icon--3d img{width:46px;height:46px;object-fit:contain;filter:drop-shadow(0 8px 10px rgba(0,0,0,.22))}
 .feat-header{display:flex;align-items:flex-start;justify-content:space-between;gap:8px;margin-bottom:6px}
 .feat-toggle{position:absolute;top:22px;right:18px;background:none;border:none;cursor:pointer;color:var(--gris);padding:0;display:flex;align-items:center;transition:transform .25s,color .15s}
 .feat-card.open .feat-toggle{transform:rotate(180deg);color:var(--verde)}
@@ -360,7 +362,7 @@ nav{
 .feat-body{max-height:0;overflow:hidden;transition:max-height .38s ease}
 .feat-card.open .feat-body{max-height:760px}
 .feat-body-inner{padding-top:16px;border-top:1px solid var(--borde);margin-top:14px}
-.feat-more{display:inline-flex;align-items:center;margin-top:14px;padding:9px 13px;border:1px solid var(--verde-border);border-radius:var(--r999);color:var(--verde);font-size:12px;font-weight:700;transition:.18s}.feat-more:hover{background:var(--verde);color:#07140d;text-decoration:none}
+.feat-more{display:inline-flex;align-items:center;margin-top:14px;padding:10px 14px;border:1px solid transparent;border-radius:var(--r999);background:linear-gradient(135deg,#5ae0a3,#36c983);box-shadow:0 9px 18px rgba(61,204,142,.2);color:#07140d;font-size:12px;font-weight:800;transition:transform .18s,filter .18s}.feat-more:hover{transform:translateY(-1px);filter:brightness(1.06);color:#07140d;text-decoration:none}
 .feat-img{width:100%;height:232px;max-height:none;object-fit:cover;object-position:center;border-radius:16px;display:block;margin:14px 0 14px;border:1px solid rgba(255,255,255,.08);background:
   radial-gradient(circle at 50% 0%, rgba(61,204,142,.15), transparent 58%),
   linear-gradient(180deg,rgba(15,22,17,.95),rgba(8,12,9,.98));box-shadow:inset 0 1px 0 rgba(255,255,255,.04),0 20px 42px rgba(0,0,0,.22)}
@@ -630,6 +632,8 @@ body.lightbox-open{overflow:hidden}
   .feat-card{padding:14px 13px}
   .feat-card.open{grid-column:1 / -1}
   .feat-icon{font-size:20px;margin-bottom:7px}
+  .feat-icon--3d{width:34px;height:34px;margin:-1px 0 5px}
+  .feat-icon--3d img{width:34px;height:34px}
   .feat-title{font-size:13.5px;margin-bottom:3px}
   .feat-sub{font-size:12px;line-height:1.4}
 }
@@ -2430,7 +2434,7 @@ fbq('track', 'PageView');
   <div class="feat-grid reveal d2" style="margin-top:36px">
 
     <div class="feat-card feat-card--phone">
-      <div class="feat-icon">📲</div>
+      <div class="feat-icon feat-icon--3d"><img src="assets/illustrations/3d_v1/phone-call.png" alt=""></div>
       <button class="feat-toggle" aria-label="expandir"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="6 9 12 15 18 9"/></svg></button>
       <div class="feat-title">Descargate la app</div>
       <div class="feat-sub">Instalala en 30 segundos, sin tienda.</div>
@@ -2441,7 +2445,7 @@ fbq('track', 'PageView');
     </div>
 
     <div class="feat-card feat-card--phone">
-      <div class="feat-icon">🤖</div>
+      <div class="feat-icon feat-icon--3d"><img src="assets/illustrations/3d_v1/whatsapp.png" alt=""></div>
       <button class="feat-toggle" aria-label="expandir"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="6 9 12 15 18 9"/></svg></button>
       <div class="feat-title">Bot disponible 24hs</div>
       <div class="feat-sub">Atiende pedidos solo, sin que toques el celular.</div>
@@ -2453,7 +2457,7 @@ fbq('track', 'PageView');
     </div>
 
     <div class="feat-card feat-card--phone feat-card--link">
-      <div class="feat-icon">🔗</div>
+      <div class="feat-icon feat-icon--3d"><img src="assets/illustrations/3d_v1/link.png" alt=""></div>
       <button class="feat-toggle" aria-label="expandir"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="6 9 12 15 18 9"/></svg></button>
       <div class="feat-title">Tu web propia</div>
       <div class="feat-sub">Tu URL para compartir donde quieras.</div>
@@ -2465,7 +2469,7 @@ fbq('track', 'PageView');
     </div>
 
     <div class="feat-card feat-card--wide">
-      <div class="feat-icon">💳</div>
+      <div class="feat-icon feat-icon--3d"><img src="assets/illustrations/3d_v1/wallet-credits.png" alt=""></div>
       <button class="feat-toggle" aria-label="expandir"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="6 9 12 15 18 9"/></svg></button>
       <div class="feat-title">Cobro por Mercado Pago</div>
       <div class="feat-sub">Link de pago automático directo en el chat.</div>
@@ -2477,7 +2481,7 @@ fbq('track', 'PageView');
     </div>
 
     <div class="feat-card feat-card--phone">
-      <div class="feat-icon">💰</div>
+      <div class="feat-icon feat-icon--3d"><img src="assets/illustrations/3d_v1/cash-bill.png" alt=""></div>
       <button class="feat-toggle" aria-label="expandir"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="6 9 12 15 18 9"/></svg></button>
       <div class="feat-title">Precio referencia Uber</div>
       <div class="feat-sub">Sabé cuánto cobra Uber antes de cotizar.</div>
@@ -2489,7 +2493,7 @@ fbq('track', 'PageView');
     </div>
 
     <div class="feat-card feat-card--phone feat-card--tracking">
-      <div class="feat-icon">📍</div>
+      <div class="feat-icon feat-icon--3d"><img src="assets/illustrations/3d_v1/location.png" alt=""></div>
       <button class="feat-toggle" aria-label="expandir"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="6 9 12 15 18 9"/></svg></button>
       <div class="feat-title">Tracking en tiempo real</div>
       <div class="feat-sub">El cliente te sigue en el mapa como en Uber.</div>
@@ -2500,7 +2504,7 @@ fbq('track', 'PageView');
     </div>
 
     <div class="feat-card feat-card--phone">
-      <div class="feat-icon">📅</div>
+      <div class="feat-icon feat-icon--3d"><img src="assets/illustrations/3d_v1/calendar.png" alt=""></div>
       <button class="feat-toggle" aria-label="expandir"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="6 9 12 15 18 9"/></svg></button>
       <div class="feat-title">Viajes programados</div>
       <div class="feat-sub">Agendá viajes con alerta automática.</div>
@@ -2512,7 +2516,7 @@ fbq('track', 'PageView');
     </div>
 
     <div class="feat-card feat-card--wide">
-      <div class="feat-icon">📊</div>
+      <div class="feat-icon feat-icon--3d"><img src="assets/illustrations/3d_v1/chart.png" alt=""></div>
       <button class="feat-toggle" aria-label="expandir"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="6 9 12 15 18 9"/></svg></button>
       <div class="feat-title">Panel de gestión</div>
       <div class="feat-sub">Tus viajes y cobros de un vistazo.</div>
@@ -2524,7 +2528,7 @@ fbq('track', 'PageView');
     </div>
 
     <div class="feat-card feat-card--phone feat-card--nav">
-      <div class="feat-icon">🗺️</div>
+      <div class="feat-icon feat-icon--3d"><img src="assets/illustrations/3d_v1/map-pin-empty.png" alt=""></div>
       <button class="feat-toggle" aria-label="expandir"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="6 9 12 15 18 9"/></svg></button>
       <div class="feat-title">Navegación automática</div>
       <div class="feat-sub">El destino llega directo a tu GPS.</div>
