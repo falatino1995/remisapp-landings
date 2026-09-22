@@ -810,7 +810,7 @@ footer{border-top:1px solid var(--borde);padding:40px;max-width:1180px;margin:0 
   /* Hero mobile — badge visible por encima del nav fijo */
   #hvd-hl{min-height:1em}
   #hvd-hl{gap:7px}
-  #hvd-hl img{width:30px;height:30px;margin-top:1px}
+  #hvd-hl img{width:40px;height:40px;margin-top:1px}
   .hero{padding:84px 0 32px}
 
   /* Trust cards — 3 columnas compactas en vez de apiladas */
@@ -1916,6 +1916,8 @@ fbq('track', 'PageView');
 .hvd-item.hvd-on .hvd-item-bar{opacity:1}
 .hvd-ico{width:36px;height:36px;border-radius:10px;background:var(--bg3);border:1px solid var(--borde);display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0;transition:background .35s,border-color .35s}
 .hvd-ico img{width:29px;height:29px;object-fit:contain;filter:drop-shadow(0 5px 7px rgba(0,0,0,.22))}
+.hvd-ico--mp{width:58px}
+.hvd-ico--mp img{width:58px;height:30px}
 .hvd-item.hvd-on .hvd-ico{background:rgba(61,204,142,.14);border-color:var(--verde-border)}
 .hvd-text{}
 .hvd-name{font-size:13px;font-weight:700;color:rgba(255,255,255,.5);transition:color .35s;line-height:1.2}
@@ -1930,7 +1932,7 @@ fbq('track', 'PageView');
 .hvd-mock-img{width:100%;height:230px;object-fit:contain;object-position:center;display:block;padding:8px;background:var(--bg3)}
 /* Animated hl (reuse hvc-hl transition) */
 #hvd-hl{display:flex;align-items:flex-start;gap:10px;min-height:1.9em;transition:opacity .18s ease,transform .18s ease}
-#hvd-hl img{width:38px;height:38px;object-fit:contain;flex:0 0 auto;margin-top:2px;filter:drop-shadow(0 7px 9px rgba(0,0,0,.25))}
+#hvd-hl img{width:54px;height:54px;object-fit:contain;flex:0 0 auto;margin-top:1px;filter:drop-shadow(0 7px 9px rgba(0,0,0,.25))}
 #hvd-hl.hvd-hl-out{opacity:0;transform:translateY(8px)}
 </style>
 <section class="hero-bg">
@@ -1991,7 +1993,7 @@ fbq('track', 'PageView');
         </div>
         <div class="hvd-item" id="hvd-i3">
           <div class="hvd-item-bar"></div>
-          <div class="hvd-ico"><img src="assets/illustrations/3d_v1/wallet-credits.png" alt=""></div>
+          <div class="hvd-ico hvd-ico--mp"><img src="assets/brand/mercadopago/mercado-pago.svg" alt="Mercado Pago"></div>
           <div class="hvd-text">
             <div class="hvd-name">Cobra con Mercado Pago</div>
             <div class="hvd-desc">Mandá link o cobrá directo, sin comisiones por viaje.</div>
@@ -4092,11 +4094,11 @@ async function handleSubmit(e){
 // Hero Variante D — lista vertical sincronizada
 (function(){
   const states = [
-    { item:0, mock:0, title:'Responde y coordina solo.', icon:'whatsapp.png' },
-    { item:1, mock:1, title:'Cotiza con referencia Uber.', icon:'cash-bill.png' },
-    { item:4, mock:4, title:'Recibe reservas y las agenda.', icon:'calendar.png' },
-    { item:2, mock:2, title:'Comparte tracking en vivo.', icon:'location.png' },
-    { item:3, mock:3, title:'Cobra con Mercado Pago.', icon:'wallet-credits.png' },
+    { item:0, mock:0, title:'Responde y coordina solo.', icon:'assets/illustrations/3d_v1/whatsapp.png' },
+    { item:1, mock:1, title:'Cotiza con referencia Uber.', icon:'assets/illustrations/3d_v1/cash-bill.png' },
+    { item:4, mock:4, title:'Recibe reservas y las agenda.', icon:'assets/illustrations/3d_v1/calendar.png' },
+    { item:2, mock:2, title:'Comparte tracking en vivo.', icon:'assets/illustrations/3d_v1/location.png' },
+    { item:3, mock:3, title:'Cobra con Mercado Pago.', icon:'assets/brand/mercadopago/mercado-pago.svg' },
   ];
   let cur = 0;
   function hvdStep(){
@@ -4108,7 +4110,7 @@ async function handleSubmit(e){
     const it=document.getElementById('hvd-i'+s.item); if(it) it.classList.add('hvd-on');
     const m=document.getElementById('hvd-m'+s.mock); if(m) m.classList.add('hvd-mock-on');
     const hl=document.getElementById('hvd-hl');
-    if(hl){ hl.classList.add('hvd-hl-out'); setTimeout(function(){ hl.innerHTML='<img src="assets/illustrations/3d_v1/'+s.icon+'" alt=""><span>'+s.title+'</span>'; hl.classList.remove('hvd-hl-out'); },200); }
+    if(hl){ hl.classList.add('hvd-hl-out'); setTimeout(function(){ hl.innerHTML='<img src="'+s.icon+'" alt=""><span>'+s.title+'</span>'; hl.classList.remove('hvd-hl-out'); },200); }
     cur=(cur+1)%states.length;
   }
   document.addEventListener('DOMContentLoaded',function(){ hvdStep(); setInterval(hvdStep,2600); });
