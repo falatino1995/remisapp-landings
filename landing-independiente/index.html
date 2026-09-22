@@ -354,6 +354,9 @@ nav{
 .feat-icon{width:40px;height:40px;border-radius:10px;background:var(--verde-bg);border:1px solid var(--verde-border);display:flex;align-items:center;justify-content:center;color:var(--verde);margin-bottom:14px}
 .feat-icon--3d{width:46px;height:46px;margin:-3px 0 11px;background:transparent;border:0}
 .feat-icon--3d img{width:46px;height:46px;object-fit:contain;filter:drop-shadow(0 8px 10px rgba(0,0,0,.22))}
+.feat-icon--brand img{filter:drop-shadow(0 6px 8px rgba(0,0,0,.18))}
+.feat-icon--mp{width:82px;height:42px;margin:0 0 12px;justify-content:flex-start}
+.feat-icon--mp img{width:82px;height:42px}
 .feat-header{display:flex;align-items:flex-start;justify-content:space-between;gap:8px;margin-bottom:6px}
 .feat-toggle{position:absolute;top:22px;right:18px;background:none;border:none;cursor:pointer;color:var(--gris);padding:0;display:flex;align-items:center;transition:transform .25s,color .15s}
 .feat-card.open .feat-toggle{transform:rotate(180deg);color:var(--verde)}
@@ -634,6 +637,8 @@ body.lightbox-open{overflow:hidden}
   .feat-icon{font-size:20px;margin-bottom:7px}
   .feat-icon--3d{width:34px;height:34px;margin:-1px 0 5px}
   .feat-icon--3d img{width:34px;height:34px}
+  .feat-icon--mp{width:66px;height:34px;margin:0 0 5px}
+  .feat-icon--mp img{width:66px;height:34px}
   .feat-title{font-size:13.5px;margin-bottom:3px}
   .feat-sub{font-size:12px;line-height:1.4}
 }
@@ -2434,7 +2439,7 @@ fbq('track', 'PageView');
   <div class="feat-grid reveal d2" style="margin-top:36px">
 
     <div class="feat-card feat-card--phone">
-      <div class="feat-icon feat-icon--3d"><img src="assets/illustrations/3d_v1/phone-call.png" alt=""></div>
+      <div class="feat-icon feat-icon--3d feat-icon--brand"><img src="assets/brand/googleplay/google-play-icon.png" alt=""></div>
       <button class="feat-toggle" aria-label="expandir"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="6 9 12 15 18 9"/></svg></button>
       <div class="feat-title">Descargate la app</div>
       <div class="feat-sub">Instalala en 30 segundos, sin tienda.</div>
@@ -2445,7 +2450,7 @@ fbq('track', 'PageView');
     </div>
 
     <div class="feat-card feat-card--phone">
-      <div class="feat-icon feat-icon--3d"><img src="assets/illustrations/3d_v1/whatsapp.png" alt=""></div>
+      <div class="feat-icon feat-icon--3d feat-icon--brand"><img src="assets/brand/whatsapp/whatsapp-icon.png" alt=""></div>
       <button class="feat-toggle" aria-label="expandir"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="6 9 12 15 18 9"/></svg></button>
       <div class="feat-title">Bot disponible 24hs</div>
       <div class="feat-sub">Atiende pedidos solo, sin que toques el celular.</div>
@@ -2469,7 +2474,7 @@ fbq('track', 'PageView');
     </div>
 
     <div class="feat-card feat-card--wide">
-      <div class="feat-icon feat-icon--3d"><img src="assets/illustrations/3d_v1/wallet-credits.png" alt=""></div>
+      <div class="feat-icon feat-icon--3d feat-icon--brand feat-icon--mp"><img src="assets/brand/mercadopago/mercado-pago.svg" alt=""></div>
       <button class="feat-toggle" aria-label="expandir"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="6 9 12 15 18 9"/></svg></button>
       <div class="feat-title">Cobro por Mercado Pago</div>
       <div class="feat-sub">Link de pago automático directo en el chat.</div>
