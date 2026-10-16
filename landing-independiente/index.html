@@ -1881,7 +1881,8 @@ fbq('track', 'PageView');
         </div>
       </div>
     </div>
-    <a href="#precios">Precios</a>
+    <!-- Pricing oculto a pedido del usuario (2026-10-16), ver seccion "precios" mas abajo -->
+    <!-- <a href="#precios">Precios</a> -->
     <a href="#faq">Preguntas</a>
     <div class="nav-dropdown">
       <span class="nav-drop-toggle" tabindex="0">Cómo usarlo</span>
@@ -1938,7 +1939,7 @@ fbq('track', 'PageView');
   <a href="funcionalidad-mercadopago.html"><img class="mm-ico" src="assets/brand/mercadopago/mercado-pago.svg" alt="">Cobros y Mercado Pago</a>
   <a href="funcionalidad-app-android.html"><img class="mm-ico" src="assets/brand/googleplay/google-play-icon.png" alt="">App móvil · Muy pronto</a>
   <a href="funcionalidad-portal-cliente.html">🧍 Portal del pasajero</a>
-  <a href="#precios" onclick="closeMobile()">Precios</a>
+  <!-- <a href="#precios" onclick="closeMobile()">Precios</a> -->
   <a href="#faq" onclick="closeMobile()">Preguntas</a>
   <a href="guia-como-registrarte.html">📝 Registrate en 2 minutos</a>
   <a href="guia-primeros-pasajeros.html">🚀 Primeros pasajeros</a>
@@ -3692,9 +3693,12 @@ fbq('track', 'PageView');
 </div>
 </section>
 
+<!-- Seccion de precios oculta a pedido del usuario (2026-10-16).
+     Para volver a mostrarla: sacar este comentario de apertura y el
+     de cierre (buscar "FIN PRICING oculto") mas abajo, y volver a
+     descomentar los 2 links de nav "#precios" (desktop y mobile). -->
+<!--
 <div class="divider"></div>
-
-<!-- PRICING -->
 <section class="section" id="precios">
 <div class="container">
   <div class="pricing-wrap">
@@ -3788,6 +3792,8 @@ fbq('track', 'PageView');
   </div>
 </div>
 </section>
+-->
+<!-- FIN PRICING oculto -->
 
 <div class="divider"></div>
 
@@ -3834,10 +3840,13 @@ fbq('track', 'PageView');
       <button class="faq-q" onclick="toggleFaq(this)">¿Funciona en cualquier ciudad de Argentina?<span class="faq-arrow">⌄</span></button>
       <div class="faq-a">Sí. El sistema es online, no tiene restricción por zona. Cuando te registrás elegís en qué ciudad operás y listo. Da igual si estás en Buenos Aires, Mendoza, Córdoba o cualquier otra ciudad del país.</div>
     </div>
+    <!-- Oculto junto con la seccion de precios (2026-10-16) -->
+    <!--
     <div class="faq-item">
       <button class="faq-q" onclick="toggleFaq(this)">¿Cuánto cuesta RemisApp Solo?<span class="faq-arrow">⌄</span></button>
       <div class="faq-a">Los primeros 14 días son gratis con uso ilimitado, sin tarjeta ni compromiso. Después podés quedarte con Free (20 viajes por mes, para siempre sin pagar nada), sumar un Pack Extra de 10 viajes por $3.500 si usás poco, o suscribirte a Growth ilimitado por $10.000/mes si ya operás seguido. Sin comisión por viaje en ningún plan.</div>
     </div>
+    -->
     <div class="faq-item">
       <button class="faq-q" onclick="toggleFaq(this)">¿Cómo funciona el programa de referidos?<span class="faq-arrow">⌄</span></button>
       <div class="faq-a">Cada cuenta tiene su propio link de invitación, disponible en el panel (pestaña Compartir). Cuando el chofer que invitaste se registra con ese link y completa 3 viajes reales dentro de sus primeros 30 días, ganás 3 créditos gratis automáticamente — hasta 3 premios por mes por cuenta. Los viajes de prueba no cuentan. <a href="funcionalidad-referidos.html">Ver cómo funciona →</a></div>
