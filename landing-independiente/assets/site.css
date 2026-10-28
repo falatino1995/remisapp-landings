@@ -258,3 +258,32 @@ footer{border-top:1px solid var(--line);padding-block:48px 36px;font-size:14px;c
 .related h3 em{font-style:normal;color:var(--verde)}
 .related p{color:var(--muted);margin-top:8px}
 @media (max-width:700px){.related-grid{grid-template-columns:1fr}}
+
+/* Celular interactivo de cada pieza: se desliza o se elige por pestaña */
+.viewer{position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;gap:18px}
+.viewer .phone{width:min(300px,74vw)}
+.track{display:flex;width:100%;height:100%;overflow-x:auto;scroll-snap-type:x mandatory;border-radius:36px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.track::-webkit-scrollbar{display:none}
+.track img{flex:0 0 100%;scroll-snap-align:start;scroll-snap-stop:always}
+.viewer-tabs{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;max-width:420px}
+.viewer-tabs button{font:inherit;font-size:13px;font-weight:600;color:var(--muted);background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:8px 14px;cursor:pointer;transition:color .15s,border-color .15s,background .15s}
+.viewer-tabs button:hover{color:var(--text);border-color:var(--line-strong)}
+.viewer-tabs button[aria-selected="true"]{color:var(--verde-ink);background:var(--verde);border-color:var(--verde)}
+.viewer-cap{font-size:14px;color:var(--muted);text-align:center;min-height:1.5em;max-width:34ch}
+
+/* Chofer 3D delante de los celulares del hero */
+.hero-chofer{position:absolute;z-index:3;left:-20%;bottom:-48px;width:min(320px,56%);height:auto;filter:drop-shadow(0 24px 30px rgba(0,0,0,.55));pointer-events:none}
+@media (max-width:900px){.hero-chofer{left:-4px;bottom:-24px;width:min(230px,52vw)}}
+
+/* Carrete de funciones */
+.reel{padding-block:clamp(48px,7vw,88px);overflow:hidden}
+.reel-title{font-size:clamp(32px,4.4vw,52px);margin-top:12px;max-width:30ch}
+.reel-track{display:flex;margin-top:36px;-webkit-mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent)}
+.reel-row{display:flex;gap:14px;padding-right:14px;list-style:none;flex:0 0 auto;animation:reel 60s linear infinite}
+.reel-track:hover .reel-row,.reel-track:focus-within .reel-row{animation-play-state:paused}
+@keyframes reel{to{transform:translateX(-100%)}}
+.reel-card{width:230px;flex:0 0 auto;display:grid;gap:8px;align-content:start;background:var(--surface);border:1px solid var(--line);border-radius:22px;padding:20px}
+.reel-card img{width:52px;height:52px;object-fit:contain;filter:drop-shadow(0 8px 10px rgba(0,0,0,.35))}
+.reel-card strong{font-size:17px;margin-top:4px}
+.reel-card span{color:var(--muted);font-size:14px;line-height:1.45}
+@media (prefers-reduced-motion:reduce){.reel-track{overflow-x:auto}.reel-row[aria-hidden="true"]{display:none}}
