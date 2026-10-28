@@ -272,18 +272,21 @@ footer{border-top:1px solid var(--line);padding-block:48px 36px;font-size:14px;c
 .viewer-cap{font-size:14px;color:var(--muted);text-align:center;min-height:1.5em;max-width:34ch}
 
 /* Chofer 3D delante de los celulares del hero */
-.hero-chofer{position:absolute;z-index:3;left:-20%;bottom:-48px;width:min(320px,56%);height:auto;filter:drop-shadow(0 24px 30px rgba(0,0,0,.55));pointer-events:none}
-@media (max-width:900px){.hero-chofer{left:-4px;bottom:-24px;width:min(230px,52vw)}}
+.hero-chofer{position:absolute;z-index:3;right:-12%;bottom:-44px;width:min(300px,52%);height:auto;filter:drop-shadow(0 24px 30px rgba(0,0,0,.55));pointer-events:none}
+@media (max-width:900px){.hero-chofer{right:-6px;bottom:-24px;width:min(200px,48vw)}}
 
-/* Carrete de funciones */
-.reel{padding-block:clamp(48px,7vw,88px);overflow:hidden}
-.reel-title{font-size:clamp(32px,4.4vw,52px);margin-top:12px;max-width:30ch}
-.reel-track{display:flex;margin-top:36px;-webkit-mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent)}
-.reel-row{display:flex;gap:14px;padding-right:14px;list-style:none;flex:0 0 auto;animation:reel 60s linear infinite}
-.reel-track:hover .reel-row,.reel-track:focus-within .reel-row{animation-play-state:paused}
-@keyframes reel{to{transform:translateX(-100%)}}
-.reel-card{width:230px;flex:0 0 auto;display:grid;gap:8px;align-content:start;background:var(--surface);border:1px solid var(--line);border-radius:22px;padding:20px}
-.reel-card img{width:52px;height:52px;object-fit:contain;filter:drop-shadow(0 8px 10px rgba(0,0,0,.35))}
-.reel-card strong{font-size:17px;margin-top:4px}
-.reel-card span{color:var(--muted);font-size:14px;line-height:1.45}
-@media (prefers-reduced-motion:reduce){.reel-track{overflow-x:auto}.reel-row[aria-hidden="true"]{display:none}}
+/* Lo principal: 0% de comision destacado + funciones clave */
+.perks-grid-sec{padding-block:clamp(48px,7vw,96px)}
+.perks-title{font-size:clamp(32px,4.4vw,52px);margin-top:12px;max-width:30ch}
+.bento{list-style:none;display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:32px}
+.bento li{display:grid;gap:8px;align-content:start;background:var(--surface);border:1px solid var(--line);border-radius:22px;padding:22px}
+.bento li img{width:52px;height:52px;object-fit:contain;filter:drop-shadow(0 8px 10px rgba(0,0,0,.35))}
+.bento li strong{font-size:17px;margin-top:4px}
+.bento li span{color:var(--muted);font-size:14px;line-height:1.45}
+.bento .bento-main{grid-column:span 2;grid-row:span 2;align-content:center;position:relative;overflow:hidden;border-color:var(--line-strong);background:radial-gradient(120% 90% at 85% 15%,rgba(61,204,142,.18),transparent 60%),var(--surface);padding:clamp(24px,3vw,36px)}
+.bento .bento-main img{position:absolute;right:clamp(16px,3vw,36px);top:clamp(16px,3vw,32px);width:clamp(84px,10vw,128px);height:auto}
+.bento .bento-big{font-family:var(--display);font-size:clamp(96px,12vw,160px);line-height:.85;color:var(--verde);margin:0}
+.bento .bento-big-sub{font-family:var(--display);font-weight:800;font-size:clamp(28px,3vw,40px);text-transform:uppercase;color:var(--text);line-height:1}
+.bento .bento-main p{color:var(--muted);font-size:16px;max-width:36ch;margin-top:10px}
+@media (max-width:900px){.bento{grid-template-columns:1fr 1fr}.bento .bento-main{grid-column:1/-1;grid-row:auto}}
+@media (max-width:420px){.bento{grid-template-columns:1fr}}
