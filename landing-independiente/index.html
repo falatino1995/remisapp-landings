@@ -162,14 +162,15 @@
       <p class="eyebrow">Cómo funciona</p>
       <h2 style="margin-top:14px">Tres piezas. <span class="hl">Todo tuyo.</span></h2>
       <p class="lead">Una app para vos, una web para que te pidan los pasajeros nuevos y un portal para los que vuelven.</p>
-      <div class="trio">
-        <a href="#tu-app"><b>1</b>Tu app</a>
-        <a href="#tu-pagina"><b>2</b>Tu web</a>
-        <a href="#tus-clientes"><b>3</b>Portal para tus clientes</a>
-      </div>
+    </div>
+    <div class="pillar-tabs" role="tablist" aria-label="Las tres piezas">
+      <button type="button" role="tab" id="tab-tu-app" aria-controls="tu-app" aria-selected="true"><b>1</b><span><strong>Tu app</strong><small>Para vos</small></span></button>
+      <button type="button" role="tab" id="tab-tu-pagina" aria-controls="tu-pagina" aria-selected="false"><b>2</b><span><strong>Tu web</strong><small>Pasajero nuevo</small></span></button>
+      <button type="button" role="tab" id="tab-tus-clientes" aria-controls="tus-clientes" aria-selected="false"><b>3</b><span><strong>Portal</strong><small>Pasajero que vuelve</small></span></button>
     </div>
 
-    <article class="pillar" id="tu-app">
+    <div class="pillar-panels" data-pillars>
+    <article class="pillar" id="tu-app" role="tabpanel" aria-labelledby="tab-tu-app">
       <div class="pillar-media">
         <div class="viewer" data-viewer>
           <div class="phone"><div class="track" tabindex="0" aria-label="Pantallas de la app del chofer. Deslizá para ver cada pantalla"><img src="assets/screens/app-nueva-oferta.webp" alt="Viaje nuevo de Barrio Jardín al Aeropuerto con el precio para proponer" data-cap="Te entra un viaje: ponés tu precio y lo proponés." width="780" height="1688"><img src="assets/screens/app-agenda.webp" alt="Agenda del chofer con los viajes de la semana y una reserva para mañana" data-cap="Tus viajes de cada día y las reservas que vienen." width="780" height="1688" loading="lazy"><img src="assets/screens/app-pasajeros.webp" alt="Lista de pasajeros del chofer con accesos a QR, carteles y link" data-cap="Tus pasajeros, y tu link y QR para conseguir más." width="780" height="1688" loading="lazy"><img src="assets/screens/app-perfil.webp" alt="Perfil del chofer con tipo de precio, Mercado Pago y WhatsApp" data-cap="Precio, cobros y WhatsApp, configurados a tu manera." width="780" height="1688" loading="lazy"></div></div>
@@ -188,10 +189,11 @@
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span><strong>Lo que ganaste.</strong> Cuánto hiciste hoy, en la semana y en el mes.</span></li>
         </ul>
         <a class="more" href="tu-app">Ver la app por dentro →</a>
+        <button type="button" class="pillar-next" data-go="tu-pagina">Siguiente: Tu web →</button>
       </div>
     </article>
 
-    <article class="pillar flip" id="tu-pagina">
+    <article class="pillar flip" id="tu-pagina" role="tabpanel" aria-labelledby="tab-tu-pagina">
       <div class="pillar-media">
         <div class="scrollphone" data-scrollphone>
           <div class="phone"><div class="scrollphone-screen"><img src="assets/screens/pagina-publica-completa.webp" alt="Web del chofer Martín Herrera: su perfil, el mapa del recorrido y el formulario para pedir el viaje" width="780" height="3070" loading="lazy"></div></div>
@@ -208,10 +210,11 @@
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span><strong>Pide con el mapa.</strong> Elige origen y destino y ve el recorrido antes de pedir.</span></li>
         </ul>
         <a class="more" href="tu-pagina">Ver cómo es tu web →</a>
+        <button type="button" class="pillar-next" data-go="tus-clientes">Siguiente: Portal para tus clientes →</button>
       </div>
     </article>
 
-    <article class="pillar" id="tus-clientes">
+    <article class="pillar" id="tus-clientes" role="tabpanel" aria-labelledby="tab-tus-clientes">
       <div class="pillar-media">
         <div class="viewer" data-viewer>
           <div class="phone"><div class="track" tabindex="0" aria-label="Pantallas del portal del pasajero. Deslizá para ver cada pantalla"><img src="assets/screens/pasajero-inicio.webp" alt="Inicio del portal del pasajero con sus lugares guardados y su chofer disponible" data-cap="Sus lugares guardados y su chofer, listos para pedir." width="780" height="1688"><img src="assets/screens/pasajero-choferes.webp" alt="Portal del pasajero con Martín Herrera como chofer favorito" data-cap="Te tiene guardado y te vuelve a pedir en un toque." width="780" height="1688" loading="lazy"><img src="assets/screens/pasajero-reservas.webp" alt="Reserva confirmada con el chofer, el recorrido y el precio" data-cap="Sus viajes programados, para cambiarlos o cancelarlos." width="780" height="1688" loading="lazy"><img src="assets/screens/pasajero-viaje.webp" alt="El pasajero ve su viaje confirmado en el mapa" data-cap="Sigue el viaje en el mapa y ve quién lo busca." width="780" height="1688" loading="lazy"></div></div>
@@ -232,6 +235,7 @@
         <a class="more" href="tus-clientes">Ver qué ve tu pasajero →</a>
       </div>
     </article>
+    </div>
   </div>
 </section>
 
@@ -507,6 +511,42 @@
     o.addEventListener('pointerleave', function(e){ if (e.pointerType === 'mouse') show(null); });
     o.addEventListener('focusout', function(e){ if (e.relatedTarget && !o.contains(e.relatedTarget)) show(null); });
     document.addEventListener('click', function(e){ if (current && !o.contains(e.target)) show(null); });
+  });
+
+  // Las tres piezas en una sola seccion: botones arriba y una pieza a la vez
+  document.querySelectorAll('[data-pillars]').forEach(function(box){
+    var panels = box.querySelectorAll('[role=tabpanel]');
+    var tabs = document.querySelectorAll('.pillar-tabs [role=tab]');
+    var bar = document.querySelector('.pillar-tabs');
+    function open(id, scroll){
+      var found = false;
+      panels.forEach(function(p){ var on = p.id === id; p.hidden = !on; if (on) found = true; });
+      if (!found) return false;
+      tabs.forEach(function(t){ t.setAttribute('aria-selected', t.getAttribute('aria-controls') === id ? 'true' : 'false'); });
+      window.dispatchEvent(new Event('resize'));
+      // Si ya bajaste dentro de la pieza, vuelve al principio de la nueva
+      var top = box.getBoundingClientRect().top + scrollY - 64 - bar.offsetHeight - 12;
+      if (scroll === 'force' || (scroll && scrollY > top)) window.scrollTo({ top: top, behavior: 'smooth' });
+      return true;
+    }
+    tabs.forEach(function(t, i){
+      t.addEventListener('click', function(){ open(t.getAttribute('aria-controls'), true); });
+      t.addEventListener('keydown', function(e){
+        if (e.key !== 'ArrowRight' && e.key !== 'ArrowLeft') return;
+        var n = tabs[(i + (e.key === 'ArrowRight' ? 1 : tabs.length - 1)) % tabs.length];
+        n.focus(); open(n.getAttribute('aria-controls'), false);
+      });
+    });
+    box.querySelectorAll('[data-go]').forEach(function(b){
+      b.addEventListener('click', function(){ open(b.getAttribute('data-go'), 'force'); });
+    });
+    // Los links del menu (#tu-app, #tu-pagina, #tus-clientes) abren su pieza
+    function fromHash(){
+      var id = location.hash.slice(1);
+      if (id) open(id, 'force');
+    }
+    window.addEventListener('hashchange', fromHash);
+    if (!open(location.hash.slice(1), false)) open(panels[0].id, false); else setTimeout(fromHash, 50);
   });
 
   var form = document.getElementById('beta-form');
