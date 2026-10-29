@@ -3,12 +3,12 @@
 /funcionalidad-panel.html            /tu-app        301
 /funcionalidad-app-android           /tu-app        301
 /funcionalidad-app-android.html      /tu-app        301
-/funcionalidad-notificaciones        /tu-app        301
-/funcionalidad-notificaciones.html   /tu-app        301
-/funcionalidad-link                  /tu-pagina     301
-/funcionalidad-link.html             /tu-pagina     301
-/funcionalidad-qr                    /tu-pagina     301
-/funcionalidad-qr.html               /tu-pagina     301
+/funcionalidad-notificaciones        /notificaciones 301
+/funcionalidad-notificaciones.html   /notificaciones 301
+/funcionalidad-link                  /compartir     301
+/funcionalidad-link.html             /compartir     301
+/funcionalidad-qr                    /compartir     301
+/funcionalidad-qr.html               /compartir     301
 /funcionalidad-portal-cliente        /tus-clientes  301
 /funcionalidad-portal-cliente.html   /tus-clientes  301
 # Referidos oculto durante la beta (promete creditos). Temporal: volver a sacar al reactivarlo.
@@ -17,7 +17,7 @@
 # Paginas de la epoca del bot (precio y Mercado Pago explicaban todo por el bot). Ahora todo en Tu app.
 /funcionalidad-bot                   /tu-app        301
 /funcionalidad-bot.html              /tu-app        301
-/funcionalidad-precio                /tu-app        301
-/funcionalidad-precio.html           /tu-app        301
-/funcionalidad-mercadopago           /tu-app        301
-/funcionalidad-mercadopago.html      /tu-app        301
+/funcionalidad-precio                /precio        301
+/funcionalidad-precio.html           /precio        301
+/funcionalidad-mercadopago           /cobros        301
+/funcionalidad-mercadopago.html      /cobros        301

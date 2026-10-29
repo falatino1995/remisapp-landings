@@ -64,6 +64,7 @@
 <link rel="preload" as="image" href="assets/screens/app-nueva-oferta.webp" type="image/webp">
 <link rel="stylesheet" href="/assets/site.css">
 <script src="/assets/analytics.js"></script>
+<script src="/assets/nav.js" defer></script>
 </head>
 <body>
 <noscript><img height="1" width="1" style="display:none" alt="" src="https://www.facebook.com/tr?id=222704174148647&ev=PageView&noscript=1"></noscript>
@@ -81,9 +82,11 @@
     <div class="nav-cta">
       <a class="login" href="https://app.remisapp.info/p/chofer/login">Iniciar sesión</a>
       <a class="btn btn-primary" href="https://app.remisapp.info/empezar?kind=independiente">Empezá gratis</a>
+      <button type="button" class="nav-burger" aria-label="Abrir menú" aria-expanded="false" aria-controls="mnav"><span></span><span></span><span></span></button>
     </div>
   </div>
 </header>
+<nav class="mnav" id="mnav" aria-label="Menú" hidden><div class="mnav-group"><span class="mnav-h">Producto</span><a href="/tu-app">Tu app</a><a href="/tu-pagina">Tu web</a><a href="/tus-clientes">Portal clientes</a></div><div class="mnav-group"><span class="mnav-h">En detalle</span><a href="/precio">Tu precio</a><a href="/cobros">Cobros</a><a href="/agenda">Reservas y agenda</a><a href="/notificaciones">Notificaciones</a><a href="/compartir">Link, QR y carteles</a></div><div class="mnav-group"><a href="/guias">Guías</a><a href="/#beta">Beta</a><a href="/#preguntas">Preguntas</a></div><div class="mnav-cta"><a class="btn btn-ghost" href="https://app.remisapp.info/p/chofer/login">Iniciar sesión</a><a class="btn btn-primary" href="https://app.remisapp.info/empezar?kind=independiente">Empezá gratis</a></div></nav>
 
 <main>
 <!-- 1 · HERO -->
@@ -375,10 +378,18 @@
       </div>
       <div>
         <h4>Producto</h4>
-        <a href="tu-app">Tu app</a>
-        <a href="tu-pagina">Tu web</a>
-        <a href="tus-clientes">Portal para tus clientes</a>
-        <a href="guias">Guías</a>
+        <a href="/tu-app">Tu app</a>
+        <a href="/tu-pagina">Tu web</a>
+        <a href="/tus-clientes">Portal para tus clientes</a>
+        <a href="/guias">Guías</a>
+      </div>
+      <div>
+        <h4>En detalle</h4>
+        <a href="/precio">Tu precio</a>
+        <a href="/cobros">Cobros</a>
+        <a href="/agenda">Reservas y agenda</a>
+        <a href="/notificaciones">Notificaciones</a>
+        <a href="/compartir">Link, QR y carteles</a>
       </div>
       <div>
         <h4>Cuenta</h4>
@@ -390,7 +401,7 @@
     </div>
     <div class="foot-bottom">
       <span>© 2026 RemisApp · Hecho en Argentina</span>
-      <a href="privacidad">Privacidad</a>
+      <a href="/privacidad">Privacidad</a>
     </div>
   </div>
 </footer>
