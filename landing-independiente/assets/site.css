@@ -447,3 +447,29 @@ footer{border-top:1px solid var(--line);padding-block:48px 36px;font-size:14px;c
   .step h4{margin-top:16px}
   .step .t{margin-bottom:18px}
 }
+
+/* ---- Menu del celular (hamburguesa) */
+.nav-burger{display:none;flex-direction:column;justify-content:center;gap:5px;width:42px;height:42px;margin-left:4px;padding:0 10px;border:1px solid var(--line);border-radius:12px;background:transparent;cursor:pointer}
+.nav-burger span{display:block;height:2px;border-radius:2px;background:var(--text);transition:transform .2s ease,opacity .2s ease}
+.nav-burger[aria-expanded="true"] span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.nav-burger[aria-expanded="true"] span:nth-child(2){opacity:0}
+.nav-burger[aria-expanded="true"] span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.mnav{position:fixed;left:0;right:0;top:64px;bottom:0;z-index:60;overflow-y:auto;background:var(--bg);border-top:1px solid var(--line);padding:20px var(--gutter) 40px;display:flex;flex-direction:column;gap:22px}
+.mnav[hidden]{display:none}
+.mnav-group{display:flex;flex-direction:column}
+.mnav-h{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--verde);margin-bottom:6px}
+.mnav-group a{font-size:17px;font-weight:600;padding:11px 0;border-bottom:1px solid var(--line);color:var(--text)}
+.mnav-cta{display:flex;flex-direction:column;gap:10px}
+@media (max-width:900px){.nav-burger{display:flex}.nav-cta{gap:8px}.nav-cta .btn{white-space:nowrap;padding:11px 16px;font-size:14px}}
+@media (prefers-reduced-motion:reduce){.nav-burger span{transition:none}}
+body.mnav-open{overflow:hidden}
+
+/* ---- Paginas de detalle */
+.feat--solo{grid-template-columns:1fr}
+.feat--solo > div{max-width:720px}
+.sheet{width:min(300px,74vw);background:#fff;border-radius:6px;padding:0;box-shadow:0 30px 70px rgba(0,0,0,.45);transform:rotate(-2deg)}
+.sheet img{display:block;width:100%;height:auto;border-radius:6px}
+.feat:nth-child(even) .sheet{order:2}
+@media (max-width:820px){.feat:nth-child(even) .sheet{order:0}.feat .sheet{margin-inline:auto}}
+.related-grid{grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+.related-grid.det h3{font-size:30px}

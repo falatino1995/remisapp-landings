@@ -21,6 +21,7 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..100,400..800&display=swap">
 <link rel="stylesheet" href="/assets/site.css">
 <script src="/assets/analytics.js"></script>
+<script src="/assets/nav.js" defer></script>
 </head>
 <body>
 <header class="nav">
@@ -30,9 +31,11 @@
     <div class="nav-cta">
       <a class="login" href="https://app.remisapp.info/p/chofer/login">Iniciar sesión</a>
       <a class="btn btn-primary" href="https://app.remisapp.info/empezar?kind=independiente">Empezá gratis</a>
+      <button type="button" class="nav-burger" aria-label="Abrir menú" aria-expanded="false" aria-controls="mnav"><span></span><span></span><span></span></button>
     </div>
   </div>
 </header>
+<nav class="mnav" id="mnav" aria-label="Menú" hidden><div class="mnav-group"><span class="mnav-h">Producto</span><a href="/tu-app">Tu app</a><a href="/tu-pagina">Tu web</a><a href="/tus-clientes">Portal clientes</a></div><div class="mnav-group"><span class="mnav-h">En detalle</span><a href="/precio">Tu precio</a><a href="/cobros">Cobros</a><a href="/agenda">Reservas y agenda</a><a href="/notificaciones">Notificaciones</a><a href="/compartir">Link, QR y carteles</a></div><div class="mnav-group"><a href="/guias">Guías</a><a href="/#beta">Beta</a><a href="/#preguntas">Preguntas</a></div><div class="mnav-cta"><a class="btn btn-ghost" href="https://app.remisapp.info/p/chofer/login">Iniciar sesión</a><a class="btn btn-primary" href="https://app.remisapp.info/empezar?kind=independiente">Empezá gratis</a></div></nav>
 
 <main>
 <section class="sub-hero">
@@ -90,6 +93,13 @@
 
 <section class="related">
   <div class="wrap">
+    <p class="eyebrow">En detalle</p>
+    <div class="related-grid det"><a href="/agenda"><span class="who">En detalle</span><h3>Reservas y agenda</h3><p>Viajes para otro día, con aviso antes de cada uno.</p></a><a href="/compartir"><span class="who">En detalle</span><h3>Link, QR y carteles</h3><p>Cómo llegan los pasajeros a tu web.</p></a></div>
+  </div>
+</section>
+
+<section class="related">
+  <div class="wrap">
     <p class="eyebrow">Las otras dos piezas</p>
     <div class="related-grid"><a href="tu-app"><span class="who">Para vos</span><h3>Tu <em>app</em></h3><p>Los pedidos te entran al celular. Vos ponés el precio y aceptás.</p></a><a href="tu-pagina"><span class="who">Para el pasajero nuevo</span><h3>Tu <em>web</em></h3><p>Tu link y tu QR para que te pidan directo, sin descargar nada.</p></a></div>
   </div>
@@ -116,10 +126,18 @@
       </div>
       <div>
         <h4>Producto</h4>
-        <a href="tu-app">Tu app</a>
-        <a href="tu-pagina">Tu web</a>
-        <a href="tus-clientes">Portal para tus clientes</a>
-        <a href="guias">Guías</a>
+        <a href="/tu-app">Tu app</a>
+        <a href="/tu-pagina">Tu web</a>
+        <a href="/tus-clientes">Portal para tus clientes</a>
+        <a href="/guias">Guías</a>
+      </div>
+      <div>
+        <h4>En detalle</h4>
+        <a href="/precio">Tu precio</a>
+        <a href="/cobros">Cobros</a>
+        <a href="/agenda">Reservas y agenda</a>
+        <a href="/notificaciones">Notificaciones</a>
+        <a href="/compartir">Link, QR y carteles</a>
       </div>
       <div>
         <h4>Cuenta</h4>
@@ -131,7 +149,7 @@
     </div>
     <div class="foot-bottom">
       <span>© 2026 RemisApp · Hecho en Argentina</span>
-      <a href="privacidad">Privacidad</a>
+      <a href="/privacidad">Privacidad</a>
     </div>
   </div>
 </footer>
