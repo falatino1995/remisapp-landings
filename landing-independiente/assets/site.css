@@ -348,6 +348,14 @@ footer{border-top:1px solid var(--line);padding-block:48px 36px;font-size:14px;c
 .orbit-fdesc{font-size:calc(var(--size) * .032 + 2px);color:var(--muted);line-height:1.4;max-width:22ch}
 @keyframes spin{to{transform:rotate(360deg)}}
 @media (max-width:900px){.orbit-grid{grid-template-columns:1fr}.orbit{--size:min(420px,calc(100vw - 96px));--item:50px;margin-top:20px}}
+/* Insignia de Google Play: la app esta en prueba cerrada, asi que lleva al formulario */
+.play-badge{display:inline-flex;align-items:center;gap:10px;border-radius:10px}
+.play-badge img{height:52px;width:auto;display:block}
+.play-badge span{font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--verde);max-width:9ch;line-height:1.25}
+.play-badge:hover img{filter:brightness(1.15)}
+.play-badge:focus-visible{outline:2px solid var(--verde);outline-offset:3px}
+.beta-play{display:block;height:46px;width:auto;margin-top:20px}
+.final .play-badge{justify-content:center}
 @keyframes ping-in{from{opacity:0;transform:translate(-50%,-18px) scale(.94)}}
 .orbit.is-active .orbit-ring,.orbit.is-active .orbit-item{animation-play-state:paused}
 
@@ -361,13 +369,38 @@ footer{border-top:1px solid var(--line);padding-block:48px 36px;font-size:14px;c
   .hero .lead{font-size:16px;margin-top:14px}
   .hero-actions{margin-top:20px;gap:6px}
   .hero-actions .btn-primary{width:100%;justify-content:center}
-  .hero-actions .btn-ghost{width:100%;justify-content:center;border:0;background:none;padding-block:10px;color:var(--muted);text-decoration:underline;text-underline-offset:4px}
+  .hero-actions{justify-content:center}
   .hero-facts{display:none}
-  .hero-phones{margin-top:4px}
-  .hero-phones .phone.front{width:min(250px,64vw);aspect-ratio:auto;height:330px;-webkit-mask-image:linear-gradient(to bottom,transparent,#000 22%);mask-image:linear-gradient(to bottom,transparent,#000 22%);animation:none}
-  .hero-phones .phone.front img{object-position:50% 100%}
-  .hero .ping{top:4px;right:auto;left:50%;transform:translateX(-50%);width:max-content;max-width:calc(100% - 8px);animation:ping-in .6s cubic-bezier(.2,.9,.3,1.2) .5s both}
-  .hero-chofer{right:-14px;bottom:-30px;width:min(150px,38vw)}
+  .hero-phones{margin-top:18px;padding-top:34px}
+  .hero-phones .phone.front{width:min(220px,58vw);border-radius:36px;padding:7px;animation:none}
+  .hero-phones .phone.front img{border-radius:30px}
+  .hero .ping{top:0;right:auto;left:50%;transform:translateX(-50%);width:max-content;max-width:calc(100% - 8px);padding:10px 14px;animation:ping-in .6s cubic-bezier(.2,.9,.3,1.2) .5s both}
+  .hero-chofer{right:-10px;bottom:-26px;width:min(140px,36vw)}
+
+  .eyebrow{font-size:11px}
+  .beta-chip{font-size:12px}
+  .viewer-cap{font-size:13px;color:var(--dim)}
+  .scrollphone .viewer-cap{display:none}
+  .pillar .who{font-size:11px}
+
+  .beta-box{padding:22px 18px;border-radius:26px;gap:22px}
+  .beta-box h2{font-size:40px}
+  .beta-play{height:40px;margin-top:16px}
+  .perks{gap:10px;margin-top:18px}
+  .perks li{grid-template-columns:32px 1fr;gap:10px;align-items:center}
+  .perks .ico{width:32px;height:32px;border-radius:10px}
+  .perks .ico svg{width:17px;height:17px}
+  .perks strong{font-size:15px;font-weight:600}
+  .perks li span:not(.ico){display:none}
+  .form{background:none;border:0;padding:0;gap:10px}
+  .form h3{font-size:24px}
+  .row2{grid-template-columns:1fr 1fr;gap:10px}
+  .field{gap:4px}
+  .field label{font-size:12px}
+  .field input{padding:11px 13px;border-radius:12px}
+  .field .hint{font-size:11px}
+  .form-msg{min-height:0}
+  .form-alt{font-size:13px}
 
   .orbit-grid .lead{display:none}
   .orbit{margin-top:8px}
