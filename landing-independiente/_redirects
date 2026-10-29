@@ -14,3 +14,10 @@
 # Referidos oculto durante la beta (promete creditos). Temporal: volver a sacar al reactivarlo.
 /funcionalidad-referidos             /              302
 /funcionalidad-referidos.html        /              302
+# Paginas de la epoca del bot (precio y Mercado Pago explicaban todo por el bot). Ahora todo en Tu app.
+/funcionalidad-bot                   /tu-app        301
+/funcionalidad-bot.html              /tu-app        301
+/funcionalidad-precio                /tu-app        301
+/funcionalidad-precio.html           /tu-app        301
+/funcionalidad-mercadopago           /tu-app        301
+/funcionalidad-mercadopago.html      /tu-app        301
