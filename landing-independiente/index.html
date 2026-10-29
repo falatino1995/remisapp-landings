@@ -92,7 +92,7 @@
     <div>
       <span class="beta-chip"><b>Beta</b>Gratis y sin límite mientras dure la beta</span>
       <h1>Tu app de chofer.<span class="l2">Tus clientes te piden a vos.</span></h1>
-      <p class="lead">Tus pasajeros te piden el viaje desde tu propia web. A vos te llega a la app, ponés tu precio y aceptás. Sin comisión: el viaje es 100% tuyo.</p>
+      <p class="lead">Te piden el viaje desde tu propia web y te llega a la app. Ponés tu precio, aceptás y el viaje es 100% tuyo.</p>
       <div class="hero-actions">
         <a class="btn btn-primary" href="https://app.remisapp.info/empezar?kind=independiente">Creá tu cuenta gratis
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
@@ -124,7 +124,7 @@
       <p class="eyebrow">Todo incluido</p>
       <h2 id="perks-title" class="perks-title">Todo lo que necesitás <span class="hl">para trabajar por tu cuenta.</span></h2>
       <p class="lead">Y lo más importante, en el centro: cada viaje que te piden por tu app es 100% tuyo. Usás Uber o DiDi en paralelo si querés.</p>
-      <p class="orbit-hint">Pasá el mouse o tocá un ícono para ver cada función.</p>
+      <p class="orbit-hint">Tocá un ícono para ver cada función.</p>
     </div>
     <div class="orbit" data-orbit>
       <ul class="orbit-ring">
@@ -482,20 +482,30 @@
     var ft = o.querySelector('.orbit-ftitle');
     var fd = o.querySelector('.orbit-fdesc');
     var items = o.querySelectorAll('.orbit-item');
+    var current = null;
     function show(btn){
+      current = btn;
+      o.classList.toggle('is-active', !!btn);
       items.forEach(function(b){ b.classList.toggle('is-on', b === btn); });
       if (!btn) { def.hidden = false; feat.hidden = true; return; }
       ft.textContent = btn.getAttribute('data-title');
       fd.textContent = btn.getAttribute('data-desc');
       def.hidden = true; feat.hidden = false;
     }
+    // En celular el toque dispara tambien eventos de mouse y foco: solo el mouse
+    // real abre al pasar, y el toque alterna. Si no, se abria y cerraba al instante.
     items.forEach(function(b){
-      b.addEventListener('mouseenter', function(){ show(b); });
-      b.addEventListener('focus', function(){ show(b); });
-      b.addEventListener('click', function(){ show(b.classList.contains('is-on') && matchMedia('(hover: none)').matches ? null : b); });
+      b.addEventListener('pointerenter', function(e){ if (e.pointerType === 'mouse') show(b); });
+      b.addEventListener('focus', function(){ if (b.matches(':focus-visible')) show(b); });
+      b.addEventListener('click', function(e){
+        e.stopPropagation();
+        var touch = !matchMedia('(hover: hover)').matches;
+        show(touch && current === b ? null : b);
+      });
     });
-    o.addEventListener('mouseleave', function(){ show(null); });
-    o.addEventListener('focusout', function(e){ if (!o.contains(e.relatedTarget)) show(null); });
+    o.addEventListener('pointerleave', function(e){ if (e.pointerType === 'mouse') show(null); });
+    o.addEventListener('focusout', function(e){ if (e.relatedTarget && !o.contains(e.relatedTarget)) show(null); });
+    document.addEventListener('click', function(e){ if (current && !o.contains(e.target)) show(null); });
   });
 
   var form = document.getElementById('beta-form');

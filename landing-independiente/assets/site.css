@@ -348,3 +348,45 @@ footer{border-top:1px solid var(--line);padding-block:48px 36px;font-size:14px;c
 .orbit-fdesc{font-size:calc(var(--size) * .032 + 2px);color:var(--muted);line-height:1.4;max-width:22ch}
 @keyframes spin{to{transform:rotate(360deg)}}
 @media (max-width:900px){.orbit-grid{grid-template-columns:1fr}.orbit{--size:min(420px,calc(100vw - 96px));--item:50px;margin-top:20px}}
+@keyframes ping-in{from{opacity:0;transform:translate(-50%,-18px) scale(.94)}}
+.orbit.is-active .orbit-ring,.orbit.is-active .orbit-item{animation-play-state:paused}
+
+/* Celular: menos texto, todo más corto. Lo que se oculta sigue en las páginas de cada pieza. */
+@media (max-width:640px){
+  .mcta{display:none}
+  .orbit-sec,.pillars,.steps,.faq,.final{padding-block:52px}
+
+  .hero{padding-block:22px 36px}
+  .hero h1{font-size:clamp(40px,11.5vw,50px);margin-top:16px}
+  .hero .lead{font-size:16px;margin-top:14px}
+  .hero-actions{margin-top:20px;gap:6px}
+  .hero-actions .btn-primary{width:100%;justify-content:center}
+  .hero-actions .btn-ghost{width:100%;justify-content:center;border:0;background:none;padding-block:10px;color:var(--muted);text-decoration:underline;text-underline-offset:4px}
+  .hero-facts{display:none}
+  .hero-phones{margin-top:4px}
+  .hero-phones .phone.front{width:min(250px,64vw);aspect-ratio:auto;height:330px;-webkit-mask-image:linear-gradient(to bottom,transparent,#000 22%);mask-image:linear-gradient(to bottom,transparent,#000 22%);animation:none}
+  .hero-phones .phone.front img{object-position:50% 100%}
+  .hero .ping{top:4px;right:auto;left:50%;transform:translateX(-50%);width:max-content;max-width:calc(100% - 8px);animation:ping-in .6s cubic-bezier(.2,.9,.3,1.2) .5s both}
+  .hero-chofer{right:-14px;bottom:-30px;width:min(150px,38vw)}
+
+  .orbit-grid .lead{display:none}
+  .orbit{margin-top:8px}
+
+  .pillars-head .lead,.trio{display:none}
+  .pillar{padding-top:56px;gap:22px}
+  .pillar .pillar-media,.pillar.flip .pillar-media{order:2}
+  .pillar h3{font-size:42px;margin-top:10px}
+  .pillar .lead{font-size:16px;margin-top:10px}
+  .pillar .checks{display:none}
+  .pillar .more{margin-top:12px}
+  .pillar-media .phone{width:min(240px,62vw)}
+
+  .steps-grid{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:12px;margin-top:24px;margin-inline:calc(var(--gutter) * -1);padding-inline:var(--gutter);padding-bottom:6px;scrollbar-width:none}
+  .steps-grid::-webkit-scrollbar{display:none}
+  .step{flex:0 0 78%;scroll-snap-align:center}
+  .step:hover{transform:none}
+  .step-art-wrap{height:180px}
+  .step .step-art{height:172px}
+  .step h4{margin-top:16px}
+  .step .t{margin-bottom:18px}
+}
