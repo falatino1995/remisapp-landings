@@ -473,3 +473,75 @@ body.mnav-open{overflow:hidden}
 @media (max-width:820px){.feat:nth-child(even) .sheet{order:0}.feat .sheet{margin-inline:auto}}
 .related-grid{grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
 .related-grid.det h3{font-size:30px}
+
+/* Objetos sin fondo (piezas premium 2026-11) */
+.hero-chofer{width:min(380px,62%);bottom:-30px;right:-8%}
+.hero-card{position:absolute;z-index:4;left:-4%;top:42%;width:min(190px,38%);height:auto;filter:drop-shadow(0 18px 24px rgba(0,0,0,.45));animation:float 7s ease-in-out -3s infinite;pointer-events:none}
+@media (max-width:900px){.hero-chofer{width:min(260px,58vw)}.hero-card{left:-6px;width:min(150px,36vw)}}
+@media (max-width:600px){.hero-chofer{width:min(190px,48vw);right:-10px}.hero-card{width:min(120px,32vw);top:46%}}
+@media (prefers-reduced-motion:reduce){.hero-card{animation:none}}
+.fineprint{margin-top:14px;font-size:12px;color:var(--muted);max-width:52ch}
+.orbit-note{text-align:center;margin-inline:auto;margin-top:28px}
+.step .step-art{-webkit-mask-image:none;mask-image:none;height:200px}
+@media (max-width:600px){.step .step-art{height:150px}}
+
+/* Hero en secuencia: pide -> oferta -> en vivo (9 s) */
+.hero-seq{display:grid}
+.hero-seq img{grid-area:1/1;opacity:0;animation:seq 9s infinite}
+.hero-seq img:nth-child(2){animation-delay:3s}
+.hero-seq img:nth-child(3){animation-delay:6s}
+@keyframes seq{0%{opacity:0}4%,30%{opacity:1}35%,100%{opacity:0}}
+.hero-phones .ping{opacity:0;animation:pingin 9s infinite}
+@keyframes pingin{0%,31%{opacity:0;transform:translateY(-10px) scale(.96)}35%,62%{opacity:1;transform:none}66%,100%{opacity:0}}
+.hero-cap{position:absolute;z-index:5;left:50%;bottom:-18px;transform:translateX(-62%);display:grid;margin:0;padding:0}
+.hero-cap li{grid-area:1/1;list-style:none;display:flex;align-items:center;gap:10px;white-space:nowrap;background:var(--surface-2);border:1px solid var(--line-strong);border-radius:999px;padding:9px 16px 9px 9px;font-size:14px;font-weight:600;box-shadow:0 14px 30px rgba(0,0,0,.45);opacity:0;animation:seq 9s infinite}
+.hero-cap li:nth-child(2){animation-delay:3s}
+.hero-cap li:nth-child(3){animation-delay:6s}
+.hero-cap b{width:24px;height:24px;border-radius:50%;background:var(--verde);color:var(--verde-ink);display:grid;place-items:center;font-size:13px}
+@media (max-width:900px){.hero-cap{transform:translateX(-50%);bottom:-14px}.hero-cap li{font-size:13px}}
+@media (prefers-reduced-motion:reduce){
+  .hero-seq img,.hero-cap li,.hero-phones .ping{animation:none}
+  .hero-seq img:nth-child(2),.hero-cap li:nth-child(2),.hero-phones .ping{opacity:1}
+}
+/* Paso 3: la web del chofer en una ventana de navegador */
+.step-web{width:min(250px,80%);height:220px;margin-top:22px;align-self:flex-end;border-radius:14px 14px 0 0;overflow:hidden;background:#fff;border:1px solid var(--line-strong);border-bottom:0;box-shadow:0 -10px 40px rgba(0,0,0,.4);transition:transform .35s ease}
+.step:hover .step-web{transform:translateY(-4px)}
+.step-web-bar{display:flex;align-items:center;gap:5px;padding:8px 10px;background:#e9ece8}
+.step-web-bar i{width:8px;height:8px;border-radius:50%;background:#c4c9c4}
+.step-web-bar span{flex:1;margin-left:6px;background:#fff;border-radius:6px;padding:3px 8px;font-size:11px;color:#59615b;text-align:center}
+.step-web img{display:block;width:100%;height:auto}
+@media (max-width:600px){.step-web{height:160px}}
+
+/* Hero: pantallas del diseno objetivo (un solo viaje) + personaje de cada momento */
+.hero-shots{position:relative;z-index:1;margin-right:22%;width:min(300px,66vw);display:grid;filter:drop-shadow(0 30px 50px rgba(0,0,0,.55))}
+.hero-shots img{grid-area:1/1;width:100%;height:auto;opacity:0;animation:seq 9s infinite}
+.hero-shots img:nth-child(2){animation-delay:3s}.hero-shots img:nth-child(3){animation-delay:6s}
+/* Personaje y globo de cada paso: cambian de lugar, entran con rebote */
+@keyframes hs{0%{opacity:0;transform:translateY(14px) scale(.92)}4%{opacity:1;transform:translateY(-4px) scale(1.03)}7%,30%{opacity:1;transform:none}35%,100%{opacity:0;transform:translateY(-8px) scale(.98)}}
+.hs-pj,.hs-cap{position:absolute;opacity:0;animation:hs 9s infinite;pointer-events:none}
+.hs-2{animation-delay:3s}.hs-3{animation-delay:6s}
+.hs-pj{z-index:3;height:auto;filter:drop-shadow(0 22px 28px rgba(0,0,0,.55))}
+.hs-pj.hs-1{width:min(250px,40%);right:-4%;bottom:-14px}
+.hs-pj.hs-2{width:min(300px,48%);right:-18%;top:30%}
+.hs-pj.hs-3{width:min(290px,46%);right:-12%;bottom:-14px}
+.hs-cap{z-index:4;display:flex;align-items:center;gap:12px;padding:12px 18px 12px 12px;border-radius:20px;background:#F4F6F1;color:#06150D;box-shadow:0 24px 50px rgba(0,0,0,.5);max-width:260px}
+.hs-cap small{display:block;font-size:11px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:#1d7a52}
+.hs-cap b{display:block;font-size:17px;font-weight:800;line-height:1.15}
+.hs-cap span:not(.hs-ico){display:block;font-size:13px;color:#4c5650}
+.hs-ico{width:42px;height:42px;border-radius:14px;background:#3DCC8E;color:#06150D;display:grid;place-items:center;flex:0 0 auto}
+.hs-ico svg{width:22px;height:22px}
+.hs-cap.hs-hot{background:#3DCC8E}
+.hs-hot .hs-ico{background:#06150D;color:#3DCC8E}
+.hs-hot small{color:#06150D;opacity:.7}.hs-hot span:not(.hs-ico){color:#0E2A1C}
+.hs-cap.hs-1{left:-24%;top:34%}
+.hs-cap.hs-2{left:-18%;top:14%}
+.hs-cap.hs-3{right:-2%;top:6%}
+@media (max-width:900px){.hs-cap.hs-1{left:0}.hs-cap.hs-2{left:0}.hs-cap.hs-3{right:0}.hs-pj.hs-2{right:-6%}}
+@media (max-width:600px){
+  .hs-cap{max-width:200px;padding:9px 12px 9px 9px;gap:9px;border-radius:16px}
+  .hs-cap b{font-size:14px}.hs-cap span:not(.hs-ico){font-size:11px}.hs-cap small{font-size:9px}
+  .hs-ico{width:32px;height:32px;border-radius:10px}.hs-ico svg{width:17px;height:17px}
+  .hs-cap.hs-1{left:-4px;top:8%}.hs-cap.hs-2{left:-4px;top:12%;bottom:auto}.hs-cap.hs-3{right:-4px;top:4%}
+  .hs-pj.hs-1{width:min(130px,34vw);right:-10px}.hs-pj.hs-2{width:min(140px,38vw);right:-14px;top:16%}.hs-pj.hs-3{width:min(150px,40vw);right:-12px}
+}
+@media (prefers-reduced-motion:reduce){.hs-pj,.hs-cap{animation:none}.hs-pj.hs-2,.hs-cap.hs-2{opacity:1}}
