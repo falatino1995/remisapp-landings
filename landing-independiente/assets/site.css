@@ -611,7 +611,7 @@ body.mnav-open{overflow:hidden}
 @media (prefers-reduced-motion:reduce){.fan img,.notif,.hand,.push,.scr img,.fan-cap p{animation:none}.push.p4,.scr img:nth-child(4),.fan-cap p:nth-child(2){opacity:1}}
 
 /* Pestanas de los dos lados: la carita del chofer y la de la pasajera, como en el hero */
-.pillar-tabs button b.tab-av{width:34px;height:34px;padding:0;border-radius:50%;overflow:hidden;background:#DDE8E1;box-shadow:0 0 0 2px var(--surface-2);opacity:.75;transition:opacity .15s,box-shadow .15s}
+.pillar-tabs button b.tab-av{width:46px;height:46px;padding:0;border-radius:50%;overflow:hidden;background:#DDE8E1;box-shadow:0 0 0 2px var(--surface-2);opacity:.75;transition:opacity .15s,box-shadow .15s}
 .pillar-tabs button b.tab-av img{width:100%;height:100%;display:block}
 .pillar-tabs button[aria-selected="true"] b.tab-av{opacity:1;background:#DDE8E1;box-shadow:0 0 0 2px var(--verde)}
-@media (max-width:600px){.pillar-tabs button b.tab-av{width:32px;height:32px}}
+@media (max-width:600px){.pillar-tabs button b.tab-av{width:42px;height:42px}}
