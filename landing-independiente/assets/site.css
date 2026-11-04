@@ -545,3 +545,67 @@ body.mnav-open{overflow:hidden}
   .hs-pj.hs-1{width:min(130px,34vw);right:-10px}.hs-pj.hs-2{width:min(140px,38vw);right:-14px;top:16%}.hs-pj.hs-3{width:min(150px,40vw);right:-12px}
 }
 @media (prefers-reduced-motion:reduce){.hs-pj,.hs-cap{animation:none}.hs-pj.hs-2,.hs-cap.hs-2{opacity:1}}
+
+/* Hero: fondo verde, celular en la mano; la pantalla y la tarjeta cambian en cada paso */
+.hv{padding-bottom:clamp(40px,6vw,80px)}
+.hv-grid{position:relative;display:grid;grid-template-columns:1.05fr .95fr;grid-template-areas:"t v" "m v";column-gap:clamp(32px,5vw,64px);align-items:center}
+.hv-text{grid-area:t;align-self:end}.hv-visual{grid-area:v;position:relative}
+.hv-more{grid-area:m;align-self:start;margin-top:26px;display:flex;flex-direction:column;align-items:flex-start;gap:12px}
+.hv .fineprint{margin:0}
+.ast{color:inherit;text-decoration:none}
+/* C: la pantalla del celular cambia en cada paso (5 pasos, 3 s cada uno); la tarjeta va arriba del celular, sin taparlo */
+@keyframes seqN{0%{opacity:0}3.0%,18.0%{opacity:1}21.0%,100%{opacity:0}}
+@keyframes dropN{0%{opacity:0;translate:0 -14px;scale:.94}2.6%{opacity:1;translate:0 2px;scale:1.03}5.0%,18.0%{opacity:1;translate:0 0;scale:1}21.0%,100%{opacity:0;translate:0 -10px;scale:.98}}
+.hand{position:relative;width:min(560px,100%);margin-inline:auto}
+.scr{position:absolute;left:30.9%;top:5.2%;width:39.4%;height:84.4%;border-radius:13%/6.6%;overflow:hidden;background:#06150D}
+.scr img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;animation:seqN 15s infinite}
+.push{position:absolute;z-index:2;left:50%;bottom:calc(100% - 7%);width:max-content;max-width:min(340px,96%);display:flex;gap:12px;align-items:center;background:#F4F6F1;color:#06150D;border-radius:18px;padding:10px 18px 10px 10px;box-shadow:0 18px 40px rgba(6,21,13,.35);opacity:0;transform:translateX(-50%);animation:dropN 15s infinite}
+.scr img:nth-child(2),.push.p2{animation-delay:3s}.scr img:nth-child(3),.push.p3{animation-delay:6s}.scr img:nth-child(4),.push.p4{animation-delay:9s}.scr img:nth-child(5),.push.p5{animation-delay:12s}
+.push .ni{width:46px;height:46px;border-radius:14px;background:#DDF5E9;display:grid;place-items:center;flex:0 0 auto}
+.push .ni img{width:40px;height:40px}
+.push.hot{background:#06150D;color:#F4F6F1}
+.push.hot small{color:#39D78D}.push.hot span:not(.ni){color:#C9D3CC}
+.av{position:relative;width:46px;height:46px;flex:0 0 auto}
+.av>img{width:46px;height:46px;border-radius:50%;background:#DDE8E1;display:block}
+.av i{position:absolute;right:-7px;bottom:-6px;width:28px;height:28px;border-radius:50%;background:#F4F6F1;display:grid;place-items:center;box-shadow:0 2px 6px rgba(6,21,13,.25)}
+.av i img,.av i svg{width:20px;height:20px}
+.push small{display:block;font-size:10px;font-weight:800;letter-spacing:.05em;text-transform:uppercase;color:#1d7a52}
+.push b{display:block;font-size:16px;font-weight:800;line-height:1.15}.push span:not(.ni):not(.av){display:flex;align-items:center;gap:5px;font-size:12.5px;color:#4c5650}
+.push b{display:flex;align-items:center;gap:8px;white-space:nowrap}.push .mp{height:22px;width:auto}
+.qrside{position:absolute;z-index:3;left:1%;top:24%;width:36%;height:auto;rotate:-8deg;filter:drop-shadow(0 16px 24px rgba(6,21,13,.4));opacity:0;animation:dropN 15s infinite}
+.push.r{padding:10px 10px 10px 18px;text-align:right;transform:translateX(-40%)}
+.push:not(.r){transform:translateX(-60%)}
+@media (max-width:600px){.push.r{transform:translateX(-44%)}.push:not(.r){transform:translateX(-56%)}}.push.r b{justify-content:flex-end}
+.hv-c .hv-visual{margin-top:66px}
+@media (max-width:600px){.hv-c .hv-visual{margin-top:58px}.hand{width:92%}}
+/* C: fondo verde de marca, celular en la mano */
+.hv-c{background:#39D78D;color:#06150D;padding-bottom:0}
+.hv-c::before{display:none}
+.hv-c h1{color:#06150D}.hv-c h1 .l2{color:#F4F6F1}
+.hv-c .lead{color:#06150D;font-weight:700;font-size:clamp(18px,2vw,22px)}
+.hv-c .beta-chip{background:rgba(6,21,13,.1);border-color:rgba(6,21,13,.2);color:#06150D}
+.hv-c .beta-chip b{background:#06150D;color:#39D78D}
+.hv-c .btn-primary{background:#06150D;color:#F4F6F1;box-shadow:none}
+.hv-c .hv-grid{grid-template-areas:"t v";align-items:end}
+.hv-c .hv-text{align-self:center;padding-bottom:clamp(40px,6vw,80px)}
+.mano{display:block;width:min(560px,100%);height:auto;margin-inline:auto}
+.hv-band{padding-block:22px}.hv-band .wrap{display:flex;flex-wrap:wrap;gap:12px 24px;align-items:center}
+@media (max-width:900px){
+  .hv-grid,.hv-c .hv-grid{grid-template-columns:1fr;grid-template-areas:"t" "v" "m"}
+  .hv-c .hv-grid{grid-template-areas:"t" "v"}
+  .hv-text{text-align:center}.hv-text .beta-chip{margin-inline:auto}
+  .hv-more{align-items:center;text-align:center}
+  .hv-visual{margin-top:22px}
+  .hv-c .hv-text{padding-bottom:0}
+  .hv-band .wrap{justify-content:center;text-align:center}
+}
+@media (max-width:600px){
+  .hv h1{font-size:clamp(36px,10.4vw,46px)}
+  .scene{width:calc(100% + 2*var(--gutter));margin-inline:calc(-1*var(--gutter))}
+  .notif{left:var(--gutter);top:-8%;max-width:240px;padding:9px 12px 9px 9px;gap:9px;border-radius:16px}
+  .notif b{font-size:14px}.notif small,.notif span:not(.ni){font-size:11px}.notif .ni{width:32px;height:32px;border-radius:10px}
+  .hv-b{padding-bottom:28px}
+  .mano{width:100%}
+}
+@media (max-width:600px){.fan-cap p{font-size:13px}.hv-a .hv-visual{margin-top:14px}.hv-switch{font-size:11px}.hv-switch a{padding:8px 8px}}
+@media (prefers-reduced-motion:reduce){.fan img,.notif,.hand,.push,.scr img,.fan-cap p{animation:none}.push.p4,.scr img:nth-child(4),.fan-cap p:nth-child(2){opacity:1}}
