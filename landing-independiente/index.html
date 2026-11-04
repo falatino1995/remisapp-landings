@@ -38,7 +38,7 @@
       "url": "https://solo.remisapp.info",
       "applicationCategory": "BusinessApplication",
       "operatingSystem": "Android, Web",
-      "description": "App para choferes independientes: página propia para recibir pedidos, app para aceptarlos y portal para que tus pasajeros te vuelvan a pedir. Sin comisión por viaje.",
+      "description": "App para choferes independientes, con dos lados: tu app para recibir y aceptar pedidos, y la de tus pasajeros para pedirte desde tu link o tu QR y volver a pedirte. Sin comisión por viaje.",
       "publisher": { "@id": "https://solo.remisapp.info/#organization" }
     }
   ]
@@ -73,9 +73,8 @@
   <div class="wrap nav-in">
     <a href="/" class="logo" aria-label="RemisApp Solo, inicio"><img src="/assets/logo/remisapp-logo-horizontal.svg" alt="RemisApp" width="150" height="25"><small>Solo</small></a>
     <nav class="nav-links" aria-label="Secciones">
-      <a href="#tu-app">Tu app</a>
-      <a href="#tu-pagina">Tu web</a>
-      <a href="#tus-clientes">Portal clientes</a>
+      <a href="#tu-app">Para vos</a>
+      <a href="#tus-pasajeros">Para tus pasajeros</a>
       <a href="#beta">Beta</a>
       <a href="#preguntas">Preguntas</a>
     </nav>
@@ -86,7 +85,7 @@
     </div>
   </div>
 </header>
-<nav class="mnav" id="mnav" aria-label="Menú" hidden><div class="mnav-group"><span class="mnav-h">Producto</span><a href="/tu-app">Tu app</a><a href="/tu-pagina">Tu web</a><a href="/tus-clientes">Portal clientes</a></div><div class="mnav-group"><span class="mnav-h">En detalle</span><a href="/precio">Tu precio</a><a href="/cobros">Cobros</a><a href="/agenda">Reservas y agenda</a><a href="/notificaciones">Notificaciones</a><a href="/compartir">Link, QR y carteles</a></div><div class="mnav-group"><a href="/guias">Guías</a><a href="/#beta">Beta</a><a href="/#preguntas">Preguntas</a></div><div class="mnav-cta"><a class="btn btn-ghost" href="https://app.remisapp.info/p/chofer/login">Iniciar sesión</a><a class="btn btn-primary" href="https://app.remisapp.info/empezar?kind=independiente">Empezá gratis</a></div></nav>
+<nav class="mnav" id="mnav" aria-label="Menú" hidden><div class="mnav-group"><span class="mnav-h">Producto</span><a href="/tu-app">Para vos</a><a href="/para-tus-pasajeros">Para tus pasajeros</a></div><div class="mnav-group"><span class="mnav-h">En detalle</span><a href="/precio">Tu precio</a><a href="/cobros">Cobros</a><a href="/agenda">Reservas y agenda</a><a href="/notificaciones">Notificaciones</a><a href="/compartir">Link, QR y carteles</a></div><div class="mnav-group"><a href="/guias">Guías</a><a href="/#beta">Beta</a><a href="/#preguntas">Preguntas</a></div><div class="mnav-cta"><a class="btn btn-ghost" href="https://app.remisapp.info/p/chofer/login">Iniciar sesión</a><a class="btn btn-primary" href="https://app.remisapp.info/empezar?kind=independiente">Empezá gratis</a></div></nav>
 
 <main>
 <!-- 1 · HERO -->
@@ -160,18 +159,17 @@
   </div>
 </section>
 
-<!-- 3 · TU APP / TU PÁGINA / TUS CLIENTES -->
+<!-- 3 · DOS LADOS: PARA VOS / PARA TUS PASAJEROS -->
 <section class="pillars" id="como-funciona">
   <div class="wrap">
     <div class="pillars-head">
       <p class="eyebrow">Cómo funciona</p>
-      <h2 style="margin-top:14px">Tres piezas. <span class="hl">Todo tuyo.</span></h2>
-      <p class="lead">Una app para vos, una web para que te pidan los pasajeros nuevos y un portal para los que vuelven.</p>
+      <h2 style="margin-top:14px">Dos lados. <span class="hl">Un solo viaje.</span></h2>
+      <p class="lead">Una app para vos y otra para tus pasajeros: entran con tu link o tu QR, te piden sin descargar nada y te guardan para la próxima.</p>
     </div>
-    <div class="pillar-tabs" role="tablist" aria-label="Las tres piezas">
-      <button type="button" role="tab" id="tab-tu-app" aria-controls="tu-app" aria-selected="true"><b>1</b><span><strong>Tu app</strong><small>Para vos</small></span></button>
-      <button type="button" role="tab" id="tab-tu-pagina" aria-controls="tu-pagina" aria-selected="false"><b>2</b><span><strong>Tu web</strong><small>Pasajero nuevo</small></span></button>
-      <button type="button" role="tab" id="tab-tus-clientes" aria-controls="tus-clientes" aria-selected="false"><b>3</b><span><strong>Portal</strong><small>Pasajero que vuelve</small></span></button>
+    <div class="pillar-tabs" role="tablist" aria-label="Los dos lados">
+      <button type="button" role="tab" id="tab-tu-app" aria-controls="tu-app" aria-selected="true"><b>1</b><span><strong>Para vos</strong><small>Tu app</small></span></button>
+      <button type="button" role="tab" id="tab-tus-pasajeros" aria-controls="tus-pasajeros" aria-selected="false"><b>2</b><span><strong>Para tus pasajeros</strong><small>Su app para pedirte</small></span></button>
     </div>
 
     <div class="pillar-panels" data-pillars>
@@ -194,50 +192,29 @@
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span><strong>Lo que ganaste.</strong> Cuánto hiciste hoy, en la semana y en el mes.</span></li>
         </ul>
         <a class="more" href="tu-app">Ver la app por dentro →</a>
-        <button type="button" class="pillar-next" data-go="tu-pagina">Siguiente: Tu web →</button>
+        <button type="button" class="pillar-next" data-go="tus-pasajeros">Siguiente: Para tus pasajeros →</button>
       </div>
     </article>
 
-    <article class="pillar flip" id="tu-pagina" role="tabpanel" aria-labelledby="tab-tu-pagina">
-      <div class="pillar-media">
-        <div class="scrollphone" data-scrollphone>
-          <div class="phone"><div class="scrollphone-screen"><img src="assets/screens/pagina-publica-completa.webp" alt="Web del chofer Martín Herrera: su perfil, el mapa del recorrido y el formulario para pedir el viaje" width="780" height="3070" loading="lazy"></div></div>
-          <p class="viewer-cap">Seguí bajando: así la ve tu pasajero, de arriba a abajo.</p>
-        </div>
-      </div>
-      <div>
-        <span class="who">Para el pasajero nuevo</span>
-        <h3>Tu <em>web</em></h3>
-        <p class="lead">Tu propia web para que te pidan viajes: tu nombre, tu auto y un botón para pedir. Sin descargar nada.</p>
-        <ul class="checks">
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span><strong>Un link tuyo.</strong> Lo mandás por WhatsApp o lo ponés en tu Instagram.</span></li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span><strong>Tu QR para el auto.</strong> El pasajero lo escanea durante el viaje y ya tiene cómo pedirte.</span></li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span><strong>Pide con el mapa.</strong> Elige origen y destino y ve el recorrido antes de pedir.</span></li>
-        </ul>
-        <a class="more" href="tu-pagina">Ver cómo es tu web →</a>
-        <button type="button" class="pillar-next" data-go="tus-clientes">Siguiente: Portal para tus clientes →</button>
-      </div>
-    </article>
-
-    <article class="pillar" id="tus-clientes" role="tabpanel" aria-labelledby="tab-tus-clientes">
+    <article class="pillar flip" id="tus-pasajeros" role="tabpanel" aria-labelledby="tab-tus-pasajeros">
       <div class="pillar-media">
         <div class="viewer" data-viewer>
-          <div class="phone"><div class="track" tabindex="0" aria-label="Pantallas del portal del pasajero. Deslizá para ver cada pantalla"><img src="assets/screens/pasajero-inicio.webp" alt="Inicio del portal del pasajero con sus lugares guardados y su chofer disponible" data-cap="Sus lugares guardados y su chofer, listos para pedir." width="780" height="1688"><img src="assets/screens/pasajero-choferes.webp" alt="Portal del pasajero con Martín Herrera como chofer favorito" data-cap="Te tiene guardado y te vuelve a pedir en un toque." width="780" height="1688" loading="lazy"><img src="assets/screens/pasajero-reservas.webp" alt="Reserva confirmada con el chofer, el recorrido y el precio" data-cap="Sus viajes programados, para cambiarlos o cancelarlos." width="780" height="1688" loading="lazy"><img src="assets/screens/pasajero-viaje.webp" alt="El pasajero ve su viaje confirmado en el mapa" data-cap="Sigue el viaje en el mapa y ve quién lo busca." width="780" height="1688" loading="lazy"></div></div>
-          <div class="viewer-tabs" role="tablist" aria-label="Pantallas del portal del pasajero"><button type="button" role="tab" aria-selected="true" data-i="0">Inicio</button><button type="button" role="tab" aria-selected="false" data-i="1">Choferes de confianza</button><button type="button" role="tab" aria-selected="false" data-i="2">Reservas</button><button type="button" role="tab" aria-selected="false" data-i="3">Viaje en curso</button></div>
-          <p class="viewer-cap" aria-live="polite">Sus lugares guardados y su chofer, listos para pedir.</p>
+          <div class="phone"><div class="track" tabindex="0" aria-label="Pantallas de la app de tus pasajeros. Deslizá para ver cada pantalla"><img src="assets/screens/pagina-publica.webp" alt="Web del chofer con su nombre, su auto y el botón para pedir" data-cap="Entra con tu link o tu QR y te pide sin descargar nada." width="780" height="1688"><img src="assets/screens/pasajero-viaje.webp" alt="El pasajero ve su viaje confirmado en el mapa" data-cap="Sigue el viaje en el mapa y ve quién lo busca." width="780" height="1688" loading="lazy"><img src="assets/screens/pasajero-choferes.webp" alt="App del pasajero con Martín Herrera como chofer favorito" data-cap="Te tiene guardado y te vuelve a pedir en un toque." width="780" height="1688" loading="lazy"><img src="assets/screens/pasajero-reservas.webp" alt="Reserva confirmada con el chofer, el recorrido y el precio" data-cap="Sus viajes programados, para cambiarlos o cancelarlos." width="780" height="1688" loading="lazy"></div></div>
+          <div class="viewer-tabs" role="tablist" aria-label="Pantallas de la app de tus pasajeros"><button type="button" role="tab" aria-selected="true" data-i="0">Te pide</button><button type="button" role="tab" aria-selected="false" data-i="1">En vivo</button><button type="button" role="tab" aria-selected="false" data-i="2">Te guarda</button><button type="button" role="tab" aria-selected="false" data-i="3">Reservas</button></div>
+          <p class="viewer-cap" aria-live="polite">Entra con tu link o tu QR y te pide sin descargar nada.</p>
         </div>
       </div>
       <div>
-        <span class="who">Para el pasajero que vuelve</span>
-        <h3>Portal para <em>tus clientes</em></h3>
-        <p class="lead">Cada pasajero que llevás te guarda como su chofer de confianza. La próxima vez te pide a vos.</p>
+        <span class="who">Para tus pasajeros</span>
+        <h3>Su app <em>para pedirte</em></h3>
+        <p class="lead">Del otro lado de tu app está la de tus pasajeros. La abren con tu link o tu QR y, la próxima vez, te piden a vos.</p>
         <ul class="checks">
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span><strong>Te vuelve a pedir en un toque.</strong> Te tiene guardado como favorito.</span></li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span><strong>Sigue el viaje en el mapa.</strong> Sabe dónde estás sin tener que llamarte.</span></li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span><strong>Chat con vos.</strong> Se escriben por la app, sin pasarse el número si no quieren.</span></li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span><strong>Sus reservas, a mano.</strong> Ve sus viajes programados y los cambia o cancela sin llamarte.</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span><strong>Sin descargar nada.</strong> Entra con tu link o tu QR y te pide desde el navegador.</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span><strong>Pide con el mapa.</strong> Elige origen y destino y ve el recorrido antes de pedir.</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span><strong>Sigue el viaje en vivo.</strong> Sabe dónde estás sin tener que llamarte, y te escribe por chat.</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span><strong>Te guarda para la próxima.</strong> Te vuelve a pedir en un toque y maneja sus reservas sin llamarte.</span></li>
         </ul>
-        <a class="more" href="tus-clientes">Ver qué ve tu pasajero →</a>
+        <a class="more" href="para-tus-pasajeros">Ver qué ve tu pasajero →</a>
       </div>
     </article>
     </div>
@@ -380,9 +357,8 @@
       </div>
       <div>
         <h4>Producto</h4>
-        <a href="/tu-app">Tu app</a>
-        <a href="/tu-pagina">Tu web</a>
-        <a href="/tus-clientes">Portal para tus clientes</a>
+        <a href="/tu-app">Para vos</a>
+        <a href="/para-tus-pasajeros">Para tus pasajeros</a>
         <a href="/guias">Guías</a>
       </div>
       <div>
@@ -520,7 +496,7 @@
     document.addEventListener('click', function(e){ if (current && !o.contains(e.target)) show(null); });
   });
 
-  // Las tres piezas en una sola seccion: botones arriba y una pieza a la vez
+  // Los dos lados en una sola seccion: botones arriba y una pieza a la vez
   document.querySelectorAll('[data-pillars]').forEach(function(box){
     var panels = box.querySelectorAll('[role=tabpanel]');
     var tabs = document.querySelectorAll('.pillar-tabs [role=tab]');
@@ -547,7 +523,7 @@
     box.querySelectorAll('[data-go]').forEach(function(b){
       b.addEventListener('click', function(){ open(b.getAttribute('data-go'), 'force'); });
     });
-    // Los links del menu (#tu-app, #tu-pagina, #tus-clientes) abren su pieza
+    // Los links del menu (#tu-app, #tus-pasajeros) abren su lado
     function fromHash(){
       var id = location.hash.slice(1);
       if (id) open(id, 'force');

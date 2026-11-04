@@ -9,8 +9,8 @@
 /funcionalidad-link.html             /compartir     301
 /funcionalidad-qr                    /compartir     301
 /funcionalidad-qr.html               /compartir     301
-/funcionalidad-portal-cliente        /tus-clientes  301
-/funcionalidad-portal-cliente.html   /tus-clientes  301
+/funcionalidad-portal-cliente        /para-tus-pasajeros 301
+/funcionalidad-portal-cliente.html   /para-tus-pasajeros 301
 # Referidos oculto durante la beta (promete creditos). Temporal: volver a sacar al reactivarlo.
 /funcionalidad-referidos             /              302
 /funcionalidad-referidos.html        /              302
@@ -21,3 +21,8 @@
 /funcionalidad-precio.html           /precio        301
 /funcionalidad-mercadopago           /cobros        301
 /funcionalidad-mercadopago.html      /cobros        301
+# "Tu web" y "Portal" se fusionaron en un solo lado: Para tus pasajeros (2026-11)
+/tu-pagina                           /para-tus-pasajeros 301
+/tu-pagina.html                      /para-tus-pasajeros 301
+/tus-clientes                        /para-tus-pasajeros 301
+/tus-clientes.html                   /para-tus-pasajeros 301
