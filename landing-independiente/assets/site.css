@@ -484,3 +484,30 @@ body.mnav-open{overflow:hidden}
 .orbit-note{text-align:center;margin-inline:auto;margin-top:28px}
 .step .step-art{-webkit-mask-image:none;mask-image:none;height:200px}
 @media (max-width:600px){.step .step-art{height:150px}}
+
+/* Hero en secuencia: pide -> oferta -> en vivo (9 s) */
+.hero-seq{display:grid}
+.hero-seq img{grid-area:1/1;opacity:0;animation:seq 9s infinite}
+.hero-seq img:nth-child(2){animation-delay:3s}
+.hero-seq img:nth-child(3){animation-delay:6s}
+@keyframes seq{0%{opacity:0}4%,30%{opacity:1}35%,100%{opacity:0}}
+.hero-phones .ping{opacity:0;animation:pingin 9s infinite}
+@keyframes pingin{0%,31%{opacity:0;transform:translateY(-10px) scale(.96)}35%,62%{opacity:1;transform:none}66%,100%{opacity:0}}
+.hero-cap{position:absolute;z-index:5;left:50%;bottom:-18px;transform:translateX(-62%);display:grid;margin:0;padding:0}
+.hero-cap li{grid-area:1/1;list-style:none;display:flex;align-items:center;gap:10px;white-space:nowrap;background:var(--surface-2);border:1px solid var(--line-strong);border-radius:999px;padding:9px 16px 9px 9px;font-size:14px;font-weight:600;box-shadow:0 14px 30px rgba(0,0,0,.45);opacity:0;animation:seq 9s infinite}
+.hero-cap li:nth-child(2){animation-delay:3s}
+.hero-cap li:nth-child(3){animation-delay:6s}
+.hero-cap b{width:24px;height:24px;border-radius:50%;background:var(--verde);color:var(--verde-ink);display:grid;place-items:center;font-size:13px}
+@media (max-width:900px){.hero-cap{transform:translateX(-50%);bottom:-14px}.hero-cap li{font-size:13px}}
+@media (prefers-reduced-motion:reduce){
+  .hero-seq img,.hero-cap li,.hero-phones .ping{animation:none}
+  .hero-seq img:nth-child(2),.hero-cap li:nth-child(2),.hero-phones .ping{opacity:1}
+}
+/* Paso 3: la web del chofer en una ventana de navegador */
+.step-web{width:min(250px,80%);height:220px;margin-top:22px;align-self:flex-end;border-radius:14px 14px 0 0;overflow:hidden;background:#fff;border:1px solid var(--line-strong);border-bottom:0;box-shadow:0 -10px 40px rgba(0,0,0,.4);transition:transform .35s ease}
+.step:hover .step-web{transform:translateY(-4px)}
+.step-web-bar{display:flex;align-items:center;gap:5px;padding:8px 10px;background:#e9ece8}
+.step-web-bar i{width:8px;height:8px;border-radius:50%;background:#c4c9c4}
+.step-web-bar span{flex:1;margin-left:6px;background:#fff;border-radius:6px;padding:3px 8px;font-size:11px;color:#59615b;text-align:center}
+.step-web img{display:block;width:100%;height:auto}
+@media (max-width:600px){.step-web{height:160px}}
