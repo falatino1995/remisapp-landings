@@ -50,7 +50,7 @@
   "@type": "FAQPage",
   "mainEntity": [
     {"@type":"Question","name":"¿Cuánto cuesta?","acceptedAnswer":{"@type":"Answer","text":"Nada mientras dure la beta: usás todo, sin límite de viajes y sin tarjeta. Antes de que termine la beta te avisamos con tiempo cómo sigue, y decidís vos si te quedás."}},
-    {"@type":"Question","name":"¿Tengo que dejar Uber, DiDi o Cabify?","acceptedAnswer":{"@type":"Answer","text":"No. Usás las dos cosas en paralelo. La idea es que cada pasajero que te gusta llevar te pueda pedir directo la próxima vez, y que con el tiempo dependas menos de las apps."}},
+    {"@type":"Question","name":"¿Tengo que dejar las otras apps?","acceptedAnswer":{"@type":"Answer","text":"No. Usás las dos cosas en paralelo. La idea es que cada pasajero que te gusta llevar te pueda pedir directo la próxima vez, y que con el tiempo dependas menos de las apps."}},
     {"@type":"Question","name":"¿Mis pasajeros tienen que descargar algo?","acceptedAnswer":{"@type":"Answer","text":"No. Entran a tu web desde el link o el QR, eligen origen y destino en el mapa y te piden el viaje desde el navegador. Si quieren, guardan tu web en la pantalla de inicio para volver a pedirte en un toque."}},
     {"@type":"Question","name":"¿Ustedes me consiguen pasajeros?","acceptedAnswer":{"@type":"Answer","text":"No: los pasajeros son tuyos. Te damos tu web, tu link y un QR para el auto, así los que ya llevás te pueden pedir directo. Como vienen de tu entorno o por recomendación, sabés quién se sube."}},
     {"@type":"Question","name":"¿Funciona en iPhone?","acceptedAnswer":{"@type":"Answer","text":"La app nativa por ahora es para Android y está en prueba cerrada en Google Play. Desde cualquier celular, también iPhone, usás todo desde el navegador con la misma cuenta."}},
@@ -106,11 +106,12 @@
         <li>Sin tarjeta</li>
         <li>Lista en 2 minutos</li>
       </ul>
+      <p class="fineprint">Si cobrás con Mercado Pago, Mercado Pago cobra su comisión aparte.</p>
     </div>
     <div class="hero-phones" aria-hidden="true">
       <div class="phone back"><img src="assets/screens/pagina-publica.webp" alt="" width="780" height="1688" loading="lazy"></div>
       <div class="phone front"><img src="assets/screens/app-nueva-oferta.webp" alt="" width="780" height="1688" fetchpriority="high"></div>
-      <img class="hero-chofer" src="assets/illustrations/3d_v1/chofer-taxi.webp" alt="" width="441" height="327">
+      <img class="hero-chofer" src="assets/objetos/obj-auto-costado.webp" alt="" width="900" height="361">
       <div class="ping">
         <span class="dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/></svg></span>
         <div><strong>Nuevo viaje de Ramiro</strong><span>Barrio Jardín → Aeropuerto</span></div>
@@ -126,7 +127,7 @@
     <div>
       <p class="eyebrow">Todo incluido</p>
       <h2 id="perks-title" class="perks-title">Todo lo que necesitás <span class="hl">para trabajar por tu cuenta.</span></h2>
-      <p class="lead">Y lo más importante, en el centro: cada viaje que te piden por tu app es 100% tuyo. Usás Uber o DiDi en paralelo si querés.</p>
+      <p class="lead">Y lo más importante, en el centro: cada viaje que te piden por tu app es 100% tuyo. Podés seguir usando las apps en paralelo si querés.</p>
       <p class="orbit-hint">Tocá un ícono para ver cada función.</p>
     </div>
     <div class="orbit" data-orbit>
@@ -147,7 +148,7 @@
       <div class="orbit-center" aria-live="polite">
         <div class="orbit-default">
           <strong class="orbit-big"><span data-count-from="25">0</span>%</strong>
-          <span class="orbit-sub">de comisión</span>
+          <span class="orbit-sub">de comisión*</span>
         </div>
         <div class="orbit-feature" hidden>
           <strong class="orbit-ftitle"></strong>
@@ -155,6 +156,7 @@
         </div>
       </div>
     </div>
+    <p class="fineprint orbit-note">* En los viajes que te piden directo. Si cobrás con Mercado Pago, Mercado Pago cobra su comisión aparte.</p>
   </div>
 </section>
 
@@ -249,19 +251,19 @@
     <h2 style="margin-top:14px">Hoy mismo podés <span class="hl">recibir tu primer pedido.</span></h2>
     <div class="steps-grid">
       <div class="step">
-        <div class="step-art-wrap"><img class="step-art" src="assets/illustrations/paso-1-cuenta.webp" alt="Chofer en su taxi amarillo creando la cuenta desde el celular" width="720" height="700" loading="lazy"></div>
+        <div class="step-art-wrap"><img class="step-art" src="assets/objetos/obj-tarjeta-chofer.webp" alt="Tarjeta del chofer con su foto, su auto y el botón Pedir viaje" width="900" height="418" loading="lazy"></div>
         <h4>Creá tu cuenta</h4>
         <p>Tu nombre, tu auto y tu ciudad. Te queda armada tu web y tu app.</p>
         <span class="t">2 minutos</span>
       </div>
       <div class="step">
-        <div class="step-art-wrap"><img class="step-art" src="assets/illustrations/paso-2-qr.webp" alt="Chofer pegando su QR en la ventanilla del taxi" width="720" height="700" loading="lazy"></div>
+        <div class="step-art-wrap"><img class="step-art" src="assets/objetos/obj-respaldo-qr.webp" alt="Respaldo del asiento con el QR: Escaneá y pedime directo" width="592" height="900" loading="lazy"></div>
         <h4>Compartí tu QR</h4>
-        <p>Pegalo en el auto y mandá tu link. Tu pasajero guarda tu web.</p>
+        <p>Pegalo en el respaldo del asiento y mandá tu link. Tu pasajero guarda tu web.</p>
         <span class="t">Hoy</span>
       </div>
       <div class="step">
-        <div class="step-art-wrap"><img class="step-art" src="assets/illustrations/paso-3-aceptar.webp" alt="Chofer apoyado en el taxi mostrando la notificación de un viaje nuevo" width="720" height="700" loading="lazy"></div>
+        <div class="step-art-wrap"><img class="step-art" src="assets/objetos/obj-tarjeta-precio.webp" alt="Precio del viaje con botones para bajar o subir 500" width="900" height="583" loading="lazy"></div>
         <h4>Te piden por tu web</h4>
         <p>El pasajero pide desde tu web y a vos te llega a la app. Aceptás y salís.</p>
         <span class="t">Cuando te pidan</span>
@@ -333,7 +335,7 @@
         <p>Nada mientras dure la beta: usás todo, sin límite de viajes y sin tarjeta. Antes de que termine la beta te avisamos con tiempo cómo sigue, y decidís vos si te quedás.</p>
       </details>
       <details>
-        <summary>¿Tengo que dejar Uber, DiDi o Cabify?</summary>
+        <summary>¿Tengo que dejar las otras apps?</summary>
         <p>No. Usás las dos cosas en paralelo. La idea es que cada pasajero que te gusta llevar te pueda pedir directo la próxima vez, y que con el tiempo dependas menos de las apps.</p>
       </details>
       <details>
