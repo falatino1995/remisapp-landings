@@ -516,9 +516,32 @@ body.mnav-open{overflow:hidden}
 .hero-shots{position:relative;z-index:1;margin-right:22%;width:min(300px,66vw);display:grid;filter:drop-shadow(0 30px 50px rgba(0,0,0,.55))}
 .hero-shots img{grid-area:1/1;width:100%;height:auto;opacity:0;animation:seq 9s infinite}
 .hero-shots img:nth-child(2){animation-delay:3s}.hero-shots img:nth-child(3){animation-delay:6s}
-.hero-pj{position:absolute;z-index:3;right:-12%;bottom:-6px;width:min(210px,36%);display:grid;pointer-events:none}
-.hero-pj img{grid-area:1/1;width:100%;height:auto;align-self:end;opacity:0;animation:seq 9s infinite;filter:drop-shadow(0 20px 26px rgba(0,0,0,.5))}
-.hero-pj img:nth-child(2){animation-delay:3s}.hero-pj img:nth-child(3){animation-delay:6s}
-@media (max-width:900px){.hero-shots{margin-right:0}.hero-pj{right:-4px;width:min(150px,34vw)}}
-@media (max-width:600px){.hero-shots{width:min(240px,62vw)}.hero-pj{right:-8px;width:min(105px,28vw);bottom:-4px}}
-@media (prefers-reduced-motion:reduce){.hero-shots img,.hero-pj img{animation:none}.hero-shots img:nth-child(2),.hero-pj img:nth-child(2){opacity:1}}
+/* Personaje y globo de cada paso: cambian de lugar, entran con rebote */
+@keyframes hs{0%{opacity:0;transform:translateY(14px) scale(.92)}4%{opacity:1;transform:translateY(-4px) scale(1.03)}7%,30%{opacity:1;transform:none}35%,100%{opacity:0;transform:translateY(-8px) scale(.98)}}
+.hs-pj,.hs-cap{position:absolute;opacity:0;animation:hs 9s infinite;pointer-events:none}
+.hs-2{animation-delay:3s}.hs-3{animation-delay:6s}
+.hs-pj{z-index:3;height:auto;filter:drop-shadow(0 22px 28px rgba(0,0,0,.55))}
+.hs-pj.hs-1{width:min(250px,40%);right:-4%;bottom:-14px}
+.hs-pj.hs-2{width:min(300px,48%);right:-18%;top:30%}
+.hs-pj.hs-3{width:min(290px,46%);right:-12%;bottom:-14px}
+.hs-cap{z-index:4;display:flex;align-items:center;gap:12px;padding:12px 18px 12px 12px;border-radius:20px;background:#F4F6F1;color:#06150D;box-shadow:0 24px 50px rgba(0,0,0,.5);max-width:260px}
+.hs-cap small{display:block;font-size:11px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:#1d7a52}
+.hs-cap b{display:block;font-size:17px;font-weight:800;line-height:1.15}
+.hs-cap span:not(.hs-ico){display:block;font-size:13px;color:#4c5650}
+.hs-ico{width:42px;height:42px;border-radius:14px;background:#3DCC8E;color:#06150D;display:grid;place-items:center;flex:0 0 auto}
+.hs-ico svg{width:22px;height:22px}
+.hs-cap.hs-hot{background:#3DCC8E}
+.hs-hot .hs-ico{background:#06150D;color:#3DCC8E}
+.hs-hot small{color:#06150D;opacity:.7}.hs-hot span:not(.hs-ico){color:#0E2A1C}
+.hs-cap.hs-1{left:-24%;top:34%}
+.hs-cap.hs-2{left:-18%;top:14%}
+.hs-cap.hs-3{right:-2%;top:6%}
+@media (max-width:900px){.hs-cap.hs-1{left:0}.hs-cap.hs-2{left:0}.hs-cap.hs-3{right:0}.hs-pj.hs-2{right:-6%}}
+@media (max-width:600px){
+  .hs-cap{max-width:200px;padding:9px 12px 9px 9px;gap:9px;border-radius:16px}
+  .hs-cap b{font-size:14px}.hs-cap span:not(.hs-ico){font-size:11px}.hs-cap small{font-size:9px}
+  .hs-ico{width:32px;height:32px;border-radius:10px}.hs-ico svg{width:17px;height:17px}
+  .hs-cap.hs-1{left:-4px;top:8%}.hs-cap.hs-2{left:-4px;top:12%;bottom:auto}.hs-cap.hs-3{right:-4px;top:4%}
+  .hs-pj.hs-1{width:min(130px,34vw);right:-10px}.hs-pj.hs-2{width:min(140px,38vw);right:-14px;top:16%}.hs-pj.hs-3{width:min(150px,40vw);right:-12px}
+}
+@media (prefers-reduced-motion:reduce){.hs-pj,.hs-cap{animation:none}.hs-pj.hs-2,.hs-cap.hs-2{opacity:1}}
