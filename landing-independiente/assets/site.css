@@ -616,3 +616,31 @@ body.mnav-open{overflow:hidden}
 .pillar-tabs button[aria-selected="true"] b.tab-av{opacity:1;background:#DDE8E1;box-shadow:0 0 0 2px var(--verde)}
 @media (max-width:600px){.pillar-tabs button b.tab-av{width:42px;height:42px}}
 .pillar-media .more-media{display:block;width:max-content;margin:18px auto 0}
+
+/* Como funciona: cada diapositiva es la pantalla del celular. Las capturas
+   largas bajan al scrollear (script del visor); la del pedido es una
+   secuencia de 5 pasos de 2,6 s con su etiqueta arriba. */
+.track .slide{flex:0 0 100%;scroll-snap-align:start;scroll-snap-stop:always;position:relative;overflow:hidden;height:100%}
+.track .slide img{display:block;width:100%;height:auto;will-change:transform}
+.slide-seq img{position:absolute;inset:0;height:100%;object-fit:cover;object-position:top;opacity:0;animation:ofseq 13s infinite}
+.slide-seq img:first-child{opacity:1}
+.slide-seq img:nth-child(2),.slide-seq .seq-chip:nth-of-type(2){animation-delay:2.6s}
+.slide-seq img:nth-child(3),.slide-seq .seq-chip:nth-of-type(3){animation-delay:5.2s}
+.slide-seq img:nth-child(4),.slide-seq .seq-chip:nth-of-type(4){animation-delay:7.8s}
+.slide-seq img:nth-child(5),.slide-seq .seq-chip:nth-of-type(5){animation-delay:10.4s}
+@keyframes ofseq{0%{opacity:0}3%,19%{opacity:1}22%,100%{opacity:0}}
+.seq-chip{position:absolute;z-index:2;left:50%;top:12px;transform:translateX(-50%);white-space:nowrap;padding:6px 12px;border-radius:999px;background:var(--verde);color:var(--verde-ink);font-size:12px;font-weight:800;box-shadow:0 8px 20px rgba(0,0,0,.45);opacity:0;animation:ofseq 13s infinite}
+@media (prefers-reduced-motion:reduce){
+  .slide-seq img,.seq-chip{animation:none}
+  .slide-seq img:first-child,.slide-seq .seq-chip:nth-of-type(1){opacity:1}
+  .track .slide{overflow-y:auto}
+}
+/* Las capturas largas no pueden estirar el celular: la pista va fuera del
+   flujo y el celular mide lo que dice su proporcion. */
+.viewer .phone .track{position:absolute;inset:9px;width:auto;height:auto}
+.track .slide-seq img{height:100%}
+/* Recorrido del celular fijo: debajo del menu (64px) y de las pestanas de
+   los dos lados, que tambien quedan fijas. */
+.phone-pin{position:relative;width:100%;display:flex;justify-content:center;align-items:flex-start}
+.phone-pin .phone{position:sticky;top:150px}
+@media (max-width:600px){.phone-pin .phone{top:140px}}
