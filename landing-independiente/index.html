@@ -62,7 +62,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..100,400..800&display=swap">
 <link rel="preload" as="image" href="assets/screens/app-nueva-oferta.webp" type="image/webp">
-<link rel="stylesheet" href="/assets/site.css?v=20261105j">
+<link rel="stylesheet" href="/assets/site.css?v=20261105k">
 <script src="/assets/analytics.js"></script>
 <script src="/assets/nav.js" defer></script>
 </head>
@@ -103,12 +103,12 @@
     <div class="hv-visual"><div class="hand">
       <img class="mano" src="assets/objetos/hv-mano.webp" alt="" width="900" height="826" fetchpriority="high">
       <div class="scr"><img src="assets/objetos/mk-05-confianza.webp" alt="" width="748" height="1402"><img src="assets/objetos/mk-01-web.webp" alt="" width="748" height="1402"><img src="assets/objetos/mk-02-oferta.webp" alt="" width="748" height="1402"><img src="assets/objetos/mk-04-seguimiento.webp" alt="" width="748" height="1402"><img src="assets/objetos/mk-06-hoy.webp" alt="" width="748" height="1402"></div>
-      <img class="qrside" src="assets/objetos/obj-sticker-qr.webp" alt="" width="360" height="256">
-      <div class="push p1"><span class="av"><img src="assets/objetos/av-lucia.webp" alt="" width="112" height="112"><i><svg viewBox="0 0 24 24" fill="#39D78D" aria-hidden="true"><path d="M12 2.8l2.8 5.8 6.3.9-4.6 4.4 1.1 6.3L12 17.2l-5.6 3 1.1-6.3L2.9 9.5l6.3-.9z"/></svg></i></span><div><small>Paso 1 · Tu pasajera</small><b>Escanea tu QR y te guarda</b></div></div>
-      <div class="push p2"><span class="av"><img src="assets/objetos/av-lucia.webp" alt="" width="112" height="112"><i><img src="assets/illustrations/3d_v1/ic-link.webp" alt="" width="56" height="56"></i></span><div><small>Paso 2 · Tu pasajera</small><b>Te pide desde tu web</b></div></div>
-      <div class="push r p3 hot"><div><small>Paso 3 · Vos</small><b>¡Te llega el pedido a tu app!</b></div><span class="av"><img src="assets/objetos/av-martin.webp" alt="" width="112" height="112"><i><img src="assets/illustrations/3d_v1/ic-bell-notifications.webp" alt="" width="56" height="56"></i></span></div>
-      <div class="push p4"><span class="av"><img src="assets/objetos/av-lucia.webp" alt="" width="112" height="112"><i><img src="assets/illustrations/3d_v1/ic-location.webp" alt="" width="56" height="56"></i></span><div><small>Paso 4 · Tu pasajera</small><b>Ve en vivo por dónde venís</b></div></div>
-      <div class="push r p5 hot"><div><small>Paso 5 · Vos</small><b>Cobrás directo <img class="mp" src="assets/objetos/logo-mp-blanco.png" alt="Mercado Pago" width="240" height="69"></b></div><span class="av"><img src="assets/objetos/av-martin.webp" alt="" width="112" height="112"><i><img src="assets/illustrations/3d_v1/ic-cash-bill.webp" alt="" width="56" height="56"></i></span></div>
+      <div class="hcast" aria-hidden="true"><span class="who who-l"><img src="assets/objetos/av-lucia.webp" alt="" width="112" height="112"><b>Pasajera</b></span><span class="who who-m"><img src="assets/objetos/av-martin.webp" alt="" width="112" height="112"><b>Vos</b></span></div><img class="qrside" src="assets/objetos/obj-sticker-qr.webp" alt="" width="360" height="256">
+      <div class="push p1"><span class="av"><img src="assets/objetos/av-lucia.webp" alt="" width="112" height="112"><i><svg viewBox="0 0 24 24" fill="#39D78D" aria-hidden="true"><path d="M12 2.8l2.8 5.8 6.3.9-4.6 4.4 1.1 6.3L12 17.2l-5.6 3 1.1-6.3L2.9 9.5l6.3-.9z"/></svg></i></span><div><small>Paso 1</small><b>Escanea tu QR y te guarda</b></div></div>
+      <div class="push p2"><span class="av"><img src="assets/objetos/av-lucia.webp" alt="" width="112" height="112"><i><img src="assets/illustrations/3d_v1/ic-link.webp" alt="" width="56" height="56"></i></span><div><small>Paso 2</small><b>Te pide desde tu web</b></div></div>
+      <div class="push r p3 hot"><div><small>Paso 3</small><b>¡Te llega el pedido a tu app!</b></div><span class="av"><img src="assets/objetos/av-martin.webp" alt="" width="112" height="112"><i><img src="assets/illustrations/3d_v1/ic-bell-notifications.webp" alt="" width="56" height="56"></i></span></div>
+      <div class="push p4"><span class="av"><img src="assets/objetos/av-lucia.webp" alt="" width="112" height="112"><i><img src="assets/illustrations/3d_v1/ic-location.webp" alt="" width="56" height="56"></i></span><div><small>Paso 4</small><b>Ve en vivo por dónde venís</b></div></div>
+      <div class="push r p5 hot"><div><small>Paso 5</small><b>Cobrás directo <img class="mp" src="assets/objetos/logo-mp-blanco.png" alt="Mercado Pago" width="240" height="69"></b></div><span class="av"><img src="assets/objetos/av-martin.webp" alt="" width="112" height="112"><i><img src="assets/illustrations/3d_v1/ic-cash-bill.webp" alt="" width="56" height="56"></i></span></div>
     </div></div>
   </div>
 </section>
@@ -445,7 +445,12 @@
       if (!slides[current].classList.contains('slide-seq')) tabs[current].style.setProperty('--p', p.toFixed(3));
     }
     tabs.forEach(function(t, i){
-      t.addEventListener('click', function(){ track.scrollTo({ left: i * track.clientWidth, behavior: 'smooth' }); mark(i); });
+      t.addEventListener('click', function(){
+        track.scrollTo({ left: i * track.clientWidth, behavior: 'smooth' }); mark(i);
+        // que se vea el celular entero, con los globos de arriba y abajo
+        var stick = pin.querySelector('.pin-stick'), r = stick.getBoundingClientRect(), top = 150;
+        if (r.top < top - 4 || r.bottom > innerHeight + 4) window.scrollTo({ top: r.top + scrollY - top, behavior: reduce ? 'auto' : 'smooth' });
+      });
     });
     track.addEventListener('scroll', function(){ mark(Math.round(track.scrollLeft / track.clientWidth)); }, { passive: true });
     track.addEventListener('keydown', function(e){
@@ -467,6 +472,12 @@
   // Quien habla: la cara del que tiene el globo visible se ilumina
   var casts = document.querySelectorAll('[data-viewer]');
   function talk(){
+    var hand = document.querySelector('.hand');
+    if (hand) {
+      var hw = '';
+      hand.querySelectorAll('.push').forEach(function(c){ if (parseFloat(getComputedStyle(c).opacity) > 0.5) hw = c.classList.contains('hot') ? 'm' : 'l'; });
+      hand.setAttribute('data-talk', hw);
+    }
     casts.forEach(function(v){
       var set = v.querySelector('.seq-cards.on');
       var who = '';

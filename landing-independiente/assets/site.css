@@ -797,3 +797,42 @@ body.mnav-open{overflow:hidden}
 .seq-cards .seq-card .av i img{background:none;border-radius:0;object-fit:contain;height:26px}
 .seq-cards .seq-card .av i{width:36px;height:36px}
 .seq-cards .seq-card .av i img,.seq-cards .seq-card .av i svg{width:34px;height:34px}
+/* v10: en Como funciona los globos quedan del todo afuera de la pantalla:
+   la pasajera arriba del celular, el chofer abajo. */
+.phone-pin .pin-stick{padding-top:74px;gap:84px}
+.viewer .phone{width:min(280px,68vw,calc((100svh - 150px - 74px - 84px - 96px) * 780 / 1688))}
+.who-l{top:auto;bottom:calc(100% + 10px)}
+.who-m{bottom:auto;top:calc(100% + 10px)}
+.seq-cards .seq-card{top:auto;bottom:calc(100% + 8px);left:-4px}
+.seq-cards .seq-card.hot{bottom:auto;top:calc(100% + 8px);right:-4px;left:auto}
+.seq-cards .seq-card.auto{bottom:auto;top:calc(100% + 8px);left:0;right:0}
+.seq-cards .seq-card-in{max-width:min(214px,calc(100% - 4px))}
+.seq-cards .seq-card:not(.hot):not(.auto) .seq-card-in::before{top:auto;bottom:12px}
+.seq-cards .seq-card.hot .seq-card-in::before{bottom:auto;top:12px}
+
+/* Hero: caras fijas arriba del celular y globos que salen de cada una */
+.hcast{position:absolute;inset:0;pointer-events:none;z-index:3}
+.hcast .who{border:0;padding:0;letter-spacing:0;text-transform:none;font-size:inherit;bottom:calc(100% - 7% - 4px);top:auto}
+.hcast .who-l{left:0}
+.hcast .who-m{right:0;left:auto}
+.hand[data-talk="l"] .who-l,.hand[data-talk="m"] .who-m{opacity:1;transform:none}
+.hand[data-talk="l"] .who-l img,.hand[data-talk="m"] .who-m img{box-shadow:0 0 0 3px #06150D,0 0 0 5px #3DCC8E,0 10px 22px rgba(6,21,13,.4)}
+.hand[data-talk="l"] .who-l b,.hand[data-talk="m"] .who-m b{color:#06150D}
+.hcast .who b{color:rgba(6,21,13,.6)}
+.hcast .who img{box-shadow:0 0 0 3px rgba(6,21,13,.25),0 8px 18px rgba(6,21,13,.3)}
+.hand .push,.hand .push.r,.hand .push:not(.r){transform:none;max-width:calc(100% - 128px)}
+.hand .push:not(.r){left:60px;right:auto}
+.hand .push.r{left:auto;right:60px}
+.hand .push .av{width:auto;height:auto}
+.hand .push .av>img{display:none}
+.hand .push .av i{position:static;width:36px;height:36px;background:none;box-shadow:none;border-radius:0}
+.hand .push .av i img,.hand .push .av i svg{width:34px;height:34px}
+.hand .push{padding:10px 16px 10px 12px}
+.hand .push.r{padding:10px 12px 10px 16px}
+.hand .push b{white-space:normal}
+@media (max-width:600px){.hand .push,.hand .push.r,.hand .push:not(.r){transform:none}.hcast .who img{width:42px;height:42px}.hand .push:not(.r){left:52px}.hand .push.r{right:52px}.hand .push,.hand .push.r,.hand .push:not(.r){max-width:calc(100% - 108px)}}
+/* ya no hay pantallas que bajen: el celular no necesita entrar entero con los botones */
+.viewer .phone{width:min(270px,66vw)}
+.phone-pin .pin-stick{padding-top:66px;gap:74px}
+.viewer .phone{width:clamp(230px,calc((100svh - 150px - 60px - 64px - 86px) * 780 / 1688),min(280px,66vw))}
+.phone-pin .pin-stick{padding-top:60px;gap:64px}
