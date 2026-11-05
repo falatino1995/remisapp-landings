@@ -720,3 +720,29 @@ body.mnav-open{overflow:hidden}
 @keyframes seqcard3{0%{opacity:0;transform:translateY(-14px) scale(.96)}5%,31.7%{opacity:1;transform:none}36.7%,100%{opacity:0;transform:translateY(-6px)}}
 @keyframes seqcard4{0%{opacity:0;transform:translateY(-14px) scale(.96)}3.75%,23.75%{opacity:1;transform:none}27.5%,100%{opacity:0;transform:translateY(-6px)}}
 .viewer.on-seq [role=tab][aria-selected="true"] em::after{animation-duration:var(--T,13s)}
+/* v6: el ultimo paso de cada secuencia queda 1.6 s mas antes de volver al primero */
+@keyframes os3{0%{opacity:0}4.15%,26.28%{opacity:1}30.43%,100%{opacity:0}}
+@keyframes os3l{0%{opacity:0}4.15%,43.3%{opacity:1}47.45%,100%{opacity:0}}
+@keyframes sc3{0%{opacity:0;transform:translateY(-14px) scale(.96)}4.15%,26.28%{opacity:1;transform:none}30.43%,100%{opacity:0;transform:translateY(-6px)}}
+@keyframes sc3l{0%{opacity:0;transform:translateY(-14px) scale(.96)}4.15%,43.3%{opacity:1;transform:none}47.45%,100%{opacity:0;transform:translateY(-6px)}}
+.viewer .phone .slide-seq.s3>img{animation-name:os3;animation-duration:9.4s}
+.viewer .phone .slide-seq.s3>img:last-child{animation-name:os3l}
+.viewer .phone .seq-cards.s3 .seq-card{animation-name:sc3;animation-duration:9.4s}
+.viewer .phone .seq-cards.s3 .seq-card:last-child{animation-name:sc3l}
+@keyframes os4{0%{opacity:0}3.25%,20.58%{opacity:1}23.83%,100%{opacity:0}}
+@keyframes os4l{0%{opacity:0}3.25%,33.92%{opacity:1}37.17%,100%{opacity:0}}
+@keyframes sc4{0%{opacity:0;transform:translateY(-14px) scale(.96)}3.25%,20.58%{opacity:1;transform:none}23.83%,100%{opacity:0;transform:translateY(-6px)}}
+@keyframes sc4l{0%{opacity:0;transform:translateY(-14px) scale(.96)}3.25%,33.92%{opacity:1;transform:none}37.17%,100%{opacity:0;transform:translateY(-6px)}}
+.viewer .phone .slide-seq.s4>img{animation-name:os4;animation-duration:12.0s}
+.viewer .phone .slide-seq.s4>img:last-child{animation-name:os4l}
+.viewer .phone .seq-cards.s4 .seq-card{animation-name:sc4;animation-duration:12.0s}
+.viewer .phone .seq-cards.s4 .seq-card:last-child{animation-name:sc4l}
+@keyframes os5{0%{opacity:0}2.67%,16.92%{opacity:1}19.59%,100%{opacity:0}}
+@keyframes os5l{0%{opacity:0}2.67%,27.88%{opacity:1}30.55%,100%{opacity:0}}
+@keyframes sc5{0%{opacity:0;transform:translateY(-14px) scale(.96)}2.67%,16.92%{opacity:1;transform:none}19.59%,100%{opacity:0;transform:translateY(-6px)}}
+@keyframes sc5l{0%{opacity:0;transform:translateY(-14px) scale(.96)}2.67%,27.88%{opacity:1;transform:none}30.55%,100%{opacity:0;transform:translateY(-6px)}}
+.viewer .phone .slide-seq.s5>img{animation-name:os5;animation-duration:14.6s}
+.viewer .phone .slide-seq.s5>img:last-child{animation-name:os5l}
+.viewer .phone .seq-cards.s5 .seq-card{animation-name:sc5;animation-duration:14.6s}
+.viewer .phone .seq-cards.s5 .seq-card:last-child{animation-name:sc5l}
+.viewer.on-seq [role=tab][aria-selected="true"] em::after{animation-duration:var(--T,14.6s)}
