@@ -795,3 +795,5 @@ body.mnav-open{overflow:hidden}
 .seq-cards .seq-card .av i,.seq-cards .seq-card.hot .av i,.seq-cards .seq-card.auto .av i{background:none;border-radius:0;width:28px;height:28px;box-shadow:none}
 .seq-cards .seq-card .av i img,.seq-cards .seq-card .av i svg{width:26px;height:26px}
 .seq-cards .seq-card .av i img{background:none;border-radius:0;object-fit:contain;height:26px}
+.seq-cards .seq-card .av i{width:36px;height:36px}
+.seq-cards .seq-card .av i img,.seq-cards .seq-card .av i svg{width:34px;height:34px}
