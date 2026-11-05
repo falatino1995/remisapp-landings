@@ -791,3 +791,7 @@ body.mnav-open{overflow:hidden}
 .who b{font-size:9px}
 .viewer .phone{width:min(290px,70vw,calc((100svh - 150px - 40px - 150px) * 780 / 1688))}
 .cast .who{border:0;padding:0;letter-spacing:0;text-transform:none;font-size:inherit}
+/* v9: iconos de los globos sueltos, sin el circulo de fondo */
+.seq-cards .seq-card .av i,.seq-cards .seq-card.hot .av i,.seq-cards .seq-card.auto .av i{background:none;border-radius:0;width:28px;height:28px;box-shadow:none}
+.seq-cards .seq-card .av i img,.seq-cards .seq-card .av i svg{width:26px;height:26px}
+.seq-cards .seq-card .av i img{background:none;border-radius:0;object-fit:contain;height:26px}
