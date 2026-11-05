@@ -710,3 +710,13 @@ body.mnav-open{overflow:hidden}
 .viewer .seq-cards:not(.on){opacity:0}
 .viewer.on-seq [role=tab][aria-selected="true"] em::after{animation:tabseq 13s linear infinite}
 .seq-cards .seq-card.bajo{top:auto;bottom:92px}
+/* v5: secuencias de 3 y 4 pasos (2,6 s por paso, como las de 5) */
+.slide-seq.seq3>img{animation-name:ofseq3;animation-duration:7.8s}
+.seq-cards.seq3 .seq-card{animation-name:seqcard3;animation-duration:7.8s}
+.slide-seq.seq4>img{animation-name:ofseq4;animation-duration:10.4s}
+.seq-cards.seq4 .seq-card{animation-name:seqcard4;animation-duration:10.4s}
+@keyframes ofseq3{0%{opacity:0}5%,31.7%{opacity:1}36.7%,100%{opacity:0}}
+@keyframes ofseq4{0%{opacity:0}3.75%,23.75%{opacity:1}27.5%,100%{opacity:0}}
+@keyframes seqcard3{0%{opacity:0;transform:translateY(-14px) scale(.96)}5%,31.7%{opacity:1;transform:none}36.7%,100%{opacity:0;transform:translateY(-6px)}}
+@keyframes seqcard4{0%{opacity:0;transform:translateY(-14px) scale(.96)}3.75%,23.75%{opacity:1;transform:none}27.5%,100%{opacity:0;transform:translateY(-6px)}}
+.viewer.on-seq [role=tab][aria-selected="true"] em::after{animation-duration:var(--T,13s)}
