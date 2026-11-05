@@ -705,3 +705,8 @@ body.mnav-open{overflow:hidden}
 .seq-cards .seq-card:nth-of-type(5){animation-delay:10.4s}
 .seq-txt b{font-size:14.5px}
 @media (prefers-reduced-motion: reduce){.seq-cards .seq-card:nth-of-type(1){opacity:1}}
+/* v4: cada secuencia tiene sus tarjetas; solo se ven las del slide activo,
+   y la barrita del boton avanza con cualquier secuencia. */
+.viewer .seq-cards:not(.on){opacity:0}
+.viewer.on-seq [role=tab][aria-selected="true"] em::after{animation:tabseq 13s linear infinite}
+.seq-cards .seq-card.bajo{top:auto;bottom:92px}
