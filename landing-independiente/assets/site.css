@@ -622,25 +622,68 @@ body.mnav-open{overflow:hidden}
    secuencia de 5 pasos de 2,6 s con su etiqueta arriba. */
 .track .slide{flex:0 0 100%;scroll-snap-align:start;scroll-snap-stop:always;position:relative;overflow:hidden;height:100%}
 .track .slide img{display:block;width:100%;height:auto;will-change:transform}
-.slide-seq img{position:absolute;inset:0;height:100%;object-fit:cover;object-position:top;opacity:0;animation:ofseq 13s infinite}
-.slide-seq img:first-child{opacity:1}
-.slide-seq img:nth-child(2),.slide-seq .seq-chip:nth-of-type(2){animation-delay:2.6s}
-.slide-seq img:nth-child(3),.slide-seq .seq-chip:nth-of-type(3){animation-delay:5.2s}
-.slide-seq img:nth-child(4),.slide-seq .seq-chip:nth-of-type(4){animation-delay:7.8s}
-.slide-seq img:nth-child(5),.slide-seq .seq-chip:nth-of-type(5){animation-delay:10.4s}
+.slide-seq>img{position:absolute;inset:0;height:100%;object-fit:cover;object-position:top;opacity:0;animation:ofseq 13s infinite}
+.slide-seq>img:first-child{opacity:1}
+.slide-seq>img:nth-child(2),.slide-seq .seq-chip:nth-of-type(2){animation-delay:2.6s}
+.slide-seq>img:nth-child(3),.slide-seq .seq-chip:nth-of-type(3){animation-delay:5.2s}
+.slide-seq>img:nth-child(4),.slide-seq .seq-chip:nth-of-type(4){animation-delay:7.8s}
+.slide-seq>img:nth-child(5),.slide-seq .seq-chip:nth-of-type(5){animation-delay:10.4s}
 @keyframes ofseq{0%{opacity:0}3%,19%{opacity:1}22%,100%{opacity:0}}
 .seq-chip{position:absolute;z-index:2;left:50%;top:12px;transform:translateX(-50%);white-space:nowrap;padding:6px 12px;border-radius:999px;background:var(--verde);color:var(--verde-ink);font-size:12px;font-weight:800;box-shadow:0 8px 20px rgba(0,0,0,.45);opacity:0;animation:ofseq 13s infinite}
 @media (prefers-reduced-motion:reduce){
-  .slide-seq img,.seq-chip{animation:none}
-  .slide-seq img:first-child,.slide-seq .seq-chip:nth-of-type(1){opacity:1}
+  .slide-seq>img,.seq-chip{animation:none}
+  .slide-seq>img:first-child,.slide-seq .seq-chip:nth-of-type(1){opacity:1}
   .track .slide{overflow-y:auto}
 }
 /* Las capturas largas no pueden estirar el celular: la pista va fuera del
    flujo y el celular mide lo que dice su proporcion. */
 .viewer .phone .track{position:absolute;inset:9px;width:auto;height:auto}
-.track .slide-seq img{height:100%}
+.track .slide-seq>img{height:100%}
 /* Recorrido del celular fijo: debajo del menu (64px) y de las pestanas de
    los dos lados, que tambien quedan fijas. */
 .phone-pin{position:relative;width:100%;display:flex;justify-content:center;align-items:flex-start}
 .phone-pin .phone{position:sticky;top:150px}
 @media (max-width:600px){.phone-pin .phone{top:140px}}
+/* Como funciona v2: botones en una fila con icono, como la barra de la app,
+   y una barrita que se llena mientras la pantalla baja. */
+.viewer-tabs{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;width:min(372px,100%);max-width:none;padding:6px;border-radius:22px;background:rgba(255,255,255,.03);border:1px solid var(--line)}
+.viewer-tabs button{position:relative;overflow:hidden;display:flex;flex-direction:column;align-items:center;gap:4px;min-width:0;padding:8px 2px 10px;border-radius:16px;border:1px solid transparent;background:transparent;font-size:12px;line-height:1.1;letter-spacing:-.01em}
+.viewer-tabs button img{width:30px;height:30px;transition:transform .2s;filter:saturate(.55) brightness(.85)}
+.viewer-tabs button .tav{border-radius:50%;background:#DDE8E1}
+.viewer-tabs button span{white-space:nowrap}
+.viewer-tabs button:hover{border-color:var(--line)}
+.viewer-tabs button[aria-selected="true"]{color:var(--text);background:var(--verde-soft);border-color:rgba(61,204,142,.45)}
+.viewer-tabs button[aria-selected="true"] img{transform:translateY(-1px) scale(1.12);filter:none}
+.viewer-tabs button em{position:absolute;left:14px;right:14px;bottom:4px;height:3px;border-radius:3px;background:rgba(255,255,255,.08);opacity:0}
+.viewer-tabs button em::after{content:"";position:absolute;inset:0;border-radius:inherit;background:var(--verde);transform-origin:left;transform:scaleX(var(--p,0))}
+.viewer-tabs button[aria-selected="true"] em{opacity:1}
+[aria-label="Pantallas de la app del chofer"] button[data-i="0"][aria-selected="true"] em::after{animation:tabseq 13s linear infinite}
+@keyframes tabseq{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+
+/* Cartel de cada paso del pedido: tarjeta como las del hero */
+.seq-card{position:absolute;z-index:2;left:8px;right:8px;top:10px;display:flex;opacity:0;animation:seqcard 13s infinite}
+.seq-card.hot{justify-content:flex-end}
+.seq-card-in{display:flex;align-items:center;gap:11px;max-width:100%;padding:9px 16px 9px 9px;border-radius:18px;background:#F4F6F1;color:#06150D;box-shadow:0 14px 32px rgba(0,0,0,.5)}
+.seq-card.hot .seq-card-in{padding:9px 9px 9px 16px;background:#06150D;color:#F4F6F1;border:1px solid rgba(61,204,142,.35);text-align:right}
+.seq-card .av{width:42px;height:42px}.seq-card .av>img{width:42px;height:42px}
+.seq-card .av i{width:24px;height:24px;right:-6px;bottom:-5px}.seq-card .av i img,.seq-card .av i svg{width:17px;height:17px}
+.seq-txt{display:flex;flex-direction:column;gap:3px;min-width:0}
+.seq-txt small{font-size:9.5px;font-weight:800;letter-spacing:.05em;text-transform:uppercase;color:#1d7a52}
+.seq-card.hot .seq-txt small{color:#39D78D}
+.seq-txt b{font-size:15px;font-weight:800;line-height:1.1;white-space:nowrap}
+.seq-dots{display:flex;gap:4px;margin-top:2px}
+.seq-card.hot .seq-dots{justify-content:flex-end}
+.seq-dots i{width:6px;height:6px;border-radius:3px;background:rgba(6,21,13,.18)}
+.seq-card.hot .seq-dots i{background:rgba(244,246,241,.2)}
+.seq-dots i.done{background:#1d9e66}.seq-card.hot .seq-dots i.done{background:#39D78D}
+.seq-dots i.on{width:18px;background:#1d9e66}.seq-card.hot .seq-dots i.on{background:#39D78D}
+.slide-seq .seq-card:nth-of-type(2){animation-delay:2.6s}
+.slide-seq .seq-card:nth-of-type(3){animation-delay:5.2s}
+.slide-seq .seq-card:nth-of-type(4){animation-delay:7.8s}
+.slide-seq .seq-card:nth-of-type(5){animation-delay:10.4s}
+@keyframes seqcard{0%{opacity:0;transform:translateY(-14px) scale(.96)}3%,19%{opacity:1;transform:none}22%,100%{opacity:0;transform:translateY(-6px)}}
+@media (prefers-reduced-motion: reduce){.seq-card{animation:none}.slide-seq .seq-card:nth-of-type(1){opacity:1}.viewer-tabs button em::after{animation:none!important}}
+.seq-txt b{white-space:normal}
+.seq-card{top:16px}
+@media (max-width:600px){.phone-pin .phone{top:164px}}
+.seq-card-in{width:max-content}
