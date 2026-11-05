@@ -746,3 +746,48 @@ body.mnav-open{overflow:hidden}
 .viewer .phone .seq-cards.s5 .seq-card{animation-name:sc5;animation-duration:14.6s}
 .viewer .phone .seq-cards.s5 .seq-card:last-child{animation-name:sc5l}
 .viewer.on-seq [role=tab][aria-selected="true"] em::after{animation-duration:var(--T,14.6s)}
+/* v8: caras fijas pegadas al celular por fuera; los carteles son globos que
+   salen de cada cara. */
+.phone-pin .pin-stick{gap:34px}
+.cast{position:absolute;inset:0;pointer-events:none;z-index:3}
+.who{position:absolute;display:flex;flex-direction:column;align-items:center;gap:3px;transition:opacity .25s,transform .25s;opacity:.45;transform:scale(.9)}
+.who img{width:46px;height:46px;border-radius:50%;background:#DDE8E1;box-shadow:0 0 0 2px rgba(255,255,255,.12),0 8px 18px rgba(0,0,0,.5)}
+.who b{font-size:10px;font-weight:800;letter-spacing:.04em;text-transform:uppercase;color:var(--muted);white-space:nowrap}
+.who-l{left:-52px;top:-8px}
+.who-m{right:-52px;bottom:-20px}
+.viewer[data-talk="l"] .who-l,.viewer[data-talk="m"] .who-m{opacity:1;transform:none}
+.viewer[data-talk="l"] .who-l img,.viewer[data-talk="m"] .who-m img{box-shadow:0 0 0 3px var(--verde),0 10px 22px rgba(0,0,0,.55)}
+.viewer[data-talk="l"] .who-l b,.viewer[data-talk="m"] .who-m b{color:var(--verde)}
+/* globos: sin la cara adentro (ya esta afuera), con el icono chico al lado */
+.seq-cards .seq-card .av{width:auto;height:auto;flex:0 0 auto}
+.seq-cards .seq-card .av>img{display:none}
+.seq-cards .seq-card .av i{position:static;width:30px;height:30px;box-shadow:none;background:#DDF5E9}
+.seq-cards .seq-card.hot .av i{background:rgba(61,204,142,.16)}
+.seq-cards .seq-card .av i img,.seq-cards .seq-card .av i svg{width:20px;height:20px}
+.seq-cards .seq-dots{display:none}
+.seq-cards .seq-card-in{position:relative;padding:9px 14px 9px 10px;gap:9px;max-width:min(236px,calc(100% - 6px))}
+.seq-cards .seq-card.hot .seq-card-in{padding:9px 10px 9px 14px}
+.seq-cards .seq-card{left:0;right:auto;top:-10px;bottom:auto}
+.seq-cards .seq-card.hot{left:auto;right:0;top:auto;bottom:-12px;justify-content:flex-end}
+.seq-cards .seq-card.auto{left:0;right:0;top:auto;bottom:-12px;justify-content:center}
+.seq-cards .seq-card.auto .seq-card-in{background:#0E1F16;color:#F4F6F1;border:1px solid rgba(61,204,142,.35)}
+.seq-cards .seq-card.auto small{color:#39D78D}
+/* colita del globo hacia la cara */
+.seq-cards .seq-card:not(.hot):not(.auto) .seq-card-in::before{content:"";position:absolute;left:-7px;top:14px;border:7px solid transparent;border-right-color:#F4F6F1;border-left:0}
+.seq-cards .seq-card.hot .seq-card-in::before{content:"";position:absolute;right:-7px;bottom:14px;border:7px solid transparent;border-left-color:#06150D;border-right:0}
+.seq-txt b{font-size:14px}
+@media (max-width:380px){.who img{width:40px;height:40px}.who-l{left:-46px}.who-m{right:-46px}}
+.viewer .phone{width:min(290px,70vw,calc((100svh - 150px - 30px - 130px) * 780 / 1688))}
+/* v8b: globos mas afuera del celular para no tapar la app */
+.phone-pin .pin-stick{gap:52px;padding-top:40px}
+.who-l{top:-30px}
+.who-m{bottom:-40px}
+.seq-cards .seq-card{top:-34px}
+.seq-cards .seq-card.hot{bottom:-42px}
+.seq-cards .seq-card.auto{bottom:-42px}
+.seq-cards .seq-card.auto .seq-card-in{background:#3DCC8E;color:#06150D;border:0;box-shadow:0 14px 32px rgba(0,0,0,.55)}
+.seq-cards .seq-card.auto small{color:#0B4A2C}
+.seq-cards .seq-card.auto .av i{background:#F4F6F1}
+.who b{font-size:9px}
+.viewer .phone{width:min(290px,70vw,calc((100svh - 150px - 40px - 150px) * 780 / 1688))}
+.cast .who{border:0;padding:0;letter-spacing:0;text-transform:none;font-size:inherit}
