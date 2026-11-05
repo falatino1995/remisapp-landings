@@ -687,3 +687,21 @@ body.mnav-open{overflow:hidden}
 .seq-card{top:16px}
 @media (max-width:600px){.phone-pin .phone{top:164px}}
 .seq-card-in{width:max-content}
+/* v3: el celular y sus botones quedan fijos juntos (al subir ya no se
+   separan), y el celular se achica si la pantalla es baja. */
+.phone-pin .pin-stick{position:sticky;top:150px;display:flex;flex-direction:column;align-items:center;gap:14px;padding-top:30px;width:100%}
+.phone-pin .phone{position:relative;top:auto}
+.viewer .phone{width:min(300px,74vw,calc((100svh - 150px - 30px - 110px) * 780 / 1688))}
+@media (max-width:600px){.phone-pin .phone{top:auto}.phone-pin .pin-stick{top:150px}}
+/* Tarjetas del pedido afuera de la pantalla: pasajera arriba a la
+   izquierda, chofer arriba a la derecha, colgando del marco. */
+.seq-cards{position:absolute;inset:0;pointer-events:none;transition:opacity .2s}
+.viewer:not(.on-seq) .seq-cards{opacity:0}
+.seq-cards .seq-card{top:-30px;left:-34px;right:auto;max-width:calc(100% + 20px)}
+.seq-cards .seq-card.hot{left:auto;right:-34px}
+.seq-cards .seq-card:nth-of-type(2){animation-delay:2.6s}
+.seq-cards .seq-card:nth-of-type(3){animation-delay:5.2s}
+.seq-cards .seq-card:nth-of-type(4){animation-delay:7.8s}
+.seq-cards .seq-card:nth-of-type(5){animation-delay:10.4s}
+.seq-txt b{font-size:14.5px}
+@media (prefers-reduced-motion: reduce){.seq-cards .seq-card:nth-of-type(1){opacity:1}}
