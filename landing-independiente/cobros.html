@@ -19,7 +19,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..100,400..800&display=swap">
-<link rel="stylesheet" href="/assets/site.css?v=20261106a">
+<link rel="stylesheet" href="/assets/site.css?v=20261106b">
 <script src="/assets/analytics.js"></script>
 <script src="/assets/nav.js" defer></script>
 </head>
@@ -38,22 +38,31 @@
 <nav class="mnav" id="mnav" aria-label="Menú" hidden><div class="mnav-group"><span class="mnav-h">Producto</span><a href="/tu-app">Para vos</a><a href="/para-tus-pasajeros">Para tus pasajeros</a></div><div class="mnav-group"><span class="mnav-h">En detalle</span><a href="/precio">Tu precio</a><a href="/cobros">Cobros</a><a href="/agenda">Reservas y agenda</a><a href="/notificaciones">Notificaciones</a><a href="/compartir">Link, QR y carteles</a></div><div class="mnav-group"><a href="/guias">Guías</a><a href="/#beta">Beta</a><a href="/#preguntas">Preguntas</a></div><div class="mnav-cta"><a class="btn btn-ghost" href="https://app.remisapp.info/p/chofer/login">Iniciar sesión</a><a class="btn btn-primary" href="https://app.remisapp.info/empezar?kind=independiente">Empezá gratis</a></div></nav>
 
 <main>
-<section class="sub-hero">
+<section class="sub-hero sub-hero-v2">
   <div class="wrap">
     <p class="crumbs"><a href="/">Inicio</a> / <a href="/tu-app">Para vos</a> / Cobros</p>
-    <h1>Cobrás <em>vos</em></h1>
-    <p class="lead">Efectivo, transferencia a tu alias o Mercado Pago. La plata va directo a vos y RemisApp no se queda con nada.</p>
+    <span class="beta-chip"><b>Fase beta</b> Gratis y sin límite de uso</span>
+    <h1>Cobrás vos. <em>Directo.</em></h1>
+    <p class="lead">Efectivo, transferencia a tu alias o Mercado Pago. La plata va a tu cuenta.</p>
     <div class="hero-actions">
       <a class="btn btn-primary" href="https://app.remisapp.info/empezar?kind=independiente">Creá tu cuenta gratis</a>
     </div>
   </div>
 </section>
 
-<section class="feats">
+<section class="solo-viewer topic-viewer">
   <div class="wrap">
-    <div class="feat"><div class="phone"><img src="/assets/screens/pagina-publica-pedido.webp" alt="Formulario de pedido con la opción Cómo vas a pagar" width="780" height="1688" loading="lazy"></div><div><h2>Sabés cómo te <em>van a pagar.</em></h2><p>Cuando el pasajero pide el viaje, indica cómo va a pagar. Así sabés de antemano si tenés que tener cambio o esperar una transferencia.</p><ul class="checks"><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span><strong>Efectivo.</strong> Como siempre.</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span><strong>Alias.</strong> Te transfiere directo a tu cuenta.</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span><strong>Mercado Pago.</strong> Le mandás el link de pago al terminar.</span></li></ul></div></div>
-    <div class="feat"><div class="phone"><img src="/assets/screens/app-perfil.webp" alt="Perfil del chofer con la opción para conectar Mercado Pago" width="780" height="1688" loading="lazy"></div><div><h2>Mercado Pago, <em>una sola vez.</em></h2><p>Desde Perfil conectás tu cuenta de Mercado Pago. RemisApp no ve tu clave: solo queda habilitado para generar cobros a tu nombre.</p><ul class="checks"><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span><strong>¿No lo querés conectar?</strong> Cargás tu alias y cobrás por transferencia.</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span><strong>No es obligatorio.</strong> Podés trabajar solo con efectivo.</span></li></ul></div></div>
-    <div class="feat feat--solo"><div><h2>Terminás el viaje <em>y listo.</em></h2><p>Al llegar tocás “Finalizar viaje” si ya cobraste, o “Cobrar con Mercado Pago” y al pasajero le llega el link de pago.</p><ul class="checks"><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span><strong>Ves el estado del pago.</strong> Acreditado, pendiente o rechazado, en el mismo viaje.</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span><strong>La plata va a tu cuenta.</strong> No pasa por RemisApp.</span></li></ul><p class="note"><span><strong>Ojo:</strong> Mercado Pago cobra su propia comisión por cada cobro, como siempre. RemisApp no suma nada encima.</span></p></div></div>
+    <div class="viewer on-seq" data-viewer>
+          <div class="phone-pin"><div class="pin-stick"><div class="phone"><div class="cast" aria-hidden="true"><span class="who who-l"><img src="assets/objetos/av-lucia.webp" alt="" width="112" height="112"><b>Pasajera</b></span><span class="who who-m"><img src="assets/objetos/av-martin.webp" alt="" width="112" height="112"><b>Vos</b></span></div><div class="track" tabindex="0" aria-label="Cómo te pagan"><div class="slide slide-seq s3 seq3" data-steps="3" data-cap="Al pedir elige cómo te paga, sabe el precio desde antes y al llegar ve el total."><img src="assets/app/y03-pagos.webp" alt="La pasajera elige pagar en efectivo o con Mercado Pago" width="600" height="1298"><img src="assets/app/q04-precio.webp" alt="La pasajera ve el precio del chofer antes de aceptar" width="600" height="1298" loading="lazy"><img src="assets/app/v05-terminado.webp" alt="Viaje terminado con el total a pagar" width="600" height="1298" loading="lazy"></div></div><div class="seq-cards s3 seq3 on" data-slide="0" aria-hidden="true"><div class="seq-card"><span class="seq-card-in"><span class="av"><i><img src="assets/illustrations/3d_v1/ic-credit-card.webp" alt="" width="56" height="56"></i></span><span class="seq-txt"><small>Paso 1</small><b>Elige cómo te paga</b></span></span></div><div class="seq-card"><span class="seq-card-in"><span class="av"><i><svg viewBox="0 0 24 24" fill="none" stroke="#1d9e66" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></i></span><span class="seq-txt"><small>Paso 2</small><b>Sabe el precio desde antes</b></span></span></div><div class="seq-card"><span class="seq-card-in"><span class="av"><i><img src="assets/illustrations/3d_v1/ic-cash-bill.webp" alt="" width="56" height="56"></i></span><span class="seq-txt"><small>Paso 3</small><b>Llega y ve el total</b></span></span></div></div></div>
+          </div></div>
+          <p class="viewer-cap" aria-live="polite">Al pedir elige cómo te paga, sabe el precio desde antes y al llegar ve el total.</p>
+        </div>
+  </div>
+</section>
+
+<section class="wins-sec">
+  <div class="wrap">
+    <div class="wins"><div class="win"><img src="assets/illustrations/3d_v1/ic-cash-bill.webp" alt="" width="56" height="56" loading="lazy"><b>Efectivo</b><span>Como siempre.</span></div><div class="win"><img src="assets/illustrations/3d_v1/ic-credit-card.webp" alt="" width="56" height="56" loading="lazy"><b>Alias</b><span>Te transfiere directo a tu cuenta.</span></div><div class="win"><img src="assets/illustrations/3d_v1/ic-money-bag.webp" alt="" width="56" height="56" loading="lazy"><b>Mercado Pago</b><span>Le llega el link de pago al terminar. Mercado Pago cobra su comisión aparte.</span></div><div class="win"><img src="assets/illustrations/3d_v1/ic-chart.webp" alt="" width="56" height="56" loading="lazy"><b>Ves el estado del pago</b><span>Acreditado, pendiente o rechazado, en el mismo viaje.</span></div></div>
   </div>
 </section>
 
@@ -91,6 +100,109 @@
   </div>
 </section>
 </main>
+<script>
+(function(){
+  document.querySelectorAll('[data-viewer]').forEach(function(v){
+    var track = v.querySelector('.track');
+    var tabs = v.querySelectorAll('[role=tab]');
+    var slides = track.querySelectorAll('.slide');
+    var cap = v.querySelector('.viewer-cap');
+    var current = 0;
+    var ticking = false;
+    function mark(i){
+      if (i === current) return;
+      current = i;
+      tabs.forEach(function(t, j){ t.setAttribute('aria-selected', j === i ? 'true' : 'false'); });
+      cap.textContent = slides[i].getAttribute('data-cap');
+      v.classList.toggle('on-seq', slides[i].classList.contains('slide-seq'));
+      v.querySelectorAll('.seq-cards').forEach(function(cs){ cs.classList.toggle('on', cs.getAttribute('data-slide') === String(i)); });
+      if (slides[i].classList.contains('slide-seq')) {
+        var set = v.querySelector('.seq-cards[data-slide="' + i + '"]');
+        tabs[i].style.setProperty('--T', (Number(slides[i].getAttribute('data-steps') || 5) * 2.6 + 1.6) + 's');
+        [slides[i], set, tabs[i]].forEach(function(el){
+          if (el && el.getAnimations) el.getAnimations({ subtree: true }).forEach(function(a){ a.currentTime = 0; });
+        });
+      }
+      sizePin();
+      scrollScreen();
+    }
+    // La captura activa es mas larga que el celular: el celular queda fijo
+    // (sticky) dentro de .phone-pin y la pantalla baja mientras se scrollea
+    // ese recorrido; despues la pagina sigue. El recorrido es lo que la
+    // captura sobra del celular.
+    var pin = v.querySelector('.phone-pin');
+    var phone = pin.querySelector('.pin-stick');
+    var reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+    function overflowOf(sl){
+      var img = sl.classList.contains('slide-seq') ? null : sl.querySelector('img');
+      return img ? Math.max(0, img.offsetHeight - sl.clientHeight) : 0;
+    }
+    function sizePin(){
+      if (reduce) return;
+      pin.style.height = (phone.offsetHeight + overflowOf(slides[current]) * 1.25) + 'px';
+    }
+    function scrollScreen(){
+      ticking = false;
+      if (reduce) return;
+      var top = parseFloat(getComputedStyle(phone).top) || 0;
+      var r = pin.getBoundingClientRect();
+      var run = r.height - phone.offsetHeight;
+      var p = run > 0 ? Math.max(0, Math.min(1, (top - r.top) / run)) : 0;
+      slides.forEach(function(sl, j){
+        var img = sl.classList.contains('slide-seq') ? null : sl.querySelector('img');
+        if (img) img.style.transform = 'translateY(' + (j === current ? -overflowOf(sl) * p : 0) + 'px)';
+      });
+      if (!slides[current].classList.contains('slide-seq')) tabs[current].style.setProperty('--p', p.toFixed(3));
+    }
+    tabs.forEach(function(t, i){
+      t.addEventListener('click', function(){
+        track.scrollTo({ left: i * track.clientWidth, behavior: 'smooth' }); mark(i);
+        // que se vea el celular entero, con los globos de arriba y abajo
+        var stick = pin.querySelector('.pin-stick'), r = stick.getBoundingClientRect(), top = parseFloat(getComputedStyle(stick).top) || 80;
+        if (r.top < top - 4 || r.bottom > innerHeight + 4) window.scrollTo({ top: r.top + scrollY - top, behavior: reduce ? 'auto' : 'smooth' });
+      });
+    });
+    track.addEventListener('scroll', function(){ mark(Math.round(track.scrollLeft / track.clientWidth)); }, { passive: true });
+    track.addEventListener('keydown', function(e){
+      var d = e.key === 'ArrowRight' ? 1 : e.key === 'ArrowLeft' ? -1 : 0;
+      if (!d) return;
+      e.preventDefault();
+      var i = Math.max(0, Math.min(slides.length - 1, current + d));
+      track.scrollTo({ left: i * track.clientWidth, behavior: 'smooth' }); mark(i);
+    });
+    if (!reduce) {
+      window.addEventListener('scroll', function(){ if (!ticking) { ticking = true; requestAnimationFrame(scrollScreen); } }, { passive: true });
+      window.addEventListener('resize', function(){ sizePin(); scrollScreen(); });
+      track.querySelectorAll('img').forEach(function(img){ img.addEventListener('load', function(){ sizePin(); scrollScreen(); }); });
+      sizePin();
+      scrollScreen();
+    }
+  });
+
+  // Quien habla: la cara del que tiene el globo visible se ilumina
+  var casts = document.querySelectorAll('[data-viewer]');
+  function talk(){
+    var hand = document.querySelector('.hand');
+    if (hand) {
+      var hw = '';
+      hand.querySelectorAll('.push').forEach(function(c){ if (parseFloat(getComputedStyle(c).opacity) > 0.5) hw = c.classList.contains('hot') ? 'm' : 'l'; });
+      hand.setAttribute('data-talk', hw);
+    }
+    casts.forEach(function(v){
+      var set = v.querySelector('.seq-cards.on');
+      var who = '';
+      if (set) set.querySelectorAll('.seq-card').forEach(function(c){
+        if (parseFloat(getComputedStyle(c).opacity) > 0.5) who = c.classList.contains('auto') ? 'auto' : (c.classList.contains('hot') ? 'm' : 'l');
+      });
+      v.setAttribute('data-talk', who);
+    });
+  }
+  if (!matchMedia('(prefers-reduced-motion: reduce)').matches) setInterval(talk, 150);
+  talk();
+
+})();
+</script>
+
 
 <footer>
   <div class="wrap">

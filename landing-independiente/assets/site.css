@@ -871,3 +871,7 @@ body.mnav-open{overflow:hidden}
   .related-grid.det .who{display:none}
 }
 .sv-title{margin-bottom:34px}
+/* paginas de tema: el visor arranca enseguida despues del hero */
+.topic-viewer{padding-top:8px}
+.wins .win:only-child{grid-column:1/-1}
+.topic-viewer .phone-pin .pin-stick{padding-bottom:70px}

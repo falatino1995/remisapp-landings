@@ -19,7 +19,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..100,400..800&display=swap">
-<link rel="stylesheet" href="/assets/site.css?v=20261106a">
+<link rel="stylesheet" href="/assets/site.css?v=20261106b">
 <script src="/assets/analytics.js"></script>
 <script src="/assets/nav.js" defer></script>
 </head>
@@ -38,22 +38,31 @@
 <nav class="mnav" id="mnav" aria-label="Menú" hidden><div class="mnav-group"><span class="mnav-h">Producto</span><a href="/tu-app">Para vos</a><a href="/para-tus-pasajeros">Para tus pasajeros</a></div><div class="mnav-group"><span class="mnav-h">En detalle</span><a href="/precio">Tu precio</a><a href="/cobros">Cobros</a><a href="/agenda">Reservas y agenda</a><a href="/notificaciones">Notificaciones</a><a href="/compartir">Link, QR y carteles</a></div><div class="mnav-group"><a href="/guias">Guías</a><a href="/#beta">Beta</a><a href="/#preguntas">Preguntas</a></div><div class="mnav-cta"><a class="btn btn-ghost" href="https://app.remisapp.info/p/chofer/login">Iniciar sesión</a><a class="btn btn-primary" href="https://app.remisapp.info/empezar?kind=independiente">Empezá gratis</a></div></nav>
 
 <main>
-<section class="sub-hero">
+<section class="sub-hero sub-hero-v2">
   <div class="wrap">
     <p class="crumbs"><a href="/">Inicio</a> / <a href="/tu-app">Para vos</a> / Notificaciones</p>
-    <h1>Que no se te <em>pase ninguno</em></h1>
-    <p class="lead">Un pedido nuevo te da 2 minutos para responder. Por eso la app te avisa aunque tengas el celular bloqueado.</p>
+    <span class="beta-chip"><b>Fase beta</b> Gratis y sin límite de uso</span>
+    <h1>Que no se te pase <em>ninguno.</em></h1>
+    <p class="lead">Un pedido nuevo te da 2 minutos para responder: la app te avisa aunque tengas el celular bloqueado.</p>
     <div class="hero-actions">
       <a class="btn btn-primary" href="https://app.remisapp.info/empezar?kind=independiente">Creá tu cuenta gratis</a>
     </div>
   </div>
 </section>
 
-<section class="feats">
+<section class="solo-viewer topic-viewer">
   <div class="wrap">
-    <div class="feat"><div class="phone"><img src="/assets/screens/app-nueva-oferta.webp" alt="Pedido nuevo en la app del chofer" width="780" height="1688" loading="lazy"></div><div><h2>Suena como <em>cualquier mensaje.</em></h2><p>Con la app Android te suena el celular cuando entra un pedido, aunque la tengas cerrada. Tocás la notificación y se abre la app.</p><p class="note"><span><strong>App Android:</strong> está en prueba cerrada en Google Play. <a href="/#beta">Pedí acceso</a>.</span></p></div></div>
-    <div class="feat"><div class="phone"><img src="/assets/screens/guia-instalar-app.webp" alt="Ventana de Android para instalar la app desde el navegador" width="480" height="1067" loading="lazy"></div><div><h2>¿Desde el navegador? <em>Guardala como app.</em></h2><p>Si usás la app desde el navegador, guardala en la pantalla de inicio: te queda un ícono propio, como cualquier otra app. La misma app te guía paso a paso.</p><ul class="checks"><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span><strong>En iPhone es obligatorio.</strong> Las notificaciones solo funcionan si la guardás en la pantalla de inicio.</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span><strong>No ocupa espacio.</strong> Es un acceso directo.</span></li></ul></div></div>
-    <div class="feat"><div class="phone"><img src="/assets/screens/guia-permitir-alertas.webp" alt="Ventana de Android para permitir notificaciones" width="480" height="1067" loading="lazy"></div><div><h2>Activá las alertas <em>una vez.</em></h2><p>La primera vez el celular te pregunta si permitís las notificaciones. Tocá “Permitir” y listo: desde ahí te avisa de cada pedido nuevo.</p><ul class="checks"><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span><strong>¿Le dijiste que no sin querer?</strong> Lo cambiás desde los ajustes del celular, en Notificaciones.</span></li></ul></div></div>
+    <div class="viewer on-seq" data-viewer>
+          <div class="phone-pin"><div class="pin-stick"><div class="phone"><div class="cast" aria-hidden="true"><span class="who who-l"><img src="assets/objetos/av-lucia.webp" alt="" width="112" height="112"><b>Pasajera</b></span><span class="who who-m"><img src="assets/objetos/av-martin.webp" alt="" width="112" height="112"><b>Vos</b></span></div><div class="track" tabindex="0" aria-label="Cómo te avisa"><div class="slide slide-seq s3 seq3" data-steps="3" data-cap="Te suena el pedido; si usás el navegador, la guardás como app y permitís las alertas una vez."><img src="assets/app/of-1.webp" alt="Pedido nuevo en la app del chofer" width="600" height="1298"><img src="assets/screens/guia-instalar-app.webp" alt="Guía para guardar la app en la pantalla de inicio" width="600" height="1298" loading="lazy"><img src="assets/screens/guia-permitir-alertas.webp" alt="El celular pregunta si permitís las notificaciones" width="600" height="1298" loading="lazy"></div></div><div class="seq-cards s3 seq3 on" data-slide="0" aria-hidden="true"><div class="seq-card hot"><span class="seq-card-in"><span class="seq-txt"><small>Paso 1</small><b>Te suena el pedido</b></span><span class="av"><i><img src="assets/illustrations/3d_v1/ic-bell-notifications.webp" alt="" width="56" height="56"></i></span></span></div><div class="seq-card hot"><span class="seq-card-in"><span class="seq-txt"><small>Paso 2</small><b>¿Desde el navegador? Guardala como app</b></span><span class="av"><i><img src="assets/illustrations/3d_v1/ic-paper-plane.webp" alt="" width="56" height="56"></i></span></span></div><div class="seq-card hot"><span class="seq-card-in"><span class="seq-txt"><small>Paso 3</small><b>Permitís las alertas una vez</b></span><span class="av"><i><svg viewBox="0 0 24 24" fill="none" stroke="#1d9e66" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></i></span></span></div></div></div>
+          </div></div>
+          <p class="viewer-cap" aria-live="polite">Te suena el pedido; si usás el navegador, la guardás como app y permitís las alertas una vez.</p>
+        </div>
+  </div>
+</section>
+
+<section class="wins-sec">
+  <div class="wrap">
+    <div class="wins"><div class="win"><img src="assets/illustrations/3d_v1/ic-bell-notifications.webp" alt="" width="56" height="56" loading="lazy"><b>Con la app cerrada</b><span>Con la app Android te suena como cualquier mensaje.</span></div><div class="win"><img src="assets/illustrations/3d_v1/ic-paper-plane.webp" alt="" width="56" height="56" loading="lazy"><b>En iPhone, guardala</b><span>Las alertas solo andan si está en la pantalla de inicio.</span></div><div class="win"><img src="assets/illustrations/3d_v1/ic-clock-waiting.webp" alt="" width="56" height="56" loading="lazy"><b>Si no llegás</b><span>El pedido vence y seguís recibiendo los siguientes.</span></div></div>
   </div>
 </section>
 
@@ -91,6 +100,109 @@
   </div>
 </section>
 </main>
+<script>
+(function(){
+  document.querySelectorAll('[data-viewer]').forEach(function(v){
+    var track = v.querySelector('.track');
+    var tabs = v.querySelectorAll('[role=tab]');
+    var slides = track.querySelectorAll('.slide');
+    var cap = v.querySelector('.viewer-cap');
+    var current = 0;
+    var ticking = false;
+    function mark(i){
+      if (i === current) return;
+      current = i;
+      tabs.forEach(function(t, j){ t.setAttribute('aria-selected', j === i ? 'true' : 'false'); });
+      cap.textContent = slides[i].getAttribute('data-cap');
+      v.classList.toggle('on-seq', slides[i].classList.contains('slide-seq'));
+      v.querySelectorAll('.seq-cards').forEach(function(cs){ cs.classList.toggle('on', cs.getAttribute('data-slide') === String(i)); });
+      if (slides[i].classList.contains('slide-seq')) {
+        var set = v.querySelector('.seq-cards[data-slide="' + i + '"]');
+        tabs[i].style.setProperty('--T', (Number(slides[i].getAttribute('data-steps') || 5) * 2.6 + 1.6) + 's');
+        [slides[i], set, tabs[i]].forEach(function(el){
+          if (el && el.getAnimations) el.getAnimations({ subtree: true }).forEach(function(a){ a.currentTime = 0; });
+        });
+      }
+      sizePin();
+      scrollScreen();
+    }
+    // La captura activa es mas larga que el celular: el celular queda fijo
+    // (sticky) dentro de .phone-pin y la pantalla baja mientras se scrollea
+    // ese recorrido; despues la pagina sigue. El recorrido es lo que la
+    // captura sobra del celular.
+    var pin = v.querySelector('.phone-pin');
+    var phone = pin.querySelector('.pin-stick');
+    var reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+    function overflowOf(sl){
+      var img = sl.classList.contains('slide-seq') ? null : sl.querySelector('img');
+      return img ? Math.max(0, img.offsetHeight - sl.clientHeight) : 0;
+    }
+    function sizePin(){
+      if (reduce) return;
+      pin.style.height = (phone.offsetHeight + overflowOf(slides[current]) * 1.25) + 'px';
+    }
+    function scrollScreen(){
+      ticking = false;
+      if (reduce) return;
+      var top = parseFloat(getComputedStyle(phone).top) || 0;
+      var r = pin.getBoundingClientRect();
+      var run = r.height - phone.offsetHeight;
+      var p = run > 0 ? Math.max(0, Math.min(1, (top - r.top) / run)) : 0;
+      slides.forEach(function(sl, j){
+        var img = sl.classList.contains('slide-seq') ? null : sl.querySelector('img');
+        if (img) img.style.transform = 'translateY(' + (j === current ? -overflowOf(sl) * p : 0) + 'px)';
+      });
+      if (!slides[current].classList.contains('slide-seq')) tabs[current].style.setProperty('--p', p.toFixed(3));
+    }
+    tabs.forEach(function(t, i){
+      t.addEventListener('click', function(){
+        track.scrollTo({ left: i * track.clientWidth, behavior: 'smooth' }); mark(i);
+        // que se vea el celular entero, con los globos de arriba y abajo
+        var stick = pin.querySelector('.pin-stick'), r = stick.getBoundingClientRect(), top = parseFloat(getComputedStyle(stick).top) || 80;
+        if (r.top < top - 4 || r.bottom > innerHeight + 4) window.scrollTo({ top: r.top + scrollY - top, behavior: reduce ? 'auto' : 'smooth' });
+      });
+    });
+    track.addEventListener('scroll', function(){ mark(Math.round(track.scrollLeft / track.clientWidth)); }, { passive: true });
+    track.addEventListener('keydown', function(e){
+      var d = e.key === 'ArrowRight' ? 1 : e.key === 'ArrowLeft' ? -1 : 0;
+      if (!d) return;
+      e.preventDefault();
+      var i = Math.max(0, Math.min(slides.length - 1, current + d));
+      track.scrollTo({ left: i * track.clientWidth, behavior: 'smooth' }); mark(i);
+    });
+    if (!reduce) {
+      window.addEventListener('scroll', function(){ if (!ticking) { ticking = true; requestAnimationFrame(scrollScreen); } }, { passive: true });
+      window.addEventListener('resize', function(){ sizePin(); scrollScreen(); });
+      track.querySelectorAll('img').forEach(function(img){ img.addEventListener('load', function(){ sizePin(); scrollScreen(); }); });
+      sizePin();
+      scrollScreen();
+    }
+  });
+
+  // Quien habla: la cara del que tiene el globo visible se ilumina
+  var casts = document.querySelectorAll('[data-viewer]');
+  function talk(){
+    var hand = document.querySelector('.hand');
+    if (hand) {
+      var hw = '';
+      hand.querySelectorAll('.push').forEach(function(c){ if (parseFloat(getComputedStyle(c).opacity) > 0.5) hw = c.classList.contains('hot') ? 'm' : 'l'; });
+      hand.setAttribute('data-talk', hw);
+    }
+    casts.forEach(function(v){
+      var set = v.querySelector('.seq-cards.on');
+      var who = '';
+      if (set) set.querySelectorAll('.seq-card').forEach(function(c){
+        if (parseFloat(getComputedStyle(c).opacity) > 0.5) who = c.classList.contains('auto') ? 'auto' : (c.classList.contains('hot') ? 'm' : 'l');
+      });
+      v.setAttribute('data-talk', who);
+    });
+  }
+  if (!matchMedia('(prefers-reduced-motion: reduce)').matches) setInterval(talk, 150);
+  talk();
+
+})();
+</script>
+
 
 <footer>
   <div class="wrap">

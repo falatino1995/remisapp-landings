@@ -19,7 +19,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..100,400..800&display=swap">
-<link rel="stylesheet" href="/assets/site.css?v=20261106a">
+<link rel="stylesheet" href="/assets/site.css?v=20261106b">
 <script src="/assets/analytics.js"></script>
 <script src="/assets/nav.js" defer></script>
 </head>
@@ -38,22 +38,31 @@
 <nav class="mnav" id="mnav" aria-label="Menú" hidden><div class="mnav-group"><span class="mnav-h">Producto</span><a href="/tu-app">Para vos</a><a href="/para-tus-pasajeros">Para tus pasajeros</a></div><div class="mnav-group"><span class="mnav-h">En detalle</span><a href="/precio">Tu precio</a><a href="/cobros">Cobros</a><a href="/agenda">Reservas y agenda</a><a href="/notificaciones">Notificaciones</a><a href="/compartir">Link, QR y carteles</a></div><div class="mnav-group"><a href="/guias">Guías</a><a href="/#beta">Beta</a><a href="/#preguntas">Preguntas</a></div><div class="mnav-cta"><a class="btn btn-ghost" href="https://app.remisapp.info/p/chofer/login">Iniciar sesión</a><a class="btn btn-primary" href="https://app.remisapp.info/empezar?kind=independiente">Empezá gratis</a></div></nav>
 
 <main>
-<section class="sub-hero">
+<section class="sub-hero sub-hero-v2">
   <div class="wrap">
     <p class="crumbs"><a href="/">Inicio</a> / <a href="/tu-app">Para vos</a> / Reservas y agenda</p>
-    <h1>Reservas <em>y agenda</em></h1>
-    <p class="lead">Tus pasajeros te reservan viajes para otro día y te quedan ordenados en la app, con aviso antes de cada uno.</p>
+    <span class="beta-chip"><b>Fase beta</b> Gratis y sin límite de uso</span>
+    <h1>Reservas <em>para otro día.</em></h1>
+    <p class="lead">Te reservan para mañana o el día que quieran y te queda todo ordenado, con aviso antes.</p>
     <div class="hero-actions">
       <a class="btn btn-primary" href="https://app.remisapp.info/empezar?kind=independiente">Creá tu cuenta gratis</a>
     </div>
   </div>
 </section>
 
-<section class="feats">
+<section class="solo-viewer topic-viewer">
   <div class="wrap">
-    <div class="feat"><div class="phone"><img src="/assets/screens/pagina-publica-pedido.webp" alt="Formulario de pedido con las opciones Ahora y Programado" width="780" height="1688" loading="lazy"></div><div><h2>Ahora <em>o para otro día.</em></h2><p>Al pedir, el pasajero elige si el viaje es para ahora o lo programa para otro día y hora. A vos te llega como un pedido más y lo aceptás con tu precio.</p><ul class="checks"><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span><strong>El aeropuerto del viernes,</strong> el colegio de todas las mañanas, el turno del médico.</span></li></ul></div></div>
-    <div class="feat"><div class="phone"><img src="/assets/screens/app-agenda.webp" alt="Agenda del chofer con el calendario y las próximas reservas" width="780" height="1688" loading="lazy"></div><div><h2>Tu calendario <em>de viajes.</em></h2><p>En Agenda ves los viajes de cada día, lo que te queda pendiente hoy y las próximas reservas.</p><ul class="checks"><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span><strong>Te recordamos cada reserva.</strong> Antes de la hora, para que no se te pase.</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span><strong>No te molesta de madrugada.</strong> Los recordatorios no suenan entre la 1 y las 6 de la mañana.</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span><strong>Lo pasás a tu calendario.</strong> Te suscribís desde Google Calendar o el del iPhone.</span></li></ul></div></div>
-    <div class="feat"><div class="phone"><img src="/assets/screens/pasajero-reservas.webp" alt="Reservas del pasajero con las opciones Reprogramar y Cancelar viaje" width="780" height="1688" loading="lazy"></div><div><h2>El pasajero también <em>tiene su agenda.</em></h2><p>Ve sus reservas con el recorrido, el precio y vos como chofer. Si se le complica, la reprograma o la cancela desde ahí y a vos te llega el aviso.</p><ul class="checks"><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span><strong>A él también le llega un recordatorio.</strong> Antes de cada viaje.</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span><strong>Te escribe desde la reserva.</strong> Por chat, WhatsApp o llamada.</span></li></ul></div></div>
+    <div class="viewer on-seq" data-viewer>
+          <div class="phone-pin"><div class="pin-stick"><div class="phone"><div class="cast" aria-hidden="true"><span class="who who-l"><img src="assets/objetos/av-lucia.webp" alt="" width="112" height="112"><b>Pasajera</b></span><span class="who who-m"><img src="assets/objetos/av-martin.webp" alt="" width="112" height="112"><b>Vos</b></span></div><div class="track" tabindex="0" aria-label="Cómo te llega una reserva"><div class="slide slide-seq s5" data-steps="5" data-cap="Te piden para mañana o el día que quieran: queda en tu agenda y una hora antes la app les avisa a vos y a tu pasajera."><img src="assets/app/ag-1.webp" alt="Lucía programa un viaje para mañana a las 06:30 desde la web del chofer" width="600" height="1298" loading="lazy"><img src="assets/app/ag-2.webp" alt="Al chofer le entra la reserva programada para mañana, con el precio para proponer" width="600" height="1298" loading="lazy"><img src="assets/app/ag-3.webp" alt="La agenda del chofer con la semana y las próximas reservas" width="600" height="1298" loading="lazy"><img src="assets/app/ag-4.webp" alt="Aviso en la app del chofer: tenés una reserva agendada, faltan 55 minutos" width="600" height="1298" loading="lazy"><img src="assets/app/ag-5.webp" alt="La pasajera sigue al chofer en vivo en el mapa" width="600" height="1298" loading="lazy"></div></div><div class="seq-cards s5 on" data-slide="0" aria-hidden="true"><div class="seq-card"><span class="seq-card-in"><span class="av"><img src="assets/objetos/av-lucia.webp" alt="" width="112" height="112"><i><img src="assets/illustrations/3d_v1/ic-calendar.webp" alt="" width="56" height="56"></i></span><span class="seq-txt"><small>Paso 1</small><b>Te pide para mañana 06:30</b><span class="seq-dots"><i class="on"></i><i></i><i></i><i></i><i></i></span></span></span></div><div class="seq-card hot"><span class="seq-card-in"><span class="seq-txt"><small>Paso 2</small><b>Te llega la reserva para mañana 06:30</b><span class="seq-dots"><i class="done"></i><i class="on"></i><i></i><i></i><i></i></span></span><span class="av"><img src="assets/objetos/av-martin.webp" alt="" width="112" height="112"><i><img src="assets/illustrations/3d_v1/ic-bell-notifications.webp" alt="" width="56" height="56"></i></span></span></div><div class="seq-card hot"><span class="seq-card-in"><span class="seq-txt"><small>Paso 3</small><b>Queda en tu agenda</b><span class="seq-dots"><i class="done"></i><i class="done"></i><i class="on"></i><i></i><i></i></span></span><span class="av"><img src="assets/objetos/av-martin.webp" alt="" width="112" height="112"><i><img src="assets/illustrations/3d_v1/ic-calendar.webp" alt="" width="56" height="56"></i></span></span></div><div class="seq-card auto"><span class="seq-card-in"><span class="seq-txt"><small>Paso 4 · Automático</small><b>1 h antes, la app les avisa a los dos</b><span class="seq-dots"><i class="done"></i><i class="done"></i><i class="done"></i><i class="on"></i><i></i></span></span><span class="av"><img src="assets/objetos/av-martin.webp" alt="" width="112" height="112"><i><img src="assets/illustrations/3d_v1/ic-clock-waiting.webp" alt="" width="56" height="56"></i></span></span></div><div class="seq-card"><span class="seq-card-in"><span class="av"><img src="assets/objetos/av-lucia.webp" alt="" width="112" height="112"><i><img src="assets/illustrations/3d_v1/ic-location.webp" alt="" width="56" height="56"></i></span><span class="seq-txt"><small>Paso 5</small><b>Te ve llegar en vivo</b><span class="seq-dots"><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="on"></i></span></span></span></div></div></div>
+          </div></div>
+          <p class="viewer-cap" aria-live="polite">Te piden para mañana o el día que quieran: queda en tu agenda y una hora antes la app les avisa a vos y a tu pasajera.</p>
+        </div>
+  </div>
+</section>
+
+<section class="wins-sec">
+  <div class="wrap">
+    <div class="wins"><div class="win"><img src="assets/illustrations/3d_v1/ic-calendar.webp" alt="" width="56" height="56" loading="lazy"><b>Semana o mes</b><span>Tus viajes de cada día y las próximas reservas.</span></div><div class="win"><img src="assets/illustrations/3d_v1/ic-clock-waiting.webp" alt="" width="56" height="56" loading="lazy"><b>Aviso antes</b><span>A vos y a tu pasajera, y nunca entre la 1 y las 6.</span></div><div class="win"><img src="assets/illustrations/3d_v1/ic-chat.webp" alt="" width="56" height="56" loading="lazy"><b>Si se le complica</b><span>La reprograma o la cancela y te llega el aviso.</span></div><div class="win"><img src="assets/illustrations/3d_v1/ic-link.webp" alt="" width="56" height="56" loading="lazy"><b>A tu calendario</b><span>Te suscribís desde Google Calendar o el del iPhone.</span></div></div>
   </div>
 </section>
 
@@ -91,6 +100,109 @@
   </div>
 </section>
 </main>
+<script>
+(function(){
+  document.querySelectorAll('[data-viewer]').forEach(function(v){
+    var track = v.querySelector('.track');
+    var tabs = v.querySelectorAll('[role=tab]');
+    var slides = track.querySelectorAll('.slide');
+    var cap = v.querySelector('.viewer-cap');
+    var current = 0;
+    var ticking = false;
+    function mark(i){
+      if (i === current) return;
+      current = i;
+      tabs.forEach(function(t, j){ t.setAttribute('aria-selected', j === i ? 'true' : 'false'); });
+      cap.textContent = slides[i].getAttribute('data-cap');
+      v.classList.toggle('on-seq', slides[i].classList.contains('slide-seq'));
+      v.querySelectorAll('.seq-cards').forEach(function(cs){ cs.classList.toggle('on', cs.getAttribute('data-slide') === String(i)); });
+      if (slides[i].classList.contains('slide-seq')) {
+        var set = v.querySelector('.seq-cards[data-slide="' + i + '"]');
+        tabs[i].style.setProperty('--T', (Number(slides[i].getAttribute('data-steps') || 5) * 2.6 + 1.6) + 's');
+        [slides[i], set, tabs[i]].forEach(function(el){
+          if (el && el.getAnimations) el.getAnimations({ subtree: true }).forEach(function(a){ a.currentTime = 0; });
+        });
+      }
+      sizePin();
+      scrollScreen();
+    }
+    // La captura activa es mas larga que el celular: el celular queda fijo
+    // (sticky) dentro de .phone-pin y la pantalla baja mientras se scrollea
+    // ese recorrido; despues la pagina sigue. El recorrido es lo que la
+    // captura sobra del celular.
+    var pin = v.querySelector('.phone-pin');
+    var phone = pin.querySelector('.pin-stick');
+    var reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+    function overflowOf(sl){
+      var img = sl.classList.contains('slide-seq') ? null : sl.querySelector('img');
+      return img ? Math.max(0, img.offsetHeight - sl.clientHeight) : 0;
+    }
+    function sizePin(){
+      if (reduce) return;
+      pin.style.height = (phone.offsetHeight + overflowOf(slides[current]) * 1.25) + 'px';
+    }
+    function scrollScreen(){
+      ticking = false;
+      if (reduce) return;
+      var top = parseFloat(getComputedStyle(phone).top) || 0;
+      var r = pin.getBoundingClientRect();
+      var run = r.height - phone.offsetHeight;
+      var p = run > 0 ? Math.max(0, Math.min(1, (top - r.top) / run)) : 0;
+      slides.forEach(function(sl, j){
+        var img = sl.classList.contains('slide-seq') ? null : sl.querySelector('img');
+        if (img) img.style.transform = 'translateY(' + (j === current ? -overflowOf(sl) * p : 0) + 'px)';
+      });
+      if (!slides[current].classList.contains('slide-seq')) tabs[current].style.setProperty('--p', p.toFixed(3));
+    }
+    tabs.forEach(function(t, i){
+      t.addEventListener('click', function(){
+        track.scrollTo({ left: i * track.clientWidth, behavior: 'smooth' }); mark(i);
+        // que se vea el celular entero, con los globos de arriba y abajo
+        var stick = pin.querySelector('.pin-stick'), r = stick.getBoundingClientRect(), top = parseFloat(getComputedStyle(stick).top) || 80;
+        if (r.top < top - 4 || r.bottom > innerHeight + 4) window.scrollTo({ top: r.top + scrollY - top, behavior: reduce ? 'auto' : 'smooth' });
+      });
+    });
+    track.addEventListener('scroll', function(){ mark(Math.round(track.scrollLeft / track.clientWidth)); }, { passive: true });
+    track.addEventListener('keydown', function(e){
+      var d = e.key === 'ArrowRight' ? 1 : e.key === 'ArrowLeft' ? -1 : 0;
+      if (!d) return;
+      e.preventDefault();
+      var i = Math.max(0, Math.min(slides.length - 1, current + d));
+      track.scrollTo({ left: i * track.clientWidth, behavior: 'smooth' }); mark(i);
+    });
+    if (!reduce) {
+      window.addEventListener('scroll', function(){ if (!ticking) { ticking = true; requestAnimationFrame(scrollScreen); } }, { passive: true });
+      window.addEventListener('resize', function(){ sizePin(); scrollScreen(); });
+      track.querySelectorAll('img').forEach(function(img){ img.addEventListener('load', function(){ sizePin(); scrollScreen(); }); });
+      sizePin();
+      scrollScreen();
+    }
+  });
+
+  // Quien habla: la cara del que tiene el globo visible se ilumina
+  var casts = document.querySelectorAll('[data-viewer]');
+  function talk(){
+    var hand = document.querySelector('.hand');
+    if (hand) {
+      var hw = '';
+      hand.querySelectorAll('.push').forEach(function(c){ if (parseFloat(getComputedStyle(c).opacity) > 0.5) hw = c.classList.contains('hot') ? 'm' : 'l'; });
+      hand.setAttribute('data-talk', hw);
+    }
+    casts.forEach(function(v){
+      var set = v.querySelector('.seq-cards.on');
+      var who = '';
+      if (set) set.querySelectorAll('.seq-card').forEach(function(c){
+        if (parseFloat(getComputedStyle(c).opacity) > 0.5) who = c.classList.contains('auto') ? 'auto' : (c.classList.contains('hot') ? 'm' : 'l');
+      });
+      v.setAttribute('data-talk', who);
+    });
+  }
+  if (!matchMedia('(prefers-reduced-motion: reduce)').matches) setInterval(talk, 150);
+  talk();
+
+})();
+</script>
+
 
 <footer>
   <div class="wrap">
