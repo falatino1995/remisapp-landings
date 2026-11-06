@@ -836,3 +836,38 @@ body.mnav-open{overflow:hidden}
 .phone-pin .pin-stick{padding-top:66px;gap:74px}
 .viewer .phone{width:clamp(230px,calc((100svh - 150px - 60px - 64px - 86px) * 780 / 1688),min(280px,66vw))}
 .phone-pin .pin-stick{padding-top:60px;gap:64px}
+/* Paginas internas v2: cortas y visuales */
+.sub-hero-v2{text-align:center}
+.sub-hero-v2 .wrap{display:flex;flex-direction:column;align-items:center}
+.sub-hero-v2 h1{font-size:clamp(40px,7vw,84px);text-transform:uppercase;line-height:.95;max-width:14ch;text-wrap:balance}
+.sub-hero-v2 h1 em{display:block;font-style:normal;color:var(--verde)}
+.sub-hero-v2 .lead{max-width:40ch;margin-inline:auto}
+.sub-hero-v2 .beta-chip{margin:14px 0 18px}
+.sub-hero-v2 .hero-actions{justify-content:center}
+.solo-viewer{padding-block:24px 40px}
+.solo-viewer .wrap{display:flex;flex-direction:column;align-items:center}
+.sv-title{font-size:clamp(28px,4.5vw,44px);text-transform:uppercase;text-align:center;margin-bottom:4px}
+.sv-title em{font-style:normal;color:var(--verde)}
+.solo-viewer .phone-pin .pin-stick{top:80px}
+.wins-sec{padding-block:8px 56px}
+.wins{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px}
+.win{display:flex;flex-direction:column;gap:6px;padding:18px;border-radius:20px;background:var(--surface);border:1px solid var(--line)}
+.win img{width:44px;height:44px}
+.win b{font-size:18px;line-height:1.15}
+.win span{font-size:14px;color:var(--muted)}
+@media (max-width:600px){.wins{grid-template-columns:1fr 1fr}.win{padding:14px}.win b{font-size:16px}.win span{font-size:13px}}
+.punch{padding-block:24px 64px;text-align:center}
+.punch-big{font-family:var(--display);font-stretch:var(--display-ancho);font-weight:800;font-size:clamp(96px,20vw,200px);line-height:.9;color:var(--verde);display:flex;flex-direction:column;align-items:center}
+.punch-big small{font-size:clamp(20px,3vw,30px);color:var(--text);text-transform:uppercase;letter-spacing:.02em}
+.punch-note{font-size:12px;color:var(--dim);max-width:46ch;margin:14px auto 0}
+.sv-title{margin-bottom:14px}
+.solo-viewer .phone-pin .pin-stick{padding-top:70px}
+.win:last-child:nth-child(odd){grid-column:1/-1}
+@media (max-width:600px){
+  .related-grid.det{grid-template-columns:1fr 1fr;gap:10px}
+  .related-grid.det a{padding:14px}
+  .related-grid.det h3{font-size:17px}
+  .related-grid.det p{font-size:12.5px}
+  .related-grid.det .who{display:none}
+}
+.sv-title{margin-bottom:34px}

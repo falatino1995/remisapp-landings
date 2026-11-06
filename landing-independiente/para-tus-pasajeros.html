@@ -19,7 +19,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..100,400..800&display=swap">
-<link rel="stylesheet" href="/assets/site.css?v=20261105k">
+<link rel="stylesheet" href="/assets/site.css?v=20261106a">
 <script src="/assets/analytics.js"></script>
 <script src="/assets/nav.js" defer></script>
 </head>
@@ -38,11 +38,12 @@
 <nav class="mnav" id="mnav" aria-label="Menú" hidden><div class="mnav-group"><span class="mnav-h">Producto</span><a href="/tu-app">Para vos</a><a href="/para-tus-pasajeros">Para tus pasajeros</a></div><div class="mnav-group"><span class="mnav-h">En detalle</span><a href="/precio">Tu precio</a><a href="/cobros">Cobros</a><a href="/agenda">Reservas y agenda</a><a href="/notificaciones">Notificaciones</a><a href="/compartir">Link, QR y carteles</a></div><div class="mnav-group"><a href="/guias">Guías</a><a href="/#beta">Beta</a><a href="/#preguntas">Preguntas</a></div><div class="mnav-cta"><a class="btn btn-ghost" href="https://app.remisapp.info/p/chofer/login">Iniciar sesión</a><a class="btn btn-primary" href="https://app.remisapp.info/empezar?kind=independiente">Empezá gratis</a></div></nav>
 
 <main>
-<section class="sub-hero">
+<section class="sub-hero sub-hero-v2">
   <div class="wrap">
     <p class="crumbs"><a href="/">Inicio</a> / Para tus pasajeros</p>
-    <h1>Para tus <em>pasajeros</em></h1>
-    <p class="lead">Del otro lado de tu app está la de tus pasajeros. Entran con tu link o tu QR, te piden sin descargar nada, siguen el viaje en vivo y te guardan para la próxima.</p>
+    <span class="beta-chip"><b>Fase beta</b> Gratis y sin límite de uso</span>
+    <h1>Su app para <em>pedirte a vos.</em></h1>
+    <p class="lead">Sin descargar nada: entra con tu link o tu QR, ve tu precio y te sigue en el mapa.</p>
     <div class="hero-actions">
       <a class="btn btn-primary" href="https://app.remisapp.info/empezar?kind=independiente">Creá tu cuenta gratis</a>
       <a class="btn btn-ghost" href="/#beta">Quiero la app Android</a>
@@ -50,58 +51,24 @@
   </div>
 </section>
 
-<section class="feats">
+<section class="solo-viewer">
   <div class="wrap">
-    <div class="feat">
-      <div class="phone"><img src="assets/screens/pagina-publica.webp" alt="Web del chofer Martín Sosa con su auto y el viaje elegido en el mapa" width="780" height="1688" loading="lazy"></div>
-      <div>
-        <h2>Te encuentra <em>con tu link o tu QR.</em></h2>
-        <p>Lo primero que ve es a vos: tu nombre, tu auto, en qué ciudad trabajás, cómo se te puede pagar y si estás disponible ahora. No el nombre de una app.</p>
-        <ul class="checks"><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span><strong>Tu link.</strong> Lo mandás por WhatsApp o lo ponés en tu Instagram.</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span><strong>Tu QR en el respaldo del asiento.</strong> Lo escanea durante el viaje y ya tiene cómo pedirte.</span></li></ul>
-      </div>
-    </div>
-    <div class="feat">
-      <div class="phone"><img src="assets/screens/pagina-publica-pedido.webp" alt="Formulario para pedir el viaje ahora o programado, con nombre y forma de pago" width="780" height="1688" loading="lazy"></div>
-      <div>
-        <h2>Pedir es <em>un minuto.</em></h2>
-        <p>Desde dónde, hasta dónde, ahora o programado, y cómo va a pagar. Toca "Pedir viaje" y a vos te llega a la app.</p>
-        <ul class="checks"><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span><strong>Sin descargar nada.</strong> Funciona desde el navegador del celular.</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span><strong>Ahora o para otro día.</strong> Las reservas te quedan en la agenda.</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span><strong>O por WhatsApp.</strong> Si prefiere, te pide por WhatsApp desde la misma página.</span></li></ul>
-      </div>
-    </div>
-    <div class="feat">
-      <div class="phone"><img src="assets/screens/pasajero-viaje.webp" alt="El pasajero ve su viaje confirmado en el mapa con el chofer asignado y el precio" width="780" height="1688" loading="lazy"></div>
-      <div>
-        <h2>Sigue el viaje <em>en el mapa.</em></h2>
-        <p>Cuando aceptás, ve que su viaje está confirmado, quién lo va a buscar, el precio y el recorrido. Sin tener que llamarte para preguntar.</p>
-        <ul class="checks"><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span><strong>Chat con vos.</strong> Se escriben por la app, o por WhatsApp si los dos quieren.</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span><strong>Cancela o cambia la hora.</strong> Si se le complica, lo hace desde su app y te avisa.</span></li></ul>
-      </div>
-    </div>
-    <div class="feat">
-      <div class="phone"><img src="assets/screens/pasajero-choferes.webp" alt="App del pasajero con Martín Sosa como chofer de confianza y el botón Pedir viaje" width="780" height="1688" loading="lazy"></div>
-      <div>
-        <h2>Te guarda <em>como su chofer.</em></h2>
-        <p>Si se registra, te tiene guardado con los choferes que ya lo llevaron, con su favorito arriba. Para volver a pedirte, toca "Pedir viaje" y listo.</p>
-        <ul class="checks"><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span><strong>Entra con Google.</strong> Sin contraseñas nuevas y sin tener que dar su teléfono.</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span><strong>Lo guarda en el inicio.</strong> Queda como un ícono más en su celular.</span></li></ul>
-      </div>
-    </div>
-    <div class="feat">
-      <div class="phone"><img src="assets/screens/pasajero-inicio.webp" alt="Inicio de la app del pasajero con su último viaje y el botón para pedir otro" width="780" height="1688" loading="lazy"></div>
-      <div>
-        <h2>La próxima vez, <em>más rápido.</em></h2>
-        <p>Al volver ve sus lugares guardados (casa, trabajo) y a vos, con un botón para pedir. Menos pasos que escribirte por WhatsApp.</p>
-        <ul class="checks"><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span><strong>Sus lugares guardados.</strong> Casa, trabajo o los que use seguido.</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span><strong>Te ve disponible.</strong> Sabe si podés llevarlo ahora.</span></li></ul>
-      </div>
-    </div>
-    <div class="feat">
-      <div class="phone"><img src="assets/screens/pasajero-reservas.webp" alt="Reserva confirmada con el chofer, el recorrido y el precio" width="780" height="1688" loading="lazy"></div>
-      <div>
-        <h2>Sus reservas, <em>a mano.</em></h2>
-        <p>Los viajes que te programó quedan en su agenda, con el recorrido, el precio y vos como chofer.</p>
-        <ul class="checks"><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span><strong>Reprograma o cancela solo.</strong> Sin tener que ubicarte para avisarte; a vos te llega el aviso.</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span><strong>Te escribe desde la reserva.</strong> Chat, WhatsApp o llamada, a un toque.</span></li></ul>
-      </div>
-    </div>
+    <h2 class="sv-title">Lo que <em>ve tu pasajero.</em></h2>
+    <div class="viewer on-seq" data-viewer>
+          <div class="phone-pin"><div class="pin-stick"><div class="phone"><div class="cast" aria-hidden="true"><span class="who who-l"><img src="assets/objetos/av-lucia.webp" alt="" width="112" height="112"><b>Pasajera</b></span><span class="who who-m"><img src="assets/objetos/av-martin.webp" alt="" width="112" height="112"><b>Vos</b></span></div><div class="track" tabindex="0" aria-label="Pantallas de la app de tus pasajeros. Deslizá para ver cada pantalla"><div class="slide slide-seq s5" data-steps="5" data-cap="Entra con tu link o tu QR, elige a dónde va y te pide sin descargar nada."><img src="assets/app/q01-web.webp" alt="Web de Martín Sosa abierta por la pasajera, con su cuenta lista" width="600" height="1298"><img src="assets/app/q02-ruta.webp" alt="La pasajera elige de Patio Olmos a Paseo del Jockey y ve los dos puntos en el mapa" width="600" height="1298" loading="lazy"><img src="assets/app/q03-oferta.webp" alt="Al chofer le entra el pedido y pone su precio" width="600" height="1298" loading="lazy"><img src="assets/app/q04-precio.webp" alt="La pasajera ve el precio del chofer y el botón Aceptar" width="600" height="1298" loading="lazy"><img src="assets/app/q05-confirmado.webp" alt="Viaje confirmado: la pasajera ve al chofer en el mapa" width="600" height="1298" loading="lazy"></div><div class="slide slide-seq s5" data-steps="5" data-cap="Sigue el viaje entero en el mapa: cuando salís, cuando llegás y hasta el destino."><img src="assets/app/v01-sale.webp" alt="El chofer confirma y sale a buscar a la pasajera" width="600" height="1298" loading="lazy"><img src="assets/app/v02-en-camino.webp" alt="La pasajera ve al chofer en camino en el mapa" width="600" height="1298" loading="lazy"><img src="assets/app/v03-llego.webp" alt="Aviso a la pasajera: tu chofer llegó, te está esperando" width="600" height="1298" loading="lazy"><img src="assets/app/v04-en-viaje.webp" alt="Viaje en curso: la pasajera sigue el recorrido en el mapa" width="600" height="1298" loading="lazy"><img src="assets/app/v05-terminado.webp" alt="Viaje terminado con el total a pagar" width="600" height="1298" loading="lazy"></div><div class="slide slide-seq s3 seq3" data-steps="3" data-cap="Te guarda como su chofer de confianza y te vuelve a pedir en un toque."><img src="assets/app/q06-choferes.webp" alt="Choferes de confianza de la pasajera, con Martín Sosa como su más usado" width="600" height="1298" loading="lazy"><img src="assets/app/q07-inicio.webp" alt="Inicio de la pasajera con Martín Sosa disponible y el botón Pedir viaje" width="600" height="1298" loading="lazy"><img src="assets/app/q13-pide-datos.webp" alt="Desde Pedir viaje entra a la web de Martín Sosa con sus datos ya cargados" width="600" height="1298" loading="lazy"></div><div class="slide slide-seq s4 seq4" data-steps="4" data-cap="Programa para mañana o el día que quiera, y una hora antes la app le avisa."><img src="assets/app/q08-programa.webp" alt="La pasajera programa un viaje para mañana a las 06:30" width="600" height="1298" loading="lazy"><img src="assets/app/q09-precio-reserva.webp" alt="Le llega el precio de la reserva y la acepta" width="600" height="1298" loading="lazy"><img src="assets/app/q10-viajes.webp" alt="La reserva confirmada en los viajes de la pasajera" width="600" height="1298" loading="lazy"><img src="assets/app/q11-inicio-reserva.webp" alt="Inicio de la pasajera con su próximo viaje del 06/11 a las 06:30" width="600" height="1298" loading="lazy"></div></div><div class="seq-cards s5 on" data-slide="0" aria-hidden="true"><div class="seq-card"><span class="seq-card-in"><span class="av"><img src="assets/objetos/av-lucia.webp" alt="" width="112" height="112"><i><img src="assets/illustrations/3d_v1/ic-qr-code.webp" alt="" width="56" height="56"></i></span><span class="seq-txt"><small>Paso 1</small><b>Abre tu link o tu QR</b><span class="seq-dots"><i class="on"></i><i></i><i></i><i></i><i></i></span></span></span></div><div class="seq-card"><span class="seq-card-in"><span class="av"><img src="assets/objetos/av-lucia.webp" alt="" width="112" height="112"><i><img src="assets/illustrations/3d_v1/ic-location.webp" alt="" width="56" height="56"></i></span><span class="seq-txt"><small>Paso 2</small><b>Elige a dónde va</b><span class="seq-dots"><i class="done"></i><i class="on"></i><i></i><i></i><i></i></span></span></span></div><div class="seq-card hot"><span class="seq-card-in"><span class="seq-txt"><small>Paso 3</small><b>Le ponés tu precio</b><span class="seq-dots"><i class="done"></i><i class="done"></i><i class="on"></i><i></i><i></i></span></span><span class="av"><img src="assets/objetos/av-martin.webp" alt="" width="112" height="112"><i><img src="assets/illustrations/3d_v1/ic-money-bag.webp" alt="" width="56" height="56"></i></span></span></div><div class="seq-card"><span class="seq-card-in"><span class="av"><img src="assets/objetos/av-lucia.webp" alt="" width="112" height="112"><i><svg viewBox="0 0 24 24" fill="none" stroke="#1d9e66" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></i></span><span class="seq-txt"><small>Paso 4</small><b>Le llega tu precio y acepta</b><span class="seq-dots"><i class="done"></i><i class="done"></i><i class="done"></i><i class="on"></i><i></i></span></span></span></div><div class="seq-card"><span class="seq-card-in"><span class="av"><img src="assets/objetos/av-lucia.webp" alt="" width="112" height="112"><i><img src="assets/illustrations/3d_v1/ic-car-icon.webp" alt="" width="56" height="56"></i></span><span class="seq-txt"><small>Paso 5</small><b>Confirmado: te ve llegar</b><span class="seq-dots"><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="on"></i></span></span></span></div></div><div class="seq-cards s3 seq3" data-slide="2" aria-hidden="true"><div class="seq-card"><span class="seq-card-in"><span class="av"><img src="assets/objetos/av-lucia.webp" alt="" width="112" height="112"><i><svg viewBox="0 0 24 24" fill="#39D78D" aria-hidden="true"><path d="M12 2.8l2.8 5.8 6.3.9-4.6 4.4 1.1 6.3L12 17.2l-5.6 3 1.1-6.3L2.9 9.5l6.3-.9z"/></svg></i></span><span class="seq-txt"><small>Paso 1</small><b>Te guarda como su chofer</b><span class="seq-dots"><i class="on"></i><i></i><i></i></span></span></span></div><div class="seq-card"><span class="seq-card-in"><span class="av"><img src="assets/objetos/av-lucia.webp" alt="" width="112" height="112"><i><svg viewBox="0 0 24 24" fill="none" stroke="#1d9e66" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></i></span><span class="seq-txt"><small>Paso 2</small><b>Ve si estás disponible</b><span class="seq-dots"><i class="done"></i><i class="on"></i><i></i></span></span></span></div><div class="seq-card"><span class="seq-card-in"><span class="av"><img src="assets/objetos/av-lucia.webp" alt="" width="112" height="112"><i><img src="assets/illustrations/3d_v1/ic-link.webp" alt="" width="56" height="56"></i></span><span class="seq-txt"><small>Paso 3</small><b>Te vuelve a pedir con sus datos cargados</b><span class="seq-dots"><i class="done"></i><i class="done"></i><i class="on"></i></span></span></span></div></div><div class="seq-cards s4 seq4" data-slide="3" aria-hidden="true"><div class="seq-card"><span class="seq-card-in"><span class="av"><img src="assets/objetos/av-lucia.webp" alt="" width="112" height="112"><i><img src="assets/illustrations/3d_v1/ic-calendar.webp" alt="" width="56" height="56"></i></span><span class="seq-txt"><small>Paso 1</small><b>Programa para mañana 06:30</b><span class="seq-dots"><i class="on"></i><i></i><i></i><i></i></span></span></span></div><div class="seq-card"><span class="seq-card-in"><span class="av"><img src="assets/objetos/av-lucia.webp" alt="" width="112" height="112"><i><svg viewBox="0 0 24 24" fill="none" stroke="#1d9e66" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></i></span><span class="seq-txt"><small>Paso 2</small><b>Le llega tu precio y confirma</b><span class="seq-dots"><i class="done"></i><i class="on"></i><i></i><i></i></span></span></span></div><div class="seq-card"><span class="seq-card-in"><span class="av"><img src="assets/objetos/av-lucia.webp" alt="" width="112" height="112"><i><img src="assets/illustrations/3d_v1/ic-calendar.webp" alt="" width="56" height="56"></i></span><span class="seq-txt"><small>Paso 3</small><b>La ve en sus viajes</b><span class="seq-dots"><i class="done"></i><i class="done"></i><i class="on"></i><i></i></span></span></span></div><div class="seq-card auto"><span class="seq-card-in"><span class="seq-txt"><small>Paso 4 · Automático</small><b>1 h antes, la app le avisa</b><span class="seq-dots"><i class="done"></i><i class="done"></i><i class="done"></i><i class="on"></i></span></span><span class="av"><img src="assets/objetos/av-martin.webp" alt="" width="112" height="112"><i><img src="assets/illustrations/3d_v1/ic-clock-waiting.webp" alt="" width="56" height="56"></i></span></span></div></div><div class="seq-cards s5" data-slide="1" aria-hidden="true"><div class="seq-card hot"><span class="seq-card-in"><span class="seq-txt"><small>Paso 1</small><b>Salís a buscarla</b><span class="seq-dots"><i class="on"></i><i></i><i></i><i></i><i></i></span></span><span class="av"><img src="assets/objetos/av-martin.webp" alt="" width="112" height="112"><i><img src="assets/illustrations/3d_v1/ic-car-icon.webp" alt="" width="56" height="56"></i></span></span></div><div class="seq-card"><span class="seq-card-in"><span class="av"><img src="assets/objetos/av-lucia.webp" alt="" width="112" height="112"><i><img src="assets/illustrations/3d_v1/ic-location.webp" alt="" width="56" height="56"></i></span><span class="seq-txt"><small>Paso 2</small><b>Ve por dónde venís</b><span class="seq-dots"><i class="done"></i><i class="on"></i><i></i><i></i><i></i></span></span></span></div><div class="seq-card"><span class="seq-card-in"><span class="av"><img src="assets/objetos/av-lucia.webp" alt="" width="112" height="112"><i><img src="assets/illustrations/3d_v1/ic-bell-notifications.webp" alt="" width="56" height="56"></i></span><span class="seq-txt"><small>Paso 3</small><b>Le avisa que llegaste</b><span class="seq-dots"><i class="done"></i><i class="done"></i><i class="on"></i><i></i><i></i></span></span></span></div><div class="seq-card"><span class="seq-card-in"><span class="av"><img src="assets/objetos/av-lucia.webp" alt="" width="112" height="112"><i><img src="assets/illustrations/3d_v1/ic-location.webp" alt="" width="56" height="56"></i></span><span class="seq-txt"><small>Paso 4</small><b>Sigue el viaje hasta el destino</b><span class="seq-dots"><i class="done"></i><i class="done"></i><i class="done"></i><i class="on"></i><i></i></span></span></span></div><div class="seq-card"><span class="seq-card-in"><span class="av"><img src="assets/objetos/av-lucia.webp" alt="" width="112" height="112"><i><svg viewBox="0 0 24 24" fill="none" stroke="#1d9e66" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></i></span><span class="seq-txt"><small>Paso 5</small><b>Llegó: ve el total y listo</b><span class="seq-dots"><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="on"></i></span></span></span></div></div></div>
+          <div class="viewer-tabs" role="tablist" aria-label="Pantallas de la app de tus pasajeros"><button type="button" role="tab" aria-selected="true" data-i="0"><img src="assets/illustrations/3d_v1/ic-link.webp" alt="" width="56" height="56"><span>Te pide</span><em aria-hidden="true"></em></button><button type="button" role="tab" aria-selected="false" data-i="1"><img src="assets/illustrations/3d_v1/ic-location.webp" alt="" width="56" height="56"><span>En vivo</span><em aria-hidden="true"></em></button><button type="button" role="tab" aria-selected="false" data-i="2"><img class="tav" src="assets/objetos/av-martin.webp" alt="" width="112" height="112"><span>Te guarda</span><em aria-hidden="true"></em></button><button type="button" role="tab" aria-selected="false" data-i="3"><img src="assets/illustrations/3d_v1/ic-calendar.webp" alt="" width="56" height="56"><span>Reservas</span><em aria-hidden="true"></em></button></div></div></div>
+          <p class="viewer-cap" aria-live="polite">Entra con tu link o tu QR y te pide sin descargar nada.</p>
+        </div>
   </div>
 </section>
+
+<section class="wins-sec">
+  <div class="wrap">
+    <div class="wins"><div class="win"><img src="assets/illustrations/3d_v1/ic-link.webp" alt="" width="56" height="56" loading="lazy"><b>Sin descargar nada</b><span>Entra con tu link o tu QR y pide en un minuto.</span></div><div class="win"><img src="assets/illustrations/3d_v1/ic-money-bag.webp" alt="" width="56" height="56" loading="lazy"><b>Ve tu precio antes</b><span>Acepta tu precio antes de que salgas.</span></div><div class="win"><img src="assets/illustrations/3d_v1/ic-location.webp" alt="" width="56" height="56" loading="lazy"><b>Te sigue en vivo</b><span>Ve por dónde venís y le avisa cuando llegaste.</span></div><div class="win"><img src="assets/illustrations/3d_v1/ic-chat.webp" alt="" width="56" height="56" loading="lazy"><b>Te guarda</b><span>Te vuelve a pedir con sus datos ya cargados.</span></div><div class="win"><img src="assets/illustrations/3d_v1/ic-calendar.webp" alt="" width="56" height="56" loading="lazy"><b>Reserva para otro día</b><span>Y una hora antes la app le avisa.</span></div></div>
+  </div>
+</section>
+
+
 
 <section class="related">
   <div class="wrap">
@@ -127,6 +94,109 @@
   </div>
 </section>
 </main>
+<script>
+(function(){
+  document.querySelectorAll('[data-viewer]').forEach(function(v){
+    var track = v.querySelector('.track');
+    var tabs = v.querySelectorAll('[role=tab]');
+    var slides = track.querySelectorAll('.slide');
+    var cap = v.querySelector('.viewer-cap');
+    var current = 0;
+    var ticking = false;
+    function mark(i){
+      if (i === current) return;
+      current = i;
+      tabs.forEach(function(t, j){ t.setAttribute('aria-selected', j === i ? 'true' : 'false'); });
+      cap.textContent = slides[i].getAttribute('data-cap');
+      v.classList.toggle('on-seq', slides[i].classList.contains('slide-seq'));
+      v.querySelectorAll('.seq-cards').forEach(function(cs){ cs.classList.toggle('on', cs.getAttribute('data-slide') === String(i)); });
+      if (slides[i].classList.contains('slide-seq')) {
+        var set = v.querySelector('.seq-cards[data-slide="' + i + '"]');
+        tabs[i].style.setProperty('--T', (Number(slides[i].getAttribute('data-steps') || 5) * 2.6 + 1.6) + 's');
+        [slides[i], set, tabs[i]].forEach(function(el){
+          if (el && el.getAnimations) el.getAnimations({ subtree: true }).forEach(function(a){ a.currentTime = 0; });
+        });
+      }
+      sizePin();
+      scrollScreen();
+    }
+    // La captura activa es mas larga que el celular: el celular queda fijo
+    // (sticky) dentro de .phone-pin y la pantalla baja mientras se scrollea
+    // ese recorrido; despues la pagina sigue. El recorrido es lo que la
+    // captura sobra del celular.
+    var pin = v.querySelector('.phone-pin');
+    var phone = pin.querySelector('.pin-stick');
+    var reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+    function overflowOf(sl){
+      var img = sl.classList.contains('slide-seq') ? null : sl.querySelector('img');
+      return img ? Math.max(0, img.offsetHeight - sl.clientHeight) : 0;
+    }
+    function sizePin(){
+      if (reduce) return;
+      pin.style.height = (phone.offsetHeight + overflowOf(slides[current]) * 1.25) + 'px';
+    }
+    function scrollScreen(){
+      ticking = false;
+      if (reduce) return;
+      var top = parseFloat(getComputedStyle(phone).top) || 0;
+      var r = pin.getBoundingClientRect();
+      var run = r.height - phone.offsetHeight;
+      var p = run > 0 ? Math.max(0, Math.min(1, (top - r.top) / run)) : 0;
+      slides.forEach(function(sl, j){
+        var img = sl.classList.contains('slide-seq') ? null : sl.querySelector('img');
+        if (img) img.style.transform = 'translateY(' + (j === current ? -overflowOf(sl) * p : 0) + 'px)';
+      });
+      if (!slides[current].classList.contains('slide-seq')) tabs[current].style.setProperty('--p', p.toFixed(3));
+    }
+    tabs.forEach(function(t, i){
+      t.addEventListener('click', function(){
+        track.scrollTo({ left: i * track.clientWidth, behavior: 'smooth' }); mark(i);
+        // que se vea el celular entero, con los globos de arriba y abajo
+        var stick = pin.querySelector('.pin-stick'), r = stick.getBoundingClientRect(), top = parseFloat(getComputedStyle(stick).top) || 80;
+        if (r.top < top - 4 || r.bottom > innerHeight + 4) window.scrollTo({ top: r.top + scrollY - top, behavior: reduce ? 'auto' : 'smooth' });
+      });
+    });
+    track.addEventListener('scroll', function(){ mark(Math.round(track.scrollLeft / track.clientWidth)); }, { passive: true });
+    track.addEventListener('keydown', function(e){
+      var d = e.key === 'ArrowRight' ? 1 : e.key === 'ArrowLeft' ? -1 : 0;
+      if (!d) return;
+      e.preventDefault();
+      var i = Math.max(0, Math.min(slides.length - 1, current + d));
+      track.scrollTo({ left: i * track.clientWidth, behavior: 'smooth' }); mark(i);
+    });
+    if (!reduce) {
+      window.addEventListener('scroll', function(){ if (!ticking) { ticking = true; requestAnimationFrame(scrollScreen); } }, { passive: true });
+      window.addEventListener('resize', function(){ sizePin(); scrollScreen(); });
+      track.querySelectorAll('img').forEach(function(img){ img.addEventListener('load', function(){ sizePin(); scrollScreen(); }); });
+      sizePin();
+      scrollScreen();
+    }
+  });
+
+  // Quien habla: la cara del que tiene el globo visible se ilumina
+  var casts = document.querySelectorAll('[data-viewer]');
+  function talk(){
+    var hand = document.querySelector('.hand');
+    if (hand) {
+      var hw = '';
+      hand.querySelectorAll('.push').forEach(function(c){ if (parseFloat(getComputedStyle(c).opacity) > 0.5) hw = c.classList.contains('hot') ? 'm' : 'l'; });
+      hand.setAttribute('data-talk', hw);
+    }
+    casts.forEach(function(v){
+      var set = v.querySelector('.seq-cards.on');
+      var who = '';
+      if (set) set.querySelectorAll('.seq-card').forEach(function(c){
+        if (parseFloat(getComputedStyle(c).opacity) > 0.5) who = c.classList.contains('auto') ? 'auto' : (c.classList.contains('hot') ? 'm' : 'l');
+      });
+      v.setAttribute('data-talk', who);
+    });
+  }
+  if (!matchMedia('(prefers-reduced-motion: reduce)').matches) setInterval(talk, 150);
+  talk();
+
+})();
+</script>
+
 
 <footer>
   <div class="wrap">
